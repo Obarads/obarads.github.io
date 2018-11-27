@@ -1,3 +1,5 @@
+# PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
+
 ## どんなもの?
 Point Cloud(以下点群)に対してClassification、Part Segmentation、Semantic Segmentationを行う教師あり学習PointNetを提案した。入力される点群の以下のような特性があり、これらに対して学習できるモデルを提案する。
 
