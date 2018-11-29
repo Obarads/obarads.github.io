@@ -48,7 +48,7 @@ anomaly score、residual score、discrimination score、受信者動作特性曲
 Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems (GANについてよく知らないし、特徴マッチングが気になった)  
 
 ### 論文関連リンク
-本家:https://arxiv.org/abs/1703.05921
+本家:https://arxiv.org/abs/1703.05921  
 文献1:Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., Chen, X.: Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems. (2016) 2226-2234.  
 文献2:Yeh, R., Chen, C., Lim, T.Y., Hasegawa-Johnson, M., Do, M.N.: Semantic image inpainting with perceptual and contextual losses. arXiv:1607.07539 (2016)  
 文献3:Pathak, D., Kraahenbuhl, P., Donahue, J., Darrell, T., Efros, A.A.: Context en-coders: Feature learning by inpainting. CoRR abs/1604.07379 (2016)  
