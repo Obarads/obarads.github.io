@@ -6,7 +6,7 @@
 - **papers**  
 各論文のmdファイルが入っている。基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている。
     - **img**  
-    論文ごとにフォルダにまとめている。論文名が長い場合があるので、フォルダ名には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
+    画像が論文ごとにフォルダにまとめている。論文名が長い場合があるので、フォルダ名には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
 
 ## Issue page in Github
 Issueの方に各論文のmdファイルの内容を載せています。もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。

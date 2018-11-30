@@ -4,9 +4,8 @@ This repository is for summarizing papers in japanese. Survey keyword is one-cla
 ## Directory
 - **papers**  
 papers folder include paper markdown files that layout follow [arXivTimes Issue](https://github.com/arXivTimes/arXivTimes) and [Ochiai format](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205).
-- **img**  
-    
-    論文ごとにフォルダにまとめている。論文名が長い場合があるので、フォルダ名には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
+    - **img**  
+    img folder include papers fig and table images separated each paper. Images are separated  には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
     
 
 ## Issue page in Github
