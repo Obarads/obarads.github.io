@@ -9,27 +9,34 @@ GANを使って異常検出を可能にした。確率分布pに従う様にG(z)
 そこである初期値z0を用意し、勾配法とxとG(zγ){γ=0,1,2,...,Γ}の誤差を用いて、xに対応するzΓを求める。
 
 ## 技術や手法のキモはどこ?
-最適なzγを勾配法によって探すため、以下の様な損失関数を定義する。  
+最適なzγを勾配法によって探すため、以下の様な式を定義する。  
+- **損失関数**  
 L(zγ)=(1-λ)・LR(zγ)+λ・LD(zγ)  
+    - LR(zγ) (Residual Loss)  
+    LRは視覚的相違を表す。G(zγ)がxと全く同じなら、L(zγ)=0となる。定義式は以下の通り  
+    LR(zγ)=Σ|x-G(zγ)|
 
-- LR(zγ) (Residual Loss)  
-LRは視覚的相違を表す。G(zγ)がxと全く同じなら、L(zγ)=0となる。定義式は以下の通り  
-LR(zγ)=Σ|x-G(zγ)|
+    - LD(zγ) (discrimination Loss)  
+    LDはGANのdiscriminatorが抽出する特徴の相違である。下の定義式のfはdiscriminatiorの中間層であり、多様性X(pに従うxの集合)に当てはまるよう学習されているため、正常なxが入力されればfからの出力は一致する。逆に異常なxが入力されれば、xに一致するzγは存在しないため特徴は一致しない。なお、特徴マッチングの元は論文関連リンクの文献1から。  
+    LD(zγ)=Σ|f(x)-f(G(zγ))|
 
-- LD(zγ) (discrimination Loss)  
-LDはGANのdiscriminatorが抽出する特徴の相違である。下の定義式のfはdiscriminatiorの中間層であり、多様性X(pに従うxの集合)に当てはまるよう学習されているため、正常なxが入力されればfからの出力は一致する。逆に異常なxが入力されれば、xに一致するzγは存在しないため特徴は一致しない。なお、特徴マッチングの元は論文関連リンクの文献1から。  
-LD(zγ)=Σ|f(x)-f(G(zγ))|
-
-最後に、anomaly scoreと呼ばれるスコアを算出する。定義は以下の通り。  
+- **anomaly score**  
+anomaly scoreと呼ばれるスコアを算出する。定義は以下の通り。  
 A(X)=(1-λ)・R(x)+λ・D(x)  
 R(x)(residual score)はLR(zΓ)によって、D(x)(discrimination score)はLD(zΓ)によって定義され、小さければ小さいほどxとG(zΓ)は似ている。
 
-追加で、identification of anomalous regionのために残差画像XR=|x-G(zΓ)|を使い、reference anomaly scoreを定義する。  
+- **residual image**  
+追加で、画像内の異常領域特定のために残差画像を使う。定義は以下の通り。  
+XR=|x-G(zΓ)|
+
+- **reference anomaly score**  
+提案した手法との比較のため、reference anomaly scoreを以下のように定義する。  
 A^(x) = (1-λ)・R(x)+λ・D^(x)  
-ここで、reference discrimination scoreのD^(x)=LD^(zΓ)であり論文関連リンクの文献2で使われている。
+ここで、reference discrimination scoreはD^(x)=LD^(zΓ)であり論文関連リンクの文献2で使われている。
 
 ## どうやって有効だと検証した?
-性能評価について以下の3点で計測している。  
+性能評価について以下の3点で計測している。
+
 - **モデルがリアルな画像を提案できるかどうか**  
 訓練セットまたはテストセットから抽出された健康な例(異常がない)の画像パッチおよびテストセットから抽出された疾患の例(異常がある)の画像について実行された。
 
@@ -39,7 +46,7 @@ anomaly score、residual score、discrimination score、受信者動作特性曲
 - **提案手法の利点の掘り下げ**  
     以下2つのアプローチの変更点に対してROC曲線と、Youden's indexを用いてROC曲線の最適なcut-off pointで再現率と精度、特異性、感度を計算し、AnoGANと比較する。
     - DCGANを用いた敵対的訓練を行わず敵対畳み込みオートエンコーダー(論文関連リンクの文献3)を用いて多様性Xを学習する。このとき、anomaly scoreの定義は変わらない。
-    - GANRも評価する。このモデルにはanomaly scoreがのためにA^(x)もしくはD^(x)が使われる。また、一致損失(多分LDとLR)が画像から潜在空間へのマッピングに使われ、このときGANのパラメーターにはAnoGANで事前訓練したものが使われる。
+    - GANRも評価する。このモデルにはanomaly scoreのためにA^(x)もしくはD^(x)が使われる。また、一致損失(多分LDとLR)が画像から潜在空間へのマッピングに使われ、このときGANのパラメーターにはAnoGANで事前訓練したものが使われる。
 
 ## 議論はある?
 考えなし

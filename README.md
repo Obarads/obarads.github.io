@@ -1,6 +1,13 @@
 # Paper-Reminder
-This is repository to remind paper details.   
-このレポジトリは論文の詳細を思い出すためのものです。  
-基本的には点群と生成モデル、2D&3D、申し訳程度の一クラス分類についてまとめます。
+## About
+このレポジトリは論文を要約するためのものです。基本的には点群と生成モデル、2D&3D、申し訳程度の一クラス分類についてまとめます。
 
-もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。
+## Directory
+- **papers**  
+各論文のmdファイルが入っている。基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている。
+    - **img**  
+    論文ごとにフォルダにまとめている。論文名が長い場合があるので、フォルダ名には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
+
+## Issue page in Github
+Issueの方に各論文のmdファイルの内容を載せています。もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。
+
