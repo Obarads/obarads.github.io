@@ -49,22 +49,22 @@ anomaly score、residual score、discrimination score、受信者動作特性曲
     - GANRも評価する。このモデルにはanomaly scoreのためにA^(x)もしくはD^(x)が使われる。また、一致損失(多分LDとLR)が画像から潜在空間へのマッピングに使われ、このときGANのパラメーターにはAnoGANで事前訓練したものが使われる。
 
 ## 議論はある?
-考えなし
+ジェネレーターへの写像ができるのであれば、それを使って画像検索とかできそう。
 
 ## 次に読むべき論文は?
-Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems (GANについてよく知らないし、特徴マッチングが気になった)  
+- Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems (GANについてよく知らないし、特徴マッチングが気になった)  
 
 ### 論文関連リンク
-本家:https://arxiv.org/abs/1703.05921  
-文献1:Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., Chen, X.: Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems. (2016) 2226-2234.  
-文献2:Yeh, R., Chen, C., Lim, T.Y., Hasegawa-Johnson, M., Do, M.N.: Semantic image inpainting with perceptual and contextual losses. arXiv:1607.07539 (2016)  
-文献3:Pathak, D., Kraahenbuhl, P., Donahue, J., Darrell, T., Efros, A.A.: Context en-coders: Feature learning by inpainting. CoRR abs/1604.07379 (2016)  
+- 本家:https://arxiv.org/abs/1703.05921
+- 文献1:Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., Chen, X.: Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems. (2016) 2226-2234.
+- 文献2:Yeh, R., Chen, C., Lim, T.Y., Hasegawa-Johnson, M., Do, M.N.: Semantic image inpainting with perceptual and contextual losses. arXiv:1607.07539 (2016)
+- 文献3:Pathak, D., Kraahenbuhl, P., Donahue, J., Darrell, T., Efros, A.A.: Context en-coders: Feature learning by inpainting. CoRR abs/1604.07379 (2016)
 
 ### 参考リンク
-参考1:https://aotamasaki.hatenablog.com/entry/2018/04/14/212948#%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2  
-参考2:https://qiita.com/NakaokaRei/items/231ec4efe42dfe79d1ff  
-参考3:http://habakan6.hatenablog.com/entry/2018/04/29/013200  
-GANを学ぶ:https://qiita.com/hakubisin104/items/64662d19fa7ae41a87aa  
+- 参考1:https://aotamasaki.hatenablog.com/entry/2018/04/14/212948#%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2
+- 参考2:https://qiita.com/NakaokaRei/items/231ec4efe42dfe79d1ff
+- 参考3:http://habakan6.hatenablog.com/entry/2018/04/29/013200
+- GANを学ぶ:https://qiita.com/hakubisin104/items/64662d19fa7ae41a87aa  
 
 ### 会議
 IPMI2017

@@ -38,17 +38,17 @@ ClassificationはModelNet40、Part SegmentationはShapeNet part data set、Seman
 局所的な形状情報を取り扱うための仕組みがないので、それをどう取り入れるか改善の余地がある。
 
 ## 次に読むべき論文は?
-Pointwise Convolutional Neural Networks (このPointNetと同等の結果を示しているため)
+- Pointwise Convolutional Neural Networks (このPointNetと同等の結果を示しているため)
 
 ### 論文関連リンク
-論文:https://arxiv.org/abs/1612.00593  
-本家実装(TensorFlow):https://github.com/charlesq34/pointnet  
-Chainer実装:https://github.com/corochann/chainer-pointnet  
-紹介:http://stanford.edu/~rqi/pointnet/  
+- 論文:https://arxiv.org/abs/1612.00593  
+- 本家実装(TensorFlow):https://github.com/charlesq34/pointnet  
+- Chainer実装:https://github.com/corochann/chainer-pointnet  
+- 紹介:http://stanford.edu/~rqi/pointnet/  
 
 ### 参考リンク
-参考1:https://www.slideshare.net/naoyachiba18/ss-120302579  
-参考2:https://www.slideshare.net/FujimotoKeisuke/point-net
+- 参考1:https://www.slideshare.net/naoyachiba18/ss-120302579  
+- 参考2:https://www.slideshare.net/FujimotoKeisuke/point-net
 
 ### 会議
 CVPR2017
