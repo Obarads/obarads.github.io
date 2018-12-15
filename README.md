@@ -10,3 +10,7 @@
 
 ## Issue page in Github
 Issueの方に各論文のmdファイルの内容を載せています。もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。
+
+# 個人メモ
+修正リスト
+- AO-CNN
