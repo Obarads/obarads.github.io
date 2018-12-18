@@ -21,8 +21,6 @@ RotNet自体は以下の通りすごくシンプル。
 
 ![fig6](img/URLbPIR/fig_10.png)
 
-![fig6](img/URLbPIR/fig_11.png)
-
 ## どうやって有効だと検証した? 
 
 ### CIFAR-10による評価
