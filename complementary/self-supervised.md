@@ -5,5 +5,8 @@ self-supervisedとは、現在問題とされるアノテーション等のラ�
 ## Evaluation
 評価方法については2つある。referenceの1を参考にしている。
 
+1. 特徴マップ固定
+pretextタスクで学習させた特徴
+
 ## Reference
 1. https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018
