@@ -1,7 +1,6 @@
-# Point Cloud GAN
+# Dynamic Graph CNN for Learning on Point Clouds
 
 ## どんなもの?
-点の集合を扱うPointCloudに対するGANを開発した。
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -21,9 +20,11 @@
 
 ### 会議
 
+
 ### 著者/所属機関
 
+
 ### 投稿日付(yyyy/MM/dd)
-2018/12/26
+2018/1/10
 
 ## コメント
