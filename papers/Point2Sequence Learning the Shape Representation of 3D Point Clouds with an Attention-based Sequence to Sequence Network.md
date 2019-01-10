@@ -1,7 +1,7 @@
 # Point2Sequence Learning the Shape Representation of 3D Point Clouds with an Attention-based Sequence to Sequence Network
 
 ## どんなもの?
-点群から特徴を捉える際の局所領域内の異なるエリアの相関性などの細かい文脈情報を保持するためのモデルを提案した。領域の関係性を把握するためにRNNとattention機構を取り入れている。
+点群から特徴を捉える際の局所領域内の異なるエリアの相関性などの細かい文脈情報を保持するためのモデルを提案した。領域の関係性を把握するためにRNNのEncoder-Decorderとattention機構を取り入れている。
 
 ## 先行研究と比べてどこがすごいの?
 論文中の主張では、ShapeContextNetやDGCNNなどの既存の深層学習を用いた点群の特徴抽出モデルは局所領域の特徴抽出にhand-crafted(手作業)またはexplicit ways(明示された方法)な特徴を使っている。その結果、局所領域内のエリア間の相関などのきめ細かい文脈情報を保持することが困難になっている。この文脈情報も重要な情報を保持しており、形状解析に必要なものである。Point2Sequenceでは新たな暗黙的な手法を使い、その問題を解決する。
@@ -26,28 +26,64 @@
 - **(b) Area Feature Extraction**  
     fig2に通り、各スケールの領域At_jはMLPで抽出後Max-poolingでD次元特徴st_jに集約される。追加で、At_jの点plはp'_jを中心とした相対座標に変換される。
 
-- **(c) Encoder-decoder feature aggregation**
-    Sj={s1_j,...,st_j,...,sT_j}はRNN(LSTM)に入力される。
+- **(c) Encoder-decoder feature aggregation**  
+    Sj={s1_j,...,st_j,...,sT_j}はRNN(LSTM)に入力される。RNNの出力値は式(1)、式(2)を経て出力される。
 
+    ![for1](img/PLtSRo3PCwaAbStSN/for1.png)
+
+    ![for2](img/PLtSRo3PCwaAbStSN/for2.png)
+
+    encoder部分でまとめられたhTは、式(3)に渡され式(4)のような出力を行う。このとき、z_oは0ベクトルである。なお、decoderのRNNが一つしか無いのは機械翻訳のように連続した解答を持ち合わせていないからとのこと。
+
+    ![for3](img/PLtSRo3PCwaAbStSN/for3.png)
+
+    ![for4](img/PLtSRo3PCwaAbStSN/for4.png)
+
+    Attention機構は異なるエリアの重要性を明確化するために適応した。context vectorのcが式(5)を生成することを目標とし、このときαはattentionベクトルである。
+
+    ![for5](img/PLtSRo3PCwaAbStSN/for5.png)
+
+    αに関係する式は式(6)と(7)となる。(6)は正規化、(7)はfig2の点線h_tと赤いLSTMから出ている実線h ̄_1TWcをかけ合わせたもの。
+
+    ![for6](img/PLtSRo3PCwaAbStSN/for6.png)
+
+    ![for7](img/PLtSRo3PCwaAbStSN/for7.png)
+
+    最終的に式(5)と(3)を用いて式(8)、(9)となる。(8)の[]内はおそらく連結であり、cのattentionが施されたcontextベクトルとh ̄_1を連結することで文脈情報を保有しながら全体の特徴量を要約した形にしている(と思う)。
+
+    ![for8](img/PLtSRo3PCwaAbStSN/for8.png)
+
+    ![for9](img/PLtSRo3PCwaAbStSN/for9.png)
+
+- **(f) Shape part segmentation**  
+    fig2に示すinterpolate layesはupsamplingによって形状レベルから点群レベルに特徴を伝播するものである。upsamplingについては論文関連リンクの1と2の論文を参照。このようなことを行う理由は、セグメンテーションが分類問題よりも難しいからとのことである。式(10)に基づいて補完する(ここよくわからない)。
+
+    ![for10](img/PLtSRo3PCwaAbStSN/for10.png)
 
 ## どうやって有効だと検証した?
+以下のようにModelNet10とModelNet40、ShapeNet part datasetを用いて検証した。
+
+![tab1](img/PLtSRo3PCwaAbStSN/tab1.png)
+
+![tab2](img/PLtSRo3PCwaAbStSN/tab2.png)
+
+他には学習率の比較、Attention等の機構の有無、Tの数を比較している。
 
 ## 議論はある?
-
-## 次に読むべき論文は?
--
--
+なし
 
 ### 論文関連リンク
 1. Charles R. Q, Li Yi, Hao Su, Leonidas J. Guibas. PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space. 2017.
-2.
+2. Li, J.; Chen, B. M.; and Lee, G. H. 2018. SO-Net: Self-organizing network for point cloud analysis. In CVPR, 9397–9406. 
 
 ### 会議
 AAAI 2019
 
 ### 著者/所属機関
+Xinhai Liu, Zhizhong Han, Yu-Shen Liu, Matthias Zwicker
 
 ### 投稿日付(yyyy/MM/dd)
+2018/12/29
 
 ## コメント
 explicit waysの手法っていうのは、graphとかshape contextのことを指しているのかな...。あと、DGCNNが強い。
