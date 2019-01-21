@@ -90,13 +90,13 @@ S3DIS、ScanNetとSemantic3Dを使い測定した。効率性も測定してい�
 なし
 
 ## 次に読むべき論文は?
-- 
--
+なし
 
 ### 論文関連リンク
-1.https://www.slideshare.net/naoyachiba18/ss-120302579
+1. https://www.slideshare.net/naoyachiba18/ss-120302579
 
 ### 会議
+CVPR 2018
 
 ### 著者/所属機関
 Maxim Tatarchenko, Jaesik Park, Vladlen Koltun, Qian-Yi Zhou
