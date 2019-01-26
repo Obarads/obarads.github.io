@@ -17,9 +17,9 @@
 Issueの方に各論文のmdファイルの内容を載せています。もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。
 
 ## 個人メモ
-修正リスト
-- Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
-- Unsupervised Visual Representation Learning by Context Prediction(検証実験が適当に記されている)
+- 修正リスト
+    - Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
+    - Unsupervised Visual Representation Learning by Context Prediction(検証実験が適当に記されている)
 
-いずれは自分で書いてねリスト
-- Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
+- いずれは自分で書いてねリスト
+    - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)

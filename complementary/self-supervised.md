@@ -1,6 +1,6 @@
 # self-supervised
 ## About
-self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。
+self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。
 
 ## Evaluation
 評価方法については2つある。referenceの1を参考にしよう。今後ここにまとめよう。

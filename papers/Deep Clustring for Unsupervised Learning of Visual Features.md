@@ -32,4 +32,4 @@ Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 2019/1/21
 
 ## コメント
-ここで言うrandom featuresはself-learningで生成した特徴量?
+なし
