@@ -56,6 +56,7 @@ CVPR2017
 ### 著者/所属機関
 Charles R. Qi, Hao Su, Kaichun Mo,  Leonidas J. Guibas  
 Stanford University 
+
 ### 投稿日付(yyyy/MM/dd)
 2016/12/02
 
