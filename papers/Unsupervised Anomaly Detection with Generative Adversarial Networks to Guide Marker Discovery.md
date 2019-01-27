@@ -73,7 +73,7 @@ IPMI2017
 Thomas Schlegl, Philipp Seebock, Sebastian M. Waldstein, Ursula Schmidt-Erfurth, and Georg Langs.
 
 ### 投稿日付(yyyy/MM/dd)
-2018/11/27
+2017/03/17
 
 ## コメント
 なし

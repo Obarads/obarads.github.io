@@ -29,7 +29,7 @@ ECCV 2018
 Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 
 ### 投稿日付(yyyy/MM/dd)
-2019/1/21
+2018/07/15
 
 ## コメント
 なし

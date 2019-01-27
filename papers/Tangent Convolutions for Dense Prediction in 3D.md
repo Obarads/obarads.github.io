@@ -102,7 +102,7 @@ CVPR 2018
 Maxim Tatarchenko, Jaesik Park, Vladlen Koltun, Qian-Yi Zhou
 
 ### 投稿日付(yyyy/MM/dd)
-2018/12/21
+2018/07/06
 
 ## コメント
 IとM、アーキテクチャがわかりませんでした...

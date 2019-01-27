@@ -113,7 +113,7 @@ SIGGRAPH Asia 2018
 PENG-SHUAI WANG, CHUN-YU SUN, YANG LIU, XIN TONG
 
 ### 投稿日付(yyyy/MM/dd)
-2018/12/10
+2018/09/21
 
 ## コメント
 なし

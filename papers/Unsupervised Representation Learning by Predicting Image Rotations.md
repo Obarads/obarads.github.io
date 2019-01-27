@@ -111,7 +111,7 @@ ICLR 2018
 Spyros Gidaris, Praveer Singh, Nikos Komodakis
 
 ### 投稿日付(yyyy/MM/dd)
-2018/12/15
+2018/03/21
 
 ## コメント
 単純なのに強力である。こんなにも簡単な手法があるとは思わんかった。

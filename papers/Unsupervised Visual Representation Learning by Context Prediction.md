@@ -34,7 +34,7 @@ ICCV 2015
 Carl Doersch, Abhinav Gupta and Alexei A. Efros.
 
 ### 投稿日付(yyyy/MM/dd)
-2019/1/25
+2015/05/19
 
 ## コメント
 無し

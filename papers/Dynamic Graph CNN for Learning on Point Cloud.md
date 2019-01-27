@@ -52,7 +52,7 @@ EdgeConvを視覚的に説明したのが図2である。図2の左はsymmetric 
 Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin M. Solomon.
 
 ### 投稿日付(yyyy/MM/dd)
-2018/1/10
+2018/1/24
 
 ## コメント
 シンプルな発想のわりに強力な効果を発揮している...。

@@ -82,7 +82,7 @@ CVPR2018
 Haowen Deng, Tolga Birdal, Slobodan Ilic
 
 ### 投稿日付(yyyy/MM/dd)
-2018/12/15
+2018/02/07
 
 ## コメント
 参考リンク2を参考にしている部分が理解できていないため、再度確認すること。

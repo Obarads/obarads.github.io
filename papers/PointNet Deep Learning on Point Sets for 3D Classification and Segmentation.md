@@ -57,7 +57,7 @@ CVPR2017
 Charles R. Qi, Hao Su, Kaichun Mo,  Leonidas J. Guibas  
 Stanford University 
 ### 投稿日付(yyyy/MM/dd)
-2018/11/27
+2016/12/02
 
 ## コメント
 CVPR2018では、局所形状を取り込む手法を取り入れたモデルが大量に生まれた。「ローカルな構造」について論文中に出ているが、ローカルな構造=局所形状のイメージが強いせいか、ローカルな構造を言うほど活かしていないように思えた(Segmentationではちゃんと使っているが)。

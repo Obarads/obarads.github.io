@@ -83,7 +83,7 @@ AAAI 2019
 Xinhai Liu, Zhizhong Han, Yu-Shen Liu, Matthias Zwicker
 
 ### 投稿日付(yyyy/MM/dd)
-2018/12/29
+2018/11/06
 
 ## コメント
 explicit waysの手法っていうのは、graphとかshape contextのことを指しているのかな...。あと、DGCNNが強い。
