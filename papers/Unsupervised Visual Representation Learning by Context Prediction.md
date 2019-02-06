@@ -17,11 +17,35 @@ self-supervisedモデルの考案。画像の一部を3*3の碁盤目に分け�
 
 ## どうやって有効だと検証した?
 ### **最近傍マッチング**
-意味的な特徴を捉えることができるのであれば，出力した特徴量に最近傍を使えば意味的な特徴が同じ=似たような画像を選ぶはずである。そこで画像から96*96サイズのランダムサンプリング(画像の一部を切り抜き)を行い1000のランダムクエリを実施した．比較モデルはImageNetを学習させたAlexNetのfc7の特徴量、提案手法のfc6、提案手法のランダム重み付け(つまり訓練なし)のfc6を使用した。結果は図4である。提案手法が意味のある特徴量を取っている。
+意味的な特徴を捉えることができるのであれば，出力した特徴量に最近傍を使えば意味的な特徴が同じ=似たような画像を選ぶはずである。そこで画像から96*96サイズのランダムサンプリング(画像の一部を切り抜き)によってパッチを作成し、1000のランダムクエリを実施した．比較モデルはImageNetを学習させたAlexNetのfc7の特徴量、提案手法のfc6、提案手法のランダム重み付け(つまり訓練なし)のfc6を使用した。結果は図4である。提案手法が意味のある特徴量を取っている。
 
-![fig2](img/UVRLbCP/fig4.png)
+![fig4](img/UVRLbCP/fig4.png)
 
+- **余談: 色収差の学習可能性**  
+初期の最近傍実験において、コンテンツに関わらず、取り出された(近傍実験で選ばれた?)いくつかのパッチが画像内の同じ絶対位置からのパッチと一致した。これらのパッチが似た収差を持ち合わせていたからである。そこでこの色収差に対する検証するために、ImageNetｋらサンプリングしたパッチの絶対座標(x,y)を予測するネットワークをトレーニングした。全体的な精度は低いものの、上位10%の画像はRMSE(root-mean-square error、少なければ誤差が少ない)が.255であった。図5はその結果の1例を示し、提案したprojectionの手法をとると上位10%の画像のRMSEは.321に増加しており、期待通りの結果が得られた。尚、常に画像の中心を予測する(図5の右のような状態?)とき、RMSEは.371になる。
 
+![fig5](img/UVRLbCP/fig5.png)
+
+### **オブジェクト検知**  
+Pascal VOCの課題以前の研究でImageNetの事前トレーニング(ImageNetの課題を解決するためのトレーニング)とその後のネットワークのfine-tuningによってPascalトレーニングセットだけの時よりも大幅に向上する。しかし、少なくとも著者が知る限りでもデータがいくらあろうが教師なしでの画像の事前トレーニングが上記のような性能向上を示すような研究はない。このタスクでは、R-CNNのパイプラインを使う。R-CNNでは227\*227の画像を使用しており、実際96\*96では情報のロスが多いので図6の形式に変更する。Image(227\*227)とpool5の間は図3のconv1からconv5で構成される。尚、pool5は7*7になるため参考文献リンクの3に従ってfc6をconv6に変換する必要がある。この後、FC層で4096を処理していくのは重いのでconv6bで1024次元に畳み込む。このタスクでは論文関連リンクの2に従ってfine-tuningを行う(conb6bとfc7とfc8はランダムな重みで始める。fc6とpool6は学習するの?(論文関連リンクの2と3は見ていないので理解しきれていない))。
+
+![fig5](img/UVRLbCP/fig6.png)
+
+結果は表1の通り。
+
+![table1](img/UVRLbCP/table1.png)
+
+scratch-Ours(pretext task無しのランダム初期化)はScrath R-CNN(中身AlexNet?のランダム初期化)にわずかに劣るが、pretext taskによって最大約6%の精度向上が見られた。これにより、ImageNetのによるラベルあり事前トレーニングをしたR-CNNより約8%遅れをとった。これはデータセット外のラベルなし事前トレーニングでVOC 2007をこなす最高の結果である。私たちはbatch normalizationで初期化した追加のベースラインを実行したが、示したものより性能が悪かった(何の話?)。
+さらなる理解のためにYahoo/Flickr 100-million Datasetの2M分を使った。ImageNetのものより精度は下がるものの、pretext taskの効果は得られた。上記のfine-tuningの実験ではbatch normalization層を削除して代わりにFCとConv層の出力を各チャンネルで平均0、分散1になるよう重みとバイアスを再スケーリングした。fine-tuning前の重みのスケーリングがテスト時のパフォーマンスに大きな影響を与えている可能性があり(論文関連リンクの4)、batch normalization削除以前の自分たちの手法はスケーリングが不十分であった。論文関連リンクの4はネットワークが計算する関数を変えることなく、ネットワークの重みの再スケーリングを行うためのfine-tuning向けのシンプルな手法を提案している。この方法によって自分たちの提案手法であるOurs-rescaleの改善が見られた。
+
+また、教師なしであるが故に無限大のデータを使える自分たちのモデルは、このモデルは例えばVGGの様な高性能モデルの可能性を押し上げるかもしれない。そこで、VGGの16層構造を参考にしたモデルをトレーニングした(最後のfc6-fc9層は図3と同様)。論文関連リンクの4に従って再度Pascal VOCの表現をfine-tuningした。結果は表1の通り。
+
+### 形状評価
+自分たちの表現がnon-object-based taskの様な別の目的でも有用なものになりえるか、NYUv2のデータセットで表面法線推定のタスクをfine-tuningで試した。結果は表2の通り。
+
+![table1](img/UVRLbCP/table2.png)
+
+4.5からまだ読んでない
 
 ## 議論はある?
 無し
@@ -30,7 +54,10 @@ self-supervisedモデルの考案。画像の一部を3*3の碁盤目に分け�
 - Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles
 
 ### 論文関連リンク
-1. http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf
+1. [鈴⽊智之. Self-supervised Learningによる特徴表現学習. (アクセス日時 2019/02/06)](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
+1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hier-archies for accurate object detection and semantic segmentation. In CVPR, 2014.](https://arxiv.org/abs/1311.2524)
+1. [J. Long, E. Shelhamer, and T. Darrell. Fully convolutionalnetworks for semantic segmentation. arXiv preprint arXiv:1411.4038, 2014.](https://arxiv.org/abs/1411.4038)
+1. [P. Krähenbühl, C. Doersch, J. Donahue, and T. Darrell. Data-dependent initializations of convolutional neural networks. arXiv preprint arXiv:1511.06856, 2015.](https://arxiv.org/abs/1511.06856)
 
 ### 会議
 ICCV 2015
