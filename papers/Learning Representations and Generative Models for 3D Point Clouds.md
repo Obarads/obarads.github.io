@@ -63,12 +63,43 @@
         l-GANに追加で、AEsによって学習された潜在空間にGMMsを当てはめる。そして、様々な数のGaussian componentsとdiagonalまたはfull covariance行列を試す。GMMsは調節された分布からのサンプリングとAEのデコーダーを用いてl-GAN同様、生成器に変えられる。
 
 ## どうやって有効だと検証した?
-- **AEの表現力**
+基本的にこれらの実験には更に調査した付録があることに注意すること。本文と同じ分のページがある。
 
+### **AEの表現力**
+- **一般化能力**
+    AEによって再構築された点群は図1に示す通り。しっかりと再構築がなされている。
+    
+    ![fig1](img/LRaGMf3PC/fig1.png)
+
+    各類似度測定手法による訓練と測定結果は表1に示す通り。一般化のギャップは小さい。
+    
     ![table1](img/LRaGMf3PC/table1.png)
 
-- **潜在空間と線形性**
+- **潜在空間と線形性**  
+    図2で潜在空間の線形補間を示す。補間は図2の左の幾何学形状と右の幾何学形状の間で行われている。
 
+    ![fig2](img/LRaGMf3PC/fig2.png)
+    
+    図３ではこれらの潜在表現を用いて、特定の個性(コンパーチブルの車や取っ手なしコップ)を持つ幾何学形状の平均ベクトルを加えることで入力の形状を変更している。以上より、学習された空間の滑らかさを証明し、尚且つ点群の滑らかな変形性を持ち合わせる内包的能力を強調した。
+
+    ![fig3](img/LRaGMf3PC/fig3.png)
+
+- **形状の完成**  
+    形状の修正。入力に欠陥がある場合、それを補うというもの。詳細は付録にあり。
+
+- **分類**  
+    55のカテゴリからなる57000のデータに含まれる様々な異なる形状をAEに学習させる。この実験では、512次元のボトルネックを使い、重力軸に沿ってランダムに点群を回転させる。これらを分別するため、線形SVMに学習させたAEから出力されるボトルネックのベクトルを入力する。これらのベクトルはModelNetの3D分類ベンチマークで学習された線形SVMによって分類される。結果を表2に示す(対象は全部AEかな?)。
+
+    ![table2](img/LRaGMf3PC/table2.png)
+
+### **生成モデルの評価**
+- **考案した生成モデルの比較**
+    椅子カテゴリの点群を扱うこととする。はじめにAE-CDとAE-EMDを訓練させ、その後それぞれの潜在空間のl-GANをGoodfellowらの非飽和損失(論文関連リンクの3)で訓練する。AE-EMDによる空間の学習において、二つのモデルを追加する: l-GANの構造はそのままでWasserstein objectiveの勾配ペナルティを使うものと、平均の数と共分散の構造が違うGMMの一種。r-GANについては直接点群を入力する。結果は図6の通り。
+
+    ![fig6](img/LRaGMf3PC/fig6.png)
+
+
+- ****
 
 ## 議論はある?
 
@@ -77,8 +108,8 @@
 
 ### 論文関連リンク
 1. [Panos Achlioptas, Olga Diamanti, Ioannis Mitliagkas, and Leonidas Guibas. Learning Representations and Generative Models for 3D Point Clouds. 2017.](https://arxiv.org/abs/1707.02392)
-
 2. [Charles R. Qi, Hao Su, Kaichun Mo, and Leonidas J. Guibas. PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation. 2016.](https://arxiv.org/abs/1612.00593)
+3. [Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley,D.,Ozair,S.,Courville,A.,andBengio,Y.Generative adversarial nets. InNIPS, 2014.](https://papers.nips.cc/paper/5423-generative-adversarial-nets)
 
 ### 会議
 ICML 2018
