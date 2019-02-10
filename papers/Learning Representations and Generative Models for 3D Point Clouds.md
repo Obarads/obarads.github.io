@@ -104,8 +104,6 @@
 
     ![table3](img/LRaGMf3PC/table3.png)
 
-
-
 - **Chamferには見えない、r-GAN’sの損失**  
     表3において、r-GANに関して気になる結果が得られたため追加で調査を行った結果、なんとChamferがたいていの場合に一部の場所に点が密集することが分かった。この問題を回避することはChamferの罰則では特に難しい。その理由は、2つの被加数のうち片方がかなり小さくなりもう片方が過疎な場所でまばらに点が配置することによって適度に値が大きくなるからである。図7ではその問題が視覚的に見て取れる。このChamferが一部分しか一致しないという盲目的なCDの問題は、CDベースのcoverageがEMDベースよりも大きいという副作用を伴っている。
 
@@ -135,9 +133,8 @@
 ## 議論はある?
 結果的に、GMMという古典的な手法が良い結果を出すということになった。これは新規の技術ばかりに着目し、昔ながらの手法を軽視してはならないということである。これの更なる証明は付録についている。
 
-
 ## 次に読むべき論文は?
--
+- [Wu, J., Zhang, C., Xue, T., Freeman, B., and Tenenbaum, J. Learning a probabilistic latent space of object shapes via 3d generative-adversarial modeling. In Lee, D. D., Sugiyama,M.,Luxburg,U.V.,Guyon,I.,andGarnett,R.(eds.),NIPS. 2016.](https://arxiv.org/abs/1610.07584)
 
 ### 論文関連リンク
 1. [Panos Achlioptas, Olga Diamanti, Ioannis Mitliagkas, and Leonidas Guibas. Learning Representations and Generative Models for 3D Point Clouds. 2017.](https://arxiv.org/abs/1707.02392)
@@ -156,4 +153,4 @@ Panos Achlioptas, Olga Diamanti, Ioannis Mitliagkas, and Leonidas Guibas.
 2017/07/08
 
 ## コメント
-JSDは別の資料を見たほうがいいと思う。あとこの論文の詳細は付録がメインである(ここではそれを省く)。
+JSDは別の資料を見たほうがいいと思う。あとこの論文の詳細は付録にいっぱいある(ここではそれを省く)。
