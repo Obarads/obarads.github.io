@@ -28,7 +28,7 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 
     ![fig3](img/VELfPCB3DOD/fig3.png)
 
-    ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
+    ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f\~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf\~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
 
     <font color="Orange">要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。</font>
 
@@ -45,7 +45,6 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 
 ### 損失関数  
 3Dのground truthボックスをパラメータ化したものをxcg, ycg, zcg, lg, wg, hg, Θgとする。xgc, ycg, zcgは中央座標、lg, wg, hgは全長, 幅, 高さ、Θgはzの軸周りのyaw回転である。
-
 
 
 ## どうやって有効だと検証した?
