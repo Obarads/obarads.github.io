@@ -39,13 +39,24 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 畳み込み中間層は、3D畳み込みを適応した層である。畳み込み中間層はボクセル単位特徴を集約し、形状記述のためのコンテキストをより多く与える。
 
 ### **領域提案ネットワーク**
-点群で論文関連リンクの1の領域提案ネットワークを使うためにいくつか変更を加えた。図4にRPNのアーキテクチャを示す(多分論文関連リンクの1の内容を見たほうが良い)。
+点群で論文関連リンクの1の領域提案ネットワークを使うためにいくつか変更を加えた。図4にRPNのアーキテクチャを示す(先に論文関連リンクの1の内容を見たほうが良い)。
 
 ![fig4](img/VELfPCB3DOD/fig4.png)
 
 ### 損失関数  
-3Dのground truthボックスをパラメータ化したものをxcg, ycg, zcg, lg, wg, hg, Θgとする。xgc, ycg, zcgは中央座標、lg, wg, hgは全長, 幅, 高さ、Θgはzの軸周りのyaw回転である。
+先に論文関連リンク1のloss functionに目を通したほうが良い。
 
+\{aipos\}i=1...Nposが一組のNpos個の正のアンカー、\{ajneg\}j=1...Nnegが一組のNneg個の負のアンカーであるとする。3Dのground truthボックスをパラメータ化したものを(xcg, ycg, zcg, lg, wg, hg, Θg)とする。xgc, ycg, zcgは中央座標、lg, wg, hgは全長, 幅, 高さ、Θgはzの軸周りのyaw回転である。(ground truthボックスに?)一致する正のアンカー(xca, yca, zca, la, wa, ha, Θa)からground truthボックスを検索するため、残差ベクトルu\*に含まれる7つの回帰値は式(1)のように定義される。
+
+![eq1](img/VELfPCB3DOD/eq1.png)
+
+この時、daはアンカーボックスの底面の対角線である。式(1)では、既存のものと違い3Dボックスを直接評価しながらΔxとΔyをdaで一様に標準化する。
+
+これらより式(2)に損失関数を定義する。
+
+![eq2](img/VELfPCB3DOD/eq2.png)
+
+この時、piposとpjnegはそれぞれaiposとajnegに対するsoftmax出力を表す。また、uiとui*は回帰の出力とaiposに対するground truth(先ほどの残差ベクトル)である。
 
 ## どうやって有効だと検証した?
 
@@ -54,12 +65,10 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 ## 議論はある?
 
 ## 次に読むべき論文は?
--
--
+- [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
 
 ### 論文関連リンク
 1. [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
-2.
 
 ### 会議
 CVPR 2018
@@ -72,3 +81,7 @@ Yin Zhou and Oncel Tuzel
 
 ## コメント
 super tensorの扱いがわからないからなぜ効率が良くなるのかわからない(ただ単に並列処理がしやすいということ?)
+
+損失関数についてはFast R-CNNをちゃんと理解していないため、説明もよくわからず書いている。uiもよくわからない。
+
+先に論文関連リンクの1を見ます(2019/02/11)
