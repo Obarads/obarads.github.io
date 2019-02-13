@@ -1,9 +1,25 @@
 # self-supervised
 ## About
-self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。
+self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。この分野はfine-tuning(日本語で微調整すること)で他のモデルに移すためのラベルあり学習モデルをラベルなしで行う、もしくは、ラベルなし特徴抽出器として転移学習する。
 
-## Evaluation
-評価方法については2つある。referenceの1を参考にしよう。今後ここにまとめよう。
+## fine-tuningとは?
+fine-tuningについて\[3\]では以下のように説明している。
+
+あらかじめ汎用性の高い大規模教師付データセットでネットワークを学習しておき、これを初期値としてターゲットタスクの学習データでさらに細かい学習を進める（＝Fine-tuning）  
+(Unsupervised pre-trainingとは違う概念であることに注意）
+
+例えば、ImageNetのデータセットで訓練させたAlexNetの出力層だけを取り除き、PASCAL VOC 2007で分類や検知を行うために出力層を付け替え、fine-tuning(PASCAL VOC 2007の訓練データでさらに訓練)する。
+
+\[2\]のImage Classificationの実験でも言っているが、最初の方の層は入力の意味的な特徴量を捉えるが、後ろの層はタスク固有の形式に特化する。なので、タスク固有の形式に特化してしまった出力層を取り外しても問題ない。  
+fine-tuningの恩恵は、適応先のモデルの精度向上である。
+
+## 転移学習とは?
+あるモデルを訓練させ、訓練後は重みを固定し(出力層のみ取り外して)特徴抽出器として扱うことである。出力層をタスクに合わせたものに変更せずに、特徴抽出器として入力の特徴量を出力させて、SVMに先ほどの出力を入力して分類するということもできる。
+
+## pretext taskとは?
+fine-tuningや転移学習で使われる事前学習させたモデルは教師あり学習のモデルであることが多い。理由としてはそちらのほうが性能が良いからである。しかし、ラベルあり以外の画像は無限に近い量であること、ラベル付けのコストが高いことを踏まえると教師なしで事前学習されたモデルでありながら教師ありの事前学習モデルに勝るとも劣らない性能を持ち合わせることが理想的である。これらの目標を達成するために、教師なし事前学習のタスクとして生まれたのがpretext task(擬似的なタスク)である。
+
+pretext taskはラベルを使わなければ基本的にどんなタスクでも良い。共起表現っぽいこと\[4\]をさせても、ジグゾーパズル\[2\]をさせても良い。
 
 ## Technical terms
 - **target task**  
@@ -22,5 +38,7 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 参考文献2より。pretextタスクをこなす為だけの手法を指す。この手法を取り入れたネットワークはtargetタスクでいまいちな結果を残す。
 
 ## Reference
-1. https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018
-2. Mehdi Noroozi nad Paolo Favaro. Unsupervised Learning of Visual Represejtation by Solving Jigsaw Puzzles. 2016.
+1. [教師なし学習特徴表現の動向](https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018)
+2. [Mehdi Noroozi nad Paolo Favaro. Unsupervised Learning of Visual Represejtation by Solving Jigsaw Puzzles. 2016.](https://arxiv.org/abs/1603.09246)
+3. [画像認識分野におけるdeep learningの発展と最新動向](http://www.nlab.ci.i.u-tokyo.ac.jp/pdf/asj20141215.pdf)
+4. [Doersch, C., Gupta, A., Efros, A.A.: Unsupervised visual representation learning by context prediction. ICCV (2015)](https://arxiv.org/abs/1505.05192)
