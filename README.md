@@ -4,7 +4,8 @@
 
 ## Directory
 - **papers**  
-各論文のmdファイルが入っている。基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている。
+各論文のmdファイルが入っている。基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている。  
+技術や手法のキモはどこ?の項目は項目の目的を無視したものが多いです....
     - **img**  
     画像が論文ごとにフォルダにまとめている。論文名が長い場合があるので、フォルダ名には各単語の先頭文字を使っている。ただし、PointNet等、一単語に複数の大文字がある場合でも先頭文字だけを取る。この場合、Pのみになる。
 
