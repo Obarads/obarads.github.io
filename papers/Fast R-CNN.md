@@ -30,7 +30,7 @@ Fast R-CNNのモデルは図1の通り。Fast R-CNNは入力として全ての�
 
 ### The RoI pooling layer
 
-RoI pooling layerはmax poolingを使って任意の領域内の特徴をH*Wの固定サイズの小さな特徴マップに変換する。HとWは特定のRoIから独立したハイパーパラメータである(どういうこと?)。RoIは左上の隅からの位置を表すr,cと、高さと幅を表すh,wによって定義される。
+RoI pooling layerはmax poolingを使って任意の領域内の特徴をH\*Wの固定サイズの小さな特徴マップに変換する。HとWは特定のRoIから独立したハイパーパラメータである(どういうこと?)。RoIは左上の隅からの位置を表すr,cと、高さと幅を表すh,wによって定義される。RoI max poolingはH\*Wサイズの特徴マップを更にh\*wサイズの窓(RoI window)で分割したものを使うことで動作する。つまり、H\*Wサイズの特徴マップには、h/W\*w/W個のRoI windowがあるということになる(論文関連リンクの3参照)。
 
 
 
@@ -45,6 +45,7 @@ RoI pooling layerはmax poolingを使って任意の領域内の特徴をH*Wの�
 ### 論文関連リンク
 1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich fea-ture hierarchies for accurate object detection and semantic segmentation. InCVPR, 2014.](https://arxiv.org/abs/1311.2524)
 2. [K. He, X. Zhang, S. Ren, and J. Sun. Spatial pyramid pooling in deep convolutional networks for visual recognition. In ECCV, 2014.](https://arxiv.org/abs/1406.4729)
+3. [論文紹介 Fast R-CNN&Faster R-CNN](https://www.slideshare.net/takashiabe338/fast-rcnnfaster-rcnn)
 
 ### 会議
 ICCV 2015
