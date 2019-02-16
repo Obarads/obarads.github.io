@@ -6,7 +6,7 @@
 ## 先行研究と比べてどこがすごいの?
 簡単に言えば、より正確に、より早く動作するようになった。
 
-R-CNN(論文関連リンクの1)では以下の点が問題となっている。
+R-CNN(論文関連リンクの1、先に見るべき)では以下の点が問題となっている。
 
 1. 多数の段階に分かれた訓練
 2. 訓練の時間と容量を必要とする訓練
@@ -20,12 +20,12 @@ R-CNNが遅い理由としてそれぞれのオブジェクト提案のために
 4. 要求される容量の低減
 
 ## 技術や手法のキモはどこ?
-Fast R-CNNのモデルは図1の通り。Fast R-CNNは入力として全ての画像と物体提案のセットを取る。ネットワークは畳み込みと畳み込み特徴マップを生成するためのmax pooling層が組み込まれており、これらですべての画像を処理する。次に、それぞれのオブジェクト提案region of interest(RoI)プーリング層が特徴マップから固定長の特徴ベクトルを抽出する。この各特徴ベクトルは二つのFCレイヤに渡される: Kクラス+背景クラスの確率を算出するsoftmaxと各Kオブジェクトクラスに対する実際の値を出力する。各4つの値のセットはKクラスのうちの一つに対して洗練されたbounding boxの位置を符号化する。
+Fast R-CNNのモデルは図1の通り。Fast R-CNNは入力として全ての画像と物体提案のセットを取る。ネットワークは畳み込みと畳み込み特徴マップを生成するためのmax pooling層が組み込まれており、これらですべての画像を処理する。次に、それぞれのオブジェクト提案のためにregion of interest(RoI)プーリング層が特徴マップから固定長の特徴ベクトルを抽出する。この各特徴ベクトルは二つのFCレイヤに渡される: Kクラス+背景クラスの確率を算出するsoftmaxと各Kオブジェクトクラスに対する実際の値を出力する。各4つの値のセットはKクラスのうちの一つに対して洗練されたbounding boxの位置を符号化する。
 
 ![fig1](img/FR/fig1.png)
 
 ### **The RoI pooling layer**
-RoI pooling layerはmax poolingを使って任意の領域内の特徴をH\*Wの固定サイズの小さな特徴マップに変換する。HとWは特定のRoIから独立したハイパーパラメータである。RoIは左上の隅からの位置を表すr,cと、高さと幅を表すh,wによって定義される。RoI max poolingはH\*Wサイズの特徴マップを更にh\*wサイズの窓(RoI)で分割したものを使うことで動作する。つまり、下図のようにH\*Wサイズの特徴マップには、h/H\*w/W個のRoI windowがあるということになる。
+RoI pooling layerはmax poolingを使って任意の有効なRoI内の特徴を小さな特徴マップに変換する。RoIは４つのタプルである(r,c,h,w)で定義される。左上からの位置(r,c)と、高さと幅(h,w)からなる。RoI max poolingはh\*wのRoIをH\*Wの碁盤目上に区切ったおおよそh/H\*w/Wサイズのsub-windowをmax poolingする。RoIとsub-windowの関係は以下の通り。
 
 ![c1](img/FR/c1.png)
 
@@ -50,14 +50,15 @@ Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごと
 ## 議論はある?
 
 ## 次に読むべき論文は?
--
--
+- [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
 
 ### 論文関連リンク
 1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. InCVPR, 2014.](https://arxiv.org/abs/1311.2524)
 2. [K. He, X. Zhang, S. Ren, and J. Sun. Spatial pyramid pooling in deep convolutional networks for visual recognition. In ECCV, 2014.](https://arxiv.org/abs/1406.4729)
 3. [論文紹介 Fast R-CNN&Faster R-CNN](https://www.slideshare.net/takashiabe338/fast-rcnnfaster-rcnn)
 4. [最新のRegion CNN(R-CNN)を用いた物体検出入門 ~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
+5. [最新の物体検出手法Mask R-CNNのRoI AlignとFast(er) R-CNNのRoI Poolingの違いを正しく理解する - Qiita](https://qiita.com/yu4u/items/5cbe9db166a5d72f9eb8)
+6. [4 Mask RCNN Arc.(Part3) - How RoI Pooling, RoI Warping & RoI Align Work](https://www.youtube.com/watch?v=XGi-Mz3do2s)
 
 ### 会議
 ICCV 2015
