@@ -34,7 +34,14 @@ Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごと
 
 ![eq1](img/FR/eq1.png)
 
-ここで、Lcls(p,u)=-log puでありクラスの誤差を示す。v=(vx,vy,vw,vh)、tu=(tux,tuy,tuw,tuh)とすると、Lo
+ここで、Lcls(p,u)=-log puでありクラスの誤差を示す。また、アイバーソンの記法で表されている関数\[u>=1\]はu>=1のとき1を返し、その他は0を返す。なお、背景クラスはu=0に割り当てられる。背景のRoIにbounding boxという概念は無いため、この場合Llocは無視される。v=(vx,vy,vw,vh)、tu=(tux,tuy,tuw,tuh)でbounding box回帰の誤差は式(2)の様になる。
+
+![eq2](img/FR/eq2.png)
+
+![eq3](img/FR/eq3.png)
+
+このrubust L1損失はR-CNNやSPPnetで使われているL2損失より外れ値に強い。回帰対象がunboundedである場合、L2損失を用いた訓練は勾配爆発を防ぐために細かい学習率の調整が必要となる。
+
 
 
 
@@ -50,6 +57,7 @@ Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごと
 1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. InCVPR, 2014.](https://arxiv.org/abs/1311.2524)
 2. [K. He, X. Zhang, S. Ren, and J. Sun. Spatial pyramid pooling in deep convolutional networks for visual recognition. In ECCV, 2014.](https://arxiv.org/abs/1406.4729)
 3. [論文紹介 Fast R-CNN&Faster R-CNN](https://www.slideshare.net/takashiabe338/fast-rcnnfaster-rcnn)
+4. [最新のRegion CNN(R-CNN)を用いた物体検出入門 ~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
 
 ### 会議
 ICCV 2015
