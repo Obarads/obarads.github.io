@@ -42,7 +42,12 @@ Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごと
 
 このrubust L1損失はR-CNNやSPPnetで使われているL2損失より外れ値に強い。回帰対象がunboundedである場合、L2損失を用いた訓練は勾配爆発を防ぐために細かい学習率の調整が必要となる。
 
+### **Back-propagation through RoI pooling layers**  
+RoI pooling層のbackwardsは式(4)のようになる。
 
+![eq4](img/FR/eq4.png)
+
+ここで、xi∈ℝをRoI poolingへのi番目の入力、yrjはr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層はyrj =xi\*(r,j)を計算する。ここでi\*(r,j)=argmax i'∈R(r,j) xi'である。
 
 
 ## どうやって有効だと検証した?
