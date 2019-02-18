@@ -36,13 +36,11 @@ tangent convolutionは点の周りの接平面に局所表面形状を映すこ�
 
     ![fig3](img/TCfDPi3/fig_3.png)
 
-
     補完を行う式は式(3)である。補完はnearest neighbor(以下NN)とGussian kernel mixtureの2種類を考えた。式(4)はNNでありfig3では(b)の様になり、式(5)はGaussian kernel mixtureでありfig3では(c)のようになる。なお、Σ_v w=1となるように正規化する。
 
     ![(3)](img/TCfDPi3/fig_5.png)
 
     ![(3)](img/TCfDPi3/fig_6.png)
-
 
     提案した補完形式以外のより優位な形式については、特に考察していない。また、大抵の場合は単純な形式であるNNを使うと述べている。  
     式(1)に式(2)と(3)をまとめ合わせた最終的なtagent convolutionの式は式(6)のようになる。

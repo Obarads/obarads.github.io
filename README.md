@@ -1,6 +1,8 @@
-# Paper-Reminder
+# obarads.github.io(Paper-Reminder)
 ## About
-このレポジトリは論文を要約するためのものです。基本的には点群と生成モデル、2D&3D、申し訳程度の一クラス分類についてまとめます。
+このレポジトリは論文を要約するためのものです。基本的には点群と生成モデル、2D&3D、申し訳程度の一クラス分類についてまとめます。下のサイトで一部の数式を成形して表示しています。
+
+[サイト(改修予定)](https://obarads.github.io/)
 
 ## Directory
 - **papers**  
@@ -26,4 +28,6 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
     - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
     - R-CNN(省略多い)
 
-$ A_s $
+
+## test
+ここで、$ x_i \in \mathbb{R} $をRoI poolingへのi番目の入力、$ y_{rj} $はr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層は$ y_{rj} =x_{i^\*(r,j)} $を計算する。ここで$ i^\* (r,j) = \arg\max_{i' \in \mathcal{R} (r,j)} x_{i'} $である。$ \mathcal{R} (r,j) $は出力$ y_{rj} $の範囲のsub-window中の入力のインデックスの集合である。(?)

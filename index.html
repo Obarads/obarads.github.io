@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obarads</title>
+    <script src="js/marked.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="grid-x">
+        <div class="cell medium-3 large-3 small-3 cell-padding">12/6/4 cells</div>
+        <div id="content" class="cell medium-9 large-9 small-9 cell-padding"></div>
+    </div>
+
+    <script>
+        $('#header').load('header.html', function () {
+            $.getScript("js/app.js", function () {
+            });
+        });
+        
+        window.addEventListener("DOMContentLoaded", main);
+        window.addEventListener("hashchange", main);
+
+        var get = $.get;
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            gfm: true,
+            tables: true,
+            breaks: true,
+            pedantic: false,
+            sanitize: false,
+            smartLists: false,
+            smartypants: false
+        });
+
+        function create_links(link){
+            return '<a href="papers/#' + link + '.md">'+ link +'</a>';
+        }
+
+        function main() {
+            var list_path = "list.csv"
+            get(list_path).catch(function () {
+                return Promise.resolve("# list.csv not found");
+            }).then(function (text) {
+                html = text.split(",").map(create_links);
+                var div = document.getElementById("content");
+                div.innerHTML = html.join("<br>");
+            }).catch(function (err) {
+                // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
+                console.error(err);
+            });
+        }
+    </script>
+</body>
+
+</html>

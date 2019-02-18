@@ -47,12 +47,26 @@ RoI pooling層のbackwardsは式(4)のようになる。
 
 ![eq4](img/FR/eq4.png)
 
-ここで、xi∈ℝをRoI poolingへのi番目の入力、yrjはr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層はyrj =xi\*(r,j)を計算する。ここでi\*(r,j)=argmax i'∈R(r,j) xi'である。
+ここで、$ x_i \in \mathbb{R} $をRoI poolingへのi番目の入力、$ y_{rj} $はr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層は$ y_{rj} =x_{i^\*(r,j)} $を計算する。ここで$ i^\* (r,j) = \arg\max_{i' \in \mathcal{R} (r,j)} x_{i'} $である。$ \mathcal{R} (r,j) $は出力$ y_{rj} $の範囲のsub-window中の入力のインデックスの集合である。(?)
 
+### **Truncated SVD for faster detection**
+画像全体の分類では全結合層は畳み込み層よりも処理する時間が短いものの、検知でRoIを処理する数が多いため、結果的にforward処理に掛ける時間のほぼ半分が全結合層に費やされる。それらの全結合層を全て切り詰めるためturncated SVD(論文関連リンクの7,8)を用いる。$ u \times v $の重み行列Wがおおよそで因数分解される時、turncated SVDを使って式(5)を定義する。
+
+![eq5](img/FR/eq5.png)
+
+このとき、Uは最初のt個のWの左特異ベクトルを含むu\*tの行列であり、$ \Sigma_t $はトップのt個のWの特異行列を含むt\*tの単位行列、Vは最初のt個の右特異ベクトルを含むv\*tの行列である。turncated SVDはuvからt(u+v)にパラメータ数を減らすことができ、tがmin(u,v)よりもかなり小さい場合は重要になる。
+
+論文関連リンクの3を見たほうが良いと思う。
 
 ## どうやって有効だと検証した?
+主な結果は以下の通り。
+
+1. VOC07、2010、2012においてSOTAなmAPを達成。
+2. R-CNNやSPPneよりも早い訓練と動作。
+3. VGG16でfine-tuningした畳み込み層がmAPを改善。
 
 ## 議論はある?
+省略
 
 ## 次に読むべき論文は?
 - [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
@@ -61,9 +75,11 @@ RoI pooling層のbackwardsは式(4)のようになる。
 1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. InCVPR, 2014.](https://arxiv.org/abs/1311.2524)
 2. [K. He, X. Zhang, S. Ren, and J. Sun. Spatial pyramid pooling in deep convolutional networks for visual recognition. In ECCV, 2014.](https://arxiv.org/abs/1406.4729)
 3. [論文紹介 Fast R-CNN&Faster R-CNN](https://www.slideshare.net/takashiabe338/fast-rcnnfaster-rcnn)
-4. [最新のRegion CNN(R-CNN)を用いた物体検出入門 ~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
+4. [最新のRegion CNN(R-CNN)を用いた物体検出入門 \~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN\~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
 5. [最新の物体検出手法Mask R-CNNのRoI AlignとFast(er) R-CNNのRoI Poolingの違いを正しく理解する - Qiita](https://qiita.com/yu4u/items/5cbe9db166a5d72f9eb8)
 6. [4 Mask RCNN Arc.(Part3) - How RoI Pooling, RoI Warping & RoI Align Work](https://www.youtube.com/watch?v=XGi-Mz3do2s)
+7. [E. Denton, W. Zaremba, J. Bruna, Y. LeCun, and R. Fergus. Exploiting linear structure within convolutional networks for efficient evaluation. InNIPS, 2014.](https://arxiv.org/abs/1404.0736)
+8. [J. Xue, J. Li, and Y. Gong. Restructuring of deep neural network acoustic models with singular value decomposition. InInterspeech, 2013.](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/01/svd_v2.pdf)
 
 ### 会議
 ICCV 2015
@@ -75,3 +91,4 @@ Ross Girshick
 2015/04/30
 
 ## コメント
+Faster R-CNNのために見たので、省略多め。
