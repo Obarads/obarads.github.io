@@ -17,9 +17,25 @@
 <body>
     <div id="header"></div>
 
-    <div class="grid-x">
-        <div class="cell medium-3 large-3 small-3 cell-padding">12/6/4 cells</div>
-        <div id="content" class="cell medium-9 large-9 small-9 cell-padding"></div>
+    <div class="grid-container">
+        <div class="grid-x">
+            <!-- <div class="cell medium-3 large-3 small-3 cell-padding">12/6/4 cells</div>-->
+            <!-- <div id="content" class="cell medium-12 large-12 small-12 cell-padding">-->
+            </div>
+            <table>
+                <tbody id="content">
+                    <tr>
+                        <td>Content Goes Here</td>
+                    </tr>
+                    <tr>
+                        <td>Content Goes Here</td>
+                    </tr>
+                    <tr>
+                        <td>Content Goes Here</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
@@ -27,7 +43,7 @@
             $.getScript("js/app.js", function () {
             });
         });
-        
+
         window.addEventListener("DOMContentLoaded", main);
         window.addEventListener("hashchange", main);
 
@@ -43,8 +59,8 @@
             smartypants: false
         });
 
-        function create_links(link){
-            return '<a href="papers/#' + link + '.md">'+ link +'</a>';
+        function create_links(link) {
+            return '<tr><td><a href="papers/#' + link + '.md">' + link + '</a></td></tr>';
         }
 
         function main() {
@@ -54,7 +70,7 @@
             }).then(function (text) {
                 html = text.split(",").map(create_links);
                 var div = document.getElementById("content");
-                div.innerHTML = html.join("<br>");
+                div.innerHTML = html.join("");
             }).catch(function (err) {
                 // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
                 console.error(err);

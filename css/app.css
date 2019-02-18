@@ -1,57 +1,66 @@
+/* colors */
+.purple{
+    background-color: purple;
+}
+.kityou{
+    background-color: rgb(79, 0, 178);
+}
+.konruri{
+    background-color: rgba(32,0,152,01);
+;}
+
+
+/* all directory design */
 @font-face{
     font-family: 'gensen-font';
 	src: url(../font/JP/GenSenMaruGothicJP-Light.ttf);
 }
-
 body{
     font-family: gensen-font;
     background-color: rgb(40,34,42);
     color: white;
 }
-
 body a{
     color: aquamarine;
 }
-
 body a:hover{
     color: coral;
 }
-
-#content img{
-    margin: 0px auto;
-    display: block;
+.cell-padding{
+    padding: 13px;
 }
 
-#content ol{
-    padding: 0 20px 0 20px;
+/* index.html design */
+/**table design*/
+table{
+    border-collapse: unset
+}
+tbody, tfoot, thead {
+    /*border: 1px solid #f1f1f1;*/
+    background-color: rgba(0, 0, 0, 0);
+}
+tbody tr:nth-child(even) {
+    background-color: black;
 }
 
-#content ul{
-    padding: 0 20px 0 20px;
-}
 
-.purple{
-    background-color: purple;
-}
-
-.kityou{
-    background-color: rgb(79, 0, 178);
-    color: white;
-}
-
-.konruri{
-    background-color: rgba(32,0,152,01);
-
-;}
-
+/* header.html design */
 .top-bar a{
     color: white;
 }
-
 .top-bar ul{
     background-color: rgba(0, 0, 0, 0);
 }
 
-.cell-padding{
-    padding: 13px;
+
+/* papers directory design */
+#content img{
+    margin: 0px auto;
+    display: block;
+}
+#content ol{
+    padding: 0 20px 0 20px;
+}
+#content ul{
+    padding: 0 20px 0 20px;
 }

@@ -27,7 +27,3 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 - いずれは自分で書いてねリスト
     - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
     - R-CNN(省略多い)
-
-
-## test
-ここで、$ x_i \in \mathbb{R} $をRoI poolingへのi番目の入力、$ y_{rj} $はr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層は$ y_{rj} =x_{i^\*(r,j)} $を計算する。ここで$ i^\* (r,j) = \arg\max_{i' \in \mathcal{R} (r,j)} x_{i'} $である。$ \mathcal{R} (r,j) $は出力$ y_{rj} $の範囲のsub-window中の入力のインデックスの集合である。(?)
