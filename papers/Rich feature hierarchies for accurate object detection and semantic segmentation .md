@@ -1,5 +1,7 @@
 # Rich feature hierarchies for accurate object detection and semantic segmentation
 
+元の論文の公開ページ : https://arxiv.org/abs/1311.2524
+
 ## どんなもの?
 R-CNNと呼ばれる画像用のオブジェクト検出フレームワークを提案した。CNNとregion proposals(領域提案)を用いて検知を行う。
 

@@ -1,5 +1,7 @@
 # Context Prediction for Unsupervised Deep Learning on Point Clouds
 
+元の論文の公開ページ : https://arxiv.org/abs/1901.08396
+
 ## どんなもの?
 ラベルなし、生の点群を用いて2つの点群区分の空間的関係性を予測するself-supervised手法であるCloudContextを提案した。
 

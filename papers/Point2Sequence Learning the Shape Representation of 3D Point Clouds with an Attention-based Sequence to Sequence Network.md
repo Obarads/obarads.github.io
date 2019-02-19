@@ -1,5 +1,7 @@
 # Point2Sequence Learning the Shape Representation of 3D Point Clouds with an Attention-based Sequence to Sequence Network
 
+元の論文の公開ページ : https://arxiv.org/abs/1811.02565
+
 ## どんなもの?
 点群から特徴を捉える際の局所領域内の異なるエリアの相関性などの細かい文脈情報を保持するためのモデルを提案した。領域の関係性を把握するためにRNNのEncoder-Decorderとattention機構を取り入れている。
 

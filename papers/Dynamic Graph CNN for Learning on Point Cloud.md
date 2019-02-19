@@ -1,5 +1,7 @@
 # Dynamic Graph CNN for Learning on Point Clouds
 
+元の論文の公開ページ : https://arxiv.org/abs/1801.07829
+
 ## どんなもの?
 点とその近傍の点との関係を記述するエッジ特徴を生成するEdgeConvを提案した。EdgeConvは既存の深層学習モデルに統合させ、性能を向上させることも可能である。
 

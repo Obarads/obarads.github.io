@@ -1,5 +1,7 @@
 # Adaptive O-CNN: A Patch-based Deep Representation of 3D Shapes
 
+元の論文の公開ページ : https://arxiv.org/abs/1809.07917
+
 ## どんなもの?
 効率的に3D形状のエンコードとデコードを行うモデルであるAdaptive Octree-based CNN(以下AO-CNN)を提案した。
 - エンコーダーではoctreeで分割したoctant(octantはoctreeによって細分化された領域。ある1つの領域を細分化すると8つの同形状のoctreeができる。)の法線と変位を入力として扱い、各レベル(octantのサイズ)で3D畳み込みを行う。
@@ -96,12 +98,11 @@ AutoEncoderを使った生成精度も測っており、概ね良好である。
 なし
 
 ### 論文関連リンク
-1. 本家:https://arxiv.org/abs/1809.07917
+1. [公式の論文内容の紹介](https://wang-ps.github.io/AO-CNN.html)
 1. Simon Fuhrmann and Michael Goesele. 2014. Floating scale surface reconstruction. ACM Trans. Graph. (SIGGRAPH) 33, 4 (2014), 46:1–46:11.
 1. Michael Kazhdan and Hugues Hoppe. 2013. Screened Poisson surface reconstruction. ACM Trans. Graph. 32, 3 (2013), 29:1–29:13. 
 1. Marco Attene, Marcel Campen, and Leif Kobbelt. 2013. Polygon mesh repairing: An application perspective.ACM Comput. Surv.45, 2 (2013), 15:1–15:33. 
 1. Tao Ju. 2004. Robust repair of polygonal models. ACM Trans. Graph. (SIGGRAPH) 23, 3 (2004), 888–895. 
-1. 本家実装:https://github.com/Microsoft/O-CNN
 
 ### 参考リンク
 - なし

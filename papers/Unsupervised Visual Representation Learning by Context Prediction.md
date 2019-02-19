@@ -1,5 +1,7 @@
 # Unsupervised Visual Representation Learning by Context Prediction
 
+元の論文の公開ページ : https://arxiv.org/abs/1505.05192
+
 ## どんなもの?
 self-supervisedモデルの考案。画像の一部を3*3の碁盤目に分け、そのうちの「中央画像」と「中央画像以外の画像」をネットワークに入力し、中央画像以外の画像が碁盤目の中のどこに位置するか予測する。
 

@@ -1,5 +1,7 @@
 # Tangent Convolutions for Dense Prediction in 3D
 
+元の論文の公開ページ : https://arxiv.org/pdf/1807.02443.pdf
+
 ## どんなもの?
 tangent convolutionの概念に基づいて表面の畳み込みネットワークのための代替構成を開発した。隠れている表面を必要とせず、近似的な法線ベクトル推定をサポートしている任意の形式(点群、メッシュ、polygon soup)で扱える。
 tangent convolutionは点の周りの接平面に局所表面形状を映すことに基づいている。これにより接平面画像を作れる。これらの接平面画像は通常の2Dの畳み込みとして扱われる。tangent convolutionを基礎構成として、U-type networkを設計した。

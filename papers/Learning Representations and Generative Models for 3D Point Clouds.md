@@ -1,5 +1,7 @@
 # Learning Representations and Generative Models for 3D Point Clouds
 
+元の論文の公開ページ : https://arxiv.org/abs/1707.02392
+
 ## どんなもの?
 生の点群で動作するGAN、潜在表現を学習したAutoEncoderを用いたGAN、Gaussian Mixture Models(GMMs)を中心に研究した点群の生成モデルに関する論文。また、点群のAutoEncoderで重要な類似度測定手法、GANの評価基準にも注目している。
 

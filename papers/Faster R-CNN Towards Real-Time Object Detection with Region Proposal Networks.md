@@ -1,5 +1,7 @@
 # Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
 
+元の論文の公開ページ : https://arxiv.org/abs/1506.01497
+
 ## どんなもの?
 オブジェクト検知ネットワークと領域提案アルゴリズムをEnd-to-Endの単体のネットワークに統合したFaster R-CNNを提案した。
 
@@ -111,3 +113,5 @@ Shaoqing Ren, Kaiming He, Ross Girshick and Jian Sun
 
 ## コメント
 Faster R-CNNは特許がある(論文関連リンクの1)。
+
+## key-words

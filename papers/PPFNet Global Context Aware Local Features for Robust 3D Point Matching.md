@@ -1,5 +1,7 @@
 # PPFNet: Global Context Aware Local Features for Robust 3D Point Matching
 
+元の論文の公開ページ : https://arxiv.org/abs/1802.02669
+
 ## どんなもの?
 点の法線とPoint Pair Feature(以下PPF)を組み合わせたLocal Geometry Frを入力して扱い、分断されたそれぞれのシーンから一致するパッチ(局所領域)を探し出す(Point set registrationと同じ)。Frは以下の通り(ψはppf()と同じ)。
 

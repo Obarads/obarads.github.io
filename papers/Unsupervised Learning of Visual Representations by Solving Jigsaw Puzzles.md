@@ -1,5 +1,7 @@
 # Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles
 
+元の論文の公開ページ : https://arxiv.org/abs/1603.09246
+
 ## どんなもの?
 pretextタスクとしてジグゾーパズルを解くself-supervisionモデル、Context-Free network(以下CFN)を提案した。
 

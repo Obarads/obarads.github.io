@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Obarads</title>
+    <title>Paper-Reminder</title>
     <script src="js/marked.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/list.js"></script>
     <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png">
@@ -24,15 +25,6 @@
             </div>
             <table>
                 <tbody id="content">
-                    <tr>
-                        <td>Content Goes Here</td>
-                    </tr>
-                    <tr>
-                        <td>Content Goes Here</td>
-                    </tr>
-                    <tr>
-                        <td>Content Goes Here</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -60,21 +52,14 @@
         });
 
         function create_links(link) {
-            return '<tr><td><a href="papers/#' + link + '.md">' + link + '</a></td></tr>';
+            return '<tr><td><a href="papers/#' + link[0] + '.md">' + link[0] + '</a></td></tr>';
         }
 
         function main() {
-            var list_path = "list.csv"
-            get(list_path).catch(function () {
-                return Promise.resolve("# list.csv not found");
-            }).then(function (text) {
-                html = text.split(",").map(create_links);
-                var div = document.getElementById("content");
-                div.innerHTML = html.join("");
-            }).catch(function (err) {
-                // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
-                console.error(err);
-            });
+            _html = infomation_list()
+            html = _html.map(create_links);
+            var div = document.getElementById("content");
+            div.innerHTML = html.join("");
         }
     </script>
 </body>

@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Obarads</title>
     <script src="../js/vendor/jquery.js"></script>
     <script src="../js/marked.js"></script>
     <script src="../js/vendor/foundation.min.js"></script>
@@ -69,6 +68,7 @@
             } else {
                 name = location.hash.slice(1);
             }
+            document.title = decodeURI(name).replace(".md","") + " - Paper-Reminder"
             // ページ内リンクなのでhistory.pushStateする必要はない
             get(name).catch(function () {
                 return Promise.resolve("# 404 page not found");
