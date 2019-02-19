@@ -8,6 +8,7 @@ def main():
     md_list = glob.glob("./papers/*.md")
     path_list = md_list
     info_list = []
+    kw_tags = []
     md_list = [m.replace("./papers/","").replace(".md","") for m in md_list] #linux path
     md_list = [m.replace("./papers\\","").replace(".md","") for m in md_list] #windows path
     for (ml,pl) in zip(md_list,path_list):
@@ -17,19 +18,27 @@ def main():
             if "## key-words" in content:
                 kw_index = content.index("## key-words")
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
-                    kw = '"'+content[kw_index+1]
+                    kw = content[kw_index+1]
+                    for k in kw.split(","):
+                        if k[0] == " ":
+                            k = k.lstrip(" ")
+                        k = "'"+k+"'"
+                        if not k in kw_tags:
+                            kw_tags.append(k)
 
             info_list.append([ml,kw])
 
     info_list.sort()
+    kw_tags.sort()
+    print(kw_tags)
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
     info_list = "function infomation_list(){ return ["+",".join(info_list)+"]}"
-
-    print(info_list)
+    kw_tags = "\n function tag_list(){ return ["+ ",".join(kw_tags) +"]}"
 
     with open('js/list.js', 'w') as f:
         f.writelines(info_list)
+        f.writelines(kw_tags)
         f.close()
 
 if __name__ == '__main__':

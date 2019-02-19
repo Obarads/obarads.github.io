@@ -117,3 +117,6 @@ Spyros Gidaris, Praveer Singh, Nikos Komodakis
 
 ## コメント
 単純なのに強力である。こんなにも簡単な手法があるとは思わんかった。
+
+## key-words
+2D Image, Self-supervised

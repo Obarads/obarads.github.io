@@ -18,19 +18,77 @@
 <body>
     <div id="header"></div>
 
-    <div class="grid-container">
-        <div class="grid-x">
-            <!-- <div class="cell medium-3 large-3 small-3 cell-padding">12/6/4 cells</div>-->
-            <!-- <div id="content" class="cell medium-12 large-12 small-12 cell-padding">-->
+    <div class="grid-x">
+        <div class="cell medium-3 large-3 small-3 cell-padding">
+            <div class="grid-x grid-padding-x">
+                <div class="medium-12 cell">
+                    <label>Title Filter
+                        <input id="input" type="text" placeholder="Fast R-CNN">
+                    </label>
+                </div>
             </div>
-            <table>
-                <tbody id="content">
-                </tbody>
-            </table>
+            <div class="grid-x grid-padding-x">
+                <div class="medium-12 cell">
+                    <a id="init" class="button alert expanded">
+                        Init
+                    </a>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <div class="medium-12 cell">
+                    <label>Tags
+                        <div id="tags">
+                    </label>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="cell medium-9 large-9 small-9 cell-padding">
+        <table>
+            <tbody id="content">
+            </tbody>
+        </table>
     </div>
 
     <script>
+        /* table scripts */
+        $(function () {
+            var $input = $('#input');
+            $input.on('input', function (event) {
+                var value = $input.val();
+                var re = new RegExp(value);
+                $('#content tr').each(function () {
+                    var txt = $(this).find("td:eq(0)").html();
+                    if (txt.match(re) != null) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+            $('.btn-flat-border').click(function () {
+                var re = new RegExp($(this, "a").text());
+                $('#content tr').each(function () {
+                    var $_txt = $(this).find("td:eq(0) .btn-flat-border")
+                    var sw = 0;
+                    $_txt.each(function () {
+                        if ($(this).html().replace('&amp;', '&').match(re) != null) {
+                            sw = 1;
+                        }
+                    });
+                    if (sw) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+            $('#init').bind("click", function () {
+                $('#input').val('');
+                $('#content tr').show();
+            });
+        });
+
         $('#header').load('header.html', function () {
             $.getScript("js/app.js", function () {
             });
@@ -50,16 +108,27 @@
             smartLists: false,
             smartypants: false
         });
-
+        function create_tag(tag) {
+            return '<a class="btn-flat-border" href="#">' + tag + '</a>';
+        }
         function create_links(link) {
-            return '<tr><td><a href="papers/#' + link[0] + '.md">' + link[0] + '</a></td></tr>';
+            var tags = [];
+            if (link[1] != "") {
+                tags = link[1].split(',').map(create_tag);
+            }
+            tags = tags.join(" ");
+            return '<tr><td><a href="papers/#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td></tr>';
         }
 
         function main() {
-            _html = infomation_list()
+            _html = infomation_list();
             html = _html.map(create_links);
             var div = document.getElementById("content");
             div.innerHTML = html.join("");
+            _html = tag_list();
+            html = _html.map(create_tag);
+            var div = document.getElementById("tags");
+            div.innerHTML = html.join(" ");
         }
     </script>
 </body>

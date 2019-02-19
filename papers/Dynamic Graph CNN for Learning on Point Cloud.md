@@ -58,3 +58,6 @@ Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin 
 
 ## コメント
 シンプルな発想のわりに強力な効果を発揮している...。
+
+## key-words
+Classification, Point Cloud, Segmentation

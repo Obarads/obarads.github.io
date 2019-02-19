@@ -79,3 +79,6 @@ Thomas Schlegl, Philipp Seebock, Sebastian M. Waldstein, Ursula Schmidt-Erfurth,
 
 ## コメント
 なし
+
+## key-words
+2D Image, GAN, One-Class & Anomaly Detection

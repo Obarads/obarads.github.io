@@ -64,3 +64,6 @@ Stanford University
 
 ## コメント
 CVPR2018では、局所形状を取り込む手法を取り入れたモデルが大量に生まれた。「ローカルな構造」について論文中に出ているが、ローカルな構造=局所形状のイメージが強いせいか、ローカルな構造を言うほど活かしていないように思えた(Segmentationではちゃんと使っているが)。
+
+## key-words
+Classification, Point Cloud, Segmentation

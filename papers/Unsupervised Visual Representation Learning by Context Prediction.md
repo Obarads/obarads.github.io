@@ -76,3 +76,6 @@ Carl Doersch, Abhinav Gupta and Alexei A. Efros.
 
 ## コメント
 Self-learning分野のはじまり。図4をのランダムサンプリングが選んだタイヤと人の顔、地面と空を見ると適当に重みづけされたネットワークを使っているにも関わらす特徴をとらえている。ほかにも、渡されたクエリとは違うものの上のキーボード(画像に明確な線が映っているもの)や上のタイヤ(右下に全体とは異なる何か目立つものが置かれている)の回答内で似たような画像を回答している。つまり、ネットワークは訓練をせずとも何かしら特徴を捉えることができる。このことに着目したものがDeep Clustering for Unsupervised Learning of Visual Featuresである。
+
+## key-words
+2D Image, Classification, Self-supervised

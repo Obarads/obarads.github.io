@@ -115,3 +115,4 @@ Shaoqing Ren, Kaiming He, Ross Girshick and Jian Sun
 Faster R-CNNは特許がある(論文関連リンクの1)。
 
 ## key-words
+2D Image, Detection, Segmentation

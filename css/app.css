@@ -7,8 +7,18 @@
 }
 .konruri{
     background-color: rgba(32,0,152,01);
-;}
-
+}
+.greenyellow{
+    background-color: greenyellow;
+    color: black;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+.tab-color{
+    background-color: rgb(19, 63, 50);
+}
 
 /* all directory design */
 @font-face{
@@ -40,7 +50,38 @@ tbody, tfoot, thead {
     background-color: rgba(0, 0, 0, 0);
 }
 tbody tr:nth-child(even) {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
+}
+table tbody td{
+    border-bottom: inset 1px gray;
+}
+
+/*tag button*/
+.btn-flat-border {
+    display: inline-block;
+    padding: 0.0em 0.2em;
+    text-decoration: none;
+    color: white;
+    background: seagreen;
+    border: solid 0.5px seagreen;
+    border-radius: 3px;
+    transition: .4s;
+    font-size: 4mm;
+}
+.btn-flat-border:hover {
+    background: coral;
+    color: white;
+    border: solid 0.5px coral;
+}
+.button {
+    padding: .45em 1em;
+}
+.expanded {
+    font-size: 0.7cm;
+}
+label {
+    color: white;
+    font-size: 5mm;
 }
 
 
