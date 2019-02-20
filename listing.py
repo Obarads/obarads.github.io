@@ -15,17 +15,19 @@ def main():
         with open(pl, 'r',encoding="utf-8") as f:
             content = f.read().split("\n")
             kw = ""
+            date = "????"
             if "## key-words" in content:
                 kw_index = content.index("## key-words")
-                date_index = content.index("### 投稿日付(yyyy/MM/dd)")
-                if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
-                    date = content[date_index+1].split("/")[0]
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
                     kw = content[kw_index+1]
                     for k in kw.split(","):
                         k = "'"+k+"'"
                         if not k in kw_tags:
                             kw_tags.append(k)
+            if "### 投稿日付(yyyy/MM/dd)" in content:
+                date_index = content.index("### 投稿日付(yyyy/MM/dd)")
+                if date_index != -1:
+                    date = content[date_index+1].split("/")[0]
 
             info_list.append([ml,kw,date])
 
