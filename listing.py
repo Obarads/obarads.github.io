@@ -21,6 +21,8 @@ def main():
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
                     kw = content[kw_index+1]
                     for k in kw.split(","):
+                        if k[0] == " ":
+                            k = k.lstrip(" ")
                         k = "'"+k+"'"
                         if not k in kw_tags:
                             kw_tags.append(k)
