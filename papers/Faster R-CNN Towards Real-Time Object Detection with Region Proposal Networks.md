@@ -10,12 +10,14 @@
 
 ## 技術や手法のキモはどこ?
 
-Faster-R-CNNはRegion Proposal Network(RPN)とFast R-CNNの2つのモジュールからなる単体のネットワークである。
+全体の構造は図2の通り。Faster-R-CNNはRegion Proposal Network(RPN)とFast R-CNN検知器(RoI pooling以降の構造)の2つのモジュールからなる単体のネットワークである。
+
+![fig2](img/FRTRODwRPN/fig2.png)
 
 ### **Region Proposal Network(PRN)**
 PRNは画像を取り込み、objectnessなスコア付きの長方形のオブジェクト提案を行う(objectnessはオブジェクトっぽさ)。これらのプロセスはfully convolutional network(FCN)で作られる。これは最終的な目標にFast R-CNNと共通の畳み込み層のセットを共有することがあるためである。
 
-図3の左に示す内容を説明する。領域提案を行うため、最後の共有畳み込み層によってsmall networkを畳み込み特徴マップの出力上でスライドさせる。このsmall networkは入力として、n\*nの入力畳み込み特徴マップの空間的なwindow(図3ではsliding window)を取る。このsliding windowは低次元の特徴へ写像される。この特徴はbox-regression層(reg)とbox-classification層(cls)に渡される。
+図3の左に示す内容を説明する。領域提案を行うため、最後の共有畳み込み層によって出力された畳み込み特徴マップ上でsmall networkをスライドさせる。small networkは入力として、n\*nの入力畳み込み特徴マップの空間的なwindow(図3ではsliding window)を取る。このsliding windowは低次元の特徴へ写像される。この特徴はbox-regression層(reg)とbox-classification層(cls)に渡される。
 
 ![fig3](img/FRTRODwRPN/fig3.png)
 
@@ -82,8 +84,6 @@ PRNは画像を取り込み、objectnessなスコア付きの長方形のオブ�
 
     この式は、アンカーボックスからすぐ近くのground-truthへの境界ボックスの回帰だと考えられる。
 
-    他のモデルでは
-
 
 
 ## どうやって有効だと検証した?
@@ -101,6 +101,7 @@ PRNは画像を取り込み、objectnessなスコア付きの長方形のオブ�
 4. [論文紹介: Fast R-CNN&Faster R-CNN](https://www.slideshare.net/takashiabe338/fast-rcnnfaster-rcnn)
 5. [R. Girshick, “Fast R-CNN,” inIEEE International Conference on Computer Vision (ICCV), 2015.](https://arxiv.org/abs/1504.08083)
 6. [R. Girshick, J. Donahue, T. Darrell, and J. Malik, “Rich feature hierarchies for accurate object detection and semantic seg-mentation,” in IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014.](https://arxiv.org/abs/1311.2524)
+7. [最新のRegion CNN(R-CNN)を用いた物体検出入門 ~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
 
 ### 会議
 NIPS 2015
