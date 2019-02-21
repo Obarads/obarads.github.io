@@ -30,6 +30,12 @@ body{
     background-color: rgb(40,34,42);
     color: white;
 }
+p{
+    margin-top: 1rem;
+}
+li{
+    margin-left: 0.5rem;
+}
 body a{
     color: aquamarine;
 }
@@ -53,10 +59,4 @@ body a:hover{
 #content img{
     margin: 0px auto;
     display: block;
-}
-#content ol{
-    padding: 0 20px 0 20px;
-}
-#content ul{
-    padding: 0 20px 0 20px;
 }

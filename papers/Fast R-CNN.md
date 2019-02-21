@@ -22,21 +22,23 @@ R-CNNが遅い理由としてそれぞれのオブジェクト提案のために
 4. 要求される容量の低減
 
 ## 技術や手法のキモはどこ?
-Fast R-CNNのモデルは図1の通り。Fast R-CNNは入力として全ての画像と物体提案のセットを取る。ネットワークは畳み込みと畳み込み特徴マップを生成するためのmax pooling層が組み込まれており、これらですべての画像を処理する。次に、それぞれのオブジェクト提案のためにregion of interest(RoI)プーリング層が特徴マップから固定長の特徴ベクトルを抽出する。この各特徴ベクトルは二つのFCレイヤに渡される: Kクラス+背景クラスの確率を算出するsoftmaxと各Kオブジェクトクラスに対する実際の値を出力する。各4つの値のセットはKクラスのうちの一つに対して洗練されたbounding boxの位置を符号化する。
+Fast R-CNNのモデルは図1の通り。Fast R-CNNは入力として全体画像と提案候補のセットを取る。入力された全体画像はconv層とmax pooling層で畳み込み特徴マップへ変換される。次に畳み込み特徴マップ上の提案候補の領域(region of interest、略してRoI)をRoI pooling layerで固定サイズの特徴マップへpoolingする。固定サイズの特徴マップは全結合層(FC層)を経てRoI feature vectorへマッピングされる。このRoI feature vectorは二つのFC層に渡される: 一つはKクラス+背景クラスの確率を算出するsoftmax(分類問題)、もう一つは各Kオブジェクトクラスに対する実際の値(回帰問題)を出力する。各4つの値のセットはKクラスのうちの一つに対して洗練されたbounding boxの位置を符号化する。
 
 ![fig1](img/FR/fig1.png)
 
 ### **The RoI pooling layer**
-RoI pooling layerはmax poolingを使って任意の有効なRoI内の特徴を小さな特徴マップに変換する。RoIは４つのタプルである(r,c,h,w)で定義される。左上からの位置(r,c)と、高さと幅(h,w)からなる。RoI max poolingはh\*wのRoIをH\*Wの碁盤目上に区切ったおおよそh/H\*w/Wサイズのsub-windowをmax poolingする。RoIとsub-windowの関係は以下の通り。
+RoI pooling layerはmax poolingを使って任意のRoI内の特徴を小さな特徴マップに変換する。RoIは４つのタプルである$ (r,c,h,w) $で定義される。左上からの位置$ (r,c) $と、高さと幅$ (h,w) $からなる。RoI max poolingは$ h \times w $のRoIを$ H \times W $の碁盤目上に区切ったおおよそ$ h/H\ \times w/W $サイズのsub-windowへ分割し、分割されたsub-windowをそれぞれmax poolingする(max pooling後はまた一つの特徴マップとして合体する?)。RoIとsub-windowの関係は以下の通り。
 
 ![c1](img/FR/c1.png)
 
+max pooling後、FC層を経てRoI feature vectorに変換された後、分類問題と回帰問題を解くために使用される。
+
 ###  **Multi-task lose**
-Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごとにK+1カテゴリ分類確率p=(p0,...,pK)を出力する。二つ目はbounding box回帰のオフセットtk=(tkx,tky,tkw,tkh)をKクラスごとに出力する(kはクラスのインデックス)。ここで、tkはオブジェクト提案に対するスケール不変の並進とlog空間の高さ/幅を特定する。それぞれのRoIのトレーニングはground-truthのクラスuとground-truthのbounding box回帰目標vでラベル付けされる。bounding box回帰と分類を同時に訓練するためにラベル付けされたRoIでmulti-task lossを式(1)に示す。
+Fast R-CNNのネットワークは2つの出力層を持ち、一つはRoIごとに$ K+1 $カテゴリ分類確率$ p=(p_0,...,p_K) $を出力する。二つ目はbounding box回帰のオフセット$ t^k=(t^k_x,t^k_y,t^k_w,t^k_h) $を$ K $クラスごとに出力する($ k $はクラスのインデックス)。ここで、$ t^k $はオブジェクト提案に対するスケール不変の並進とlog空間の高さ/幅を特定する。それぞれのRoIのトレーニングはground-truthのクラスuとground-truthのbounding box回帰目標vでラベル付けされる。bounding box回帰と分類を同時に訓練するためにラベル付けされたRoIでmulti-task lossを式(1)に示す。
 
 ![eq1](img/FR/eq1.png)
 
-ここで、Lcls(p,u)=-log puでありクラスの誤差を示す。また、アイバーソンの記法で表されている関数\[u>=1\]はu>=1のとき1を返し、その他は0を返す。なお、背景クラスはu=0に割り当てられる。背景のRoIにbounding boxという概念は無いため、この場合Llocは無視される。v=(vx,vy,vw,vh)、tu=(tux,tuy,tuw,tuh)でbounding box回帰の誤差は式(2)の様になる。
+ここで、$ L_{cls}(p,u)=-\log p_u $でありクラスの誤差を示す。また、アイバーソンの記法で表されている関数$ [u \geq 1] $はu>=1のとき1を返し、その他は0を返す。なお、背景クラスはu=0に割り当てられる。背景のRoIにbounding boxという概念は無いため、この場合Llocは無視される。$ v=(v_x,v_y,v_w,v_h) $、$ t^u=(t^u_x,t^u_y,t^u_w,t^u_h) $でbounding box回帰の誤差は式(2)の様になる。
 
 ![eq2](img/FR/eq2.png)
 
@@ -56,7 +58,7 @@ RoI pooling層のbackwardsは式(4)のようになる。
 
 ![eq5](img/FR/eq5.png)
 
-このとき、Uは最初のt個のWの左特異ベクトルを含むu\*tの行列であり、$ \Sigma_t $はトップのt個のWの特異行列を含むt\*tの単位行列、Vは最初のt個の右特異ベクトルを含むv\*tの行列である。turncated SVDはuvからt(u+v)にパラメータ数を減らすことができ、tがmin(u,v)よりもかなり小さい場合は重要になる。
+このとき、Uは最初のt個のWの左特異ベクトルを含む$ u \times t $の行列であり、$ \Sigma_t $はトップのt個のWの特異行列を含む$ t \times t $の単位行列、Vは最初のt個の右特異ベクトルを含む$ v \times t $の行列である。turncated SVDはuvから$ t(u+v) $にパラメータ数を減らすことができ、tが$ \min (u,v) $よりもかなり小さい場合は重要になる。
 
 論文関連リンクの3を見たほうが良いと思う。
 

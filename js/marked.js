@@ -176,6 +176,8 @@ Lexer.prototype.lex = function(src) {
     .replace(/\u00a0/g, ' ')
     .replace(/\u2424/g, '\n');
 
+  console.log(src);
+
   return this.token(src, true);
 };
 
@@ -1261,6 +1263,8 @@ Parser.prototype.tok = function() {
           ? this.parseText()
           : this.tok();
       }
+
+      // console.log(body);
 
       return this.renderer.listitem(body);
     }
