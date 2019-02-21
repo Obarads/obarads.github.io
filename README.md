@@ -28,4 +28,4 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 
 - いずれは自分で書いてねリスト
     - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
-    - R-CNN(省略多い)
+    - 暇なときにDetection関連の論文読み直せ

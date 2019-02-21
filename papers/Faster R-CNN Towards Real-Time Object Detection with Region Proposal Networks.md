@@ -61,12 +61,12 @@ PRNは画像を取り込み、objectnessなスコア付きの長方形のオブ�
   ここで、
   
   1. iはミニバッチ中のアンカーのインデックスである。
-  1. piはiのアンカーがオブジェクトである予測確率である。pi*はアンカーがpositiveなら1、negativeなら0である。
-  1. tiは予測した境界ボックスの座標を4つの値でパラメーター化させたベクトルである。4つのパラメータについては式(2)に示す。ti*はpositiveアンカーに関連するground-truthボックスの4の記述のベクトルである。
-  1. 分類損失Lclsは2クラス(オブジェクトかそうでないか)のlog損失です。回帰損失Lregは、Lreg(ti,ti*)=R(ti-ti*)である。Rは論文関連リンクの5で定義されているrubust損失関数(smooth L1)である。
-  1. pi*Lregは損失関数はpositiveアンカーのみで活性化し、そのほかでは無効になる。
-  1. cls層とreg層はそれぞれpiとtiからなる。
-  1. 二つの項はNclsとNregで正規化され、λによって重みづけされる。実装では、Nclsの値をmini-batchサイズ(Ncls=256等)に、Nregの値をアンカーの位置の数(Nreg\~2400)に設定している。λはデフォルトで10に設定している。
+  1. $ p_i $はiのアンカーがオブジェクトである予測確率である。$ p_i^* $はアンカーがpositiveなら1、negativeなら0である。
+  1. $ t_i $は予測した境界ボックスの座標を4つの値でパラメーター化させたベクトルである。4つのパラメータについては式(2)に示す。$ t_i^* $はpositiveアンカーに関連するground-truthボックスの4の記述のベクトルである。
+  1. 分類損失$ L_{cls} $は2クラス(オブジェクトかそうでないか)のlog損失です。回帰損失$ L_{reg} $は、$ L_{reg}(t_i,t_i^\*)=R(t_i-t_i^\*) $である。Rは論文関連リンクの5で定義されているrubust損失関数(smooth L1)である。
+  1. $ p_i^*L_{reg} $は損失関数はpositiveアンカーのみで活性化し、そのほかでは無効になる。
+  1. cls層とreg層の出力はそれぞれp_iとt_iからなる。
+  1. 二つの項は$ N_{cls} $と$ N_{reg} $で正規化され、λによって重みづけされる。実装では、$ N_{cls} $をmini-batchサイズ($ N_{cls} $=256)に、$ N_{reg} $をアンカーの位置の数($ N_{reg} $\~2400)で正規化している。λはデフォルトで10に設定している。
 
   境界ボックスの回帰のために論文関連リンクの6に従い、4つの座標のパラメータを適応する。これを式(2)に示す。
 
@@ -74,9 +74,9 @@ PRNは画像を取り込み、objectnessなスコア付きの長方形のオブ�
   
   この時、
   1. xとyはボックスの中央座標、wとhはそれぞれ幅と高さである。
-  2. 変数x, xa, x*はそれぞれ予測したボックス, アンカーボックス, ground-truthボックスである(y, w, hも同様)。
+  2. 変数$ x, x_a, x^* $はそれぞれ予測したボックス, アンカーボックス, ground-truthボックスである(y, w, hも同様)。
 
-  この式は、アンカーボックスからすぐ近くのground-truthへの境界ボックスの回帰だと考えられる。
+  この式は、アンカーボックスからすぐ近くのground-truthへの境界ボックスの回帰だと考えられる。最終的にFast R-CNNへ渡す領域はNMSを用いて渡しているらしい(論文関連リンクの8参照、節3.1からまともに読んでいない)。
 
 他にもトレーニング戦略や、RPNとFast R-CNN検知器との特徴マップの共有の記述がある。
 
@@ -98,6 +98,7 @@ VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection. CVPR 20
 5. [R. Girshick, “Fast R-CNN,” inIEEE International Conference on Computer Vision (ICCV), 2015.](https://arxiv.org/abs/1504.08083)
 6. [R. Girshick, J. Donahue, T. Darrell, and J. Malik, “Rich feature hierarchies for accurate object detection and semantic seg-mentation,” in IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014.](https://arxiv.org/abs/1311.2524)
 7. [最新のRegion CNN(R-CNN)を用いた物体検出入門 ~物体検出とは? R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN~ - Qiita](https://qiita.com/arutema47/items/8ff629a1516f7fd485f9)
+8. [私がわかりにくいと思った「Faster RCNN」のポイントの解説 - のんびりしているエンジニアの日記](http://nonbiri-tereka.hatenablog.com/entry/2018/03/07/075835)
 
 ### 会議
 NIPS 2015

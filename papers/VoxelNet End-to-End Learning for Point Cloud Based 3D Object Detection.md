@@ -32,7 +32,7 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 
   ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f\~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf\~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
 
-  <font color="Orange">要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。</font>
+  要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。
 
 1. **スパースなTensor表現**  
   空ではないボクセルのリストを作る。図2の様に、ボクセルごとの特徴の次元がCであるとき、スパースな3D tensorはC\*D'\*H'*W'のサイズとなる。基本的に90%のボクセルは空であり、空ではないボクセル特徴をsuper tensorとして扱うことは学習時のメモリ使用率や計算量を減らすことができる。
@@ -48,29 +48,47 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 ### 損失関数  
 先に論文関連リンク1のloss functionに目を通したほうが良い。
 
-\{aipos\}i=1...Nposが一組のNpos個の正のアンカー、\{ajneg\}j=1...Nnegが一組のNneg個の負のアンカーであるとする。3Dのground truthボックスをパラメータ化したものを(xcg, ycg, zcg, lg, wg, hg, Θg)とする。xgc, ycg, zcgは中央座標、lg, wg, hgは全長, 幅, 高さ、Θgはzの軸周りのyaw回転である。(ground truthボックスに?)一致する正のアンカー(xca, yca, zca, la, wa, ha, Θa)からground truthボックスを検索するため、残差ベクトルu\*に含まれる7つの回帰値は式(1)のように定義される。
+$ { \\{ a^{pos}\_i \\} \_{i=1...N\_{pos}}} $ が一組の$ N_{pos} $個のpositiveアンカー、$ { \\{ a^{neg}\_j \\} \_{j=1...N\_{neg}}} $ が一組の$ N_{neg} $個のnegativeアンカーであるとする。3Dのground truthボックスをパラメータ化したものを$ (x_c^g, y_c^g, z_c^g, l^g, w^g, h^g, \theta^g) $とする。$ x_c^g, y_c^g, z_c^g $ は中央座標、$ l^g, w^g, h^g $は全長, 幅, 高さ、$ \theta^g $はzの軸周りのyaw回転である。(ground truthボックスに?)一致するpositiveアンカー$ (x_c^a, y_c^a, z_c^a, l^a, w^a, h^a, \theta^a) $からground truthボックスを探すため、残差ベクトル$ u^* \in \mathbb{R}^7 $に含まれる7つの回帰値は式(1)のように定義される。
 
 ![eq1](img/VELfPCB3DOD/eq1.png)
 
-この時、daはアンカーボックスの底面の対角線である。式(1)では、既存のものと違い3Dボックスを直接評価しながらΔxとΔyをdaで一様に標準化する。
+この時、$ d^a $はアンカーボックスの底面の対角線である。式(1)では、既存のものと違い3Dボックスを直接評価しながらΔxとΔyを$ d^a $で一様に標準化する。
 
 これらより式(2)に損失関数を定義する。
 
 ![eq2](img/VELfPCB3DOD/eq2.png)
 
-この時、piposとpjnegはそれぞれaiposとajnegに対するsoftmax出力を表す。また、uiとui*は回帰の出力とaiposに対するground truth(先ほどの残差ベクトル)である。
+この時、$ p_i^{pos} $と$ p_j^{neg} $ はそれぞれ$ a^{pos}\_i $と$ a^{neg}\_j $に対するsoftmax出力を表す。また、$ u_i \in \mathbb{R}^7 $と$ u_i^* \in \mathbb{R}^7 $は回帰の出力とpositiveアンカー$ a^{pos}\_i $に対するground truthである。最初の2つの項は$ { \\{ a^{pos}\_i \\} \_{i=1...N\_{pos}}} $と$ { \\{ a^{neg}\_j \\} \_{j=1...N\_{neg}}} $に対する標準化された分類損失であり、この$ L_{cls} $は2値corss entropy損失であり、$ \alpha, \beta $はバランス調節用の変数である。最後の項の$ L_{reg} $は回帰損失であり、論文関連リンク2のSmooth L1関数を使用している。
+
+その他にも効率的な実装、実装の詳細などが載っている。
 
 ## どうやって有効だと検証した?
+KITTI 3Dオブジェクト検知ベンチマーク(論文関連リンクの3)を用いて評価した。鳥瞰図検知は表1に、3D検知は表2にVaidation setによるそれぞれ結果が載せられている。これらは3つの難易度で評価されている。
 
+![table1](img/VELfPCB3DOD/table1.png)
 
+![table2](img/VELfPCB3DOD/table2.png)
+
+KITTIのTest setによる結果も表3に見せている。
+
+![table2](img/VELfPCB3DOD/table2.png)
+
+図6は検知の例をRGB画像とbounding boxで表示させたもの。ただし、検知処理自体にRGBデータは用いられていない。
+
+![fig6](img/VELfPCB3DOD/fig6.png)
+
+TitanX GPUと1.7GhzのCPUによる動作では一回の推論に33msかかる。これはvoxel input feature computationに5ms、feature learning networkに16ms、convolutional middle layersに1ms、RPNに11ms取られているからである。
 
 ## 議論はある?
+RGB画像とLiDARを併用したEnd-to-Endな3D検知を行うことができれば、精度が更に向上するとしている。
 
 ## 次に読むべき論文は?
 - [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
 
 ### 論文関連リンク
 1. [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
+2. [R. Girshick. Fast r-cnn. In Proceedings of the 2015 IEEE International Conference on Computer Vision (ICCV), ICCV ’15, 2015.](https://arxiv.org/abs/1504.08083)
+3. [A. Geiger, P. Lenz, and R. Urtasun. Are we ready for au-tonomous driving? the kitti vision benchmark suite. In Conference on Computer Vision and Pattern Recognition (CVPR), 2012.](http://www.cvlibs.net/datasets/kitti/)
 
 ### 会議
 CVPR 2018
