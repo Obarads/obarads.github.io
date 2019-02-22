@@ -51,7 +51,7 @@ RoI pooling層のbackwardsは式(4)のようになる。
 
 ![eq4](img/FR/eq4.png)
 
-ここで、$ x_i \in \mathbb{R} $をRoI poolingへのi番目の入力、$ y_{rj} $はr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層は$ y_{rj} =x_{i^\*(r,j)} $を計算する。ここで$ i^\* (r,j) = \arg\max_{i' \in \mathcal{R} (r,j)} x_{i'} $である。$ \mathcal{R} (r,j) $は出力$ y_{rj} $の範囲のsub-window中の入力のインデックスの集合である。(?)
+ここで、$x_i \in \mathbb{R}$をRoI poolingへのi番目の入力、$y_{rj}$はr番目のRoIを層に入力し、j番目に出力されたものである。RoI pooling層は$y_{rj} =x_{i^* (r,j)}$を計算する。ここで$i^* (r,j) = \arg\max_{i' \in \mathcal{R} (r,j)} x_{i'}$である。$\mathcal{R} (r,j)$は出力$y_{rj}$の範囲のsub-window中の入力のインデックスの集合である。(?)
 
 ### **Truncated SVD for faster detection**
 画像全体の分類では全結合層は畳み込み層よりも処理する時間が短いものの、検知でRoIを処理する数が多いため、結果的にforward処理に掛ける時間のほぼ半分が全結合層に費やされる。それらの全結合層を全て切り詰めるためturncated SVD(論文関連リンクの7,8)を用いる。$ u \times v $の重み行列Wがおおよそで因数分解される時、turncated SVDを使って式(5)を定義する。
