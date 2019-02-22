@@ -22,7 +22,7 @@ $$
 ここで、$x_i$は$i^{th}$番目の合成訓練画像である。式(1)の一項目である$\ell_{real}$は現実感を合成画像へ加えるため、二項目である$\ell_{reg}$は注釈情報を維持するためにある。以下にこの$\theta$を最適化するためのアルゴリズムを紹介する。
 
 - **Adversarial Loss with Self-Regularization**  
-  合成画像に現実感を加えるため、合成画像と現実の画像の分布の差を埋める必要がある。理想的な精製器は現実の画像と洗練された画像の分類を不可能にすることであり敵対性弁別ネットワーク$D_\phi$を使う理由に成る。このとき、$\phi$は弁別ネットワークのパラメータである。GANと同じように、洗練ネットワーク$R$は$D$を騙すことを目標とする。この目標を達成するため、式(2)を最小化する。
+  合成画像に現実感を加えるため、合成画像と現実の画像の分布の差を埋める必要がある。理想的な精製器は現実の画像と洗練された画像の分類を不可能にすることであり敵対性弁別ネットワーク$D_\phi$を使う理由に成る。このとき、$\phi$は弁別ネットワークのパラメータである。GANと同じように、精製器ネットワーク$R$は$D$を騙すことを目標とする。この目標を達成するため、式(2)を最小化する。
 
   $$
   \mathcal{L}_D(\phi)=-\sum_i\log(D_\phi(\tilde x_i))-\sum_j\log(1-D_\phi(y_j)) \tag{2}
@@ -36,7 +36,7 @@ $$
   \ell_{real}(\theta;x_i,\mathcal{Y})=-\log(1-D_\phi(R_\theta(x_i))) \tag{3}
   $$
 
-  損失関数を最小化することで、精製器は弁別器が洗練された画像の分類に失敗するようにさせる。現実感のある画像を生成するのに加えて、精製器ネットワークはシミュレーターの注釈情報を維持しなければならない。そのため、著者らは合成と洗練された画像の特徴変換間のピクセル単位の違いを最小化するself-regularization損失を使うことを提案する。そうである時、$\ell_{reg}=||\psi(\tilde x)-x||_1$でとし、$\psi$は画像空間から特徴空間へマッピングすることであり、$||・||_1$はL1ノルムである。特徴変換は恒等写像$(\phi(x)=x)$、image derivatives(画像導関数?)、色チャンネルの平均や畳込みニューラルネットワーク等の学習された変換に成り得る。この論文では、特に明記しない限り特徴変換としての恒等写像として使う。したがって、実装内で使われる式(1)の精製器全体の損失関数は式(4)になる。
+  損失関数を最小化することで、精製器は弁別器が洗練された画像の分類に失敗するようにさせる。現実感のある画像を生成するのに加えて、精製器ネットワークはシミュレーターの注釈情報を維持しなければならない。そのため、著者らは合成と洗練された画像の特徴変換間のピクセル単位の違いを最小化するself-regularization損失を使うことを提案する。そうである時、$\ell_{reg}=||\psi(\tilde x)-x||_1$とし、$\psi$は画像空間から特徴空間へマッピングすることであり、$||・||_1$はL1ノルムである。特徴変換は恒等写像$(\phi(x)=x)$、image derivatives(画像導関数?)、色チャンネルの平均(訳が違うかも)や学習された変換(例えば畳込みニューラルネットワークなど)に成り得る。この論文では、特に明記しない限り特徴変換としての恒等写像として使う。したがって、実装内で使われる式(1)の精製器全体の損失関数は式(4)になる。
 
   $$
   \mathcal{L}_R(\theta)=-\sum_i\log(1-D_\phi(R_\theta(x_i)))+\lambda||\psi(R_\theta(x_i))-\psi(x_i)||_1 \tag{4}
@@ -68,23 +68,34 @@ $$
 ## どうやって有効だと検証した?
 MPIIGazeデータセットによる視線推定とデプス画像のNYU hand poseデータセットによる手のポーズ推定を用いて評価した。全ての実験においてResNet blockを導入した全畳込み精製器ネットワークを使用している。目の質感は図5の様になっている。
 
-  ![fig5](img/LfSaUItAT/fig5.png)
+![fig5](img/LfSaUItAT/fig5.png)
+
+生成した画像と何もしていない合成画像をそれぞれCNNに学習させ、視線推定タスクを行わせた結果は表2の通りであり、SimGANによって改善されている。
+
+![tab2](img/LfSaUItAT/table2.png)
+
+他にもself-regularizationの検証、人による洗練された画像のチューリングテスト、表2の手のポーズ推定版などがある。
 
 ## 議論はある?
+将来的に、ノイズ分布をモデリングして、各合成画像に対して複数の洗練された画像を生成し、単体画像ではなく洗練されたビデオについて研究する。
 
 ## 次に読むべき論文は?
+- (多分)[Shuang Ma, Jianlong Fu, Chang Wen Chen and Tao Mei. DA-GAN: Instance-level Image Translation by Deep Attention Generative Adversarial Networks (with Supplementary Materials). 2018](https://arxiv.org/abs/1802.06454)
 
 ### 論文関連リンク
 1. [T. Salimans, I. Goodfellow, W. Zaremba, V. Che-ung, A. Radford, and X. Chen. Improved techniques for training gans. arXiv preprint arXiv:1606.03498, 2016.](https://arxiv.org/abs/1606.03498)
 
 ### 会議
+CVPR 2017
 
 ### 著者
+Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Josh Susskind, Wenda Wang and Russ Webb.
 
 ### 投稿日付(yyyy/MM/dd)
 2016/12/22
 
 ## コメント
+なし
 
 ## key-words
 GAN, Simulation, 2D Image, S+U_learning
