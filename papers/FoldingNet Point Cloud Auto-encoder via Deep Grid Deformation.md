@@ -16,8 +16,8 @@
 
 $$
 d_{CH}(S,\widehat S)=\max\{\frac{1}{|S|}\sum_{ {\bf x} 
-\in S}\min_{{\bf \widehat x}\in \widehat S} {\bf|| x-\widehat x||_ 2} 
-,\frac{1}{|\widehat S|}\sum_{{\bf \widehat x} 
+\in S}\min_{ {\bf \widehat x}\in \widehat S} {\bf|| x-\widehat x||_ 2} 
+,\frac{1}{|\widehat S|}\sum_{ {\bf \widehat x} 
 \in \widehat S}\min_{ {\bf x}\in S} {\bf|| \widehat x-x||_2}\} \tag{1}
 $$
 
