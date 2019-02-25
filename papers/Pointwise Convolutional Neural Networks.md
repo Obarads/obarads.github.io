@@ -33,9 +33,7 @@ PointNetやPointCNNは点群解析の分野において素晴らしい結果を�
   - $\ell-1$と$\ell$: 入力と出力層のインデックス
 
 
-  つまり、(おそらくは)ある点を中心としてその周りの点を座標を元にサブドメインごとに分割、サブドメインごとに値の中央値を割り出しそれに重みを掛けるというものである。
-
-  なお、この論文ではカーネルのセルは3\*3\*3のサイズを使っている(この文自体はgradient backpropagationの項に有り)。
+  つまり、(おそらくは)ある点を中心としてその周りの点を座標を元にサブドメインごとに分割、サブドメインごとに値の平均値を割り出しそれに重みを掛けるというものである。
 
 ## **Gradient backpropagation**  
 このConvolutionで示した式は訓練可能である。損失関数$L$としたとき、入力に関する勾配は式(2)の様になる。
@@ -62,7 +60,7 @@ $$
   \frac{\partial x_i^{\ell}}{\partial w_k} = \frac{1}{|\Omega_i(k)|} \sum_{p_j \in \Omega_i(k)} x_j^{\ell-1} \tag{5}
 $$
 
-となる。
+となる。これらの式にはカーネルの形状には依存しない(そのため、球体でも立方体でも良い)。この論文ではカーネルのセルは3\*3\*3のサイズの正方体を使っている。
 
 この論文では、poolingを使用しない。こうすることで以下の利点が生まれる。
 
@@ -96,6 +94,7 @@ S3DISデータセットによるセマンティックセグメンテーション
 
 ### 論文関連リンク
 1. [G. M. Morton. A computer oriented geodetic data base and a new technique in file sequencing. International Business Machines Company New York, 1966.](https://domino.research.ibm.com/library/cyberdig.nsf/0/0dabf9473b9c86d48525779800566a39?OpenDocument)
+1. [Naoya Chiba. 三次元点群を取り扱うニューラルネットワークのサーベイ. pp.78~81. (アクセス:2019/2/23)](https://www.slideshare.net/naoyachiba18/ss-120302579)
 
 ### 会議
 CVPR 2018

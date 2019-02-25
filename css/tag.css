@@ -1,0 +1,8 @@
+.__PointCloud{
+  background-color: rgb(0, 167, 97);
+  color: white;
+}
+.__PointCloud:hover{
+  background-color: rgb(0, 95, 55);
+  color: white;
+}

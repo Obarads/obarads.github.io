@@ -24,15 +24,13 @@ table tbody td, th{
     text-decoration: none;
     color: white;
     background: seagreen;
-    border: solid 0.5px seagreen;
     border-radius: 3px;
-    transition: .4s;
+    transition: .3s;
     font-size: 4mm;
 }
 .btn-flat:hover, .hovered{
     background: coral;
     color: white;
-    border: solid 0.5px coral;
 }
 .btn-flat:visited{
     color: white;
