@@ -15,7 +15,7 @@
 提案するFoldingNetは図1の通り。損失には(拡張された)Chamfer distanceを使用する。入力点群が$S$、再構成点群が$\widehat{S}$である時、(拡張された)Chamfer distanceは式(1)になる。
 
 $$
-d_{CH}(S,\widehat S)=\max\{\frac{1}{|S|}\sum_{{\bf x} \in S}\min_{{\bf \widehat x}\in \widehat S} {\bf|| x-\widehat x||_2} ,\frac{1}{|\widehat S|}\sum_{{\bf \widehat x} \in \widehat S}\min_{{\bf x}\in S} {\bf|| \widehat x-x||_2}\} \tag{1}
+d_{CH}(S,\widehat S)=\max\{\frac{1}{|S|}\sum_{{\bf x} \in S}\min_{{\bf \widehat x}\in \widehat S} {\bf|| x-\widehat x||_ 2} ,\frac{1}{|\widehat S|}\sum_{{\bf \widehat x} \in \widehat S}\min_{{\bf x}\in S} {\bf|| \widehat x-x||_2}\} \tag{1}
 $$
 
 ![fig1](img/FPCAvDGD/fig1.png)

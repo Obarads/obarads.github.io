@@ -10,7 +10,7 @@
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### **構造**
-提案したアーキテクチャは図2の通り。点集合の形状の類似性を測定するkernel correlation(カーネル相関)と近傍点間のローカル特徴を伝播するK-Nearest Neighbor Graph(KNNG、K最近傍グラフ)を使ったアーキテクチャである。
+提案したアーキテクチャは図2の通り。点集合の形状の類似性を測定するkernel correlation(カーネル相関、発想はpoint cloud registrationから)と近傍点間のローカル特徴を伝播するK-Nearest Neighbor Graph(KNNG、K最近傍グラフ)を使ったアーキテクチャである。
 
 ![fig2](img/MPCLSbKCaGP/fig2.png)
 
