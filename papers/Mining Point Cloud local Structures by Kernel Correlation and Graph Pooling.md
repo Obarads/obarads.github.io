@@ -10,24 +10,24 @@
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### **構造**
-提案したアーキテクチャは図2の通り。点集合の形状の類似性を測定するkernel correlation(カーネル相関、元ネタはpoint cloud registrationから)と近傍点間のローカル特徴を伝播するK-Nearest Neighbor Graph(KNNG、K最近傍グラフ)を使ったアーキテクチャである。
+提案したアーキテクチャは図2の通り。点集合の形状の類似性を測定するkernel correlation(カーネル相関、元ネタはpoint cloud registrationから)と近傍点間のローカル特徴を伝播するK-Nearest Neighbor Graph(KNNG、K最近傍グラフ)を使ったアーキテクチャである。尚、図2にある$L$はカーネル数を表し、これは$L$がconvolutional netsの出力チャンネルの数に相当する(この記述はLearning on Local Geometric Structureの最後にあり)。
 
 ![fig2](img/MPCLSbKCaGP/fig2.png)
 
-### **Learning on Loacal Geometric Structure**  
-畳み込みカーネルを用いて画像とカーネルの類似性を定量化するように、点群では2つの点集合間(入力とkernel point)の類似性をkernel correlation(論文関連リンクの1と2)で測定する。kernel correlationの計算はback propagationを介して修正される。具体的には論文関連リンクの2のLeave-one-out Kernek Correlation(LOO-KC)とmultiply-linked registration cost function(論文関連リンクの2)で点群の局所形状構造を得る。
+### **Learning on Local Geometric Structure**  
+畳み込みカーネルを用いて画像とカーネルの類似性を定量化するように、点群では2つの点集合間(入力とkernel point)の類似性をkernel correlation(論文関連リンクの1と2)で測定する。kernel correlationの計算はback propagationを介して修正される。具体的には論文関連リンクの2のLeave-one-out Kernek Correlation(LOO-KC)とmultiply-linked registration cost functionで点群の局所形状構造を得る。
 
-M個の学習可能な点群を持つpoint-set kernel ${\kappa}$と、$N$個の点を持つ点群内にある現在のanchor point ${\rm x}_i$間のkernel correlation(KC)を式(1)の様に定義する。
+M個の学習可能な点群を持つpoint-set kernel ${\kappa}$(畳み込み層のフィルタに相当するもの？)と、$N$個の点を持つ点群内にある現在のanchor point ${\rm x}_i$間のkernel correlation(KC)を式(1)の様に定義する。
 
 $$
 {\rm KC}( \kappa_i, {\rm x_i} )=\frac{1}{|\mathcal{N}(i)|} \sum_{m=1}^ {M} \sum_ {n \in \mathcal{N}(i)} {\rm K_ \sigma}(\kappa_m,{\rm x}_n-{\rm x}_i) \tag{1}
 $$
 
 この時、  
-1. $\kappa_m$はカーネル内のm番目の学習できる点を表す。
+1. $\kappa_m$はカーネル内のm番目の学習できる点(畳み込み層のフィルタのピクセルに相当するもの？)を表す。
 2. $\mathcal{N}(i)$はanchor point ${\rm x}_iの$近傍インデックスのセットである。
 3. ${\rm x}_n$は${\rm x}_i$の近傍点の一つを指す。
-4. ${\rm K_\sigma}(・,・):\mathfrak{R}^D\times\mathfrak{R}^D→\mathfrak{R}$は任意の有効なカーネル関数である($D$=2(2D点群)もしくは3(3D点群)である)(式がよくわからんかった)。
+4. ${\rm K_\sigma}(・,・):\mathfrak{R}^D\times\mathfrak{R}^D→\mathfrak{R}$は任意の有効なカーネル関数である($D$=2(2D点群)もしくは3(3D点群)である)。
 
 論文関連リンクの2に従って、カーネルには式(2)の様にガウスカーネルを適応する。
 
@@ -39,7 +39,8 @@ $$
 1. ||・||は2点間のユークリッド距離を表す。
 2. $\sigma$はカーネル幅であり、2点間の距離の影響をコントロールする(このパラメーターは全ての訓練点群にわたる近傍グラフの平均近傍距離を入力すれば問題ない)。
 
-$\mathcal{L}$が損失関数であり、top layerから各点$x_i$のKC応答$d_i=\frac{\partial \mathcal{L}}{\partial {\rm KC(\kappa,{\bf x}_i ) } }$逆伝播である(?)。この時、それぞれのkernel point $\kappa_m$のための逆伝播は式(3)の様になる。
+また、それぞれのkernel point $\kappa_m$のための逆伝播は
+$\mathcal{L}$が損失関数であり、top layerから各点$x_i$のKC response $d_i=\frac{\partial \mathcal{L}}{\partial {\rm KC(\kappa,{\bf x}_i ) } }$ back-propagationとする(?)。
 
 $$
 \frac{\partial\mathcal{L} }{\partial\kappa_m}=\sum_{i=1}^N \alpha_i d_i [ \sum_{n \in \mathcal{N}(i) } {\bf v}_ {m,i,n} \exp(-\frac{||{\bf v}_ {m,i,n}||^2}{2\sigma^2}) ] \tag{3}
@@ -53,7 +54,21 @@ LOO-KCに由来するが、著者らのKCの動作は異なる。
 1. 著者らのKCは学習可能な点のカーネルとデータ点の近傍の間の類似性を計算する。
 2. 著者らのKCはカーネル中の全ての点が自由に動き、順応することを可能にし(つまり、$\kappa$に対して重みの減少がない)、テンプレートと変換パラメータをpoint-set kernelとして置き換える。
 
-KCが局所の幾何学的構造をどのように捉えているか
+KCが局所の幾何学的構造をどのように捉えているか理解するため、図1にセマンティックセグメンテーションを使って学習したカーネル、図3に手作りのカーネルとそれに対応する異なるオブジェクトのKC responseを視覚化した。
+
+![fig1](img/MPCLSbKCaGP/fig1.png)
+
+![fig3](img/MPCLSbKCaGP/fig3.png)
+
+### **Learning on Local Feature Structure**
+KCを計算するため、点の局所的な近傍点を効率的に格納できる、点と点を結んだK Nearest neighbor graph(KNNG)を構築する。
+
+具体的には
+1. $X\in \mathfrak{R}^{N \times K}$はgraph pooling layer(図2)への入力である。
+1. KNNGは隣接行列${\bf W\in\mathfrak{R}^{N\times N} }$を持つ。
+  1. ${\bf W}(i,j)=1$は、頂点iとjの間にedge(辺)がある場合。
+  1. ${\bf W}(i,j)=0$は、上記条件以外の場合。
+
 
 ## どうやって有効だと検証した?
 
