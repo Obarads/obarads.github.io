@@ -91,7 +91,7 @@ $$
 - なし
 
 ### 論文関連リンク
-1. [鈴木智之. 教師なし画像特徴表現学習の動向 {Un, Self} supervised representation learning (CVPR 2018 完全読破チャレンジ報告会). pp.23.](https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018)
+1. [鈴木智之. 教師なし画像特徴表現学習の動向 {Un, Self} supervised representation learning (CVPR 2018 完全読破チャレンジ報告会). pp.23. (アクセス:2019/03/03).](https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018)
 1. [Y. Bengio, G. Mesnil, Y. Dauphin, and S. Rifai. Better mixing via deep representations. InICML, 2013.](https://arxiv.org/abs/1207.4404)
 2. [A. Radford, L. Metz, and S. Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. InICLR, 2016.](https://arxiv.org/abs/1511.06434)
 4. [R. Zhang, P. Isola, and A. A. Efros. Colorful image colorization. InECCV, 2016.](https://arxiv.org/abs/1603.08511)

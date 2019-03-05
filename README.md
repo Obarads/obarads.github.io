@@ -1,6 +1,6 @@
 # obarads.github.io(Paper-Reminder)
 ## About
-このレポジトリは論文を(自分用に)日本語化するためのものです。基本的には点群と生成モデル、2D&3D、申し訳程度の一クラス分類についてまとめます。下のサイトで一部の数式を成形して表示しています。検索はIssuesからできます。
+このレポジトリは論文を(自分用に)日本語化するためのものです。基本的には点群と生成モデル、2D&3D、Self-supervised learningについてまとめます。下のサイトで一部の数式を成形して表示しています。検索はIssuesからできます。
 
 各論文の内容が乗っているwebページはこちら>[obarads.github.io(Paper-Reminder)](https://obarads.github.io/)  
 更新情報はこちら>[Twitter/obarads](https://twitter.com/obarads)
