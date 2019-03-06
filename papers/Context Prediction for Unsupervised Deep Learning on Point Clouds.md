@@ -60,4 +60,4 @@ Jonathan Sauder and Bjarne Sievers.
 結局ラベルの種類は何個?見逃したかな...。回転や関係ないコンテキストも含めて実装が見たい。
 
 ## key-words
-Classification, Point Cloud, Segmentation, Self-supervised
+Classification, Point Cloud, SemanticSegmentation, Self-supervised

@@ -108,4 +108,4 @@ Maxim Tatarchenko, Jaesik Park, Vladlen Koltun, Qian-Yi Zhou
 IとM、アーキテクチャがわかりませんでした...
 
 ## key-words
-Point Cloud, Segmentation
+Point Cloud, SemanticSegmentation

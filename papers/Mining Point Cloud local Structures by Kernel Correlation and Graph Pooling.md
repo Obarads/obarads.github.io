@@ -149,4 +149,4 @@ Y. Shen, C. Feng, Y. Yang, and D. Tian.
 なんか難しくない...?
 
 ## key-words
-PointCloud,Classification,Segmentaion
+PointCloud,Classification,SemanticSegmentation
