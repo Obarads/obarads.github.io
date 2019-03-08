@@ -86,7 +86,7 @@ Fenggen Yu, Kun Liu, Yan Zhang, Chenyang Zhu and Kai Xu.
 2019/03/08
 
 ## コメント
-再帰的に点群を分解するところが面白いと思った(ひねりのない感想)。Node classification moduleはうまく説明できなかった(事前知識が必要?)。
+再帰的に点群を分解するところが面白いと思った(ひねりのない感想)。Node classification moduleとNode segmentation moduleは詳細まで理解できてない(論文関連リンクの1の事前知識が必要?)。
 
 ## key-words
 PointCloud, InstanceSegmentation, SemanticSegmentation
