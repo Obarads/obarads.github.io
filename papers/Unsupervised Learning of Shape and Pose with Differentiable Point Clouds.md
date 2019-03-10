@@ -54,4 +54,4 @@ Eldar Insafutdinov and Alexey Dosovitskiy.
 なし
 
 ## key-words
-2DImage, PointCloud
+2D_Image, Point_Cloud

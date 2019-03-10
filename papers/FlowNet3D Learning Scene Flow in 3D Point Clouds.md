@@ -35,4 +35,4 @@ Xingyu Liu, Charles R. Qi and Leonidas J. Guibas.
 無し
 
 ## key-words
-PointCloud
+Point_Cloud

@@ -80,4 +80,4 @@ Lukas Ruff, Robert A. Vandermeulen, Nico G ̈ornitz, Lucas Deecke, Shoaib A. Sid
 提案手法がシンプル。論文1章にあるように一クラス分類(異常検知)が他の分類タスクと比べてそこまで活発ではないせいか(いつしかの国際会議のワークショップでも、生成モデルは満員だったのに一クラス分類は空席が目立っていたことがあった)。特性についてももうちょっと理解を深めたい。
 
 ## key-words
-2D Image, One-Class & Anomaly Detection
+2D_Image, One-Class_&_Anomaly_Detection

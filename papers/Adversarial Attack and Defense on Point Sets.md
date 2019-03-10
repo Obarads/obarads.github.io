@@ -35,4 +35,4 @@ Jiancheng Yang, Qiang Zhang, Rongyao Fang, Bingbing Ni, Jinxian Liu.
 構成がよくわからない上にあまりこの分野に知識がないため後回し
 
 ## key-words
-PointCloud, Adversarial
+Point_Cloud, Adversarial

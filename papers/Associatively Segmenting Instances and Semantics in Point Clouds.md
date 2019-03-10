@@ -94,4 +94,4 @@ Xinlong Wang, Shu Liu, Xiaoyong Shen, Chunhua Shen, Jiaya Jia.
 Deep One-Class classificationのアイデアを用いて論文関連リンクの2と同じようなこと考えていた。
 
 ## key-words
-PointCloud,InstanceSegmentation,SemanticSegmentation
+Point_Cloud,Instance_Segmentation,Semantic_Segmentation

@@ -37,4 +37,4 @@ Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 なし
 
 ## key-words
-2D Image, Self-supervised
+2D_Image, Self-supervised

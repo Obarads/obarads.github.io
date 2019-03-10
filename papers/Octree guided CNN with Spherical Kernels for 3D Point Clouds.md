@@ -34,4 +34,4 @@ Huan Lei, Naveed Akhtar and Ajmal Mian.
 なし
 
 ## key-words
-PointCloud
+Point_Cloud

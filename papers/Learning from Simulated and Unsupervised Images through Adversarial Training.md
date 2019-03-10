@@ -98,4 +98,4 @@ Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Josh Susskind, Wenda Wang and Ru
 なし
 
 ## key-words
-GAN, Simulation, 2D Image, S+U_learning
+GAN, Simulation, 2D_Image

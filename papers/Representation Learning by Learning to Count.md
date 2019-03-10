@@ -110,4 +110,4 @@ Mehdi Noroozi, Hamed Pirsiavash and Paolo Favaro.
 論文関連リンク1様様。
 
 ## key-words
-Self-supervised,2DImage
+Self-supervised,2D_Image

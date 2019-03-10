@@ -60,4 +60,4 @@ Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin 
 シンプルな発想のわりに強力な効果を発揮している...。
 
 ## key-words
-Classification, Point Cloud, SemanticSegmentation
+Classification, Point_Cloud, Semantic_Segmentation

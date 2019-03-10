@@ -108,4 +108,4 @@ Yaoqing Yang, Chen Feng, Yiru Shen and Dong Tian.
 なし
 
 ## key-words
-PointCloud,AutoEncoder
+Point_Cloud,AutoEncoder

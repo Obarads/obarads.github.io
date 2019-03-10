@@ -158,4 +158,4 @@ Panos Achlioptas, Olga Diamanti, Ioannis Mitliagkas, and Leonidas Guibas.
 JSDは別の資料を見たほうがいいと思う。あとこの論文の詳細は付録にいっぱいある(ここではそれを省く)。
 
 ## key-words
-AutoEncoder, Classification, GAN, Point Cloud
+AutoEncoder, Classification, GAN, Point_Cloud
