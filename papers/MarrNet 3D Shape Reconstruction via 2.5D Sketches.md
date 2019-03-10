@@ -27,7 +27,7 @@ MarrNetは図2の通り。MarrNetは3つのパーツに分かれる。
 ### **Reprojection Consistency**
 ニューラルネットワークにおいて3Dオブジェクトと2D表現間で整合性を強化する試みがあり、ここでは、depth reprojection損失とsurface normal reprojection損失からなる3D形状と2.5Dスケッチ間のreprojection consistency損失を含む新たな方法を導入する。
 
-$v_{x,y,z}$は3Dボクセル内の位置$(x,y,z)$を表し、これらは$v_{x,y,z}\in [0,1], \ \forall_{x,y,z}$を仮定する。$d_{x,y}$は位置$(x,y)$の推定されたデプスを示し、$n_{x,y}=(n_a,n_b,n_c)$は推定された表面法線を示す。正投影を行うとする。
+$v_{x,y,z}$は3Dボクセル内の位置$(x,y,z)$における値を表し、これらは$v_{x,y,z}\in [0,1], \ \forall x,y,z$を仮定する。$d_{x,y}$は位置$(x,y)$の推定されたデプスを示し、$n_{x,y}=(n_a,n_b,n_c)$は推定された表面法線を示す。正投影を行うとする。
 
 - **Depth**  
   projection depth損失はデプス$v_{x,y,d_{x,y} }$のボクセルが1であり、それの前のボクセルが0であるようにするものである。
