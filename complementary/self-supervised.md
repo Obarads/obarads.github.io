@@ -1,6 +1,14 @@
 # self-supervised
 ## About
-self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。この分野はfine-tuning(日本語で微調整すること)で他のモデルに移すためのラベルあり学習モデルをラベルなしで行う、もしくは、ラベルなし特徴抽出器として転移学習する。
+self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。通常、下図の様にfine-tuningや転移学習でネットワークの性能を上げるために事前学習済みのモデルを使う。通常の事前訓練とself-supervised学習との違いは以下の通り。
+
+- **通常の事前学習**  
+  教師ありのデータセットを使って事前訓練を行う。分類問題などをするだけで、ネットワーク移転後の性能が上がる。しかし、データセットは教師ラベルがあるもののみしか使えない。
+
+- **self-supervised学習**  
+  教師ラベルがないデータセットを使いpre textタスクと呼ばれる疑似学習を事前訓練として行う。よって、使えるデータが無限大にある(YahooやGoogleで出てきた画像でも使える)。
+
+![fig1](img/self-supervised/fig1.png)
 
 ## fine-tuningとは?
 fine-tuningについて\[3\]では以下のように説明している。
@@ -17,9 +25,9 @@ fine-tuningの恩恵は、適応先のモデルの精度向上である。
 あるモデルを訓練させ、訓練後は重みを固定し(出力層のみ取り外して)特徴抽出器として扱うことである。出力層をタスクに合わせたものに変更せずに、特徴抽出器として入力の特徴量を出力させて、SVMに先ほどの出力を入力して分類するということもできる。
 
 ## pretext taskとは?
-fine-tuningや転移学習で使われる事前学習させたモデルは教師あり学習のモデルであることが多い。理由としてはそちらのほうが性能が良いからである。しかし、ラベルあり以外の画像は無限に近い量であること、ラベル付けのコストが高いことを踏まえると教師なしで事前学習されたモデルでありながら教師ありの事前学習モデルに勝るとも劣らない性能を持ち合わせることが理想的である。これらの目標を達成するために、教師なし事前学習のタスクとして生まれたのがpretext task(擬似的なタスク)である。
+fine-tuningや転移学習で使われる事前学習させたモデルは教師あり学習のモデルであることが多い。理由としてはそちらのほうが性能が良いからである。しかし、ラベルあり以外の画像は無限に近い量であること、ラベル付けのコストが高いことを踏まえると、教師なしで事前学習されたモデルでありながら教師ありの事前学習モデルに勝るとも劣らない性能を持ち合わせることが理想的である。これらの目標を達成するために、教師なし事前学習のタスクとして生まれたのがpretext task(擬似的なタスク)である。
 
-pretext taskはラベルを使わなければ基本的にどんなタスクでも良い。共起表現っぽいこと\[4\]をさせても、ジグゾーパズル\[2\]をさせても良い。
+pretext taskはラベルを使わなければ基本的にどんなタスクでも良い。共起表現っぽいこと(\[4\]もしくは\[6\])をさせても、ジグゾーパズル(\[2\]もしくは\[5\])をさせても良い。
 
 ## Technical terms
 - **target task**  
@@ -42,3 +50,5 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 2. [Mehdi Noroozi nad Paolo Favaro. Unsupervised Learning of Visual Represejtation by Solving Jigsaw Puzzles. 2016.](https://arxiv.org/abs/1603.09246)
 3. [画像認識分野におけるdeep learningの発展と最新動向](http://www.nlab.ci.i.u-tokyo.ac.jp/pdf/asj20141215.pdf)
 4. [Doersch, C., Gupta, A., Efros, A.A.: Unsupervised visual representation learning by context prediction. ICCV (2015)](https://arxiv.org/abs/1505.05192)
+5. [Paper-Reminder Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://obarads.github.io/papers/#Unsupervised%20Learning%20of%20Visual%20Representations%20by%20Solving%20Jigsaw%20Puzzles.md)
+6. [Paper-Reminder Unsupervised Visual Representation Learning by Context Prediction](https://obarads.github.io/papers/#Unsupervised%20Visual%20Representation%20Learning%20by%20Context%20Prediction.md)
