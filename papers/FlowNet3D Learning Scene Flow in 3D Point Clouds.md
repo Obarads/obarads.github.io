@@ -35,7 +35,7 @@ $$
 ### **Point Mixture with Flow Embedding Layer**
 この層では、はじめのフレーム内の各点に対するフロー埋め込み$\{e_ i\}_ {i=1}^{n_ 1} (e_i\in\mathbb{R}^{c'})$を学習する。XYZ座標$x_ i,y_ j\in\mathbb{R}^c$と特徴ベクトル$f_ i,g_ j\in\mathbb{R}^c$があるとき、このflow embedding層は$t$フレーム中に含まれる点群$\{p_ i=(x_ i,f_ i)\}_ {i=1}^{n_ 1}$と$t+1$フレーム中に含まれる点群$\{q_ j=(y_ j,g_ j)\}_ {j=1}^{n_ 2}$を入力として受け取る。この層の最終的な出力ははじめのフレームの点の元の座標$x_i$を含むので$\{o_ i=(x_ i,e_ i)\}_ {i=1}^{n_1}$となる。
 
-点のシーンフローにおいて、$t$フレームにあった点がオクルージョンや視点移動によって$t+1$フレーム後にはなくなっている可能性がある。そこではじめのフレームに含まれる点$p_i$に近い、二番目のフレームに含まれる点$q_ j$を見つける(図2中央の青い点)。もし、$p_ i$に対応する$q * =\{y * ,g * \}$があるのであれば$p_i$のフローは$y*-x_i$となるが、そんなことはめったにないので代わりに$q_j$'sの近傍からflow vote(フロー候補?)を集約する。式は式(2)の通り。
+点のシーンフローにおいて、$t$フレームにあった点がオクルージョンや視点移動によって$t+1$フレーム後にはなくなっている可能性がある。そこではじめのフレームに含まれる点$p_i$に近い、二番目のフレームに含まれる点$q_ j$を見つける(図2中央の青い点)。もし、$p_ i$に対応する$q ^* =\{y ^* ,g ^* \}$があるのであれば$p_i$のフローは$y^*-x_i$となるが、そんなことはめったにないので代わりに$q_j$'sの近傍からflow vote(フロー候補?)を集約する。式は式(2)の通り。
 
 $$
 e_i=\underset{\{j||y_j-x_i||\leq r\} }{\rm MAX} {\{h(f_i,g_j,y_j-x_i)\} } \tag{2}
@@ -46,7 +46,7 @@ $$
 また、この式の代案として、特徴距離$dist(f_i,g_j)$を計算するというものがある。特徴距離は$h$に与えられる($f_i$と$g_j$が直接与えられる)。
 
 ### **Flow Refinement with Set Upconv Layer**
-このモジュールでは入力された点とその特徴から、アップサンプリングしながら元のすべての点に対するフローの予測を行う。入力はソース点$\{p_ i=\{x_ i,f_ i\}i=1,\ldots,n\}$と目標の点座標の集合$\{x'_ j|j=1,\ldots,n\}$である。各目標点$x'_j$に対し、層は近傍のソース点を集約することで各目標点の特徴$f'_j\in\mathbb{R}^{c'}$(この場合、伝播されたフロー埋め込み)を出力する。このset upconvは式(1)で定義されているset conv層を直接利用することもできるが、ここでは別の方法をとる。set conv層の様に最も遠い$x'_j$を見つける代わりに、目標点$\{x_ j'\}^{n'}_{j=1}$によって指定された場所の特徴を計算する。尚、アップサンプリングであるため、$n'>n$である。
+このモジュールでは入力された点とその特徴から、アップサンプリングしながら元のすべての点に対するフローの予測を行う。入力はソース点$\{p_ i=\{x_ i,f_ i\}i=1,\ldots,n\}$と目標の点座標の集合$\{x'_ j|j=1,\ldots,n\}$である。各目標点$x'_ j$に対し、層は近傍のソース点を集約することで各目標点の特徴$f'_ j\in\mathbb{R}^{c'}$(この場合、伝播されたフロー埋め込み)を出力する。このset upconvは式(1)で定義されているset conv層を直接利用することもできるが、ここでは別の方法をとる。set conv層の様に最も遠い$x'_ j$を見つける代わりに、目標点$\{x_ j'\}^{n'}_{j=1}$によって指定された場所の特徴を計算する。尚、アップサンプリングであるため、$n'>n$である。
 
 点特徴をアップサンプリングする方法の比較用代案として、3D補完($f'_ i=\sum_ {i| \ ||x_ i-x'_ j||\leq r} w(x_ i,x'_ j)f_ i$、$w$はPointNet++の正規化されたinverse-distance weight関数)を使う。
 
@@ -56,13 +56,13 @@ FlowNet3Dは4つのset conv層、一つのflow embedding層、4つのset upconv�
 ### **Training and Inference wtih FlowNet3D**
 教師つき訓練データとして、FlyingThings3D[2]を利用する。
 - **Training loss with cycle-consistency regularization**  
-  シーンフローの訓練のため、smooth $L_1$損失(huber loss)とcycle-consistency正則化を利用する。$t$フレームの点群$\mathcal{P}=\{x_ i\}^{n_ 1}_{i=1}$と$t+1$フレームの点群$\mathcal{Q}=\{y_ j\}^{n_ 2}_{j=1}$が与えられたとき、ネットワークは$\mathcal{D}=F(\mathcal{P,Q};\Theta)=\{d_ i\}^{n_ 1}_{i=1}$としてシーンフローを予測する($F$はパラメータ$\Theta$のFlowNet3D)。ground truthシーンフロー$\mathcal{D* }=\{d_ i * \}^{n_ 1}_{i=1}$があるとき、損失関数は式(3)の様に定義される。
+  シーンフローの訓練のため、smooth $L_ 1$損失(huber loss)とcycle-consistency正則化を利用する。$t$フレームの点群$\mathcal{P}=\{x_ i\}^{n_ 1}_ {i=1}$と$t+1$フレームの点群$\mathcal{Q}=\{y_ j\}^{n_ 2}_ {j=1}$が与えられたとき、ネットワークは$\mathcal{D}=F(\mathcal{P,Q};\Theta)=\{d_ i\}^{n_ 1}_ {i=1}$としてシーンフローを予測する($F$はパラメータ$\Theta$のFlowNet3D)。ground truthシーンフロー$\mathcal{D^* }=\{d_ i ^* \}^{n_ 1}_ {i=1}$があるとき、損失関数は式(3)の様に定義される。
 
   $$
-  L(\mathcal{P,Q,D*},\Theta)=\frac{1}{n_ 1}\sum_ {i=1}^{n_ 1}\{||d_ i-d_ i*||+\lambda||d_ i'+d_ i||\} \tag{3}
+  L(\mathcal{P,Q,D^* },\Theta)=\frac{1}{n_ 1}\sum_ {i=1}^{n_ 1}\{||d_ i-d_ i^* ||+\lambda||d_ i'+d_ i||\} \tag{3}
   $$
 
-  このとき、$||d'_ i+d_i||$はcycle-consistency項であり、シフトされた点群$\mathcal{P}'=\{x_ i+d_ i\}_ {i=1}^{n_1}$から元の点群$\mathcal{P}$へのbackward flow$\{d_ i'\}^{n_ 1}_{i=1}=F(\mathcal{P',P};\Theta)$がforward flowのバックに近くなるように強制する。
+  このとき、$||d'_ i+d_i||$はcycle-consistency項であり、シフトされた点群$\mathcal{P}'=\{x_ i+d_ i\}_ {i=1}^{n_1}$から元の点群$\mathcal{P}$へのbackward flow$\{d_ i'\}^{n_ 1}_ {i=1}=F(\mathcal{P',P};\Theta)$がreverse of forward flow(?)に近くなるように強制する。
 
 - **Inference with random re-sampling**  
   ダウンサンプリングを導入したことによって回帰問題の予測結果にノイズが混じる。ノイズを減らすため、複数の推測実行に対して点群をランダムにリサンプリングし、各点に対して予測されたフローベクトルの平均をとることである(?)。
