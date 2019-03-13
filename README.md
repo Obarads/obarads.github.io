@@ -28,7 +28,9 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
     - Unsupervised Visual Representation Learning by Context Prediction(検証実験が適当に記されている)
     - Mining Point Cloud Local Structures by Kernel Correlation and Graph Pooling(一応まとめてあるが、Learning on Loacal Geometric Structureの項が曖昧)
     - Unsupervised Learning of Shape and Pose with Differentiable Point Clouds(全部)
+    - l-GANのやつ、AEが理解できていないのと実験書き直すべきかな?
 
 - いずれは自分で書いてねリスト
     - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
     - 暇なときにDetection関連の論文読み直せ
+
