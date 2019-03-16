@@ -50,4 +50,4 @@ Xu Cao, Katashi Nagao.
 なし
 
 ## key-words
-PointCloud, Dataset, GAN
+Point_Cloud, Dataset, GAN
