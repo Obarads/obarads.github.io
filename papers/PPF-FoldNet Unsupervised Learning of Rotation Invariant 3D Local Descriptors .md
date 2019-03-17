@@ -33,4 +33,4 @@ Haowen Deng, Tolga Birdal and Slobodan Ilic.
 なし
 
 ## key-words
-Point_CLoud, AutoEncoder
+Point_Cloud, AutoEncoder
