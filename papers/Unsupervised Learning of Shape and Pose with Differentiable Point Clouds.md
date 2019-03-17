@@ -60,7 +60,7 @@ Eldar Insafutdinov and Alexey Dosovitskiy.
 2018/10/22
 
 ## コメント
-なし
+アンサンブルについて詳しくないから意味あってるのかよくわからん。
 
 ## key-words
 2D_Image, Point_Cloud

@@ -26,7 +26,7 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 - 修正リスト
     - Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
     - Mining Point Cloud Local Structures by Kernel Correlation and Graph Pooling(一応まとめてあるが、Learning on Loacal Geometric Structureの項が曖昧)
-    - Unsupervised Learning of Shape and Pose with Differentiable Point Clouds(全部)
+    - Unsupervised Learning of Shape and Pose with Differentiable Point Clouds(アンサンブル覚えて)
     - l-GANのやつ、AEが理解できていないのと実験書き直すべきかな?
 
 - いずれは自分で書いてねリスト
