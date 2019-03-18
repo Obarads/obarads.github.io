@@ -19,9 +19,9 @@ def main():
             if "## key-words" in content:
                 kw_index = content.index("## key-words")
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
-                    kw = content[kw_index+1].replace(" ","")
+                    kw = content[kw_index+1].replace(" ","").replace("_"," ")
                     for k in kw.split(","):
-                        k = "'"+k.replace(" ","")+"'"
+                        k = "'"+k+"'"
                         if not k in kw_tags:
                             kw_tags.append(k)
             if "### 投稿日付(yyyy/MM/dd)" in content:
