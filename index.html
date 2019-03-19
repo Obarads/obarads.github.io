@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/table.css" />
 </head>
 
-<body>
+<body id="body">
 
   <div id="_header_html"></div>
 
@@ -164,17 +164,19 @@
 
     /*create this page*/
     $('#_header_html').load('header.html', function () {
-      if (window.parent.screen.width < 576) {
+      var size = document.getElementById("body").clientWidth;
+      if (size < 576) {
         size_states = 1;
         $('#sidebar').appendTo('#s-sb');
       }
     });
 
     $(window).resize(function () {
-      if (window.parent.screen.width < 576 && size_states == 0) {
+      var size = document.getElementById("body").clientWidth;
+      if (size < 576 && size_states == 0) {
         size_states = 1;
         $('#sidebar').appendTo('#s-sb');
-      } else if (window.parent.screen.width >= 576 && size_states == 1) {
+      } else if (size >= 576 && size_states == 1) {
         size_states = 0;
         $('#sidebar').appendTo('#l-sb');
       }
