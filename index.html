@@ -23,27 +23,6 @@
 
   <div id="_header_html"></div>
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top tab-color">
-    <a class="navbar-brand" href="/">Paper-Reminder</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto"></ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Obarads/obarads.github.io">Github</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Obarads/obarads.github.io/issues">Issues</a>
-        </li>
-        <li class="nav-item" id="s-sb">
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <main role="main" class="container-fluid adjustment-pad">
     <div class="row">
       <div class="col-sm-3 position-fixed" id="l-sb">
@@ -152,27 +131,6 @@
       });
     });
 
-    var size_states = 0;
-    if (window.parent.screen.width < 576) {
-      size_states = 1;
-      $('#sidebar').appendTo('#s-sb');
-    }
-
-    $(window).resize(function () {
-      if (window.parent.screen.width < 576 && size_states == 0) {
-        size_states = 1;
-        $('#sidebar').appendTo('#s-sb');
-      } else if (window.parent.screen.width >= 576 && size_states == 1) {
-        size_states = 0;
-        $('#sidebar').appendTo('#l-sb');
-      }
-    });
-
-
-    /*create this page*/
-    $('#_header_html').load('header.html', function () {
-    });
-
     window.addEventListener("DOMContentLoaded", main);
     window.addEventListener("hashchange", main);
 
@@ -201,6 +159,26 @@
       var div = document.getElementById("_category_tags");
       div.innerHTML = html.join(" ");
     }
+
+    var size_states = 0;
+
+    /*create this page*/
+    $('#_header_html').load('header.html', function () {
+      if (window.parent.screen.width < 576) {
+        size_states = 1;
+        $('#sidebar').appendTo('#s-sb');
+      }
+    });
+
+    $(window).resize(function () {
+      if (window.parent.screen.width < 576 && size_states == 0) {
+        size_states = 1;
+        $('#sidebar').appendTo('#s-sb');
+      } else if (window.parent.screen.width >= 576 && size_states == 1) {
+        size_states = 0;
+        $('#sidebar').appendTo('#l-sb');
+      }
+    });
   </script>
 
 </html>
