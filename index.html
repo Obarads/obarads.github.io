@@ -19,13 +19,13 @@
   <link rel="stylesheet" href="css/table.css" />
 </head>
 
-<body id="body">
+<body class="adjustment-pad" id="body">
 
   <div id="_header_html"></div>
 
-  <main role="main" class="container-fluid adjustment-pad">
-    <div class="row">
-      <div class="col-sm-3 position-fixed" id="l-sb">
+  <main role="main" class="container-fluid">
+    <div class="row row-h">
+      <div class="col-sm-3" id="l-sb">
         <div id="sidebar">
           <div class="row row-pad">
             <label for="_filter_input">Title Filter</label>
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="col offset-sm-3">
+      <div class="offset-sm-3 col-sm-9" id="t-con">
         <table id="_papers_table" class="table tablesorter-dark">
           <thead>
             <tr>
