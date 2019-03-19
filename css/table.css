@@ -13,8 +13,17 @@ tbody, tfoot, thead{
 tbody tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0);
 }
+.table td, .table th{
+    border-top: inherit;
+}
+.table thead th{
+    border-bottom: inset 1px gray;
+}
 table tbody td, th{
     border-bottom: inset 1px gray;
+}
+.table td, .table th{
+    padding: 0.5rem;
 }
 
 /*tag button*/
@@ -35,9 +44,6 @@ table tbody td, th{
 .btn-flat:visited{
     color: white;
 }
-.button {
-    padding: .45em 1em;
-}
 .expanded {
     font-size: 0.7cm;
 }
@@ -45,6 +51,7 @@ label {
     color: white;
     font-size: 5mm;
 }
+
 /* header */
 .tablesorter-dark th,
 .tablesorter-dark thead td {

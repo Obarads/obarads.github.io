@@ -1,163 +1,166 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://getbootstrap.com/docs/4.3/examples/starter-template/ -->
+<html lang="ja">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paper-Reminder</title>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/list.js"></script>
-    <script src="js/jquery.tablesorter.min.js"></script>
-    <link rel="stylesheet" href="css/foundation.min.css" />
-    <link rel="stylesheet" href="css/table.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Obarads">
+  <title>Paper-Reminder</title>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/list.js"></script>
+  <script src="js/jquery.tablesorter.min.js"></script>
+  <script src="js/jquery.twbsPagination.min.js"></script>
+  <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/table.css" />
 </head>
 
 <body>
-    <div id="_header_html"></div>
 
-    <div class="grid-x">
-        <div class="cell medium-3 large-3 small-3 cell-padding">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
-                    <label>Title Filter
-                        <input id="_filter_input" type="text" placeholder="Fast R-CNN">
-                    </label>
-                </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
-                    <a id="_initialization_button" class="button alert expanded">
-                        Init
-                    </a>
-                </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
-                    <label>Tags
-                        <div id="_category_tags"> </div>
-                    </label>
-                </div>
-            </div>
+  <div id="_header_html"></div>
+
+  <main role="main" class="container-fluid adjustment-pad">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="row row-pad">
+          <label for="_filter_input">Title Filter</label>
+          <input class="form-control" id="_filter_input" type="text" placeholder="Fast R-CNN">
         </div>
-        <div class="cell medium-9 large-9 small-9 cell-padding">
-            <table id="_papers_table" class="tablesorter-dark">
-                <thead>
-                    <tr>
-                        <th>Title & Tags</th>
-                        <th width="100">Year</th>
-                    </tr>
-                </thead>
-                <tbody id="_papers_tbody">
-                </tbody>
-            </table>
+        <div class="row row-pad">
+          <a id="_initialization_button" class="btn btn-danger btn-block">
+            Init
+          </a>
         </div>
+        <div class="row">
+          <label>Tags
+            <div id="_category_tags"> </div>
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <table id="_papers_table" class="table tablesorter-dark">
+          <thead>
+            <tr>
+              <th>Title & Tags</th>
+              <th width="100">Year</th>
+            </tr>
+          </thead>
+          <tbody id="_papers_tbody">
+          </tbody>
+        </table>
+      </div>
     </div>
+  </main><!-- /.container -->
 
-    <script>
-        /* table scripts */
-        var title_filter = "";
-        var tag_names = [];
-        function table_show_and_hide() {
-            $('#_papers_tbody tr').each(function () {
-                var sw_0 = 0;
-                //var sw_0_arr = new Array(tag_names.length).fill(0);
-                var sw_0_num = 0;
-                $(this).find("td:eq(0) .btn-flat").each(function () {
-                    if (tag_names.indexOf($(this).html().replace('&amp;', '&')) >= 0) {
-                        sw_0_num++;
-                    }
-                });
-                //if(!sw_0_arr.inclodes(0)){
-                if (sw_0_num == Object.keys(tag_names).length) {
-                    sw_0 = 1;
-                }
-
-                var sw_1 = 0;
-                if ($(this).find("td:eq(0) .paper_title").html().match(title_filter) != null) {
-                    sw_1 = 1;
-                }
-
-                if (sw_0 && sw_1) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        }
-
-        $(function () {
-            $("#_papers_table").tablesorter();
-            var $input = $('#_filter_input');
-            $input.on('input', function (event) {
-                var value = $input.val();
-                var re = new RegExp(value);
-                title_filter = re;
-                table_show_and_hide();
-            });
-            $('.btn-flat').click(function () {
-                var category_name = $(this).html().replace('&amp;', '&');
-                var new_tag_names = tag_names.filter(n => n !== category_name);
-                if (new_tag_names.toString() == tag_names.toString()) {
-                    tag_names.unshift(category_name);
-                } else {
-                    tag_names = new_tag_names;
-                }
-                var $_tags_txt = $('.btn-flat');
-                $_tags_txt.each(function () {
-                    if (category_name == $(this).html().replace('&amp;', '&')) {
-                        $(this).toggleClass('hovered');
-                    }
-                });
-                table_show_and_hide();
-            });
-            $('#_initialization_button').bind("click", function () {
-                $('#_filter_input').val('');
-                $('#_papers_tbody tr').show();
-                $(".btn-flat").removeClass("hovered");
-                title_filter = "";
-                tag_names = [];
-            });
+  <script>
+    /* table scripts */
+    var title_filter = "";
+    var tag_names = [];
+    function table_show_and_hide() {
+      $('#_papers_tbody tr').each(function () {
+        var sw_0 = 0;
+        //var sw_0_arr = new Array(tag_names.length).fill(0);
+        var sw_0_num = 0;
+        $(this).find("td:eq(0) .btn-flat").each(function () {
+          if (tag_names.indexOf($(this).html().replace('&amp;', '&')) >= 0) {
+            sw_0_num++;
+          }
         });
+        //if(!sw_0_arr.inclodes(0)){
+        if (sw_0_num == Object.keys(tag_names).length) {
+          sw_0 = 1;
+        }
 
-        /*create this page*/
-        $('#_header_html').load('header.html', function () {
-            $.getScript("js/app.js", function () {
-            });
+        var sw_1 = 0;
+        if ($(this).find("td:eq(0) .paper_title").html().match(title_filter) != null) {
+          sw_1 = 1;
+        }
+
+        if (sw_0 && sw_1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+    $('.sync-pagination').twbsPagination({
+        totalPages: 20,
+        onPageClick: function (evt, page) {
+            $('#content').text('Page ' + page);
+        }
+    });
+    $(function () {
+      $("#_papers_table").tablesorter();
+      var $input = $('#_filter_input');
+      $input.on('input', function (event) {
+        var value = $input.val();
+        var re = new RegExp(value);
+        title_filter = re;
+        table_show_and_hide();
+      });
+      $('.btn-flat').click(function () {
+        var category_name = $(this).html().replace('&amp;', '&');
+        var new_tag_names = tag_names.filter(n => n !== category_name);
+        if (new_tag_names.toString() == tag_names.toString()) {
+          tag_names.unshift(category_name);
+        } else {
+          tag_names = new_tag_names;
+        }
+        var $_tags_txt = $('.btn-flat');
+        $_tags_txt.each(function () {
+          if (category_name == $(this).html().replace('&amp;', '&')) {
+            $(this).toggleClass('hovered');
+          }
         });
+        table_show_and_hide();
+      });
+      $('#_initialization_button').bind("click", function () {
+        //var len=$('tbody tr').filter(':visible').length;
+        //console.log(len);
+        $('#_filter_input').val('');
+        $('#_papers_tbody tr').show();
+        $(".btn-flat").removeClass("hovered");
+        title_filter = "";
+        tag_names = [];
+      });
+    });
 
-        window.addEventListener("DOMContentLoaded", main);
-        window.addEventListener("hashchange", main);
+    /*create this page*/
+    $('#_header_html').load('header.html', function () {
+    });
 
-        function create_tag(tag) {
-            if (tag[0] == " ") {
-                tag = tag.replace(" ", "");
-            }
-            return '<a class="btn-flat">' + tag + '</a>';
-        }
-        function create_links(link) {
-            var tags = [];
-            if (link[1] != "") {
-                tags = link[1].split(',').map(create_tag);
-            }
-            tags = tags.join(" ");
-            return '<tr ><td><a  class="paper_title" href="papers/#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td></tr>';
-        }
+    window.addEventListener("DOMContentLoaded", main);
+    window.addEventListener("hashchange", main);
 
-        function main() {
-            _html = infomation_list();
-            html = _html.map(create_links);
-            var div = document.getElementById("_papers_tbody");
-            div.innerHTML = html.join("");
-            _html = tag_list();
-            html = _html.map(create_tag);
-            var div = document.getElementById("_category_tags");
-            div.innerHTML = html.join(" ");
-        }
-    </script>
-</body>
+    function create_tag(tag) {
+      if (tag[0] == " ") {
+        tag = tag.replace(" ", "");
+      }
+      return '<a class="btn-flat">' + tag + '</a>';
+    }
+    function create_links(link) {
+      var tags = [];
+      if (link[1] != "") {
+        tags = link[1].split(',').map(create_tag);
+      }
+      tags = tags.join(" ");
+      return '<tr ><td><a class="paper_title" href="papers/#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td></tr>';
+    }
+
+    function main() {
+      _html = infomation_list();
+      html = _html.map(create_links);
+      var div = document.getElementById("_papers_tbody");
+      div.innerHTML = html.join("");
+      _html = tag_list();
+      html = _html.map(create_tag);
+      var div = document.getElementById("_category_tags");
+      div.innerHTML = html.join(" ");
+    }
+  </script>
 
 </html>

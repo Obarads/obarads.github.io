@@ -27,9 +27,18 @@
 }
 body{
     font-family: gensen-font;
+    padding-top: 4.5rem;
     background-color: rgb(40,34,42);
     color: white;
 }
+.adjustment-pad{
+    padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.row-pad{
+    padding-bottom: 1rem;
+}
+
 p{
     margin-top: 1rem;
 }
@@ -59,4 +68,5 @@ body a:hover{
 #content img{
     margin: 0px auto;
     display: block;
+    max-width:100%;
 }
