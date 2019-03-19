@@ -34,7 +34,6 @@ body{
 .adjustment-pad{
     padding: 0rem 1.5rem 0rem 1.5rem;
 }
-
 .row-pad{
     padding-bottom: 1rem;
 }
@@ -54,13 +53,18 @@ body a:hover{
 .cell-padding{
     padding: 13px;
 }
-
 /* header.html design */
 .top-bar a{
     color: white;
 }
 .top-bar ul{
     background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (max-width: 575px) {
+    #sidebar{
+        padding: 1rem;
+    }
 }
 
 
