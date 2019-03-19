@@ -1,0 +1,39 @@
+# Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
+
+元の論文の公開ページ : https://arxiv.org/abs/1703.10593
+
+## どんなもの?
+ドメインAのからドメインBへのImage to Imageを目的としたGANを提案した。ただし、このドメインに含まれるデータにはペアになるようなラベルが組み込まれていない。
+
+## 先行研究と比べてどこがすごいの?
+省略
+
+## 技術や手法のキモはどこ? or 提案手法の詳細
+[1]を参照すること。
+
+## どうやって有効だと検証した?
+省略
+
+## 議論はある?
+省略
+
+## 次に読むべき論文は?
+- 未定
+
+### 論文関連リンク
+1. [hrs1985, CycleGAN (アクセス日時:2019/03/20)](https://qiita.com/hrs1985/items/050acb15ce33675f07ec)
+
+### 会議
+ICCV 2017
+
+### 著者
+Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros.
+
+### 投稿日付(yyyy/MM/dd)
+2017/03/30
+
+## コメント
+資料を信じているため論文は見ていない。
+
+## key-words
+2D_Image, GAN

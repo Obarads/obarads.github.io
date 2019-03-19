@@ -54,6 +54,7 @@ body a {
 body a:hover {
     color: coral;
 }
+
 /* header.html design */
 
 .top-bar a {
@@ -82,6 +83,7 @@ body a:hover {
 }
 
 #t-con {
+    display: block;
     margin-top: 3.5rem;
     overflow-x: hidden;
     overflow-y: auto;
