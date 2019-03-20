@@ -2,11 +2,13 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Obarads">
     <script src="../js/jquery.js"></script>
     <script src="../js/marked.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
     <!--Reference https://qiita.com/legokichi/items/27b7b865a0ab28b5d530 -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -23,22 +25,25 @@
       }
     });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
     <script src="../js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="shortcut icon" href="../nanyouhagi_base_a.png" type="nanyouhagi_base_a.png">
 </head>
 
-<body>
+<body id="body">
     <div id="header"></div>
 
-    <div class="container">
-        <div class="row">
-            <div id="content" class="col-sm-12 cell-padding"></div>
-        </div>
+    <div id="content-p">
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="content"></div>
+                </div>
+            </div>
+        </main>
     </div>
 
     <script>
@@ -60,6 +65,12 @@
             smartypants: false
         });
 
+        $(window).resize(function () {
+            var size = document.getElementById("body").clientWidth;
+            console.log(size)
+        });
+
+
         function main() {
             // ルーティング
             var name = "";
@@ -69,7 +80,7 @@
             } else {
                 name = location.hash.slice(1);
             }
-            document.title = decodeURI(name).replace(".md","") + " - Paper-Reminder"
+            document.title = decodeURI(name).replace(".md", "") + " - Paper-Reminder"
             // ページ内リンクなのでhistory.pushStateする必要はない
             get(name).catch(function () {
                 return Promise.resolve("# 404 page not found");

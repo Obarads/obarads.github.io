@@ -111,6 +111,15 @@ body a:hover {
     max-width: 100%;
 }
 
+#content-p{
+    padding-top: 2.0rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    margin-top: 3.5rem;
+    height: -webkit-calc(100vh - 3.5rem) ;
+}
+
 /*scroll bar*/
 
 *::-webkit-scrollbar-track
