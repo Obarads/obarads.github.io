@@ -18,7 +18,7 @@
 省略
 
 ## 次に読むべき論文は?
-- 未定
+- [Alec Radford, Luke Metz, Soumith Chintala. Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks. ICLR2016.](https://arxiv.org/abs/1511.06434)
 
 ### 論文関連リンク
 1. [hrs1985, CycleGAN (アクセス日時:2019/03/20)](https://qiita.com/hrs1985/items/050acb15ce33675f07ec)
