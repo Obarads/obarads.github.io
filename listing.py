@@ -9,6 +9,7 @@ def main():
     path_list = md_list
     info_list = []
     kw_tags = []
+    date_tags = []
     md_list = [m.replace("./papers/","").replace(".md","") for m in md_list] #linux path
     md_list = [m.replace("./papers\\","").replace(".md","") for m in md_list] #windows path
     for (ml,pl) in zip(md_list,path_list):
@@ -28,19 +29,25 @@ def main():
                 date_index = content.index("### 投稿日付(yyyy/MM/dd)")
                 if date_index != -1:
                     date = content[date_index+1].split("/")[0]
+                    date_tags.append(date)
 
             info_list.append([ml,kw,date])
 
+    date_tags = list(set(date_tags))
+
     info_list.sort()
     kw_tags.sort()
+    date_tags.sort()
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
     info_list = "function infomation_list(){ return ["+",".join(info_list)+"]}"
     kw_tags = "\n function tag_list(){ return ["+ ",".join(kw_tags) +"]}"
+    date_tags = "\n function date_tag_list(){ return ["+ ",".join(date_tags) +"]}"
 
     with open('js/list.js', 'w') as f:
         f.writelines(info_list)
         f.writelines(kw_tags)
+        f.writelines(date_tags)
         f.close()
 
 if __name__ == '__main__':

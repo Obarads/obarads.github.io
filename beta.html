@@ -42,6 +42,11 @@
                 <div id="_category_tags"> </div>
               </label>
             </div>
+            <div class="row">
+              <label>Year
+                <div id="_category_year"> </div>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -69,7 +74,7 @@
         var sw_0 = 0;
         //var sw_0_arr = new Array(tag_names.length).fill(0);
         var sw_0_num = 0;
-        $(this).find("td:eq(0) .btn-flat").each(function () {
+        $(this).find(".search-word").each(function () {
           if (tag_names.indexOf($(this).html().replace('&amp;', '&')) >= 0) {
             sw_0_num++;
           }
@@ -91,12 +96,6 @@
         }
       });
     }
-    $('.sync-pagination').twbsPagination({
-      totalPages: 20,
-      onPageClick: function (evt, page) {
-        $('#content').text('Page ' + page);
-      }
-    });
     $(function () {
       $("#_papers_table").tablesorter();
       var $input = $('#_filter_input');
@@ -140,7 +139,7 @@
       if (tag[0] == " ") {
         tag = tag.replace(" ", "");
       }
-      return '<a class="btn-flat">' + tag + '</a>';
+      return '<a class="btn-flat search-word">' + tag + '</a>';
     }
     function create_links(link) {
       var tags = [];
@@ -148,7 +147,7 @@
         tags = link[1].split(',').map(create_tag);
       }
       tags = tags.join(" ");
-      return '<tr ><td><a class="paper_title" href="papers/#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td></tr>';
+      return '<tr ><td><a class="paper_title" href="papers/#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td class="search-word">' + link[2] + '</td></tr>';
     }
 
     function main() {
@@ -159,6 +158,10 @@
       _html = tag_list();
       html = _html.map(create_tag);
       var div = document.getElementById("_category_tags");
+      div.innerHTML = html.join(" ");
+      _html = date_tag_list();
+      html = _html.map(create_tag);
+      var div = document.getElementById("_category_year");
       div.innerHTML = html.join(" ");
     }
 

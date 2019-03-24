@@ -23,7 +23,7 @@
 }
 
 .tab-color {
-    background-color: rgb(58, 97, 85);
+    background-color: rgb(73, 122, 108);
 }
 
 /* all directory design */
@@ -35,7 +35,7 @@
 
 body {
     font-family: gensen-font;
-    background-color: rgb(40, 34, 42);
+    background-color: rgb(17, 17, 17);
     color: white;
 }
 
@@ -66,9 +66,6 @@ body a:hover {
 }
 
 /*index menu*/
-.adjustment-pad {
-    padding: 0rem 0rem 0rem 1.0rem;
-}
 @media screen and (max-width: 576px) {
     #sidebar {
         padding: 1rem;
@@ -90,8 +87,12 @@ body a:hover {
     height: -webkit-calc(100vh - 3.5rem) ;
 }
 
+#s-con {
+    background: rgb(36, 56, 50);
+}
+
 @media screen and (min-width: 575px) {
-    #l-sb {
+    #s-con {
         position: fixed;
         display: block;
         margin-top: 3.5rem;
@@ -102,6 +103,12 @@ body a:hover {
         height: -webkit-calc(100% - 3.5rem) ;
     }
 }
+
+#l-sb{
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
 
 /* papers directory design */
 
