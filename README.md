@@ -25,7 +25,6 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 ## 個人メモ
 - 修正リスト
     - Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
-    - l-GANのやつ、AEが理解できていないのと実験書き直すべきかな?
     - ACGAN
 
 - いずれは自分で書いてねリスト
