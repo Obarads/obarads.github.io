@@ -35,4 +35,4 @@ Angela Dai, Charles Ruizhongtai Qi, Matthias Nießner.
 なし
 
 ## key-words
-2D_Image, Voxel
+Voxel

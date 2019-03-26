@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Obarads">
-  <title>Paper-Reminder</title>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/list.js"></script>
@@ -63,7 +62,6 @@
   <script>
     /* table scripts */
     var title_filter = "";
-    var tag_names = [];
     function table_show_and_hide() {
       $('#_papers_tbody tr').each(function () {
         var sw_0 = 0;
@@ -91,12 +89,15 @@
         }
       });
     }
-    $('.sync-pagination').twbsPagination({
-      totalPages: 20,
-      onPageClick: function (evt, page) {
-        $('#content').text('Page ' + page);
-      }
-    });
+    function getParam(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
     $(function () {
       $("#_papers_table").tablesorter();
       var $input = $('#_filter_input');
@@ -120,6 +121,13 @@
             $(this).toggleClass('hovered');
           }
         });
+        if (Object.keys(tag_names).length == 0) {
+          document.title = "Paper-Reminder"
+          window.history.replaceState('', '', '/');
+        } else {
+          document.title = tag_names + " - Paper-Reminder"
+          window.history.replaceState('', '', '?tag=' + tag_names);
+        }
         table_show_and_hide();
       });
       $('#_initialization_button').bind("click", function () {
@@ -160,6 +168,23 @@
       html = _html.map(create_tag);
       var div = document.getElementById("_category_tags");
       div.innerHTML = html.join(" ");
+      url_param = getParam("tag");
+      if (url_param==null){
+        tag_names = []
+        document.title = "Paper-Reminder"
+      }else{
+        tag_names = url_param.split(",");
+        document.title = tag_names + " - Paper-Reminder"
+      }
+      var $_tags_txt = $('.btn-flat');
+      $_tags_txt.each(function () {
+        for (var i = 0; i < Object.keys(tag_names).length; i++) {
+          if (tag_names[i] == $(this).html().replace('&amp;', '&')) {
+            $(this).toggleClass('hovered');
+          }
+        }
+      });
+      table_show_and_hide();
     }
 
     var size_states = 0;
