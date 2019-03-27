@@ -29,12 +29,22 @@
 /* all directory design */
 
 @font-face {
-    font-family: 'gensen-font';
+    font-family: 'gensen-fontL';
     src: url(../font/JP/GenSenMaruGothicJP-Light.ttf);
+}
+@font-face {
+    font-family: 'gensen-fontR';
+    src: url(../font/JP/GenSenMaruGothicJP-Regular.ttf);
+}
+
+.gfl{
+    font-family: gensen-fontL;
+}
+.gfr{
+    font-family: gensen-fontR;
 }
 
 body {
-    font-family: gensen-font;
     background-color: rgb(17, 17, 17);
     color: white;
 }
