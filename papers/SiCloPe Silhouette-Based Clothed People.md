@@ -3,9 +3,10 @@
 元の論文の公開ページ : https://arxiv.org/abs/1901.00049
 
 ## どんなもの?
-正面像が映った1枚の2D画像から3Dの服を着た人の形状を推定するモデルを提案した。
+正面像が映った1枚の2D画像から3Dの服を着た人の形状を推定するモデルを提案した。このモデルでは、キャリブレーションなどの手間を省いた状態で3D身体の推定を行う。
 
 ## 先行研究と比べてどこがすごいの?
+一枚の画像からより詳細な3D推定を行う新しいモデルを提案した。また、この手法は一枚の画像から全身にテクスチャが貼られている衣服を身に着けた3D身体モデルを再構築する最初のノンパラメトリックな解決策である。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### **構造**
@@ -63,14 +64,16 @@ $$
 ![fig8](img/SSCP/fig8.png)
 
 ### **その他**
-他にもいろいろ検証している。
+他にもいろいろ検証している。他の手法との比較もある。
 
 ## 議論はある?
-
+- トレーニングセットが限られているため、実際の画像から偏っている場合がある。
+- 出力されるメッシュにはリギングが施されていないため、アニメーションに直接使えない。
+- 布と人体の幾何学形状を明確に区別できていない。(意味ラベルとかで拡張する予定)
+- diffuseやspecular albedo mapsの様なrelightableテクスチャを推論すること。
 
 ## 次に読むべき論文は?
--
--
+- [G.Varol,D.Ceylan,B.Russell,J.Yang,E.Yumer,I.Laptev, and C.Schmid. BodyNet: Volumetric inference of 3D human body shapes. InEuropean Conference on Computer Vision, pages 20–36, 2018.](https://arxiv.org/abs/1804.04875)
 
 ### 論文関連リンク
 1. [P.Isola,J.-Y.Zhu,T.Zhou,and A.A.Efros. Image-to-image translation with conditional adversarial networks. In IEEE Conference on Computer Vision and Pattern Recognition, pages 1125–1134, 2017.](https://arxiv.org/abs/1611.07004)
