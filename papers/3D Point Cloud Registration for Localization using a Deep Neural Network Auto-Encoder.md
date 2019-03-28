@@ -8,7 +8,7 @@
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### **アルゴリズム**
-LORAX(LOcalization by Registration using a deep Auto-encoder reduced Cover Set、X=CS?)アルゴリズムによってRegistrationタスクを行う。アルゴリズムの概要は以下の通り。
+LORAX(LOcalization by Registration using a deep Auto-encoder reduced Cover Set、X=CS?)アルゴリズムによってRegistrationタスクを行う。このアルゴリズムでは、large outdoor areaを描写する点群をglobal点群、global点群内に一部含まれる点群をlocal点群とする(点群の関係は図7を参照したほうがいい)。global点群の点の数は最大一億であり、local点群はglobal点群よりも2~3桁少ない。アルゴリズムの概要は以下の通り。
 
 1. 新しいRandom Sphere Cover Setアルゴリズムを使用し点群をsuper-points(SP)に分割する。
 2. 各SPに対する正規化されたローカル座標系の選択(要はSP内の座標系の定義)。
@@ -19,16 +19,18 @@ LORAX(LOcalization by Registration using a deep Auto-encoder reduced Cover Set�
 7. 局所探索を使った大まかなRegistrationを行う。
 8. 反復的に最短点の微調整を行う。
 
+![fig7](img/3PCRfLuaDNNA/fig7.png)
+
 ### **Random Sphere Cover Set (RSCS)**
 RSCSのアルゴリズムは以下の通り。
 
 1. ランダムにSPに属していない点$P$を選択する。
 2. $P$を中心として半径$R_ {sphere}$内にある点の集合を新しいSPとして定義する。
 
-適切な$R_ {sphere}$の値はアルゴリズムの最終段階中に一致した数$m$と局所的な点群を包括する球の体積$V_ {local}$等の値から近似式で求める。
+適切な$R_ {sphere}$の値はアルゴリズムの最終段階中に一致した数$m$とlocal点群を包括する球の体積$V_ {local}$等の値から近似式で求める。尚、堅牢性向上のためglobal点群で1回、local点群で複数回、RSCSが施される。
 
 ### **Depth Map Projection**
-図3を見ての通り。SPをz軸方向から写し取った画像を用意し、必要な部分だけ切り取り、点群のノイズや点密度を均一にするためにmax filterとmean filterを使って図3(c)の状態のSPを作り出す。
+図3を見ての通り。SPをz軸方向から写し取った画像を用意し、必要な部分だけ切り取り、点群のノイズや点密度を均一にするためにmax filterとmean filterを使って図3(c)の状態のSPを作り出す。尚、切り取り後の画像サイズは$d_ {im2}^2=32\times 32$とする。
 
 ![fig3](img/3PCRfLuaDNNA/fig3.png)
 
@@ -40,7 +42,9 @@ RSCSのアルゴリズムは以下の通り。
 - **Geometric Quality Test**  
   高さ(z軸)に差がないSPをはじく。
 - **Saliency Test**  
-  あまり特徴のない
+  global点群から得たSPのデプスマップを$d_ {im2}^2$個のデプスベクトルに変形する。デプスベクトルのセットにPCAを施し、最初の三つの固有ベクトルを使うだけで正確に再構築できるSP(local点群とglobal点群のもの)はデータセットでよく見られる幾何学特徴であるため、排除する(最初ってなに?)。これにより、点群の異なる領域にある類似のSP間での一致の可能性が減少する。
+
+### ****
 
 ## どうやって有効だと検証した?
 
