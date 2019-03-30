@@ -104,7 +104,7 @@ function search(il, tl,title, path) {
   });
 
   $(function () {
-    $("#_papers_table").tablesorter();
+    $("#_papers_table").tablesorter({});
     var $input = $('#_filter_input');
     $input.on('input', function (event) {
       var value = $input.val();
