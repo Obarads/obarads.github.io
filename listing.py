@@ -4,14 +4,14 @@ import csv
 import os
 import glob
 
-def main():
-    md_list = glob.glob("./papers/*.md")
+def extract_data(path):
+    md_list = glob.glob("./"+ path +"/*.md")
     path_list = md_list
     info_list = []
     kw_tags = []
     date_tags = []
-    md_list = [m.replace("./papers/","").replace(".md","") for m in md_list] #linux path
-    md_list = [m.replace("./papers\\","").replace(".md","") for m in md_list] #windows path
+    md_list = [m.replace("./"+ path +"/","").replace(".md","") for m in md_list] #linux path
+    md_list = [m.replace("./"+ path +"\\","").replace(".md","") for m in md_list] #windows path
     for (ml,pl) in zip(md_list,path_list):
         with open(pl, 'r',encoding="utf-8") as f:
             content = f.read().split("\n")
@@ -40,14 +40,27 @@ def main():
     date_tags.sort()
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
-    info_list = "function infomation_list(){ return ["+",".join(info_list)+"]}"
-    kw_tags = "\n function tag_list(){ return ["+ ",".join(kw_tags) +"]}"
-    date_tags = "\n function date_tag_list(){ return ["+ ",".join(date_tags) +"]}"
+
+    return info_list,kw_tags,date_tags
+
+def main():
+    info_list_papers,kw_tags_papers,date_tags_papers = extract_data("papers")
+    info_list_complementary,kw_tags_complementary,date_tags_complementary = extract_data("complementary")
+
+    info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
+    kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
+    date_tags_papers = "function date_tag_list(){ return ["+ ",".join(date_tags_papers) +"]}\n"
+    info_list_complementary = "function information_list_c(){ return ["+",".join(info_list_complementary)+"]}\n"
+    kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
+    date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
 
     with open('js/list.js', 'w') as f:
-        f.writelines(info_list)
-        f.writelines(kw_tags)
-        f.writelines(date_tags)
+        f.writelines(info_list_papers)
+        f.writelines(kw_tags_papers)
+        f.writelines(date_tags_papers)
+        f.writelines(info_list_complementary)
+        f.writelines(kw_tags_complementary)
+        f.writelines(date_tags_complementary)
         f.close()
 
 if __name__ == '__main__':

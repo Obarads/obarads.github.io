@@ -1,0 +1,39 @@
+<script src="../js/list.js"></script>
+<script src="../js/jquery.tablesorter.min.js"></script>
+
+<main role="main" class="container-fluid gfr">
+  <div class="row">
+    <div class="col-sm-3" id="s-con">
+      <div id="l-sb">
+        <div id="sidebar">
+          <div class="row row-pad">
+            <label for="_filter_input">Title Filter</label>
+            <input class="form-control" id="_filter_input" type="text" placeholder="Fast R-CNN">
+          </div>
+          <div class="row row-pad">
+            <a id="_initialization_button" class="btn btn-danger btn-block">
+              Init
+            </a>
+          </div>
+          <div class="row">
+            <label>Tags
+              <div id="_category_tags"> </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offset-sm-3 col-sm-9" id="t-con">
+      <table id="_papers_table" class="table tablesorter-dark">
+        <thead>
+          <tr>
+            <th>Title & Tags</th>
+            <th width="100">Year</th>
+          </tr>
+        </thead>
+        <tbody id="_papers_tbody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main><!-- /.container -->

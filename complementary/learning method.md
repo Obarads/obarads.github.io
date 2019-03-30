@@ -6,3 +6,6 @@
 
 ## Ensemble
 ### **資料**
+
+## key-words
+curriculum_learning

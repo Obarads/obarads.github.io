@@ -52,3 +52,6 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 4. [Doersch, C., Gupta, A., Efros, A.A.: Unsupervised visual representation learning by context prediction. ICCV (2015)](https://arxiv.org/abs/1505.05192)
 5. [Paper-Reminder Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://obarads.github.io/papers/#Unsupervised%20Learning%20of%20Visual%20Representations%20by%20Solving%20Jigsaw%20Puzzles.md)
 6. [Paper-Reminder Unsupervised Visual Representation Learning by Context Prediction](https://obarads.github.io/papers/#Unsupervised%20Visual%20Representation%20Learning%20by%20Context%20Prediction.md)
+
+## key-words
+self-learning, 2D_Image, fine-tuning, transfer_learning

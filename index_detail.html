@@ -1,0 +1,30 @@
+<script src="../js/marked.js"></script>
+<!--Reference https://qiita.com/legokichi/items/27b7b865a0ab28b5d530 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  skipStartupTypeset: true, // ページロード時のmathjax発動禁止
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "HTML-CSS": {
+    availableFonts: ["TeX"]
+  }
+});
+</script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+<script src="../js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+
+<div class="gfl" id="content-p">
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="content"></div>
+            </div>
+        </div>
+    </main>
+</div>

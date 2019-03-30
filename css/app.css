@@ -1,51 +1,26 @@
-/* colors */
-
-.purple {
-    background-color: purple;
-}
-
-.kityou {
-    background-color: rgb(79, 0, 178);
-}
-
-.konruri {
-    background-color: rgba(32, 0, 152, 01);
-}
-
-.greenyellow {
-    background-color: greenyellow;
-    color: black;
-}
-
-.green {
-    background-color: green;
-    color: white;
-}
-
-.tab-color {
-    background-color: rgb(73, 122, 108);
-}
-
 /* all directory design */
 
 @font-face {
     font-family: 'gensen-fontL';
     src: url(../font/JP/GenSenMaruGothicJP-Light.ttf);
 }
+
 @font-face {
     font-family: 'gensen-fontR';
     src: url(../font/JP/GenSenMaruGothicJP-Regular.ttf);
 }
 
-.gfl{
+.gfl {
     font-family: gensen-fontL;
 }
-.gfr{
+
+.gfr {
     font-family: gensen-fontR;
 }
 
 body {
-    background-color: rgb(17, 17, 17);
+    background-color: #333;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
     color: white;
 }
 
@@ -67,15 +42,17 @@ body a:hover {
 
 /* header.html design */
 
-.top-bar a {
-    color: white;
+.tab-color {
+    background: #333;
+    border-bottom: solid 2px rgb(182, 182, 182);
 }
 
-.top-bar ul {
-    background-color: rgba(0, 0, 0, 0);
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
 }
 
 /*index menu*/
+
 @media screen and (max-width: 576px) {
     #sidebar {
         padding: 1rem;
@@ -85,7 +62,8 @@ body a:hover {
 .row-pad {
     padding-bottom: 1rem;
 }
-.row-h{
+
+.row-h {
     height: 85vh;
 }
 
@@ -94,11 +72,11 @@ body a:hover {
     margin-top: 3.5rem;
     overflow-x: hidden;
     overflow-y: auto;
-    height: -webkit-calc(100vh - 3.5rem) ;
+    height: -webkit-calc(100vh - 3.5rem);
 }
 
 #s-con {
-    background: rgb(36, 56, 50);
+    border-right: solid 2px gray;
 }
 
 @media screen and (min-width: 575px) {
@@ -110,15 +88,14 @@ body a:hover {
         padding-top: 0.5rem;
         overflow-x: hidden;
         overflow-y: auto;
-        height: -webkit-calc(100% - 3.5rem) ;
+        height: -webkit-calc(100% - 3.5rem);
     }
 }
 
-#l-sb{
+#l-sb {
     margin-left: 1rem;
     margin-right: 0.5rem;
 }
-
 
 /* papers directory design */
 
@@ -128,31 +105,29 @@ body a:hover {
     max-width: 100%;
 }
 
-#content-p{
+#content-p {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     padding-top: 2.0rem;
     overflow-x: hidden;
     overflow-y: auto;
     display: block;
     margin-top: 3.5rem;
-    height: -webkit-calc(100vh - 3.5rem) ;
+    height: -webkit-calc(100vh - 3.5rem);
 }
 
 /*scroll bar*/
 
-*::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
-	background-color: rgba(0, 0, 0, 0);
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
-*::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: rgba(0, 0, 0, 0);
+*::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-*::-webkit-scrollbar-thumb
-{
-	background-color: rgba(0, 0, 0, 0);
-	border: 4px solid #7a7a7a;
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+    border: 4px solid #7a7a7a;
 }

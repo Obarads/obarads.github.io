@@ -20,7 +20,6 @@
 
     <div id="_main_contents"></div>
 
-    <script href="../js/app.js"></script>
     <script>
         window.addEventListener("DOMContentLoaded", main);
         window.addEventListener("hashchange", main);
@@ -30,12 +29,12 @@
             var name = "";
             if (location.hash.length <= 1) {
                 $('#_main_contents').load('../index_search.html', function () {
-                    title = "Papers"
-                    search(information_list(),tag_list(),title,"papers/");
+                    title = "Complementary";
+                    search(information_list_c(),tag_list_c(),title,"complementary/");
                 });
             } else {
                 $('#_main_contents').load('../index_detail.html', function () {
-                    title = "Papers"
+                    title = "Complementary";
                     detail(location.hash.slice(1),title);
                 });
             }

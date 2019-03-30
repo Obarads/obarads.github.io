@@ -47,3 +47,6 @@
 
 ## Reference
 1. [CNN による画像分類で使われる前処理・テスト時処理まとめ](http://iwiwi.hatenadiary.jp/entry/2016/12/31/162059)
+
+## key-words
+preprocessing, 2D_Image

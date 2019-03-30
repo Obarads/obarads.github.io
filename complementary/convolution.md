@@ -1,4 +1,0 @@
-# convolution
-
-## reference
-1. 
