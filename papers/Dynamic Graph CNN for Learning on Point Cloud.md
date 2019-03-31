@@ -13,13 +13,13 @@
 
 ![fig1](img/DGCfLoPC/fig1.png)
 
-EdgeConvは式1の様に定義される。この時、□はΣの様なsymmetric aggregation operationであり、hΘはMLP等の非線形関数である。
+EdgeConvは式1の様に定義される。この時、□は$\sum$の様なsymmetric aggregation operationであり、$h_ \theta$はMLP等の非線形関数である。
 
 ![eq1](img/DGCfLoPC/eq1.png)
 
-本研究ではhΘ(x_i, x_j)に4つの手法を紹介おり、提案手法ではhΘ(x_i, x_j) = hΘ(x_i, x_j-x_i)を扱っている。この時、x_iは中心ノードであり、x_jは周辺ノードであり、x_iは中心ノードの値、x_i - x_jはx_iを中心としたx_jの相対距離である。相対距離を含んだものを入力することで、付近の特徴(局所領域の特徴)を総括した入力が可能となる。
+本研究では$h_ \theta(x_ i,x_ j)$に4つの手法を紹介おり、提案手法では$h_ \theta(x_ i, x_ j) = hΘ(x_ i, x_ j-x_ i)$を扱っている。この時、$x_ i$は中心ノードであり、$x_ j$は周辺ノードであり、$x_ i$は中心ノードの値、$x_ i - x_ j$は$x_ i$を中心とした$x_ j$の相対距離である。相対距離を含んだものを入力することで、付近の特徴(局所領域の特徴)を総括した入力が可能となる。
 
-EdgeConvを視覚的に説明したのが図2である。図2の左はsymmetric aggregation operationを使用する前のもの、図2の右のe_ijはエッジ特徴と呼ばれ、これらの情報をsymmetric aggregation operationでひとまとめにしたものがx'_iである。
+EdgeConvを視覚的に説明したのが図2である。図2の左はsymmetric aggregation operationを使用する前のもの、図2の右の$e_ {ij}$はエッジ特徴と呼ばれ、これらの情報をsymmetric aggregation operationでひとまとめにしたものが$x'_ i$である。
 
 ![fig2](img/DGCfLoPC/fig2.png)
 
