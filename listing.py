@@ -3,6 +3,7 @@
 import csv
 import os
 import glob
+import copy
 
 def extract_data(path):
     md_list = glob.glob("./"+ path +"/*.md")
@@ -43,9 +44,21 @@ def extract_data(path):
 
     return info_list,kw_tags,date_tags
 
+def coloring_tag_template(tags):
+    tag_css_class = ""
+    for t in tags:
+        tag_css_class += '.__'+ t.replace(" ","_").replace("&","_").replace("'","") + '{\nbackground:rgb(0,0,0);\ncolor:#fff;\n}\n\n' 
+    return tag_css_class
+
 def main():
     info_list_papers,kw_tags_papers,date_tags_papers = extract_data("papers")
     info_list_complementary,kw_tags_complementary,date_tags_complementary = extract_data("complementary")
+
+    kw_tags = copy.copy(kw_tags_papers)
+    kw_tags.extend(kw_tags_complementary)
+    kw_tags = list(set(kw_tags))
+    kw_tags = coloring_tag_template(kw_tags)
+    kw_tags = kw_tags.sort()
 
     info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
     kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
@@ -61,6 +74,10 @@ def main():
         f.writelines(info_list_complementary)
         f.writelines(kw_tags_complementary)
         f.writelines(date_tags_complementary)
+        f.close()
+
+    with open('css/tag_temp.css', 'w') as f:
+        f.writelines(kw_tags)
         f.close()
 
 if __name__ == '__main__':

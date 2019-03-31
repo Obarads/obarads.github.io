@@ -40,10 +40,8 @@ function getParam(name, url) {
 }
 
 function create_tag(tag) {
-  if (tag[0] == " ") {
-    tag = tag.replace(" ", "");
-  }
-  return '<a class="btn-flat">' + tag + '</a>';
+  tag_class = '__' + tag.replace(/ /g, "_").replace(/&/g, "_");
+  return '<a class="btn-flat ' + tag_class + '">' + tag + '</a>';
 }
 
 function create_links(link) {
@@ -55,7 +53,7 @@ function create_links(link) {
   return '<tr ><td><a class="paper_title" href="#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td></tr>';
 }
 
-function search(il, tl,title, path) {
+function search(il, tl, title, path) {
   _html = il;
   html = _html.map(create_links);
   var div = document.getElementById("_papers_tbody");
@@ -84,7 +82,7 @@ function search(il, tl,title, path) {
 
   /*create this page*/
   $('#_header').load('../index_header.html', function () {
-    document.getElementById("page_title").innerHTML=title
+    document.getElementById("page_title").innerHTML = title
     var size = document.getElementById("body").clientWidth;
     if (size < 576) {
       size_states = 1;
@@ -128,7 +126,7 @@ function search(il, tl,title, path) {
       });
       if (Object.keys(tag_names).length == 0) {
         document.title = title;
-        window.history.replaceState('', '', '/'+path);
+        window.history.replaceState('', '', '/' + path);
       } else {
         document.title = tag_names + " - " + title;
         window.history.replaceState('', '', '?tag=' + tag_names);
@@ -148,9 +146,9 @@ function search(il, tl,title, path) {
 
 }
 
-function detail(name,title) {
+function detail(name, title) {
   $('#_header').load('../index_header_container.html', function () {
-    document.getElementById("page_title").innerHTML=title;
+    document.getElementById("page_title").innerHTML = title;
   });
 
   var get = $.get;
@@ -204,7 +202,7 @@ function detail(name,title) {
 
 function home(name) {
   $('#_header').load('../index_header_container.html', function () {
-    document.getElementById("page_title").innerHTML="Obarads"
+    document.getElementById("page_title").innerHTML = "Obarads"
   });
 
   var get = $.get;

@@ -8,4 +8,4 @@
 ### **資料**
 
 ## key-words
-curriculum_learning
+Curriculum_learning

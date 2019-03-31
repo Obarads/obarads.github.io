@@ -7,7 +7,7 @@
 ## 先行研究と比べてどこがすごいの?
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-提案手法のパイプラインは図2に示す通り。高フレームレートを維持するために、キーフレーム上でのみCNNを介してデプスマップを予測するように提案している。さらに、訓練データとテストデータの内容の違いがあることを踏まえ、ピクセル単位のデプス予測の信頼度を測定するuncertainry mapを作成する。
+提案手法のパイプラインは図2に示す通り。高フレームレートを維持するために、キーフレーム上でのみCNNを介してデプスマップを予測するように提案している。さらに、訓練データとテストデータの内容の違いがあることを踏まえ、ピクセル単位のデプス予測の信頼度を測定するuncertainryマップを作成する。
 
 ![fig2](img/CRdmSwldp/fig2.png)
 
@@ -40,7 +40,45 @@ $$
 $T_ t^{k_ i}$が得られたのち、世界座標系中の最新のカメラポーズは$T_ t=T_ t^{k_ i}T_ {k_ i}$として計算される。
 
 ### **CNN-based Depth Prediction and Semantic Segmentation**
-新しいキーフレームが作られたとき、CNNを介してデプスマップが推定される。
+新しいキーフレームが作られたとき、CNNを介してデプスマップが推定される。ImageNetで訓練されたモデルの値を初期値として使う。
+
+### **Key-frame Creation and Pose Graph Optimization**
+事前訓練時と推定時のSLAMの内部パラメーターに違いがある場合、3D再構築時のスケールが不正確になる。これを改善するために、現在のカメラの焦点距離$\mathcal{f}_ {cur}$とトレーニング時に使われたセンサーの焦点距離$\mathcal{f}_ {tr}$の間の比率を用いて、CNNを介したデプス回帰を調節する。比率は式(5)に示す通りである。
+
+$$
+\mathcal{D}_ {k_ i}(u) = \frac{\mathcal{f}_ {cur}}{f_ {tr} }\tilde{\mathcal{D} }_ {k_ i}(u) \tag{5}
+$$
+
+ここで、$\tilde{D}_ {k_ i}$は最新のキーフレーム画像$\mathcal{I}_ i$からCNNによって直接回帰されたデプスマップである。  
+図3にこの調節の有用性を示す。調節したときのものを表す緑線がもっともGround truthに近い。
+
+![fig3](img/CRdmSwldp/fig3.png)
+
+追加で、デプスマップ$\mathcal{D}_ {k_ i}$をuncertaintyマップ $\mathcal{U}_ {k_ i}$に関連付ける。  
+まずはuncertaintyマップを初期化する。著者らは現在のデプスマップと直近のキーフレーム上の各シーンポイントとの間の差に基づいて信頼値を計算し、uncertaintyマップを初期化することを提案した。具体的には、uncertaintyマップ $\mathcal{U}_ {k_ i}$は最新のキーフレーム$k_ i$のデプスマップと直近のキーフレーム$k_ j$のデプスマップの間にある要素ごとの平方差として定義される。定義は$k_ i$から$k_ j$への変換$T_ {k_ j}^{k_ i}$に従って式(6)の様になる。
+
+$$
+\mathcal{U}_ {k_ i}(u)=(\mathcal{D}_ {k_ i}(u)-\mathcal{D}_ {k_ j}(v))^2 \tag{6}
+$$
+
+ここで$v = \pi(KT_ {k_ j}^{k_ i}\mathcal{V}_ {k_ i}(u))$である。  
+さらに、新しく初期化された各キーフレームの精度をさらに向上させるために、デプスマップとuncertaintyマップを融合する。具体的には、最初に直近のキーフレーム$k_ j$から伝播されたuncertainty mapを式(7)の様に定義する。
+
+$$
+\tilde{\mathcal{U} }_ {k_ j}(v)=\frac{D_ {k_ j}(v)}{D_ {k_ i}(v)} \mathcal{U}_ {k_ j}(v)+\sigma_ p^2 \tag{7}
+$$
+
+ここで、$\sigma_ p^2$は伝播されたuncertaintyを増加させるために使われるホワイトノイズである。次に、2つのデプスマップとuncertaintyマップを式(8)と(9)の加重スキームに従って融合する。
+
+$$
+\mathcal{D}_ {k_ i}(u)=\frac{\tilde{\mathcal{U}_ {k_ j} }(v)\cdot\mathcal{D}_ {k_ i}(u)+\mathcal{U}_ {k_ i}(u)\cdot\mathcal{D}_ {k_ j}(v) }{ \mathcal{U}_ {k_ i}(u) + \tilde{\mathcal{U}_ {k_ j}(v)} } \tag{8}
+$$
+
+$$
+\mathcal{U}_ {k_ i}(u) = \frac{\tilde{\mathcal{U} }_ {k_ j}(v) \cdot \mathcal{U}_ {k_ i}(u) }{\mathcal{U}_ {k_ i}(u)+\tilde{\mathcal{U}}_ {k_ j} (v) } \tag{9}
+$$
+
+
 
 ## どうやって有効だと検証した?
 
@@ -53,7 +91,7 @@ $T_ t^{k_ i}$が得られたのち、世界座標系中の最新のカメラポ�
 
 ### 論文関連リンク
 1. [J. Engel, T. Schps, and D. Cremers. LSD-SLAM: Large-Scale Direct Monocular SLAM. InEuropean Conference on Computer Vision (ECCV), 2014.](https://vision.in.tum.de/research/vslam/lsdslam)
-2.
+2. [長谷川邦洋. 第41回関東CV勉強会 CNN-SLAM. 2017. (アクセス:2019/03/31)](https://www.slideshare.net/KunihiroHasegawa/41cv-cnnslam)
 
 ### 会議
 CVPR2017
