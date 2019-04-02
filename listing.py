@@ -58,7 +58,6 @@ def main():
     kw_tags.extend(kw_tags_complementary)
     kw_tags = list(set(kw_tags))
     kw_tags = coloring_tag_template(kw_tags)
-    kw_tags = kw_tags.sort()
 
     info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
     kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
