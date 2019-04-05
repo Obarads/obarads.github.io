@@ -21,6 +21,7 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 - 修正リスト
   - Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
   - 3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder(事前知識が足りないだけである可能性)
+  - Learning Localized Generative Models for 3D Point Clouds via Graph Convolution(内容が分かりずらい)
 
 - いずれは自分で書いてねリスト
   - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
