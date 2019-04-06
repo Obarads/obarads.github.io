@@ -59,7 +59,7 @@ ShaapeNetから用意した3つのカテゴリを使い提案モデルのテス�
 もっとシンプルなグラフ構築演算を作ろう。
 
 ## 次に読むべき論文は?
-- なし
+- [Martin Simonovsky and Nikos Komodakis. Dynamic edge-conditioned filters in convolutional neu-ral networks on graphs. In Proc. CVPR, 2017.](https://arxiv.org/abs/1704.02901)
 
 ### 論文関連リンク
 1. [Martin Simonovsky and Nikos Komodakis. Dynamic edge-conditioned filters in convolutional neu-ral networks on graphs. In Proc. CVPR, 2017.](https://arxiv.org/abs/1704.02901)
