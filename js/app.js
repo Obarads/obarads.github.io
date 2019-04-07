@@ -81,7 +81,7 @@ function search(il, tl, title, path) {
   table_show_and_hide();
 
   /*create this page*/
-  $('#_header').load('../index_header.html', function () {
+  $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = title
     var size = document.getElementById("body").clientWidth;
     if (size < 576) {
@@ -147,7 +147,7 @@ function search(il, tl, title, path) {
 }
 
 function detail(name, title) {
-  $('#_header').load('../index_header_container.html', function () {
+  $('#_header').load('../html/index_header_container.html', function () {
     document.getElementById("page_title").innerHTML = title;
   });
 
@@ -201,7 +201,7 @@ function detail(name, title) {
 }
 
 function home(name) {
-  $('#_header').load('../index_header_container.html', function () {
+  $('#_header').load('../html/index_header_container.html', function () {
     document.getElementById("page_title").innerHTML = "Obarads"
   });
 

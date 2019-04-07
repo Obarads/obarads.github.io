@@ -2,7 +2,7 @@
 ## About
 このレポジトリは論文を要約・日本語化するためのものです。基本的には点群と生成モデル、2D&3D、Self-supervised learningについてまとめます。下のサイトで一部の数式を成形して表示しています。論文と見比べて怪しい部分がある場合は該当する論文のIssueにコメントをお願いいたします。
 
-更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています。
+比較的最近(1年くらい)の論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています。
 サイトの方には[Markdown_and_MathJax](https://github.com/Obarads/Markdown_and_MathJax)を使っています。
 
 ## Link & Directory
