@@ -20,7 +20,7 @@ $$
 E(T_ t^{k_ i})=\sum_ {\tilde{u}\in\Omega}\rho\Biggl(\frac{r(\tilde{u},T_ t^{k_ i})}{\sigma(r(\tilde{u},T_ t^{k_ i}))}\Biggl) \tag{1}
 $$
 
-ここで、$\rho$はHuberノルム、$\sigma$は[1]のresidual 不確実性を測る関数である。ここで、$r$は式(2)の様に定義される輝度誤差である。
+ここで、$\rho$はHuberノルム、$\sigma$は[1]の残差不確実性を測る関数である。ここで、$r$は式(2)の様に定義される輝度誤差である。
 
 $$
 r(\tilde{u},T_ t^{k_ i}) = \mathcal{I}_ {k_ i}(\tilde{u}) - \mathcal{I}_ t(\pi(KT_ t^{k_ i}\tilde{\mathcal{V}_ {k_ i} }(\tilde{u}))) \tag{2}

@@ -85,6 +85,7 @@ LRFやLiDAR、車輪エンコーダー、カメラなどから自分の位置や
 2. [掃除機. visual SLAM の歴史1(visual SLAMの誕生). 2017. (アクセス:2019/03/30)](https://noshumi.blogspot.com/2017/05/visual-slam-1visual-slam.html)
 3. [友納正裕 (2018) SLAM入門 -ロボットの自己位置推定と地図構築の技術-, オーム社.](https://shop.ohmsha.co.jp/shopdetail/000000005234/)
 4. [友納正裕 (2018) SLAM入門 -ロボットの自己位置推定と地図構築の技術-, オーム社. (アクセス:2019/04/07)](https://books.google.co.jp/books?id=QM5QDwAAQBAJ&pg=PA80&hl=ja&source=gbs_toc_r&cad=4#v=onepage&q&f=false)
+5. [peisuke, ChainerでDeep Learningをしない（SfMからSLAMまで）. (アクセス:2019/04/08)](https://qiita.com/peisuke/items/fbe00bacb22df8115323)
 
 ## key-words
 SLAM, 2D_Image
