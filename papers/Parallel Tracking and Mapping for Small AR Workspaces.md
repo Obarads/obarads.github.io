@@ -1,6 +1,6 @@
-# LSD-SLAM: Large-Scale Direct Monocular SLAM
+# Parallel Tracking and Mapping for Small AR Workspaces
 
-元の論文の公開ページ : https://vision.in.tum.de/_media/spezial/bib/engel14eccv.pdf
+元の論文の公開ページ : http://www.robots.ox.ac.uk/~gk/publications/KleinMurray2007ISMAR.pdf
 
 ## どんなもの?
 
@@ -13,19 +13,20 @@
 ## 議論はある?
 
 ## 次に読むべき論文は?
-- なし
+-
+-
 
 ### 論文関連リンク
-1. [Iwami Kazuya. SLAM勉強会（3） LSD-SLAM. (アクセス:2019/04/08)](https://www.slideshare.net/kazuya_tennis/slam3-lsdslam)
+1.
+2.
 
 ### 会議
-ECCV 2014
+????
 
 ### 著者
-Jakob Engel and Thomas Schops and Daniel Cremers.
+Georg Klein, David Murray.
 
 ### 投稿日付(yyyy/MM/dd)
-2014/09/06
 
 ## コメント
 なし
