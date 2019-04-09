@@ -28,14 +28,13 @@
         function main() {
             // ルーティング
             var name = "";
+            title = "Obarads/Papers"
             if (location.hash.length <= 1) {
                 $('#_main_contents').load('../html/index_search.html', function () {
-                    title = "Papers"
                     search(information_list(),tag_list(),title,"papers/");
                 });
             } else {
                 $('#_main_contents').load('../html/index_detail.html', function () {
-                    title = "Papers"
                     detail(location.hash.slice(1),title);
                 });
             }

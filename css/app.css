@@ -36,7 +36,7 @@ h2 {
 }
 
 body a {
-    color: rgb(255, 70, 23);
+    color: rgb(255, 56, 56);
 }
 
 body a:hover {
@@ -47,6 +47,7 @@ body a:hover {
 
 .tab-color {
     background: rgb(255, 56, 56);
+    filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.6));
 }
 
 .navbar-dark .navbar-nav .nav-link {

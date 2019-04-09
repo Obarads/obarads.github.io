@@ -20,7 +20,7 @@
 }
 
 .__Classification {
-  background: rgb(0, 116, 124);
+  background: rgb(145, 85, 71);
 }
 
 .__Curriculum_learning {
@@ -69,7 +69,7 @@
 }
 
 .__SLAM {
-  background: rgb(0, 153, 133);
+  background: rgb(73, 112, 107);
   color: #fff;
 }
 
@@ -115,5 +115,10 @@
 
 .__Optimization{
   background: rgb(134, 37, 66);
+  color: #fff;
+}
+
+.__Graph{
+  background: rgb(78, 65, 153);
   color: #fff;
 }
