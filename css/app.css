@@ -19,10 +19,8 @@
 }
 
 body {
-    background-color: #333;
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-    color: white;
-    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    background-color: white;
+    color: #333;
 }
 
 p {
@@ -38,18 +36,17 @@ h2 {
 }
 
 body a {
-    color: aquamarine;
+    color: rgb(255, 70, 23);
 }
 
 body a:hover {
-    color: coral;
+    color: rgb(255, 158, 123);
 }
 
 /* header.html design */
 
 .tab-color {
-    background: #333;
-    border-bottom: solid 2px rgb(182, 182, 182);
+    background: rgb(255, 56, 56);
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -78,10 +75,11 @@ body a:hover {
     overflow-x: hidden;
     overflow-y: auto;
     height: -webkit-calc(100vh - 3.5rem);
+    box-shadow: 0px 0px 4px -2px gray inset
 }
 
 #s-con {
-    border-right: solid 2px gray;
+    background: #333;
 }
 
 @media screen and (min-width: 575px) {
@@ -111,7 +109,6 @@ body a:hover {
 }
 
 #content-p {
-    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     padding-top: 2.0rem;
     overflow-x: hidden;
     overflow-y: auto;

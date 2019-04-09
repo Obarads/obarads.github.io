@@ -11,7 +11,6 @@ table {
 tbody, tfoot, thead {
     /*border: 1px solid #f1f1f1;*/
     background-color: rgba(0, 0, 0, 0);
-    color: white;
 }
 
 tbody tr:nth-child(even) {
@@ -34,28 +33,32 @@ table tbody td, th {
     padding: 0.5rem;
 }
 
+.title-font{
+    font-size: 4.5mm;
+}
+
 /*tag button*/
 
 .btn-flat {
     text-shadow: none;
     display: inline-block;
-    padding: 0.0em 0.2em;
+    padding: 0.0em 0.3em;
     text-decoration: none;
     background: seagreen;
     color: white;
     border-radius: 3px;
-    transition: 0s;
-    font-size: 4mm;
+    transition: 0.1s;
+    font-size: 3.7mm;
 }
 
 .btn-flat:hover, .hovered {
-    color: #333 !important;
+    color: #fff !important;
     /* Prevent inheritance from `body` */
-    background-color: #fff !important;
+    background-color: #333 !important;
 }
 
 .btn-flat:visited {
-    color: white;
+    color: fff;
 }
 
 .expanded {
@@ -63,7 +66,7 @@ table tbody td, th {
 }
 
 label {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 5mm;
 }
 
@@ -73,22 +76,22 @@ label {
     border-collapse: collapse;
 }
 
-.tablesorter-dark .header, .tablesorter-dark .tablesorter-header {
+.tablesorter-default .header, .tablesorter-default .tablesorter-header {
     cursor: pointer;
-    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAAP///////yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
     background-position: center right;
     background-repeat: no-repeat;
 }
 
-.tablesorter-dark thead .headerSortUp, .tablesorter-dark thead .tablesorter-headerSortUp, .tablesorter-dark thead .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+.tablesorter-default thead .headerSortUp, .tablesorter-default thead .tablesorter-headerSortUp, .tablesorter-dark thead .tablesorter-headerAsc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
 }
 
-.tablesorter-dark thead .headerSortDown, .tablesorter-dark thead .tablesorter-headerSortDown, .tablesorter-dark thead .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+.tablesorter-default thead .headerSortDown, .tablesorter-default thead .tablesorter-headerSortDown, .tablesorter-dark thead .tablesorter-headerDesc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 }
 
-.tablesorter-dark thead .sorter-false {
+.tablesorter-default thead .sorter-false {
     background-image: none;
     cursor: default;
 }
