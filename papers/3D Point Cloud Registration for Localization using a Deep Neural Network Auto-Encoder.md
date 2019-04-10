@@ -63,7 +63,8 @@ RANSACを使い、反復的に6つの候補ペアを選択し、変換を計算�
 - なし
 
 ### 論文関連リンク
-1. なし
+1. [Gil Elbaz. 3D Point Cloud Registration for Localization using a Deep Auto-encoder Neural Network. (著者の説明動画, アクセス:2019/04/10)](https://www.youtube.com/watch?v=iAScGjMvyHA)
+2. [gilbaz, gilbaz/LORAX: CVPR Paper - "3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder" - Partial Implementation Code. (著者らの実装, アクセス:2019/04/10)](https://github.com/gilbaz/LORAX)
 
 ### 会議
 CVPR 2017
