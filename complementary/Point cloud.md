@@ -16,6 +16,11 @@
   - Fine registration algorithm  
     入力される点群が大体位置合わせされており、先ほどの[1]の図の様に点群が大きくかぶっている場合はこのアルゴリズムが使われる。また、Coarse registration algorithmの補助としても使われる。
 
+## 有用性の主張
+### Instance Segmentation
+#### 2019 3D Graph Embedding Learning with a Structure-aware Loss Function for Point Cloud Semantic Instance Segmentation
+LIDARやRGBDカメラ等のカメラの開発として、自動運転や拡張現実で3Dシーンの理解はより重要なものとなっている。2Dのシーン理解と比較して、3Dの理解はデータの希薄性と費用のかかる計算コストによってより難しくなっている。しかしながら、3Dデータは意味的な理解に役立つ幾何学的情報を含んでいるが、2D画像はそうではない。この論文では3Dセマンティックインスタンスセグメンテーションに注力する。
+
 ## Reference
 1. [Haowen Deng, Tolga Birdal, Slobodan Ilic. PPFNet: Global Context Aware Local Features for Robust 3D Point Matching. CVPR2018.](https://arxiv.org/abs/1802.02669)
 2. [Gil Elbaz, Tamar Avraham, Anath Fischer. 3D Point Cloud Registration for Localization Using a Deep Neural Network Auto-Encoder. CVPR2017](http://openaccess.thecvf.com/content_cvpr_2017/papers/Elbaz_3D_Point_Cloud_CVPR_2017_paper.pdf)

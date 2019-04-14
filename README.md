@@ -21,6 +21,7 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
 - 修正リスト
   - Tangent Convolutions for Dense Prediction in 3D(効率の部分のIとMがわからない、アーキテクチャの理解が不透明)
   - Learning Localized Generative Models for 3D Point Clouds via Graph Convolution(内容が分かりずらい)
+  - SiCloPe: Silhouette-Based Clothed People(binの説明をまだ理解していない)
 
 - いずれは自分で書いてねリスト
   - Deep Clustring for Unsupervised Learning of Visual Features(事前知識として、Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzlesが必要だと思う)
@@ -31,4 +32,4 @@ Issueの方に各論文のmdファイルの内容を載せています。もし�
   - OctNet: Learning Deep 3D Representations at High Resolutions
   - Parallel Tracking and Mapping for Small AR Workspaces
   - CNN-SLAM: Real-time dense monocular SLAM with learned depth prediction
-  - Recurrent Slice Networks for 3D Segmentation of Point Clouds
+  - 3D Graph Embedding Learning with a Structure-aware Loss Function for Point Cloud Semantic Instance Segmentation
