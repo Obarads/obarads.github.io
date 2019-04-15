@@ -22,23 +22,39 @@ kNNにアテンション機構を導入して不必要な参照しないよう�
 $Loss_ {i}^{intra}$は同じインスタンスの埋め込み間の距離を最小にする損失であり、$Loss_ {ij}^{inter}$は異なるインスタンス間の埋め込みを離れさせる損失である。
 
 ### Attention-based K Nearest Neighbour
-通常のkNN集約の式にアテンションの重み$\alpha$を組み込んだものを使っている。
+通常のkNN集約の式にアテンションの重み$\alpha$を組み込んだものを使っている。$\alpha$自体は中心点とその点の近傍点を用いたソフトマックス関数から出力される値である。
 
 ![eq7](img/3GELwaSLFfPCSIS/eq7.png)
 
+### Graph Convolutional Neural Network using Attention-based KNN
+通常、グラフ畳み込みニューラルネットワーク(GCN)は集約と更新によって成り立つ。ここでは先程説明したアテンションkNNを集約として使い、バイアスなしの全結合層を更新として使う。よって、式(10)のように表すことができる。このグラフ畳み込みニューラルネットワークの概要図は図3の通り。  
+なお、この提案は莫大な計算、グラフの固有値とラプラシアン行列の計算が必要ない(Analysis参照)。
+
+![eq10](img/3GELwaSLFfPCSIS/eq10.png)
+
 ![fig3](img/3GELwaSLFfPCSIS/fig3.png)
 
-### Graph Convolutional Neural Network using Attention-based KNN
-
 ## どうやって有効だと検証した?
+### データセットの利用
+ScanNetとNYUv2を用いて実験した。結果は表1と表2の通り。視覚的結果は図4の通り。
+
+![tab1](img/3GELwaSLFfPCSIS/tab1.png)
+
+![tab2](img/3GELwaSLFfPCSIS/tab2.png)
+
+![fig4](img/3GELwaSLFfPCSIS/fig4.png)
+
+### Ablation Study
+結果は表3の通り。vanillaLossは提案した損失の新規性である構造情報を使わない損失である。structure-aware loss関数はセマンティックセグメンテーションのIoUには影響を及ぼさないが、APの評価では精度が増加しているため、structure-aware lossによって学習されたより識別可能な埋込みから来る恩恵だと考えられる。
 
 ## 議論はある?
+さらなる複数台のセンサ融合により性能を高められるだろう。
 
 ## 次に読むべき論文は?
 - なし
 
 ### 論文関連リンク
-1. [Benjamin Graham, Martin Engelcke, and Laurens van der Maaten. 3d semantic segmentation with submanifold sparse convolutional networks. In Pro-ceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 9224–9232, 2018.](http://openaccess.thecvf.com/content_cvpr_2018/papers/Graham_3D_Semantic_Segmentation_CVPR_2018_paper.pdf)
+1. [Benjamin Graham, Martin Engelcke, and Laurens van der Maaten. 3d semantic segmentation with submanifold sparse convolutional networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 9224–9232, 2018.](http://openaccess.thecvf.com/content_cvpr_2018/papers/Graham_3D_Semantic_Segmentation_CVPR_2018_paper.pdf)
 
 ### 会議
 不明
