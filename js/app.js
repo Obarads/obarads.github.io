@@ -46,6 +46,7 @@ function create_tag(tag) {
 
 function create_links(link) {
   var tags = [];
+  //console.log(link);
   if (link[1] != "") {
     tags = link[1].split(',').map(create_tag);
   }
