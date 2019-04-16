@@ -13,6 +13,8 @@
 
 ![fig2](img/GGSPNf3ISiPC/fig2.png)
 
+
+
 ### Generative Shape Proposal Network
 
 
