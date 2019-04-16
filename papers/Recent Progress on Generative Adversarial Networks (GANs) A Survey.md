@@ -140,16 +140,16 @@ FIDはHeuselら[32]によって提案された。FIDはクラス内のmode dropp
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 この資料中の参考文献は論文中のReferenceを参照すること。
 
-### 会議
+## 会議
 IEEE
 
-### 著者
+## 著者
 Zhaoqing Pan, Weijie Yu, Xiaokai Yi, Asifullah Khan, Feng Yuan, Yuhui Zheng.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2019/03/14
 
 ## コメント
@@ -157,3 +157,6 @@ Zhaoqing Pan, Weijie Yu, Xiaokai Yi, Asifullah Khan, Feng Yuan, Yuhui Zheng.
 
 ## key-words
 GAN
+
+## status
+未完

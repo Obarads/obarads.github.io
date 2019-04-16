@@ -16,16 +16,16 @@ Self-Organizing Map(SOM)を構築することで点群の空間分布をモデ�
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. なし
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Jiaxin Li, Ben M. Chen, Gim Hee Lee.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/03/12
 
 ## コメント
@@ -33,3 +33,6 @@ Jiaxin Li, Ben M. Chen, Gim Hee Lee.
 
 ## key-words
 Point_Cloud, AutoEncoder, Semantic_Segmentation, Classification
+
+## status
+未完

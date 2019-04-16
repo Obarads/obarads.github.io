@@ -104,3 +104,6 @@ super tensorの扱いがわからないからなぜ効率が良くなるのか�
 
 ## key-words
 Detection, Point_Cloud
+
+## status
+更新済

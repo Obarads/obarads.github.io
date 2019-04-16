@@ -12,7 +12,7 @@ GANを使って異常検出を可能にした。確率分布pに従う様にG(z)
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 最適なzγを勾配法によって探すため、以下の様な式を定義する。  
-- **損失関数**  
+### 損失関数
 L(zγ)=(1-λ)・LR(zγ)+λ・LD(zγ)  
   - LR(zγ) (Residual Loss)  
   LRは視覚的相違を表す。G(zγ)がxと全く同じなら、L(zγ)=0となる。定義式は以下の通り  
@@ -22,16 +22,16 @@ L(zγ)=(1-λ)・LR(zγ)+λ・LD(zγ)
   LDはGANのdiscriminatorが抽出する特徴の相違である。下の定義式のfはdiscriminatiorの中間層であり、多様性X(pに従うxの集合)に当てはまるよう学習されているため、正常なxが入力されればfからの出力は一致する。逆に異常なxが入力されれば、xに一致するzγは存在しないため特徴は一致しない。なお、特徴マッチングの元は論文関連リンクの文献1から。  
   LD(zγ)=Σ|f(x)-f(G(zγ))|
 
-- **anomaly score**  
+### anomaly score
 anomaly scoreと呼ばれるスコアを算出する。定義は以下の通り。  
 A(X)=(1-λ)・R(x)+λ・D(x)  
 R(x)(residual score)はLR(zΓ)によって、D(x)(discrimination score)はLD(zΓ)によって定義され、小さければ小さいほどxとG(zΓ)は似ている。
 
-- **residual image**  
+### residual image
 追加で、画像内の異常領域特定のために残差画像を使う。定義は以下の通り。  
 XR=|x-G(zΓ)|
 
-- **reference anomaly score**  
+### reference anomaly score
 提案した手法との比較のため、reference anomaly scoreを以下のように定義する。  
 A^(x) = (1-λ)・R(x)+λ・D^(x)  
 ここで、reference discrimination scoreはD^(x)=LD^(zΓ)であり論文関連リンクの文献2で使われている。
@@ -39,16 +39,16 @@ A^(x) = (1-λ)・R(x)+λ・D^(x)
 ## どうやって有効だと検証した?
 性能評価について以下の3点で計測している。
 
-- **モデルがリアルな画像を提案できるかどうか**  
+### モデルがリアルな画像を提案できるかどうか
 訓練セットまたはテストセットから抽出された健康な例(異常がない)の画像パッチおよびテストセットから抽出された疾患の例(異常がある)の画像について実行された。
 
-- **異常検出精度の質は良いものかどうか**  
+### 異常検出精度の質は良いものかどうか
 anomaly score、residual score、discrimination score、受信者動作特性曲線(以下ROC曲線)で評価する。
 
-- **提案手法の利点の掘り下げ**  
-  以下2つのアプローチの変更点に対してROC曲線と、Youden's indexを用いてROC曲線の最適なcut-off pointで再現率と精度、特異性、感度を計算し、AnoGANと比較する。
-  - DCGANを用いた敵対的訓練を行わず敵対畳み込みオートエンコーダー(論文関連リンクの文献3)を用いて多様性Xを学習する。このとき、anomaly scoreの定義は変わらない。
-  - GANRも評価する。このモデルにはanomaly scoreのためにA^(x)もしくはD^(x)が使われる。また、一致損失(多分LDとLR)が画像から潜在空間へのマッピングに使われ、このときGANのパラメーターにはAnoGANで事前訓練したものが使われる。
+### 提案手法の利点の掘り下げ
+以下2つのアプローチの変更点に対してROC曲線と、Youden's indexを用いてROC曲線の最適なcut-off pointで再現率と精度、特異性、感度を計算し、AnoGANと比較する。
+- DCGANを用いた敵対的訓練を行わず敵対畳み込みオートエンコーダー(論文関連リンクの文献3)を用いて多様性Xを学習する。このとき、anomaly scoreの定義は変わらない。
+- GANRも評価する。このモデルにはanomaly scoreのためにA^(x)もしくはD^(x)が使われる。また、一致損失(多分LDとLR)が画像から潜在空間へのマッピングに使われ、このときGANのパラメーターにはAnoGANで事前訓練したものが使われる。
 
 ## 議論はある?
 ジェネレーターへの写像ができるのであれば、それを使って画像検索とかできそう。
@@ -56,25 +56,25 @@ anomaly score、residual score、discrimination score、受信者動作特性曲
 ## 次に読むべき論文は?
 - Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems (GANについてよく知らないし、特徴マッチングが気になった)  
 
-### 論文関連リンク
+## 論文関連リンク
 - 本家:https://arxiv.org/abs/1703.05921
 - 文献1:Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., Chen, X.: Improved techniques for training GANs. In: Advances in Neural Information Pro-cessing Systems. (2016) 2226-2234.
 - 文献2:Yeh, R., Chen, C., Lim, T.Y., Hasegawa-Johnson, M., Do, M.N.: Semantic image inpainting with perceptual and contextual losses. arXiv:1607.07539 (2016)
 - 文献3:Pathak, D., Kraahenbuhl, P., Donahue, J., Darrell, T., Efros, A.A.: Context en-coders: Feature learning by inpainting. CoRR abs/1604.07379 (2016)
 
-### 参考リンク
+## 参考リンク
 - 参考1:https://aotamasaki.hatenablog.com/entry/2018/04/14/212948#%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2
 - 参考2:https://qiita.com/NakaokaRei/items/231ec4efe42dfe79d1ff
 - 参考3:http://habakan6.hatenablog.com/entry/2018/04/29/013200
 - GANを学ぶ:https://qiita.com/hakubisin104/items/64662d19fa7ae41a87aa  
 
-### 会議
+## 会議
 IPMI2017
 
-### 著者/所属機関
+## 著者/所属機関
 Thomas Schlegl, Philipp Seebock, Sebastian M. Waldstein, Ursula Schmidt-Erfurth, and Georg Langs.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/03/17
 
 ## コメント
@@ -82,3 +82,6 @@ Thomas Schlegl, Philipp Seebock, Sebastian M. Waldstein, Ursula Schmidt-Erfurth,
 
 ## key-words
 2D_Image, GAN, One-Class_&_Anomaly_Detection
+
+## status
+更新済

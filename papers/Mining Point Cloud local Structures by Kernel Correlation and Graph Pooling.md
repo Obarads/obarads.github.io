@@ -14,7 +14,7 @@
 
 ![fig2](img/MPCLSbKCaGP/fig2.png)
 
-### **Learning on Local Geometric Structure**  
+### Learning on Local Geometric Structure
 畳み込みカーネルを用いて画像とカーネルの類似性を定量化するように、点群では2つの点集合間(入力とkernel point)の類似性をkernel correlation(論文関連リンクの1と2)で測定する。kernel correlationの計算はback propagationを介して修正される。具体的には論文関連リンクの2のLeave-one-out Kernel Correlation(LOO-KC)とmultiply-linked registration cost functionで点群の局所形状構造を得る。
 
 M個の学習可能な点群を持つpoint-set kernel ${\kappa}$(畳み込み層のフィルタに相当するもの？)と、$N$個の点を持つ点群内にある現在のanchor point ${\rm x}_i$間のkernel correlation(KC)を式(1)の様に定義する。
@@ -59,7 +59,7 @@ KCが局所の幾何学的構造をどのように捉えているか理解する
 
 ![fig3](img/MPCLSbKCaGP/fig3.png)
 
-### **Learning on Local Feature Structure**
+### Learning on Local Feature Structure
 KCを計算するため、点の局所的な近傍を効率的に格納できる、点を頂点とするK Nearest neighbor graph(KNNG)を構築する。その後、入力の局所的な構造を利用するために、KNNGのedgeに沿った集約と再帰的な特徴伝播を行う(画像でいう畳み込みと似ている)。
 
 具体的には、
@@ -73,52 +73,52 @@ $$
 $$
 
 これはaverageもしくはmax poolingとして実装できる。
-- **Graph average pooling**  
-  graph average poolingの場合、正規化された(標準化?)隣接行列として式(4)のPを使うことで、近傍の点の特徴を平均化する。この${\bf P}$は式(5)で定義される。
+#### Graph average pooling
+graph average poolingの場合、正規化された(標準化?)隣接行列として式(4)のPを使うことで、近傍の点の特徴を平均化する。この${\bf P}$は式(5)で定義される。
 
-  $$
-  {\bf P=D^{-1}W \tag{5} }
-  $$
+$$
+{\bf P=D^{-1}W \tag{5} }
+$$
 
-  この時、
-  - KNNGは隣接行列${\bf W\in\mathfrak{R}^{N\times N} }$を持つ。
-  - ${\bf W}(i,j)=1$は、頂点iとjの間にedgeがある場合。
-  - ${\bf W}(i,j)=0$は、上記条件以外の場合。
-  - $D\in \mathfrak{R}^{N\times N}$は$(i,j)$番目のentry(要素?)$d_{i,j}$による次数行列である(?)。
-  - $deg(i)$は頂点$i$とつながっている頂点の数を数えた頂点$i$の次数である。
+この時、
+- KNNGは隣接行列${\bf W\in\mathfrak{R}^{N\times N} }$を持つ。
+- ${\bf W}(i,j)=1$は、頂点iとjの間にedgeがある場合。
+- ${\bf W}(i,j)=0$は、上記条件以外の場合。
+- $D\in \mathfrak{R}^{N\times N}$は$(i,j)$番目のentry(要素?)$d_{i,j}$による次数行列である(?)。
+- $deg(i)$は頂点$i$とつながっている頂点の数を数えた頂点$i$の次数である。
 
-  以上の定義があるとき、$d_{i,j}$は式(6)のように定義される。
+以上の定義があるとき、$d_{i,j}$は式(6)のように定義される。
 
-  $$
-  d_{i,j} = \left\{\begin{array}{ll}deg(i), & if \qquad i=j \\0, & otherwise\end{array}\right. \tag{6}
-  $$
+$$
+d_{i,j} = \left\{\begin{array}{ll}deg(i), & if \qquad i=j \\0, & otherwise\end{array}\right. \tag{6}
+$$
 
-- **Graph max pooling(GM)**  
-  graph max pooling(GM)の場合、それぞれの近傍上の最大特徴をとる。これは式(4)の行列乗算の「+」演算子を「max」演算子に置き換えることで簡単に計算できるようになる。これにより出力のY$(i,k)$番目のentryは式(7)のようになる。
+#### Graph max pooling(GM)
+graph max pooling(GM)の場合、それぞれの近傍上の最大特徴をとる。これは式(4)の行列乗算の「+」演算子を「max」演算子に置き換えることで簡単に計算できるようになる。これにより出力のY$(i,k)$番目のentryは式(7)のようになる。
 
-  $$
-  {\bf Y}(i,k) = \max_{n\in\mathcal{N}(i)} {\bf X}(n,k) \tag{7}
-  $$
+$$
+{\bf Y}(i,k) = \max_{n\in\mathcal{N}(i)} {\bf X}(n,k) \tag{7}
+$$
 
-  ここで、
-  - $\mathcal{N}(i)$は${\bf W}$から計算された点${\bf X}_i$の近隣のインデックスの集合を示す。
+ここで、
+- $\mathcal{N}(i)$は${\bf W}$から計算された点${\bf X}_i$の近隣のインデックスの集合を示す。
 
 poolingが行われた特徴量は図2の様に結合される。
 
 ## どうやって有効だと検証した?
-### **Shape Classification**
+### Shape Classification
 MNISTを2D点群に変換した分類(表1)とModelNetを使った分類(表2)で評価を行った。あとMのサイズによる比較も行っている。
 
 ![table1](img/MPCLSbKCaGP/table1.png)
 
 ![table2](img/MPCLSbKCaGP/table2.png)
 
-### **Part Segmentation**
+### Part Segmentation
 ShapeNetのpart datasetで評価を行った(表4)。
 
 ![table4](img/MPCLSbKCaGP/table4.png)
 
-### **Ablation Study**
+### Ablation Study
 以下の項にまとめられている。ここでは省く。
 - Effectiveness of Kernel Correlation(KCの効率性)
 - Symmetric Functions(対称関数)
@@ -132,17 +132,17 @@ ShapeNetのpart datasetで評価を行った(表4)。
 ## 次に読むべき論文は?
 - [Yaoqing Yang, Chen Feng, Yiru Shen and Dong Tian. FoldingNet: Point Cloud Auto-encoder via Deep Grid Deformation. CVPR 2018.](https://arxiv.org/abs/1712.07262)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [B. Jian and B. C. Vemuri. Robust point set registration us-ing gaussian mixture models. IEEE Transactions on Pattern Analysis and Machine Intelligence, 33(8):1633–1645, 2011.](https://www.researchgate.net/publication/224207506_Robust_Point_Set_Registration_Using_Gaussian_Mixture_Models)
 2. [Y. Tsin and T. Kanade. A correlation-based approach to robust point set registration. In European conference on com-puter vision (ECCV), pages 558–569, 2004.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.88.8155&rep=rep1&type=pdf)
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Y. Shen, C. Feng, Y. Yang, and D. Tian.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/07/08
 
 ## コメント
@@ -150,3 +150,6 @@ Y. Shen, C. Feng, Y. Yang, and D. Tian.
 
 ## key-words
 Point_Cloud,Classification,Semantic_Segmentation
+
+## status
+更新済

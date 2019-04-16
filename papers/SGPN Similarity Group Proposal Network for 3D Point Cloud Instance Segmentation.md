@@ -26,17 +26,17 @@ SGPN概要図は図2の通り。生の点群はPointNetもしくはPointNet++等
 -
 -
 
-### 論文関連リンク
+## 論文関連リンク
 1.
 2.
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Weiyue Wang, Ronald Yu, Qiangui Huang, Ulrich Neumann.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/11/23
 
 ## コメント
@@ -44,3 +44,6 @@ Weiyue Wang, Ronald Yu, Qiangui Huang, Ulrich Neumann.
 
 ## key-words
 Point_Cloud, Instance_Segmentation, Semantic_Segmentation
+
+## status
+未完

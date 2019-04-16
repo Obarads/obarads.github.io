@@ -32,5 +32,6 @@ Martin Simonovsky, Nikos Komodakis.
 
 ## コメント
 なし
+
 ## key-words
 Graph

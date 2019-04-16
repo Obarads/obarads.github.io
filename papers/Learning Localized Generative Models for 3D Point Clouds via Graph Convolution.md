@@ -61,16 +61,16 @@ ShaapeNetから用意した3つのカテゴリを使い提案モデルのテス�
 ## 次に読むべき論文は?
 - [Martin Simonovsky and Nikos Komodakis. Dynamic edge-conditioned filters in convolutional neu-ral networks on graphs. In Proc. CVPR, 2017.](https://arxiv.org/abs/1704.02901)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Martin Simonovsky and Nikos Komodakis. Dynamic edge-conditioned filters in convolutional neu-ral networks on graphs. In Proc. CVPR, 2017.](https://arxiv.org/abs/1704.02901)
 
-### 会議
+## 会議
 ICLR 2019
 
-### 著者
+## 著者
 Diego Valsesia, Giulia Fracastoro, Enrico Magli.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/09/28
 
 ## コメント
@@ -82,3 +82,6 @@ Diego Valsesia, Giulia Fracastoro, Enrico Magli.
 
 ## key-words
 Point_Cloud, GAN
+
+## status
+更新済

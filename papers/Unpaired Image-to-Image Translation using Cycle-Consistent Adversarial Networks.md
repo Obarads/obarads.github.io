@@ -23,13 +23,13 @@
 ### 論文関連リンク
 1. [hrs1985, CycleGAN (アクセス日時:2019/03/20)](https://qiita.com/hrs1985/items/050acb15ce33675f07ec)
 
-### 会議
+## 会議
 ICCV 2017
 
-### 著者
+## 著者
 Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/03/30
 
 ## コメント
@@ -37,3 +37,6 @@ Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros.
 
 ## key-words
 2D_Image, GAN
+
+## status
+参照

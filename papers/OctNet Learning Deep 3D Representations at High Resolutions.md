@@ -29,16 +29,16 @@ OctNetにはoctreeが使われる。octreeはデータが疎な部分を要約�
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [A. Miller, V. Jain, and J. L. Mundy. Real-time rendering and dynamic updating of 3-d volumetric data. In Proc. of the Workshop on General Purpose Processing on Graphics Processing Units (GPGPU), page 8, 2011.](https://dl.acm.org/citation.cfm?id=1964190)
 
-### 会議
+## 会議
 CVPR 2017.
 
-### 著者
+## 著者
 Gernot Riegler, Ali Osman Ulusoy, Andreas Geiger.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2016/11/15
 
 ## コメント
@@ -46,3 +46,6 @@ Gernot Riegler, Ali Osman Ulusoy, Andreas Geiger.
 
 ## key-words
 Voxel, Point_Cloud, Classification
+
+## status
+未完

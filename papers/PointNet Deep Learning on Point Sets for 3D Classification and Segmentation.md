@@ -21,15 +21,15 @@ Point Cloud(以下点群)に対してClassification、Part Segmentation、Semant
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 以下にこのモデルの工夫を示す。
 
-- **入力に順序がない問題への対策**  
+### 入力に順序がない問題への対策
 入力の順序の変化に対しても出力は変わらないので  
 f({x1, … ,xn}) ≈ g(h(x1), … ,h(xn));  
 で定義される。このとき、x1やx2などの順番は変化する。このモデルの場合、hをMLPと畳込み(ただしPointwise convolution)で、gをsingle variable function(単一の値を入れる関数?)とmax pooling関数で近似する。
 
-- **ローカルな特徴とグローバルな特徴の集約**  
+### ローカルな特徴とグローバルな特徴の集約
 セグメンテーションの場合、ローカル&グローバルな特徴が必要になる。そこで、点ごとの特徴とgobal featureを結合することで解決した。
 
-- **剛体変換への対策**  
+### 剛体変換への対策
 T-netと呼ばれるアフィン変換の役目を持つネットワークを導入した。T-netも学習可能なネットワークである。
 T-netを作るに当たって参考にされたもの→Spatial transformer networks. In NIPS 2015.
 
@@ -42,24 +42,24 @@ ClassificationはModelNet40、Part SegmentationはShapeNet part data set、Seman
 ## 次に読むべき論文は?
 - Pointwise Convolutional Neural Networks (このPointNetと同等の結果を示しているため)
 
-### 論文関連リンク
+## 論文関連リンク
 - 論文:https://arxiv.org/abs/1612.00593  
 - 本家実装(TensorFlow):https://github.com/charlesq34/pointnet  
 - Chainer実装:https://github.com/corochann/chainer-pointnet  
 - 紹介:http://stanford.edu/~rqi/pointnet/  
 
-### 参考リンク
+## 参考リンク
 - 参考1:https://www.slideshare.net/naoyachiba18/ss-120302579  
 - 参考2:https://www.slideshare.net/FujimotoKeisuke/point-net
 
-### 会議
+## 会議
 CVPR2017
 
-### 著者/所属機関
+## 著者/所属機関
 Charles R. Qi, Hao Su, Kaichun Mo,  Leonidas J. Guibas  
 Stanford University 
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2016/12/02
 
 ## コメント
@@ -67,3 +67,6 @@ CVPR2018では、局所形状を取り込む手法を取り入れたモデルが
 
 ## key-words
 Classification, Point_Cloud, Semantic_Segmentation
+
+## status
+更新済

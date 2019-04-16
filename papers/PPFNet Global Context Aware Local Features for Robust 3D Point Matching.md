@@ -70,20 +70,20 @@ N-tuple lossは各フラグメントにそれぞれN個のパッチがあると�
 ## 次に読むべき論文は?
 - Learning descriptors for object recognition and 3d pose estimation.(論文中の参考文献45より)
 
-### 論文関連リンク
+## 論文関連リンク
 1. 本論文: https://arxiv.org/abs/1802.02669
 
-### 参考リンク
+## 参考リンク
 1. PPFの説明:http://isl.sist.chukyo-u.ac.jp/Archives/ppf.html
 2. https://www.slideshare.net/naoyachiba18/ss-120302579
 
-### 会議
+## 会議
 CVPR2018
 
-### 著者/所属機関
+## 著者/所属機関
 Haowen Deng, Tolga Birdal, Slobodan Ilic
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/02/07
 
 ## コメント
@@ -91,3 +91,6 @@ Haowen Deng, Tolga Birdal, Slobodan Ilic
 
 ## key-words
 Point_Cloud, Registration
+
+## status
+更新済

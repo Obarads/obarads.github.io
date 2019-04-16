@@ -15,24 +15,24 @@ PartNetのアーキテクチャは図2の通り。木の各ノードは3つの�
 
 ![fig2](img/PARPDNfFaHSS/fig2.png)
 
-### **Node decoding modelue**
+### Node decoding modelue
 このモジュールは現在のノードから子ノードにglobal contextual informationを渡すために使われる。モジュールの構造は図3(図内のNode decoding modelueは後述するNode classification moduleと合体している)の通り。再帰的に渡される親ノードの特徴と現ノードの点群特徴を合体させている。図の中で使用されるPoubtNet_1は後述するNode segmentaion moduleで使用されるものと別であるため区別している。
 
 ![fig3](img/PARPDNfFaHSS/fig3.png)
 
-### **Node classification module**  
+### Node classification module
 このモジュールは分解階層の位相関係を構築するために使われる。具体的には、ノードを分解するかもしくは分解を止めるか、ノードのタイプの決定を予測をすることを学習し、このモジュールの役割を果たす。構造は図3(図の構造は前述したようにNode decoding modelueと合体している)の通り。ノードのタイプはadjacency、symmetryもしくはleafに分類される。adjacencyとsymmetryは分解位置、leafは分解停止を示す。  
 symmetryノードである場合、論文関連リンクの1と同様に左の子をsymmetry generatorと右の子をsymmetry parametersとする。symmetry generatorにsymmetry parameterを適応すると、symmetryノードの完全な点群が得られる。例えば、図1の左でいえば、
 - (多分左下から3番目の)脚部のスポークに対応するノードはrotational symmetryノードである。
   - 左の子はスポークの点群を持つ。
   - 右の子はsymmetry axis(対称性を持つための軸?)とsymmetry fold(?)を持つ。
 
-### **Node segmentation module**
+### Node segmentation module
 このモジュールは現在のノードの点群のセグメンテーションを実行するために使用される。最終的には点ごとの二値ラベルが出力される。構造は図4の通り。ここにあるPointNet_2はPointNet_1と重みを共有しないまったく別のPointNetである。symmetryノードでは、symmetry parameterに基づいてsymmetry generatorの対称物は分割される。
 
 ![fig4](img/PARPDNfFaHSS/fig4.png)
 
-### **Loss function**
+### Loss function
 各ノードに含まれるPointNetの平均を損失とする。損失は式(1)の通り。
 
 $$
@@ -42,25 +42,25 @@ $$
 このとき、$L_{class}(n)$と$L_{seg}$はそれぞれnノードの分類損失とセグメンテーション損失である。両方とも、cross entropy損失で定義されている。$\mathcal{H}$は階層内のすべてのノードの集合、$\mathcal{T}$はすべての非leafノードの集合である。
 
 ## どうやって有効だと検証した?
-### **The Fine-grained Segmentation Benchmark (FineSeg)**
+### The Fine-grained Segmentation Benchmark (FineSeg)
 著者らはきめ細かいパーツのインスタンスセグメンテーションのためのベンチマークを提案した。このベンチマークはきめ細かいshape segmentationを評価するのに役に立つ。データセットには椅子1000個、テーブル500個、飛行機600個、ソファ600個、ヘリコプター100個、バイク140個の約3000個が含まれている。論文関連リンクの3で使用されているShapeNetの一部分が使われ、一様に整列、拡大縮小されている。きめ細かい分割が行われていない場合は手でセグメントしている。そして、論文関連リンクの2の手法で各形状のための部品階層を構築する。このベンチマークはAverage Precisionを用いて定量的に点群のきめ細かいセグメンテーションの評価を行える。このベンチマークについては[www.kevinkaixu.net/partnet.html](http://kevinkaixu.net/partnet.html)を参照すること。
 
-### **Visual results on FineSeg**
+### Visual results on FineSeg
 視覚的な結果は図5に示すとおりである。
 
 ![fig5](img/PARPDNfFaHSS/fig5.png)
 
-### **Comparison of semantic segmentation**
+### Comparison of semantic segmentation
 ShapeNet partデータセットで評価する。PartNetはセマンティックセグメンテーションを行えないので、分解する各部品のセマンティックラベルを予測するためのモジュールを追加した。結果は表2の通り。
 
 ![tab2](img/PARPDNfFaHSS/table2.png)
 
-### **Comparison of instance segmentation**
+### Comparison of instance segmentation
 SGPNとFineSegでインスタンスセグメンテーションの比較を行う。結果は表3の通り。
 
 ![tab3](img/PARPDNfFaHSS/table3.png)
 
-### **その他の評価**
+### その他の評価
 きめ細かい点群を含んでいないShapeNetを使ったラベルの生成などいろいろある。
 
 ## 議論はある?
@@ -70,19 +70,19 @@ SGPNとFineSegでインスタンスセグメンテーションの比較を行う
 ## 次に読むべき論文は?
 - [J. Li, K. Xu, S. Chaudhuri, E. Yumer, H. Zhang, and L. Guibas. GRASS: Generative recursive autoencoders for shape structures. ACM Transactions on Graphics (TOG), 36(4):52, 2017.](https://arxiv.org/abs/1705.02090)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [J. Li, K. Xu, S. Chaudhuri, E. Yumer, H. Zhang, and L. Guibas. GRASS: Generative recursive autoencoders for shape structures. ACM Transactions on Graphics (TOG), 36(4):52, 2017.](https://arxiv.org/abs/1705.02090)
 1. [Y. Wang, K. Xu, J. Li, H. Zhang, A. Shamir, L. Liu, Z. Cheng, and Y. Xiong. Symmetry hierarchy of man-made objects. Computer Graphics Forum, 30(2):287–296, 2011.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-8659.2011.01885.x)
 1. [M. Sung, H. Su, V. G. Kim, S. Chaudhuri, and L. Guibas. ComplementMe: Weakly-supervised component sugges-tions for 3D modeling. ACM Trans. on Graph. (SIGGRAPH Asia), 2017.](https://arxiv.org/abs/1708.01841)
 1. [T. Liu, S. Chaudhuri, V. G. Kim, Q. Huang, N. J. Mitra, and T. Funkhouser. Creating consistent scene graphs us-ing a probabilistic grammar. ACM Transactions on Graphics (TOG), 33(6):211, 2014.](https://dl.acm.org/citation.cfm?id=2661243&dl=ACM&coll=DL)
 
-### 会議
+## 会議
 CVPR 2019
 
-### 著者
+## 著者
 Fenggen Yu, Kun Liu, Yan Zhang, Chenyang Zhu and Kai Xu.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2019/03/08
 
 ## コメント
@@ -90,3 +90,6 @@ Fenggen Yu, Kun Liu, Yan Zhang, Chenyang Zhu and Kai Xu.
 
 ## key-words
 Point_Cloud, Instance_Segmentation, Semantic_Segmentation, treeRNN
+
+## status
+更新済

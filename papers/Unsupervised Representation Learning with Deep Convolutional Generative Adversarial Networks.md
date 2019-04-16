@@ -19,22 +19,22 @@ GANはノイズと理解できない表現を含む画像を生成すること�
 ![fig1](img/URLwDCGAN/fig1.png)
 
 ## どうやって有効だと検証した?
-### **LSUN**
+### LSUN
 Large-scale Scene Understanding (LSUN)データセットを使用して生成したベッドルームの例を図3に示す。また、画像の重複排除プロセスについても検証している。
 
 ![fig3](img/URLwDCGAN/fig3.png)
 
-## **CLASSIFYING CIFAR-10 USING GANS AS A FEATURE EXTRACTOR**
+### CLASSIFYING CIFAR-10 USING GANS AS A FEATURE EXTRACTOR
 教師付きタスクについてDCGANの識別性能を図る。DCGANをImagenet-1Kで訓練したのち、全ての層から弁別器の畳み込み特徴を使い、$4\times 4$の空間グリッドを生成するためにそれぞれの層表現をmax-poolingする。特徴は28672次元ベクトルから平坦化、連結され、そして規則化された線形L2-SVM分類器を訓練するために使われる。
 
 ![tab1](img/URLwDCGAN/tab1.png)
 
-### **VECTOR ARITHMETIC ON FACE SAMPLES**
+### VECTOR ARITHMETIC ON FACE SAMPLES
 生成器の入力であるZベクトルを使い、word2vecの様にベクトル演算が可能である。この演算により図7の様にベクトル演算の結果が反映される。
 
 ![fig7](img/URLwDCGAN/fig7.png)
 
-### **その他**
+### その他
 他にもいろいろ行っている。
 
 ## 議論はある?
@@ -45,7 +45,7 @@ Large-scale Scene Understanding (LSUN)データセットを使用して生成し
 - [Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros. Image-to-Image Translation with Conditional Adversarial Networks. 2016.](https://arxiv.org/abs/1611.07004)
 - [Augustus Odena, Christopher Olah, Jonathon Shlens. Conditional Image Synthesis With Auxiliary Classifier GANs. 2016.](https://arxiv.org/abs/1610.09585)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Denton, Emily, Chintala, Soumith, Szlam, Arthur, and Fergus, Rob. Deep generative image models using a laplacian pyramid of adversarial networks. arXiv preprint arXiv:1506.05751, 2015](https://arxiv.org/abs/1506.05751)
 2. [Gregor, Karol, Danihelka, Ivo, Graves, Alex, and Wierstra, Daan. Draw: A recurrent neural network for image generation. arXiv preprint arXiv:1502.04623, 2015.](https://arxiv.org/abs/1502.04623)
 3. [Dosovitskiy, Alexey, Springenberg, Jost Tobias, and Brox, Thomas. Learning to generate chairs with convolutional neural networks. arXiv preprint arXiv:1411.5928, 2014.](https://arxiv.org/abs/1411.5928)
@@ -54,13 +54,13 @@ Large-scale Scene Understanding (LSUN)データセットを使用して生成し
 6. [Shinya Yuki. はじめてのGAN (アクセス日時:2019/3/21).](https://elix-tech.github.io/ja/2017/02/06/gan.html)
 7. [Nair, Vinod and Hinton, Geoffrey E. Rectified linear units improve restricted boltzmann machines. InProceedings of the 27th International Conference on Machine Learning (ICML-10), pp. 807– 814, 2010.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.165.6419&rep=rep1&type=pdf)
 
-### 会議
+## 会議
 ICLR 2016
 
-### 著者
+## 著者
 Alec Radford, Luke Metz, Soumith Chintala.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2015/11/19
 
 ## コメント
@@ -68,3 +68,6 @@ Alec Radford, Luke Metz, Soumith Chintala.
 
 ## key-words
 GAN, 2D_Image
+
+## status
+更新済

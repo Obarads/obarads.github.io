@@ -15,16 +15,16 @@
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Iwami Kazuya. SLAM勉強会（3） LSD-SLAM. (アクセス:2019/04/08)](https://www.slideshare.net/kazuya_tennis/slam3-lsdslam)
 
-### 会議
+## 会議
 ECCV 2014
 
-### 著者
+## 著者
 Jakob Engel and Thomas Schops and Daniel Cremers.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2014/09/06
 
 ## コメント
@@ -32,3 +32,6 @@ Jakob Engel and Thomas Schops and Daniel Cremers.
 
 ## key-words
 SLAM, 2D_Image
+
+## status
+未完

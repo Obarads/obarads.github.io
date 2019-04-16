@@ -56,16 +56,16 @@ S3DIS、ShapeNet、ScanNetのセマンティックセグメンテーションが
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. なし
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Qiangui Huang, Weiyue Wang, Ulrich Neumann.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/02/13
 
 ## コメント
@@ -73,3 +73,6 @@ Qiangui Huang, Weiyue Wang, Ulrich Neumann.
 
 ## key-words
 Point_Cloud, Semantic_Segmentation
+
+## status
+更新済

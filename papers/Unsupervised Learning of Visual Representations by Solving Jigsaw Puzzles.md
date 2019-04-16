@@ -17,10 +17,10 @@ pretextタスクとしてジグゾーパズルを解くself-supervisionモデル
 
 ## どうやって有効だと検証した?
 
-### **実装の詳細**
+### 実装の詳細
 Titan X GPU\*1で論文関連リンクの6を使う。訓練ではImageNetから256\*256ピクセルのカラー画像を1.3M使い、ミニバッチは256バッチサイズである。画像は比率を守り、幅か高さが256ピクセルに一致するまでリサイズし、そこから他の次元(幅もしくは高さ)が256ピクセルになるようにトリミングする。トレーニングは350K回繰り返されたのちに学習率は0.01へ収束する。(Tesla K40の話は省略)
 
-### **Pascal VOC**  
+### Pascal VOC
 ジグゾーパズルタスクで得た特徴を、論文関連リンクの3のフレームワークを介してPASCAL VOC 2007の分類タスク、Fast R-CNN(論文関連リンクの4)を介してPASCAL VOC 2007の検知タスクへfine-tuningする。また、同じ重みを論文関連リンクの5のフレームワークを利用してPASCAL VOC 2012データセットのセマンティックセグメンテーションへfine-tuningする。結果は表1の通り。
 
 ![tab1](img/ULoVRbSJP/table1.png)
@@ -42,20 +42,20 @@ AlexNet等のネットワークでは、最後の層が目的のタスクと使�
 ## 次に読むべき論文は?
 - [Doersch, C., Gupta, A., Efros, A.A.: Unsupervised visual representation learning by context prediction. ICCV (2015)](https://arxiv.org/abs/1505.05192)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Self-supervised Learning による特徴表現学習](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
 2. [Doersch, C., Gupta, A., Efros, A.A.: Unsupervised visual representation learning by context prediction. ICCV (2015)](https://arxiv.org/abs/1505.05192)
 3. [Krahenbuhl, P., Doersch, C., Donahue, J., Darrell, T.: Data-dependent initializa-tions of convolutional neural networks. ICLR (2016) ](https://arxiv.org/abs/1511.06856)
 4. [Girshick, R.: Fast r-cnn. ICCV (2015)](https://arxiv.org/abs/1504.08083)
 5. [Long, J., Shelhamer, E., Darrell, T.: Fully convolutional networks for semantic segmentation. In: CVPR (2015)](https://arxiv.org/abs/1605.06211)
 
-### 会議
+## 会議
 ECCV 2016
 
-### 著者/所属機関
+## 著者/所属機関
 Mehdi Noroozi and Paolo Favaro.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2016/03/30
 
 ## コメント
@@ -63,3 +63,6 @@ In this case, the features Fi would carry no semantic meaning, but just informat
 
 ## key-words
 2D_Image, Classification, Self-supervised
+
+## status
+更新済

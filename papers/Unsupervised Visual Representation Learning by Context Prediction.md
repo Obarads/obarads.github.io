@@ -59,19 +59,19 @@ scratch-Ours(pretext task無しのランダム初期化)はScrath R-CNN(中身Al
 ## 次に読むべき論文は?
 - Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles
 
-### 論文関連リンク
+## 論文関連リンク
 1. [鈴⽊智之. Self-supervised Learningによる特徴表現学習. (アクセス日時 2019/02/06)](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
 1. [R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hier-archies for accurate object detection and semantic segmentation. In CVPR, 2014.](https://arxiv.org/abs/1311.2524)
 1. [J. Long, E. Shelhamer, and T. Darrell. Fully convolutionalnetworks for semantic segmentation. arXiv preprint arXiv:1411.4038, 2014.](https://arxiv.org/abs/1411.4038)
 1. [P. Krähenbühl, C. Doersch, J. Donahue, and T. Darrell. Data-dependent initializations of convolutional neural networks. arXiv preprint arXiv:1511.06856, 2015.](https://arxiv.org/abs/1511.06856)
 
-### 会議
+## 会議
 ICCV 2015
 
-### 著者
+## 著者
 Carl Doersch, Abhinav Gupta and Alexei A. Efros.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2015/05/19
 
 ## コメント
@@ -79,3 +79,6 @@ Self-learning分野のはじまり。図4をのランダムサンプリングが
 
 ## key-words
 2D_Image, Classification, Self-supervised
+
+## status
+更新済

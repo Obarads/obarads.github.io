@@ -22,17 +22,17 @@
 -
 -
 
-### 論文関連リンク
+## 論文関連リンク
 1.
 2.
 
-### 会議
+## 会議
 ECCV 2018
 
-### 著者
+## 著者
 Haowen Deng, Tolga Birdal and Slobodan Ilic.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/08/30
 
 ## コメント
@@ -40,3 +40,6 @@ Haowen Deng, Tolga Birdal and Slobodan Ilic.
 
 ## key-words
 Point_Cloud, AutoEncoder
+
+## status
+未完

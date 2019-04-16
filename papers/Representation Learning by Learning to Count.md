@@ -11,7 +11,7 @@
 画像間の特徴を直接比べているところかな?発想が面白い。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-### **構造**
+### 構造
 visual primitiveには以下の制約がある。
 - 画像に含まれるvisual primitiveの数は縮小拡大、併進、回転に対して不変でなければならない。
 - 画像全体に含まれるvisual primitiveの数は画像の一部分に含まれるvisual primitiveの数より多くなければならない。
@@ -20,7 +20,7 @@ visual primitiveには以下の制約がある。
 
 ![fig2](img/RLbLtC/fig2.png)
 
-### **Transforming Images to Transform Features**
+### Transforming Images to Transform Features
 
 このpretext taskを解くための具体的な定式を以下に示す。
 
@@ -51,7 +51,7 @@ $$
 
 著者らは式(2)をvisual primitivesを数えることができる特徴$\phi$を学習させるためのmain building blockとして使う。
 
-### **Learning to Count**
+### Learning to Count
 式(3)の様にvisual primitiveの数の差を損失関数とする。
 
 $$
@@ -67,21 +67,22 @@ $$
 ![fig3](img/RLbLtC/fig3.png)
 
 ## どうやって有効だと検証した?
-### **Transfer Learning Evalution**
+### Transfer Learning Evalution
 先にpretext taskとImageNetのデータセットを使って提案したネットワークを訓練する。
-- **Fine-tuning on PASCAL**  
-  PASCAL VOC 2007とVOC 2012を使った分類、検知、セグメンテーションタスクに対して訓練したネットワークをfine-tuningした結果は表1の通り。
 
-  ![table1](img/RLbLtC/table1.png)
+#### Fine-tuning on PASCAL
+PASCAL VOC 2007とVOC 2012を使った分類、検知、セグメンテーションタスクに対して訓練したネットワークをfine-tuningした結果は表1の通り。
 
-- **Linear Classification on Places and ImageNet**  
-  論文関連リンクの4で導入されている評価を取り入れた。ネットワークをpretext taskで訓練させ、固定させた層のtopとImageNetもしくはPlaceデータセットを使って線形分類器を学習させ、分類タスクを行う。結果は表2と表3の通り。placeの時、教師あり学習よりも良い結果を残している。
+![table1](img/RLbLtC/table1.png)
 
-  ![table2](img/RLbLtC/table2.png)
+#### Linear Classification on Places and ImageNet
+論文関連リンクの4で導入されている評価を取り入れた。ネットワークをpretext taskで訓練させ、固定させた層のtopとImageNetもしくはPlaceデータセットを使って線形分類器を学習させ、分類タスクを行う。結果は表2と表3の通り。placeの時、教師あり学習よりも良い結果を残している。
 
-  ![table3](img/RLbLtC/table3.png)
+![table2](img/RLbLtC/table2.png)
 
-### **その他**
+![table3](img/RLbLtC/table3.png)
+
+### その他
 切除実験や近傍検索などの分析を行っている。
 
 ## 議論はある?
@@ -90,20 +91,20 @@ $$
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [鈴木智之. 教師なし画像特徴表現学習の動向 {Un, Self} supervised representation learning (CVPR 2018 完全読破チャレンジ報告会). pp.23. (アクセス:2019/03/03).](https://www.slideshare.net/cvpaperchallenge/un-self-supervised-representation-learning-cvpr-2018)
 1. [Y. Bengio, G. Mesnil, Y. Dauphin, and S. Rifai. Better mixing via deep representations. InICML, 2013.](https://arxiv.org/abs/1207.4404)
 2. [A. Radford, L. Metz, and S. Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. InICLR, 2016.](https://arxiv.org/abs/1511.06434)
 4. [R. Zhang, P. Isola, and A. A. Efros. Colorful image colorization. InECCV, 2016.](https://arxiv.org/abs/1603.08511)
 
 
-### 会議
+## 会議
 ICCV 2017
 
-### 著者
+## 著者
 Mehdi Noroozi, Hamed Pirsiavash and Paolo Favaro.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/08/22
 
 ## コメント
@@ -111,3 +112,6 @@ Mehdi Noroozi, Hamed Pirsiavash and Paolo Favaro.
 
 ## key-words
 Self-supervised,2D_Image
+
+## status
+更新済
