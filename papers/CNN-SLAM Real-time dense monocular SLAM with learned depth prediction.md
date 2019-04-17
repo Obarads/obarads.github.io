@@ -13,7 +13,7 @@
 
 ![fig2](img/CRdmSwldp/fig2.png)
 
-### **Camera Pose Estimation**
+### Camera Pose Estimation
 カメラポーズ推定は[1]を参考にしている。各フレーム$t$において、最新のカメラポーズ$T_ t^{k_ i}=[R_ t, t_ t]\in\mathbb{SE}(3)$を予測する。この$T_ t^{k_ i}$はフレーム$t$と直近キーフレーム$k_ i$間の変換であり、$R_ t\in\mathbb{SO}(3)$は$3\times 3$の回転行列、$t_ t\in\mathbb{R}^3$は3D変換ベクトルである。最新の輝度画像$\mathcal{I}_ t$と直近のキーフレーム$k_ i$の輝度画像$\mathcal{I}_ {k_ i}$間の輝度誤差を最小化するような変換を求める。$T_ t^{k_ i}$は目的関数の式(1)に基づく重みづけされたGauss-Newton最適化を使って求められる。
 
 $$
@@ -41,10 +41,10 @@ $$
 このとき、$K$はカメラの内部行列である。  
 $T_ t^{k_ i}$が得られたのち、世界座標系中の最新のカメラポーズは$T_ t=T_ t^{k_ i}T_ {k_ i}$として計算される。
 
-### **CNN-based Depth Prediction and Semantic Segmentation**
+### CNN-based Depth Prediction and Semantic Segmentation
 新しいキーフレームが作られたとき、CNNを介してデプスマップが推定される。ImageNetで訓練されたモデルの値を初期値として使う。
 
-### **Key-frame Creation and Pose Graph Optimization**
+### Key-frame Creation and Pose Graph Optimization
 事前訓練時と推定時のSLAMの内部パラメーターに違いがある場合、3D再構築時のスケールが不正確になる。これを改善するために、現在のカメラの焦点距離$\mathcal{f}_ {cur}$とトレーニング時に使われたセンサーの焦点距離$\mathcal{f}_ {tr}$の間の比率を用いて、CNNを介したデプス回帰を調節する。比率は式(5)に示す通りである。
 
 $$
@@ -109,18 +109,18 @@ $$
 ## 次に読むべき論文は?
 - DeepVO?
 
-### 論文関連リンク
+## 論文関連リンク
 1. [J. Engel, T. Schps, and D. Cremers. LSD-SLAM: Large-Scale Direct Monocular SLAM. InEuropean Conference on Computer Vision (ECCV), 2014.](https://vision.in.tum.de/research/vslam/lsdslam)
 2. [長谷川邦洋. 第41回関東CV勉強会 CNN-SLAM. 2017. (アクセス:2019/03/31)](https://www.slideshare.net/KunihiroHasegawa/41cv-cnnslam)
 3. [J. Engel, J. Sturm, and D. Cremers. Semi-dense visual odom-etry for a monocular camera. InIEEE International Confer-ence on Computer Vision (ICCV), December 2013.](https://jsturm.de/publications/data/engel2013iccv.pdf)
 
-### 会議
+## 会議
 CVPR2017
 
-### 著者
+## 著者
 Keisuke Tateno, Federico Tombari, Iro Laina, Nassir Navab.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/04/11
 
 ## コメント
@@ -128,3 +128,6 @@ Keisuke Tateno, Federico Tombari, Iro Laina, Nassir Navab.
 
 ## key-words
 2D_Image, SLAM
+
+## status
+修正

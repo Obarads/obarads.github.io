@@ -9,7 +9,7 @@
 点群には凹凸やコーナー等の判別しやすい表現(ローカル特徴)が含まれており、それらを学習できる拡張をPointNetにシンプルさを維持したまま適応する。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-### **構造**
+### 構造
 提案したアーキテクチャは図2の通り。点集合の形状の類似性を測定するkernel correlation(カーネル相関、元ネタはpoint cloud registrationから)と近傍点間のローカル特徴を伝播するK-Nearest Neighbor Graph(KNNG、K最近傍グラフ)を使ったアーキテクチャである。尚、図2にある$L$はカーネル数を表し、これは$L$がconvolutional netsの出力チャンネルの数に相当する(この記述はLearning on Local Geometric Structureの最後にあり)。
 
 ![fig2](img/MPCLSbKCaGP/fig2.png)

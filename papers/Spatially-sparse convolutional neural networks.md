@@ -42,4 +42,4 @@ Sparse 3D convolutional neural networksという3Dバージョンも有り。
 省略
 
 ## status
-編集中
+未完

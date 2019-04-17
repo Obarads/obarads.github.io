@@ -51,7 +51,7 @@ function create_links(link) {
     tags = link[1].split(',').map(create_tag);
   }
   tags = tags.join(" ");
-  return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td></tr>';
+  return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td><td>' + link[3] + '</td></tr>';
 }
 
 function search(il, tl, title, path) {

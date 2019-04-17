@@ -17,17 +17,17 @@
 -
 -
 
-### 論文関連リンク
+## 論文関連リンク
 1.
 2.
 
-### 会議
+## 会議
 CVPR 2017
 
-### 著者
+## 著者
 Yi Li, Haozhi Qi, Jifeng Dai, Xiangyang Ji, Yichen Wei.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2016/11/23
 
 ## コメント
@@ -35,3 +35,6 @@ Yi Li, Haozhi Qi, Jifeng Dai, Xiangyang Ji, Yichen Wei.
 
 ## key-words
 2D_Image, Instance_Segmentation
+
+## status
+未完

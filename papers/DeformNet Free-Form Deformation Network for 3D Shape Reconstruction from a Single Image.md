@@ -20,16 +20,16 @@
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [icoxfog417. DeformNet: Free-Form Deformation Network for 3D Shape Reconstruction from a Single Image #384. 2017.](https://github.com/arXivTimes/arXivTimes/issues/384)
 
-### 会議
+## 会議
 NIPS
 
-### 著者
+## 著者
 Andrey Kurenkov, Jingwei Ji, Animesh Garg, Viraj Mehta, JunYoung Gwak, Christopher Choy and Silvio Savarese.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/08/11
 
 ## コメント
@@ -37,6 +37,9 @@ Andrey Kurenkov, Jingwei Ji, Animesh Garg, Viraj Mehta, JunYoung Gwak, Christoph
 
 ## key-words
 2D_Image, Voxel, 3D_Estimation
+
+## status
+参照
 
 ## status
 参照

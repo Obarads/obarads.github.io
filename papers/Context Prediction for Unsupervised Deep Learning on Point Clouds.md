@@ -42,18 +42,18 @@ Unsupervised Visual Representation Learning by Context Prediction(論文関連�
 ## 次に読むべき論文は?
 - [Achlioptas Panos, Diamanti Olga, Mitliagkas Ioannis, and Guibas Leonidas. Representation learning and adversarial generation of 3d point clouds. 2017.](https://arxiv.org/abs/1707.02392)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Jonathan Sauder and Bjarne Sievers. Context Prediction for Unsupervised Deep Learning on Point Clouds. 2019.](https://arxiv.org/abs/1901.08396v1)
 2. [Achlioptas Panos, Diamanti Olga, Mitliagkas Ioannis, and Guibas Leonidas. Representation learning and adversarial generation of 3d point clouds. 2017.](https://arxiv.org/abs/1707.02392)
 3. [Carl Doersch, Abhinav Gupta, and Alexei A. Efros. Unsupervised Visual Representation Learning by Context Prediction. 2015.](https://arxiv.org/abs/1505.05192)
 
-### 会議
+## 会議
 なし(2019/01/26現在)
 
-### 著者
+## 著者
 Jonathan Sauder and Bjarne Sievers.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2019/01/24
 
 ## コメント
@@ -61,3 +61,6 @@ Jonathan Sauder and Bjarne Sievers.
 
 ## key-words
 Classification, Point_Cloud, Semantic_Segmentation, Self-supervised
+
+## status
+更新済

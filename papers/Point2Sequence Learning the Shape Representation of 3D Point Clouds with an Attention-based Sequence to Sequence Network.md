@@ -25,7 +25,7 @@
 ### (a) Multi-scale area establishment
 NからM個の点を得るためにPointNet++等で紹介されているFarthest point sampling(以下FPS)を採用した。FPSは大雑把に言えば選ばれた点から最も遠い点を選択するアルゴリズムである(詳しくは論文関連リンクの1を参照)。その後、kNNを使ってp'_jを中心とする局所領域Rjに分ける。
 
-###(b) Area Feature Extraction
+### (b) Area Feature Extraction
 fig2に通り、各スケールの領域At_jはMLPで抽出後Max-poolingでD次元特徴st_jに集約される。追加で、At_jの点plはp'_jを中心とした相対座標に変換される。
 
 ### (c) Encoder-decoder feature aggregation

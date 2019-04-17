@@ -94,7 +94,7 @@ $G_ 1 \to G_ 2 \to G_ 3$の順でそれぞれ訓練したのち、すべての�
 ## 次に読むべき論文は?
 - pix2pix
 
-### 論文関連リンク
+## 論文関連リンク
 1. [J. Johnson, A. Alahi, and L. Fei-Fei. Perceptual losses for real-time style transfer and super-resolution. In European Conference on Computer Vision (ECCV), 2016.](https://arxiv.org/abs/1603.08155)
 2. [A. Dosovitskiy and T. Brox. Generating images with perceptual similarity metrics based on deep networks. In Advances in Neural Information Processing Sys-tems (NIPS), 2016](https://papers.nips.cc/paper/6158-generating-images-with-perceptual-similarity-metrics-based-on-deep-networks)
 3. [C. Ledig, L. Theis, F. Husz ́ ar, J. Caballero, A. Cun-ningham, A. Acosta, A. Aitken, A. Tejani, J. Totz, Z. Wang, et al. Photo-realistic single image super-resolution using a generative adversarial network. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.](https://arxiv.org/abs/1609.04802)
@@ -102,13 +102,13 @@ $G_ 1 \to G_ 2 \to G_ 3$の順でそれぞれ訓練したのち、すべての�
 5. [本研究の紹介ページ](https://tcwang0509.github.io/pix2pixHD/)
 6. [天崎 李. CVPR2018 pix2pixHD論文紹介 (CV勉強会@関東). (アクセス:2019/03/24)](https://www.slideshare.net/ssuser86aec4/cvpr2018-pix2pixhd-cv-103835371)
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Ting-Chun Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, Jan Kautz, Bryan Catanzaro.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/11/30
 
 ## コメント
@@ -116,3 +116,6 @@ Ting-Chun Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, Jan Kautz, Bryan Catanzaro
 
 ## key-words
 2D_Image, GAN, Semantic_Segmentation
+
+## status
+更新済

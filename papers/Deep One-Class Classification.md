@@ -22,37 +22,43 @@ Deep SVDDはADの使用を前提としており、データを囲む超球のボ
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 適切なcompactnessを得るための定義を以下に示す。
-- **各定義**  
+### 各定義
 入力空間X⊆Rd、出力空間F⊆Rpとして、ニューラルネットワークを∅(・;W):X→F、隠れ層L∈Nで重みW=(W1,...,WL)、ここでWlはl∈{1,...,L}とする。また、∅(x,W)∈Fはx∈Xの特徴表現である。
 
-- **仮定**  
+### 仮定
 Deep SVDDはWの調節とFを含む超球の最小化を同時に学習する。このとき、超級は半径R>0、中央c∈Fとする。
 
-- **soft-boundary Deep SVDD**  
+### soft-boundary Deep SVDD
 学習データにDn={x1,...,xn}が与えられたとすると、soft-boundary(超球の境界線) Deep SVDDの目標は以下の定義式(論文中の式(3))となる。  
 下の定義式によってデータ点が超球のcに密接にマッピングされるようなWをネットワークは学習できる。  
-![論文中の式3](img/DOC/fig_0.png)  
-  - 第一項はカーネルSVDDと同じようにR**2を最小にすることで超球を最小化することになる。
-  - 第二項は罰則項であり、ネットワークを通過したあと球の外にある点(つまり、中心からの距離が半径Rよりはるかに遠い点がある場合)のためである。ハイパーパラメーターv∈(0,1]は球のボリュームと限度違反のトレードオフを取り持つ。つまり、どれくらい球の外側の点を許容するか決められる。
-  - 最終項は重みを調節するための正則化を||・||Fのフロベニウスノルムとハイパーパラメーターλ>0で定義している。  
 
-- **One-Class Deep SVDD**  
+![論文中の式3](img/DOC/fig_0.png)
+
+- 第一項はカーネルSVDDと同じようにR**2を最小にすることで超球を最小化することになる。
+- 第二項は罰則項であり、ネットワークを通過したあと球の外にある点(つまり、中心からの距離が半径Rよりはるかに遠い点がある場合)のためである。ハイパーパラメーターv∈(0,1]は球のボリュームと限度違反のトレードオフを取り持つ。つまり、どれくらい球の外側の点を許容するか決められる。
+- 最終項は重みを調節するための正則化を||・||Fのフロベニウスノルムとハイパーパラメーターλ>0で定義している。  
+
+### One-Class Deep SVDD
 学習データのほとんどが正常なデータである場合(一クラス分類など)、簡略化された損失を定義する。これは、∅(xi;W)とcの距離を罰則化するためのものである。定義式は以下のとおり。
+
 ![論文中の式4](img/DOC/fig_2.png)  
-  - 第一項はノルムによって示されている∅(xi;W)からcまでの距離を集計し、平均に直したもの。
-  - 第二項は正則化を行うためのものであり、ハイパーパラメーターλ>0を含む。
+
+- 第一項はノルムによって示されている∅(xi;W)からcまでの距離を集計し、平均に直したもの。
+- 第二項は正則化を行うためのものであり、ハイパーパラメーターλ>0を含む。
 
 soft-boundary Deep SVDDは直接半径にペナルティを課して縮小するのに対し、One-Class Deep SVDDはFでのデータ表現を中心(cの近く)まで抑えることができる。
 
-- **anomaly score**  
+### anomaly score
 異常値であるかどうかを表す指標。定義式は以下の通り。この値からR*を引いたものが負であれば正常なデータ(超球内)であり、正であれば異常なデータ(超球外)である。  
-![論文中の式5](img/DOC/fig_5.png)  
+
+![論文中の式5](img/DOC/fig_5.png)
 
 ## どうやって有効だと検証した?
 MNISTとCIFAR-10を使った異常検知タスクと、Boundary AttackをGTSRB stop datasetに適応したAdversarial attacksの評価を行った。下図のKDEはKernel density estimation、IFはIsolation Forestである。
 
-![論文中の表1](img/DOC/fig_3.png)  
-![論文中の表2](img/DOC/fig_4.png)  
+![論文中の表1](img/DOC/fig_3.png)
+
+![論文中の表2](img/DOC/fig_4.png)
 
 ## 議論はある?
 考えつかない
@@ -60,20 +66,20 @@ MNISTとCIFAR-10を使った異常検知タスクと、Boundary AttackをGTSRB s
 ## 次に読むべき論文は?
 - Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery (もう読んだけど再度確認)  
 
-### 論文関連リンク
+## 論文関連リンク
 - 本家:http://proceedings.mlr.press/v80/ruff18a.html
 - 本家実装:https://github.com/lukasruff/Deep-SVDD
 
-### 参考リンク
+## 参考リンク
 - なし
 
-### 会議
+## 会議
 ICML2018
 
-### 著者/所属機関
+## 著者/所属機関
 Lukas Ruff, Robert A. Vandermeulen, Nico G ̈ornitz, Lucas Deecke, Shoaib A. Siddiqui, Alexander Binder, Emmanuel M ̈uller, Marius Kloft
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/??/??
 
 ## コメント
@@ -81,3 +87,6 @@ Lukas Ruff, Robert A. Vandermeulen, Nico G ̈ornitz, Lucas Deecke, Shoaib A. Sid
 
 ## key-words
 2D_Image, One-Class_&_Anomaly_Detection
+
+## status
+更新済

@@ -15,16 +15,16 @@
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. なし
 
-### 会議
+## 会議
 CVPR 2015
 
-### 著者
+## 著者
 Jifeng Dai, Kaiming He, Jian Sun.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2014/12/03
 
 ## コメント
@@ -32,3 +32,6 @@ Jifeng Dai, Kaiming He, Jian Sun.
 
 ## key-words
 2D_Image
+
+## status
+未完

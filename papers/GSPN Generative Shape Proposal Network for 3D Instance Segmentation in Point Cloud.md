@@ -13,8 +13,6 @@
 
 ![fig2](img/GGSPNf3ISiPC/fig2.png)
 
-
-
 ### Generative Shape Proposal Network
 
 
@@ -25,16 +23,16 @@
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. なし
 
-### 会議
+## 会議
 不明
 
-### 著者
+## 著者
 Li Yi, Wang Zhao, He Wang, Minhyuk Sung, Leonidas Guibas.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/12/08
 
 ## コメント
@@ -42,3 +40,6 @@ Li Yi, Wang Zhao, He Wang, Minhyuk Sung, Leonidas Guibas.
 
 ## key-words
 Point_Cloud, Semantic_Segmentation, Instance_Segmentation
+
+## status
+未完

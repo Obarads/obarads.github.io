@@ -55,16 +55,16 @@ ScanNetとNYUv2を用いて実験した。結果は表1と表2の通り。視覚
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Benjamin Graham, Martin Engelcke, and Laurens van der Maaten. 3d semantic segmentation with submanifold sparse convolutional networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 9224–9232, 2018.](http://openaccess.thecvf.com/content_cvpr_2018/papers/Graham_3D_Semantic_Segmentation_CVPR_2018_paper.pdf)
 
-### 会議
+## 会議
 不明
 
-### 著者
+## 著者
 Zhidong Liang, Ming Yang, Chunxiang Wang.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2019/02/14
 
 ## コメント
@@ -72,3 +72,6 @@ Zhidong Liang, Ming Yang, Chunxiang Wang.
 
 ## key-words
 Point_Cloud, Semantic_Segmentation, Instance_Segmentation
+
+## status
+更新済

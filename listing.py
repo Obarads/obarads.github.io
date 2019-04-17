@@ -11,6 +11,7 @@ def extract_data(path):
     info_list = []
     kw_tags = []
     date_tags = []
+    status_tags = []
     md_list = [m.replace("./"+ path +"/","").replace(".md","") for m in md_list] #linux path
     md_list = [m.replace("./"+ path +"\\","").replace(".md","") for m in md_list] #windows path
     for (ml,pl) in zip(md_list,path_list):
@@ -18,6 +19,7 @@ def extract_data(path):
             content = f.read().split("\n")
             kw = ""
             date = "????"
+            status = "????"
             if "## key-words" in content:
                 kw_index = content.index("## key-words")
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
@@ -31,18 +33,25 @@ def extract_data(path):
                 if date_index != -1:
                     date = content[date_index+1].split("/")[0]
                     date_tags.append(date)
+            if "## status" in content:
+                status_index = content.index("## status")
+                if status_index != -1:
+                    status = content[status_index+1]
+                    status_tags.append(status)
 
-            info_list.append([ml,kw,date])
+            info_list.append([ml,kw,date,status])
 
     date_tags = list(set(date_tags))
+    status_tags = list(set(status_tags))
 
     info_list.sort()
     kw_tags.sort()
     date_tags.sort()
+    status_tags.sort()
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
 
-    return info_list,kw_tags,date_tags
+    return info_list,kw_tags,date_tags,status_tags
 
 def coloring_tag_template(tags):
     tag_css_class = ""
@@ -51,9 +60,10 @@ def coloring_tag_template(tags):
     return tag_css_class
 
 def main():
-    info_list_papers,kw_tags_papers,date_tags_papers = extract_data("papers")
-    info_list_complementary,kw_tags_complementary,date_tags_complementary = extract_data("complementary")
+    info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("papers")
+    info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("complementary")
 
+    # tagのテンプレ作成
     kw_tags = copy.copy(kw_tags_papers)
     kw_tags.extend(kw_tags_complementary)
     kw_tags = list(set(kw_tags))
@@ -66,7 +76,7 @@ def main():
     kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
     date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
 
-    with open('js/list.js', 'w') as f:
+    with open('js/list.js', 'w', encoding="utf-8") as f:
         f.writelines(info_list_papers)
         f.writelines(kw_tags_papers)
         f.writelines(date_tags_papers)

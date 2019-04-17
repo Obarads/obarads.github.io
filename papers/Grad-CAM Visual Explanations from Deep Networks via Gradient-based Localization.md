@@ -17,7 +17,7 @@
 ![fig1](img/GVEfDNvGL/fig1.png)
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-### **構造**
+### 構造
 提案手法は図2の通り。論文関連リンクの3と4は、より深い表現はより高いレベルの視覚構造を捉えると主張している。また、畳み込み特徴は全結合層で失われる空間情報を保持する。以上より、最後の畳み込み層が高レベルのセマンティックスと詳細な空間情報を保持していることを期待できる。Grad-CAMは最後の畳み込み層に流れ込む勾配情報を利用して、関心の決定のための各ニューロンの重要性を理解する。
 
 ![fig2](img/GVEfDNvGL/fig2.png)
@@ -39,14 +39,14 @@ $$
 ここで、畳み込み特徴マップと同じサイズの荒いヒートマップになることに注意すること(VGGなどの場合は$14\times 14$になる、これはGuided Grad-CAMを作る動機になる)。  
 関心のあるクラスのpositiveの影響力、つまり$y^c$を向上させるためにintensity(強さ)を上げる(強調する)必要があるピクセルを持つ特徴量だけに注目したいためReLUをマップの線形結合に適応する。逆に、Negativeなピクセルは画像内の他のカテゴリに属する可能性があるのでReLUで無視する。
 
-### **Grad-CAM as a generalization to CAM**
+### Grad-CAM as a generalization to CAM
 Grad-CAMはCAMの一般化である。それに関連する内容を含んだ項。省略する。
 
-### **Guided Grad-CAM**
+### Guided Grad-CAM
 Grad-CAMでCNNが注目している位置を大まかに示すことができるようになったものの、ヒートマップの解像度が低いため図１の(b)や(h)で示されているGuided Backpropagation(論文関連リンクの6)の手法の様にきめ細かい重要な部分を明確にすることができない。そこで、明確さを維持しつつもどこに注目しているか示すため、point-wiseの乗算を介してGrad-CAMの視覚化とGuided Backpropagationを合体する。具体的に言えば、$L_{\rm Grad-CAM}^c$はバイリニア補完を使い入力画像の解像度と同等になるようアップサンプリングされる。なお、Deconvolution(論文関連リンクの7)を使わなかった理由は、artifactが付随するからである(Guided backpropagationのほうが視覚的ノイズが少ないのもある)。
 
 ## どうやって有効だと検証した?
-### **Weakly-supervised Localization**
+### Weakly-supervised Localization
 画像分類の観点からGrad-CAMの位置特定能力を評価する。ImageNet localization challengeは、分類ラベルに加えて境界ボックスを提供するために競合するアプローチを必要としている。分類と同様に、上位1位と上位5位までの両方のカテゴリ予想に対して評価が行われる。方法は、
 1. 画像が与えられたら、まずその画像のクラス予想を得る。
 2. 予想されたクラスの各々に対してGrad-CAMのマップを生成する。
@@ -57,7 +57,7 @@ Grad-CAMでCNNが注目している位置を大まかに示すことができる
 
 ![table1](img/GVEfDNvGL/table1.png)
 
-### **その他**
+### その他
 いろいろあるが省略
 
 ## 議論はある?
@@ -66,7 +66,7 @@ Grad-CAMでCNNが注目している位置を大まかに示すことができる
 ## 次に読むべき論文は?
 - 特になし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [B.Zhou,A.Khosla,L.A.,A.Oliva,andA.Torralba.LearningDeep Features for Discriminative Localization. InCVPR, 2016.](https://arxiv.org/abs/1512.04150)
 2. [畳み込みネットワークの「基礎の基礎」を理解する　～ディープラーニング入門｜第2回](https://www.imagazine.co.jp/%E7%95%B3%E3%81%BF%E8%BE%BC%E3%81%BF%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%80%8C%E5%9F%BA%E7%A4%8E%E3%81%AE%E5%9F%BA%E7%A4%8E%E3%80%8D%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99/)
 3. [Y. Bengio, A. Courville, and P. Vincent. Representation learning: A review and new perspectives. IEEE transactions on pattern analysis and machine intelligence, 35(8):1798–1828, 2013.](https://ieeexplore.ieee.org/document/6472238)
@@ -75,13 +75,13 @@ Grad-CAMでCNNが注目している位置を大まかに示すことができる
 6. [J. T. Springenberg, A. Dosovitskiy, T. Brox, and M. A. Ried-miller. Striving for Simplicity: The All Convolutional Net. CoRR, abs/1412.6806, 2014.](https://arxiv.org/abs/1412.6806)
 7. [M. D. Zeiler and R. Fergus. Visualizing and understanding convolu-tional networks. InECCV, 2014.](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf)
 
-### 会議
+## 会議
 ICCV 2017
 
-### 著者
+## 著者
 Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh and Dhruv Batra.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2016/10/7
 
 ## コメント
@@ -89,3 +89,6 @@ Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, 
 
 ## key-words
 2D_Image, Analytics
+
+## status
+更新済

@@ -13,39 +13,39 @@ LiDARの様な100K程の大規模点群を使うような状況でも効率よ�
 
 ![fig2](img/VELfPCB3DOD/fig2.png)
 
-### **特徴学習ネットワーク**
+### 特徴学習ネットワーク
 以下の1~5までの手順の図は図2にある。
 
-1. **ボクセル分割**  
-  ボクセルを分割する。ボクセルのサイズは正六面体でなくても問題なく、3D空間の範囲D, H, Wであり、ボクセルのサイズがvD, vH, vWであるとき、ボクセルの軸ごとの数はD'=D/vD, H'=H/vH, W'=W/vWとなるようにする。
+#### ボクセル分割
+ボクセルを分割する。ボクセルのサイズは正六面体でなくても問題なく、3D空間の範囲D, H, Wであり、ボクセルのサイズがvD, vH, vWであるとき、ボクセルの軸ごとの数はD'=D/vD, H'=H/vH, W'=W/vWとなるようにする。
 
-1. **グルーピング**  
-  ボクセルごとに点群を分割する。LiDARが点群を取得するため、図2のgroupingのボクセルの様にボクセルごとに保有する点群はまばらである。
+#### グルーピング
+ボクセルごとに点群を分割する。LiDARが点群を取得するため、図2のgroupingのボクセルの様にボクセルごとに保有する点群はまばらである。
 
-1. **ランダムサンプリング**  
-  計算の節約とボクセル内の点群の数による偏りを減らすためにT個以下の点群になるようランダムサンプリングする。
+#### ランダムサンプリング
+計算の節約とボクセル内の点群の数による偏りを減らすためにT個以下の点群になるようランダムサンプリングする。
 
-1. **スタックボクセル特徴のエンコーディング**  
-  図3にボクセル特徴エンコーディング(VFE)層を示す。
+#### スタックボクセル特徴のエンコーディング
+図3にボクセル特徴エンコーディング(VFE)層を示す。
 
-  ![fig3](img/VELfPCB3DOD/fig3.png)
+![fig3](img/VELfPCB3DOD/fig3.png)
 
-  ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f\~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf\~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
+ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f\~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf\~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
 
-  要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。
+要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。
 
-1. **スパースなTensor表現**  
-  空ではないボクセルのリストを作る。図2の様に、ボクセルごとの特徴の次元がCであるとき、スパースな3D tensorはC\*D'\*H'*W'のサイズとなる。基本的に90%のボクセルは空であり、空ではないボクセル特徴をsuper tensorとして扱うことは学習時のメモリ使用率や計算量を減らすことができる。
+#### スパースなTensor表現
+空ではないボクセルのリストを作る。図2の様に、ボクセルごとの特徴の次元がCであるとき、スパースな3D tensorはC\*D'\*H'*W'のサイズとなる。基本的に90%のボクセルは空であり、空ではないボクセル特徴をsuper tensorとして扱うことは学習時のメモリ使用率や計算量を減らすことができる。
 
-### **畳み込み中間層**
+### 畳み込み中間層
 畳み込み中間層は、3D畳み込みを適応した層である。畳み込み中間層はボクセル単位特徴を集約し、形状記述のためのコンテキストをより多く与える。
 
-### **領域提案ネットワーク**
+### 領域提案ネットワーク
 点群で論文関連リンクの1の領域提案ネットワークを使うためにいくつか変更を加えた。図4にRPNのアーキテクチャを示す(先に論文関連リンクの1の内容を見たほうが良い)。
 
 ![fig4](img/VELfPCB3DOD/fig4.png)
 
-### 損失関数  
+### 損失関数
 先に論文関連リンク1のloss functionに目を通したほうが良い。
 
 $ { \\{ a^{pos}\_i \\} \_{i=1...N\_{pos}}} $ が一組の$ N_{pos} $個のpositiveアンカー、$ { \\{ a^{neg}\_j \\} \_{j=1...N\_{neg}}} $ が一組の$ N_{neg} $個のnegativeアンカーであるとする。3Dのground truthボックスをパラメータ化したものを$ (x_c^g, y_c^g, z_c^g, l^g, w^g, h^g, \theta^g) $とする。$ x_c^g, y_c^g, z_c^g $ は中央座標、$ l^g, w^g, h^g $は全長, 幅, 高さ、$ \theta^g $はzの軸周りのyaw回転である。(ground truthボックスに?)一致するpositiveアンカー$ (x_c^a, y_c^a, z_c^a, l^a, w^a, h^a, \theta^a) $からground truthボックスを探すため、残差ベクトル$ u^* \in \mathbb{R}^7 $に含まれる7つの回帰値は式(1)のように定義される。
@@ -85,18 +85,18 @@ RGB画像とLiDARを併用したEnd-to-Endな3D検知を行うことができれ
 ## 次に読むべき論文は?
 - [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in Neural Information Processing Sys-tems 28, pages 91–99. 2015.](https://arxiv.org/abs/1506.01497)
 2. [R. Girshick. Fast r-cnn. In Proceedings of the 2015 IEEE International Conference on Computer Vision (ICCV), ICCV ’15, 2015.](https://arxiv.org/abs/1504.08083)
 3. [A. Geiger, P. Lenz, and R. Urtasun. Are we ready for au-tonomous driving? the kitti vision benchmark suite. In Conference on Computer Vision and Pattern Recognition (CVPR), 2012.](http://www.cvlibs.net/datasets/kitti/)
 
-### 会議
+## 会議
 CVPR 2018
 
-### 著者
+## 著者
 Yin Zhou and Oncel Tuzel
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2017/11/17
 
 ## コメント

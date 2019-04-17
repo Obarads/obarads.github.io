@@ -44,16 +44,16 @@ EdgeConvを視覚的に説明したのが図2である。図2の左はsymmetric 
 ## 次に読むべき論文は?
 なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. https://www.slideshare.net/naoyachiba18/ss-120302579
 
-### 会議
+## 会議
 なし?
 
-### 著者/所属機関
+## 著者/所属機関
 Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin M. Solomon.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/1/24
 
 ## コメント
@@ -61,3 +61,6 @@ Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin 
 
 ## key-words
 Classification, Point_Cloud, Semantic_Segmentation
+
+## status
+更新済

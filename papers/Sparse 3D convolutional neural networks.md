@@ -56,4 +56,4 @@ Ben Graham
 Voxel
 
 ## status
-編集中
+未完

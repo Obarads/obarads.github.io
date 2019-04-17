@@ -72,20 +72,20 @@ ARの利用にも耐えうるようなvisual SLAMアルゴリズムを提案し�
 ## 次に読むべき論文は?
 - なし
 
-### 論文関連リンク
+## 論文関連リンク
 1. [Masaya Kaneko. SLAM勉強会(PTAM). (大いに参考になる、アクセス:2019/04/09)](https://www.slideshare.net/MasayaKaneko/slamptam)
 2. [ActiveVision Oxford. Parallel Tracking and Mapping for Small AR Workspaces (PTAM). (最初に見るべき、アクセス:2019/04/10)](https://www.youtube.com/watch?v=F3s3M0mokNc)
 3. [E. Rosten and T. Drummond. Machine learning for high-speed cor-ner detection. InProc. 9th European Conference on Computer Vision (ECCV’06), Graz, May 2006.](https://www.springer.com/gp/book/9783540338321)
 4. [H. Stew ́ enius, C. Engels, and D. Nist ́ er. Recent developments on direct relative orientation. ISPRS Journal of Photogrammetry and Remote Sensing, 60:284–294, June 2006.](https://pdfs.semanticscholar.org/514f/a8d4981cc2b2aecfc02e0e3a8f4be717bcd7.pdf)
 5. [コーナー検出のためのFASTアルゴリズム. OpenCV. (アクセス:2019/04/11)](http://lang.sist.chukyo-u.ac.jp/classes/OpenCV/py_tutorials/py_feature2d/py_fast/py_fast.html)
 
-### 会議
+## 会議
 ISMAR 2007
 
-### 著者
+## 著者
 Georg Klein, David Murray.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2007/??/??
 
 ## コメント

@@ -52,12 +52,12 @@ ST同様に、CBSTにも$k_ c$の値を決定するためのアルゴリズム�
 舗装道路の情報をモデルに適応させるために、空間的な事前知識を使う。ターゲットドメインとソースドメインの内容がよく似ている(例:空が上にあり、道路が下にあるという情報)場合、これらがモデルの適合に役に立つと考えられる。よって、[2]と同様に空間事前分布を導入する。事前空間分布は提案されたCBSTに組み込まれ、CBST-SPとして扱われる。
 
 ## どうやって有効だと検証した?
-### **Small shift: cross city adaptation**
+### Small shift: cross city adaptation
 現実世界の都市のデータセットを使った適応実験を行う。表1はCityspcapesデータセットからNTHUデータセットへの適応。どちらも都市風景のデータセットであり、NTHUにはローマ、リオ、東京、台北のデータのデータが含まれている。数値はクラスごとのIoU値とそれらの平均IoU値である。
 
 ![tab1](img/UDAfSSvCS/tab1.png)
 
-### **Large Shift: synthetic to real adaptation**
+### Large Shift: synthetic to real adaptation
 合成(非現実)データセットから現実のデータセットへの適応実験を行う。表2はSYNTHIAデータセットからCityspcapesデータセットへの適応。表2のmIoUはIoUの平均値を示す。表3はGTA5からCityscapesへの適応結果を示す。図3,4は合成データからの現実データへの適応結果の視覚化。
 
 ![tab2](img/UDAfSSvCS/tab2.png)
@@ -72,18 +72,18 @@ ST同様に、CBSTにも$k_ c$の値を決定するためのアルゴリズム�
 ## 次に読むべき論文は?
 - [Bousmalis, K., Trigeorgis, G., Silberman, N., Krishnan, D., Erhan, D.: Domain separation networks. In: Advances in Neural Information Processing Systems. pp. 343–351 (2016)](https://arxiv.org/abs/1608.06019)
 
-### 論文関連リンク
+## 論文関連リンク
 1. [祥孝 牛久, Curriculum Learning (アクセス日時:2019/03/16).](https://www.slideshare.net/YoshitakaUshiku/20150530-kantocv-curriculumlearning)
 2. [Silberman, N., Fergus, R.: Indoor scene segmentation using a structured light sen-sor. In: Computer Vision Workshops (ICCV Workshops), 2011 IEEEInternational Conference on. pp. 601–608. IEEE (2011)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.365.9764&rep=rep1&type=pdf)
 3. [Chen, Y.H., Chen, W.Y., Chen, Y.T., Tsai, B.C., Frank Wang, Y.C., Sun, M.: No more discrimination: Cross city adaptation of road scene segmenters. In: The IEEE International Conference on Computer Vision (ICCV) (Oct 2017)](https://yihsinchen.github.io/segmentation_adaptation/)
 
-### 会議
+## 会議
 ECCV 2018
 
-### 著者
+## 著者
 Yang Zou, Zhiding Yu, B.V.K. Vijaya Kumar, and Jinsong Wang.
 
-### 投稿日付(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/10/18
 
 ## コメント
@@ -91,3 +91,6 @@ Yang Zou, Zhiding Yu, B.V.K. Vijaya Kumar, and Jinsong Wang.
 
 ## key-words
 Domain_Adaptation, 2D_Image
+
+## status
+更新済
