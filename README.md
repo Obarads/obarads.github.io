@@ -1,6 +1,6 @@
 # obarads.github.io
 ## About
-このレポジトリは論文を要約するためのものです。基本的には点群と生成モデル、2D&3D、Self-supervised learningについてまとめます。下のサイトで一部の数式を成形して表示しています。論文と見比べて怪しい部分がある場合は該当する論文のIssueにコメントをお願いいたします。ブラウザはGoogle Chromeにしか対応してません。
+このレポジトリは論文を要約するためのものです。基本的には点群と生成モデル、2D&3D、Self-supervised learningについてまとめます。下のサイトで一部の数式を成形して表示しています。論文と見比べて怪しい部分がある場合は該当する論文のIssueにコメントをお願いいたします。ブラウザはGoogle Chromeにしか対応してません。Githubのスターを押していただけるとやる気が出ます。
 
 PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.github.io/)で正しく表示されます。  
 比較的最近(1年くらい)の論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています。  

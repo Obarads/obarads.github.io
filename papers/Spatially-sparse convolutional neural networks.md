@@ -62,7 +62,7 @@ Benjamin Graham
 Sparse 3D convolutional neural networksという3Dバージョンも有り。
 
 ## key-words
-2D_Image
+2D_Image, Sparse
 
 ## status
 省略

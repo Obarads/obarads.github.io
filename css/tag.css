@@ -84,9 +84,14 @@
 }
 
 .__Simulation {
-  background: rgb(172, 0, 14);
-  color: #fff;
+  background: rgb(114, 196, 199);
+  color: rgb(0, 0, 0);
 }
+
+.__Sparse{
+  background:rgb(134, 202, 45);
+  color:rgb(0, 0, 0);
+}  
 
 .__Transfer_learning {
   background: rgb(199, 178, 219);

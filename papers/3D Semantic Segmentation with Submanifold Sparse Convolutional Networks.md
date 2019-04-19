@@ -21,7 +21,7 @@
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [Steven Steinke. What’s the difference between a matrix and a tensor?. (アクセス:2019/04/18)](https://medium.com/@quantumsteinke/whats-the-difference-between-a-matrix-and-a-tensor-4505fbdc576c)
 
 ## 会議
 CVPR 2018
@@ -33,10 +33,10 @@ Benjamin Graham, Martin Engelcke, Laurens van der Maaten
 2017/11/28
 
 ## コメント
-なし
+重要なアイデア、確認しとくべき。
 
 ## key-words
-Point_Cloud, Semantic_Segmentation
+Point_Cloud, Sparse
 
 ## status
 未完
