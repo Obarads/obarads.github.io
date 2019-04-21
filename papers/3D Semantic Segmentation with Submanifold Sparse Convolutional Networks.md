@@ -12,8 +12,14 @@
 
 ![tab1](img/3SSwSSCN/tab1.png)
 
-## 技術や手法のキモはどこ? or 提案手法の詳細
+submanifold dilation problemについて述べて。
 
+## 技術や手法のキモはどこ? or 提案手法の詳細
+このアプローチの潜在的問題(submanifold dilation problem?)はネットワークにある隠れ層が入力データを分類するために必要とするすべてのデータを受け取ることができない可能性があるためである(特に、2つの隣接する接続コンポーネント(?)は完全かつ独立に扱われる)。この問題に解決するため、poolingもしくはstrided畳み込み演算を使った畳み込みネットワークを用いる。
+
+![fig2_anime](img/3SSwSSCN/fig2_anime.gif)
+
+![fig3_anime](img/3SSwSSCN/fig3_anime.gif)
 
 ## どうやって有効だと検証した?
 
@@ -25,6 +31,7 @@
 ## 論文関連リンク
 1. [cvpaperchallenge2018](https://cvpaperchallenge.github.io/CVPR2018_Survey/#/ID_3D_Semantic_Segmentation_with_Submanifold_Sparse_Convolutional_Networks)
 2. [三次元点群を取り扱うニューラルネットワークのサーベイ Ver. 2 / Point Cloud Deep Learning Survey Ver. 2 - Speaker Deck](https://speakerdeck.com/nnchiba/point-cloud-deep-learning-survey-ver-2?slide=55)
+3. [facebookresearch/SparseConvNet: Submanifold sparse convolutional networks](https://github.com/facebookresearch/SparseConvNet)
 
 ## 会議
 CVPR 2018
