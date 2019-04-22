@@ -27,8 +27,8 @@ SGPN概要図は図2の通り。生の点群はPointNetもしくはPointNet++等
 -
 
 ## 論文関連リンク
-1.
-2.
+1. [三次元点群を取り扱うニューラルネットワークのサーベイ Ver. 2 / Point Cloud Deep Learning Survey Ver. 2 - Speaker Deck](https://speakerdeck.com/nnchiba/point-cloud-deep-learning-survey-ver-2?slide=191)
+2. [cvpaper.challenge](https://cvpaperchallenge.github.io/CVPR2018_Survey/#/ID_SGPN_Similarity_Group_Proposal_Network_for_3D_Point_Cloud_Instance_Segmentation)
 
 ## 会議
 CVPR 2018
