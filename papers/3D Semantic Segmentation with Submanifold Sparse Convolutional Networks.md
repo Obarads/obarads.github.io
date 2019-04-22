@@ -44,9 +44,12 @@ deconvolution演算子などについて言及しているが省略。
 ![fig4](img/3SSwSSCN/fig4.png)
 
 ## どうやって有効だと検証した?
-
+図5はShapeNetのセマンティックセグメンテーション向けに訓練させたもの。(a)はベースラインとの比較、(b)はネットワークアーキテクチャとしてC3,FCN,U-Netを使い比較したもの、(c)は異なるスケールを使用した時のものである。
 
 ![fig5](img/3SSwSSCN/fig5.png)
+
+#### その他
+他にもあるが省略
 
 ## 議論はある?
 なし
@@ -77,4 +80,4 @@ Benjamin Graham, Martin Engelcke, Laurens van der Maaten
 Point_Cloud, Sparse
 
 ## status
-更新済
+省略
