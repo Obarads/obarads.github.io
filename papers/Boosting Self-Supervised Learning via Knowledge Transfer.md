@@ -3,8 +3,10 @@
 元の論文の公開ページ : https://arxiv.org/abs/1805.00385
 
 ## どんなもの?
+省略
 
 ## 先行研究と比べてどこがすごいの?
+省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 提案する手法は図2の様に4つのステップに分けられる。また、新たなpretextであるJigsaw++を提案した。訓練全体の流れは以下の通りである。
@@ -17,16 +19,20 @@
 ![fig2](img/BSLvKT/fig2.png)
 
 #### The Jigsaw++ Pretext Task
-著者らはResNetではなくAlexNetによるPASCALの認識タスクに興味がある。
+Jigsawタスク[1]では1つの画像を分割してタスクをこなす形式であったが、Jigsaw++タスクは1つの画像の分割パネルの中に別の画像の分割パネル(occludingタイル)を最大2個混ぜる。混ぜたものは図3の様になる。
 
-Jigsawタスク[1]に
+![fig3](img/BSLvKT/fig3.png)
+
+モデルはoccludingタイルの検出と、occludingタイルが無いときよりも情報量が少ない状態でJigsawタスクをこなす必要があるため、より難易度が上がる。タスクに曖昧さを加えないためにJigsawのときと同じく最小ハミング距離を使ってタイルの配置が似ないようにする。他にも各画像タイルに対して独立にmean and std normalization(平均と標準化?)を適応し、ネットワークの70%(の時間?)はグレイスケール画像によって訓練される。これらは低レベルな統計値による解決を防ぐための手法である。
 
 ## どうやって有効だと検証した?
+省略
 
 ## 議論はある?
+省略
 
 ## 次に読むべき論文は?
-- なし
+- Deep Clustring for Unsupervised Learning of Visual Features
 
 ## 論文関連リンク
 1. [M. Noroozi and P. Favaro. Unsupervised learning of visual representations by solving jigsaw puzzles. In ECCV, 2016.](https://arxiv.org/abs/1603.09246)
@@ -48,4 +54,4 @@ Mehdi Noroozi, Ananth Vinjimoor, Paolo Favaro, Hamed Pirsiavash.
 2D_Image, Classification, Self-supervised
 
 ## status
-未完
+省略
