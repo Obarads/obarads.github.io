@@ -49,7 +49,7 @@
 ## 議論はある?
 
 ## 次に読むべき論文は?
-- なし
+- Boosting Self-Supervised Learning via Knowledge Transfer
 
 ## 論文関連リンク
 1. [鈴⽊智之. Self-supervised Learningによる特徴表現学習. (アクセス日時 2019/04/22)](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
