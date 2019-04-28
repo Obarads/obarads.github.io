@@ -38,6 +38,23 @@ table tbody td, th {
 }
 
 /*tag button*/
+.btn-column {
+    display: inline-block;
+    padding: 0.0em 0.3em;
+    text-decoration: none;
+    background: white;
+    color: black;
+    border-radius: 3px;
+    font-size: 4mm;
+}
+.btn-column:hover,.bc-hovered {
+    color: #fff !important;
+    /* Prevent inheritance from `body` */
+    background-color: #333 !important;
+}
+.column-hidden {
+    display: none;
+}
 
 .btn-flat {
     text-shadow: none;
@@ -47,18 +64,12 @@ table tbody td, th {
     background: seagreen;
     color: white;
     border-radius: 3px;
-    transition: 0.1s;
     font-size: 3.7mm;
 }
-
 .btn-flat:hover, .hovered {
     color: #fff !important;
     /* Prevent inheritance from `body` */
     background-color: #333 !important;
-}
-
-.btn-flat:visited {
-    color: fff;
 }
 
 .expanded {

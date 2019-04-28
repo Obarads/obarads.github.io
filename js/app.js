@@ -134,6 +134,16 @@ function search(il, tl, title, path) {
       }
       table_show_and_hide();
     });
+    $('.btn-column').click(function () {
+      var column_name = $(this).html().split(' ')[0];
+      var column_dict = { 'Title': 1, 'Year': 2, 'Status': 3 };
+      var cn = String(column_dict[column_name]);
+      $("td:nth-of-type(" + cn + ")")
+        .toggleClass("column-hidden");
+      $("th:nth-of-type(" + cn + ")")
+        .toggleClass("column-hidden");
+      $(this).toggleClass("bc-hovered");
+    });
     $('#_initialization_button').bind("click", function () {
       //var len=$('tbody tr').filter(':visible').length;
       //console.log(len);
