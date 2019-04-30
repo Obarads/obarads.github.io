@@ -67,15 +67,22 @@ $$
 
 ![cost_4](img/Machine_Learning/cost_4.png)
 
-## 目的関数の最適化
-
-## ノルム
-
-
-## 技術用語
-
-## Reference
+### 参考文献
 1. [Machine Learning | Coursera. Stanford. (アクセス:2019/04/08)](https://www.coursera.org/learn/machine-learning/)
 
+
+## 勾配視覚化
+### 参考文献
+1. [‎urusulambda. CNNの可視化に関して簡単に紹介しているページをざっくり翻訳した. (アクセス:2019/04/30)](https://urusulambda.wordpress.com/2018/05/13/cnn%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E7%B0%A1%E5%8D%98%E3%81%AB%E7%B4%B9%E4%BB%8B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92/)
+
+## Curriculum learning
+### 参考文献
+1. [祥孝 牛久、Curriculum learning (アクセス:2019/03/17)](https://www.slideshare.net/YoshitakaUshiku/20150530-kantocv-curriculumlearning)
+
+## Ensemble
+### 参考文献
+1. [ToshinoriHanya. Deep Learningにおける知識の蒸留. (アクセス:3019/04/30)](http://codecrafthouse.jp/p/2018/01/knowledge-distillation/#vs)
+
+
 ## key-words
-Math, Optimization
+Math, Optimization, Curriculum_learning
