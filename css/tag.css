@@ -45,6 +45,11 @@
   background: rgb(255, 0, 191);
 }
 
+.__Entropy{
+  background:rgb(231, 229, 74);
+  color:rgb(0, 0, 0);
+}
+
 .__Fine-tuning {
   background: rgb(36, 130, 158);
   color: #fff;
