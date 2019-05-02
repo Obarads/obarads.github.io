@@ -1,6 +1,6 @@
 # obarads.github.io
 ## About
-3Dと点群、教師なし手法、その他についてまとめもしくは翻訳をします。論文と見比べて怪しい部分がある場合は該当する論文のIssueにコメントをしていただけると幸いです。Githubのスターを押していただけるとやる気が出ます。
+3Dと点群、教師なし手法、その他についてまとめもしくは翻訳をします。論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or その他の場合は新規Issueを建てていただけると幸いです。Githubのスターを押していただけるとやる気が出ます。
 
 PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.github.io/)で正しく表示されます。ブラウザはGoogle Chromeにしか対応しておらず、その他は表示が崩れる可能性が有ります。  
 比較的最近(1年くらい)の論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています。  
@@ -24,8 +24,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 各論文で出てくる単語やジャンルへの補足説明を行う。
 
 ## Issue page in Github
-Issueの方に各論文のmdファイルの内容を載せています。もし間違いだと思う部分がある場合は、とりあえずissueの方にcommentしてください。
-
+論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or その他の場合は新規Issueを建てていただけると幸いです。
 
 ## Use this repository in local
 ### About

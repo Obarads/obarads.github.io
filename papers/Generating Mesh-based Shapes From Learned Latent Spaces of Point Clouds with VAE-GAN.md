@@ -64,7 +64,7 @@ Cherdsak Kingkan, Koichi Hashimoto.
 なし
 
 ## key-words
-Point_Cloud, GAN
+Point_Cloud, GAN, Mesh
 
 ## status
 更新済

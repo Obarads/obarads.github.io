@@ -1,20 +1,16 @@
-# Convolutional Feature Masking for Joint Object and Stuff Segmentation
+# Self-Supervised Audio-Visual Co-Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1412.1283
+元の論文の公開ページ : https://arxiv.org/abs/1904.09013
 
 ## どんなもの?
-省略
 
 ## 先行研究と比べてどこがすごいの?
-省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 
 ## どうやって有効だと検証した?
-省略
 
 ## 議論はある?
-省略
 
 ## 次に読むべき論文は?
 - なし
@@ -23,19 +19,19 @@
 1. なし
 
 ## 会議
-CVPR 2015
+ICASSP 2019
 
 ## 著者
-Jifeng Dai, Kaiming He, Jian Sun.
+Andrew Rouditchenko, Hang Zhao, Chuang Gan, Josh McDermott, Antonio Torralba.
 
 ## 投稿日付(yyyy/MM/dd)
-2014/12/03
+2019/04/18
 
 ## コメント
 なし
 
 ## key-words
-2D_Image, Semantic_Segmentation
+Self-supervised
 
 ## status
-未完
+省略

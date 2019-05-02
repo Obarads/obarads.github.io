@@ -6,7 +6,7 @@
   background: rgb(131, 5, 79);
 }
 
-.__Adversarial {
+.__Adversarial_Examples {
   background: rgba(187, 2, 26, 0.829);
 }
 
@@ -50,17 +50,37 @@
   color:rgb(0, 0, 0);
 }
 
+.__Few-shot{
+  background:rgb(240, 255, 157);
+  color:rgb(0, 0, 0);
+}
+
 .__Fine-tuning {
   background: rgb(36, 130, 158);
   color: #fff;
+}
+
+.__Flow_Estimation{
+  background: rgb(0, 223, 137);
+  color: rgb(0, 0, 0);
 }
 
 .__GAN {
   background: rgb(233, 14, 14);
 }
 
+.__Gaze_Estimation{
+  background:rgb(151, 41, 161);
+  color:#fff;
+}
+
 .__Instance_Segmentation {
   background: rgb(196, 78, 0);
+}
+
+.__Mesh{
+  background: rgb(179, 124, 52);
+  color: #fff;
 }
 
 .__One-Class___Anomaly_Detection {

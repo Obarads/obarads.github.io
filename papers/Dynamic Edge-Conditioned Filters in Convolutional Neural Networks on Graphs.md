@@ -34,7 +34,7 @@ Martin Simonovsky, Nikos Komodakis.
 なし
 
 ## key-words
-Graph
+Graph, Point_Cloud
 
 ## status
 未完
