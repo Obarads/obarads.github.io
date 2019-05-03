@@ -32,7 +32,7 @@
 なし
 
 ## key-words
-Sparse, 2D_Image
+2D_Image, Sparsity
 
 ## status
 未完

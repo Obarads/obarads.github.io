@@ -84,7 +84,7 @@ Ben Graham
 この内容自体はまだ完全に理解してはいないため、いずれは勉強し直す。
 
 ## key-words
-Voxel, Sparse
+Voxel, Sparsity
 
 ## status
 省略

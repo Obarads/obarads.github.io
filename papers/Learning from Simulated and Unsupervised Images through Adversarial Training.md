@@ -98,7 +98,7 @@ Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Josh Susskind, Wenda Wang and Ru
 なし
 
 ## key-words
-GAN, Simulation, 2D_Image
+GAN, Synthetic, 2D_Image
 
 ## status
 更新済

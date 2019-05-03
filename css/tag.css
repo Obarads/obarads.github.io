@@ -50,7 +50,7 @@
   color:rgb(0, 0, 0);
 }
 
-.__Few-shot{
+.__Few-Shot{
   background:rgb(240, 255, 157);
   color:rgb(0, 0, 0);
 }
@@ -97,12 +97,17 @@
   color: #fff;
 }
 
+.__RNN{
+  background: rgb(71, 109, 0);
+  color: #fff;
+}
+
 .__SLAM {
   background: rgb(73, 112, 107);
   color: #fff;
 }
 
-.__Self-supervised {
+.__Self-Supervision {
   background: rgb(58, 255, 255);
   color: rgb(0, 0, 0);
 }
@@ -112,15 +117,15 @@
   color: rgb(0, 0, 0);
 }
 
-.__Simulation {
-  background: rgb(114, 196, 199);
-  color: rgb(0, 0, 0);
-}
-
-.__Sparse{
+.__Sparsity{
   background:rgb(134, 202, 45);
   color:rgb(0, 0, 0);
-}  
+}
+
+.__Synthetic {
+  background: rgb(217, 46, 223);
+  color: rgb(255, 255, 255);
+}
 
 .__Transfer_learning {
   background: rgb(199, 178, 219);
@@ -132,7 +137,7 @@
   color: rgb(0, 0, 0);
 }
 
-.__treeRNN {
+.__TreeRNN {
   background: rgb(253, 169, 169);
   color: rgb(0, 0, 0);
 }

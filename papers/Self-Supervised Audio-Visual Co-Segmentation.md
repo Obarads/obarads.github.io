@@ -31,7 +31,7 @@ Andrew Rouditchenko, Hang Zhao, Chuang Gan, Josh McDermott, Antonio Torralba.
 なし
 
 ## key-words
-Self-supervised
+Self-Supervision
 
 ## status
 省略

@@ -54,15 +54,30 @@ function create_links(link) {
   return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td><td>' + link[3] + '</td></tr>';
 }
 
-function search(il, tl, title, path) {
+function search(il, tl, title, path, mode) {
   _html = il;
   html = _html.map(create_links);
   var div = document.getElementById("_papers_tbody");
   div.innerHTML = html.join("");
-  _html = tl;
-  html = _html.map(create_tag);
-  var div = document.getElementById("_category_tags");
-  div.innerHTML = html.join(" ");
+  if (mode==0){
+    _html = tl;
+    html = _html.map(create_tag);
+    var div = document.getElementById("_category_tags");
+    div.innerHTML = html.join(" ");
+  }else if(mode==1){
+    _html = tl[0];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_data_tags");
+    div.innerHTML = html.join(" ");
+    _html = tl[1];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_task_tags");
+    div.innerHTML = html.join(" ");
+    _html = tl[2];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_etc_tags");
+    div.innerHTML = html.join(" ");
+  }
   url_param = getParam("tag");
   if (url_param == null) {
     tag_names = []
@@ -81,11 +96,12 @@ function search(il, tl, title, path) {
   });
   table_show_and_hide();
 
+  transform_size = 576
   /*create this page*/
   $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = title
     var size = document.getElementById("body").clientWidth;
-    if (size < 576) {
+    if (size < transform_size) {
       size_states = 1;
       $('#sidebar').appendTo('#s-sb');
     }
@@ -93,10 +109,10 @@ function search(il, tl, title, path) {
 
   $(window).resize(function () {
     var size = document.getElementById("body").clientWidth;
-    if (size < 576 && size_states == 0) {
+    if (size < transform_size && size_states == 0) {
       size_states = 1;
       $('#sidebar').appendTo('#s-sb');
-    } else if (size >= 576 && size_states == 1) {
+    } else if (size >= transform_size && size_states == 1) {
       size_states = 0;
       $('#sidebar').appendTo('#l-sb');
     }
@@ -150,6 +166,8 @@ function search(il, tl, title, path) {
       $('#_filter_input').val('');
       $('#_papers_tbody tr').show();
       $(".btn-flat").removeClass("hovered");
+      var href = (window.location.href).split("?");
+      window.history.replaceState('', '', href[0]);
       title_filter = "";
       tag_names = [];
     });

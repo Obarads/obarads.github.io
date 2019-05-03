@@ -101,6 +101,12 @@ body a:hover {
     margin-right: 0.5rem;
 }
 
+.scrollable-menu {
+    height: auto;
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
 /* papers directory design */
 
 #content img {

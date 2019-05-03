@@ -51,7 +51,7 @@ Mehdi Noroozi, Ananth Vinjimoor, Paolo Favaro, Hamed Pirsiavash.
 なし
 
 ## key-words
-2D_Image, Classification, Self-supervised
+2D_Image, Classification, Self-Supervision
 
 ## status
 省略

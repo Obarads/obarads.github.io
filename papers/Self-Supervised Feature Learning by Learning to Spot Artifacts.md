@@ -69,7 +69,7 @@ Simon Jenni, Paolo Favaro.
 なし
 
 ## key-words
-2D_Image, Self-supervised
+2D_Image, Self-Supervision
 
 ## status
 省略

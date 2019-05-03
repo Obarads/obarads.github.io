@@ -36,7 +36,7 @@ Pengpeng Liu, Michael Lyu, Irwin King, Jia Xu.
 なし
 
 ## key-words
-2D_Image, Flow_Estimation, Self-supervised
+2D_Image, Flow_Estimation, Self-Supervision
 
 ## status
 省略

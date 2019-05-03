@@ -119,7 +119,7 @@ Spyros Gidaris, Praveer Singh, Nikos Komodakis
 単純なのに強力である。こんなにも簡単な手法があるとは思わんかった。
 
 ## key-words
-2D_Image, Self-supervised
+2D_Image, Self-Supervision
 
 ## status
 更新済
