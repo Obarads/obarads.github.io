@@ -117,6 +117,11 @@
   color: rgb(0, 0, 0);
 }
 
+.__Survey{
+  background:rgb(255, 71, 25);
+  color:rgb(255, 255, 255);
+}
+
 .__Sparsity{
   background:rgb(134, 202, 45);
   color:rgb(0, 0, 0);
@@ -130,6 +135,11 @@
 .__Transfer_learning {
   background: rgb(199, 178, 219);
   color: rgb(0, 0, 0);
+}
+
+.__Video{
+  background: rgb(207, 67, 67);
+  color: rgb(255, 255, 255);
 }
 
 .__Voxel {

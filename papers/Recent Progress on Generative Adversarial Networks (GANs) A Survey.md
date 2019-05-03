@@ -193,7 +193,7 @@ Zhaoqing Pan, Weijie Yu, Xiaokai Yi, Asifullah Khan, Feng Yuan, Yuhui Zheng.
 なし
 
 ## key-words
-GAN
+GAN, Survey
 
 ## status
 更新済

@@ -4,6 +4,9 @@ import csv
 import os
 import glob
 import copy
+import argparse
+import yaml
+import numpy as np
 
 def extract_data(path):
     status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"大雑把":0}
@@ -64,34 +67,81 @@ def coloring_tag_template(tags):
     return tag_css_class
 
 def main():
-    info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("papers")
-    info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("complementary")
+    parser = argparse.ArgumentParser(description='-m l:listing, t:classes tag category')
+    # parser.add_argument('--conv-layers', '-c', type=int, default=4)
+    parser.add_argument('--mode', '-m', type=str, default="l")
+    args = parser.parse_args()
+    mode = args.mode
 
-    # tagのテンプレ作成
-    kw_tags = copy.copy(kw_tags_papers)
-    kw_tags.extend(kw_tags_complementary)
-    kw_tags = list(set(kw_tags))
-    kw_tags = coloring_tag_template(kw_tags)
+    if mode=="l":
+        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("papers")
+        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("complementary")
 
-    info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
-    kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
-    date_tags_papers = "function date_tag_list(){ return ["+ ",".join(date_tags_papers) +"]}\n"
-    info_list_complementary = "function information_list_c(){ return ["+",".join(info_list_complementary)+"]}\n"
-    kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
-    date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
+        kwt = kw_tags_papers
 
-    with open('js/list.js', 'w', encoding="utf-8") as f:
-        f.writelines(info_list_papers)
-        f.writelines(kw_tags_papers)
-        f.writelines(date_tags_papers)
-        f.writelines(info_list_complementary)
-        f.writelines(kw_tags_complementary)
-        f.writelines(date_tags_complementary)
-        f.close()
+        # tagのテンプレ作成
+        kw_tags = copy.copy(kw_tags_papers)
+        kw_tags.extend(kw_tags_complementary)
+        kw_tags = list(set(kw_tags))
+        kw_tags = coloring_tag_template(kw_tags)
 
-    with open('css/tag_temp.css', 'w') as f:
-        f.writelines(kw_tags)
-        f.close()
+        info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
+        kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
+        date_tags_papers = "function date_tag_list(){ return ["+ ",".join(date_tags_papers) +"]}\n"
+        info_list_complementary = "function information_list_c(){ return ["+",".join(info_list_complementary)+"]}\n"
+        kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
+        date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
+
+        with open('js/list.js', 'w', encoding="utf-8") as f:
+            f.writelines(info_list_papers)
+            f.writelines(kw_tags_papers)
+            f.writelines(date_tags_papers)
+            f.writelines(info_list_complementary)
+            f.writelines(kw_tags_complementary)
+            f.writelines(date_tags_complementary)
+            f.close()
+
+        with open('css/tag_temp.css', 'w') as f:
+            f.writelines(kw_tags)
+            f.close()
+
+        with open('tag_list_temp.yaml', 'w', encoding="utf-8") as f:
+            f.writelines("other: [")
+            for kt in kwt:
+                f.writelines('"'+kt+'",\n')
+            f.writelines("]")
+
+    elif mode=="t":
+        with open('tag_list.yaml') as f:
+            yml = yaml.load(f)
+        with open('tag_list_temp.yaml') as f:
+            yml_0 = yaml.load(f)
+            confirmation_origin = np.array(sorted(yml_0["other"]))
+        task = yml["task"]
+        data = yml["data"]
+        etc = yml["etc"]
+        confirmation = []
+        confirmation.extend(task)
+        confirmation.extend(data)
+        confirmation.extend(etc)
+        confirmation = np.array(sorted(confirmation))
+
+        print(task)
+
+        print("以下のタグがtag_listに含まれていない")
+        for i,l in zip(confirmation_origin,np.in1d(confirmation_origin,confirmation)):
+            if l == False:
+                print(i)
+
+        print("以下のタグがtag_listに余計に含まれている")
+        for i,l in zip(confirmation,np.in1d(confirmation,confirmation_origin)):
+            if l == False:
+                print(i)
+
+        with open('js/tag_s_list.js', 'w') as f:
+            f.writelines("function tag_task_list(){ return [" + ",".join(sorted(task))+"]}\n")
+            f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
+            f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
 
 if __name__ == '__main__':
     main()
