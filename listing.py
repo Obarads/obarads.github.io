@@ -7,6 +7,7 @@ import copy
 import argparse
 import yaml
 import numpy as np
+from distutils.util import strtobool
 
 def extract_data(path):
     status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"大雑把":0}
@@ -70,8 +71,10 @@ def main():
     parser = argparse.ArgumentParser(description='-m l:listing, t:classes tag category')
     # parser.add_argument('--conv-layers', '-c', type=int, default=4)
     parser.add_argument('--mode', '-m', type=str, default="l")
+    parser.add_argument('--css', '-c', type=strtobool, default='false')
     args = parser.parse_args()
     mode = args.mode
+    css = args.css
 
     if mode=="l":
         info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("papers")
@@ -143,11 +146,12 @@ def main():
             f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
             f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
 
-        with open('css/tag.css', 'w') as f:
-            f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
-            f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
-            f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))
-            f.close()
+        if css:
+            with open('css/tag.css', 'w') as f:
+                f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))
+                f.close()
 
 
 
