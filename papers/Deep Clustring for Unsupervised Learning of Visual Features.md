@@ -62,7 +62,7 @@ Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 なし
 
 ## key-words
-2D_Image, Self-Supervision
+2D_Image, Self-Supervised_Learning
 
 ## status
 省略

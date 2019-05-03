@@ -96,7 +96,7 @@ R Devon Hjelm, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachma
 なし
 
 ## key-words
-2D_Image, Self-Supervision
+2D_Image, Self-Supervised_Learning
 
 ## status
 未完

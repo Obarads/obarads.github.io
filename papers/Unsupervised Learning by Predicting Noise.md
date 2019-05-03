@@ -35,7 +35,7 @@ Piotr Bojanowski, Armand Joulin.
 なし
 
 ## key-words
-2D_Image, Self-Supervision
+2D_Image, Self-Supervised_Learning
 
 ## status
 未完

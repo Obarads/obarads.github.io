@@ -111,7 +111,7 @@ Mehdi Noroozi, Hamed Pirsiavash and Paolo Favaro.
 論文関連リンク1様様。
 
 ## key-words
-2D_Image, Self-Supervision
+2D_Image, Self-Supervised_Learning
 
 ## status
 更新済

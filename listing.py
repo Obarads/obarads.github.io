@@ -60,10 +60,10 @@ def extract_data(path):
 
     return info_list,kw_tags,date_tags,status_tags
 
-def coloring_tag_template(tags):
+def coloring_tag_template(tags,propertis='background:rgb(0,0,0);\ncolor:#fff;'):
     tag_css_class = ""
     for t in tags:
-        tag_css_class += '.__'+ t.replace(" ","_").replace("&","_").replace("'","") + '{\nbackground:rgb(0,0,0);\ncolor:#fff;\n}\n\n' 
+        tag_css_class += '.__'+ t.replace(" ","_").replace("&","_").replace("'","") + '{\n'+propertis+'\n}\n\n' 
     return tag_css_class
 
 def main():
@@ -142,6 +142,15 @@ def main():
             f.writelines("function tag_task_list(){ return [" + ",".join(sorted(task))+"]}\n")
             f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
             f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
+
+        with open('css/tag.css', 'w') as f:
+            f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
+            f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
+            f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))
+            f.close()
+
+
+
 
 if __name__ == '__main__':
     main()
