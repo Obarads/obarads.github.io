@@ -41,6 +41,11 @@
   background: rgb(0, 60, 255);
 }
 
+.__Depth_Estimation{
+  background: rgb(85, 4, 139);
+  color:rgb(255, 255, 255);
+}
+
 .__Domain_Adaptation {
   background: rgb(255, 0, 191);
 }

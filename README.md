@@ -4,7 +4,6 @@
 
 PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.github.io/)で正しく表示されます。ブラウザはGoogle Chromeにしか対応しておらず、その他は表示が崩れる可能性が有ります。  
 比較的最近(1年くらい)の論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています。  
-サイトの方には[Markdown_and_MathJax](https://github.com/Obarads/Markdown_and_MathJax)を使っています。
 
 ## Link & Directory
 各ページ(ディレクトリ)の説明をする。なお、基本的に定義式は画像形式で示します。理由は、書くのに時間がかかるのと、スマホで見たときに画面外にはみ出すことがあるからです。
