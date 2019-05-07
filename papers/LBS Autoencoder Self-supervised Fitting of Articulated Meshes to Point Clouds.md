@@ -1,6 +1,7 @@
 # LBS Autoencoder: Self-supervised Fitting of Articulated Meshes to Point Clouds
 
 元の論文の公開ページ : https://arxiv.org/abs/1904.10037
+Github Issues : [#57](https://github.com/Obarads/obarads.github.io/issues/57)
 
 ## どんなもの?
 LBS-AEと呼ばれる、関節付きのメッシュモデルを点群へフィッティングするためのself-supervisedなオートエンコーディングアルゴリズムを提案した。図1に示すように、(a)点群を受け取り、(b)粗いセグメンテーションや(c)(d)テンプレートに従った変形、(e)再構築などを行う。  

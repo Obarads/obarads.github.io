@@ -1,6 +1,7 @@
 # Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
 
 元の論文の公開ページ : https://arxiv.org/abs/1506.01497
+Github Issues : [#54](https://github.com/Obarads/obarads.github.io/issues/54)
 
 ## どんなもの?
 オブジェクト検知ネットワークと領域提案アルゴリズムをEnd-to-Endの単体のネットワークに統合したFaster R-CNNを提案した。

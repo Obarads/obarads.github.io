@@ -1,6 +1,7 @@
 # Improving Spatiotemporal Self-Supervision by Deep Reinforcement Learning
 
 元の論文の公開ページ : https://arxiv.org/abs/1807.11293
+Github Issues : [#56](https://github.com/Obarads/obarads.github.io/issues/56)
 
 ## どんなもの?
 疑似タスクとして、時間的領域と空間的領域における視覚データの順序付けに同時に取り組む。[1]のようなビデオによる時間順序付けと[2]のような入力画像内の空間的順序付けは順序付けの次元が違うため同時にそれらのタスクを行うことができる。  

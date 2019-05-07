@@ -1,6 +1,7 @@
 # Boosting Self-Supervised Learning via Knowledge Transfer
 
 元の論文の公開ページ : https://arxiv.org/abs/1805.00385
+Github Issues : [#49](https://github.com/Obarads/obarads.github.io/issues/49)
 
 ## どんなもの?
 省略

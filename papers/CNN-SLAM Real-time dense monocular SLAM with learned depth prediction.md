@@ -1,6 +1,7 @@
 # CNN-SLAM: Real-time dense monocular SLAM with learned depth prediction
 
-元の論文の公開ページ : https://arxiv.org/abs/1704.03489
+元の論文の公開ページ : https://arxiv.org/abs/1704.03489  
+Github Issues : [#50](https://github.com/Obarads/obarads.github.io/issues/50)
 
 ## どんなもの?
 省略

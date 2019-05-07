@@ -1,6 +1,7 @@
 # 3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder
 
-元の論文の公開ページ : [CVFのページ](http://openaccess.thecvf.com/content_cvpr_2017/papers/Elbaz_3D_Point_Cloud_CVPR_2017_paper.pdf)
+元の論文の公開ページ : [CVFのページ](http://openaccess.thecvf.com/content_cvpr_2017/papers/Elbaz_3D_Point_Cloud_CVPR_2017_paper.pdf)  
+Github Issues : [#48](https://github.com/Obarads/obarads.github.io/issues/48)
 
 ## どんなもの?
 RegistrationタスクをこなすアルゴリズムであるLORAXを提案した。

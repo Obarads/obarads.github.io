@@ -1,6 +1,7 @@
 # Fast R-CNN
 
-元の論文の公開ページ : https://arxiv.org/abs/1504.08083
+元の論文の公開ページ : https://arxiv.org/abs/1504.08083  
+Github Issues : [#53](https://github.com/Obarads/obarads.github.io/issues/53)
 
 ## どんなもの?
 深層畳み込みネットワークを使ったオブジェクト検出用のフレームワークであるFast R-CNNを提案した。

@@ -56,4 +56,4 @@ Alexey Dosovitskiy, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller
 2D_Image, Data_Augmentation
 
 ## status
-省略
+未完
