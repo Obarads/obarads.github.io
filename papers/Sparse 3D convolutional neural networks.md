@@ -1,6 +1,7 @@
 # Sparse 3D convolutional neural networks
 
-元の論文の公開ページ : https://arxiv.org/pdf/1505.02890.pdf
+元の論文の公開ページ : https://arxiv.org/pdf/1505.02890.pdf 
+Github Issues : [#63](https://github.com/Obarads/obarads.github.io/issues/63)
 
 ## どんなもの?
 スパースな表現として扱われることが多い3D表現に対して使えるCNNを提案した。3Dとは言っているが、2Dでも4Dでも使おうと思えば使える。

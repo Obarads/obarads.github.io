@@ -1,6 +1,7 @@
 # Self-Supervised Audio-Visual Co-Segmentation
 
 元の論文の公開ページ : https://arxiv.org/abs/1904.09013
+Github Issues : [#61](https://github.com/Obarads/obarads.github.io/issues/61)
 
 ## どんなもの?
 自然なビデオからself-supervisionを介して学習する、視覚的なオブジェクト分割と音源分離のためのニューラルネットワークを開発した。このモデル自体は[1]の拡張である。

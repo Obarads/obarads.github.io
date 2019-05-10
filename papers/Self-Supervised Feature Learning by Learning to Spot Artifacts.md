@@ -1,6 +1,7 @@
 # Self-Supervised Feature Learning by Learning to Spot Artifacts
 
 元の論文の公開ページ : https://arxiv.org/abs/1806.05024
+Github Issues : [#62](https://github.com/Obarads/obarads.github.io/issues/62)
 
 ## どんなもの?
 意図的に画像の一部分を破損させ、破損させた部分を修復し、その後に識別器に本物か偽物か分類&どの部分が破損していたか識別させるself-supervised学習手法を提案した。

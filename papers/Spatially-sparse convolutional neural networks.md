@@ -1,6 +1,7 @@
 # Spatially-sparse convolutional neural networks
 
 元の論文の公開ページ : https://arxiv.org/abs/1409.6070
+Github Issues : [#64](https://github.com/Obarads/obarads.github.io/issues/64)
 
 ## どんなもの?
 手書きの文字(注目するべき場所は引いた線だけ、他の空白は何も無いため疎な行列として捉えることができる)のように、空間的スパースな入力に対して効率的な計算が行えるようなCNNを提案した。

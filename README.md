@@ -45,12 +45,18 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 
 ### How to use
 1. **リンクや情報諸々をまとめたjsファイルの作成**  
-    mdを/papersへ入れた後に、listing.pyをpythonで動かす。すると、jsフォルダにlist.jsが作られる。
-    - **文中にある情報をまとめる際のトリガーワード(listing.pyによる処理前に行うこと)**  
-        - \#\# key-words  
-        この表記の一行下にkey-wordを置くことで、/index.htmlにそのkey-wordを並べてくれる(書き方は/papersの中のmdファイルを参考に)。
-        - \#\#\# 投稿日付(yyyy/MM/dd)  
-        この表記の一行下にその内容の投稿日や公開年月日を書くと/index.htmlで表示してくれる(書き方は/papersの中のmdファイルを参考に)。
+    mdを/papersへ入れた後に、listing.pyをpythonで動かす。すると、jsフォルダにlist.jsが作られる。list.jsには2種類の引数を設定できる。
+    - **-m**  
+    lもしくはtを入れることで機能する。lはpapersとcomplementaryの中にあるmdファイル中のトリガーワードについてまとめる。tはtag_list.yamlファイルに書かれている分け方をサイトの方にも反映できるようにする。
+        - **文中にある情報をまとめる際のトリガーワード(listing.pyによる処理前に行うこと)** 
+            - \#\# key-words  
+            この表記の一行下にkey-wordを置くことで、/index.htmlにそのkey-wordを並べてくれる(書き方は/papersの中のmdファイルを参考に)。
+            - \#\#\# 投稿日付(yyyy/MM/dd)  
+            この表記の一行下にその内容の投稿日や公開年月日を書くと/index.htmlで表示してくれる(書き方は/papersの中のmdファイルを参考に)。
+            - status  
+            この表記の1行下に現在のページの状況を書く(書き方は/papersの中のmdファイルを参考に)。
+    - **-c**  
+    tag_list.yamlファイルに書かれている分け方ごとに色をつける。このコマンドは-m tと同時に使う。
 
 1. **Live serverによるローカルサーバー化**  
     vscodeにこのディレクトリを追加後、Live serverを起動し、このディレクトリを選択する。webブラウザが起動して/index.htmlが表示される。あとは好きにする。
