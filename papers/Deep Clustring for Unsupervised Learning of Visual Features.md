@@ -4,10 +4,12 @@
 Github Issues : [#51](https://github.com/Obarads/obarads.github.io/issues/51)
 
 ## どんなもの?
-省略
+画像をconvnetに入力して得た画像の特徴量をクラスタリングで分割し、それらの分割した特徴量を元に画像に擬似ラベルを振り分ける。convnetはその疑似ラベルを元に学習をして重みを更新する。この作業を繰り返して有用な特徴量を抽出できるself-supervised learning(SSL)手法を提案した。提案手法はDeepClustringと名付けられた。
 
 ## 先行研究と比べてどこがすごいの?
-省略
+過去にも、クラスタリング損失をconvnetの特徴との共同学習で使うことがあったが、これらは現在のconvnetアーキテクチャに関して徹底的な研究を可能にするような規模でテストされていない。クラスタリング損失に関連する研究で興味深いのは、Yangら\[5\]のconvnetの特徴とクラスタを交互に学習していく再帰的なフレームワークである。巨大なデータセットを使って特徴学習をした研究もあるがそれらはexamplar SVMと\[6\]同じように画像を区別するが(?)、こちらの提案手法は単純なクラスタリングを用いる。
+
+既存のSSLは入力に依存する手法が殆どであった。しかし、著者らの提案手法はconvnetの特徴量を元に擬似ラベルを生成するため、入力がどんな形であろうが入力の特徴量さえ取れれば学習が可能である。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 $\theta$のパラメーターを持つconvnet mapping $f_ \theta$は、学習させなければ良い特徴を生成することができない。しかし、$\theta$の値がランダムでも$f_ \theta$は何らかの画像上に存在している特徴を捉えており、$\theta$がランダム値であるAlexNetでもImageNetで12%の精度を持っている\[2\](本当にランダムであるなら0.1%の精度しか持たないはずである[4])。  
@@ -34,7 +36,23 @@ $$
 少数のクラスタに大部分の画像が割り振られている場合、パラメータ$theta$はそれらの間を排他的に識別するだろう。1つのクラスタを除く全てのクラスタがシングルトン(??)となるような非常に極端なシナリオである時、入力に関係なくconvnetは同じ予測を出力するtrivial parametrizationを引き起こす。この問題は画像のクラスが非常に偏っている教師有り学習でも起こる。この問題を回避するため、クラスまたは疑似ラベル上の一様分布に基づいて画像をサンプリングすることである。
 
 ## どうやって有効だと検証した?
-省略
+### Preliminary study
+図2(a)に訓練中のクラスタの割当とImageNetのラベル間のNormalized Mutual Information(NMI)の評価を示す。割当とラベル間の依存性は時間と共に増加し、抽出される特徴量はオブジェクトクラスに関連する情報を取り込み続ける。
+
+図2(b)は訓練中のエポック$t$と$t-1$のクラスタ間のNMIを示したものである。これは画像が前とは別のクラスタにどれくらい振り分けられるかを示すものであり、図2(b)では徐々にNMIが増加している、つまり再割り当てが少なくなっていることを示している。
+
+図2(c)にクラスタの数$k$がどれくらいモデルの質に影響を与えるか示す。mAPは下流タスクとしてPASCAL VOC 2007分類バリデーションセットを採用したときの値である。測定は300エポックまで学習させたモデルを用いて行っている。その結果、図2(c)より$k=10000$のとき最良の性能が得られることがわかった。ImageNetでモデルを訓練すると想定する場合、ImageNetのクラス数と同じ$k=1000$で最良の結果が得られるように思えるが、図2(c)よりある程度のオーバーセグメンテーション(過剰分割)を行うことが性能向上につながることがわかった。
+
+![fig2](img/DCfULoVF/fig2.png)
+
+### Visualizations
+#### First layer filters
+図3はSobelフィルタリングを用いて前処理された画像と生の画像を用いてDeepClusterを用いて訓練されたAlexNetの最初の層を示したものである。生の画像をそのまま使ったconvnetの学習の難しさは以前から指摘されており、図3の左側のおアネルに示すように、殆どのフィルタはクラス分類にほとんど影響しない色情報のみを捕捉する。Sobelフィルタリングを行ったものはエッジ情報を得ている。
+
+![fig3](img/DCfULoVF/fig3.png)
+
+#### Probing deeper layers
+
 
 ## 議論はある?
 省略
@@ -49,6 +67,8 @@ $$
 2. [Yuki Ishikawa. DeepCluster 論文の紹介. (アクセス日時 2019/04/24)](https://speakerdeck.com/hoto17296/deepcluster-lun-wen-falseshao-jie?slide=15)
 3. [鈴⽊智之. Self-supervised Learningによる特徴表現学習. (アクセス日時 2019/04/24)](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
 4. [Noroozi, M., Favaro, P.: Unsupervised learning of visual representations by solving jigsaw puzzles. In: ECCV. (2016)](https://arxiv.org/abs/1603.09246)
+5. [Yang, J., Parikh, D., Batra, D.: Joint unsupervised learning of deep representations and image clusters. In: CVPR. (2016)](https://arxiv.org/abs/1604.03628)
+6. [Malisiewicz, T., Gupta, A., Efros, A.A.: Ensemble of exemplar-svms for object detection and beyond. In: ICCV. (2011)](https://www.cs.cmu.edu/~efros/exemplarsvm-iccv11.pdf)
 
 ## 会議
 ECCV 2018
