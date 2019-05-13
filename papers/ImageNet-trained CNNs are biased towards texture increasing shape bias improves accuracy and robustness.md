@@ -1,10 +1,10 @@
 # ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness
 
 元の論文の公開ページ : https://arxiv.org/abs/1811.12231  
-Github Issues : 
+Github Issues : [#66](https://github.com/Obarads/obarads.github.io/issues/66)
 
 ## どんなもの?
-CNNは画像のオブジェクトの形状を記憶しそれに基づいて検出を行うというshape hypothesis(形状仮説,,論文内の呼称)に基づいていると考えられることが多い。しかし、ローカルテクスチャ(オブジェクト全体ではなく一部分の模様)がオブジェクトクラスに関する十分な情報を提供するらしく、ImageNetのオブジェクト認識はテクスチャ認識だけで実現できるという発見があった。これらの発見より、この論文ではtexture hypothesis(テクスチャ仮説,論文内の呼称)について検討する。論文では、形状仮説とテクスチャ仮説の矛盾を解決する実験を行う。
+CNNは画像のオブジェクトの形状を記憶しそれに基づいて検出を行うというshape hypothesis(形状仮説,,論文内の呼称)に基づいていると考えられることが多い。しかし、ローカルテクスチャ(オブジェクト全体ではなく部分的な模様)がオブジェクトクラスに関する十分な情報を提供するらしく、ImageNetのオブジェクト認識はテクスチャ認識だけで実現できるという発見があった。これらの発見より、この論文ではtexture hypothesis(テクスチャ仮説,論文内の呼称)について検討する。論文では、形状仮説とテクスチャ仮説の矛盾を解決する実験を行う。
 
 ## 先行研究と比べてどこがすごいの?
 省略
