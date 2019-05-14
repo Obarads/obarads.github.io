@@ -56,7 +56,39 @@ $$
 式(4)には、入力に$p_ {ij}$と$o_ {ij}$を取り、予測平均 $\mu_ {\psi}$(?)と標準偏差$\sigma_ \psi$から成る潜在$z\in\mathbb{R}^L$のガウス分布$q_ {\psi}(z |\left(p_ {i j}, O_{i j})_ {j=1 : K}\right)$を出力するエンコーダーネットワーク$g_ \psi(\cdot)$を挿入している。
 
 ### Inference
+訓練されたoccupancy networkを与えられた新しい観測($x$?)があり、それに対応する等値面を抽出するため、著者らはMultiresolution IsoSurface Extraction (MISE)という階層等値面抽出アルゴリズムを導入する(図2)。octreeを段階的に構築することで、最初からきめ細かいボクセルを使って等値面を抽出するより効率的な処理を行える。手順は以下の通り。
 
+#### 1. mark voxels & subdivide voxels & evaluate network
+1. 最初の解像度(mark voxels)で体積空間を離散化する。
+2. occupancy network $f_ \theta(p,x)$で全ての$p$(グリッド点)を評価する(占有率を求める?)(この$p$は、図2で言えば赤またはシアンで表されている点である)。
+3. $p$の占有率が閾値$\tau$以上であるもののみマークする(図2で言えば、赤点としてマークする)。
+4. 次に、最低２つの隣接するグリッド点が互いに異なる占有率の値をもつボクセルをアクティブとする(図2で言えば、薄い赤色のボクセル)。
+5. アクティブなボクセルを8つのサブボクセルに分割する。
+6. 2~5を望む解像度になるまで繰り返す。
+
+#### 2. marching cubes
+望む解像度になったら、Marching Cubesアルゴリズム[1]で近似する等値面(式(5))を抽出する。
+
+$$
+\left\{p \in \mathbb{R}^{3} | f_{\theta}(p, x)=\tau\right\} \tag{5}
+$$
+
+もし、初期解像度での占有率グリッドが内部と外部メッシュの両方の連結成分からなる場合、著者らのアルゴリズムは正確なメッシュに収束する(?)。殆どの場合これを満たす初期値は$32^3$であった。
+
+#### 3. simplify mesh
+(ここからの作業は離散化表現を除去するため、ボクセル表現では行う必要がない)  
+作成された等値面、つまりメッシュをさらに洗練する。Fast-Quadric-Mesh-Simplification algorithm[2]を使ってメッシュの洗練を行う。
+
+#### 4. refine using gradients
+さらにメッシュを洗練するため、一次と二次情報(つまり勾配)を使う。メッシュの各面からランダムな点$p_ k$をサンプリングし、式(6)を最小化する。
+
+$$
+\sum_{k=1}^{K}\left(f_{\theta}\left(p_{k}, x\right)-\tau\right)^{2}+\lambda\left\|\frac{\nabla_{p} f_{\theta}\left(p_{k}, x\right)}{\left\|\nabla_{p} f_{\theta}\left(p_{k}, x\right)\right\|}-n\left(p_{k}\right)\right\|^{2} \tag{6}
+$$
+
+ここで、$n(p_ k)$は$p_ k$におけるメッシュの法線ベクトルである。式(6)の二項の最小化は二次勾配情報をつかい、効率的にDouble-Backpropagation[3]を実行する。なお、メッシュの全頂点の法線はoccupancy networkを介して逆伝播で求められる。この推定アルゴリズムはメッシュごとに3秒かかる。
+
+![fig2](img/ONL3RiFS/fig2.png)
 
 ## どうやって有効だと検証した?
 
@@ -66,7 +98,9 @@ $$
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [W. E. Lorensen and H. E. Cline. Marching cubes: A high resolution 3D surface construction algorithm. InACM Trans. on Graphics (SIGGRAPH), 1987.](http://academy.cba.mit.edu/classes/scanning_printing/MarchingCubes.pdf)
+2. [M. Garland and P. S. Heckbert. Simplifying surfaces with color and texture using quadric error metrics. In Visualization’98. Proceedings, pages 263–269. IEEE, 1998.](https://www.cs.cmu.edu/~./garland/Papers/quadric2.pdf)
+3. [H. Drucker and Y. Le Cun. Improving generalization perfor-mance using double backpropagation. IEEE Trans. on Neu-ral Networks, 3(6):991–997, 1992.](https://ieeexplore.ieee.org/abstract/document/165600/similar#similar)
 
 ## 会議
 CVPR 2019
