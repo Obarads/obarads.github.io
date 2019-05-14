@@ -47,13 +47,14 @@ $$
 
 ここで、$x_ i$はバッチ$\mathcal{B}$の$i$番目の観測、$o_ {i j} \equiv o\left(p_ {i j}\right)$は点$p_ {ij}$の真の占有率、$\mathcal{L}(\cdot,\cdot)$はクロスエントロピー分類損失を示す。このネットワークの性能は位置$p_ {ij}$に依存し、その点に関しては実験を行う。
 
-また、著者らの3D表現は確率潜在変数モデルを学習することも可能であり、損失を式(4)として定義できる。
+また、著者らの3D表現は確率潜在変数モデルを学習することも可能である。入力に$p_ {ij}$と$o_ {ij}$を取り、潜在$z\in\mathbb{R}^L$のガウス分布$q_ {\psi}(z |\left(p_ {i j}, o_ {i j})_ {j=1 : K}\right)$からなる平均 $\mu_ {\psi}$と標準偏差$\sigma_ \psi$を予測するようなエンコーダーネットワーク$g_ \psi(\cdot)$を導入することを目的とする。
+著者らは、生成モデル$p\left(\left(o_ {i j}\right)_ {j=1 : K} |\left(p_ {i j}\right)_ {j=1 : K}\right)$の負の対数尤度に下界を最適化する。
 
 $$
 \begin{aligned} \mathcal{L}_{\mathcal{B}}^{\mathrm{gen}}(\theta, \psi)=& \frac{1}{|\mathcal{B}|} \sum_{i=1}^{|\mathcal{B}|} [ \sum_{j=1}^{K} \mathcal{L}(f_{\theta}(p_{i j}, z_{i}), o_{i j})\\ &+\mathrm{KL}(q_{\psi}(z |(p_{i j}, o_{i j})_{j=1 : K}) \| p_{0}(z)) ] \end{aligned} \tag{4}
 $$
 
-式(4)には、入力に$p_ {ij}$と$o_ {ij}$を取り、予測平均 $\mu_ {\psi}$(?)と標準偏差$\sigma_ \psi$から成る潜在$z\in\mathbb{R}^L$のガウス分布$q_ {\psi}(z |\left(p_ {i j}, O_{i j})_ {j=1 : K}\right)$を出力するエンコーダーネットワーク$g_ \psi(\cdot)$を挿入している。
+$p_ 0(z)$は潜在変数$z_ i$の事前分布、$z_ i$は$q_ {\psi}\left(z_{i} |\left(p_ {i j}, o_ {i j}\right)_ {j}=1 : K\right)$からサンプリングされる。
 
 ### Inference
 訓練されたoccupancy networkを与えられた新しい観測($x$?)があり、それに対応する等値面を抽出するため、著者らはMultiresolution IsoSurface Extraction (MISE)という階層等値面抽出アルゴリズムを導入する(図2)。octreeを段階的に構築することで、最初からきめ細かいボクセルを使って等値面を抽出するより効率的な処理を行える。手順は以下の通り。
@@ -91,8 +92,27 @@ $$
 ![fig2](img/ONL3RiFS/fig2.png)
 
 ## どうやって有効だと検証した?
+### Representation Power
+ShapeNetの椅子クラスを使って、どれ程の表現力(細かいところまで表現できるか)があるか評価する。この評価では、ground truthメッシュにボクセル化を施してボクセル表現にしたものと、ground truthメッシュを使ってOccupancy Network(ONet)を学習したものを比較する。
+
+結果は図4の通り。ground truthメッシュに対する体積IoUを測定している(?)。提案手法は常に0.89という高い平均IoU値を保っているが、低解像度においてボクセル表現はメッシュを的確に示すことができていない。また、提案手法は6M個のパラメーターで4746個のトレーニングサンプルをエンコードできる。図3に作成したオブジェクトを示す。
+
+![fig4](img/ONL3RiFS/fig4.png)
+
+![fig3](img/ONL3RiFS/fig3.png)
+
+### Single Image 3D Reconstruction
+画像から3Dオブジェクトを再構築する。質的な結果は図5の通り。最も自然な再構築オブジェクトは著者らの3D表現である。定量的な結果は表1に示されている。
+
+![fig5](img/ONL3RiFS/fig5.png)
+
+![tab1](img/ONL3RiFS/tab1.png)
+
+### その他
+あり、多分書く
 
 ## 議論はある?
+無し
 
 ## 次に読むべき論文は?
 - なし
@@ -115,7 +135,7 @@ Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Ge
 なし
 
 ## key-words
-2D_Image, Voxel, Point_Cloud, 3D_Estimation
+2D_Image, Voxel, Point_Cloud, Mesh, 3D_Estimation
 
 ## status
 未完
