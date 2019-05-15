@@ -138,4 +138,4 @@ Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Ge
 2D_Image, Voxel, Point_Cloud, Mesh, 3D_Estimation
 
 ## status
-未完
+更新済
