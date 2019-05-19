@@ -6,6 +6,11 @@
   background: rgb(131, 5, 79);
 }
 
+.__Active_Learning{
+  background:rgb(39, 95, 133);
+  color:#fff;
+}
+
 .__Adversarial_Examples {
   background: rgba(187, 2, 26, 0.829);
 }

@@ -1,9 +1,10 @@
-# (タイトルを入力)
+# The Sound of Pixels
 
-元の論文の公開ページ :   
+元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1804.03160)  
 Github Issues : 
 
 ## どんなもの?
+
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -20,16 +21,19 @@ Github Issues :
 1. なし
 
 ## 会議
+ECCV 2018
 
 ## 著者
+Hang Zhao, Chuang Gan, Andrew Rouditchenko, Carl Vondrick, Josh McDermott, Antonio Torralba.
 
 ## 投稿日付(yyyy/MM/dd)
+2018/04/03
 
 ## コメント
 なし
 
 ## key-words
+Video
 
 ## status
-
-## BibTex
+未完

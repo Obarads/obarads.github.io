@@ -1,6 +1,6 @@
-# (タイトルを入力)
+# Towards Human-Machine Cooperation: Self-supervised Sample Mining for Object Detection
 
-元の論文の公開ページ :   
+元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1803.09867)  
 Github Issues : 
 
 ## どんなもの?
@@ -20,16 +20,21 @@ Github Issues :
 1. なし
 
 ## 会議
+CVPR 2018
 
 ## 著者
+Keze Wang, Xiaopeng Yan, Dongyu Zhang, Lei Zhang, Liang Lin.
 
 ## 投稿日付(yyyy/MM/dd)
+2018/03/27
 
 ## コメント
 なし
 
 ## key-words
+2D_Image, Active_Learning
 
 ## status
+未完
 
 ## BibTex

@@ -1,6 +1,6 @@
-# (タイトルを入力)
+# Unsupervised Learning of Depth and Ego-Motion from Video
 
-元の論文の公開ページ :   
+元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1704.07813)  
 Github Issues : 
 
 ## どんなもの?
@@ -8,6 +8,8 @@ Github Issues :
 ## 先行研究と比べてどこがすごいの?
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+
+![fig4](img/ULoDaEfV/fig4.png)
 
 ## どうやって有効だと検証した?
 
@@ -20,16 +22,19 @@ Github Issues :
 1. なし
 
 ## 会議
+CVPR 2017
 
 ## 著者
+Tinghui Zhou, Matthew Brown, Noah Snavely, David G. Lowe
 
 ## 投稿日付(yyyy/MM/dd)
+2017/04/25
 
 ## コメント
 なし
 
 ## key-words
+Video
 
 ## status
-
-## BibTex
+未完
