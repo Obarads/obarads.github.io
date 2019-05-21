@@ -1,0 +1,41 @@
+data: [
+  "'2D Image'",
+  "'Mesh'",
+  "'Point Cloud'",
+  "'Voxel'",
+  "'Video'",
+]
+
+etc: [
+  "'AutoEncoder'",
+  "'GAN'",
+  "'Graph'",
+  "'RNN'",
+  "'Active Learning'",
+  "'Reinforcement Learning'",
+  "'Self-Supervised Learning'",
+  "'Sparsity'",
+  "'Synthetic'",
+  "'TreeRNN'",
+  "'Survey'",
+]
+
+task: [
+  "'3D Estimation'",
+  "'Adversarial Examples'",
+  "'Analytics'",
+  "'Classification'",
+  "'Data Augmentation'",
+  "'Dataset'",
+  "'Detection'",
+  "'Depth Estimation'",
+  "'Domain Adaptation'",
+  "'Few-Shot'",
+  "'Flow Estimation'",
+  "'Gaze Estimation'",
+  "'Instance Segmentation'",
+  "'One-Class & Anomaly Detection'",
+  "'Registration'",
+  "'SLAM'",
+  "'Semantic Segmentation'",
+]
