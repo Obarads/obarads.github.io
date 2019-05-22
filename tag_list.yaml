@@ -18,6 +18,7 @@ etc: [
   "'Synthetic'",
   "'TreeRNN'",
   "'Survey'",
+  "'Robot'",
 ]
 
 task: [
