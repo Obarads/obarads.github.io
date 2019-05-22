@@ -1,7 +1,7 @@
 # Shuffle and Learn: Unsupervised Learning using Temporal Order Verification
 
 元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1603.08561)  
-Github Issues : 
+Github Issues : [#70](https://github.com/Obarads/obarads.github.io/issues/70)
 
 ## どんなもの?
 ビデオのフレームを並べたタプルを用意し、そのタプル内のフレームが入れ替えられていないかどうか判定することでネットワークを訓練するSelf-Supervised Learning手法を提案した。
@@ -14,7 +14,9 @@ Github Issues :
 ![fig1](img/SaLULuTOV/fig1.png)
 
 一つのタプルにつき3つのフレームを使う。視覚的な変化があまりないフレームの組み合わせは曖昧な訓練データとなるため、オプティカルフロー[1]を用いてフレーム間の変化が激しい部分を使用する。  
-また、データもただ無作為に並べ替えるわけではなく
+また、データもただ無作為に並べ替えるわけではない。図2に示すように$f_ a~f_ e$までのフレームを用意する。この時、ポジティブタプルとなるのは$(f_ b, f_ c, f_ d)$と$(f_ d, f_ c, f_ b)$(時系列が逆のものも追加する)とする。またネガティブタプルは$f_ c$の代わりに$f_ a$もしくは$f_ e$が入れられたものを使う。この時重要なのは、始まりと終わりのフレームが$f_ b$と$f_ d$のどちらかで、その中間にあるフレームを替えるということである。ネットワークにはこの中間フレームの微妙な違いを見分けられるようになってもらうことが目標である。  
+尚、ここでも$f_ a$と$f_ e$が$f_ c$に似るような状況を減らすため、RGBピクセル値のSSDによって訓練に最適な$f_ a$と$f_ e$を探す。  
+実験で使われるアーキテクチャはAlexNet、訓練時はネットワークには3つのフレームが入力される。入力時のネットワークのパラメータは共有されている。出力として、入力されたタプルが正しい並びであるかどうかを予測する。
 
 ![fig2](img/SaLULuTOV/fig2.png)
 
@@ -44,6 +46,6 @@ Ishan Misra, C. Lawrence Zitnick, Martial Hebert.
 Video, Self-Supervised_Learning
 
 ## status
-未完
+省略
 
 ## BibTex
