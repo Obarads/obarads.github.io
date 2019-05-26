@@ -75,6 +75,10 @@ $$
 ### 参考文献
 1. [‎urusulambda. CNNの可視化に関して簡単に紹介しているページをざっくり翻訳した. (アクセス:2019/04/30)](https://urusulambda.wordpress.com/2018/05/13/cnn%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E7%B0%A1%E5%8D%98%E3%81%AB%E7%B4%B9%E4%BB%8B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92/)
 
+## 畳み込み
+### 参考文献
+2. [yu4u, Kerasの作者@fcholletさんのCVPR'17論文XceptionとGoogleのMobileNets論文を読んだ - Qiita, (アクセス:2019/05/27)](https://qiita.com/yu4u/items/34cd33b944d8bdca142d)
+
 ## Curriculum learning
 ### 参考文献
 1. [祥孝 牛久、Curriculum learning (アクセス:2019/03/17)](https://www.slideshare.net/YoshitakaUshiku/20150530-kantocv-curriculumlearning)
