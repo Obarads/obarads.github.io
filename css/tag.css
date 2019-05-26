@@ -88,6 +88,11 @@
   background: rgb(196, 78, 0);
 }
 
+.__Interpretability{
+  background:rgb(131, 23, 23);
+  color:#fff;
+}
+
 .__Mesh{
   background: rgb(179, 124, 52);
   color: #fff;
