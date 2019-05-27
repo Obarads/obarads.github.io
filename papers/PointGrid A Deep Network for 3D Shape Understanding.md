@@ -17,7 +17,7 @@ Github Issues :
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [trucleduc, trucleduc/PointGrid, (アクセス:2019/05/27)](https://github.com/trucleduc/PointGrid)
 
 ## 会議
 CVPR 2018
@@ -38,6 +38,7 @@ Point_Cloud
 未完
 
 ## read
+A, M
 
 ## BibTex
 @article{PointGrid,
