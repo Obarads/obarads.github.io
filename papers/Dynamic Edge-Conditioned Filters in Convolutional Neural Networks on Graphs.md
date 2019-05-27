@@ -36,5 +36,16 @@ Martin Simonovsky, Nikos Komodakis.
 ## key-words
 Graph, Point_Cloud
 
+## read
+A
+
 ## status
 未完
+
+## BibTex
+@inproceedings{Simonovsky2017ecc,
+    author = {Martin Simonovsky and Nikos Komodakis},
+    title = {Dynamic Edge-Conditioned Filters in Convolutional Neural Networks on Graphs},
+    url = {https://arxiv.org/abs/1704.02901},
+    booktitle = {CVPR},
+    year = {2017}}
