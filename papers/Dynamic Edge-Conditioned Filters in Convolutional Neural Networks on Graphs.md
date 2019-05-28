@@ -21,6 +21,10 @@ $$
 \begin{aligned} X^{l}(i) &=\frac{1}{|N(i)|} \sum_{j \in N(i)} F^{l}\left(L(j, i) ; w^{l}\right) X^{l-1}(j)+b^{l} \\ &=\frac{1}{|N(i)|} \sum_{j \in N(i)} \Theta_{j i}^{l} X^{l-1}(j)+b^{l} \end{aligned} \tag{1}
 $$
 
+ECCを使ったネットワークは図3の通り。
+
+![fig3](img/DEFiCNNoG/fig3.png)
+
 ## どうやって有効だと検証した?
 
 ## 議論はある?
@@ -42,16 +46,16 @@ Martin Simonovsky, Nikos Komodakis.
 2017/04/10
 
 ## コメント
-自分のグラフへの理解がほぼないため、おそらくミス多め
+なし
 
 ## key-words
-Graph, Point_Cloud
+Graph, Point_Cloud, 2D_Image, Classification
 
 ## read
 A, I, M
 
 ## status
-未完
+省略
 
 ## Citation
 @inproceedings{Simonovsky2017ecc,
