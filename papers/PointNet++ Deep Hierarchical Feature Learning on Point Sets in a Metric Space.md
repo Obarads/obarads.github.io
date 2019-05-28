@@ -13,11 +13,18 @@ PointNet++のアーキテクチャは図2の通り。PointNet++はSampling層、
 
 ![fig1](img/PDHFLoPSiMS/fig2.png)
 
-### Sampling layer
+### Hierarchical Point Set Feature Learning
+#### Sampling layer
 入力点 $\\{x_ 1,x_ 2,\ldots,x_ n\\}$が与えられたとき、farthest points sampling(FPS)を繰り返し使って点のサブセット $\\{x_ {i_ 1},x_ {i_ 2},\ldots,x_ {i_ m}\\}$を選択する。このとき、$x_ {i_ j}$は$\\{x_ {i_ 1},x_ {i_ 2},\ldots,x_ {i_ {j-1} } \\}$のセットから一番遠い残りの点である。通常のランダムサンプリングよりも全体的に点を取得できる。
 
-### Grouping layer
-入力として$N\times(d+C)$サイズの点の集合と$N'\times d$サイズの重心の集合の座標を受け取る。出力は$N'\times K \times (d+C)$サイズの点集合のグループであり、各グループは局所領域に対応し、$K$は重心点の近傍中の点の数である。$K$はグループによって異なるが、後続のPointNet層は、自由な数の点を固定長の局所領域特徴ベクトルに変換することができる。
+#### Grouping layer
+入力として$N\times(d+C)$サイズの点の集合と$N'\times d$サイズの重心の集合の座標を受け取る。出力は$N'\times K \times (d+C)$サイズの点集合のグループであり、各グループは局所領域に対応し、$K$は重心点の近傍中の点の数である。$K$はグループによって異なるが、後続のPointNet層は、自由な数の点を固定長の局所領域特徴ベクトルに変換することができる。  
+グループ化には$K$の上限値が決まっているボールクエリ(重心点から指定した距離内にある点を選択する)を使う。kNNではなくボールクエリである理由は選ばれる点の距離範囲が固定長の上限を持ち、それによって一般化可能になるからである。
+
+#### PointNet layer
+入力として$N^{\prime} \times K \times(d+C)$サイズの$N^{\prime}$個の局所領域(グループ)点情報をもつデータを扱う(上記の訳が間違っていなければこの$K$はグループごとにちがうはず、本来は$K$がグループごとに違うことを書かなければいけない)。出力は$N^{\prime} \times(d+C)$サイズの近傍情報を要約した$N^{\prime}$個の特徴量である。なお、局所領域内の近傍点の座標には重心点との相対距離が使われる。
+
+### Robust Feature Learning under Non-Uniform Sampling Density
 
 ## どうやって有効だと検証した?
 
