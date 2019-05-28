@@ -34,4 +34,4 @@ Github Issues :
 
 ## read
 
-## BibTex
+## Citation

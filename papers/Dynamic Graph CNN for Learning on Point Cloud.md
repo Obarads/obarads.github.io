@@ -48,7 +48,7 @@ EdgeConvを視覚的に説明したのが図2である。図2の左はsymmetric 
 1. https://www.slideshare.net/naoyachiba18/ss-120302579
 
 ## 会議
-なし?
+ACM Transactions on Graphics 2019
 
 ## 著者/所属機関
 Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin M. Solomon.
@@ -64,3 +64,11 @@ Classification, Point_Cloud, Semantic_Segmentation
 
 ## status
 更新済
+
+## Citation
+@article{dgcnn,
+  title={Dynamic Graph CNN for Learning on Point Clouds},
+  author={Wang, Yue and Sun, Yongbin and Liu, Ziwei and Sarma, Sanjay E. and Bronstein, Michael M. and Solomon, Justin M.},
+  journal={ACM Transactions on Graphics (TOG)},
+  year={2019}
+}

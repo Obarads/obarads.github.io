@@ -79,3 +79,5 @@ A, R, M, E
 
 ## status
 更新済
+
+## Citation
