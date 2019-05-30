@@ -1,6 +1,7 @@
 # PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
 元の論文の公開ページ : https://arxiv.org/abs/1706.02413
+Github Issues : 
 
 ## どんなもの?
 PointNetは設計上、距離空間上の局所構造を取得できなかったが、本論文のPointNet++はその欠点を克服したモデルである。距離空間上の局所構造を得ることでメトリック空間上のコンテキストを取得し、結果としてPointNetよりもロバストな処理を行うことができるようになる。
@@ -23,7 +24,7 @@ PointNet++のアーキテクチャは図2の通り。PointNet++はSampling層、
 グループ化には$K$の上限値が決まっているボールクエリ(重心点から指定した距離内にある点を選択する)を使う。kNNではなくボールクエリである理由は選ばれる点の距離範囲が固定長の上限を持ち、それによって一般化可能になるからである。
 
 #### PointNet layer
-入力として$N^{\prime} \times K \times(d+C)$サイズの$N^{\prime}$個の局所領域(グループ)点情報をもつデータを扱う(上記の訳が間違っていなければこの$K$はグループごとにちがうはず、本来は$K$がグループごとに違うことを書かなければいけない)。出力は$N^{\prime} \times(d+C)$サイズの近傍情報を要約した$N^{\prime}$個の特徴量である。なお、局所領域内の近傍点の座標には重心点との相対距離が使われる。
+入力として$N^{\prime} \times K \times(d+C)$サイズの$N^{\prime}$個の局所領域(グループ)点情報をもつデータを扱う(上記の訳が間違っていなければこの$K$はグループごとにちがうはず、本来は$K$がグループごとに違うことを書かなければいけない)。出力は$N^{\prime} \times(d+C^{\prime})$サイズの近傍情報を要約した$N^{\prime}$個の特徴量である。なお、局所領域内の近傍点の座標には重心点との相対距離が使われる。
 
 ### Robust Feature Learning under Non-Uniform Sampling Density
 入力点群の密度が不均一な場合でも、適切に局所構造を認識できる密度適応型PointNet layerを提案する。そして、そのPointNet layerを持つ階層的ネットワークをPointNet++と呼称する。
@@ -37,14 +38,23 @@ PointNet++のアーキテクチャは図2の通り。PointNet++はSampling層、
 #### Multi-scale grouping (MSG)
 MSGの順序は以下の通り。
 
-1. 点群に異なるスケールをもつgrouping layerを適応する。
+1. 点群に異なるスケール(ボールクエリの半径が異なる?)をもつgrouping layerを適応する。
 2. PointNetに従って各スケールの特徴量を抽出する。
 3. 各スケールの特徴量を連結する。
 
-
+複数のスケールの特徴を組み合わせるこの方法を最適化するため、入力点群のいくつかの点をランダムに削除して学習する。
 
 #### Multi-resolution grouping (MRG)
+MSGは全ての重心点とその近傍点に対してPointNetを実行するため計算コストが高い。そこで、抽象化レベル$L_ i$(図2のset abstractionの過程を経るごとにレベルが1上がる)の領域特徴を２つのベクトルの連結で得る方法を提案する。このベクトルは以下の通り。
 
+1. 図3(b)の左のベクトルは$L_ {i-1}$から各小領域の特徴を集約したもの。
+2. 図3(b)の右のベクトルは単体のPointNetを使って局所領域上の生の点を直接計算して得たもの。
+
+局所領域の点密度が低い場合、左のベクトルにサンプリング不足の影響が出て右のベクトルよりも信頼性が低くなる可能性がある。その場合は右のベクトルの重みを大きくする必要がある(?)。  
+逆に点密度が高い場合、左のベクトルはより詳細な情報を提供する(?)。
+
+### Point Feature Propagation for Set Segmentation
+省略
 
 ## どうやって有効だと検証した?
 
@@ -72,4 +82,15 @@ Charles R. Qi, Li Yi, Hao Su, Leonidas J. Guibas.
 Point_Cloud, Classification, Semantic_Segmentation
 
 ## status
-未完
+修正
+
+## read
+A, M
+
+## Citation
+@article{qi2017pointnetplusplus,
+    title={PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space},
+    author={Qi, Charles R and Yi, Li and Su, Hao and Guibas, Leonidas J},
+    journal={arXiv preprint arXiv:1706.02413},
+    year={2017}
+  }
