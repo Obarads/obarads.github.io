@@ -21,6 +21,8 @@ Github Issues :
 
 ![fig1](img/PCoXP/fig1.png)
 
+### $\mathcal{X}$-Conv Operator
+
 図2の下図に示すように、段階的に点が減少する代わりに点がもつ情報が増加するような畳み込み演算子$\mathcal{X}$-Convを作成する。畳み込むときの中心となる点はタスクごとに異なる。論文の実装では、分類タスクはランダムサンプリング、セグメンテーションタスクはFPSを適応する。セグメンテーションタスクがFPSである理由は、一様な点分布を必要とするからである(?)。
 
 ![fig2](img/PCoXP/fig2.png)
@@ -32,6 +34,13 @@ $\mathcal{X}$-Conv演算子のアルゴリズムはアルゴリズム1の通り�
 $$
 \mathbf{F}_{p}=\mathcal{X}-\operatorname{Conv}(\mathbf{K}, p, \mathbf{P}, \mathbf{F})=\operatorname{Conv}\left(\mathbf{K}, M L P(\mathbf{P}-p) \times\left[M L P_{\delta}(\mathbf{P}-p), \mathbf{F}\right]\right) \tag{2}
 $$
+
+### PointCNN Architectures
+PointCNNのアーキテクチャは図2の通り。分類器として使うのであれば図2(a)のアーキテクチャとなるが、(a)のような構造だと上位の$\mathcal{X}$-Convのトレーニングサンプルの数が急速に減少するため、訓練が非効率的になる(?)。
+
+
+![fig4](img/PCoXP/fig4.png)
+
 
 ## どうやって有効だと検証した?
 
