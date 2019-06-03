@@ -35,6 +35,27 @@ $$
 ##### CIFAR-100 & MS1M
 図2(b,c)にその結果を視覚化する。これらはt-SNEを用いて次元削減したものを視覚化している。赤点がアンカーであり、アンカーが各クラスの重心の知覚にいることを観測した。
 
+### Investigate in Gradients
+訓練手順の勾配効果の観点から、アンカーと重心が徐々に一致する理由を探す。
+
+n番目のクラスに属する線形写像$\mathbf{f}$の入力と出力$\mathbf{y}=\mathbf{W}^{T} \mathbf{f}$を考慮すると、n番目のクラスに属する$\mathbf{f}$のソフトマックス確率は式(2)によって計算される。
+
+$$
+p_{n}=\operatorname{softmax}(y)=\frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{i=1}^{N} \exp \left(\mathbf{y}_{i}\right)} \tag{2}
+$$
+
+![fig3](img/TCPfSLR/fig3.png)
+
+そして、式(3)のように負の対数尤度(ソフトマックス損失$\ell$)を最小化するように学習される。
+
+$$
+\underset{\theta}{\arg \min } \ell=\underset{\theta}{\arg \min }-\log (p) \tag{3}
+$$
+
+ここで、$\theta$はCNNの全てのパラメータを指す。ここで、単体のサンプル$\mathbf{f}$が与えられたときのアンカー$\mathbf{w}_ n$に関するソフトマックス損失$\ell_ \mathbf{f}$の勾配を推察できる。それを式(4)に示す。
+
+
+
 ## どうやって有効だと検証した?
 
 ## 議論はある?
