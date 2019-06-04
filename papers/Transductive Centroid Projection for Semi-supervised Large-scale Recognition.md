@@ -44,8 +44,6 @@ $$
 p_{n}=\operatorname{softmax}(y)=\frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{i=1}^{N} \exp \left(\mathbf{y}_{i}\right)} \tag{2}
 $$
 
-![fig3](img/TCPfSLR/fig3.png)
-
 そして、式(3)のように負の対数尤度(ソフトマックス損失$\ell$)を最小化するように学習される。
 
 $$
@@ -54,7 +52,30 @@ $$
 
 ここで、$\theta$はCNNの全てのパラメータを指す。ここで、単体のサンプル$\mathbf{f}$が与えられたときのアンカー$\mathbf{w}_ n$に関するソフトマックス損失$\ell_ \mathbf{f}$の勾配を推察できる。それを式(4)に示す。
 
+$$
+\nabla_{\mathbf{w}_{n}} \ell_{\mathbf{f}}=\frac{\partial \ell_{\mathbf{f}}}{\partial \mathbf{w}_{n}}=-\sum_{\mathbf{f} \in \mathcal{I}}\left(\mathbb{I}\left[\mathbf{f} \in \mathcal{I}_{n}\right]-\frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{i=1}^{N} \exp \left(\mathbf{y}_{i}\right)}\right) \cdot \mathbf{f} \tag{4}
+$$
 
+ここで、$\mathcal{I}_ n$はクラス$n$のサンプル、$\mathbf{y}_ {n}$は$\mathbf{y}$の$n$番目の要素である。$\mathcal{I}$は$\mathbf{f}$が$\mathcal{I}_ {n}$にあるとき、indicatorが1になり、その逆は0になる。つまり、0と1の場合分けの部分を書き換えると以下の式になる(下の式は論文のものをそのまま使用、分母の$n$は$i$では?)。
+
+$$
+\nabla_{\mathbf{w}_{n}} \ell=-\sum_{\mathbf{f} \in \mathcal{I}_{n}}\left(1-\frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{n=1}^{N} \exp \left(\mathbf{y}_{n}\right)}\right) \cdot \mathbf{f}+\sum_{\mathbf{f} \notin \mathcal{I}_{n}} \frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{n=1}^{N} \exp \left(\mathbf{y}_{n}\right)} \cdot \mathbf{f}
+$$
+
+ここから、$\mathbf{w}_ n$の更新値(更新による変化値)は以下の式で導ける。なお、$\eta$は学習率である(下の式は論文のものをそのまま使用、分母の$n$は$i$では?)。
+
+$$
+\Delta \mathbf{w}_{n}=-\eta \dot{\nabla}_{\mathbf{w}_{n}} \ell=\eta \sum_{\mathbf{f} \in \mathcal{I}_{n}}\left(1-\frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{n=1}^{N} \exp \left(\mathbf{y}_{n}\right)}\right) \cdot \mathbf{f}-\eta \sum_{\mathbf{f} \notin \mathcal{I}_{n}} \frac{\exp \left(\mathbf{y}_{n}\right)}{\sum_{n=1}^{N} \exp \left(\mathbf{y}_{n}\right)} \cdot \mathbf{f}
+$$
+
+上記の式の前者の項は、クラス$n$のサンプルのスケールされた総和としてみなすことができ、クラスの重心$\mathbf{c}_ n$にほぼ比例する(上の自分の指摘が正しければ、このスケールは全クラスの指数関数によるもの)。後者の項も、普通、特徴サンプルが特徴空間に均一に分布するため、これらも重心$\mathbf{c}_ n$の負の方向にほぼ従う。図3は、これらの過程を図で表したもの。
+
+![fig3](img/TCPfSLR/fig3.png)
+
+### Approach
+
+
+![fig4](img/TCPfSLR/fig4.png)
 
 ## どうやって有効だと検証した?
 
