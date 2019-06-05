@@ -73,6 +73,9 @@ $$
 ![fig3](img/TCPfSLR/fig3.png)
 
 ### Approach
+前述した$w_ {n} \approx c_ {n}$の特性を利用し、ラベルなしデータセット$\mathcal{X}^\mathbf{U}$に[1]を用いたクラスタからのad hoc重心$\mathbf{c}^{\mathrm{U}}$で、それに対応するアンカーベクトル$\mathbf{w}^{\mathrm{U} }$を構築する。
+
+#### Transductive Centroid Projection (TCP)
 
 
 ![fig4](img/TCPfSLR/fig4.png)
