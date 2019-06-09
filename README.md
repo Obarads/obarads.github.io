@@ -1,9 +1,11 @@
 # obarads.github.io
 ## About
-3Dと点群, 教師なし手法, その他についてまとめもしくは翻訳をします. **このレポジトリを編集している人間はその道のプロではありません. 論文の内容を勘違いしている場合もあります. 論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or その他の場合は新規Issueを建てていただけると幸いです.** Githubのスターを押していただけるとやる気が出ます. 
+このレポジトリは読んだ論文(点群と教師なし学習多め)の内容を日本語で書き残しておくものである. 他人に見てもらうことを第一とするブログと違い, こちらは自分のための書き残しをするものとして扱っています. Githubのスターを押していただけると嬉しくなります:). 
+
+**このレポジトリを編集している人間はその道のプロではありません. 論文の内容を勘違いしている場合もあります. もし、論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or 新規Issueを建てていただけると幸いです.** 
 
 PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.github.io/)で正しく表示されます. ブラウザはGoogle Chromeにしか対応しておらず, その他は表示が崩れる可能性が有ります.   
-比較的最近(1年くらい)の論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています.   
+(気分によるが)論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています.   
 
 ## Link & Directory
 各ページ(ディレクトリ)の説明をする. なお, 基本的に定義式は画像形式で示します. 理由は, 書くのに時間がかかるのと, スマホで見たときに画面外にはみ出すことがあるからです. 
@@ -27,13 +29,14 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 - I: Implement, 実装. 
 - E: Experiments, 実験. 
 - C: Conclusion, 結論. 
-- D: Discussion, 議論(そういう項目がある論文のみ).
+- D: Discussion, 議論(そのような項目がある論文のみ).
+- AP: Appendix, 付録(そのような項目がある論文のみ).
 
 ### [Complementary](./complementary)
 [Complementary(complementaryディレクトリ)](./complementary)には各論文で出てくる単語やジャンルへの補足説明が入っている. 
 
 ## Issue page in Github
-論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or その他の場合は新規Issueを建てていただけると幸いです. 
+ もし、論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or 新規Issueを建てていただけると幸いです.
 
 ## Use this repository in local
 ### About
