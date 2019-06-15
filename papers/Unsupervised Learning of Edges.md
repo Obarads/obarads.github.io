@@ -1,6 +1,6 @@
-# (タイトルを入力)
+# Unsupervised Learning of Edges
 
-元の論文の公開ページ :   
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1511.04166)  
 Github Issues : 
 
 ## どんなもの?
@@ -20,10 +20,13 @@ Github Issues :
 1. なし
 
 ## 会議
+CVPR 2016
 
 ## 著者
+Yin Li, Manohar Paluri, James M. Rehg, Piotr Dollár.
 
 ## 投稿日付(yyyy/MM/dd)
+2015/11/13
 
 ## コメント
 なし
