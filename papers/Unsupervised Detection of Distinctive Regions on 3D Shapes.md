@@ -14,9 +14,12 @@ Github Issues :
 クラスラベルを必要としない3D形状の識別領域検出が可能にしている。また、Grad-CAMなどのニューロン活動視覚化手法ではクラスラベルを必要とする方法を紹介しているが、本提案では教師なしで視覚化する。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-提案では柔軟性と計算量の軽さから点群で形状の識別領域を予測する。提案手法の概要図は図2の通り。以下に(後ほど説明)
+提案では柔軟性と計算量の軽さから点群で形状の識別領域を予測する。提案手法の概要図は図2の通り。
 
 ![fig2](img/UDoDRo3S/fig2.png)
+
+### Overview
+複数の形状$\mathcal{S}=\\{S_ {j}\\}_ {j=1}^{N_ {\mathrm{obj}}}$の集合が与えられたとき、その形状をかたどった点群$P_ {j}=\\{\mathbf{p}_ {i, j}\\}_ {i=1}^{N}$の特徴埋め込みを教師なしで学習し、そこから各形状中の局所の識別性$d_ {i,j}$を得ることを目的とする。各変数はそれぞれ、$j$は形状の番号、$N_ {obj}$は形状の個数、$N$は$P_ j$に含まれる点の数、$p_ {i,j}$は3次元座標を含む$j$番目のオブジェクトの$i$番目の点である。
 
 ### Feature Embedding
 図2のFeature embeddingモジュールはパラメータ$\theta$を持つ埋め込み関数$f_ \theta$を学習する。この時、$j$番目の形状内にある$i$番目の点の埋め込み特徴$f_ {i,j}$は式(1)で表される。$f_ {i,j}$により、点レベルの識別性を測ることができるようになる。
@@ -25,7 +28,7 @@ $$
 f_ {i,j} = f_ \theta(p_ {i,j}) \tag{1}
 $$
 
-提案手法では$f_ \theta$にPointCNNを利用する。
+提案手法では$f_ \theta$にPointCNNに基づいたモデルを利用する。
 
 さらに、他のオブジェクと比べて識別できるような形状レベルの識別性を探すために先程の埋め込みをオブジェクトごとに集約する。点の数が$N$である時、式(2)の様に表すことができる。
 
@@ -60,11 +63,43 @@ $$
 実験では、スペクトルクラスタリングを使い、各訓練エポック中にグローバル特徴$g_ j$をグループ化する。
 
 ### Adapted Contrastive Learning
-特徴学習の効果を向上させるため、著者らはadapted cotrastive lossを導入する。この損失は、クラスタリングの結果がほぼランダムに近い状態である訓練開始時に特に重要となる。各訓練エポックでの入力点集合$P_ j$をアンカーとして、著者らは$P_ j$に対してpositive点集合サンプルを$P_ {j}^{+}$、negative点集合$P_{j}^{-}$を定義する。この時、$P_ {j}^{+}$に関連するグローバル特徴$g _{j}^{+}$は$g_ j$に近く、逆に$P_ {j}^{-}$に関連する$g _{j}^{-}$は$g_ j$から遠いものとする。
+特徴学習の効果を向上させるため、著者らはadapted cotrastive lossを導入する。この損失は、クラスタリングの結果がほぼランダムに近い状態である訓練開始時に特に重要となる。各訓練エポックでの入力点集合$P_ j$をアンカーとして、著者らは$P_ j$に対してpositive点集合サンプルを$P_ {j}^{+}$、negative点集合サンプルを$P_{j}^{-}$として形成する。この時、$P_ {j}^{+}$に関連するグローバル特徴$g _{j}^{+}$は$g_ j$に近く、逆に$P_ {j}^{-}$に関連する$g _{j}^{-}$は$g_ j$から遠いものとする。
 
+- $P_ {j}^{-}$の場合、$P_ j$が属していないクラスタ内にある形状から点集合をランダムに選ぶ(?)。
+- $P_ {j}^{+}$の場合、クラス内クラスタリング(クラスタ内じゃないの?)の結果は、訓練開始時では特に信用できないため、$P_ j$に属するクラスタからランダムに選ぶことはない。そうではなく、$P_ j$に関連する3D形状($S_ j$)上の別の点集合$P_ j^+$をリサンプリングして、$g_ j^+$を生成するためのネットワークに$P_ j^+$を渡す(?)。注意として、$P_ j^+$と$P_ j$は点サンプリングプロセスのランダム性のために異なる点集合と成るが、本質的にはそれらは同じオブジェクトとして表される(i.e.,$S_ j$)(?)。
 
+著者らはadapted contrastive loss[5]を定式化するため、上記の3つ$\\{\mathbf{g}_ {j}, \mathbf{g}_ {j}^{+}, \mathbf{g}_ {j}^{-}\\}$を扱う。式(6)の通り。式(6)の$D$は特徴空間中のユークリッド距離を示す。$\lambda=2.0$。
+
+$$
+L_{\text {contrastive}}=D\left(\mathbf{g}_{j}, \mathbf{g}_{j}^{+}\right)+\max \left(0, \lambda-D\left(\mathbf{g}_{j}, \mathbf{g}_{j}^{-}\right)\right) \tag{6}
+$$
+
+これを使うことで、信頼性の高いサンプルを生成していく。
+
+### End-to-end Network Training
+以上より、このネットワークの損失関数は式(7)の様になる。
+
+$$
+L(\theta)=L_{c l u s t e r}+\alpha L_{\text {contrastive}}+\beta\|\theta\|^{2} \tag{7}
+$$
+
+学習手順自体は、再帰的に特徴ベクトルの学習を行い、それらを再クラスタリングし、モデルを微調整するためにクラスタリング結果を使うというものである。図3は学習プロセスを表したものである。図4は、これらの学習プロセスを経た形状ごとの特徴を可視化したものである。
+
+![fig3](img/UDoDRo3S/fig3.png)
+
+![fig4](img/UDoDRo3S/fig4.png)
+
+### Obtaining and Visualizing the Distinctivenes
+上記の学習で、グローバル特徴とローカル特徴$f_ {i,j}$($i$は点のインデックス)が学習できるため、$f_ {i,j}$の最大値をとってそして0~1の間で識別性$d_ {i,j}$を正規化する。その結果を形状に反映することで識別性を可視化する。可視化したものは図1の通り。
+
+![fig1](img/UDoDRo3S/fig1.png)
 
 ## どうやって有効だと検証した?
+### Implementation Details
+TensorFlow、ランダムサンプリングによる2048個の点の使用、$\alpha,\beta$はそれぞれ3.0と10の-5乗、訓練は500エポック、Adam optimizer、学習率は0.01となっている。$f_ \theta$(点の符号化)にPointCNNベースのアーキテクチャを採用する。アーキテクチャはKNNやgeodesic-like KNN[6]の代わりに固定サイズのquery ball(PointNet++と同じもの)を利用する。また、$\mathcal{X}$-convを外し、点ごとの特徴復元のための特徴補完(PointNet++参照)を直接使用した。こうすることで、品質低下をほとんどさせずにパラメータ数を減らした。また、補足資料でPointNetとPointNet++についても扱う。
+
+### Detecting Distinctive Regions
+
 
 ## 議論はある?
 
@@ -76,6 +111,8 @@ $$
 2. [Kai Zhang, James T. Kwok, Bahram Parvin. Prototype Vector Machine for Large Scale Semi-Supervised Learning. ICML 2009.](https://icml.cc/Conferences/2009/papers/198.pdf)
 3. [Yu Liu, Guanglu Song, Jing Shao, Xiao Jin, and Xiaogang Wang. 2018. Transductive centroid projection for semi-supervised large-scale recognition. In European Conf. on Computer Vision (ECCV). 70–86.](http://openaccess.thecvf.com/content_ECCV_2018/html/Weiwei_Shi_Transductive_Semi-Supervised_Deep_ECCV_2018_paper.html)
 4. [Geoffrey Hinton, Oriol Vinyals, and Jeff Dean. 2015. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531 (2015).](https://arxiv.org/abs/1503.02531)
+5. [Raia Hadsell, Sumit Chopra, and Yann LeCun. 2006. Dimensionality reduction by learn-ing an invariant mapping. In IEEE Conf. on Computer Vision and Pattern Recognition (CVPR). 1735–1742.](http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf)
+6. [Lequan Yu, Xianzhi Li, Chi-Wing Fu, Daniel Cohen-Or, and Pheng-Ann Heng. 2018. EC-Net: an Edge-aware Point set Consolidation Network. In European Conf. on Computer Vision (ECCV). 398–414.](https://www.researchgate.net/publication/328108835_EC-Net_An_Edge-Aware_Point_Set_Consolidation_Network_15th_European_Conference_Munich_Germany_September_8-14_2018_Proceedings_Part_VII)
 
 ## 会議
 不明(提出先はSIGGRAPH?)
@@ -87,13 +124,13 @@ Xianzhi Li, Lequan Yu, Chi-Wing Fu, Daniel Cohen-Or, Pheng-Ann Heng.
 2019/05/05
 
 ## コメント
-なし
+Adapted Contrastive Learningがよくわからん、PointCNNがもはや別物で笑ってしまった。
 
 ## key-words
 Point_Cloud, Analytics
 
 ## status
-未完
+修正
 
 ## read
 A, I, R, M

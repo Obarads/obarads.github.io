@@ -36,7 +36,6 @@ $$
 $$
 
 ### PointCNN Architectures
-PointCNNのアーキテクチャは図2の通り。分類器として使うのであれば図2(a)のアーキテクチャとなるが、(a)のような構造だと上位の$\mathcal{X}$-Convのトレーニングサンプルの数が急速に減少するため、訓練が非効率的になる(?)。
 
 
 ![fig4](img/PCoXP/fig4.png)
