@@ -36,12 +36,16 @@ $$
 $$
 
 ### PointCNN Architectures
-
+$\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の様になる。しかし、階層ごとに点の数は減少していくため、上部の$\mathcal{X}$-Conv(図4(a)だと一番上の$\mathcal{X}$-Conv)を訓練しづらくなる(おそらく、下部の層は4回畳み込みができるのに対し、上の層は1回しか畳み込みができないことを指している)。  
+そこで、図4(b)の様に最終出力を増やすことでバランスを取り、なおかつより代表的な点が$\mathcal{X}$-Convに保持されるようにする。また、形状全体を把握できるような代表的な点を作成するため、$K$近傍の代わりに$K\times D$個の近傍点から一様に$K$個の点をサンプリングする手法を取る($D$は拡張率)。テスト時は予測を安定させるためにソフトマックスの前に複数の代表点からの出力は平均化される。  
+セグメンテーションタスクでは、点単位の出力が要求されるため、Conv-Deconv[3]に従いアーキテクチャを作成する(図4(c))。
 
 ![fig4](img/PCoXP/fig4.png)
 
+実装ではドロップアウトを採用し、[4]からsubvolume supervisionのアイデアを導入することとした。また、より一般化された表現を得るためにデータ拡張を行う(詳細省略)。
 
 ## どうやって有効だと検証した?
+
 
 ## 議論はある?
 - 畳み込む際の中心点を決める手法について、もっといいものがあるはず(Deep Points[1]など)。
@@ -52,6 +56,8 @@ $$
 ## 論文関連リンク
 1. [edo_m18. コンボリューション（畳み込み処理）を実装してみる. 2014. (アクセス:2019/05/30)](https://qiita.com/edo_m18/items/d9f5f4b6de7ff73075ed)
 2. [Shihao Wu,Hui Huang,Minglun Gong,Matthias Zwicker,and Daniel Cohen-Or. Deep points consolidation. ToG, 34(6):176:1–176:13, October 2015.](https://dl.acm.org/citation.cfm?id=2818073)
+3. [Hyeonwoo Noh, Seunghoon Hong, and Bohyung Han. Learning deconvolution network for semantic segmentation. In ICCV, ICCV ’15, pages 1520–1528, Washington, DC, USA, 2015. IEEE Computer Society.](https://arxiv.org/abs/1505.04366)
+4. [CharlesR.Qi,HaoSu,MatthiasNießner,AngelaDai,MengyuanYan,andLeonidasJ.Guibas.Volumetric and multi-view cnns for object classification on 3d data. InCVPR, pages 5648–5656, 2016.](https://arxiv.org/abs/1604.03265)
 
 ## 会議
 NIPS 2018
@@ -66,12 +72,12 @@ Yangyan Li, Rui Bu, Mingchao Sun, Wei Wu, Xinhan Di, Baoquan Chen.
 なし
 
 ## key-words
-Point_Cloud, 2D_Image, Semantic_Segmenation, Classification
+Point_Cloud, Semantic_Segmenation, Classification
 
 ## status
-未完
+省略
 
 ## read
-A, I
+A, I、M
 
 ## Citation
