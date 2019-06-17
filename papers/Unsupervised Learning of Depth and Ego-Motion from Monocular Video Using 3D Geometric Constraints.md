@@ -7,8 +7,8 @@ Github Issues :
 単眼カメラで取ったビデオを用いて、深度と自己運動推定を教師なし学習で行う手法を提案した。貢献は以下の通り。
 
 1. **新規損失関数** : 画像再構築による逆伝播を利用せず、推定された深度の矛盾を見つける損失関数を提案する。
-2. **Principled masking** : 
-3. **調節されていないビデオストリームから学習する** : 
+2. **Principled masking** : フレームの変換の際にシーンの一部が学習に悪影響を及ぼす。それに対処するため、Principled Maskを適応する。
+3. **調節されていないビデオストリームから学習する** : 著者らは自転車に乗りながら、一般的な携帯電話のカメラを用いて単眼ビデオを撮った。このビデオデータを含む新規のデータセットと提案手法を用いてKITTIデータセットでベンチマークを行う。
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -65,10 +65,45 @@ $$
 r^{i j}=A^{i j}-T^{\prime-1} \cdot B^{c(i j)}
 $$
 
-図4に沿って説明する。ICPによる点群$Q_ {t-1}$と$\hat{Q}_ {t-1}$の位置合わせが完璧である場合、ニューラルネットワークは適切な$T_ t$と$D_ t$は
+図4に沿って説明する。ICPによる点群$Q_ {t-1}$と$\hat{Q}_ {t-1}$の位置合わせが完璧である場合、ニューラルネットワークは適切な$T_ t$と$D_ t$を推定したということになる。そうでない場合、ICPによる$Q_ {t-1}$と$\hat{Q}_ {t-1}$の位置合わせは変換$T_ {t}^{\prime}$と残差$r_ {t}$を生成し、これらの生成物を用いて$T_ t$と$D_ t$をより良くなるように調節する(具体的な話は省略)。これらの損失は式(5)のように表される。式(5)の$||\cdot||$はL1ノルム、$I$は単位行列を指す。
 
+$$
+L_{3 \mathrm{D}}=\left\|T_{t}^{\prime}-I\right\|_{1}+\left\|r_{t}\right\|_{1} \tag{5}
+$$
 
+### Additional Image-Based Losses
+Structured similarity (SSIM)は画像予測の質を評価することができ、著者らはこれを損失項として訓練に導入する。2つの画像パッチ$x$と$y$間の類似度を計測するとおくと、SSIMを以下のように定義できる。以下の式の$\mu_ x$と$\sigma_ x$はそれぞれ局所平均と分散を示す。
 
+$$
+\operatorname{SSIM}(x, y)=\frac{\left(2 \mu_{x} \mu_{y}+c_{1}\right)\left(2 \sigma_{x y}+c_{2}\right)}{\left(\mu_{x}^{2}+\mu_{y}^{2}+c_{1}\right)\left(\sigma_{x}+\sigma_{y}+c_{2}\right)}
+$$
+
+実装ではsimple (fixed) poolingによって$\mu,\sigma$を計算し、$c_ 1=0.01^2$、$c_ 2=0.03^2$とする。  
+SSIMは上限1であり、最大化する必要性があるため、著者らは式(6)のように最小化するように定める。
+
+$$
+L_{\mathrm{SSIM}}=\sum_{i j}\left[1-\operatorname{SSIM}\left(\hat{X}_{t}^{i j}, X_{t}^{i j}\right)\right] M_{t}^{i j} \tag{6}
+$$
+
+深度平滑化損失は深度推定値を正規化するために使われる。著者らは式(7)のようにこれらを損失に組み込む([2]を調整している)。
+
+$$
+L_{\mathrm{sm}}=\sum_{i, j}\left\|\partial_{x} D^{i j}\right\| e^{-\left\|\partial_{x} X^{i j}\right\|}+\left\|\partial_{y} D^{i j}\right\| e^{-\left\|\partial_{y} X^{i j}\right\|} \tag{7}
+$$
+
+### Learning Setup
+全ての損失関数には4つの異なるスケール$s$が適応される。最終的な損失は式(8)の通り。実装では$\alpha, \beta, \gamma, \omega$の値はそれぞれ0.85、0.1、0.05、0.15とした。
+
+$$
+L=\sum_{s} \alpha L_{\mathrm{rec}}^{s}+\beta L_{3 \mathrm{D}}^{s}+\gamma L_{\mathrm{sm}}^{s}+\omega L_{\mathrm{SSIM}}^{s} \tag{8}
+$$
+
+著者らはDispNetに基づくSfMLearnerアーキテクチャを使用する(?)。この２つのニューラルネットワーク(tower, タワー)は互いに接続されていない。タワーは以下の説明は以下の通り。(この後にある3D損失の話は[2]に従う話っぽいので省略)
+
+- 深度タワーは$128\times 416$の単体画像を入力として受け取り、入力の深度マップを出力する。
+- 自己運動タワーは入力として大量のビデオフレームを受け取り、全ての隣接2フレーム間の自己運動推定値を出力する。推定値は相対的な3D回転と並進で表される(合計6つの値で扱われる)。
+
+実装はTensorFlow、Adam optimizer、$\beta_{1}=0.9, \beta_{2}=0.999, \alpha=0.0002$である。エポックは20で行われる。(このあとのチェックポイントの話がよくわからん)
 
 ## どうやって有効だと検証した?
 
@@ -98,7 +133,7 @@ Reza Mahjourian, Martin Wicke, Anelia Angelova.
 Video, Depth_Estimation, Point_Cloud
 
 ## status
-未完
+省略
 
 ## read
 A, I, M
