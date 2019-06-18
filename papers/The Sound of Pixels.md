@@ -4,11 +4,30 @@
 Github Issues : 
 
 ## どんなもの?
-
+ラベルがついていない大量のビデオを利用して音が出ている領域を見つけ、各ピクセルからの音を表す一連の成分に入力音を分離することを学習するモデル、PixelPlayerを提案した。
 
 ## 先行研究と比べてどこがすごいの?
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+### Model architectures
+モデルの概要は図2の通りである。提案したアーキテクチャの部品の説明は以下の通り。
+
+![fig2.png](img/TSoP/fig2.png)
+
+#### Video analysis network
+このネットワークはビデオのフレームから視覚特徴を抽出する。この部品のアーキテクチャには、視覚的なクラス分類用の任意のアーキテクチャを使用することができる。実装ではResNet-18の拡張モデルを採用した(拡張内容は後述)。  
+モデルは$\mathrm{T} \times \mathrm{H} \times \mathrm{W} \times 3$サイズのビデオを入力として受け取り、フレームごとに$\mathrm{T} \times(\mathrm{H} / 16) \times(\mathrm{W} / 16) \times \mathrm{K}$サイズの特徴を抽出する。その後、temporal poolingとsigmoid活性化で各ピクセルごとに$\mathrm{K}$サイズの視覚特徴$i_ {k}(x, y)$を得る。
+
+#### Audio analysis network
+このネットワークは入力音を$\mathrm{K}$個の成分$s_ k$($k=(1, \ldots, K)$)へ分離するU-Netアーキテクチャである。経験的に、生の波形を使うよりもオーディオスペクトルグラムを使用するほうがより良いパフォーマンスを生むため、実装では音のTime-Frequency (T-F)表現を使用する。  
+はじめに、入力である入り混じった音からスペクトルグラムを得るためにShort-Time Fourier Transform (STFT)を適応する。次に、スペクトルグラムの大きさをlog-frequency scaleに変換し、その後U-Netに与える。U-Netは入力音の異なる成分の特徴を含む$\mathrm{K}$個の特徴マップを生成する。
+
+#### Audio synthesizer network
+このネットワークは視覚特徴$i_ k(x,y)$と音特徴$s_ k$を使って音を予測する。出力する音スペクトルグラムは視覚に基づくスペクトルグラムマスキング技術によって生成される。  
+具体的には、入力からピクセルごとの音を分離することができるマスク$M(x,y)$が推定され、入力スペクトルグラムと乗算される。最終的に、予測波形を得るため、スペクトルグラムの予測された大きさと入力スペクトルグラムの位相を組み合わせ、STFTを用いて復元する。
+
+### Mix-and-Separate framework for Self-supervised Training
+
 
 ## どうやって有効だと検証した?
 
@@ -37,3 +56,8 @@ Video
 
 ## status
 未完
+
+## read
+A, I, M
+
+## Citation
