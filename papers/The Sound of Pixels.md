@@ -51,7 +51,7 @@ PixelPlayerのプロセスは図1の通りである。図1について、PixelPl
 
 ![fig3](img/TSoP/fig3.png)
 
-
+訓練時はテスト時と違う。
 
 ## どうやって有効だと検証した?
 

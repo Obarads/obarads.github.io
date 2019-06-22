@@ -22,7 +22,7 @@ Github Issues :
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### Deep Matching
-このマッチングアルゴリズムは多段階アーキテクチャに基づく。
+このマッチングアルゴリズムは多段階アーキテクチャ(deep convolutional nets)に基づく。
 
 #### Insights on the approach
 ここではマッチングの方針について説明する。最初に定義について述べる。SIFT記述子は$4\times 4$の空間的なセルを持つ勾配方向のヒストグラムであり、128次元の実数ベクトル$H\in\mathbb{R}^{128}$を生成する。ここで、図2(b')に示すようにSIFTパッチを4つのquadrants(ここでは分割領域と呼ぶ)と呼ばれるものに分割する。これは次の様に示すことができる : $H=[H^1 \ H^2 \ H^3 \ H^4], \ H^S\in\mathbb{R}^{32}$
@@ -33,7 +33,7 @@ Github Issues :
 ![fig2](img/DLdofwdm/fig2.png)
 
 #### Deep matching as 2D warping
-より目的を明確にするため、1Dのワーピングの場合について説明する(2Dへの拡張は簡単である、[3,4]参照)。一連の２つの1D記述子をそれぞれ参照$\mathbf{P}=\{\mathbf{P}_ {i}\}_ {i=0}^{L-1}$と目標$\mathbf{P}^{\prime} = \{\mathbf{P}_ {i}^{\prime}\}_ {i=0}^{L-1}$と呼ぶとする。最適なワーピングは式(1)のような要素間の類似性の合計を最大化する関数$w^{*} :\{0 \ldots L-1\} \rightarrow\{0 \ldots L-1\}$によって定義される。
+より目的を明確にするため、**1Dのワーピングの場合**について説明する(2Dへの拡張は簡単である、[3,4]参照)。２つの1D記述子の列をそれぞれリファレンス(上記のソース記述子と同じ)$\mathbf{P}=\{\mathbf{P}_ {i}\}_ {i=0}^{L-1}$とターゲット$\mathbf{P}^{\prime} = \{\mathbf{P}_ {i}^{\prime}\}_ {i=0}^{L-1}$と呼ぶとする。最適なワーピングは式(1)のような要素間の類似性の合計を最大化する関数$w^{*} :\{0 \ldots L-1\} \rightarrow\{0 \ldots L-1\}$によって定義される。
 
 $$
 S\left(w^{*}\right)=\max _{w \in W} S(w)=\max _{w \in W} \sum_{i} \operatorname{sim}\left(\mathbf{P}(i), \mathbf{P}^{\prime}(w(i))\right) \tag{1}
@@ -42,7 +42,9 @@ $$
 ここで、$w(i)$は$\mathbf{P}^{\prime}$中の要素$i$の位置を返す。式(1)の類似性測定は非負のコサイン類似度を使う。　　
 実現可能なワーピングの集合$W$は最適なワーピング$w^*$を見つけることが計算上効率的であり、ワーピングが中程度の変形に対して耐性がある様に再帰的に定義される。
 
-**Efficient computation of response maps** : 中心$\delta$とするサイズ$N \leqslant L$の$\mathbf{P}$のサブシーケンスを$\mathbf{P}[\delta, N]=\{\mathbf{P}(i)\}_ {i=\delta-\frac{N}{2}}^{\delta+\frac{N}{2}-1}$とする(?)。$\mathbf{P}[\delta, N]$から$\mathbf{P}^{\prime}[T, N]$へのサブワーピングは$w_ {N, \delta \rightarrow T}$として表記される(?)。
+**Efficient computation of response maps** : 定義として、中心$\delta$とするサイズ$N \leqslant L$の$\mathbf{P}$の部分列(1D記述子について話していることに注意)を$\mathbf{P}[\delta, N]=\{\mathbf{P}(i)\}_ {i=\delta-\frac{N}{2}}^{\delta+\frac{N}{2}-1}$とする。$\mathbf{P}[\delta, N]$から$\mathbf{P}^{\prime}[T, N]$へのサブワーピングは$w_ {N, \delta \rightarrow T}$として表記される。
+
+ここで、(1D記述子の)Deep matchingの重要なアイデアは左半分と右半分の変位をそれぞれ仮定することである。任意のシーケンス$P[\delta,N]$の$\mathbf{P}[\delta-\frac{N}{4}, \frac{N}{2}]$と$\mathbf{P} [\delta+\frac{N}{4}, \frac{N}{2}]$は両方とも$P[\delta,N]$の変位と$N$の比例的に独立かつ制限されたものとする。図3
 
 ## どうやって有効だと検証した?
 
