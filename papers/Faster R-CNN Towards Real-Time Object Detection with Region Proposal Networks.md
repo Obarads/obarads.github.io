@@ -114,7 +114,7 @@ Shaoqing Ren, Kaiming He, Ross Girshick and Jian Sun
 Faster R-CNNの特許がある(論文関連リンクの1)。VoxelNetの予習用に見たため、省略多め。
 
 ## key-words
-2D_Image, Detection, Semantic_Segmentation
+2D_Image, Detection
 
 ## status
 省略
