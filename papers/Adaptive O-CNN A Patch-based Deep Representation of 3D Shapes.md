@@ -1,6 +1,7 @@
 # Adaptive O-CNN: A Patch-based Deep Representation of 3D Shapes
 
-元の論文の公開ページ : https://arxiv.org/abs/1809.07917
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1809.07917)
+Github Issues : [#5](https://github.com/Obarads/obarads.github.io/issues/5)
 
 ## どんなもの?
 効率的に3D形状のエンコードとデコードを行うモデルであるAdaptive Octree-based CNN(以下AO-CNN)を提案した。

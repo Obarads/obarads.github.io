@@ -1,6 +1,7 @@
 # 3D Graph Embedding Learning with a Structure-aware Loss Function for Point Cloud Semantic Instance Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1902.05247
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1902.05247)
+Github Issues : [#43](https://github.com/Obarads/obarads.github.io/issues/43)
 
 ## どんなもの?
 3Dセマンティックインスタンスセグメンテーションのための提案なし手法(proposal-free method、詳細はコメント参照)を提案した。提案手法ではkNNを使い点の周りにあるであろう同じインスタンスの点を得ようとするが、近い点全てが同じインスタンスでは無いためアテンション機構を取り込み分別する。また、3Dインスタンスごとに埋め込み情報と構造情報の両方を考慮した3Dインスタンスセグメンテーションのためのstructure-aware lossを提案した。

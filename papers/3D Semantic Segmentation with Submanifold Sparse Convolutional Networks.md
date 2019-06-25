@@ -1,6 +1,7 @@
 # 3D Semantic Segmentation with Submanifold Sparse Convolutional Networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1711.10275
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.10275)
+Github Issues : [#44](https://github.com/Obarads/obarads.github.io/issues/44)
 
 ## どんなもの?
 画像などの密なデータ形式にしか対応していない一般的なCNNではなく点群などの疎なデータ形式に対応したsubmanifold sparse convolutional networks(SSCNs)を提案した。
