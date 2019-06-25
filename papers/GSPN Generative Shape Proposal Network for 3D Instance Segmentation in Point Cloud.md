@@ -1,6 +1,7 @@
 # GSPN: Generative Shape Proposal Network for 3D Instance Segmentation in Point Cloud
 
-元の論文の公開ページ : https://arxiv.org/abs/1812.03320
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1812.03320)
+Github Issues : [#80](https://github.com/Obarads/obarads.github.io/issues/80)
 
 ## どんなもの?
 

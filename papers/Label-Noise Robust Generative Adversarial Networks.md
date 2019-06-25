@@ -1,6 +1,6 @@
 # Label-Noise Robust Generative Adversarial Networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1811.11165
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1811.11165)
 Github Issues : [#68](https://github.com/Obarads/obarads.github.io/issues/68)
 
 ## どんなもの?

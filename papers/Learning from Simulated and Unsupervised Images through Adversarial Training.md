@@ -1,6 +1,7 @@
 # Learning from Simulated and Unsupervised Images through Adversarial Training
 
-元の論文の公開ページ : https://arxiv.org/abs/1612.07828
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1612.07828)
+Github Issues : [#19](https://github.com/Obarads/obarads.github.io/issues/19)
 
 ## どんなもの?
 GANを使って合成画像(シミュレーター内の画像など)を現実の画像に近づけるモデルであるSimGANを提案した。

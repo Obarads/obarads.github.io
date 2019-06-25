@@ -1,7 +1,7 @@
 # Frustum PointNets for 3D Object Detection from RGB-D Data
 
-元の論文の公開ページ : https://arxiv.org/abs/1711.08488  
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.08488)  
+Github Issues : [#77](https://github.com/Obarads/obarads.github.io/issues/77)
 
 ## どんなもの?
 RGB-Dデータを使用した3D検知モデル、Frustum PointNetを提案した。領域提案はRGBデータをもとに行われる。貢献は以下の通り。

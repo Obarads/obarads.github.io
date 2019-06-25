@@ -1,6 +1,7 @@
 # Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling
 
-元の論文の公開ページ : https://arxiv.org/abs/1610.07584
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1610.07584)  
+Github Issues : [#28](https://github.com/Obarads/obarads.github.io/issues/28)
 
 ## どんなもの?
 GANを使った3Dオブジェクト生成と2D画像から3Dオブジェクトへの変換が可能な3D-GANと3D-VAE-GANを提案した。

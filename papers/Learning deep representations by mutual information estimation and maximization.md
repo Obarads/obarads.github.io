@@ -1,6 +1,7 @@
 # Learning deep representations by mutual information estimation and maximization
 
-元の論文の公開ページ : https://arxiv.org/abs/1808.06670
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1808.06670)
+Github Issues : [#82](https://github.com/Obarads/obarads.github.io/issues/82)
 
 ## どんなもの?
 エンコーダーの入力と出力の相互情報量を最大化するような教師なし学習を提案した。

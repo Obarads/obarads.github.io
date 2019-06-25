@@ -1,6 +1,7 @@
 # Associatively Segmenting Instances and Semantics in Point Clouds 
 
-元の論文の公開ページ : https://arxiv.org/abs/1902.09852
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1902.09852)
+Github Issues : [#26](https://github.com/Obarads/obarads.github.io/issues/26)
 
 ## どんなもの?
 インスタンスセグメンテーションとセマンティックセグメンテーションを段階的ではなく並列的に学習し、処理するASIS (Associatively Segmenting Instances and Semantics)を提案した。

@@ -1,6 +1,6 @@
 # Deep Clustring for Unsupervised Learning of Visual Features
 
-元の論文の公開ページ : https://arxiv.org/abs/1807.05520  
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1807.05520)  
 Github Issues : [#51](https://github.com/Obarads/obarads.github.io/issues/51)
 
 ## どんなもの?

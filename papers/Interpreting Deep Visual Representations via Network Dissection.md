@@ -1,7 +1,7 @@
 # Interpreting Deep Visual Representations via Network Dissection
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.05611)  
-Github Issues : 
+Github Issues : [#81](https://github.com/Obarads/obarads.github.io/issues/81)
 
 ## どんなもの?
 概念のラベル(車、人等)を個々のユニット(畳み込みユニット)に提供し、個々のユニットが何に注目するか調べることによってネットワークを解釈する方法、Network Dissectionを提案した。

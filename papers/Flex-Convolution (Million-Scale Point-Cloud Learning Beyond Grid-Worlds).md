@@ -1,7 +1,7 @@
 # Flex-Convolution (Million-Scale Point-Cloud Learning Beyond Grid-Worlds)
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1803.07289)  
-Github Issues : 
+Github Issues : [#76](https://github.com/Obarads/obarads.github.io/issues/76)
 
 ## どんなもの?
 点群処理向けの、複雑な層構造を使用せずにシンプルかつ少量の学習可能パラメータを持つネットワークアーキテクチャを提案した。貢献は以下の通り。

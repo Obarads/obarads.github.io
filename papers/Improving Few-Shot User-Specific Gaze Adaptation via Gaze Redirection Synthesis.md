@@ -1,6 +1,6 @@
 # Improving Few-Shot User-Specific Gaze Adaptation via Gaze Redirection Synthesis
 
-元の論文の公開ページ : https://arxiv.org/abs/1904.10638
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1904.10638)
 Github Issues : [#55](https://github.com/Obarads/obarads.github.io/issues/55)
 
 ## どんなもの?

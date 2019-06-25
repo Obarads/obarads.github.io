@@ -1,6 +1,6 @@
 # LBS Autoencoder: Self-supervised Fitting of Articulated Meshes to Point Clouds
 
-元の論文の公開ページ : https://arxiv.org/abs/1904.10037
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1904.10037)
 Github Issues : [#57](https://github.com/Obarads/obarads.github.io/issues/57)
 
 ## どんなもの?

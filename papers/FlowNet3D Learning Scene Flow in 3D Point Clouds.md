@@ -1,6 +1,7 @@
 # FlowNet3D: Learning Scene Flow in 3D Point Clouds
 
-元の論文の公開ページ : https://arxiv.org/abs/1806.01411
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1806.01411)  
+Github Issues : [#31](https://github.com/Obarads/obarads.github.io/issues/31)
 
 ## どんなもの?
 二つの点群からシーンフロー(場面の移り変わり)を得るFlowNet3Dを提案した。

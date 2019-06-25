@@ -1,7 +1,7 @@
 # Learning Feature Representations with K-means
 
-元の論文の公開ページ : [stanfordのページ](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)  
-Github Issues : 
+元の論文の公開ページ : [www-cs.stanford.edu](https://www-cs.stanford.edu/~acoates/papers/coatesng_nntot2012.pdf)  
+Github Issues : [#83](https://github.com/Obarads/obarads.github.io/issues/83)
 
 ## どんなもの?
 

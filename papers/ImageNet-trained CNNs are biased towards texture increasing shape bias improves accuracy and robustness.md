@@ -1,6 +1,6 @@
 # ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness
 
-元の論文の公開ページ : https://arxiv.org/abs/1811.12231  
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1811.12231)  
 Github Issues : [#66](https://github.com/Obarads/obarads.github.io/issues/66)
 
 ## どんなもの?

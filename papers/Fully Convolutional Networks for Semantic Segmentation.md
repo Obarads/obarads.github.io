@@ -1,7 +1,7 @@
 # Fully Convolutional Networks for Semantic Segmentation
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1411.4038)  
-Github Issues : 
+Github Issues : [#79](https://github.com/Obarads/obarads.github.io/issues/79)
 
 ## どんなもの?
 任意のサイズの画像を取り込み、それに対応する密な予測(セグメンテーション)を行うEnd-to-Endなモデルを提案した。このモデルはfully convolutional networksとなっている。

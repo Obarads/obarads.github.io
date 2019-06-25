@@ -1,6 +1,8 @@
 # Discriminative Unsupervised Feature Learning with Convolutional Neural Networks
 
-元の論文の公開ページ : [NIPSのページ](https://papers.nips.cc/paper/5548-discriminative-unsupervised-feature-learning-with-convolutional-neural-networks.pdf)
+元の論文の公開ページ : [nips](https://papers.nips.cc/paper/5548-discriminative-unsupervised-feature-learning-with-convolutional-neural-networks.pdf)
+Github Issues : [#74](https://github.com/Obarads/obarads.github.io/issues/74)
+
 
 ## どんなもの?
 省略

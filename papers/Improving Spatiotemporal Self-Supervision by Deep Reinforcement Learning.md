@@ -1,6 +1,6 @@
 # Improving Spatiotemporal Self-Supervision by Deep Reinforcement Learning
 
-元の論文の公開ページ : https://arxiv.org/abs/1807.11293
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1807.11293)  
 Github Issues : [#56](https://github.com/Obarads/obarads.github.io/issues/56)
 
 ## どんなもの?

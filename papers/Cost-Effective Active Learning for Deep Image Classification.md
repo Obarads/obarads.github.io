@@ -1,7 +1,7 @@
 # Cost-Effective Active Learning for Deep Image Classification
 
-元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1701.03551)  
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1701.03551)  
+Github Issues : [#72](https://github.com/Obarads/obarads.github.io/issues/72)
 
 ## どんなもの?
 

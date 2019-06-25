@@ -1,6 +1,7 @@
 # Deep One-Class Classification
 
-元の論文の公開ページ : http://proceedings.mlr.press/v80/ruff18a/ruff18a.pdf
+元の論文の公開ページ : [proceedings.mlr.press](http://proceedings.mlr.press/v80/ruff18a/ruff18a.pdf)
+Github Issues : [#3](https://github.com/Obarads/obarads.github.io/issues/3)
 
 ## どんなもの?
 カーネルベースの一クラス分類と最小ボリューム推定からインスピレーションを受け、新しい深いAnomaly Deteciotn(以下AD)を提案する。その手法はDeep Support Vector Data Description(以下Deep SVDD)と名付ける。これはデータのネットワーク表現を包みこむ超球のボリュームを最小化するニューラルネットワークを学習する。下の図(論文中の図1)で言えば、

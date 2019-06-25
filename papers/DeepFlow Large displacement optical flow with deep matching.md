@@ -1,7 +1,7 @@
 # DeepFlow: Large displacement optical flow with deep matching
 
 元の論文の公開ページ : [cvl.its.u-tokyo](http://www.cvl.iis.u-tokyo.ac.jp/class2016/2016w/papers/3.inpainting/Weinzaepfel_DeepFlow_Large_Displacement_2013_ICCV_paper.pdf)  
-Github Issues : 
+Github Issues : [#73](https://github.com/Obarads/obarads.github.io/issues/73)
 
 ## どんなもの?
 マッチングアルゴリズムと変分アプローチを用いて大変位するオプティカルフローに対処する手法、DeepFlowを提案した。貢献は以下の通り。

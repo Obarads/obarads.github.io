@@ -1,7 +1,7 @@
 # Dynamic Edge-Conditioned Filters in Convolutional Neural Networks on Graphs
 
-元の論文の公開ページ : https://arxiv.org/abs/1704.02901
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1704.02901)
+Github Issues : [#75](https://github.com/Obarads/obarads.github.io/issues/75)
 
 ## どんなもの?
 グラフ上の各頂点(点)とその頂点の近傍頂点間のエッジを使って畳み込むEdge-Conditioned Convolution(ECC)を提案した。

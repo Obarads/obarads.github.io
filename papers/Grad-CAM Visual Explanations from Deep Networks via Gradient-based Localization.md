@@ -1,6 +1,7 @@
 # Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization
 
-元の論文の公開ページ : https://arxiv.org/abs/1610.02391
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1610.02391)
+Github Issues : [#23](https://github.com/Obarads/obarads.github.io/issues/23)
 
 ## どんなもの?
 犬、猫など概念を予測するためにCNNが画像のどの部分に注目しているか、それらの概念の勾配を用いてヒートマップで強調するGradient-weighted Class Activation Mapping(Grad-CAM)を提案した。

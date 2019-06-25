@@ -1,6 +1,7 @@
 # Generating 3D Adversarial Point Clouds
 
-元の論文の公開ページ : https://arxiv.org/abs/1809.07016
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1809.07016)
+Github Issues : [#25](https://github.com/Obarads/obarads.github.io/issues/25)
 
 ## どんなもの?
 点群分類に対するAdversarial exampleを行った。著者らが知る限り、3Dへの直接的なAdversarial exampleの適応は初めてとしている。

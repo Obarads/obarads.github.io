@@ -1,6 +1,7 @@
 # Conditional Image Synthesis with Auxiliary Classifier GANs
 
-元の論文の公開ページ : https://arxiv.org/abs/1610.09585
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1610.09585)
+Github Issues : [#37](https://github.com/Obarads/obarads.github.io/issues/37)
 
 ## どんなもの?
 クラス条件付きモデルであり、クラスと画像を出力とする生成器を持つAC-GANを提案した。また、評価方法を提案したりGANの崩壊の観測についても実験している。

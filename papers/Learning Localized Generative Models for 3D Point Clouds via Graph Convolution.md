@@ -1,6 +1,7 @@
 # Learning Localized Generative Models for 3D Point Clouds via Graph Convolution
 
-元の論文の公開ページ : https://openreview.net/forum?id=SJeXSo09FQ
+元の論文の公開ページ : [openreiew.net](https://openreview.net/forum?id=SJeXSo09FQ)  
+Github Issues : [#41](https://github.com/Obarads/obarads.github.io/issues/41)
 
 ## どんなもの?
 グラフ畳み込みタイプの局所演算を使った生成器を含むGANの提案をした。

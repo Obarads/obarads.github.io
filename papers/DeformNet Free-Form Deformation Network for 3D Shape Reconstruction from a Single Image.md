@@ -1,6 +1,6 @@
 # DeformNet: Free-Form Deformation Network for 3D Shape Reconstruction from a Single Image
 
-元の論文の公開ページ : https://arxiv.org/abs/1708.04672
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1708.04672)
 Github Issues : [#52](https://github.com/Obarads/obarads.github.io/issues/52)
 
 ## どんなもの?

@@ -1,6 +1,7 @@
 # Fully Convolutional Instance-aware Semantic Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1611.07709
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1611.07709)  
+Github Issues : [here](https://github.com/Obarads/obarads.github.io/issues/78)
 
 ## どんなもの?
 

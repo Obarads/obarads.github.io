@@ -1,6 +1,8 @@
 # Generating Mesh-based Shapes From Learned Latent Spaces of Point Clouds with VAE-GAN
 
-元の論文の公開ページ : [IEEEのページ](https://ieeexplore.ieee.org/document/8546232)  
+元の論文の公開ページ : [ieee](https://ieeexplore.ieee.org/document/8546232)  
+Github Issues : [#38](https://github.com/Obarads/obarads.github.io/issues/38)
+
 注意書き：論文がフリーではないため、おおざっぱにしか書きません。書く範囲は[1]に従って書きます。各図と表は[2]のものを引用しています。
 
 ## どんなもの?

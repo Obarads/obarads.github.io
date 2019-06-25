@@ -1,6 +1,7 @@
 # High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs
 
-元の論文の公開ページ : https://arxiv.org/abs/1711.11585
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.11585)  
+Github Issues : [#36](https://github.com/Obarads/obarads.github.io/issues/36)
 
 ## どんなもの?
 GANを使った、セマンティックラベルマップから高解像度画像の生成を行う手法(論文中にはないがpix2pixHDといわれている)を提案した。また、生成する高解像度画像の編集方法も提案もしている。紹介ページは[5]にある。
