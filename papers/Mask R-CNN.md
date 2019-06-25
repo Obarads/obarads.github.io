@@ -1,7 +1,7 @@
 # Mask R-CNN
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1703.06870)  
-Github Issues : 
+Github Issues : [#86](https://github.com/Obarads/obarads.github.io/issues/86)
 
 ## どんなもの?
 Faster R-CNNを拡張して、バウンディングボックス内の対象オブジェクトにマスクを付属し、結果としてインスタンス&セマンティックセグメンテーションを行えるようにしたMask R-CNNを提案した。

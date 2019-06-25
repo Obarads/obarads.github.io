@@ -1,7 +1,7 @@
 # Object Detectors Emerge in Deep Scene CNNs
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1412.6856)  
-Github Issues : 
+Github Issues : [#87](https://github.com/Obarads/obarads.github.io/issues/87)
 
 ## どんなもの?
 

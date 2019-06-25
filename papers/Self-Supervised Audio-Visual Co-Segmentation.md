@@ -1,6 +1,6 @@
 # Self-Supervised Audio-Visual Co-Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1904.09013
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1904.09013)
 Github Issues : [#61](https://github.com/Obarads/obarads.github.io/issues/61)
 
 ## どんなもの?

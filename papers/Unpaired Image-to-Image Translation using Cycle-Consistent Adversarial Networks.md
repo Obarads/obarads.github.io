@@ -1,6 +1,6 @@
 # Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1703.10593
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1703.10593)
 Github : [#65](https://github.com/Obarads/obarads.github.io/issues/65)
 
 ## どんなもの?

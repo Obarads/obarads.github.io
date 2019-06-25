@@ -1,6 +1,7 @@
 # LSD-SLAM: Large-Scale Direct Monocular SLAM
 
-元の論文の公開ページ : https://vision.in.tum.de/_media/spezial/bib/engel14eccv.pdf
+元の論文の公開ページ : [vision.in.tum.de](https://vision.in.tum.de/_media/spezial/bib/engel14eccv.pdf)
+Github Issues : [#85](https://github.com/Obarads/obarads.github.io/issues/85)
 
 ## どんなもの?
 

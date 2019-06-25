@@ -1,7 +1,7 @@
 # The Sound of Pixels
 
 元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1804.03160)  
-Github Issues : 
+Github Issues : [#103](https://github.com/Obarads/obarads.github.io/issues/103)
 
 ## どんなもの?
 ラベルがついていない大量のビデオを利用して音が出ている領域を見つけ、入力音を各ピクセルからの音を表す一連の成分へ分離することを学習するモデル、PixelPlayerを提案した。手法の流れは下掲の図1を見たほうがわかりやすい。  

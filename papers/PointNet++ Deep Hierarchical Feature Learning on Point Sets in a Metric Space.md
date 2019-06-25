@@ -1,7 +1,7 @@
 # PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
-元の論文の公開ページ : https://arxiv.org/abs/1706.02413
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1706.02413)
+Github Issues : [#94](https://github.com/Obarads/obarads.github.io/issues/94)
 
 ## どんなもの?
 PointNetは設計上、距離空間上の局所構造を取得できなかったが、本論文のPointNet++はその欠点を克服したモデルである。距離空間上の局所構造を得ることでメトリック空間上のコンテキストを取得し、結果としてPointNetよりもロバストな処理を行うことができるようになる。

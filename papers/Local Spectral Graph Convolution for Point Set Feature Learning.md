@@ -1,7 +1,7 @@
 # Local Spectral Graph Convolution for Point Set Feature Learning
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1803.05827)  
-Github Issues : 
+Github Issues : [#84](https://github.com/Obarads/obarads.github.io/issues/84)
 
 ## どんなもの?
 pointnet++のフレームワークで新規のsepctral graph CNNを利用しながら、従来とは異なるプーリング手法を利用することを提案した。貢献は以下の通り。

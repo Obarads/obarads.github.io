@@ -1,6 +1,7 @@
 # Self-Supervised Relative Depth Learning for Urban Scene Understanding
 
-元の論文の公開ページ : [CVF](http://openaccess.thecvf.com/content_ECCV_2018/html/Huaizu_Jiang_Self-Supervised_Relative_Depth_ECCV_2018_paper.html)
+元の論文の公開ページ : [CVF](http://openaccess.thecvf.com/content_ECCV_2018/html/Huaizu_Jiang_Self-Supervised_Relative_Depth_ECCV_2018_paper.html)  
+Github Issues : [#100](https://github.com/Obarads/obarads.github.io/issues/100)
 
 ## どんなもの?
 新しいproxy task(pretext task, 代用タスク)として単眼カメラから相対深度(深度$z\in[0,1]$)を想定する手法を提案した。また、代理タスクをドメイン適応に使う方法も示す。貢献は以下の通り。

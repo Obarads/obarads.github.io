@@ -1,6 +1,7 @@
 # Representation Learning by Learning to Count
 
-元の論文の公開ページ : https://arxiv.org/abs/1708.06734
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1708.06734)
+Github Issues : [#24](https://github.com/Obarads/obarads.github.io/issues/24)
 
 ## どんなもの?
 新たなpretext taskとして、visual primitiveを数えることを提案する。図1の様に元の画像を重ならないように分割しても各領域のvisual primitiveの総計と元画像のvisual primitiveの数は一致しなければならない。この図では、画像上のオブジェクト(nose、eyeなど)をvisual primitiveにして直接数えている様に見えるが、実際には画像中に含まれる特徴のベクトルをvisual primitiveとして使用している。

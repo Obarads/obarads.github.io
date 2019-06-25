@@ -1,7 +1,7 @@
 # Object-Contrastive Networks: Unsupervised Object Representations
 
 元の論文の公開ページ : [openreview](https://openreview.net/forum?id=B1g6XnCcKQ)  
-Github Issues : 
+Github Issues : [#88](https://github.com/Obarads/obarads.github.io/issues/88)
 
 ## どんなもの?
 

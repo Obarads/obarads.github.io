@@ -1,6 +1,7 @@
 # Unsupervised Learning of Shape and Pose with Differentiable Point Clouds
 
-元の論文の公開ページ : https://arxiv.org/abs/1810.09381
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1810.09381)
+Github Issues : [#33](https://github.com/Obarads/obarads.github.io/issues/33)
 
 ## どんなもの?
 同じオブジェクトが映っている2枚の画像からカメラの向きと点群表現を予測し、画像から3D表現を生成するモデルを提案した。

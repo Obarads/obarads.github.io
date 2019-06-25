@@ -1,7 +1,7 @@
 # Temporal Cycle-Consistency Learning
 
 元の論文の公開ページ : [github.io](https://temporal-cycle-consistency.github.io/)  
-Github Issues : 
+Github Issues : [#102](https://github.com/Obarads/obarads.github.io/issues/102)
 
 ## どんなもの?
 

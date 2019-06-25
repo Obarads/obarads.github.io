@@ -1,6 +1,7 @@
 # Learning Shape Priors for Single-View 3D Completion and Reconstruction
 
-元の論文の公開ページ : https://arxiv.org/abs/1809.05068
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1809.05068)
+Github Issues : [#30](https://github.com/Obarads/obarads.github.io/issues/30)
 
 ## どんなもの?
 MarrNet[1]で推定された3Dオブジェクトをよりリアルなものに近づけるためのコンポーネントを搭載したShapeHDを提案した。

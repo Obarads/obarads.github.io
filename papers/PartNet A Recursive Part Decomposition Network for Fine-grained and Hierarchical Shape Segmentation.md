@@ -1,6 +1,7 @@
 # PartNet: A Recursive Part Decomposition Network for Fine-grained and Hierarchical Shape Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1903.00709
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1903.00709)
+Github Issues : [#27](https://github.com/Obarads/obarads.github.io/issues/27)
 
 ## どんなもの?
 点群オブジェクトを再帰的にパーツごとに分割していくPartNetを提案した。最終的にはインスタンスレベルまで分割される。再帰的分割で分けられる点群は図1の通り。

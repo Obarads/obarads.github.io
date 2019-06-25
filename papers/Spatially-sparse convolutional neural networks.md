@@ -1,6 +1,6 @@
 # Spatially-sparse convolutional neural networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1409.6070
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1409.6070)
 Github Issues : [#64](https://github.com/Obarads/obarads.github.io/issues/64)
 
 ## どんなもの?

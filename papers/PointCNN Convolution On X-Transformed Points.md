@@ -1,7 +1,7 @@
 # PointCNN: Convolution On X-Transformed Points
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1801.07791)  
-Github Issues : 
+Github Issues : [#91](https://github.com/Obarads/obarads.github.io/issues/91)
 
 ## どんなもの?
 点群において、点と関連付けられている入力特徴の重み付けと点の潜在的な順序を同時に学習する演算とネットワークを提案した。

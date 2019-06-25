@@ -1,6 +1,7 @@
 # Unsupervised Representation Learning by Predicting Image Rotations
 
-元の論文の公開ページ : https://arxiv.org/abs/1803.07728
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1803.07728)  
+Github Issues : [#6](https://github.com/Obarads/obarads.github.io/issues/6)
 
 ## どんなもの?
 入力として得られる画像に適応された2Dの回転を認識するようにConvNetsを訓練させて画像特徴を学習するself-supervised学習を行うRotNetを提案した。実装自体はあまりにも簡単であるため、結果への考察が主となる。

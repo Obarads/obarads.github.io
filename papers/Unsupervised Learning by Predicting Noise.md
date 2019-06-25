@@ -1,6 +1,7 @@
 # Unsupervised Learning by Predicting Noise
 
-元の論文の公開ページ : https://arxiv.org/abs/1704.05310#
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1704.05310)
+Github Issues : [#110](https://github.com/Obarads/obarads.github.io/issues/110)
 
 ## どんなもの?
 

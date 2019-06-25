@@ -1,6 +1,7 @@
 # Mining Point Cloud Local Structures by Kernel Correlation and Graph Pooling
 
-元の論文の公開ページ : https://www.merl.com/publications/docs/TR2018-041.pdf
+元の論文の公開ページ : [www.merl.com](https://www.merl.com/publications/docs/TR2018-041.pdf)
+Github Issues : [#21](https://github.com/Obarads/obarads.github.io/issues/21)
 
 ## どんなもの?
 局所特徴の活用によってPointNetを改善したモデルであるKernel Correlation Net(KCNet)を提案した。

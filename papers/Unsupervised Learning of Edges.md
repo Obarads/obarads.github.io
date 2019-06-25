@@ -1,7 +1,7 @@
 # Unsupervised Learning of Edges
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1511.04166)  
-Github Issues : 
+Github Issues : [#113](https://github.com/Obarads/obarads.github.io/issues/113)
 
 ## どんなもの?
 人が注釈付けした情報を使う教師あり手法に代わって動きを利用したエッジ検出器の訓練手法を提案する。

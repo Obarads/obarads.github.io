@@ -1,6 +1,7 @@
 # SiCloPe: Silhouette-Based Clothed People
 
-元の論文の公開ページ : https://arxiv.org/abs/1901.00049
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1901.00049)
+Github Issues : [#39](https://github.com/Obarads/obarads.github.io/issues/39)
 
 ## どんなもの?
 正面像が映った1枚の2D画像から3Dの服を着た人の形状を推定するモデルを提案した。このモデルでは、キャリブレーションなどの手間を省いた状態で3D身体の推定を行う。

@@ -1,7 +1,8 @@
-# Unsupervised Domain Adaptation for Semantic Segmentation via Class-Balanced Self-Training 
+# Unsupervised Domain Adaptation for Semantic Segmentation via Class-Balanced Self-Training
 
-元の論文の公開ページ : [ECCV2018のページ](http://openaccess.thecvf.com/content_ECCV_2018/html/Yang_Zou_Unsupervised_Domain_Adaptation_ECCV_2018_paper.html
-)
+元の論文の公開ページ : [cvf](http://openaccess.thecvf.com/content_ECCV_2018/html/Yang_Zou_Unsupervised_Domain_Adaptation_ECCV_2018_paper.html
+)  
+Github Issues : [#34](https://github.com/Obarads/obarads.github.io/issues/34)
 
 ## どんなもの?
 教師なし学習によるセマンティックセグメンテーションのためのドメイン適応を行う。論文では、自動運転関係のデータセットに関するドメイン問題に対して、GANを使わない教師なしドメイン適応手法を提案している。

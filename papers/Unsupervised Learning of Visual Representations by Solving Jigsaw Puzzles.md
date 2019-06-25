@@ -1,6 +1,7 @@
 # Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles
 
-元の論文の公開ページ : https://arxiv.org/abs/1603.09246
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1603.09246)
+本レポジトリのページ : [#12](https://github.com/Obarads/obarads.github.io/issues/12)
 
 ## どんなもの?
 pretextタスクとしてジグゾーパズルを解くself-supervisionモデル、Context-Free network(以下CFN)を提案した。

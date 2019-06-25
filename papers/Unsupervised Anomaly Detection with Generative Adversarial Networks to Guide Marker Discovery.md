@@ -1,6 +1,7 @@
 # Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery
 
-元の論文の公開ページ : https://arxiv.org/abs/1703.05921
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1703.05921)
+Github Issues : [#2](https://github.com/Obarads/obarads.github.io/issues/2)
 
 ## どんなもの?
 医療画像に写っている疾患を発見するために発案された。画像とそれに関わる語彙をわざわざ結びつけるのは画像情報の使用を制限するため教師なし学習を使う。また、疾患を発見するのに利用される医療画像は限られている上、それらを学習させたとしても学習データの量によっては異常検知力に限りがある(未知のデータに対応できない)。そこで、GANの画像生成を用いて、GANに入力した画像とジェネレータから出力した画像の差異から異常検出を行うモデル、AnoGANを提案した。

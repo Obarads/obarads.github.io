@@ -1,7 +1,7 @@
 # Unsupervised Learning of Depth and Ego-Motion from Monocular Video Using 3D Geometric Constraints
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1802.05522)  
-Github Issues : 
+Github Issues : [#111](https://github.com/Obarads/obarads.github.io/issues/111)
 
 ## どんなもの?
 単眼カメラで取ったビデオを用いて、深度と自己運動推定を教師なし学習で行う手法を提案した。貢献は以下の通り。

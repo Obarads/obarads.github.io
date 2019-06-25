@@ -1,6 +1,7 @@
 # VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection 
 
-元の論文の公開ページ : https://arxiv.org/abs/1711.06396
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.06396)
+Github Issuse : [#15](https://github.com/Obarads/obarads.github.io/issues/15)
 
 ## どんなもの?
 手作業の特徴量の設計を必要とせず、特徴抽出とオブジェクトの境界ボックスの予測を行う汎用的でEnd-to-Endな3D検知ネットワーク、VoxelNetを提案する。ボクセルによって一定間隔ごとに点群をまとめそれを特徴表現に変換する。

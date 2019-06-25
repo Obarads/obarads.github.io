@@ -1,7 +1,7 @@
 # Towards Human-Machine Cooperation: Self-supervised Sample Mining for Object Detection
 
 元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1803.09867)  
-Github Issues : 
+Github Issues : [#105](https://github.com/Obarads/obarads.github.io/issues/105)
 
 ## どんなもの?
 

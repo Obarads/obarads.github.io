@@ -1,7 +1,7 @@
 # Self Organization in Vision: Stochastic Clustering for Image Segmentation, Perceptual Grouping, and Image Database Organization
 
 元の論文の公開ページ : [semanticscholar.org](https://www.semanticscholar.org/paper/Self-Organization-in-Vision%3A-Stochastic-Clustering-Gdalyahu-Weinshall/efa37df413342d48a5ef9bdbeb6f01a91c5a5176)  
-Github Issues : 
+Github Issues : [#99](https://github.com/Obarads/obarads.github.io/issues/99)
 
 ## どんなもの?
 

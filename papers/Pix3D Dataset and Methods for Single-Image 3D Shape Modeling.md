@@ -1,6 +1,7 @@
 # Pix3D: Dataset and Methods for Single-Image 3D Shape Modeling
 
-元の論文の公開ページ : [CVFのページ](http://openaccess.thecvf.com/content_cvpr_2018/papers/Sun_Pix3D_Dataset_and_CVPR_2018_paper.pdf)
+元の論文の公開ページ : [cvf](http://openaccess.thecvf.com/content_cvpr_2018/papers/Sun_Pix3D_Dataset_and_CVPR_2018_paper.pdf)  
+Github Issues : [#45](https://github.com/Obarads/obarads.github.io/issues/45)
 
 ## どんなもの?
 画像と3Dモデルがペアになっているデータセット、Pix3Dを提供した。また、MarrNetに姿勢推定器を追加したアプローチも実験している。

@@ -1,7 +1,7 @@
 # PointGrid: A Deep Network for 3D Shape Understanding
 
 元の論文の公開ページ : [CVF](http://openaccess.thecvf.com/content_cvpr_2018/papers/Le_PointGrid_A_Deep_CVPR_2018_paper.pdf)  
-Github Issues : 
+Github Issues : [#93](https://github.com/Obarads/obarads.github.io/issues/93)
 
 ## どんなもの?
 点の座標値を特徴量とするボクセルを畳み込むネットワークを提案した。

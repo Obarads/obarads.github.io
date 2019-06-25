@@ -1,7 +1,7 @@
 # Unsupervised Detection of Distinctive Regions on 3D Shapes
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1905.01684)  
-Github Issues : 
+Github Issues : [#108](https://github.com/Obarads/obarads.github.io/issues/108)
 
 ## どんなもの?
 教師なしで3D形状のdistinctive region(以下識別領域と呼ぶ)を探す手法を提案する。貢献は以下の通り。

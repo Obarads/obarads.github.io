@@ -1,6 +1,7 @@
 # Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1511.06434
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1511.06434)
+Github Issues : [#35](https://github.com/Obarads/obarads.github.io/issues/35)
 
 ## どんなもの?
 DGCNNと呼ばれるGANを提案した。GANに畳み込みを適応している代表例であり、ベクトル算術演算を画像に反映できることを示したモデルでもある。

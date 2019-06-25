@@ -1,6 +1,7 @@
 # Point Cloud Colorization Based on  Densely Annotated 3D Shape Dataset
 
-元の論文の公開ページ : https://arxiv.org/abs/1810.05396
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1810.05396)
+Github Issues : [#32](https://github.com/Obarads/obarads.github.io/issues/32)
 
 ## どんなもの?
 DensePointと呼ばれるデータセットの提案を提案した。データセットには16カテゴリに分けられた10000の単体オブジェクトが含まれている。1オブジェクトにつき40000個の点があり、各点にはRGBとパーツ注釈がついている。また、点群への色付け方法としてGANを使用する。発想はpix2pixより。なお、DensePointはShapeNetとShapeNetPartを拡張したものである。URLは[1]のとおり。

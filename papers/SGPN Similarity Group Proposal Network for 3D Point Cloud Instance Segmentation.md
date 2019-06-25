@@ -1,6 +1,7 @@
 # SGPN: Similarity Group Proposal Network for 3D Point Cloud Instance Segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1711.08588
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.08588)
+Github Issues : [#47](https://github.com/Obarads/obarads.github.io/issues/47)
 
 ## どんなもの?
 初の3D点群に対するinstance-awareなセマンティックセグメンテーションが可能なモデルであるSGPNを提案した。SGPNは特徴空間内における点同士の距離に基づく損失、クラスに基づく損失、予測の確信度に基づく損失を扱う。

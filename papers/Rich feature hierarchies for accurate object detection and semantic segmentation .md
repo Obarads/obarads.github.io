@@ -1,6 +1,6 @@
 # Rich feature hierarchies for accurate object detection and semantic segmentation
 
-元の論文の公開ページ : https://arxiv.org/abs/1311.2524
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1311.2524)
 Github Issues : [#59](https://github.com/Obarads/obarads.github.io/issues/59)
 
 ## どんなもの?

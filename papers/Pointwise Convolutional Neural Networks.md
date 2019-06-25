@@ -1,6 +1,7 @@
 # Pointwise Convolutional Neural Networks
 
-元の論文の公開ページ : https://arxiv.org/abs/1712.05245
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1712.05245)  
+Github Issues : [#20](https://github.com/Obarads/obarads.github.io/issues/20)
 
 ## どんなもの?
 点群の各点に適応できる、point-wise convolutionを根本とした新しい畳み込み演算子を提案した。

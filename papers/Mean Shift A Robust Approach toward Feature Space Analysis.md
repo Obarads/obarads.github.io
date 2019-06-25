@@ -1,6 +1,6 @@
 # Mean Shift: A Robust Approach toward Feature Space Analysis
 
-元の論文の公開ページ : [citeseerxのページ](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.3832&rep=rep1&type=pdf)
+元の論文の公開ページ : [citeseerx](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.3832&rep=rep1&type=pdf)
 Github Issues : [#58](https://github.com/Obarads/obarads.github.io/issues/58)
 
 ## どんなもの?

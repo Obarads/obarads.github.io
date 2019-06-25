@@ -1,6 +1,6 @@
 # Occupancy Networks: Learning 3D Reconstruction in Function Space
 
-元の論文の公開ページ : https://arxiv.org/abs/1812.03828  
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1812.03828)  
 Github Issues : [#67](https://github.com/Obarads/obarads.github.io/issues/67)
 
 ## どんなもの?

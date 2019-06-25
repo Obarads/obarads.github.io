@@ -1,6 +1,7 @@
 # Recurrent Slice Networks for 3D Segmentation of Point Clouds
 
-元の論文の公開ページ : https://arxiv.org/abs/1802.04402
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1802.04402)
+Github Issues : [#42](https://github.com/Obarads/obarads.github.io/issues/42)
 
 ## どんなもの?
 点群をスライスして、そのスライスごとの点を集約して処理するslice pooling層とRNN層を組み合わせたRSNetを提案した。

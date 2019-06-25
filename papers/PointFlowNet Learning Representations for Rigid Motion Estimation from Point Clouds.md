@@ -1,7 +1,7 @@
 # PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1806.02170)  
-Github Issues : 
+Github Issues : [#92](https://github.com/Obarads/obarads.github.io/issues/92)
 
 ## どんなもの?
 深層学習を用いて構造化されていない生の点群から3Dモーションを推定する。貢献は以下の通り。

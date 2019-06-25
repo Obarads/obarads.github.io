@@ -1,10 +1,9 @@
 # PointNetLK: Robust & Efficient Point Cloud Registration using PointNet
 
-元の論文の公開ページ : https://arxiv.org/abs/1903.05711  
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1903.05711)  
+Github Issues : [#95](https://github.com/Obarads/obarads.github.io/issues/95)
 
 ## どんなもの?
-
 
 ## 先行研究と比べてどこがすごいの?
 

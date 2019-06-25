@@ -1,7 +1,7 @@
 # Unsupervised Learning of Depth and Ego-Motion from Video
 
 元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1704.07813)  
-Github Issues : 
+Github Issues : [#112](https://github.com/Obarads/obarads.github.io/issues/112)
 
 ## どんなもの?
 

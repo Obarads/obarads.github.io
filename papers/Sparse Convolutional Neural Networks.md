@@ -1,6 +1,7 @@
 # Sparse Convolutional Neural Networks
 
-元の論文の公開ページ : [CVFのページ](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.pdf)
+元の論文の公開ページ : [CVF](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.pdf)
+Github Issues : [#101](https://github.com/Obarads/obarads.github.io/issues/101)
 
 ## どんなもの?
 スパース分解を使ったCNNで精度を維持しながらも劇的に計算量を下げるという論文。

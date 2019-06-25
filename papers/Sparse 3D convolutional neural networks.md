@@ -1,6 +1,6 @@
 # Sparse 3D convolutional neural networks
 
-元の論文の公開ページ : https://arxiv.org/pdf/1505.02890.pdf 
+元の論文の公開ページ : [arxiv](https://arxiv.org/pdf/1505.02890.pdf)  
 Github Issues : [#63](https://github.com/Obarads/obarads.github.io/issues/63)
 
 ## どんなもの?

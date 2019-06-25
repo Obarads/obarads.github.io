@@ -1,7 +1,7 @@
 # Unsupervised Deep Learning of Mid-Level Video Representation for Action Recognition
 
 元の論文の公開ページ : [aaai](https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16794)  
-Github Issues : 
+Github Issues : [#107](https://github.com/Obarads/obarads.github.io/issues/107)
 
 ## どんなもの?
 

@@ -1,7 +1,7 @@
 # Point Cloud Oversegmentation with Graph-Structured Deep Metric Learning 
 
-元の論文の公開ページ : https://arxiv.org/abs/1904.02113  
-Github Issues : 
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1904.02113)  
+Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 
 ## どんなもの?
 

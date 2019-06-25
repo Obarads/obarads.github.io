@@ -1,6 +1,7 @@
 # Recent Progress on Generative Adversarial Networks (GANs): A Survey
 
-元の論文の公開ページ : https://ieeexplore.ieee.org/document/8667290
+元の論文の公開ページ : [ieee](https://ieeexplore.ieee.org/document/8667290)
+Github Issues : [#40](https://github.com/Obarads/obarads.github.io/issues/40)
 
 ## どんなもの?
 GANのサーベイ。発行が2019/03/14(=つい最近)なのでありがたい。

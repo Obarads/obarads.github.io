@@ -1,7 +1,7 @@
 # Transductive Centroid Projection for Semi-supervised Large-scale Recognition
 
 元の論文の公開ページ : [cvf](http://openaccess.thecvf.com/content_ECCV_2018/html/Yu_Liu_Transductive_Centroid_Projection_ECCV_2018_paper.html)  
-Github Issues : 
+Github Issues : [#106](https://github.com/Obarads/obarads.github.io/issues/106)
 
 ## どんなもの?
 最後の全結合層をTransductive Centroid Projection (TCP)と呼ばれるモジュールに替えて半教師あり学習(教師なし学習も?)を効率化する提案をした。貢献は以下の通り。

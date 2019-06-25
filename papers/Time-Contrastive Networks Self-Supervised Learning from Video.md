@@ -1,7 +1,7 @@
 # Time-Contrastive Networks: Self-Supervised Learning from Video
 
 元の論文の公開ページ : [arXiv](https://arxiv.org/abs/1704.06888)  
-Github Issues : 
+Github Issues : [#104](https://github.com/Obarads/obarads.github.io/issues/104)
 
 ## どんなもの?
 一連の動作を記録したラベルなしビデオを訓練データとして、ロボットにその一連の動作を直接模倣してもらうSelf-Supervised Learning手法を提案した。

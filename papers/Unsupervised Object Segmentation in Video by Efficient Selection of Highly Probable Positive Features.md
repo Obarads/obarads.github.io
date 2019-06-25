@@ -1,7 +1,7 @@
 # Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features
 
 元の論文の公開ページ : [CVF](http://openaccess.thecvf.com/content_ICCV_2017/papers/Haller_Unsupervised_Object_Segmentation_ICCV_2017_paper.pdf)  
-Github Issues : 
+Github Issues : [#114](https://github.com/Obarads/obarads.github.io/issues/114)
 
 ## どんなもの?
 ラベル付されていない2Dビデオを使ってオブジェクトのソフトセグメンテーションとバウンディングボックスを出力する教師なし手法を提案した。また、提案手法は競合する研究よりも少なくとも10倍早く処理する(計算効率が良い)。想定している検知対象は単体の目立つオブジェクトであり、目立つオブジェクトがない or 目立つオブジェクトが複数ある場合は正しく動作しない。

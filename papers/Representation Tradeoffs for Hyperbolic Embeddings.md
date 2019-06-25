@@ -1,7 +1,7 @@
 # Representation Tradeoffs for Hyperbolic Embeddings
 
 元の論文の公開ページ : [PMLR](http://proceedings.mlr.press/v80/sala18a.html)  
-Github Issues : 
+Github Issues : [#98](https://github.com/Obarads/obarads.github.io/issues/98)
 
 ## どんなもの?
 

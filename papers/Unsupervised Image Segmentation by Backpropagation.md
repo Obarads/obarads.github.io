@@ -1,7 +1,7 @@
 # Unsupervised Image Segmentation by Backpropagation
 
 元の論文の公開ページ : [github.io](https://kanezaki.github.io/pytorch-unsupervised-segmentation/ICASSP2018_kanezaki.pdf)  
-Github Issues : 
+Github Issues : [#109](https://github.com/Obarads/obarads.github.io/issues/109)
 
 ## どんなもの?
 $k$種類(ただし$k$は不明とする)のインスタンスラベルのうちのどれか一つを各ピクセルに割り振る教師なし学習アルゴリズムを提案した。
@@ -78,7 +78,7 @@ Asako Kanezaki.
 2D_Image
 
 ## status
-省略
+未完
 
 ## BibTex
 @inproceedings{kanezaki2018_unsupervised_segmentation,

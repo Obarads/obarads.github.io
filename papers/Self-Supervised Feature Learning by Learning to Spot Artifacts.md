@@ -1,6 +1,6 @@
 # Self-Supervised Feature Learning by Learning to Spot Artifacts
 
-元の論文の公開ページ : https://arxiv.org/abs/1806.05024
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1806.05024)
 Github Issues : [#62](https://github.com/Obarads/obarads.github.io/issues/62)
 
 ## どんなもの?

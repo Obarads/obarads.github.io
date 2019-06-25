@@ -1,6 +1,7 @@
 # Parallel Tracking and Mapping for Small AR Workspaces
 
-元の論文の公開ページ : http://www.robots.ox.ac.uk/~gk/publications/KleinMurray2007ISMAR.pdf
+元の論文の公開ページ : [www.robots.ox.ac.uk](http://www.robots.ox.ac.uk/~gk/publications/KleinMurray2007ISMAR.pdf)
+Github Issues : [#89](https://github.com/Obarads/obarads.github.io/issues/89)
 
 ## どんなもの?
 ARの利用にも耐えうるようなvisual SLAMアルゴリズムを提案した。
