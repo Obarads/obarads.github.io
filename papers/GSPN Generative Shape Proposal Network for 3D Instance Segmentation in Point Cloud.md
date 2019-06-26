@@ -24,14 +24,24 @@ GSPNのアーキテクチャは図2に示すとおりである。GPSNは4つの�
 
 ![fig2](img/GGSPNf3ISiPC/fig2.png)
 
+#### 入力
 $c$はシード点$s$を中心として$P$から切り取られた点群である。$c$は$K$個の異なる切り取り半径をもとに球状の範囲を持って生成される。$K=3$であるとき、異なるスケールの点群(論文ではコンテキスト)$c_ {k \in \\{1 \cdots K\\}}$が得られる。
 
+#### Center Prediction Network
 Center prediction networkは$c$を受け取り、ワールド座標系におけるオブジェクト$x$の中央$t$(これがバウンディングボックスの中央となる)を回帰する。具体的には、$c_ {k}$を$K$個のPointNetにそれぞれ入力し、各PointNetから出力された特徴ベクトル$f_ {c_ {k} }$を連結させた$f_ c$をMLPに渡して、中央$t$を求める。(※注意として、シード点はおそらくランダムに選ばれた点であるため、必ずしもオブジェクトの中心点にならない(つまり$s\not= t$))  
 Center prediction networkによって計算された$t$は、$c$を$t$を中心とする座標に変換した$\hat{c}_ {k \in \\{1 \cdots K\\} }$とGeneration Networkの出力に使われる。
 
-prior networkは$\hat{c}$を入力として、$p_ {\theta}(z | c)$のガウス事前分布$\mathcal{N}(\mu_ {z}, \sigma_ {z}^{2})$に従う$\mu_ {z}, sigma_ {z}$を出力する。この$p_ {\theta}(z | c)$は
+#### Prior Network
+prior networkは$\hat{c}$を入力として、$p_ {\theta}(z | c)$のガウス事前分布$\mathcal{N}(\mu_ {z}, \sigma_ {z}^{2})$に従う$\mu_ {z}, \sigma_ {z}$を出力する。この$z$は natural objects(実際のオブジェクト)の潜在変数を指す。prior networkは$K$個のPointNetとMLPで構成され、入力として$\hat{c}_ k$をそれぞれのPointNetに与え、PointNetの出力は連結することで一つの特徴ベクトル$f_ \hat{c}$へ変換される。その後、$f_ \hat{c}$はMLPを介して$\mu_ {z}, \sigma_ {z}$を出力する。
 
+#### Recognition Network
+Recognition networkは単体PointNetへ$\hat{x}$を入力し、その出力$f_ {\hat{x} }$をprior networkの$f_ \hat{c}$と連結する。連結された特徴はMLPに入力され、パラメーター化された$q_ {\phi}(z | x, c)$であるガウス提案分布$\mathcal{N}(\mu_ {z}^{\prime}, \sigma_ {z}^{\prime 2})$の$\mu_ {z}^{\prime}, \sigma_ {z}^{\prime}$を予測する。
 
+#### Generation Network
+Generation Networkは入力として$z$とprior networkの$f_ \hat{c}$を受け取り、点群$\hat{x}$と生成された点ごとの外見尤度(多分、オブジェクトっぽいかどうかということ)の信頼スコア$e$を出力する。この2つの出力(デコーディング)には[1]の構造を利用する。出力された点群$\hat{x}$は$t$を利用してシーンの座標に戻される。
+
+#### その他
+GPSNはMask R-CNNと同様に、各提案のobjectnessスコアを予測すため$f_ \hat{c}$を取るMLPを追加する。objectnessスコアはIoUとバウンディングボックスでsuperviseされる(?)。
 
 ## どうやって有効だと検証した?
 
@@ -41,7 +51,7 @@ prior networkは$\hat{c}$を入力として、$p_ {\theta}(z | c)$のガウス�
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [H. Fan, H. Su, and L. J. Guibas. A point set generation net-work for 3d object reconstruction from a single image. In CVPR, volume 2, page 6, 2017.](http://ai.stanford.edu/~haosu/papers/SI2PC_arxiv_submit.pdf)
 
 ## 会議
 CVPR 2019

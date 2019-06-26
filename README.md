@@ -8,7 +8,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 (気分によるが)論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています.   
 
 ## Link & Directory
-各ページ(ディレクトリ)の説明をする. なお, 基本的に定義式は画像形式で示します. 理由は, 書くのに時間がかかるのと, スマホで見たときに画面外にはみ出すことがあるからです. 
+各ページ(ディレクトリ)の説明をする.
 
 ### [Papers](./papers)
 [Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている.   
