@@ -20,6 +20,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 - 参照: 他のページを参照するようにリンクを貼っているもの
 - 未完: 更新中もしくは更新を放棄しているもの
 - 修正: ちゃんと理解する必要して修正する必要がある. 
+- 導入: AbstractとIntroduceを読んで図を把握したものである。 
 
 #### read
 論文内で読んだ部分を示す. 
@@ -36,7 +37,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 [Complementary(complementaryディレクトリ)](./complementary)には各論文で出てくる単語やジャンルへの補足説明が入っている. 
 
 ## Issue page in Github
- もし、論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or 新規Issueを建てていただけると幸いです.
+もし、論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or 新規Issueを建てていただけると幸いです.
 
 ## Use this repository in local
 ### About

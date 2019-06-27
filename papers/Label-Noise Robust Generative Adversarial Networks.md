@@ -36,4 +36,4 @@ Takuhiro Kaneko, Yoshitaka Ushiku, Tatsuya Harada.
 GAN, 2D_Image
 
 ## status
-省略
+導入

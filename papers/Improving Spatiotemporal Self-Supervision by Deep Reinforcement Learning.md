@@ -42,4 +42,4 @@ Uta Büchler, Biagio Brattoli, Björn Ommer.
 Reinforcement_Learning, Self-Supervised_Learning
 
 ## status
-省略
+導入

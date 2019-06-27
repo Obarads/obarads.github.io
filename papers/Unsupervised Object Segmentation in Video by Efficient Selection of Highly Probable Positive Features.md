@@ -45,6 +45,6 @@ Emanuela Haller and Marius Leordeanu.
 2D_Image
 
 ## status
-未完
+導入
 
 ## BibTex

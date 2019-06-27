@@ -44,4 +44,4 @@ Yu Yu, Gang Liu, Jean-Marc Odobez.
 Few-Shot, Self-Supervised_Learning, Domain_Adaptation, Gaze_Estimation, Synthetic
 
 ## status
-省略
+導入

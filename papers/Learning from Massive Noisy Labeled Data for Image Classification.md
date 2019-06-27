@@ -44,4 +44,4 @@ Tong Xiao, Tian Xia, Yi Yang, Chang Huang, and Xiaogang Wang.
 2D_Image
 
 ## status
-省略
+導入

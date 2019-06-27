@@ -10,7 +10,7 @@ import numpy as np
 from distutils.util import strtobool
 
 def extract_data(path):
-    status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"大雑把":0}
+    status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
     md_list = glob.glob("./"+ path +"/*.md")
     path_list = md_list
     info_list = []
@@ -43,7 +43,7 @@ def extract_data(path):
                 if status_index != -1:
                     status = content[status_index+1]
                     status_tags.append(status)
-                    if status in ["更新済","省略","参照","未完","修正","大雑把"]:
+                    if status in ["更新済","省略","参照","未完","修正","導入"]:
                         status_counter[status]+=1
 
             info_list.append([ml,kw,date,status])

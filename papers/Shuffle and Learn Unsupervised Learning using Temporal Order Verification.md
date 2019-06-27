@@ -46,6 +46,6 @@ Ishan Misra, C. Lawrence Zitnick, Martial Hebert.
 Video, Self-Supervised_Learning
 
 ## status
-省略
+未完
 
 ## BibTex

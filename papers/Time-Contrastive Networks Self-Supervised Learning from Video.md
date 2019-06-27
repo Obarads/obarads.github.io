@@ -40,7 +40,7 @@ Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Sc
 Video, Self-Supervised_Learning, Robot
 
 ## status
-省略
+導入
 
 ## BibTex
 @article{Sermanet2017TCN,

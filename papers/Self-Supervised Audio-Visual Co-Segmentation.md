@@ -43,4 +43,4 @@ Andrew Rouditchenko, Hang Zhao, Chuang Gan, Josh McDermott, Antonio Torralba.
 Self-Supervised_Learning, Video
 
 ## status
-省略
+導入

@@ -40,4 +40,4 @@ Pengpeng Liu, Michael Lyu, Irwin King, Jia Xu.
 2D_Image, Flow_Estimation, Self-Supervised_Learning
 
 ## status
-省略
+導入

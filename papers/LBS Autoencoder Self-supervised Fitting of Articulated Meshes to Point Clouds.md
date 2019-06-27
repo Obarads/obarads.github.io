@@ -40,4 +40,4 @@ Chun-Liang Li, Tomas Simon, Jason Saragih, Barnabás Póczos, Yaser Sheikh.
 Point_Cloud, Self-Supervised_Learning, AutoEncoder, Mesh
 
 ## status
-省略
+導入

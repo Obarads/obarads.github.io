@@ -4,6 +4,7 @@
 Github Issues : 
 
 ## どんなもの?
+リアルタイムで3D LIDARと2Dカメラ間の6-DoF剛体変換を自動的に推定することができる自己教師ありネットワーク、CalibNetを提案した
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -35,7 +36,7 @@ Ganesh Iyer, Karnik Ram R., J. Krishna Murthy, K. Madhava Krishna.
 Point_Cloud, 2D_Image, Self-Supervised_Learning
 
 ## status
-
+導入
 
 ## read
 
