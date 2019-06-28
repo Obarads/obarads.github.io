@@ -72,7 +72,7 @@ Yangyan Li, Rui Bu, Mingchao Sun, Wei Wu, Xinhan Di, Baoquan Chen.
 なし
 
 ## key-words
-Point_Cloud, Semantic_Segmenation, Classification
+Point_Cloud, Semantic_Segmentation, Classification
 
 ## status
 省略
