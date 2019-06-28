@@ -1,8 +1,7 @@
-# preprocessing
-## About
-前処理。Referenceのコピペ。
+# (art.) CNN による画像分類で使われる前処理・テスト時処理まとめ
 
-## List
+元の記事のページ : [iwi(iwiwi), CNN による画像分類で使われる前処理・テスト時処理まとめ](http://iwiwi.hatenadiary.jp/entry/2016/12/31/162059)
+
 ### 前処理・Data Augmentation  
 1. Mean Subtraction  
     入力画像から平均を引く。[103.939, 116.779, 123.68] を各ピクセルから引く。VGG はこれ。
@@ -45,8 +44,10 @@
     さらに、テスト画像のサイズを複数試し、その結果の平均を用いる。例えば、ResNet 本家論文では短辺を 224, 256, 384, 480, 640 になるようにリサイズしている。また、horizontal flip も試して平均を取る。  
     VGG から使われている。ResNet 本家論文を見るところ、10-crop Testing と比べて、大体 2% 程度精度に寄与している。
 
-## Reference
-1. [CNN による画像分類で使われる前処理・テスト時処理まとめ](http://iwiwi.hatenadiary.jp/entry/2016/12/31/162059)
+## 投稿日付(yyyy/MM/dd)
+2016/12/31
 
 ## key-words
 Preprocessing, 2D_Image
+
+## 参考文献
