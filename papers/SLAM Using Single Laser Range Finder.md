@@ -1,7 +1,7 @@
 # SLAM Using Single Laser Range Finder
 
 元の論文の公開ページ : [sciencedirect](https://www.sciencedirect.com/science/article/pii/S1474667016413479)  
-Github Issues : 
+Github Issues : [#117](https://github.com/Obarads/obarads.github.io/issues/117)
 
 ## どんなもの?
 

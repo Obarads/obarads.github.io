@@ -1,7 +1,7 @@
 # A Monotonic and Continuous Two-Dimensional Warping Based on Dynamic Programming
 
 元の論文の公開ページ : [pdfs.semanticscholar.org](https://pdfs.semanticscholar.org/36dd/e6fa87576b393fd6769b3ba1c173dc610908.pdf)  
-Github Issues : 
+Github Issues : [#118](https://github.com/Obarads/obarads.github.io/issues/118)
 
 ## どんなもの?
 連続性と単調性の制約を受ける、最適なピクセルマッピングを探索する新規の2次元ワーピングアルゴリズムを提示した。
