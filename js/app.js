@@ -77,6 +77,10 @@ function search(il, tl, title, path, mode) {
     html = _html.map(create_tag);
     var div = document.getElementById("_etc_tags");
     div.innerHTML = html.join(" ");
+    _html = tl[3];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_method_tags");
+    div.innerHTML = html.join(" ");
   }
   url_param = getParam("tag");
   if (url_param == null) {

@@ -44,14 +44,14 @@ $$
 
 **Efficient computation of response maps** : 定義として、中心$\delta$とするサイズ$N \leqslant L$の$\mathbf{P}$の部分列(1D記述子について話していることに注意)を$\mathbf{P}[\delta, N]=\{\mathbf{P}(i)\}_ {i=\delta-\frac{N}{2}}^{\delta+\frac{N}{2}-1}$とする。$\mathbf{P}[\delta, N]$から$\mathbf{P}^{\prime}[T, N]$へのサブワーピングは$w_ {N, \delta \rightarrow T}$として表記される。
 
-ここで、(1D記述子の)Deep matchingの重要なアイデアは左半分と右半分の変位をそれぞれ仮定することである。任意のシーケンス$P[\delta,N]$の$\mathbf{P}[\delta-\frac{N}{4}, \frac{N}{2}]$と$\mathbf{P} [\delta+\frac{N}{4}, \frac{N}{2}]$は両方とも$P[\delta,N]$の変位と$N$の比例的に独立かつ制限されたものとする。図3
+ここで、(1D記述子のはず...)Deep matchingの重要なアイデアは左半分と右半分の変位をそれぞれ仮定することである。任意のシーケンス$P[\delta,N]$の$\mathbf{P}[\delta-\frac{N}{4}, \frac{N}{2}]$と$\mathbf{P} [\delta+\frac{N}{4}, \frac{N}{2}]$は両方とも$P[\delta,N]$の変位と$N$の比例的に独立かつ制限されたものとする。図3に示すとおりである。
 
 ## どうやって有効だと検証した?
 
 ## 議論はある?
 
 ## 次に読むべき論文は?
-- なし
+- 3. [S. Uchida and H. Sakoe. A monotonic and continuous two-dimensional warping based on dynamic programming. In ICPR, 1998.](https://pdfs.semanticscholar.org/36dd/e6fa87576b393fd6769b3ba1c173dc610908.pdf)
 
 ## 論文関連リンク
 1. [T. Brox and J. Malik. Large displacement optical flow: de-scriptor matching in variational motion estimation.IEEE Trans. PAMI, 2011.](http://www.ee.oulu.fi/research/imag/courses/Kokkinos/brox-malik-pami-2010.pdf)

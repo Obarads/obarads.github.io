@@ -6,6 +6,11 @@
   background: rgb(131, 5, 79);
 }
 
+.__Active_Learning{
+  background:rgb(39, 95, 133);
+  color:#fff;
+}
+
 .__Adversarial_Examples {
   background: rgba(187, 2, 26, 0.829);
 }
@@ -39,6 +44,11 @@
 
 .__Detection {
   background: rgb(0, 60, 255);
+}
+
+.__Depth_Estimation{
+  background: rgb(103, 12, 163);
+  color:rgb(255, 255, 255);
 }
 
 .__Domain_Adaptation {
@@ -78,6 +88,11 @@
   background: rgb(196, 78, 0);
 }
 
+.__Interpretability{
+  background:rgb(131, 23, 23);
+  color:#fff;
+}
+
 .__Mesh{
   background: rgb(179, 124, 52);
   color: #fff;
@@ -107,6 +122,11 @@
   color: #fff;
 }
 
+.__Robot{
+  background:rgb(39, 26, 163);
+  color:#fff;
+}
+
 .__SLAM {
   background: rgb(73, 112, 107);
   color: #fff;
@@ -127,6 +147,11 @@
   color:rgb(255, 255, 255);
 }
 
+.__Supervised_Learning{
+  background:rgb(125, 104, 221);
+  color:#fff;
+}
+
 .__Sparsity{
   background:rgb(134, 202, 45);
   color:rgb(0, 0, 0);
@@ -140,6 +165,11 @@
 .__Transfer_learning {
   background: rgb(199, 178, 219);
   color: rgb(0, 0, 0);
+}
+
+.__Unsupervised_Learning{
+  background:rgb(52, 89, 194);
+  color:#fff;
 }
 
 .__Video{

@@ -123,13 +123,13 @@ def main():
         task = yml["task"]
         data = yml["data"]
         etc = yml["etc"]
+        method = yml["method"]
         confirmation = []
         confirmation.extend(task)
         confirmation.extend(data)
         confirmation.extend(etc)
+        confirmation.extend(method)
         confirmation = np.array(sorted(confirmation))
-
-        print(task)
 
         print("以下のタグがtag_listに含まれていない")
         for i,l in zip(confirmation_origin,np.in1d(confirmation_origin,confirmation)):
@@ -145,15 +145,15 @@ def main():
             f.writelines("function tag_task_list(){ return [" + ",".join(sorted(task))+"]}\n")
             f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
             f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
+            f.writelines("function tag_method_list(){ return [" + ",".join(sorted(method))+"]}\n")
 
         if css:
             with open('css/tag.css', 'w') as f:
                 f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
                 f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
                 f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(method,propertis='background:rgb(255, 255, 75);\ncolor:#000;'))
                 f.close()
-
-
 
 
 if __name__ == '__main__':

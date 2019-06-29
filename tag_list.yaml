@@ -6,14 +6,19 @@ data: [
   "'Video'",
 ]
 
+method: [
+  "'Active Learning'",
+  "'Reinforcement Learning'",
+  "'Self-Supervised Learning'",
+  "'Unsupervised Learning'",
+  "'Supervised Learning'"
+]
+
 etc: [
   "'AutoEncoder'",
   "'GAN'",
   "'Graph'",
   "'RNN'",
-  "'Active Learning'",
-  "'Reinforcement Learning'",
-  "'Self-Supervised Learning'",
   "'Interpretability'",
   "'Sparsity'",
   "'Synthetic'",
