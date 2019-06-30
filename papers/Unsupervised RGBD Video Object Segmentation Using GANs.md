@@ -1,7 +1,7 @@
 # Unsupervised RGBD Video Object Segmentation Using GANs
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1811.01526)  
-Github Issues : 
+Github Issues : [#122](https://github.com/Obarads/obarads.github.io/issues/122)
 
 ## どんなもの?
 照明の変動、影、色彩の変化などの要素がタスクに含まれる場合、そのタスクに対するパフォーマンスは低下する。これらの問題に対処してより良い精度を達成するために、著者らは色と深度情報を利用したGANによるフュージョンベースの(?)移動体セグメンテーションアルゴリズムを提案する。

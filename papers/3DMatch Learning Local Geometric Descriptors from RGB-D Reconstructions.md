@@ -1,7 +1,7 @@
 # 3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1603.08182)  
-Github Issues : 
+Github Issues : [#121](https://github.com/Obarads/obarads.github.io/issues/121)
 
 ## どんなもの?
 
