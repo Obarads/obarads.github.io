@@ -48,6 +48,6 @@
 2016/12/31
 
 ## key-words
-Preprocessing, 2D_Image
+Preprocessing, RGB_Image
 
 ## 参考文献

@@ -33,7 +33,7 @@ Deqing Sun, Xiaodong Yang, Ming-Yu Liu, Jan Kautz.
 なし
 
 ## key-words
-2D_Image
+RGB_Image
 
 ## status
 未完

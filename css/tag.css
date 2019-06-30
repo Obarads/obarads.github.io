@@ -83,9 +83,14 @@ background:rgb(33, 83, 219);
 color:#fff;
 }
 
-.__2D_Image{
-background:rgb(0, 143, 59);
-color:#fff;
+.__RGB_Image{
+  background:rgb(0, 143, 59);
+  color:#fff;
+}
+
+.__Depth_Image{
+  background:rgb(0, 143, 59);
+  color:#fff;
 }
 
 .__Mesh{

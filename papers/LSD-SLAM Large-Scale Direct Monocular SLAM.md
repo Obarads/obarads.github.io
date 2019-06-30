@@ -32,7 +32,7 @@ Jakob Engel and Thomas Schops and Daniel Cremers.
 なし
 
 ## key-words
-SLAM, 2D_Image
+SLAM, RGB_Image
 
 ## status
 未完

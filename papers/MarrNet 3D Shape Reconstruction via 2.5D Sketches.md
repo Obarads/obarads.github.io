@@ -118,7 +118,7 @@ Jiajun Wu, Yifan Wang, Tianfan Xue, Xingyuan Sun, William T Freeman and Joshua B
 なし
 
 ## key-words
-2D_Image, Voxel, 3D_Estimation
+RGB_Image, Voxel, 3D_Estimation, Depth_Image
 
 ## status
 更新済

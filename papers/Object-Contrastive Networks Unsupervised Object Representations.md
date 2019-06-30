@@ -32,7 +32,7 @@ Soeren Pirk, Mohi Khansari, Yunfei Bai, Corey Lynch, Pierre Sermanet.
 なし
 
 ## key-words
-2D_Image, Detection
+RGB_Image, Detection
 
 ## status
 未完

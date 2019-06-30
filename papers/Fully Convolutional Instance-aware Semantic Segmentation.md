@@ -35,7 +35,7 @@ Yi Li, Haozhi Qi, Jifeng Dai, Xiangyang Ji, Yichen Wei.
 なし
 
 ## key-words
-2D_Image, Instance_Segmentation
+RGB_Image, Instance_Segmentation
 
 ## status
 未完

@@ -84,7 +84,7 @@ Seiichi Uchida and Hiroaki Sakoe.
 なし
 
 ## key-words
-2D_Image
+RGB_Image
 
 ## status
 導入

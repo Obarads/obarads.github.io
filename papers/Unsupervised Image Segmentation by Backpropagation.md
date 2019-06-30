@@ -93,7 +93,7 @@ Asako Kanezaki.
 なし
 
 ## key-words
-2D_Image, Unsupervised_Learning
+RGB_Image, Unsupervised_Learning
 
 ## status
 省略

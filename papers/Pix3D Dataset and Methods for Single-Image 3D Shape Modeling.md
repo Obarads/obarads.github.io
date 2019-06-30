@@ -135,7 +135,7 @@ CVPR 2018
 なし
 
 ## key-words
-3D_Estimation, 2D_Image, Voxel, Dataset
+3D_Estimation, RGB_Image, Voxel, Dataset
 
 ## status
 更新済

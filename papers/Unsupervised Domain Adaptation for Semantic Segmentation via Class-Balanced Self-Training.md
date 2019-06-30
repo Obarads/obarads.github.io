@@ -91,7 +91,7 @@ Yang Zou, Zhiding Yu, B.V.K. Vijaya Kumar, and Jinsong Wang.
 なし
 
 ## key-words
-Domain_Adaptation, 2D_Image
+Domain_Adaptation, RGB_Image
 
 ## status
 更新済

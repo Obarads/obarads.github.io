@@ -76,7 +76,7 @@ Jonathan Long, Evan Shelhamer, Trevor Darrell.
 なし
 
 ## key-words
-2D_Image, Semantic_Segmentation
+RGB_Image, Semantic_Segmentation
 
 ## status
 修正

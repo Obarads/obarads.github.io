@@ -41,7 +41,7 @@ Ganesh Iyer, Karnik Ram R., J. Krishna Murthy, K. Madhava Krishna.
 なし
 
 ## key-words
-Point_Cloud, 2D_Image, Self-Supervised_Learning
+Point_Cloud, RGB_Image, Self-Supervised_Learning
 
 ## status
 導入

@@ -68,7 +68,7 @@ Alec Radford, Luke Metz, Soumith Chintala.
 なし
 
 ## key-words
-GAN, 2D_Image
+GAN, RGB_Image
 
 ## status
 更新済

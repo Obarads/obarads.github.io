@@ -71,7 +71,7 @@ Charles R. Qi, Wei Liu, Chenxia Wu, Hao Su, Leonidas J. Guibas.
 なし
 
 ## key-words
-Point_Cloud, Detection, 2D_Image
+Point_Cloud, Detection, RGB_Image, Depth_Image
 
 ## status
 未完

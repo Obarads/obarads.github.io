@@ -70,7 +70,7 @@ Simon Jenni, Paolo Favaro.
 なし
 
 ## key-words
-2D_Image, Self-Supervised_Learning
+RGB_Image, Self-Supervised_Learning
 
 ## status
 省略

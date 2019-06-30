@@ -42,7 +42,7 @@ Emanuela Haller and Marius Leordeanu.
 なし
 
 ## key-words
-2D_Image
+RGB_Image
 
 ## status
 導入

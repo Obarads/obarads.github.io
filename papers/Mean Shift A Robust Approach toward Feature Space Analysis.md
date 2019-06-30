@@ -45,7 +45,7 @@ Dorin Comaniciu, Peter Meer.
 なし
 
 ## key-words
-Point_Cloud, 2D_Image
+Point_Cloud, RGB_Image
 
 ## status
 参照

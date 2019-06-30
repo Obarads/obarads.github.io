@@ -1,5 +1,6 @@
 data: [
-  "'2D Image'",
+  "'RGB Image'",
+  "'Depth Image'",
   "'Mesh'",
   "'Point Cloud'",
   "'Voxel'",

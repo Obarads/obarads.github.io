@@ -99,7 +99,7 @@ Ross Girshick
 Faster R-CNNのために見たので、省略多め。
 
 ## key-words
-Detection, 2D_Image
+Detection, RGB_Image
 
 ## status
 省略

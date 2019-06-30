@@ -90,7 +90,7 @@ Jiajun Wu, Chengkai Zhang, Xiuming Zhang, Zhoutong Zhang, William T. Freeman and
 なし
 
 ## key-words
-2D_Image, Voxel, 3D_Estimation
+RGB_Image, Voxel, 3D_Estimation, Depth_Image
 
 ## status
 更新済

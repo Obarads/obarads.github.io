@@ -90,7 +90,7 @@ Robert Geirhos, Patricia Rubisch, Claudio Michaelis, Matthias Bethge, Felix A. W
 なし
 
 ## key-words
-2D_Image, Analytics
+RGB_Image, Analytics
 
 ## status
 更新済

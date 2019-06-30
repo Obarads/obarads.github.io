@@ -89,7 +89,7 @@ Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, 
 どちらかというと検証メインの論文。
 
 ## key-words
-2D_Image, Analytics
+RGB_Image, Analytics
 
 ## status
 更新済

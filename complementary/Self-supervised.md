@@ -54,4 +54,4 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 6. [Paper-Reminder Unsupervised Visual Representation Learning by Context Prediction](https://obarads.github.io/papers/#Unsupervised%20Visual%20Representation%20Learning%20by%20Context%20Prediction.md)
 
 ## key-words
-Self-supervised, 2D_Image, Fine-tuning, Transfer_learning
+Self-supervised, RGB_Image, Fine-tuning, Transfer_learning

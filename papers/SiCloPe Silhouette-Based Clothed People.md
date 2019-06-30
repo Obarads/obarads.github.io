@@ -96,7 +96,7 @@ Ryota Natsume, Shunsuke Saito, Zeng Huang, Weikai Chen, Chongyang Ma, Hao Li, Sh
 ビンについて知りたい。
 
 ## key-words
-2D_Image, 3D_Estimation
+RGB_Image, 3D_Estimation
 
 ## status
 修正

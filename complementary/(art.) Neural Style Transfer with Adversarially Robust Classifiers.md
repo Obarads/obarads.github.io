@@ -3,7 +3,7 @@
 元の記事のページ : [reiinakano, Neural Style Transfer with Adversarially Robust Classifiers | reiinakano’s blog, [Accessed: 24-Jun-2019]](https://reiinakano.com/2019/06/21/robust-neural-style-transfer.html)
 
 ## key-words
-2D_Image, Transfer
+RGB_Image, Transfer
 
 ## 投稿日付(yyyy/MM/dd)
 2019/06/21

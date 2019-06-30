@@ -33,7 +33,7 @@ Github Issues : [#101](https://github.com/Obarads/obarads.github.io/issues/101)
 なし
 
 ## key-words
-2D_Image, Sparsity
+RGB_Image, Sparsity
 
 ## status
 未完

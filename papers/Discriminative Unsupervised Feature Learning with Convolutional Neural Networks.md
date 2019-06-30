@@ -55,7 +55,7 @@ Alexey Dosovitskiy, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller
 なし
 
 ## key-words
-2D_Image, Data_Augmentation
+RGB_Image, Data_Augmentation
 
 ## status
 未完

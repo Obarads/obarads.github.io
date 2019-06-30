@@ -33,7 +33,7 @@ Seiichi UCHIDA, Hiroaki SAKOE.
 なし
 
 ## key-words
-2D_Image
+RGB_Image
 
 ## status
 未完

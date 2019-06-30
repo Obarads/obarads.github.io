@@ -130,7 +130,7 @@ Reza Mahjourian, Martin Wicke, Anelia Angelova.
 なし
 
 ## key-words
-Video, Depth_Estimation, Point_Cloud
+Video, Depth_Estimation, Point_Cloud, Depth_Image
 
 ## status
 省略

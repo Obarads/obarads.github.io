@@ -49,7 +49,7 @@ Martin Simonovsky, Nikos Komodakis.
 なし
 
 ## key-words
-Graph, Point_Cloud, 2D_Image, Classification
+Graph, Point_Cloud, RGB_Image, Classification
 
 ## read
 A, I, M
