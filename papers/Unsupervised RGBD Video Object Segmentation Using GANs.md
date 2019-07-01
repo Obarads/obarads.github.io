@@ -11,7 +11,10 @@ Github Issues : [#122](https://github.com/Obarads/obarads.github.io/issues/122)
 ## 先行研究と比べてどこがすごいの?
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-提案手法は図1の通り。
+提案手法は図1の通り。本提案は以下の2段階で構成されている。
+
+1. 2つの独立したモデルはRGBと深度のビデオシーケンスを用いて訓練される(図1左)。
+2. 逆伝播を介して背景 or 前景を含むビデオシーケンスで訓練されたモデルをテストする(図1右)。
 
 ![fig1](img/URVOSUG/fig1.png)
 
@@ -35,7 +38,7 @@ Maryam Sultana, Arif Mahmood, Sajid Javed, and Soon Ki Jung
 2018/11/05
 
 ## コメント
-なし
+なんか説明するたびにベースとなるGANの種類が変わっているように思える。
 
 ## key-words
 RGB_Image, Depth_Image, GAN, Video
