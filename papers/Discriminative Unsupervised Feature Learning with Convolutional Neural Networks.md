@@ -3,9 +3,9 @@
 元の論文の公開ページ : [nips](https://papers.nips.cc/paper/5548-discriminative-unsupervised-feature-learning-with-convolutional-neural-networks.pdf)
 Github Issues : [#74](https://github.com/Obarads/obarads.github.io/issues/74)
 
-
 ## どんなもの?
-省略
+ラベルのない画像データのみを使用してCNNを学習できるアプローチを提案した。データに対して代理クラスを適応する。各代理クラスはランダムにサンプリングされた画像のパッチに変換を加えたデータで形成される。
+このアプローチは、学習時にラベルに依存しないデータを使用することでよりオブジェクトに対する識別性を上げることで
 
 ## 先行研究と比べてどこがすごいの?
 省略
@@ -26,7 +26,7 @@ Github Issues : [#74](https://github.com/Obarads/obarads.github.io/issues/74)
 ![fig1_2](img/DUFLwCNN/fig1_2.png)
 
 ### Learning Algorithm
-変換されたパッチにシード画像ごとのクラスラベル(代理クラスのラベル)を割り振る。次に、これらの代理クラスを適切に識別する様に以下の損失関数を最小化する。
+変換された画像パッチの集合が与えられたとき、
 
 ### Formal Analysis
 
@@ -55,7 +55,7 @@ Alexey Dosovitskiy, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller
 なし
 
 ## key-words
-RGB_Image, Data_Augmentation
+RGB_Image, Data_Augmentation, Unsupervised_Learning
 
 ## status
 未完
