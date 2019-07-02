@@ -26,7 +26,7 @@ Github Issues : [#122](https://github.com/Obarads/obarads.github.io/issues/122)
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [Yeh, R.A., Chen, C., Lim,T.Y., Schwing, A.G., Hasegawa-Johnson, M., Do, M.N.: Semantic image inpainting with deep generative models. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 5485-5493 (2017)](https://arxiv.org/abs/1607.07539)
 
 ## 会議
 ACCV Workshop
