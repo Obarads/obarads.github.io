@@ -11,7 +11,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 各ページ(ディレクトリ)の説明をする.
 
 ### [Papers](./papers)
-[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている.   
+[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. **文章中に存在する[※ 任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
 
 #### status
 ページ内の進行具合を示すものである. 以下4つに分かれる. 

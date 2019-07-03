@@ -49,12 +49,14 @@ $$
 M(\mathbf{y}, \mathbf{f}) &=-\langle\mathbf{y}, \log \mathbf{f}\rangle=-\sum_{k} y_{k} \log f_{k} \end{aligned} \tag{2}
 $$
 
-このとき、$f(\cdot)$は畳み込み層などの出力値、$\mathbf{e}_ i$は$i$番目の標準基底ベクトルである。
+このとき、$f(\cdot)$は畳み込み層などの出力値、$\mathbf{e}_ i$は$i$番目の標準基底ベクトルである。代理クラスごとの変換の数がかなり多い(an infinite number of)場合は式(1)を式(3)の様に書き換える。式(3)の内容はFormal Analysisにあるが省略する。
 
-(後の式(3)とその後の内容は飛ばす)
+$$
+\widehat{L}(X)=\sum_{\mathbf{x}_{i} \in X} \mathbb{E}_{\alpha}\left[l\left(i, T_{\alpha} \mathbf{x}_{i}\right)\right] \tag{3}
+$$
 
-### Formal Analysis
-
+### Formal Analysis と Conceptual Comparison to Previous Unsupervised Learning Methods
+分類問題の特性と他の教師なし学習との比較をおこなう。省略。
 
 ## どうやって有効だと検証した?
 省略
@@ -84,4 +86,4 @@ Alexey Dosovitskiy, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller
 RGB_Image, Data_Augmentation, Unsupervised_Learning
 
 ## status
-未完
+省略
