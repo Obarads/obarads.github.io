@@ -54,7 +54,7 @@ RGB-Dデータを使用した3D検知モデル、Frustum PointNetを提案した
 [※ light-weight regression PointNetは軽い回帰を行うPointNet、つまりPointNetそのものの亜種ではなくPointNetの一部分を指していると考えたほうがよさそう]
 
 #### Amodal 3D Box Estimation PointNet
-box estimation networkはamodal bouding boxesを予測する(図4(d))。ネットワークアーキテクチャはPointNetとほぼ同様であるが、最後の出力をクラス予測から3Dバウンディングボックスパラメータの回帰に変更する。予測する値は
+box estimation networkはamodal bouding boxesを予測する(図4(d))。ネットワークアーキテクチャはPointNetとほぼ同様であるが、最後の出力をクラス予測から3Dバウンディングボックスパラメータの回帰に変更する。3Dバウンディングボックスパラメータは中央値$(c_ {x}, c_ {y}, c_ {z})$、サイズ$(h, w, l)$、heading angle $\theta$である。
 
 ## どうやって有効だと検証した?
 
