@@ -11,7 +11,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 各ページ(ディレクトリ)の説明をする.
 
 ### [Papers](./papers)
-[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. **文章中に存在する[※ 任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
+[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. また、英語表記の内容もあるが、こちらは論文中の内容をそのまま引用している. **文章中に存在する[※ 任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
 
 #### status
 ページ内の進行具合を示すものである. 以下4つに分かれる. 
@@ -20,7 +20,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 - 参照: 他のページを参照するようにリンクを貼っているもの
 - 未完: 更新中もしくは更新を放棄しているもの
 - 修正: ちゃんと理解する必要して修正する必要がある. 
-- 導入: AbstractとIntroduceを読んで図を把握したものである。 
+- 導入: AbstractとIntroduceを読み、図を把握したものである。 
 
 #### read
 論文内で読んだ部分を示す. 

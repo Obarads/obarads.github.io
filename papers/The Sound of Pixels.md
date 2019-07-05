@@ -84,7 +84,7 @@ Hang Zhao, Chuang Gan, Andrew Rouditchenko, Carl Vondrick, Josh McDermott, Anton
 なし
 
 ## key-words
-Video
+Video, Sound
 
 ## status
 修正

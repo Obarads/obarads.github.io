@@ -38,6 +38,11 @@ background:rgb(33, 83, 219);
 color:#fff;
 }
 
+.__Depth_Completion{
+background:rgb(33, 83, 219);
+color:#fff;
+}
+
 .__Domain_Adaptation{
 background:rgb(33, 83, 219);
 color:#fff;
@@ -84,13 +89,13 @@ color:#fff;
 }
 
 .__RGB_Image{
-  background:rgb(0, 143, 59);
-  color:#fff;
+background:rgb(0, 143, 59);
+color:#fff;
 }
 
 .__Depth_Image{
-  background:rgb(0, 143, 59);
-  color:#fff;
+background:rgb(0, 143, 59);
+color:#fff;
 }
 
 .__Mesh{
@@ -110,6 +115,16 @@ color:#fff;
 
 .__Video{
 background:rgb(0, 143, 59);
+color:#fff;
+}
+
+.__Sound{
+background:rgb(0, 143, 59);
+color:#fff;
+}
+
+.__Sensor_Fusion{
+background:rgb(216,0,0);
 color:#fff;
 }
 

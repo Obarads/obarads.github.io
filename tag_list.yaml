@@ -5,6 +5,7 @@ data: [
   "'Point Cloud'",
   "'Voxel'",
   "'Video'",
+  "'Sound'",
 ]
 
 method: [
@@ -16,6 +17,7 @@ method: [
 ]
 
 etc: [
+  "'Sensor Fusion'",
   "'AutoEncoder'",
   "'GAN'",
   "'Graph'",
@@ -37,6 +39,7 @@ task: [
   "'Dataset'",
   "'Detection'",
   "'Depth Estimation'",
+  "'Depth Completion'",
   "'Domain Adaptation'",
   "'Few-Shot'",
   "'Flow Estimation'",
