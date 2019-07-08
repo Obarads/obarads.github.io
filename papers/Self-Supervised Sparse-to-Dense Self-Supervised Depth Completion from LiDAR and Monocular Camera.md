@@ -114,7 +114,7 @@ Fangchang Ma, Guilherme Venturelli Cavalheiro, and Sertac Karaman
 なし
 
 ## key-words
-RGB_Image, Depth_Completion, Sensor_Fusion, Video
+Self-Supervised_Learning, RGB_Image, Depth_Completion, Sensor_Fusion, Video
 
 ## status
 修正
