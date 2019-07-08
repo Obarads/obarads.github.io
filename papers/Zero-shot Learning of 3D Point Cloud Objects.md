@@ -1,7 +1,7 @@
 # Zero-shot Learning of 3D Point Cloud Objects
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1902.10272)  
-Github Issues : 
+Github Issues : [#128](https://github.com/Obarads/obarads.github.io/issues/128)
 
 ## どんなもの?
 3Dオブジェクトに対してzero-shot learning(ZSL)を適応する。ZSLにより、通常の3Dオブジェクト認識では対応できなかった未確認クラスのオブジェクトに対する識別を行えるようになる(図1)。
@@ -58,7 +58,7 @@ Ali Cheraghian, Shafin Rahman, Lars Petersson
 なし
 
 ## key-words
-Point_Cloud, Zero-Shot
+Point_Cloud, Zero-Shot_Learning
 
 ## status
 修正

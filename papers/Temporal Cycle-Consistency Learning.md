@@ -33,7 +33,7 @@ Dwibedi, Aytar, Tompson, Sermanet, Zisserman.
 なし
 
 ## key-words
-Video, Self-Supervised_Learning, Few-Shot
+Video, Self-Supervised_Learning, Few-Shot_Learning
 
 ## status
 未完

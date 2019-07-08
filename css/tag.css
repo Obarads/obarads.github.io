@@ -48,11 +48,6 @@ background:rgb(33, 83, 219);
 color:#fff;
 }
 
-.__Few-Shot{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
 .__Flow_Estimation{
 background:rgb(33, 83, 219);
 color:#fff;
@@ -84,11 +79,6 @@ color:#fff;
 }
 
 .__Semantic_Segmentation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Zero-Shot{
 background:rgb(33, 83, 219);
 color:#fff;
 }
@@ -204,6 +194,16 @@ color:#000;
 }
 
 .__Supervised_Learning{
+background:rgb(255, 255, 75);
+color:#000;
+}
+
+.__Few-Shot_Learning{
+background:rgb(255, 255, 75);
+color:#000;
+}
+
+.__Zero-Shot_Learning{
 background:rgb(255, 255, 75);
 color:#000;
 }

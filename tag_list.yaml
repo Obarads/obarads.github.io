@@ -13,7 +13,9 @@ method: [
   "'Reinforcement Learning'",
   "'Self-Supervised Learning'",
   "'Unsupervised Learning'",
-  "'Supervised Learning'"
+  "'Supervised Learning'",
+  "'Few-Shot Learning'",
+  "'Zero-Shot Learning'"
 ]
 
 etc: [
@@ -41,7 +43,6 @@ task: [
   "'Depth Estimation'",
   "'Depth Completion'",
   "'Domain Adaptation'",
-  "'Few-Shot'",
   "'Flow Estimation'",
   "'Gaze Estimation'",
   "'Instance Segmentation'",
@@ -49,5 +50,4 @@ task: [
   "'Registration'",
   "'SLAM'",
   "'Semantic Segmentation'",
-  "'Zero-Shot'"
 ]
