@@ -1,7 +1,7 @@
 # Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1703.10593)
-Github : [#65](https://github.com/Obarads/obarads.github.io/issues/65)
+Github Issues : [#65](https://github.com/Obarads/obarads.github.io/issues/65)
 
 ## どんなもの?
 ドメインAのからドメインBへのImage to Imageを目的としたGANを提案した。ただし、このドメインに含まれるデータにはペアになるようなラベルが組み込まれていない。

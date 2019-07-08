@@ -1,7 +1,7 @@
 # PointRCNN: 3D Object Proposal Generation and Detection from Point Cloud
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1812.04244)
-本レポジトリのページ : [#96](https://github.com/Obarads/obarads.github.io/issues/96)
+Github Issues : [#96](https://github.com/Obarads/obarads.github.io/issues/96)
 
 ## どんなもの?
 2つのステージで構成される検知フレームワークPointRCNNを提案した。入力として点群を受け取る。

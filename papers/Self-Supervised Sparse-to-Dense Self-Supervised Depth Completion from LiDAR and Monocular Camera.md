@@ -1,7 +1,7 @@
 # Self-Supervised Sparse-to-Dense: Self-Supervised Depth Completion from LiDAR and Monocular Camera
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1807.00275)  
-Github Issues : 
+Github Issues : [#123](https://github.com/Obarads/obarads.github.io/issues/123)
 
 ## どんなもの?
 スパースな深度表現から密な深度表現を予測するDepth completion(深度補完)にself-supervised learningを適応したモデルを提案した。著者らはこのタスクに含まれる以下の課題に対して取り組んだ。

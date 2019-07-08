@@ -1,10 +1,10 @@
 # Self-supervised Visual Descriptor Learning for Dense Correspondence
 
 元の論文の公開ページ : [homes.cs.washington.edu](https://homes.cs.washington.edu/~tws10/3163.pdf)  
-Github Issues : 
+Github Issues : [#126](https://github.com/Obarads/obarads.github.io/issues/126)
 
 ## どんなもの?
-SLAMを使ってビデオのフレーム中に含まれるピクセルを他のフレームのピクセルと比べて損失を小さくする。よくわからなかったため修正。
+SLAMを使ってビデオのフレーム中に含まれるピクセルの記述子を他のフレームのピクセルの記述子と比べて損失を小さくする。よくわからなかったため後で修正。
 
 ## 先行研究と比べてどこがすごいの?
 

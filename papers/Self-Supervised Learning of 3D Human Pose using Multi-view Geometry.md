@@ -1,7 +1,7 @@
 # Self-Supervised Learning of 3D Human Pose using Multi-view Geometry
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1903.02330)  
-Github Issues : 
+Github Issues : [#125](https://github.com/Obarads/obarads.github.io/issues/125)
 
 ## どんなもの?
 3D ground truthデータとカメラの外部パラメータを使用せずに、マルチビュー画像(複数の視点からの画像)と事前訓練された2D人姿勢推定器を用いて3D人姿勢推定器を訓練する手法を提案した。この手法を著者らはEpipolarPoseと呼ぶ。また、姿勢推定モデルの評価基準としてPose Structure Score (PSS)を提案した(ただし、この評価基準は損失関数に導入できない)。

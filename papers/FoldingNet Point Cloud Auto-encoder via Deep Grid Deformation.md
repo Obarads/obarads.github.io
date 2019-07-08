@@ -1,7 +1,7 @@
 # FoldingNet: Point Cloud Auto-encoder via Deep Grid Deformation
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1712.07262)
-本レポジトリのページ : [#22](https://github.com/Obarads/obarads.github.io/issues/22)
+Github Issues : [#22](https://github.com/Obarads/obarads.github.io/issues/22)
 
 ## どんなもの?
 点群をEncoderで符号化した後に、紙の様な2Dの点群と先程の符号化したものを用いて入力と同じものに復元するFoldingNetと呼ばれるAutoEncoderを提案した(じゃんけんで言えは紙で石を包む感じ)。

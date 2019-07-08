@@ -49,4 +49,5 @@ task: [
   "'Registration'",
   "'SLAM'",
   "'Semantic Segmentation'",
+  "'Zero-Shot'"
 ]

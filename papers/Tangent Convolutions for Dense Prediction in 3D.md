@@ -1,7 +1,7 @@
 # Tangent Convolutions for Dense Prediction in 3D
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/pdf/1807.02443.pdf)
-本レポジトリのページ : [#9](https://github.com/Obarads/obarads.github.io/issues/9)
+Github Issues : [#9](https://github.com/Obarads/obarads.github.io/issues/9)
 
 ## どんなもの?
 tangent convolutionの概念に基づいて表面の畳み込みネットワークのための代替構成を開発した。隠れている表面を必要とせず、近似的な法線ベクトル推定をサポートしている任意の形式(点群、メッシュ、polygon soup)で扱える。

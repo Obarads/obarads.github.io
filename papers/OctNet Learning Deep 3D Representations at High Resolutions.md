@@ -1,7 +1,7 @@
 # OctNet: Learning Deep 3D Representations at High Resolutions
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1611.05009)  
-本レポジトリのページ : [#46](https://github.com/Obarads/obarads.github.io/issues/46)
+Github Issues : [#46](https://github.com/Obarads/obarads.github.io/issues/46)
 
 ## どんなもの?
 入力(ボクセル)のスパース性を利用して、各リーフノードがプールされた特徴表現を保存している不均一なoctreeのセットを使い、空間を階層的に分割するモデルを提案した。

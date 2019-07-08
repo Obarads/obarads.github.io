@@ -1,7 +1,7 @@
 # Unsupervised Learning of Visual Representations using Videos
 
 元の論文の公開ページ : [cvf](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Wang_Unsupervised_Learning_of_ICCV_2015_paper.pdf)  
-Github Issues : 
+Github Issues : [#127](https://github.com/Obarads/obarads.github.io/issues/127)
 
 ## どんなもの?
 ラベルなしのビデオで動くオブジェクトをトラッキングし、そのトラッキングしている領域(パッチ画像)をCNNに与えて視覚表現学習を行う教師なし学習手法を提案した。トラッキングで得られるパッチ画像は基本的に同じ単体のオブジェクトもしくはその部分を映し出している。そのため、ビデオ内のトラッキングで得られた複数のパッチ画像は同様の視覚表現を持つように訓練が可能である。本提案の概要は図1の通り。
@@ -44,7 +44,7 @@ Xiaolong Wang and Abhinav Gupta
 なし
 
 ## key-words
-Self-Supervised_Learning, 2D_Image, Video
+Self-Supervised_Learning, RGB_Image, Video
 
 ## status
 導入

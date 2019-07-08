@@ -1,7 +1,7 @@
 # MarrNet: 3D Shape Reconstruction via 2.5D Sketches
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.03129)
-Github Issuse : [#29](https://github.com/Obarads/obarads.github.io/issues/29)
+Github Issues : [#29](https://github.com/Obarads/obarads.github.io/issues/29)
 
 ## どんなもの?
 RGB画像を2.5Dスケッチと呼ばれる立体構造を把握しやすい画像に変換させ、2.5Dスケッチから3Dボクセルオブジェクトを生成するMarrNetを提案した。

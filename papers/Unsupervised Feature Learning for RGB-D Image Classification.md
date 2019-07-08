@@ -1,7 +1,7 @@
 # Unsupervised Feature Learning for RGB-D Image Classification
 
 元の論文の公開ページ : [staff.ustc.edu.cn](http://staff.ustc.edu.cn/~lszhuang/Doc/2014-ACCV-RGBD_Feature_Learning.pdf)  
-Github Issues : 
+Github Issues : [#124](https://github.com/Obarads/obarads.github.io/issues/124)
 
 ## どんなもの?
 RGB-D画像のための深層学習アーキテクチャを提案する。具体的には、deep Regularized Reconstruction Independent Component Analysis network $(R^2ICA)$とそれをブロックとして含む多層ニューラルネットワークを提案する。$R^2ICA$はグレースケール画像と深度画像との関係を符号化し、画像表現におけるシーン&オブジェクト構造の特徴付を容易にする役割を持っている。
