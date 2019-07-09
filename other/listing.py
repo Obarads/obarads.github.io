@@ -11,7 +11,7 @@ from distutils.util import strtobool
 
 def extract_data(path):
     status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
-    md_list = glob.glob("./"+ path +"/*.md")
+    md_list = glob.glob(path)
     path_list = md_list
     info_list = []
     kw_tags = []
@@ -77,8 +77,9 @@ def main():
     css = args.css
 
     if mode=="l":
-        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("../papers")
-        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("../complementary")
+        print(os.path.dirname(os.path.abspath(__file__)))
+        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data(os.path.dirname(os.path.abspath(__file__))+"../papers/*.md")
+        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data(os.path.dirname(os.path.abspath("../complementary"))+"*.md")
 
         kwt = kw_tags_papers
 
