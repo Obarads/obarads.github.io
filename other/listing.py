@@ -77,8 +77,8 @@ def main():
     css = args.css
 
     if mode=="l":
-        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("papers")
-        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("complementary")
+        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data("../papers")
+        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("../complementary")
 
         kwt = kw_tags_papers
 
@@ -95,7 +95,7 @@ def main():
         kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
         date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
 
-        with open('js/list.js', 'w', encoding="utf-8") as f:
+        with open('../js/list.js', 'w', encoding="utf-8") as f:
             f.writelines(info_list_papers)
             f.writelines(kw_tags_papers)
             f.writelines(date_tags_papers)
@@ -104,7 +104,7 @@ def main():
             f.writelines(date_tags_complementary)
             f.close()
 
-        with open('css/tag_temp.css', 'w') as f:
+        with open('../css/tag_temp.css', 'w') as f:
             f.writelines(kw_tags)
             f.close()
 

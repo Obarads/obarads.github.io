@@ -30,7 +30,7 @@ def main():
     # parser.add_argument('--conv-layers', '-c', type=int, default=4)
     args = parser.parse_args()
 
-    check_files(path="papers")
+    check_files(path="../papers")
 
 if __name__ == '__main__':
     main()
