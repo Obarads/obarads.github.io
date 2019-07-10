@@ -48,6 +48,6 @@
 2016/12/31
 
 ## key-words
-Preprocessing, RGB_Image
+RGB_Image
 
 ## 参考文献
