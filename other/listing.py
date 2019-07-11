@@ -7,18 +7,18 @@ import copy
 import argparse
 import yaml
 import numpy as np
+import re
 from distutils.util import strtobool
 
 def extract_data(path):
     status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
-    md_list = glob.glob(path)
+    md_list = glob.glob(path+"*.md")
     path_list = md_list
     info_list = []
     kw_tags = []
     date_tags = []
     status_tags = []
-    md_list = [m.replace("./"+ path +"/","").replace(".md","") for m in md_list] #linux path
-    md_list = [m.replace("./"+ path +"\\","").replace(".md","") for m in md_list] #windows path
+    md_list = [os.path.split(m)[1].replace(".md","") for m in md_list]
     for (ml,pl) in zip(md_list,path_list):
         with open(pl, 'r',encoding="utf-8") as f:
             content = f.read().split("\n")
@@ -77,9 +77,9 @@ def main():
     css = args.css
 
     if mode=="l":
-        print(os.path.dirname(os.path.abspath(__file__)))
-        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data(os.path.dirname(os.path.abspath(__file__))+"../papers/*.md")
-        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data(os.path.dirname(os.path.abspath("../complementary"))+"*.md")
+        PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
+        info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data(PATH+"/papers/")
+        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("../complementary/")
 
         kwt = kw_tags_papers
 
@@ -96,7 +96,7 @@ def main():
         kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
         date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
 
-        with open('../js/list.js', 'w', encoding="utf-8") as f:
+        with open(PATH+'/js/list.js', 'w', encoding="utf-8") as f:
             f.writelines(info_list_papers)
             f.writelines(kw_tags_papers)
             f.writelines(date_tags_papers)
@@ -105,7 +105,7 @@ def main():
             f.writelines(date_tags_complementary)
             f.close()
 
-        with open('../css/tag_temp.css', 'w') as f:
+        with open(PATH+'/css/tag_temp.css', 'w') as f:
             f.writelines(kw_tags)
             f.close()
 
@@ -142,14 +142,14 @@ def main():
             if l == False:
                 print(i)
 
-        with open('js/tag_s_list.js', 'w') as f:
+        with open(PATH+'/js/tag_s_list.js', 'w') as f:
             f.writelines("function tag_task_list(){ return [" + ",".join(sorted(task))+"]}\n")
             f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
             f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
             f.writelines("function tag_method_list(){ return [" + ",".join(sorted(method))+"]}\n")
 
         if css:
-            with open('css/tag.css', 'w') as f:
+            with open(PATH+'/css/tag.css', 'w') as f:
                 f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
                 f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
                 f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))

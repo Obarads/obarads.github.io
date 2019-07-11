@@ -65,7 +65,7 @@ Eldar Insafutdinov and Alexey Dosovitskiy.
 アンサンブルについて詳しくないから意味あってるのかよくわからん。
 
 ## key-words
-RGB_Image, Point_Cloud, 3D_Estimation
+Unsupervised_Learning, RGB_Image, Point_Cloud, 3D_Estimation
 
 ## status
 更新済

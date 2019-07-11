@@ -51,7 +51,7 @@ function create_links(link) {
     tags = link[1].split(',').map(create_tag);
   }
   tags = tags.join(" ");
-  return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md" target="_blank">' + link[0] + '</a> ' + tags + ' </td><td>' + link[2] + '</td><td>' + link[3] + '</td></tr>';
+  return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md" target="_blank">' + link[0] + '</a><br>' + tags + '</td><td>' + link[2] + '</td><td>' + link[3] + '</td></tr>';
 }
 
 function search(il, tl, title, path, mode) {
@@ -101,6 +101,7 @@ function search(il, tl, title, path, mode) {
   table_show_and_hide();
 
   transform_size = 576
+
   /*create this page*/
   $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = title
@@ -154,6 +155,8 @@ function search(il, tl, title, path, mode) {
       }
       table_show_and_hide();
     });
+
+    /* table column sw */
     $('.btn-column').click(function () {
       var column_name = $(this).html().split(' ')[0];
       var column_dict = { 'Title': 1, 'Year': 2, 'Status': 3 };
@@ -164,6 +167,14 @@ function search(il, tl, title, path, mode) {
         .toggleClass("column-hidden");
       $(this).toggleClass("bc-hovered");
     });
+
+    /* display year and status or not*/
+    var size = document.getElementById("body").clientWidth;
+    if (size < transform_size) {
+        document.getElementById("__Year").click();
+        document.getElementById("__Status").click();
+    }
+
     $('#_initialization_button').bind("click", function () {
       //var len=$('tbody tr').filter(':visible').length;
       //console.log(len);

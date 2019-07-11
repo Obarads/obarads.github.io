@@ -37,7 +37,7 @@ Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros.
 資料を信じているため論文は見ていない。
 
 ## key-words
-RGB_Image, GAN
+Unsupervised_Learning, RGB_Image, GAN
 
 ## status
 参照
