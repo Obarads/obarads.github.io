@@ -63,12 +63,22 @@ background:rgb(33, 83, 219);
 color:#fff;
 }
 
+.__Labeling{
+background:rgb(33, 83, 219);
+color:#fff;
+}
+
 .__One-Class___Anomaly_Detection{
 background:rgb(33, 83, 219);
 color:#fff;
 }
 
 .__Registration{
+background:rgb(33, 83, 219);
+color:#fff;
+}
+
+.__Reconstruction{
 background:rgb(33, 83, 219);
 color:#fff;
 }

@@ -76,10 +76,12 @@ def main():
     mode = args.mode
     css = args.css
 
+    PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
+    PATH_OTHER = os.path.dirname(os.path.abspath(__file__))
+
     if mode=="l":
-        PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
         info_list_papers,kw_tags_papers,date_tags_papers,status_tags_papers = extract_data(PATH+"/papers/")
-        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data("../complementary/")
+        info_list_complementary,kw_tags_complementary,date_tags_complementary,status_tags_complementary = extract_data(PATH+"/complementary/")
 
         kwt = kw_tags_papers
 
@@ -109,16 +111,16 @@ def main():
             f.writelines(kw_tags)
             f.close()
 
-        with open('tag_list_temp.yaml', 'w', encoding="utf-8") as f:
+        with open(PATH_OTHER + '/tag_list_temp.yaml', 'w', encoding="utf-8") as f:
             f.writelines("other: [")
             for kt in kwt:
                 f.writelines('"'+kt+'",\n')
             f.writelines("]")
 
     elif mode=="t":
-        with open('tag_list.yaml') as f:
+        with open(PATH_OTHER + '/tag_list.yaml') as f:
             yml = yaml.load(f)
-        with open('tag_list_temp.yaml') as f:
+        with open(PATH_OTHER + '/tag_list_temp.yaml') as f:
             yml_0 = yaml.load(f)
             confirmation_origin = np.array(sorted(yml_0["other"]))
         task = yml["task"]

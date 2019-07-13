@@ -4,7 +4,15 @@
 Github Issues : 
 
 ## どんなもの?
+点ごとのアノテーションを持つ大規模点群データセットを作成するための点群アノテーションフレームワークを提案する。本フレームワークではhuman-in-loop学習を採用している。著者らの提案するフレームワークの概要図は図1の通り。本手法は人による部分的でまばらな注釈(Manual Annotation)を用いて始まり、次に3Dの幾何学的なキュー(手がかり)を用いてregio growing stepを行う。その後は、以下の手順は繰り返す。
 
+1. 新たに利用できるアノテーションを使用してModelのfine-turningを行う。
+2. アノテーションされた点群の予測を行う。
+3. 人による予測の修正を行う。
+
+![fig1](img/FPCRAwHitL/fig1.png)
+
+[※ fine-turningで使用できるアノテーションはかなり少ないため、Few-shot Learningの扱いとなる。]
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -33,11 +41,12 @@ Siddhant Jain, Sowmya Munukutla, and David Held
 なし
 
 ## key-words
-Point_Cloud, Few-Shot_Learning
+Point_Cloud, Few-Shot_Learning, Labeling
 
 ## status
-未完
+導入
 
 ## read
+A, I
 
 ## Citation

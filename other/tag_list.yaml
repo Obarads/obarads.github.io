@@ -46,8 +46,10 @@ task: [
   "'Flow Estimation'",
   "'Gaze Estimation'",
   "'Instance Segmentation'",
+  "'Labeling'",
   "'One-Class & Anomaly Detection'",
   "'Registration'",
+  "'Reconstruction'",
   "'SLAM'",
   "'Semantic Segmentation'",
 ]

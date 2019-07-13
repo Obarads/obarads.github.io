@@ -1,7 +1,7 @@
 # Large-scale Point Cloud Semantic Segmentation with Superpoint Graphs
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.09869)  
-Github Issues : 
+Github Issues : [#129](https://github.com/Obarads/obarads.github.io/issues/129)
 
 ## どんなもの?
 画像セグメンテーションにおけるスーパポイント手法[1]と同様の意図を持って、著者らはスーパーポイントで作られた、相互のつながりを持つシンプルな形状の一群として大規模3D点群の表現することを提案する。図1に示すように、super-point graph(SGP)と呼ばれる属性付き有向グラフによって構造を取得することができる。ノードはシンプルな形状を示し、一方でエッジは隣接関係を示す。

@@ -21,19 +21,24 @@ Github Issues :
 1. なし
 
 ## 会議
+TCSVT 2016
 
 ## 著者
+Keze Wang, Dongyu Zhang, Ya Li, Ruimao Zhang, and Liang Lin
 
 ## 投稿日付(yyyy/MM/dd)
+2017/01/13
 
 ## コメント
 なし
 
 ## key-words
+Active_Learning
 
 ## status
 未完
 
 ## read
+A
 
 ## Citation
