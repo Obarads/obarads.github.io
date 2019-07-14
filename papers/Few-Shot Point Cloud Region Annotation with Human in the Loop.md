@@ -1,7 +1,7 @@
 # Few-Shot Point Cloud Region Annotation with Human in the Loop
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1906.04409)  
-Github Issues : 
+Github Issues : [#130](https://github.com/Obarads/obarads.github.io/issues/130)
 
 ## どんなもの?
 点ごとのアノテーションを持つ大規模点群データセットを作成するための点群アノテーションフレームワークを提案する。本フレームワークではhuman-in-loop学習を採用している。著者らの提案するフレームワークの概要図は図1の通り。本手法は人による部分的でまばらな注釈(Manual Annotation)を用いて始まり、次に3Dの幾何学的なキュー(手がかり)を用いてregio growing stepを行う。その後は、以下の手順は繰り返す。
