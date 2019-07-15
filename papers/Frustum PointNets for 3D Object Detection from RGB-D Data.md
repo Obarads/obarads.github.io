@@ -54,7 +54,35 @@ RGB-Dデータを使用した3D検知モデル、Frustum PointNetを提案した
 [※ light-weight regression PointNetは軽い回帰を行うPointNet、つまりPointNetそのものの亜種ではなくPointNetの一部分を指していると考えたほうがよさそう]
 
 #### Amodal 3D Box Estimation PointNet
-box estimation networkはamodal bouding boxesを予測する(図4(d))。ネットワークアーキテクチャはPointNetとほぼ同様であるが、最後の出力をクラス予測から3Dバウンディングボックスパラメータの回帰に変更する。3Dバウンディングボックスパラメータは中央値$(c_ {x}, c_ {y}, c_ {z})$、サイズ$(h, w, l)$、heading angle $\theta$である。
+box estimation networkはamodal bouding boxesを予測する(図4(d))。ネットワークアーキテクチャはPointNetとほぼ同様であるが、最後の出力をクラス予測から3Dバウンディングボックスパラメータの回帰に変更する。
+
+3Dバウンディングボックスパラメータは中央値$(c_ {x}, c_ {y}, c_ {z})$、サイズ$(h, w, l)$、heading angle $\theta$である。3Dバウンディングボックスの中心推定は「残差」アプローチによって決まる。これは、box estimation networkが出力した中心残差、maskingされた点の重心、T-Netから算出された以前の中心残差を組み合わし、最終的な絶対的な中心座標を回帰する(式1)。
+
+$$
+C_{p r e d}=C_{m a s k}+\Delta C_{t-n e t}+\Delta C_{b o x-n e t} \tag{1}
+$$
+
+また、ボックスサイズとheading angleは[1,2]に従い、分類と回帰公式のハイブリッドを使う。具体的な内容は省略。
+
+[※ 「絶対的な」はおそらく実世界の採寸、最終的な位置などの意味を指すと思われる。]
+
+### Training with Multi-task Losses
+著者らはマルチタスク損失(式2)を用いて3つのネットワーク(3D instance segmentation PointNet, T-Netとamodal box estimation PointNet)を最適化する。分類問題にはソフトマックス、回帰にはsmooth-$l_ 1$損失が使われる。
+
+$$
+\begin{aligned} L_{\text {multi}-\text {task}}=& L_{\text {seg}}+\lambda\left(L_{c 1-r e g}+L_{c 2-r e g}+L_{h-c l s}+\right.\\ & L_{h-r e g}+L_{s-c l s}+L_{s-r e g}+\gamma L_{corner} ) \end{aligned} tag{2}
+$$
+
+式(2)はT-Netの$L_ {c1-reg}$、box estimation netの中心回帰の$L_ {c2-reg}$、$L_ {h-cls}$と$L_ {h-reg}$のheading angle予測損失、$L_ {s-cls}$と$L_ {h-reg}$のボックスサイズから構成されている。$L_{corner}$は後ほど。
+
+#### Corner Loss for Joint Optimization of Box Parameters
+上記の3つのネットワークの損失を足し合わせた損失だけでは3つのパラメータが個々に最適化されない(例:中心とサイズは正確だがheading angleがずれ、3D IoU値がheading angleに依存する)。そこで、IoU測定法の下、3つのパラメータを共同で最適化する、corner損失と呼ばれる新規正則化損失(式3)を追加する。
+
+$$
+L_{\text {corner}}=\sum_{i=1}^{N S} \sum_{j=1}^{N H} \delta_{i j} \min \left\{\sum_{k=1}^{8}\left\|P_{k}^{i j}-P_{k}^{*}\right\|, \sum_{i=1}^{8}\left\|P_{k}^{i j}-P_{k}^{* *}\right\|\right\} \tag{3}
+$$
+
+この損失は、予測した3Dボックスとground truth boxにある8つの角の距離比較を行っている。詳細は省略。
 
 ## どうやって有効だと検証した?
 
@@ -64,7 +92,8 @@ box estimation networkはamodal bouding boxesを予測する(図4(d))。ネッ�
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in neural information processing systems, pages 91–99, 2015.](https://arxiv.org/pdf/1506.01497.pdf)
+2. [A. Mousavian, D. Anguelov, J. Flynn, and J. Kosecka. 3d bounding box estimation using deep learning and geometry. arXiv preprint arXiv:1612.00496, 2016.](https://arxiv.org/abs/1612.00496)
 
 ## 会議
 CVPR 2018
@@ -82,7 +111,7 @@ Charles R. Qi, Wei Liu, Chenxia Wu, Hao Su, Leonidas J. Guibas.
 Point_Cloud, Detection, RGB_Image, Depth_Image
 
 ## status
-未完
+省略
 
 ## read
 A, I, M

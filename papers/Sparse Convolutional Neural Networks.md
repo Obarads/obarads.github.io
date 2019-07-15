@@ -4,13 +4,11 @@
 Github Issues : [#101](https://github.com/Obarads/obarads.github.io/issues/101)
 
 ## どんなもの?
-スパース分解を使ったCNNで精度を維持しながらも劇的に計算量を下げるという論文。
+スパース分解を使ったCNNで精度を維持しながらも劇的に計算量を下げる提案をした。著者らはSparse Convolutional Neural Networks(SCNN)のための効率的な疎行列の乗算アルゴリズムを提案、CPUで実装した。更に、これらの実装をオブジェクト検知タスクに適応した。
 
 ## 先行研究と比べてどこがすごいの?
 
-
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-これらのネットワークには大きな過剰性(この過剰性というのは、おそらくネットワーク中に含まれる)
 
 ## どうやって有効だと検証した?
 
@@ -23,17 +21,22 @@ Github Issues : [#101](https://github.com/Obarads/obarads.github.io/issues/101)
 1. なし
 
 ## 会議
+CVPR 2015
 
 ## 著者
+Baoyuan Liu, Min Wang, Hassan Foroosh, Marshall Tappen, and Marianna Penksy
 
 ## 投稿日付(yyyy/MM/dd)
 2015/10/15
 
 ## コメント
-なし
+なぜ、ネットワーク内に冗長性が生まれるのかを調べて理解した上で読んだほうが良いため修正にした。あと、この論文は後回しでいいか。
 
 ## key-words
 RGB_Image, Sparsity
 
 ## status
-未完
+修正
+
+## read
+A, I
