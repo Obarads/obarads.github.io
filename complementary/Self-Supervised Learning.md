@@ -1,4 +1,7 @@
-# self-supervised
+# Self-Supervised Learning
+
+間違いあり、修正予定
+
 ## About
 self-supervisedとは、アノテーションなしで有用な特徴量を抽出できるネットワークを構築すること。ネットワークを構築するにあたって、pretext taskと呼ばれる事前トレーニングを行う。通常、下図の様にfine-tuningや転移学習でネットワークの性能を上げるために事前学習済みのモデルを使う。通常の事前訓練とself-supervised学習との違いは以下の通り。
 
@@ -55,4 +58,4 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 7. [Andrew Zisserman, Self-Supervised Learning](https://project.inria.fr/paiss/files/2018/07/zisserman-self-supervised.pdf)
 
 ## key-words
-Self-supervised, RGB_Image, Fine-tuning, Transfer_learning
+Self-Supervised_Learning

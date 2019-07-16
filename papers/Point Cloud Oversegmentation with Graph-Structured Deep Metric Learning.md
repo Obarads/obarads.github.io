@@ -82,7 +82,7 @@ Loic Landrieu, Mohamed Boussaha.
 なし
 
 ## key-words
-Supervised_Learning, Point_Cloud, Semantic_Segmentation
+Supervised_Learning, Point_Cloud, Semantic_Segmentation, Oversegmentation
 
 ## status
 導入

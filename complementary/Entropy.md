@@ -115,7 +115,6 @@ $$
 
 
 ## key-words
-Entropy
 
 
 ## 参考文献

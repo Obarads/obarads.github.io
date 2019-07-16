@@ -91,4 +91,4 @@ LRFやLiDAR、車輪エンコーダー、カメラなどから自分の位置や
 5. [peisuke, ChainerでDeep Learningをしない（SfMからSLAMまで）. (アクセス:2019/04/08)](https://qiita.com/peisuke/items/fbe00bacb22df8115323)
 
 ## key-words
-SLAM, RGB_Image
+SLAM

@@ -49,6 +49,7 @@ task: [
   "'Instance Segmentation'",
   "'Labeling'",
   "'One-Class & Anomaly Detection'",
+  "'Oversegmentation'",
   "'Registration'",
   "'Reconstruction'",
   "'SLAM'",

@@ -17,6 +17,10 @@ tbody tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0);
 }
 
+.table{
+    padding-top: 7px;
+}
+
 .table td, .table th {
     border-top: inherit;
 }
@@ -30,7 +34,7 @@ table tbody td, th {
 }
 
 .table td, .table th {
-    padding: 0.5rem;
+    padding: 0.3rem;
 }
 
 .title-font{

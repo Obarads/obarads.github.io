@@ -89,4 +89,3 @@ $$
 
 
 ## key-words
-Math, Optimization, Curriculum_learning

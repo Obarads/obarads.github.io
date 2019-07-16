@@ -51,7 +51,7 @@ function create_links(link) {
     tags = link[1].split(',').map(create_tag);
   }
   tags = tags.join(" ");
-  return '<tr ><td><a class="paper_title title-font" href="#' + link[0] + '.md" target="_blank">' + link[0] + '</a><br>' + tags + '</td><td>' + link[2] + '</td><td>' + link[3] + '</td></tr>';
+  return '<tr><td><div><a class="paper_title title-font" href="#' + link[0] + '.md" target="_blank">' + link[0] + '</a></div>' + tags + '</td><td class="align-middle text-center">' + link[2] + '</td><td class="align-middle text-center">' + link[3] + '</td></tr>';
 }
 
 function search(il, tl, title, path, mode) {
