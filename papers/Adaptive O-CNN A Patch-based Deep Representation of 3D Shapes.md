@@ -51,13 +51,13 @@ POをOによって制限されたPとすると局所領域の形状近似値δO�
   下の図がAO-CNNのデコーダーである。デコーダーではoctant内の形状の近似状態を推定する。推定する状態の種類はempty、surface-well-approximatedと surface-poorly-approximatedの3つである。
 
 #### 近似状態
-##### surface-poorly-approximated
+- **surface-poorly-approximated**  
 この状態であるoctantは更に細分化され、含まれている特徴も細分化されたものへdeconvolution演算子を介して渡される。
 
-##### surface-well-approximated
+- **surface-well-approximated**  
 この状態であるoctantはそこで細分化をやめ、octantのレベルもそこで止まる。
 
-##### empty
+- **empty**  
 これに関しては説明なし。多分無視される。
 
 #### 予測モジュール
@@ -65,21 +65,21 @@ FC+BN+ReLU+FCからなり、予測モジュールの出力は局所近似ステ�
 
 #### 損失関数
 損失はstructure lossとpatch lossの2つを含む。デコーダーの損失はこの2つの損失を足し合わせたものとなる。
-##### structure loss
-予測された構造と実際の構造の相違を測る。octantのステータスは3種類あるため、3クラス分類として扱い、クロスエントロピー損失を使ってstructure lossを定義する。ここで、Hlはレベルlのoctreeのクロスエントロピーを示し、structure lossは以下のように示される。  
+- **structure loss**  
+  予測された構造と実際の構造の相違を測る。octantのステータスは3種類あるため、3クラス分類として扱い、クロスエントロピー損失を使ってstructure lossを定義する。ここで、Hlはレベルlのoctreeのクロスエントロピーを示し、structure lossは以下のように示される。  
 
-![Ls](img/AOPDo3DS/fig_5.png)
+  ![Ls](img/AOPDo3DS/fig_5.png)
 
-ここで、nlは予測されたoctreeのlレベルでのoctreeの数であり、lmaxは最大深度、wlはそれぞれのレベルで定義された重みを指す。l=2であるのは、エンコーダーと同様の理由で設計したoctreeの最も荒いレベルが2であるからである。実装ではwlを1に設定している。
+  ここで、nlは予測されたoctreeのlレベルでのoctreeの数であり、lmaxは最大深度、wlはそれぞれのレベルで定義された重みを指す。l=2であるのは、エンコーダーと同様の理由で設計したoctreeの最も荒いレベルが2であるからである。実装ではwlを1に設定している。
 
-##### patch loss
-それぞれのレベルのすべてのoctantの平面パラメータと実際の値の2乗距離誤差を測る。定義式は以下の通り。
+- **patch loss**
+  それぞれのレベルのすべてのoctantの平面パラメータと実際の値の2乗距離誤差を測る。定義式は以下の通り。
 
-![Lp](img/AOPDo3DS/fig_6.png)
+  ![Lp](img/AOPDo3DS/fig_6.png)
 
-ここでniとd☆iは予測されたパラメーターであり、n上線iとd☆上線iは一致させるべき実際の値を指し、n'lは予測されたoctreeのlレベルで分割されたoctantの数を指す。λには0.2をセットする。この論文ではoctreeのレベルが4を超えるときにoctreeを適応するため、ｌは4から始まる。この下の図はデコーダーである。
+  ここでniとd☆iは予測されたパラメーターであり、n上線iとd☆上線iは一致させるべき実際の値を指し、n'lは予測されたoctreeのlレベルで分割されたoctantの数を指す。λには0.2をセットする。この論文ではoctreeのレベルが4を超えるときにoctreeを適応するため、ｌは4から始まる。この下の図はデコーダーである。
 
-![デコーダー](img/AOPDo3DS/fig_4.png)
+  ![デコーダー](img/AOPDo3DS/fig_4.png)
 
 ## どうやって有効だと検証した?
 ModelNet40を使った分類タスクにおけるメモリ使用量と時間、精度を比較している。比較した表は以下の通り。目標通り、高効率なモデルを作成できている。
