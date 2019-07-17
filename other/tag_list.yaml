@@ -16,6 +16,7 @@ method: [
   "'Supervised Learning'",
   "'Few-Shot Learning'",
   "'Meta Learning'",
+  "'Weakly Supervised Learning'",
   "'Zero-Shot Learning'"
 ]
 
