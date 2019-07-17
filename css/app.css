@@ -25,12 +25,17 @@ h1, h2, h3, h4, h5{
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 42px;
 }
 
 h2 {
-    font-size: 42px;
+    font-size: 34px;
     margin-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom: solid 1.2px #999;
+    border-left: solid 4px #999;
+    
 }
 
 h3 {
