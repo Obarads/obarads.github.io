@@ -1,26 +1,27 @@
 /* all directory design */
 
-@font-face {
-    font-family: 'gensen-fontL';
-    src: url(../font/JP/GenSenMaruGothicJP-Light.ttf);
+@font-face{
+    font-family: noto;
+    src: url(../font/JP/NotoSansJP-Regular.otf) format('opentype');
 }
 
-@font-face {
-    font-family: 'gensen-fontR';
-    src: url(../font/JP/GenSenMaruGothicJP-Regular.ttf);
+@font-face{
+    font-family: noto-b;
+    src: url(../font/JP/NotoSansJP-Black.otf) format('opentype'),
+    url(../font/JP/NotoSansJP-Bold.otf) format('opentype');
 }
 
-.gfl {
-    font-family: cursive;
-}
-
-.gfr {
-    font-family: cursive;
+.ff-noto {
+    font-family: noto;
 }
 
 body {
     background-color: white;
     color: #333;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: noto-b;
 }
 
 h1 {
@@ -34,10 +35,6 @@ h2 {
 
 h3 {
     font-size: 34px;
-}
-
-h1 h2 h3 h4 h5{
-    font-weight: bolder;
 }
 
 li {
