@@ -8,9 +8,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 (気分によるが)論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開しています.   
 
 ## Link & Directory
-各ページ(ディレクトリ)の説明をする.
-
-### [Papers](./papers)
+### Papers
 [Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. また、英語表記の内容もあるが、こちらは論文中の内容をそのまま引用している. **文章中に存在する[※ 任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
 
 #### status
@@ -33,7 +31,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 - D: Discussion, 議論(そのような項目がある論文のみ).
 - AP: Appendix, 付録(そのような項目がある論文のみ).
 
-### [Complementary](./complementary)
+### Complementary
 [Complementary(complementaryディレクトリ)](./complementary)には各論文で出てくる単語やジャンルへの補足説明が入っている. 
 
 ## Issue page in Github

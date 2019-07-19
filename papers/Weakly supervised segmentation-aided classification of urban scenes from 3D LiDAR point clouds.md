@@ -11,6 +11,8 @@ Github Issues :
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 
+![fig4](img/Wsscousf3pc/fig4.png)
+
 ## どうやって有効だと検証した?
 
 ## 議論はある?

@@ -31,15 +31,24 @@ h1 {
 h2 {
     font-size: 34px;
     margin-top: 50px;
-    padding-bottom: 10px;
     padding-left: 10px;
-    border-bottom: solid 1.2px #999;
-    border-left: solid 4px #999;
-    
+    border-left: solid 4px #666;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #666;
 }
 
 h3 {
-    font-size: 34px;
+    font-size: 29px;
+    padding-left: 10px;
+    border-left: double 12px #999;
+    padding-bottom: 10px;
+    border-bottom: dashed 2px #999;
+}
+
+h4 {
+    font-size: 24px;
+    border-bottom: dotted 2px #999;
+    padding-bottom: 3px;
 }
 
 li {
@@ -47,17 +56,20 @@ li {
 }
 
 body a {
-    color: rgb(255, 56, 56);
+    color: #167ac6;
 }
-
 body a:hover {
     color: rgb(255, 158, 123);
+    text-decoration: unset;
+}
+
+tr a{
+    color: rgb(61, 42, 95);
 }
 
 /* header.html design */
-
 .tab-color {
-    background: rgb(61, 1, 173);
+    background: rgb(49, 6, 131);
     filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.6));
 }
 
