@@ -1,7 +1,7 @@
 # PU-Net: Point Cloud Upsampling Network
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1801.06761)  
-Github Issues : 
+Github Issues : [#132](https://github.com/Obarads/obarads.github.io/issues/132)
 
 ## どんなもの?
 3Dモデルから点に基づくパッチの幾何学的意味を学習し、学習した知識を使って与えられた点群をアップサンプリングするPU-Netを提案した。
@@ -52,6 +52,7 @@ Github Issues :
 ここでは、先程の$rN\times\tilde{C}_ 2$の拡張された特徴をから3D座標値を持つ点群を出力する。これは、全結合層を介して行われる。
 
 ### End-to-End Network Training
+後に更新
 
 ## どうやって有効だと検証した?
 
