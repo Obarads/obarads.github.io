@@ -1,6 +1,6 @@
-# Deep Image Prior
+# Salient object detection on hyperspectral images using features learned from unsupervised segmentation task
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.10925)  
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1902.10993)  
 Github Issues : 
 
 ## どんなもの?
@@ -20,24 +20,22 @@ Github Issues :
 1. なし
 
 ## 会議
-CVPR 2018
+ICASSP 2019
 
 ## 著者
-Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky.
+Nevrez Imamoglu, Guanqun Ding, Yuming Fang, Asako Kanezaki, Toru Kouyama, Ryosuke Nakamura
 
 ## 投稿日付(yyyy/MM/dd)
-2017/11/29
+2019/02/28
 
 ## コメント
 なし
 
 ## key-words
-RGB_Image
 
 ## status
 未完
 
 ## read
-A, I
 
 ## Citation

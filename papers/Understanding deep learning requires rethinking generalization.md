@@ -1,6 +1,6 @@
-# Deep Image Prior
+# Understanding deep learning requires rethinking generalization
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.10925)  
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1611.03530)  
 Github Issues : 
 
 ## どんなもの?
@@ -20,24 +20,22 @@ Github Issues :
 1. なし
 
 ## 会議
-CVPR 2018
+ICLR 2017
 
 ## 著者
-Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky.
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals
 
 ## 投稿日付(yyyy/MM/dd)
-2017/11/29
+2016/11/10
 
 ## コメント
 なし
 
 ## key-words
-RGB_Image
 
 ## status
 未完
 
 ## read
-A, I
 
 ## Citation
