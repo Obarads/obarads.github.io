@@ -18,6 +18,11 @@ background:rgb(33, 83, 219);
 color:#fff;
 }
 
+.__Completion{
+background:rgb(33, 83, 219);
+color:#fff;
+}
+
 .__Data_Augmentation{
 background:rgb(33, 83, 219);
 color:#fff;
@@ -34,11 +39,6 @@ color:#fff;
 }
 
 .__Depth_Estimation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Depth_Completion{
 background:rgb(33, 83, 219);
 color:#fff;
 }

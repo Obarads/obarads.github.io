@@ -33,6 +33,8 @@ def extract_data(path):
                         k = "'"+k+"'"
                         if not k in kw_tags:
                             kw_tags.append(k)
+                        if k == "''":
+                            print(ml)
             if "## 投稿日付(yyyy/MM/dd)" in content:
                 date_index = content.index("## 投稿日付(yyyy/MM/dd)")
                 if date_index != -1:
