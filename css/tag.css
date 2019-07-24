@@ -1,235 +1,245 @@
-.__3D_Estimation{
-background:rgb(33, 83, 219);
+.__Active_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Adversarial_Examples{
-background:rgb(33, 83, 219);
+.__Reinforcement_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Analytics{
-background:rgb(33, 83, 219);
+.__Self-Supervised_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Classification{
-background:rgb(33, 83, 219);
+.__Unsupervised_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Completion{
-background:rgb(33, 83, 219);
+.__Supervised_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Data_Augmentation{
-background:rgb(33, 83, 219);
+.__Few-Shot_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Dataset{
-background:rgb(33, 83, 219);
+.__Meta_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Detection{
-background:rgb(33, 83, 219);
+.__Weakly_Supervised_Learning{
+background:#C52233;
 color:#fff;
 }
 
-.__Depth_Estimation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Domain_Adaptation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Flow_Estimation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Gaze_Estimation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Instance_Segmentation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Labeling{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__One-Class___Anomaly_Detection{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Oversegmentation{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Registration{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Reconstruction{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__SLAM{
-background:rgb(33, 83, 219);
-color:#fff;
-}
-
-.__Semantic_Segmentation{
-background:rgb(33, 83, 219);
+.__Zero-Shot_Learning{
+background:#C52233;
 color:#fff;
 }
 
 .__RGB_Image{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Depth_Image{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Mesh{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Point_Cloud{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Voxel{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Video{
-background:rgb(0, 143, 59);
+background:#687D69;
 color:#fff;
 }
 
 .__Sound{
-background:rgb(0, 143, 59);
+background:#687D69;
+color:#fff;
+}
+
+.__3D_Estimation{
+background:#36558F;
+color:#fff;
+}
+
+.__Adversarial_Examples{
+background:#36558F;
+color:#fff;
+}
+
+.__Analytics{
+background:#36558F;
+color:#fff;
+}
+
+.__Classification{
+background:#36558F;
+color:#fff;
+}
+
+.__Completion{
+background:#36558F;
+color:#fff;
+}
+
+.__Data_Augmentation{
+background:#36558F;
+color:#fff;
+}
+
+.__Dataset{
+background:#36558F;
+color:#fff;
+}
+
+.__Denoising{
+background:#36558F;
+color:#fff;
+}
+
+.__Detection{
+background:#36558F;
+color:#fff;
+}
+
+.__Depth_Estimation{
+background:#36558F;
+color:#fff;
+}
+
+.__Domain_Adaptation{
+background:#36558F;
+color:#fff;
+}
+
+.__Flow_Estimation{
+background:#36558F;
+color:#fff;
+}
+
+.__Gaze_Estimation{
+background:#36558F;
+color:#fff;
+}
+
+.__Instance_Segmentation{
+background:#36558F;
+color:#fff;
+}
+
+.__Labeling{
+background:#36558F;
+color:#fff;
+}
+
+.__One-Class___Anomaly_Detection{
+background:#36558F;
+color:#fff;
+}
+
+.__Oversegmentation{
+background:#36558F;
+color:#fff;
+}
+
+.__Registration{
+background:#36558F;
+color:#fff;
+}
+
+.__Reconstruction{
+background:#36558F;
+color:#fff;
+}
+
+.__SLAM{
+background:#36558F;
+color:#fff;
+}
+
+.__Semantic_Segmentation{
+background:#36558F;
+color:#fff;
+}
+
+.__Super-Resolution{
+background:#36558F;
 color:#fff;
 }
 
 .__Sensor_Fusion{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__AutoEncoder{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__GAN{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Graph{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__RNN{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Interpretability{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Sparsity{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Synthetic{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__TreeRNN{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Survey{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
 }
 
 .__Robot{
-background:rgb(216,0,0);
+background:#F15025;
 color:#fff;
-}
-
-.__Active_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Reinforcement_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Self-Supervised_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Unsupervised_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Supervised_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Few-Shot_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Meta_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Weakly_Supervised_Learning{
-background:rgb(255, 255, 75);
-color:#000;
-}
-
-.__Zero-Shot_Learning{
-background:rgb(255, 255, 75);
-color:#000;
 }
 

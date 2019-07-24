@@ -41,6 +41,10 @@ table tbody td, th {
     font-size: 4.5mm;
 }
 
+tr a{
+    color: #111111;
+}
+
 /*tag button*/
 .btn-column {
     display: inline-block;
@@ -65,7 +69,7 @@ table tbody td, th {
     display: inline-block;
     padding: 0.0em 0.3em;
     text-decoration: none;
-    background: seagreen;
+    background: orange;
     color: white;
     border-radius: 3px;
     font-size: 3.7mm;

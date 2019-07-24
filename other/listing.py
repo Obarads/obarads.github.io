@@ -121,9 +121,9 @@ def main():
 
     elif mode=="t":
         with open(PATH_OTHER + '/tag_list.yaml') as f:
-            yml = yaml.load(f)
+            yml = yaml.load(f,Loader=yaml.SafeLoader)
         with open(PATH_OTHER + '/tag_list_temp.yaml') as f:
-            yml_0 = yaml.load(f)
+            yml_0 = yaml.load(f,Loader=yaml.SafeLoader)
             confirmation_origin = np.array(sorted(yml_0["other"]))
         task = yml["task"]
         data = yml["data"]
@@ -154,12 +154,11 @@ def main():
 
         if css:
             with open(PATH+'/css/tag.css', 'w') as f:
-                f.writelines(coloring_tag_template(task,propertis='background:rgb(33, 83, 219);\ncolor:#fff;'))
-                f.writelines(coloring_tag_template(data,propertis='background:rgb(0, 143, 59);\ncolor:#fff;'))
-                f.writelines(coloring_tag_template(etc,propertis='background:rgb(216,0,0);\ncolor:#fff;'))
-                f.writelines(coloring_tag_template(method,propertis='background:rgb(255, 255, 75);\ncolor:#000;'))
+                f.writelines(coloring_tag_template(method,propertis='background:#C52233;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(data,propertis='background:#687D69;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(task,propertis='background:#36558F;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(etc,propertis='background:#F15025;\ncolor:#fff;'))
                 f.close()
-
 
 if __name__ == '__main__':
     main()

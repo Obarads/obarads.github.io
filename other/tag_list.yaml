@@ -42,6 +42,7 @@ task: [
   "'Completion'",
   "'Data Augmentation'",
   "'Dataset'",
+  "'Denoising'",
   "'Detection'",
   "'Depth Estimation'",
   "'Domain Adaptation'",
@@ -55,4 +56,5 @@ task: [
   "'Reconstruction'",
   "'SLAM'",
   "'Semantic Segmentation'",
+  "'Super-Resolution'",
 ]
