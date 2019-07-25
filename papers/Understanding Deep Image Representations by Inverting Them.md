@@ -1,9 +1,13 @@
 # Understanding Deep Image Representations by Inverting Them
 
-元の論文の公開ページ :   
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1412.0035)  
 Github Issues : 
 
 ## どんなもの?
+この論文では、表現が保持している画像情報を明らかにすることで、表現の直接的な解析を実施している。
+深層学習によって四角特徴表現の開発は飛躍的に進歩したが、hand-crafted特徴も含めこれらの設計のほとんどは経験的なものであり、それらの根本的な特質についての理解はかけている。
+
+[※ ここの復元(reconstructing)はautoencoderなどの復元と別物と一旦考えたほうが良い。こちらの復元は解析のための復元である。]
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -20,15 +24,19 @@ Github Issues :
 1. なし
 
 ## 会議
+CVPR 2015
 
 ## 著者
+Aravindh Mahendran, Andrea Vedaldi
 
 ## 投稿日付(yyyy/MM/dd)
+2014/11/26
 
 ## コメント
 なし
 
 ## key-words
+
 
 ## status
 未完
