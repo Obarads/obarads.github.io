@@ -32,7 +32,7 @@ Keze Wang, Dongyu Zhang, Ya Li, Ruimao Zhang, Liang Lin.
 なし
 
 ## key-words
-RGB_Image, Active_Learning
+RGB_Image, Active_Learning, CV
 
 ## status
 未完

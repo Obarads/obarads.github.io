@@ -1,80 +1,95 @@
+.__CV{
+background:#d9333f;
+color:#fff;
+}
+
+.__NLP{
+background:#d9333f;
+color:#fff;
+}
+
+.__Robot{
+background:#d9333f;
+color:#fff;
+}
+
 .__Active_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Reinforcement_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Self-Supervised_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Unsupervised_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Supervised_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Few-Shot_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Meta_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Weakly_Supervised_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__Zero-Shot_Learning{
-background:#C52233;
+background:#eb6101;
 color:#fff;
 }
 
 .__RGB_Image{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Depth_Image{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Mesh{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Point_Cloud{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Voxel{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Video{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
 .__Sound{
-background:#687D69;
+background:#005FFF;
 color:#fff;
 }
 
@@ -189,62 +204,57 @@ color:#fff;
 }
 
 .__Sensor_Fusion{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__AutoEncoder{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Encoder-Decoder{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__GAN{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Graph{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__RNN{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Interpretability{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Sparsity{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Synthetic{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__TreeRNN{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 
 .__Survey{
-background:#F15025;
-color:#fff;
-}
-
-.__Robot{
-background:#F15025;
+background:#228B22;
 color:#fff;
 }
 

@@ -82,7 +82,7 @@ Diego Valsesia, Giulia Fracastoro, Enrico Magli.
 
 
 ## key-words
-Point_Cloud, GAN
+Point_Cloud, GAN, CV
 
 ## status
 更新済

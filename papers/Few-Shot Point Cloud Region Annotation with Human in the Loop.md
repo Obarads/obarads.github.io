@@ -41,7 +41,7 @@ Siddhant Jain, Sowmya Munukutla, and David Held
 なし
 
 ## key-words
-Point_Cloud, Few-Shot_Learning, Labeling
+Point_Cloud, Few-Shot_Learning, Labeling, CV
 
 ## status
 導入

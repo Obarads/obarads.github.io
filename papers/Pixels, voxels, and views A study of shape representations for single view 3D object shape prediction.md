@@ -79,7 +79,7 @@ Daeyun Shin, Charless C. Fowlkes, Derek Hoiem
 なし
 
 ## key-words
-RGB_Image, Reconstruction, Encoder-Decoder, Supervised_Learning, Voxel, Mesh
+RGB_Image, Reconstruction, Encoder-Decoder, Supervised_Learning, Voxel, Mesh, CV
 
 ## status
 省略

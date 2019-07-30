@@ -41,7 +41,7 @@ I-Hong Jhuo, Shenghua Gao, Liansheng Zhuang, D. T. Lee, and Yi Ma
 なし
 
 ## key-words
-RGB_Image, Depth_Image, Classification
+RGB_Image, Depth_Image, Classification, CV
 
 ## status
 導入

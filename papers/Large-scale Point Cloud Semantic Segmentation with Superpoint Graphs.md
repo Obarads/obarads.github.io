@@ -61,7 +61,7 @@ Loic Landrieu, Martin Simonovsky
 なし
 
 ## key-words
-Point_Cloud, Graph, Semantic_Segmentation
+Point_Cloud, Graph, Semantic_Segmentation, CV
 
 ## status
 導入

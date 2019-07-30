@@ -32,7 +32,7 @@ Joaquin Vanschoren
 なし
 
 ## key-words
-Meta_Learning, Survey
+Meta_Learning, Survey, CV
 
 ## status
 未完

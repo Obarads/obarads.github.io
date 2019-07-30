@@ -194,7 +194,7 @@ Zhaoqing Pan, Weijie Yu, Xiaokai Yi, Asifullah Khan, Feng Yuan, Yuhui Zheng.
 なし
 
 ## key-words
-GAN, Survey
+GAN, Survey, CV
 
 ## status
 更新済

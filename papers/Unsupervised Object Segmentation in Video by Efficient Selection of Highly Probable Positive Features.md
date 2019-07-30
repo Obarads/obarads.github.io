@@ -42,7 +42,7 @@ Emanuela Haller and Marius Leordeanu.
 なし
 
 ## key-words
-RGB_Image
+RGB_Image, CV
 
 ## status
 導入

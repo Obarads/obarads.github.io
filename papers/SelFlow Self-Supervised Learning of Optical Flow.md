@@ -37,7 +37,7 @@ Pengpeng Liu, Michael Lyu, Irwin King, Jia Xu.
 なし
 
 ## key-words
-RGB_Image, Flow_Estimation, Self-Supervised_Learning
+RGB_Image, Flow_Estimation, Self-Supervised_Learning, CV
 
 ## status
 導入

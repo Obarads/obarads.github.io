@@ -63,7 +63,7 @@ Truc Le and Ye Duan.
 なし
 
 ## key-words
-Point_Cloud, Classification, Semantic_Segmentation
+Point_Cloud, Classification, Semantic_Segmentation, CV
 
 ## status
 更新済

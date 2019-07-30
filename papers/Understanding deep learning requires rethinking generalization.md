@@ -32,6 +32,7 @@ Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, Oriol Vinyals
 なし
 
 ## key-words
+CV
 
 ## status
 未完

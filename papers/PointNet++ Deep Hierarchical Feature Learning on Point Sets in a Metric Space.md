@@ -79,7 +79,7 @@ Charles R. Qi, Li Yi, Hao Su, Leonidas J. Guibas.
 なし
 
 ## key-words
-Point_Cloud, Classification, Semantic_Segmentation
+Point_Cloud, Classification, Semantic_Segmentation, CV
 
 ## status
 修正

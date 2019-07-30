@@ -83,7 +83,7 @@ Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning
+RGB_Image, Self-Supervised_Learning, CV
 
 ## status
 省略

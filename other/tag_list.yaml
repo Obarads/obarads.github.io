@@ -32,7 +32,6 @@ etc: [
   "'Synthetic'",
   "'TreeRNN'",
   "'Survey'",
-  "'Robot'",
 ]
 
 task: [
@@ -58,4 +57,10 @@ task: [
   "'SLAM'",
   "'Semantic Segmentation'",
   "'Super-Resolution'",
+]
+
+field: [
+  "'CV'",
+  "'NLP'",
+  "'Robot'",
 ]

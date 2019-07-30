@@ -93,7 +93,7 @@ Asako Kanezaki.
 なし
 
 ## key-words
-RGB_Image, Unsupervised_Learning
+RGB_Image, Unsupervised_Learning, CV
 
 ## status
 省略

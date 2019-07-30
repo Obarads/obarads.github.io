@@ -150,7 +150,7 @@ Y. Shen, C. Feng, Y. Yang, and D. Tian.
 なんか難しくない...?
 
 ## key-words
-Point_Cloud,Classification,Semantic_Segmentation
+Point_Cloud,Classification,Semantic_Segmentation, CV
 
 ## status
 更新済

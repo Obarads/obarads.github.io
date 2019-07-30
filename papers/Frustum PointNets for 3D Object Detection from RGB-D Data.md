@@ -108,7 +108,7 @@ Charles R. Qi, Wei Liu, Chenxia Wu, Hao Su, Leonidas J. Guibas.
 なし
 
 ## key-words
-Point_Cloud, Detection, RGB_Image, Depth_Image
+Point_Cloud, Detection, RGB_Image, Depth_Image, CV
 
 ## status
 省略

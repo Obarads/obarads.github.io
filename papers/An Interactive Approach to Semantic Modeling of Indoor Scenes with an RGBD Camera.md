@@ -35,7 +35,7 @@ Tianjia Shao, Weiwei Xu, Kun Zhou, Jingdong Wang, Dongping Li, and Baining Guo
 なし
 
 ## key-words
-RGB_Image, Depth_Image, Reconstruction, Labeling
+RGB_Image, Depth_Image, Reconstruction, Labeling, CV
 
 ## status
 導入

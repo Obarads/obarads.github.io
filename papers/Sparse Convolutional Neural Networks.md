@@ -33,7 +33,7 @@ Baoyuan Liu, Min Wang, Hassan Foroosh, Marshall Tappen, and Marianna Penksy
 なぜ、ネットワーク内に冗長性が生まれるのかを調べて理解した上で読んだほうが良いため修正にした。あと、この論文は後回しでいいか。
 
 ## key-words
-RGB_Image, Sparsity
+RGB_Image, Sparsity, CV
 
 ## status
 修正

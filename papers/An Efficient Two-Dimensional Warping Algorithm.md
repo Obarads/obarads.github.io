@@ -36,7 +36,7 @@ Seiichi UCHIDA, Hiroaki SAKOE.
 なし
 
 ## key-words
-RGB_Image
+RGB_Image, CV
 
 ## status
 導入

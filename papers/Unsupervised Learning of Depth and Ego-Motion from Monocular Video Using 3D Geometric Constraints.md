@@ -130,7 +130,7 @@ Reza Mahjourian, Martin Wicke, Anelia Angelova.
 なし
 
 ## key-words
-Unsupervised_Learning, Video, Depth_Estimation, Point_Cloud, Depth_Image
+Unsupervised_Learning, Video, Depth_Estimation, Point_Cloud, Depth_Image, CV
 
 ## status
 省略

@@ -69,17 +69,25 @@ function search(il, tl, title, path, mode) {
     html = _html.map(create_tag);
     var div = document.getElementById("_data_tags");
     div.innerHTML = html.join(" ");
+
     _html = tl[1];
     html = _html.map(create_tag);
     var div = document.getElementById("_task_tags");
     div.innerHTML = html.join(" ");
+
     _html = tl[2];
     html = _html.map(create_tag);
     var div = document.getElementById("_etc_tags");
     div.innerHTML = html.join(" ");
+
     _html = tl[3];
     html = _html.map(create_tag);
     var div = document.getElementById("_method_tags");
+    div.innerHTML = html.join(" ");
+
+    _html = tl[4];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_field_tags");
     div.innerHTML = html.join(" ");
   }
   url_param = getParam("tag");

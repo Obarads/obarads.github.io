@@ -41,7 +41,7 @@ Maryam Sultana, Arif Mahmood, Sajid Javed, and Soon Ki Jung
 なんか説明するたびにベースとなるGANの種類が変わっているように思える。
 
 ## key-words
-RGB_Image, Depth_Image, GAN, Video
+RGB_Image, Depth_Image, GAN, Video, CV
 
 ## status
 導入

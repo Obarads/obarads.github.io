@@ -48,7 +48,7 @@ Shaoshuai Shi, Xiaogang Wang, Hongsheng Li
 なし
 
 ## key-words
-Point_Cloud, Detection
+Point_Cloud, Detection, CV
 
 ## status
 未完

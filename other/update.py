@@ -20,6 +20,9 @@ def change_tag_names(path,target,changed_name):
                     if target in content[kw_index+1]:
                         content[kw_index+1] = content[kw_index+1].replace(target,changed_name)
                         kw = "A!"
+                    elif target == "!ALL":
+                        content[kw_index+1] = content[kw_index+1] + ", "+ changed_name
+                        kw = "ALL!"
         if kw != "":
             with open(pl, 'w',encoding="utf-8") as f:
                 f.write('\n'.join(content))

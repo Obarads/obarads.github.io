@@ -33,7 +33,7 @@ Francis Williams, Teseo Schneider, Claudio Silva, Denis Zorin, Joan Bruna, Danie
 なし
 
 ## key-words
-Point_Cloud
+Point_Cloud, CV
 
 ## status
 未完

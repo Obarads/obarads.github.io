@@ -115,7 +115,7 @@ $$
 
 
 ## key-words
-
+, CV
 
 ## 参考文献
 1. [Frank Keller. Formal Modeling in Cognitive Science Lecture 25: Entropy, Joint Entropy, Conditional Entropy. (アクセス:2019/05/01)](http://www.inf.ed.ac.uk/teaching/courses/fmcs1/slides/lecture25.pdf)

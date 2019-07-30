@@ -110,7 +110,7 @@ Binh-Son Hua, Minh-Khoi Tran and Sai-Kit Yeung.
 Point orderで順序の必要不必要の判断理由として、分類問題は点群全体の形(それを特徴化したものがconcatによるglobal feature)を見てそれが何なのか決める必要があるため順序が必要となるが、セマンティックセグメンテーションは点一つの特徴(畳み込みによって周りから得た特徴)にしか注目せず、その点がどのクラスであるのか判断するから順序が必要ないということか?
 
 ## key-words
-Point_Cloud,Classification,Semantic_Segmentation
+Point_Cloud,Classification,Semantic_Segmentation, CV
 
 ## status
 更新済

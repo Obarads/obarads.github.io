@@ -96,6 +96,7 @@ def main():
         info_list_papers = "function information_list(){ return ["+",".join(info_list_papers)+"]}\n"
         kw_tags_papers = "function tag_list(){ return ["+ ",".join(kw_tags_papers) +"]}\n"
         date_tags_papers = "function date_tag_list(){ return ["+ ",".join(date_tags_papers) +"]}\n"
+        
         info_list_complementary = "function information_list_c(){ return ["+",".join(info_list_complementary)+"]}\n"
         kw_tags_complementary = "function tag_list_c(){ return ["+ ",".join(kw_tags_complementary) +"]}\n"
         date_tags_complementary = "function date_tag_list_c(){ return ["+ ",".join(date_tags_complementary) +"]}"
@@ -104,9 +105,11 @@ def main():
             f.writelines(info_list_papers)
             f.writelines(kw_tags_papers)
             f.writelines(date_tags_papers)
+
             f.writelines(info_list_complementary)
             f.writelines(kw_tags_complementary)
             f.writelines(date_tags_complementary)
+            
             f.close()
 
         with open(PATH+'/css/tag_temp.css', 'w') as f:
@@ -129,11 +132,13 @@ def main():
         data = yml["data"]
         etc = yml["etc"]
         method = yml["method"]
+        field = yml["field"]
         confirmation = []
         confirmation.extend(task)
         confirmation.extend(data)
         confirmation.extend(etc)
         confirmation.extend(method)
+        confirmation.extend(field)
         confirmation = np.array(sorted(confirmation))
 
         print("以下のタグがtag_listに含まれていない")
@@ -151,13 +156,15 @@ def main():
             f.writelines("function tag_data_list(){ return [" + ",".join(sorted(data))+"]}\n")
             f.writelines("function tag_etc_list(){ return [" + ",".join(sorted(etc))+"]}\n")
             f.writelines("function tag_method_list(){ return [" + ",".join(sorted(method))+"]}\n")
+            f.writelines("function tag_field_list(){ return [" + ",".join(sorted(field))+"]}\n")
 
         if css:
             with open(PATH+'/css/tag.css', 'w') as f:
-                f.writelines(coloring_tag_template(method,propertis='background:#C52233;\ncolor:#fff;'))
-                f.writelines(coloring_tag_template(data,propertis='background:#687D69;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(field,propertis='background:#d9333f;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(method,propertis='background:#eb6101;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(data,propertis='background:#005FFF;\ncolor:#fff;'))
                 f.writelines(coloring_tag_template(task,propertis='background:#36558F;\ncolor:#fff;'))
-                f.writelines(coloring_tag_template(etc,propertis='background:#F15025;\ncolor:#fff;'))
+                f.writelines(coloring_tag_template(etc,propertis='background:#228B22;\ncolor:#fff;'))
                 f.close()
 
 if __name__ == '__main__':

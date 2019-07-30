@@ -32,6 +32,7 @@ Yoram Gdalyahu, Daphna Weinshall, Michael Werman.
 なし
 
 ## key-words
+CV
 
 ## status
 未完

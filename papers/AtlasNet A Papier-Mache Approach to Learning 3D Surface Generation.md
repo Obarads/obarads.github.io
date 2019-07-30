@@ -44,7 +44,7 @@ Thibault Groueix, Matthew Fisher, Vladimir G. Kim, Bryan C. Russell, Mathieu Aub
 なし
 
 ## key-words
-Point_Cloud, Reconstruction
+Point_Cloud, Reconstruction, CV
 
 ## status
 導入

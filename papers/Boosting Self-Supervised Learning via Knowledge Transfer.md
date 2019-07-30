@@ -52,7 +52,7 @@ Mehdi Noroozi, Ananth Vinjimoor, Paolo Favaro, Hamed Pirsiavash.
 なし
 
 ## key-words
-RGB_Image, Classification, Self-Supervised_Learning
+RGB_Image, Classification, Self-Supervised_Learning, CV
 
 ## status
 省略

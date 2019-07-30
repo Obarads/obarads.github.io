@@ -80,7 +80,7 @@ Jiajun Wu, Chengkai Zhang, Tianfan Xue, William T. Freeman and Joshua B. Tenenba
 なし
 
 ## key-words
-Voxel, GAN
+Voxel, GAN, CV
 
 ## status
 更新済

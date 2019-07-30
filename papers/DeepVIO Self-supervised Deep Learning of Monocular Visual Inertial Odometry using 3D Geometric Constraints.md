@@ -41,7 +41,7 @@ Liming Han, Yimin Lin, Guoguang Du, Shiguo Lian
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning
+RGB_Image, Self-Supervised_Learning, CV
 
 ## status
 導入

@@ -223,7 +223,7 @@ Chong Xiang, Charles R. Qi, Bo Li
 アイデアはわかるが細かいところの使用が理解できなかった(特にcritical pointsの判明方法)。PointNetの人が共著している初めての点群に対するAdeversarial exampleの論文。
 
 ## key-words
-Point_Cloud, Adversarial_Examples
+Point_Cloud, Adversarial_Examples, CV
 
 ## status
 更新済

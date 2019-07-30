@@ -103,7 +103,7 @@ Yu Liu, Guanglu Song, Jing Shao, Xiao Jin, Xiaogang Wang.
 なし
 
 ## key-words
-RGB_Image
+RGB_Image, CV
 
 ## status
 修正

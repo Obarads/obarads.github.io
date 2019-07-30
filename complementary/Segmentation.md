@@ -34,5 +34,5 @@ Image segmentation has attracted attention in computer vision research for decad
 1. Asako Kanezaki, UNSUPERVISED IMAGE SEGMENTATION BY BACKPROPAGATION, ICAPS 2018.
 
 ## key-words
-Oversegmentation, Semantic_Segmentation, Instance_Segmentation
+Oversegmentation, Semantic_Segmentation, Instance_Segmentation, CV
 

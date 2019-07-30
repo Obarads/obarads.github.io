@@ -36,7 +36,7 @@ S. Guinard and L. Landrieu.
 
 
 ## key-words
-Weakly_Supervised_Learning, Point_Cloud
+Weakly_Supervised_Learning, Point_Cloud, CV
 
 ## status
 導入

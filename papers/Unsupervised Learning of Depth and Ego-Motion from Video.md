@@ -34,7 +34,7 @@ Tinghui Zhou, Matthew Brown, Noah Snavely, David G. Lowe
 なし
 
 ## key-words
-Video
+Video, CV
 
 ## status
 未完

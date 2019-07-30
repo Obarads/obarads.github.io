@@ -32,7 +32,7 @@ Michael Bloesch, Jan Czarnowski, Ronald Clark, Stefan Leutenegger, Andrew J. Dav
 なし
 
 ## key-words
-SLAM
+SLAM, CV
 
 ## status
 未完

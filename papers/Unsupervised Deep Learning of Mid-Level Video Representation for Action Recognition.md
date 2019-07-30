@@ -32,7 +32,7 @@ Jingyi Hou, Xinxiao Wu, Jin Chen, Jiebo Luo, Yunde Jia.
 なし
 
 ## key-words
-Video
+Video, CV
 
 ## status
 未完

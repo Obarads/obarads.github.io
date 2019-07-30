@@ -33,7 +33,7 @@ Yuan-Ting Hu, Jia-Bin Huang, and Alexander G. Schwing
 なし
 
 ## key-words
-Unsupervised_Learning, RGB_Image, Video
+Unsupervised_Learning, RGB_Image, Video, CV
 
 ## status
 未完

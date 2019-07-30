@@ -60,7 +60,7 @@ Chu Wang, Babak Samari, Kaleem Siddiqi.
 なし
 
 ## key-words
-Point_Cloud, Graph
+Point_Cloud, Graph, CV
 
 ## status
 未完

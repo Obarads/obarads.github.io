@@ -42,7 +42,7 @@ Andy Zeng, Shuran Song, Matthias Nießner, Matthew Fisher, Jianxiong Xiao, Thoma
 なし
 
 ## key-words
-Voxel, Self-Supervised_Learning, Registration
+Voxel, Self-Supervised_Learning, Registration, CV
 
 ## status
 導入

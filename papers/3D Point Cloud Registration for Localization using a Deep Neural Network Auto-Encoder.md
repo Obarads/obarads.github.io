@@ -82,7 +82,7 @@ Gil Elbaz, Tamar Avraham, Anath Fischer.
 なし
 
 ## key-words
-Registration, Point_Cloud, AutoEncoder
+Registration, Point_Cloud, AutoEncoder, CV
 
 ## status
 修正

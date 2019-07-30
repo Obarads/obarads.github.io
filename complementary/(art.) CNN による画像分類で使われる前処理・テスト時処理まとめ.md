@@ -48,6 +48,6 @@
 2016/12/31
 
 ## key-words
-RGB_Image
+RGB_Image, CV
 
 ## 参考文献
