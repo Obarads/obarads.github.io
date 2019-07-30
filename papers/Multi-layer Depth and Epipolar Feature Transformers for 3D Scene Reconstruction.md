@@ -8,7 +8,13 @@ Github Issues :
 
 ## 先行研究と比べてどこがすごいの?
 
+
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+
+![fig2](img/MDaEFTf3SR/fig2.png)
+
+
+![fig1](img/MDaEFTf3SR/fig1.png)
 
 ## どうやって有効だと検証した?
 
@@ -36,9 +42,9 @@ Daeyun Shin, Zhile Ren, Erik B. Sudderth, Charless C. Fowlkes
 RGB_Image, Reconstruction, 3D_Estimation
 
 ## status
-未完
+修正
 
 ## read
-A, 
+A, I, M
 
 ## Citation

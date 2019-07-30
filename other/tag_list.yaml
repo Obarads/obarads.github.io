@@ -23,6 +23,7 @@ method: [
 etc: [
   "'Sensor Fusion'",
   "'AutoEncoder'",
+  "'Encoder-Decoder'",
   "'GAN'",
   "'Graph'",
   "'RNN'",
