@@ -1,7 +1,7 @@
 # Pixels, voxels, and views: A study of shape representations for single view 3D object shape prediction
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1804.06032)  
-Github Issues : 
+Github Issues : [#137](https://github.com/Obarads/obarads.github.io/issues/137)
 
 ## どんなもの?
 この論文では、2D画像から3Dオブジェクトの形状を予測を行う(図1)。その過程で、この論文では二つの課題について取り組む(二つの課題は図2にも記載)。

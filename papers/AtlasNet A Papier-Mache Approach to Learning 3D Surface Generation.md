@@ -1,7 +1,7 @@
-# AtlasNet: A Papier-Mache Approach to Learning 3D Surface Generatio
+# AtlasNet: A Papier-Mache Approach to Learning 3D Surface Generation
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1802.05384)  
-Github Issues : 
+Github Issues : [#133](https://github.com/Obarads/obarads.github.io/issues/133)
 
 ## どんなもの?
 ボクセルグリッドや点群を生成するのではなく、3D形状の表面を推定するAtlasNetを提案した。この手法では、複数の2Dの正方形(の紙の様なもの)をオブジェクトの表面に合うように変形させることができるパラメータを学習する(図1)。

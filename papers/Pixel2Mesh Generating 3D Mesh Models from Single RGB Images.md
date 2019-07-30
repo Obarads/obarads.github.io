@@ -1,7 +1,7 @@
 # Pixel2Mesh: Generating 3D Mesh Models from Single RGB Images
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1804.01654)  
-Github Issues : 
+Github Issues : [#136](https://github.com/Obarads/obarads.github.io/issues/136)
 
 ## どんなもの?
 単体カラー画像から3Dメッシュを抽出するアルゴリズムを提案した。合成というよりかは、メッシュを平均的な形状から目的の形状へ変換することを学習するモデルである。これには、以下の3点のメリットがある。
@@ -69,7 +69,7 @@ Nanyang Wang, Yinda Zhang, Zhuwen Li, Yanwei Fu, Wei Liu, Yu-Gang Jiang
 なし
 
 ## key-words
-RGB_Image, Mesh, 3D_Estimation
+RGB_Image, Mesh, 3D_Estimation, Reconstruction, Supervised_Learning
 
 ## status
 省略
