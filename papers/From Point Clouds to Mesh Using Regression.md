@@ -5,7 +5,6 @@ Github Issues :
 
 ## どんなもの?
 
-
 ## 先行研究と比べてどこがすごいの?
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
@@ -14,7 +13,7 @@ Github Issues :
 
 ## 議論はある?
 
-## 次に読むべき論文は?
+## 次に読むべき論文は?1
 - なし
 
 ## 論文関連リンク
@@ -24,7 +23,7 @@ Github Issues :
 ICCV 2017
 
 ## 著者
-L ’ubor Ladick, Olivier Saurer, SoHyeon Jeong, Fabio Maninchedda, Marc Pollefeys
+L’ubor Ladick, Olivier Saurer, SoHyeon Jeong, Fabio Maninchedda, Marc Pollefeys
 
 ## 投稿日付(yyyy/MM/dd)
 2017/10/22
