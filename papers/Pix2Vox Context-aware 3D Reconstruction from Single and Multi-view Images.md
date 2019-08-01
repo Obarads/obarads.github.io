@@ -1,7 +1,7 @@
 # Pix2Vox: Context-aware 3D Reconstruction from Single and Multi-view Images
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1901.11153)  
-Github Issues : 
+Github Issues : [#139](https://github.com/Obarads/obarads.github.io/issues/139)
 
 ## どんなもの?
 一視点もしくは多視点の画像を用いて3Dボクセルを出力する新規フレームワーク、Pix2Voxを提案した。
