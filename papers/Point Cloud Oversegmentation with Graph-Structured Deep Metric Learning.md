@@ -26,9 +26,9 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 著者らの目的は、スーパーポイントベースのセマンティックセグメンテーションアルゴリズムのための、高品質な3D点群オーバーセグメンテーションを生成することである。これを言い換えると以下の3つ特性につながる。
 
-- **object-purity(オブジェクトの純粋さ)**: 特にこれらが意味的な違いを持つとき、スーパーポイントはオブジェクト同士で重複するべきではない。
-- **border recall(境界の再現)**: スーパーポイント間の境界は、オブジェクト間の境界と一致しなければいけない。
-- **regularity(規則的)**: 形状とスーパーポイントの輪郭はシンプルでなくてはいけない。
+- (P1) **object-purity(オブジェクトの純粋さ)**: 特にこれらが意味的な違いを持つとき、スーパーポイントはオブジェクト同士で重複するべきではない。
+- (P2) **border recall(境界の再現)**: スーパーポイント間の境界は、オブジェクト間の境界と一致しなければいけない。
+- (P3) **regularity(規則的)**: 形状とスーパーポイントの輪郭はシンプルでなくてはいけない。
 
 以下に、1)局所点埋め込み器と、2)グラフもしくはクラスタベースのオーバーセグメンテーションアルゴリズムを使った埋め込みから点群オーバーセグメンテーションを計算する方法を説明する。
 
@@ -56,10 +56,16 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 ### Graph-Based Point Cloud Oversegmentation
 #### The Generalized Minimal Partition Problem
 埋め込み計算後、点群$C$から算出される隣接グラフ$G=(C,E)$に関連するスーパーポイントを定義する(この$E$はLPEに使用される近傍構造から取得できる)。
-
-[※ $E$はエンコードされていない近傍点の情報?]
+[一時的に中止する]
 
 ## どうやって有効だと検証した?
+### Datasets
+著者らはS3DIS(インドア)とvKITTI(アウトドア)の二つのデータセットを利用して評価している。vKITTIは色情報を利用する場合とそうでない場合で評価する。大量の点を持つ両方のデータセットに対して、S3DISは3cm、vKITTIは5cm幅のregular grid of voxelsを使ってsubsampleする。各ボクセルでは位置と色を平均化する。これにより、メモリのロードと計算量を減らす。
+
+### PointCloud Oversegmentation
+#### Evaluation Metrics
+著者らは(P1)object-purity、(P2)border recall、(P3)regularityを測定するための基準を用意する。具体的には、superpointがobject boundariesを順守し、変に交わらないか評価するために、Boundary Recall(BR)とPrecision(BP)が使われる((P2),(P3))。これらの計測方法はpoints[1]やboundary pixels[2]に関して定義されている。しかしながら、著者らは点群の点ではなく点間でtransitionが起こると主張する。そのため、著者らは
+
 
 ## 議論はある?
 
