@@ -56,7 +56,6 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 ### Graph-Based Point Cloud Oversegmentation
 #### The Generalized Minimal Partition Problem
 埋め込み計算後、点群$C$から算出される隣接グラフ$G=(C,E)$に関連するスーパーポイントを定義する(この$E$はLPEに使用される近傍構造から取得できる)。
-[一時的に中止する]
 
 ## どうやって有効だと検証した?
 ### Datasets
