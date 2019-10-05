@@ -34,7 +34,7 @@ Supervoxelを使う手法がいくつかあるが、Supervoxel化する際にど
 Voxel, Video, SuperVoxel
 
 ## status
-省略
+導入
 
 ## read
 
