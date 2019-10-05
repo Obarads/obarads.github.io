@@ -32,7 +32,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 - AP: Appendix, 付録(そのような項目がある論文のみ).
 
 ### Complementary
-[Complementary(complementaryディレクトリ)](./complementary)には各論文で出てくる単語やジャンルへの補足説明が入っている. 
+[Complementary(complementaryディレクトリ)](./complementary)には各論文で出てくる単語やジャンルへの補足説明が入っています. 
 
 ## Issue page in Github
 もし、論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをする or 新規Issueを建てていただけると幸いです.
