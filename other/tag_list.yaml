@@ -6,6 +6,7 @@ data: [
   "'Voxel'",
   "'Video'",
   "'Sound'",
+  "'SuperVoxel'",
 ]
 
 method: [

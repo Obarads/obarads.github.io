@@ -72,8 +72,8 @@ def coloring_tag_template(tags,propertis='background:rgb(0,0,0);\ncolor:#fff;'):
 def main():
     parser = argparse.ArgumentParser(description='-m l:listing, t:classes tag category')
     # parser.add_argument('--conv-layers', '-c', type=int, default=4)
-    parser.add_argument('--mode', '-m', type=str, default="l")
-    parser.add_argument('--css', '-c', type=strtobool, default='false')
+    parser.add_argument('--mode', '-m', type=str, default="l", choices=["l","t"]) # lはmdの情報を/papersページのリストに反映、tは新規タグを反映させる。タグに反映させる際はother/tag_list.yamlに新たなtagを入力しなければいけない。
+    parser.add_argument('--css', '-c', type=strtobool, default='false') # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
     args = parser.parse_args()
     mode = args.mode
     css = args.css
