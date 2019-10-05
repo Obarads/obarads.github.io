@@ -21,11 +21,13 @@ Supervoxelを使う手法がいくつかあるが、Supervoxel化する際にど
 1. なし
 
 ## 会議
+CVPR 2012
 
 ## 著者
-
+Chenliang Xu and Jason J. Corso
 
 ## 投稿日付(yyyy/MM/dd)
+2012/07/16
 
 ## コメント
 なし
@@ -37,6 +39,7 @@ Voxel, Video, SuperVoxel
 導入
 
 ## read
+A
 
 ## Citation
 

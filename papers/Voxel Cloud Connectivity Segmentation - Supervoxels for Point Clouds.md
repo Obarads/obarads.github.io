@@ -1,6 +1,6 @@
-# Effcient Graph-Based Image Segmentation
+# Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds
 
-元の論文の公開ページ : [people.cs.uchicago.edu](http://people.cs.uchicago.edu/~pff/papers/seg-ijcv.pdf)  
+元の論文の公開ページ : [cv-foundation.org](https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Papon_Voxel_Cloud_Connectivity_2013_CVPR_paper.pdf)  
 Github Issues : 
 
 ## どんなもの?
@@ -30,7 +30,6 @@ Github Issues :
 なし
 
 ## key-words
-CV
 
 ## status
 未完
