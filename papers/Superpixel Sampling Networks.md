@@ -20,15 +20,19 @@ Github Issues :
 1. なし
 
 ## 会議
+ECCV 2018
 
 ## 著者
+Varun Jampani, Deqing Sun, Ming-Yu Liu, Ming-Hsuan Yang, Jan Kautz
 
 ## 投稿日付(yyyy/MM/dd)
+2018/07/26
 
 ## コメント
 なし
 
 ## key-words
+Superpixel, CV
 
 ## status
 未完

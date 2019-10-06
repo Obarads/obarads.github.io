@@ -34,7 +34,7 @@ David Stutz, Alexander Hermans, Bastian Leibe
 なし
 
 ## key-words
-Superpixel, Image, Survey, CV
+Superpixel, RGB_Image, Survey, CV
 
 ## status
 未完

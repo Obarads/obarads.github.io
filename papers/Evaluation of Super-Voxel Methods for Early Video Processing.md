@@ -33,7 +33,7 @@ Chenliang Xu and Jason J. Corso
 なし
 
 ## key-words
-Voxel, Video, SuperVoxel
+Voxel, Video, Supervoxel
 
 ## status
 導入
