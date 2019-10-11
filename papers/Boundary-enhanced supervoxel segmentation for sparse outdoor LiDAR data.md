@@ -4,8 +4,10 @@
 Github Issues : 
 
 ## どんなもの?
+Velodyne LiDARの屋外スパースデータ用のsupervoxel手法を提案した。
 
 ## 先行研究と比べてどこがすごいの?
+
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 
