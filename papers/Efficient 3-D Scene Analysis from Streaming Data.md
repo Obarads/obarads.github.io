@@ -4,7 +4,7 @@
 Github Issues : 
 
 ## どんなもの?
-
+速度と分類精度を両立した3D点群セグメンテーション手法をした。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 
@@ -33,12 +33,13 @@ Hanzhang Hu, Daniel Munoz, J. Andrew Bagnell and Martial Hebert
 なし
 
 ## key-words
-CV, Point_Cloud
+CV, Point_Cloud, Supervoxel
 
 ## status
 未完
 
 ## read
+A
 
 ## Citation
 
