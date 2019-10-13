@@ -45,8 +45,13 @@ SPG表現を作成するにおいて、最後の２つのステップはEnd-to-E
 
 各点について、局所近傍の形状の特性を示す$d_ g$個の幾何学特徴$f_ i\in \mathbb{R}^{d_ g}$の集合を計算する。そのため、ここでは[2]で提案された3次元値(planarity and scattering, as well as the verticality feature introduced by [3])を使用する。また、点群全体の￥で正規化された点$p_ i$の$z$座標として定義される各点の高さも計算する。
 
+[13]によって提案されたglobal energyは点群の10最近傍グラフ$G_ {nn}=(C,E_ {mn})$に関連して定義される(これはSGPではない)[?]。幾何学的に均一な分割は次の最適化問題のthe constant connected components of the solutionとして定義される。
 
+$$
+\underset{g \in \mathbb{R}^{d g}}{\arg \min } \sum_{i \in C}\left\|g_{i}-f_{i}\right\|^{2}+\mu \sum_{(i, j) \in E_{\mathrm{nn}}} w_{i, j}\left[g_{i}-g_{j} \neq 0\right] \tag{1}
+$$
 
+ここで$[\cdot]$はアイバーソンの記法を示す。
 
 
 
