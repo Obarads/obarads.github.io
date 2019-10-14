@@ -43,15 +43,34 @@ SPG表現を作成するにおいて、最後の２つのステップはEnd-to-E
 
 ![fig3](img/LPCSSwSG/fig3.png)
 
-各点について、局所近傍の形状の特性を示す$d_ g$個の幾何学特徴$f_ i\in \mathbb{R}^{d_ g}$の集合を計算する。そのため、ここでは[2]で提案された3次元値(planarity and scattering, as well as the verticality feature introduced by [3])を使用する。また、点群全体の￥で正規化された点$p_ i$の$z$座標として定義される各点の高さも計算する。
+各点について、局所近傍の形状の特性を示す$d_ g$個の幾何学特徴$f_ i\in \mathbb{R}^{d_ g}$の集合を計算する。そのため、ここでは[2]で提案された3次元値(planarity and scattering, as well as the verticality feature introduced by [3])を使用する。また、点群全体で正規化された点$p_ i$の$z$座標として定義される各点の高さも計算する。
 
-[13]によって提案されたglobal energyは点群の10最近傍グラフ$G_ {nn}=(C,E_ {mn})$に関連して定義される(これはSGPではない)[?]。幾何学的に均一な分割は次の最適化問題のthe constant connected components of the solutionとして定義される。
+[13]によって提案されたglobal energyは点群の10最近傍グラフ$G_ {nn}=(C,E_ {mn})$に関連して定義される(これはSGPではない)[?]。**幾何学的に均一な分割は次の最適化問題のthe constant connected components of the solutionとして定義される。**
 
 $$
 \underset{g \in \mathbb{R}^{d g}}{\arg \min } \sum_{i \in C}\left\|g_{i}-f_{i}\right\|^{2}+\mu \sum_{(i, j) \in E_{\mathrm{nn}}} w_{i, j}\left[g_{i}-g_{j} \neq 0\right] \tag{1}
 $$
 
-ここで$[\cdot]$はアイバーソンの記法を示す。
+ここで$[\cdot]$はアイバーソンの記法を示す。edge weight $w\in \mathbb{R}^{|E|}_ {+}$はedge lengthの長さに対して線形的に減少するようになっている。係数$\mu$はthe regularization strengthであり、分割の粗さを決定する。
+
+The problem defined in eq.1はgeneralized minimal partition problemとして知られ, a continuous-space version of the Potts energy model, もしくはan ℓ0 variant of the graph total variationとみなすことができる. ただし、[24]によって定義された$\ell_ 0$-cut pursuit algorithmはa few graph-cut iterationsで近似解をすぐに導出できる。また、$\alpha$-expansion[5]のような他の最適化手法とは対象的に、$\ell_ 0$-sut pursuit algorithmはパーティションのサイズを事前に選択する必要がない。**eq.1の解であるthe constant connected components $\mathcal{S}=\\{S_ 1,\cdots,S_ k\\}$は幾何学的な要素を定義し、これをsuperpoints (i.e. set of points)として扱う。**
+
+### Superpoint Graph Construction
+ここでは、SGPの計算方法とその機能について説明する。SPGは点群を構造化した表現でありoriented attributed graph $\mathcal{G}=(\mathcal{S}, \mathcal{E}, F)$として定義される。このグラフのノードはsuperpoints $\mathcal{S}$、エッジ $\mathcal{E}$はsuperpoints間の隣接(superedgesとみなす)を示す。このsuperedgesは$d_ f$個の特徴の集合によって注釈付けられる: $F \in \mathbb{R}^{\mathcal{E} \times d_ {f}}$はsuperpoint間の隣接関係を特徴づける[?]。
+
+$G_ {\mathrm{vor}}=\left(C, E_ {\mathrm{vor}}\right)$を[6]によって定義されたthe symmetric Voronoi adjacency graph of the complete input point cloudとして定義する。
+
+もし、少なくとも$E_ {vor}$中に最低一つのエッジがあり、一端が$S$、もう一端が$T$である場合、superpointsである$S$と$T$は隣接する:
+
+$$
+\mathcal{E}=\left\{(S, T) \in \mathcal{S}^{2} | \exists(i, j) \in E_{\mathrm{vor}} \cap(S \times T)\right\} \tag{2}
+$$
+
+Important spatial features associated with a superedge $(S,T)$は２つのsuperpointsに繋がっている$E_ {vor}$中のエッジに対するthe set of offsets $δ(S, T)$から得られる[相対値?]:
+
+$$
+\delta(S, T)=\left\{\left(p_{i}-p_{j}\right) |(i, j) \in E_{\mathrm{vor}} \cap(S \times T)\right\} \tag{3}
+$$
 
 
 
@@ -63,9 +82,12 @@ $$
 - なし
 
 ## 論文関連リンク
-1. [R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. S ̈ usstrunk. SLIC superpixels compared to state-of-the-art superpixel methods. IEEE Transactions on Pattern Analysis and Machine Intelligence, 34(11):2274–2282, 2012.](https://ieeexplore.ieee.org/document/6205760)
-2. [J. Demantk, C. Mallet, N. David, and B. Vallet. Dimension-ality based scale selection in 3D lidar point clouds. Inter-national Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XXXVIII-5/W12:97–102, 2011.](http://recherche.ign.fr/labos/matis/pdf/articles_conf/2011/laserscanning2011_demantke_final.pdf)
-3. [S. Guinard and L. Landrieu.Weakly supervised segmentation-aided classification of urban scenes from 3d LiDAR point clouds. InISPRS 2017, 2017.](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-1-W1/151/2017/isprs-archives-XLII-1-W1-151-2017.pdf)
+1. [R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. S ̈ usstrunk. SLIC superpixels compared to state-of-the-art superpixel methods. IEEE Transactions on Pattern Analysis and Machine Intelligence, 34(11):2274–2282, 2012.](https://ieeexplore.ieee.org/document/6205760)[1]
+2. [J. Demantk, C. Mallet, N. David, and B. Vallet. Dimension-ality based scale selection in 3D lidar point clouds. Inter-national Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XXXVIII-5/W12:97–102, 2011.](http://recherche.ign.fr/labos/matis/pdf/articles_conf/2011/laserscanning2011_demantke_final.pdf)[9]
+3. [S. Guinard and L. Landrieu.Weakly supervised segmentation-aided classification of urban scenes from 3d LiDAR point clouds. InISPRS 2017, 2017.](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-1-W1/151/2017/isprs-archives-XLII-1-W1-151-2017.pdf)[13]
+4. [L. Landrieu and G. Obozinski. Cut pursuit: Fast algorithms to learn piecewise constant functions on general weighted graphs. SIAM Journal on Imaging Sciences, 10(4):1724– 1766, 2017.](https://hal.archives-ouvertes.fr/hal-01306779v4/document)[24]
+5. [Y. Boykov, O. Veksler, and R. Zabih. Fast approximate en-ergy minimization via graph cuts.IEEE Transactions on Pat-tern Analysis and Machine Intelligence, 23(11):1222–1239, 2001.](http://www.cs.cornell.edu/~rdz/Papers/BVZ-PAMI01.pdf)[6]
+6. [J. W. Jaromczyk and G. T. Toussaint. Relative neighbor-hood graphs and their relatives. Proceedings of the IEEE, 80(9):1502–1517, 1992.](https://pdfs.semanticscholar.org/778e/013907b0edc3e2e6bb40446af3837307f72b.pdf)[19]
 
 ## 会議
 CVPR 2018
@@ -80,7 +102,7 @@ Loic Landrieu, Martin Simonovsky
 なし
 
 ## key-words
-Point_Cloud, Graph, Semantic_Segmentation, CV
+Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV
 
 ## status
 導入

@@ -9,7 +9,7 @@ PapersやComplementaryの内容は[https://obarads.github.io/](https://obarads.g
 
 ## Link & Directory
 ### Papers
-[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. また、英語表記の内容もあるが、こちらは論文中の内容をそのまま引用している. **文章中に存在する[※ 任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
+[Papers(papersディレクトリ)](./papers)には各論文のmdファイルが入っている. 基本的に[arXivTimesのIssue](https://github.com/arXivTimes/arXivTimes)と[落合フォーマット](https://www.slideshare.net/Ochyai/1-ftma15?ref=http://lafrenze.hatenablog.com/entry/2015/08/04/120205)に従う形式となっている. また、英語表記の内容もあるが、こちらは論文中の内容をそのまま引用している. **文章中に存在する[※ 任意の文字]もしくは[任意の文字]は個人的なメモです。こちらも間違いを指摘していただいても問題ありません。**
 
 #### status
 ページ内の進行具合を示すものである. 以下6つに分けられる. 
