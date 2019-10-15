@@ -72,8 +72,16 @@ $$
 \delta(S, T)=\left\{\left(p_{i}-p_{j}\right) |(i, j) \in E_{\mathrm{vor}} \cap(S \times T)\right\} \tag{3}
 $$
 
-superedge特徴は隣接superpointsのサイズと形状を比較することで算出できる。そのため、
+superedge特徴は隣接superpointsのサイズと形状を比較することで算出できる。これらの算出するために、sueperpoint $S$中の点の数$|S|$, shape features length $(S)=\lambda_ 1$, surface $(S)=\lambda_ 1\lambda_ 2$, volume $(S)=\lambda_ 1 \lambda_ 2 \lambda_ 3$を計算する。これらは、値の減少順にならべた各superpointに含まれる点の位置の共分散の固有値$\lambda_ 1, \lambda_ 2, \lambda_ 3$からなる[?]。表1では、この論文で扱われているsuperedge特徴の違いをリストにしている。なお、edgeの特徴の対称性がなくなった場合、SPGは有向グラフになる。
 
+![fig3](img/LPCSSwSG/tab1.png)
+
+[handcrafted特徴を使用]
+
+### Superpoint Embeding
+ここでは全てのsuperpoint $S_ i$に対応する記述子を計算する。この記述子は、[superpointから]固定次元長$d_ z$のベクトル$z_ i$への埋め込みである。なお、この埋め込みはsuperpointごとに分離されている。信頼できる分類を行うためのcontextual informationはグラフ畳み込みによって次の段階でのみ提供される。
+
+最近の深層学習手法はこの目的[(埋め込み抽出)]のためにいくつかの提案がなされている。PointNetは点群におけるその代表である。著者らの場合、入力形状は幾何学的に単純なオブジェクトであり、少量の点(サブサンプリングなど)とコンパクトなPointNetで確実に表現、埋め込みできる(GPUなどの計算資源を節約できる)。
 
 ## どうやって有効だと検証した?
 
