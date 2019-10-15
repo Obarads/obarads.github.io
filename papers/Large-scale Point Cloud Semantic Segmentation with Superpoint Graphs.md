@@ -72,6 +72,7 @@ $$
 \delta(S, T)=\left\{\left(p_{i}-p_{j}\right) |(i, j) \in E_{\mathrm{vor}} \cap(S \times T)\right\} \tag{3}
 $$
 
+superedge特徴は隣接superpointsのサイズと形状を比較することで算出できる。そのため、
 
 
 ## どうやって有効だと検証した?
