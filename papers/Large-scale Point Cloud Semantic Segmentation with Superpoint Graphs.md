@@ -86,7 +86,17 @@ superedge特徴は隣接superpointsのサイズと形状を比較することで
 [in order for ~は仕様について書いてある]
 
 ### Contextual Segmentation
-ここでは最後の仕上げを行う。
+ここでは最後の仕上げを行う。このpipelineは埋め込み$z_ i$とSPGによる局所領域に従って各superpoint $S_ i$を分類する。ここのアーキテクチャはGated Graph Neural Networks[7]やECC[8]からのアイデアに基づいており、superpointはsuperedgesの情報に従って埋め込みを洗練させていく。
+
+具体的には、
+- Gated Recurrent Unit(GRU)[9]内のhidden state$\mathbf{h}_ {i}^{(t)}$(tはイテレーション数, $t=1\ldots T$, Tはseveral)をrefineしていく。  
+    ![new1](img/LPCSSwSG/new1.png)
+- $\mathbf{h_ i^1}$は$i$番目のsuperpoint $S_ i$の埋め込み$z_ i$によって初期化される。
+- $\mathbf{h_ i^{(t+1)}}$(新たなhidden state)はincoming message $\mathbf{m}_ i^{(t)}$と$\mathbf{h}_ i^{(t)}$をGRUに入力することで得られる。
+- incoming message $\mathbf{m}_ i^{(t)}$ to superpoint $i$は隣接するsuperpoint $j$の$h_ j^{(t)}$の加重和として計算されている。
+- actual weighting for a superedge $(j,i)$は、表1に挙げられるようにits attrubutes $F_ {ji}$に依存する。
+- 
+
 
 ## どうやって有効だと検証した?
 
@@ -102,6 +112,9 @@ superedge特徴は隣接superpointsのサイズと形状を比較することで
 4. [L. Landrieu and G. Obozinski. Cut pursuit: Fast algorithms to learn piecewise constant functions on general weighted graphs. SIAM Journal on Imaging Sciences, 10(4):1724– 1766, 2017.](https://hal.archives-ouvertes.fr/hal-01306779v4/document)[24]
 5. [Y. Boykov, O. Veksler, and R. Zabih. Fast approximate en-ergy minimization via graph cuts.IEEE Transactions on Pat-tern Analysis and Machine Intelligence, 23(11):1222–1239, 2001.](http://www.cs.cornell.edu/~rdz/Papers/BVZ-PAMI01.pdf)[6]
 6. [J. W. Jaromczyk and G. T. Toussaint. Relative neighbor-hood graphs and their relatives. Proceedings of the IEEE, 80(9):1502–1517, 1992.](https://pdfs.semanticscholar.org/778e/013907b0edc3e2e6bb40446af3837307f72b.pdf)[19]
+7. [Y. Li, D. Tarlow, M. Brockschmidt, and R. S. Zemel. Gated graph sequence neural networks. InICLR, 2016.](https://arxiv.org/abs/1511.05493)[28]
+8. [M. Simonovsky and N. Komodakis. Dynamic edge-conditioned filters in convolutional neural networks on graphs. InCVPR, 2017.](https://arxiv.org/abs/1704.02901)[43]
+9. [K. Cho, B. van Merri ̈ enboer, C  ̧ . G ̈ ulc  ̧ehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using RNN encoder–decoder for statistical machine translation. InEMNLP, 2014.](https://arxiv.org/abs/1406.1078)[9]
 
 ## 会議
 CVPR 2018
