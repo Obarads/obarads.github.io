@@ -24,6 +24,8 @@ Github Issues : [#129](https://github.com/Obarads/obarads.github.io/issues/129)
 
 [※ アドバンテージの※部分がわかりづらいから修正すること。あと桁が小さくなるのは計算量のことでいいのか?]
 
+これ見ればいいですね...-> [2018/12/28 LiDARで取得した道路上点群に対するsemantic segmentation by Takuya Minagawa](https://www.slideshare.net/takmin/20181228-lidarsemantic-segmentation)
+
 ## 先行研究と比べてどこがすごいの?
 細かい情報を保持でき、なおかつ大規模な点群を処理できる手法がいままでなかった。本提案では、提案の中に含まれているパイプラインが幾何学的な複雑さに従って適応的に点群を分割するため、それらを両立した処理が行える。
 
@@ -95,12 +97,55 @@ superedge特徴は隣接superpointsのサイズと形状を比較することで
 - $\mathbf{h_ i^{(t+1)}}$(新たなhidden state)はincoming message $\mathbf{m}_ i^{(t)}$と$\mathbf{h}_ i^{(t)}$をGRUに入力することで得られる。
 - incoming message $\mathbf{m}_ i^{(t)}$ to superpoint $i$は隣接するsuperpoint $j$の$h_ j^{(t)}$の加重和として計算されている。
 - actual weighting for a superedge $(j,i)$は、表1に挙げられるようにits attrubutes $F_ {ji}$に依存する。
-- 
+- 具体的には、attributesからMLP $\Theta$によって計算され、Filter Generating Networkと呼ばれている.
 
+上記の内容を公式で示すと、
+
+$$
+\begin{array}{l}
+{\mathbf{h}_{i}^{(t+1)}=\left(1-\mathbf{u}_{i}^{(t)}\right) \odot \mathbf{q}_{i}^{(t)}+\mathbf{u}_{i}^{(t)} \odot \mathbf{h}_{i}^{(t)}} \\ 
+{\mathbf{q}_{i}^{(t)}=\tanh \left(\mathbf{x}_{1, i}^{(t)}+\mathbf{r}_{i}^{(t)} \odot \mathbf{h}_{1, i}^{(t)}\right)} \\ 
+{\mathbf{u}_{i}^{(t)}=\sigma\left(\mathbf{x}_{2, i}^{(t)}+\mathbf{h}_{2, i}^{(t)}\right), \quad \mathbf{r}_{i}^{(t)}=\sigma\left(\mathbf{x}_{3, i}^{(t)}+\mathbf{h}_{3, i}^{(t)}\right)}
+\end{array} \tag{4}
+$$
+
+$$
+\begin{array}{l}{\left(\mathbf{h}_{1, i}^{(t)}, \mathbf{h}_{2, i}^{(t)}, \mathbf{h}_{3, i}^{(t)}\right)^{T}=\rho\left(W_{h} \mathbf{h}_{i}^{(t)}+b_{h}\right)} \\ 
+{\left(\mathbf{x}_{1, i}^{(t)}, \mathbf{x}_{2, i}^{(t)}, \mathbf{x}_{3, i}^{(t)}\right)^{T}=\rho\left(W_{x} \mathbf{x}_{i}^{(t)}+b_{x}\right)}\end{array} \tag{5}
+$$
+
+$$
+\mathbf{x}_{i}^{(t)}=\sigma\left(W_{g} \mathbf{h}_{i}^{(t)}+b_{g}\right) \odot \mathbf{m}_{i}^{(t)} \tag{6}
+$$
+
+$$
+\mathbf{m}_{i}^{(t)}=\operatorname{mean}_{j |(j, i) \in \mathcal{E}} \Theta\left(F_{j i,}, .; W_{e}\right) \odot \mathbf{h}_{j}^{(t)} \tag{7}
+$$
+
+$$
+\mathbf{h}_{i}^{(1)}=\mathbf{z}_{i}, \quad \mathbf{y}_{i}=W_{o}\left(\mathbf{h}_{i}^{(1)}, \ldots, \mathbf{h}_{i}^{(T+1)}\right)^{T} \tag{8}
+$$
+
+となる。
+
+この公式において、
+
+- $\odot$はelement-wise multiplicatioである。
+- $\sigma(\cdot)$はシグモイド関数である。
+- $W.とb.$はすべてのGRU同士で共有されている学習パラメータである。
+- 式4は標準のGRUのルール[9]であり、
+    - update gate $\mathbf{u}_ i^{(t)}$と、
+    - reset gate $\mathbf{r}_ i^{(t)}$を持つ。
+- 式5で、学習の安定化のためにLayer Normalization[11]を$\rho(\mathbf{a}):=(\mathbf{a}-\operatorname{mean}(\mathbf{a})) /(\operatorname{std}(\mathbf{a})+\epsilon)$として定義し、
+    - これをlinearly transformed input $\mathbf{x}_ i^{(t)}$とtransformed hidden state $\mathbf{h}_ i^{(t)}$にそれぞれ適応する。
+    - このとき、$\epsilon$は小さな定数である。
+- 式6~8は拡張であり、論文のInput Gating以降の内容を参考にすること。[ここでは省略]
 
 ## どうやって有効だと検証した?
+省略
 
 ## 議論はある?
+省略
 
 ## 次に読むべき論文は?
 - なし
@@ -114,7 +159,9 @@ superedge特徴は隣接superpointsのサイズと形状を比較することで
 6. [J. W. Jaromczyk and G. T. Toussaint. Relative neighbor-hood graphs and their relatives. Proceedings of the IEEE, 80(9):1502–1517, 1992.](https://pdfs.semanticscholar.org/778e/013907b0edc3e2e6bb40446af3837307f72b.pdf)[19]
 7. [Y. Li, D. Tarlow, M. Brockschmidt, and R. S. Zemel. Gated graph sequence neural networks. InICLR, 2016.](https://arxiv.org/abs/1511.05493)[28]
 8. [M. Simonovsky and N. Komodakis. Dynamic edge-conditioned filters in convolutional neural networks on graphs. InCVPR, 2017.](https://arxiv.org/abs/1704.02901)[43]
-9. [K. Cho, B. van Merri ̈ enboer, C  ̧ . G ̈ ulc  ̧ehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using RNN encoder–decoder for statistical machine translation. InEMNLP, 2014.](https://arxiv.org/abs/1406.1078)[9]
+9. [K. Cho, B. van Merri ̈ enboer, C  ̧ . G ̈ ulc  ̧ehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using RNN encoder–decoder for statistical machine translation. InEMNLP, 2014.](https://arxiv.org/abs/1406.1078)[8]
+10. [Takuya Minagawa, 2018/12/28 LiDARで取得した道路上点群に対するsemantic segmentation, 2019.](https://www.slideshare.net/takmin/20181228-lidarsemantic-segmentation)
+11. [L. J. Ba, R. Kiros, and G. E. Hinton. Layer normalization. CoRR, abs/1607.06450, 2016.](https://arxiv.org/abs/1607.06450)[4]
 
 ## 会議
 CVPR 2018
@@ -132,7 +179,7 @@ Loic Landrieu, Martin Simonovsky
 Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV
 
 ## status
-導入
+省略
 
 ## read
 A, I, R

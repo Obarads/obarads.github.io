@@ -21,11 +21,11 @@ Github Issues : []()
 
 ## Conference, Journal, etc.
 
-## 著者
+## The author
 
-## 投稿日付(yyyy/MM/dd)
+## Release date(yyyy/MM/dd)
 
-## コメント
+## My comments
 なし
 
 ## key-words
