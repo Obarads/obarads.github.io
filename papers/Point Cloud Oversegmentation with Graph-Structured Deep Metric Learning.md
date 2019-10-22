@@ -43,7 +43,25 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 
 ![fig2](img/PCOwGDML/fig2.png)
 
-![eq1_2_3_4_5](img/PCOwGDML/eq1_2_3_4_5.png)
+$$
+\operatorname{rad}=\operatorname{std}\left(P_{i}\right) \tag(1)
+$$
+
+$$
+\Omega=\operatorname{PTN}\left(\tilde{P}_{i}\right) \tag{2}
+$$
+
+$$
+P_{i}^{\prime}=\left(P_{i}-p_{i}\right) / \operatorname{rad} \tag{3}
+$$
+
+$$
+\tilde{P}_{i}=\left\{p \times \Omega | p \in P_{i}^{\prime}\right\} \tag{4}
+$$
+
+$$
+\tilde{p}_{i}=\left[p_{i}^{(z)}, \operatorname{rad}, \Omega\right] \tag{5}
+$$
 
 #### Local Point Embedder(LPE)
 この部品は標準化された点特徴$x_ i$と集合特徴$X_ i$の２つの入力から正規化された埋め込みを計算する。埋め込みは$e_ i$はshared LPEを介して$C$の各点$i$に対して計算される。先程示した入力の集合特徴$X_ i$には前節の$\tilde{P}_ i$と放射測定情報$R_ i$、点特徴$x_ i$には点$i$の$\tilde{p}_ i$と放射分析(?)$r_ i$が割り当てられる。
@@ -51,11 +69,52 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 
 ![fig3](img/PCOwGDML/fig3.png)
 
-![eq_6_7_8](img/PCOwGDML/eq_6_7_8.png)
+$$
+\mathrm{L}_{2}(\cdot)=\cdot /\|\cdot\| \tag{6}
+$$
+
+$$
+\operatorname{LPE}\left(X_{i}, x_{i}\right)=\mathrm{L}_{2}\left(\operatorname{MLP}_{2}\left(\left[\max \left(\mathrm{MLP}_{1}\left(X_{i}\right)\right), x_{i}\right]\right)\right) \tag{7}
+$$
+
+$$
+e_{i}=\operatorname{LPE}\left(\left[\tilde{P}_{i}, R_{i}\right],\left[\tilde{p}_{i}, r_{i}\right]\right) \tag{8}
+$$
 
 ### Graph-Based Point Cloud Oversegmentation
 #### The Generalized Minimal Partition Problem
-埋め込み計算後、点群$C$から算出される隣接グラフ$G=(C,E)$に関連するスーパーポイントを定義する(この$E$はLPEに使用される近傍構造から取得できる)。
+埋め込み計算後にsuperpointsを定義する。
+- 具体的には、埋め込み計算後、点群$C$から算出されるadjacency graph $G=(C,E)$に関連するスーパーポイントを定義する。
+    - この$E$はLPEに使用される近傍構造から取得できる。
+- ただし、the local neighborhood of pointsを記述するより、the cloud's adjacency structureを得るためにmuch smaller neighborhoodsを必要とされる。[違いがいまいちわからない、local\~の方はcvpr2018なんかでよく使われた半径もしくはk最近傍を用いたもの、cloud's\~はそれよりも更に小さい範囲で点を得ることなのか?]
+- [21]で提案されているように、著者らはsuperpointsをconstant connected componentsとして定義する。
+    - constant connected componentsは埋め込み$e \in \mathbb{S}_ {m}^{C}$のpiecewise-constant approximation(区分定数近似)の$G$中のものである。
+    - この近似は式(9)の最適化問題の解$f^*$である。
+
+$$
+f^{\star}=\underset{f \in \mathbb{R}^{C \times m}}{\arg \min } \sum_{i \in C}\left\|f_{i}-e_{i}\right\|^{2}+\sum_{(i, j) \in E} w_{i, j}\left[f_{i} \neq f_{j}\right] \tag{9}
+$$
+- この式のパラメーターは、
+    - $w \in \mathbb{R}_ {+}^{E}$はエッジの重み、
+    - $[x \neq y]$は$x=y$のとき0に、その他は1になる。
+    - ネットワークが高コントラストの領域に沿ってより分割するために、エッジの重みとして$w_ {i, j}=\lambda \exp (\frac{-1}{\sigma}\|e_ {i}-e_ {j}\|^{2})$を定義して、
+        - パラメーターとして$\lambda$と$\sigma\in \mathbb{R}^+$を使う。
+
+Problem 9(最適化問題の式9)の解を求める際の注意
+- 式9は[31]で導入されており、generalized minimal partition (GMP)として知られている。
+    - 式9はcontinuousでも、differentiableでも、convexでもない。
+- この式9は(大域的な)最小値を導出することができない。
+- しかしながら、$\ell_ 0$-cutpursuit algorithm[31]なら高速で近似解を求められる。
+
+式9とP3の関わりと補足
+- the contour penalty[式9のこと?]は、問題を合理的にパラメータ化するため、P3の条件を自動的に満たす。
+- 最適化変数$f$は$\mathbb{R}^{C \times m}$中の値を取り、一方で各埋め込み$e_ i$は$m$-sphere上に制約される。
+    - これは著者らのアプローチでの制限であり、効率性の問題があるから。
+    - いくつかのsuboptimal approximate solutionsを導くことができる可能性がある。
+        - しかしながら、著者らの実験で学習した埋め込みが良い結果を残すことを示した。
+
+#### Graph-Structured Contrastive Loss
+まだ
 
 ## どうやって有効だと検証した?
 ### Datasets
@@ -67,6 +126,7 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 
 
 ## 議論はある?
+
 
 ## 次に読むべき論文は?
 - なし
