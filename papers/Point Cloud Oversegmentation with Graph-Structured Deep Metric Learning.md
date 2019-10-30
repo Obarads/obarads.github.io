@@ -152,9 +152,13 @@ $\ell$の2項目にはthe opposite of the truncated graph-total variation [61] o
 - 具体的な式は次の通り: $\psi(x)=\max (1-\|x\|, 0)$
     - オブジェクト間の境界で、類似の埋め込みを罰則化する。
     - 埋め込みがunit sphereに制約されることを考慮し、この関数で1(角度60度に相当)よりも大きい差があるのでしきい値を設置する。[意訳]
-    - 言い換えれば、$\psi(x)$はan euclidean distance of 1を持つ埋め込みを取るために、inter-edgeによってリンクされた頂点を促進する。しかし、
+    - 言い換えれば、$\psi(x)$はan euclidean distance of 1を持つ埋め込みを取るために、inter-edgeによってリンクされた頂点を促進するが、大きすぎる差を出そうとはさせない。
 
 ![fig3](img/PCOwGDML/fig4.png)
+
+オブジェクト内でconstant(一定)であり、なおかつ隣接するオブジェクト間で少なくとも1の差がある場合、任意の埋め込みが持つ損失は0になる。
+- four-color theorem [17] は埋め込みの次元が最低3つある限りは常に可能であると言っている。[?, [17]を見ないとわからない]
+- しかしながら、LPEによって
 
 ## どうやって有効だと検証した?
 ### Datasets
