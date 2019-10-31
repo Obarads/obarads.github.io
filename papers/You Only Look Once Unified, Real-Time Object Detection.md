@@ -1,11 +1,12 @@
-# (enter a paper)
+# You Only Look Once: Unified, Real-Time Object Detection
 
-a URL for the published paper : []()  
+a URL for the published paper : [arxiv.org](https://arxiv.org/abs/1506.02640)  
 Github Issues : []()  
 
 Note: most contents is quoted from the paper.
 
 ## What's this paper?
+
 
 ## What's amazing in comparison with existing studies? or Related works
 
@@ -22,15 +23,19 @@ Note: most contents is quoted from the paper.
 1. None
 
 ## Conference, Journal, etc.
+CVPR 2016
 
 ## The author
+Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
 
 ## Release date(yyyy/MM/dd)
+2015/07/08
 
 ## My comments
 None
 
 ## key-words
+CV, English, RGB_Image, Detection, Supervised_Learning
 
 ## status
 未完

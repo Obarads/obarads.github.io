@@ -19,6 +19,8 @@ def extract_data(path):
     date_tags = []
     status_tags = []
     md_list = [os.path.split(m)[1].replace(".md","") for m in md_list]
+    rd_type_0 = "## 投稿日付(yyyy/MM/dd)"
+    rd_type_1 = "## Release date(yyyy/MM/dd)"
     for (ml,pl) in zip(md_list,path_list):
         with open(pl, 'r',encoding="utf-8") as f:
             content = f.read().split("\n")
@@ -35,8 +37,13 @@ def extract_data(path):
                             kw_tags.append(k)
                         if k == "''":
                             print(ml)
-            if "## 投稿日付(yyyy/MM/dd)" in content:
-                date_index = content.index("## 投稿日付(yyyy/MM/dd)")
+            rd_type = None
+            if rd_type_0 in content:
+                rd_type = rd_type_0
+            elif rd_type_1 in content:
+                rd_type = rd_type_1
+            if rd_type is not None:
+                date_index = content.index(rd_type)
                 if date_index != -1:
                     date = content[date_index+1].split("/")[0]
                     date_tags.append(date)
