@@ -160,6 +160,51 @@ $\ell$の2項目にはthe opposite of the truncated graph-total variation [61] o
 - four-color theorem [17] は埋め込みの次元が最低3つある限りは常に可能であると言っている。[?, [17]を見ないとわからない]
 - しかしながら、LPEによって計算された埋め込みであるため、認識可能な幾何学的 or 放射的な形状を表現できない境界線は著者らの手法で復元できない。
 
+#### Cross-Partition Weighting
+graph structured contrastive loss の効率において、$\mu_ {i, j}$の選択は非常に重要な要素である。
+- [前述したように]P2はP1を暗示しているが、P2の小さな損失がP2に大きく影響する可能性がある。
+- 実際、一本のエッジの欠損により、異なるオブジェクをカバーする2つの巨大なsuperpointsが間違って混ざり合うかもしれない。
+
+それ故、著者らはthe induced partition's purityを損失に組み込むことを必要とした。
+
+[37]はこのアイデアを実装したsegmentation-aware affinity loss (SEAL)を紹介している。
+- 彼らはintra-edgesを1として重み付けする。
+- inter-edgesでは$\mu_ {i, j}=1+|S|-|S \backslash O_ {S}|$として重み付けする。
+    - the same superpoint $S$の$i$と$j$に対するもの。
+    - $O_ S$ the majority-object[$O_ S$個かな?]
+    - *i.e.* the object for which most points of $S$ belongs to.
+
+[37]はsuperpixel oversegmentationに対して印象的な結果を残しているが、著者らのフレームワーク内ではこの効果を得ることができず、著者らは原因が3つあると考えている。
+1. すべてのsuperpoint of border edgesがinterface[?]のサイズとpurityに関係なく等しく重み付けされている。
+2. superpointがオブジェクトの境界に一致しないと、その重みは著しく1へ減少し、損失がかなり不安定になる。
+3. 異なるgraph-based clustring [36]を使っている。
+
+これらの制限を克服するために、著者らはパーティション間のweighting strategyを取る。
+- 著者らははじめにcross-segmentation graph $\mathcal{G}=(\mathcal{C,E})$を計算する。
+    - ここで、オブジェクトパーティション$\mathcal{O}$、superpoints partition $\mathcal{S}$間の$C$のcross-partition $\mathcal{C}$の隣接グラフを定義する。[?]
+    - 言い換えれば$\mathcal{C}$がオブジェクトもしくはsuperpoints間のすべてのエッジが削除されたとき、$\mathcal{C}$はthe set of connected components of the graph $G$であり、
+    - *super-edge*(*i.e.* set of edges)($U,V$)$\in \mathcal{E}$は、$\mathcal{C}$中の$U$,$V$間の$E_ {inter}$のinter-edgesの集合である。
+    - このとき、上記の定義は以下のように表される。
+        - $$ \begin{array}{l}{\mathcal{C}=\{O \cap S | O \in \mathcal{O}, S \in \mathcal{S}\}} \\ {\mathcal{E}=\left\{\left\{(i, j) \in(U \times V) \cap E_{\text {inter }}\right\} | U, V \in \mathcal{C}\right\}}\end{array}$$
+
+- 著者らは重み$\mu_ {U,V}$を各superedge$(U,V)$へ、$\mu_ {i,j}$を各edgeに振り分ける。
+    - 重みは以下の通り。
+    - $$ \begin{array}{l}{\mu_{U, V}=\frac{\mu \min (|U|,|V|)}{|(U, V)|} \quad \text{for}(U, V) \in \mathcal{E}} \\ {\mu_{i, j}=\mu_{U, V} \quad \text { for all }(i, j) \in(U, V)}\end{array} $$
+        - $\mu$はモデルのパラメータである。
+    - このような重みは、界面のpurityと形状によるedgesの影響を同時に考慮する。[訳間違ってるかも]
+    - 実際、superedge $(U,V)$のedgeが境界として見過ごされると、the superpoints $U$と$V$はマージされるだろう。
+    - $U$と$V$は異なるオブジェクトをカバーするので、このようなマージは最低$\min (|U|,|V|)$個のvertices trespassingを起こす。
+        - *i.e.* not being in the majority-object of the merged super-point.
+    - 重みはinterfaceを構成するedgesの数以上のペナルティを均等に分配するために、$U$と$V$間のinterfaceを構成するedegesの数によって分けられる。
+    - これにより、長い境界線が損失で過剰に描写されることを防げる。
+        - 図5に掲載。
+
+### Cluster-Based Oversegmentation
+著者らは[28]の手法を一般化したものを3Dの設定に実装した。
+- このアプローチの主な利点はsuperpoints中の平均化された意味的クラスのクラスエントロピーを介してP1を直接的に実装できることである。
+- しかしながら、このアプローチはsuperpointsのサイズをシーンの局所的な複雑さに適応させることができず、superpointの初期化に対する感度による妨げがある。
+- さらに、P3の回避において、複雑な輪郭をもつsuperpointsを生成してしまう。
+
 ## どうやって有効だと検証した?
 ### Datasets
 著者らはS3DIS(インドア)とvKITTI(アウトドア)の二つのデータセットを利用して評価している。vKITTIは色情報を利用する場合とそうでない場合で評価する。大量の点を持つ両方のデータセットに対して、S3DISは3cm、vKITTIは5cm幅のregular grid of voxelsを使ってsubsampleする。各ボクセルでは位置と色を平均化する。これにより、メモリのロードと計算量を減らす。
@@ -193,7 +238,7 @@ Loic Landrieu, Mohamed Boussaha.
 Supervised_Learning, Point_Cloud, Semantic_Segmentation, Oversegmentation, CV
 
 ## status
-導入
+省略
 
 ## read
-A, I, R
+A, I, R, M
