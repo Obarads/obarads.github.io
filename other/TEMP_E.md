@@ -3,7 +3,7 @@
 a URL for the published paper : []()  
 Github Issues : []()  
 
-Note: most contents is quoted from the paper.
+Note: most contents of this file is quoted from the paper, and citation parts are indicated by double quotation.
 
 ## What's this paper?
 
