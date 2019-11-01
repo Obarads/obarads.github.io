@@ -3,10 +3,14 @@
 a URL for the published paper : [arxiv.org](https://arxiv.org/abs/1506.02640)  
 Github Issues : []()  
 
-Note: most contents is quoted from the paper.
-
 ## What's this paper?
-
+This paper proposed YOLO, new object detection model for RGB image.
+- This unified architecture is extremely fast.
+    - Base YOLO model processes images in real-time at 45 FPS (frames per second).
+    -  Fast YOLO (A smaller version of the network) processes an 155 FPS.
+        - Fast YOLO achieved double the mAP of other real-time detectors [as of 2015].
+    - Compared to SOTA detection systems, YOLO makes more localization errors but is less likely to predict false positives on background.
+    - 
 
 ## What's amazing in comparison with existing studies? or Related works
 
