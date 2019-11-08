@@ -130,6 +130,24 @@ body a:hover {
     }
 }
 
+#d-con {
+    background: #333;
+    color: #fff;
+    border-right: solid 1px #666;
+}
+
+@media screen and (min-width: 575px) {
+    #d-con {
+        position: fixed;
+        display: block;
+        margin-top: 3.5rem;
+        padding-top: 0.5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: -webkit-calc(100% - 3.5rem);
+    }
+}
+
 #l-sb {
     margin-left: 1rem;
     margin-right: 0.5rem;
@@ -183,24 +201,45 @@ body a:hover {
 
 .toc-2{
     padding-left: 0px;
-    padding-top: 10px;
+    padding-top: 25px;
     font-size: 23px;
+}
+.toc-con-2{
+    border-left: solid 4px #666;
+    border-bottom: solid 1px #666;
+}
+.toc-con2-2{
+    margin-left: 5px;
 }
 .toc-2 a{
     color: #ffffff;
 }
 .toc-3{
     padding-left: 15px;
-    padding-top: 4px;
+    padding-top: 18px;
     font-size: 20px;
+
+}
+.toc-con-3{
+    border-left: double 12px #999;
+    border-bottom: dashed 2px #999;
+}
+.toc-con2-3{
+    margin-left: 5px;
 }
 .toc-3 a{
     color: #ffffff;
 }
 .toc-4{
     padding-left: 30px;
-    padding-top: 2px;
+    padding-top: 4px;
     font-size: 18px;
+}
+.toc-con-4{
+    border-bottom: dotted 2px #999;
+}
+.toc-con2-4{
+    margin-left: 5px;
 }
 .toc-4 a{
     color: #ffffff;

@@ -204,60 +204,73 @@ function search(il, tl, title, path, mode) {
 
 }
 
-function chenge_id(){
-  var h_list = [2,3,4,5]
+function chenge_id() {
+  var h_list = [1, 2, 3, 4, 5]
   var new_ids = []
-  for(var i in h_list){
+  for (var i in h_list) {
     h = h_list[i]
-    var element = document.getElementsByTagName("h"+h)
+    var element = document.getElementsByTagName("h" + h)
     var counter = 0
-    while(counter < element.length){
-      new_id = "_"+h+"-"+counter
+    while (counter < element.length) {
+      new_id = "_" + h + "-" + counter
       element[counter].id = new_id
       new_ids.push(new_id)
-      counter=counter+1
+      counter = counter + 1
     }
   }
   return new_ids
 }
 
-function headline(markdown, new_ids){
+function headline(markdown, new_ids) {
   lines = markdown.split("\n");
   var headline = [];
   var in_code = false;
-  for(var it in lines){
-      if(lines[it].match(/^```.?/)){
-          // コードの行内の場合は外す
-          in_code = in_code ? false : true;
-      }
-      if(lines[it][0] == '#' && !in_code && lines[it][1] != ' '){
-          // 先頭の#とスペースを削除して追加
-          headline.push([lines[it].replace(/^#+/, '').trim(),lines[it].split(" ")[0].length]);
-      }
+  for (var it in lines) {
+    if (lines[it].match(/^```.?/)) {
+      // コードの行内の場合は外す
+      in_code = in_code ? false : true;
+    }
+    if (lines[it][0] == '#' && !in_code && lines[it][1] != ' ') {
+      // 先頭の#とスペースを削除して追加
+      headline.push([lines[it].replace(/^#+/, '').trim(), lines[it].split(" ")[0].length]);
+    }
+    // #が1個だけ(記事のタイトル)の場合のみ別の処理
+    if (lines[it][0] == '#' && !in_code && lines[it][1] == ' ') {
+      title = lines[it].replace(/^#+/, '').trim()
+    }
   }
 
   // 表示用のリスト構文
-  var preview = "";
-  var counter = [0,0,0,0,0] // [h1,h2,h3,h4,h5]
-  for(var it in headline){
-      preview += "<div class='toc-"
-              +  headline[it][1]
-              +  "'>"
-              +  "<a href=\"javascript:id_scroll('"
-              +  "_" + headline[it][1] + "-" + counter[headline[it][1]-1]
-              +  "')\">"
-              +  headline[it][0]
-              +  "</a></div>";
-              counter[headline[it][1]-1] = counter[headline[it][1]-1] + 1
+  var preview = "<a style='font-size: 30px; color: white;' href=\"javascript:id_scroll('" 
+  + "_1-0"
+  + "')\">"
+  + title
+  + "</a><br>";
+  var counter = [0, 0, 0, 0, 0] // [h1,h2,h3,h4,h5]
+  for (var it in headline) {
+    preview += "<div class='toc-"
+      + headline[it][1]
+      + "'>"
+      + "<div class='toc-con-"
+      + headline[it][1]
+      + "'>"
+      + "<div class='toc-con2-"
+      + headline[it][1]
+      + "'>"
+      + "<a href=\"javascript:id_scroll('"
+      + "_" + headline[it][1] + "-" + counter[headline[it][1] - 1]
+      + "')\">"
+      + headline[it][0]
+      + "</a></div></div></div>";
+    counter[headline[it][1] - 1] = counter[headline[it][1] - 1] + 1
   }
-  preview += "</ul>"
   // 確認用
   $('#headline-preview').html(preview);
   // 更新用
   $('#headline').html(headline.join(','));
 }
 
-function id_scroll(id_name){
+function id_scroll(id_name) {
   var element = document.getElementById(id_name);
   element.scrollIntoView({
     behavior: 'auto',
