@@ -104,7 +104,7 @@ Weiyue Wang, Ronald Yu, Qiangui Huang, Ulrich Neumann.
 なし
 
 ## key-words
-Point_Cloud, Instance_Segmentation, Semantic_Segmentation, CV
+Point_Cloud, Instance_Segmentation, Semantic_Segmentation, CV, Paper
 
 ## status
 更新済

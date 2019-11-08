@@ -91,7 +91,7 @@ Yang Zou, Zhiding Yu, B.V.K. Vijaya Kumar, and Jinsong Wang.
 なし
 
 ## key-words
-Unsupervised_Learning, Domain_Adaptation, RGB_Image, CV
+Unsupervised_Learning, Domain_Adaptation, RGB_Image, CV, Paper
 
 ## status
 更新済

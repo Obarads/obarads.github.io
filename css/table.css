@@ -42,7 +42,11 @@ table tbody td, th {
 }
 
 tr a{
-    color: #111111;
+    color: #333333;
+}
+
+tr {
+    color: #333333;
 }
 
 /*tag button*/

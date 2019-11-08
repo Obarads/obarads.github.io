@@ -58,4 +58,4 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 7. [Andrew Zisserman, Self-Supervised Learning](https://project.inria.fr/paiss/files/2018/07/zisserman-self-supervised.pdf)
 
 ## key-words
-Self-Supervised_Learning, CV
+Self-Supervised_Learning, CV, Memo

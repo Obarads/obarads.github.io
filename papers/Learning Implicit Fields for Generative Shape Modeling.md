@@ -37,7 +37,7 @@ Zhiqin Chen, Hao Zhang
 なし
 
 ## key-words
-Reconstruction, CV
+Reconstruction, CV, Paper
 
 ## status
 導入

@@ -32,7 +32,7 @@ Hugues Thomas, Jean-Emmanuel Deschaud, Beatriz Marcotegui, François Goulette, Y
 なし
 
 ## key-words
-Point_Cloud, CV
+Point_Cloud, CV, Paper
 
 ## status
 未完

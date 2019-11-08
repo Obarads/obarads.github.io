@@ -34,7 +34,7 @@ Francis Engelmann, Theodora Kontogianni, Alexander Hermans, Bastian Leibe
 なし
 
 ## key-words
-CV, Point_Cloud, Semantic_Segmentation
+CV, Point_Cloud, Semantic_Segmentation, Paper
 
 ## status
 導入

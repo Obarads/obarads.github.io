@@ -45,7 +45,7 @@ Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegro
 なし
 
 ## key-words
-Reconstruction, AutoEncoder, Point_Cloud, Completion, CV
+Reconstruction, AutoEncoder, Point_Cloud, Completion, CV, Paper
 
 ## status
 導入

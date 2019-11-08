@@ -104,7 +104,7 @@ Yin Zhou and Oncel Tuzel
 super tensorの扱いがわからないからなぜ効率が良くなるのかわからない(ただ単に並列処理がしやすいということ?)。損失関数についてはFast R-CNNをちゃんと理解していないため、説明もよくわからず書いている。uiもよくわからない。先に論文関連リンクの1を見ます(2019/02/11)
 
 ## key-words
-Detection, Point_Cloud, CV
+Detection, Point_Cloud, CV, Supervised_Learning, Paper
 
 ## status
 更新済

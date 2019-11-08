@@ -85,7 +85,7 @@ Augustus Odena, Christopher Olah, Jonathon Shlens.
 なし
 
 ## key-words
-RGB_Image, GAN, CV
+RGB_Image, GAN, CV, Paper
 
 ## status
 更新済

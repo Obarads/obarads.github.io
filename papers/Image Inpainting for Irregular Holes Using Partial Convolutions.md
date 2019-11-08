@@ -32,7 +32,7 @@ Guilin Liu, Fitsum A. Reda, Kevin J. Shih, Ting-Chun Wang, Andrew Tao, Bryan Cat
 valid pixelは正常なピクセルって意味でいいらしい
 
 ## key-words
-RGB_Image, CV, Completion
+RGB_Image, CV, Completion, Paper
 
 ## status
 未完

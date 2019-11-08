@@ -89,7 +89,7 @@ Gernot Riegler, Ali Osman Ulusoy, Andreas Geiger.
 なし
 
 ## key-words
-Voxel, Point_Cloud, Classification, Semantic_Segmentation, CV
+Voxel, Point_Cloud, Classification, Semantic_Segmentation, CV, Paper
 
 ## status
 更新済

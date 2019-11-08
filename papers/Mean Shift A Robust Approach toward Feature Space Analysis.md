@@ -45,7 +45,7 @@ Dorin Comaniciu, Peter Meer.
 なし
 
 ## key-words
-Point_Cloud, RGB_Image, CV
+Point_Cloud, RGB_Image, CV, Paper
 
 ## status
 参照

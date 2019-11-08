@@ -42,7 +42,7 @@ Adam Coates and Andrew Y. Ng.
 なし
 
 ## key-words
-RGB_Image, CV
+RGB_Image, CV, Paper
 
 ## status
 未完

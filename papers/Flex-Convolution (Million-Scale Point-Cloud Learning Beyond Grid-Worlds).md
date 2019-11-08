@@ -44,7 +44,7 @@ Fabian Groh, Patrick Wieschollek, Hendrik P.A. Lensch.
 なし
 
 ## key-words
-Point_Cloud, CV
+Point_Cloud, CV, Paper
 
 ## status
 未完

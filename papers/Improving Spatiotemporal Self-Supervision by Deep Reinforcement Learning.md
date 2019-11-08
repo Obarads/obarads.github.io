@@ -39,7 +39,7 @@ Uta Büchler, Biagio Brattoli, Björn Ommer.
 なし
 
 ## key-words
-Reinforcement_Learning, Self-Supervised_Learning, CV
+Reinforcement_Learning, Self-Supervised_Learning, CV, Paper
 
 ## status
 導入

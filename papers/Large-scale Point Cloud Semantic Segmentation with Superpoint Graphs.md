@@ -176,7 +176,7 @@ Loic Landrieu, Martin Simonovsky
 なし
 
 ## key-words
-Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV
+Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV, Paper
 
 ## status
 省略

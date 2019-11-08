@@ -68,7 +68,7 @@ Alec Radford, Luke Metz, Soumith Chintala.
 なし
 
 ## key-words
-Unsupervised_Learning, GAN, RGB_Image, CV
+Unsupervised_Learning, GAN, RGB_Image, CV, Paper
 
 ## status
 更新済

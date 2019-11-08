@@ -32,7 +32,7 @@ AliAkbar Aghamohammadi, Amir  H. Tamjidi, and Hamid D. Taghirad
 なし
 
 ## key-words
-Point_Cloud, SLAM, CV
+Point_Cloud, SLAM, CV, Paper
 
 ## status
 未完

@@ -32,7 +32,7 @@ Yasuhiro Aoki, Hunter Goforth, Rangaprasad Arun Srivatsan, Simon Lucey.
 なし
 
 ## key-words
-Point_Cloud, CV
+Point_Cloud, CV, Paper
 
 ## status
 未完

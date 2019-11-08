@@ -46,7 +46,7 @@ Weiyue Wang, Duygu Ceylan, Radomir Mech, Ulrich Neumann
 なし
 
 ## key-words
-Point_Cloud, Mesh
+CV, Point_Cloud, Mesh, Paper
 
 ## status
 導入

@@ -40,7 +40,7 @@ Y. Ben-Shabat, T. Avraham, M. Lindenbaum, and A. Fischer.
 なし
 
 ## key-words
-Point_Cloud, Graph, Oversegmentation, CV
+Point_Cloud, Graph, Oversegmentation, CV, Paper
 
 ## status
 未完

@@ -8,15 +8,15 @@
   <meta name="description" content="">
   <meta name="author" content="Obarads">
   <title>Paper-Reminder</title>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/list.js"></script>
-  <script src="js/jquery.tablesorter.min.js"></script>
-  <script src="js/jquery.twbsPagination.min.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/list.js"></script>
+  <script src="../js/jquery.tablesorter.min.js"></script>
+  <script src="../js/jquery.twbsPagination.min.js"></script>
   <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/app.css" />
-  <link rel="stylesheet" href="css/table.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/app.css" />
+  <link rel="stylesheet" href="../css/table.css" />
 </head>
 
 <body class="adjustment-pad" id="body">
@@ -25,43 +25,30 @@
 
   <main role="main" class="container-fluid">
     <div class="row">
-      <div class="col-sm-3" id="s-con">
-        <div id="l-sb">
-          <div id="sidebar">
-            <div class="row row-pad">
-              <label for="_filter_input">Title Filter</label>
-              <input class="form-control" id="_filter_input" type="text" placeholder="Fast R-CNN">
-            </div>
-            <div class="row row-pad">
-              <a id="_initialization_button" class="btn btn-danger btn-block">
-                Init
-              </a>
-            </div>
-            <div class="row">
-              <label>Tags
-                <div id="_category_tags"> </div>
-              </label>
-            </div>
-            <div class="row">
-              <label>Year
-                <div id="_category_year"> </div>
-              </label>
-            </div>
-          </div>
+      <nav id="navbar-example3" class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#item-1">Item 1</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+            <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+          </nav>
+          <a class="nav-link" href="#item-2">Item 2</a>
+          <a class="nav-link" href="#item-3">Item 3</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+            <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+          </nav>
+        </nav>
+      </nav>
+      <nav data-spy="scroll" data-target="#navbar-example3" data-offset="0" id="content" class="container">
+        <div id="item-1-1">
+          AAAA
         </div>
-      </div>
-      <div class="offset-sm-3 col-sm-9" id="t-con">
-        <table id="_papers_table" class="table tablesorter-dark">
-          <thead>
-            <tr>
-              <th>Title & Tags</th>
-              <th width="100">Year</th>
-            </tr>
-          </thead>
-          <tbody id="_papers_tbody">
-          </tbody>
-        </table>
-      </div>
+        <div id="item-1-2">
+          AAAA
+        </div>
+      </nav>
     </div>
   </main><!-- /.container -->
 

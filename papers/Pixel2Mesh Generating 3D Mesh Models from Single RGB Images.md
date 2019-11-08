@@ -69,7 +69,7 @@ Nanyang Wang, Yinda Zhang, Zhuwen Li, Yanwei Fu, Wei Liu, Yu-Gang Jiang
 なし
 
 ## key-words
-RGB_Image, Mesh, 3D_Estimation, Reconstruction, Supervised_Learning, CV
+RGB_Image, Mesh, 3D_Estimation, Reconstruction, Supervised_Learning, CV, Paper
 
 ## status
 省略

@@ -32,7 +32,7 @@ Varun Jampani, Deqing Sun, Ming-Yu Liu, Ming-Hsuan Yang, Jan Kautz
 なし
 
 ## key-words
-Superpixel, CV
+Superpixel, CV, Paper
 
 ## status
 未完

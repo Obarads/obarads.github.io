@@ -83,4 +83,4 @@ LiDAR用のシミュレータ
 3. [Documentation - Point Cloud Library (PCL). (アクセス:2019/06/10)](http://www.pointclouds.org/documentation/tutorials/index.php)
 
 ## key-words
-Point_Cloud, Registration, CV
+Point_Cloud, Registration, CV, Memo

@@ -32,7 +32,7 @@ Jakob Engel and Thomas Schops and Daniel Cremers.
 なし
 
 ## key-words
-SLAM, RGB_Image, CV
+SLAM, RGB_Image, CV, Paper
 
 ## status
 未完

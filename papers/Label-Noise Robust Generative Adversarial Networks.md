@@ -33,7 +33,7 @@ Takuhiro Kaneko, Yoshitaka Ushiku, Tatsuya Harada.
 なし
 
 ## key-words
-GAN, RGB_Image, CV
+GAN, RGB_Image, CV, Paper
 
 ## status
 導入

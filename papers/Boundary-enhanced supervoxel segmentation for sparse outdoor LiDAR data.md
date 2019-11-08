@@ -34,7 +34,7 @@ Soohwan Song, Honggu Lee and Sungho Jo
 なし
 
 ## key-words
-Supervoxel, CV
+Supervoxel, CV, Paper
 
 ## status
 未完

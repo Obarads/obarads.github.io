@@ -32,7 +32,7 @@ Li Zhang, Tao Xiang, and Shaogang Gong
 なし
 
 ## key-words
-Zero-Shot_Learning, CV
+Zero-Shot_Learning, CV, Paper
 
 ## status
 未完

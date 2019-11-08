@@ -32,7 +32,7 @@ Jhony K. Pontes, Chen Kong, Sridha Sridharan, Simon Lucey, Anders Eriksson, Clin
 なし
 
 ## key-words
-RGB_Image, Mesh, Reconstruction
+CV, RGB_Image, Mesh, Reconstruction, Paper
 
 ## status
 未完

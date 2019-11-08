@@ -44,7 +44,7 @@ Github Issues : [#90](https://github.com/Obarads/obarads.github.io/issues/90)
 ![fig2](img/PCOwGDML/fig2.png)
 
 $$
-\operatorname{rad}=\operatorname{std}\left(P_{i}\right) \tag(1)
+\operatorname{rad}=\operatorname{std}\left(P_{i}\right) \tag{1}
 $$
 
 $$
@@ -235,7 +235,7 @@ Loic Landrieu, Mohamed Boussaha.
 なし
 
 ## key-words
-Supervised_Learning, Point_Cloud, Semantic_Segmentation, Oversegmentation, CV
+Supervised_Learning, Point_Cloud, Semantic_Segmentation, Oversegmentation, CV, Paper
 
 ## status
 省略

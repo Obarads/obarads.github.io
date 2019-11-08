@@ -1,7 +1,14 @@
-# Entropy
+# Formal Modeling in Cognitive Science Lecture 25: Entropy, Joint Entropy, Conditional Entropy
 
-## Entropy
-以下は[1]の意訳である。  
+元の記事の公開ページ : [Frank Keller. Formal Modeling in Cognitive Science Lecture 25: Entropy, Joint Entropy, Conditional Entropy. (アクセス:2019/05/01)](http://www.inf.ed.ac.uk/teaching/courses/fmcs1/slides/lecture25.pdf)
+Github Issues : []()  
+
+## どんなもの?
+Entropy.
+
+## 内容の詳細は?
+以下は意訳である。  
+### Entropy
 $X$が離散確率変数であり$f(x)$が$x$における確率分布の値である時、$X$のエントロピーは以下の式で表される。
 
 $$
@@ -13,7 +20,7 @@ $$
 - 確率変数の結果を伝えるメッセージの長さとしても解釈できる。
 - $H(X)\geq 0$と定義される。
 
-### 例
+#### 例
 例としてフェアな8面ダイスを振った結果を記録するとする。この場合のエントロピーはどのようになるか?  
 この確率分布は$f(x)=\frac{1}{8}$ for ${x=1,\cdots,8}$となる。そのため、エントロピーは以下のようになる。
 
@@ -27,7 +34,7 @@ $$
 |---|---|---|---|---|---|---|---|
 |001|010|011|100|101|110|111|000|
 
-### 定理
+#### 定理
 もし$X$が$f(0)=p$と$f(1)=1-p$の分布を持つ二値確率変数である場合、以下の特性がある。
 
 - $p=0 or 1$のとき、$H(X)=0$
@@ -38,7 +45,7 @@ $$
 
 ![1_fig1](img/Entropy/1_fig1.png)
 
-## Joint Entropy
+### Joint Entropy
 以下は[1]の意訳である。  
 もし$X$と$Y$が離散確率変数、$f(x,y)$が$(x,y)$における結合確率分布の値であるとき、$X$と$Y$の結合エントロピー(Joint Entropy)は下の式の様になる。
 
@@ -48,7 +55,7 @@ $$
 
 結合エントロピーは、2つの離散確率変数の値を明確にするために必要とされる平均的な情報量を示す。
 
-## Conditional Entropy
+### Conditional Entropy
 以下は[1]の意訳である。  
 もし$X$と$Y$が離散確率変数であり、$f(x,y)$と$f(y|x)$が結合確率分布と条件付き確率分布であるとき、$X$で与えられる$Y$の条件付きエントロピー(conditional entropy)は以下のようになる。
 
@@ -58,7 +65,7 @@ $$
 
 条件付きエントロピーが相手方が$X$を知っているとして、$Y$を伝えるために平均でどれだけの追加情報が必要であるかを示す。
 
-### 例
+#### 例
 ここで、母音と子音が同じ音節内で一緒に発生する可能性があるとする。
 
 |$f(x,y)$|p|t|k|$f(y)$|
@@ -87,7 +94,7 @@ H(V | C)=-\sum_{x \in C} \sum_{y \in V} f(x, y) \log f(y | x)\\
 =\frac{11}{8} = 1.375 bits
 $$
 
-### 定理
+#### 定理
 確率分布に対して次のように定義できる。
 
 $$
@@ -104,7 +111,7 @@ $$
 
 エントロピーとしての減算ではなく除算が対数で定義されている。
 
-## Cross Entropy
+### Cross Entropy
 [3]より引用する。  
 2つの確率分布$P$と$Q$に対して以下の式を交差エントロピー(cross entropy)という。２つの確率分布の関係性を測るのに役に立つ。
 
@@ -112,10 +119,10 @@ $$
 \mathrm{H}(p, q)=-\sum_{x} p(x) \log q(x)
 $$
 
-
+## 投稿日付(yyyy/MM/dd)
 
 ## key-words
-, CV
+CV, Other
 
 ## 参考文献
 1. [Frank Keller. Formal Modeling in Cognitive Science Lecture 25: Entropy, Joint Entropy, Conditional Entropy. (アクセス:2019/05/01)](http://www.inf.ed.ac.uk/teaching/courses/fmcs1/slides/lecture25.pdf)

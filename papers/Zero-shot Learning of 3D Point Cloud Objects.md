@@ -58,7 +58,7 @@ Ali Cheraghian, Shafin Rahman, Lars Petersson
 なし
 
 ## key-words
-Point_Cloud, Zero-Shot_Learning, CV
+Point_Cloud, Zero-Shot_Learning, CV, Paper
 
 ## status
 修正

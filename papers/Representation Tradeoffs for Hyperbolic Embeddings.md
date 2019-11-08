@@ -32,7 +32,7 @@ Frederic Sala, Chris De Sa, Albert Gu, Christopher Re.
 なし
 
 ## key-words
-NLP
+NLP, Paper
 
 ## status
 未完

@@ -32,7 +32,7 @@ Soeren Pirk, Mohi Khansari, Yunfei Bai, Corey Lynch, Pierre Sermanet.
 なし
 
 ## key-words
-RGB_Image, Detection, CV
+RGB_Image, Detection, CV, Paper
 
 ## status
 未完

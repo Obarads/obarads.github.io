@@ -45,7 +45,7 @@ Chun-Liang Li, Tomas Simon, Jason Saragih, Barnabás Póczos, Yaser Sheikh.
 なし
 
 ## key-words
-Point_Cloud, Self-Supervised_Learning, AutoEncoder, Mesh, CV
+Point_Cloud, Self-Supervised_Learning, AutoEncoder, Mesh, CV, Paper
 
 ## status
 導入

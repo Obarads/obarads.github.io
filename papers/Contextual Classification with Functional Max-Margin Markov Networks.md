@@ -33,7 +33,7 @@ Daniel Munoz, J. Andrew Bagnell, Nicolas Vandapel, Martial Hebert
 なし
 
 ## key-words
-CV, Point_Cloud
+CV, Point_Cloud, Paper
 
 ## status
 導入

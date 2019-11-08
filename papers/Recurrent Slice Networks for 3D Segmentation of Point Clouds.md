@@ -73,7 +73,7 @@ Qiangui Huang, Weiyue Wang, Ulrich Neumann.
 なし
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, RNN, CV
+Point_Cloud, Semantic_Segmentation, RNN, CV, Paper
 
 ## status
 更新済

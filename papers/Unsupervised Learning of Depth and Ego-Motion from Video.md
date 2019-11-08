@@ -34,7 +34,7 @@ Tinghui Zhou, Matthew Brown, Noah Snavely, David G. Lowe
 なし
 
 ## key-words
-Video, CV
+Video, CV, Unsupervised_Learning, Paper
 
 ## status
 未完

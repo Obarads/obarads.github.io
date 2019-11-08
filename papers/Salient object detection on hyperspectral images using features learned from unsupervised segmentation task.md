@@ -32,7 +32,7 @@ Nevrez Imamoglu, Guanqun Ding, Yuming Fang, Asako Kanezaki, Toru Kouyama, Ryosuk
 なし
 
 ## key-words
-CV
+CV, Paper
 
 ## status
 未完

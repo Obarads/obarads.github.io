@@ -123,7 +123,7 @@ PENG-SHUAI WANG, CHUN-YU SUN, YANG LIU, XIN TONG
 なし
 
 ## key-words
-Classification, Voxel, CV
+Classification, Voxel, CV, Paper
 
 ## status
 更新済

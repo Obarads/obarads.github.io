@@ -120,7 +120,7 @@ Spyros Gidaris, Praveer Singh, Nikos Komodakis
 単純なのに強力である。こんなにも簡単な手法があるとは思わんかった。
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV
+RGB_Image, Self-Supervised_Learning, CV, Paper
 
 ## status
 更新済

@@ -42,7 +42,7 @@ Angelo Porrello, Davide Abati, Simone Calderara, and Rita Cucchiara
 なし
 
 ## key-words
-RGB_Image, Classification, CV
+RGB_Image, Classification, CV, Paper
 
 ## status
 導入

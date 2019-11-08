@@ -55,10 +55,16 @@ $$
 結果として以下のように実装できる。
 
 $$
-temp0 := \theta_0-\alpha\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)\\
-temp1 := \theta_1-\alpha\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)\\
-\theta_0 := temp0\\
-\theta_1 := temp1\\
+temp0 := \theta_0-\alpha\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)
+$$
+$$
+temp1 := \theta_1-\alpha\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)
+$$
+$$
+\theta_0 := temp0
+$$
+$$
+\theta_1 := temp1
 $$
 
 ここで上記の実装の説明を行う。下のような図がある時、前述したとおり$\theta_1$は$J(\theta_0,\theta_1)$が最も少なくなるような値になるように動かなければいけない。以下括弧内に速度とかの例えを出す。  
@@ -87,6 +93,7 @@ $$
 ### 参考文献
 1. [ToshinoriHanya. Deep Learningにおける知識の蒸留. (アクセス:3019/04/30)](http://codecrafthouse.jp/p/2018/01/knowledge-distillation/#vs)
 
+## 投稿日付(yyyy/MM/dd)
 
 ## key-words
-, CV
+Other

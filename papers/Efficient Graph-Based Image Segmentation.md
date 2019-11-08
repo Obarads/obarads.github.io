@@ -30,7 +30,7 @@ Github Issues :
 なし
 
 ## key-words
-CV
+CV, Paper
 
 ## status
 未完

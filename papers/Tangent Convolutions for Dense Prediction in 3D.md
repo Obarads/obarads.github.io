@@ -109,7 +109,7 @@ Maxim Tatarchenko, Jaesik Park, Vladlen Koltun, Qian-Yi Zhou
 IとM、アーキテクチャがわかりませんでした...
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, CV
+Point_Cloud, Semantic_Segmentation, CV, Paper
 
 ## status
 修正

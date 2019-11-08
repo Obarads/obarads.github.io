@@ -32,7 +32,7 @@ Kyle Hsu, Sergey Levine, and Chelsea Finn
 なし
 
 ## key-words
-Unsupervised_Learning, CV
+Unsupervised_Learning, CV, Paper
 
 ## status
 未完

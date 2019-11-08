@@ -31,6 +31,7 @@ Loic Landrieu and Guillaume Obozinski
 なし
 
 ## key-words
+CV, Paper
 
 ## status
 未完

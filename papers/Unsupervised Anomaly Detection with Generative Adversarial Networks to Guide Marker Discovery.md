@@ -82,7 +82,7 @@ Thomas Schlegl, Philipp Seebock, Sebastian M. Waldstein, Ursula Schmidt-Erfurth,
 なし
 
 ## key-words
-Unsupervised_Learning, RGB_Image, GAN, One-Class_&_Anomaly_Detection, CV
+Unsupervised_Learning, RGB_Image, GAN, One-Class_&_Anomaly_Detection, CV, Paper
 
 ## status
 更新済

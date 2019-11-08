@@ -37,7 +37,7 @@ Bolei Zhou, Aditya Khosla, Agata Lapedriza, Aude Oliva, Antonio Torralba.
 なし
 
 ## key-words
-RGB_Image, CV
+RGB_Image, CV, Paper
 
 ## status
 未完

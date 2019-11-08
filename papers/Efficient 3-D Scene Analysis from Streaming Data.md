@@ -33,7 +33,7 @@ Hanzhang Hu, Daniel Munoz, J. Andrew Bagnell and Martial Hebert
 なし
 
 ## key-words
-CV, Point_Cloud, Supervoxel
+CV, Point_Cloud, Supervoxel, Paper
 
 ## status
 未完

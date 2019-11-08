@@ -1,13 +1,15 @@
-data: [
-  "'RGB Image'",
-  "'Depth Image'",
-  "'Mesh'",
-  "'Point Cloud'",
-  "'Voxel'",
-  "'Video'",
-  "'Sound'",
-  "'Supervoxel'",
-  "'Superpixel'",
+contents: [
+  "'Paper'",
+  "'Article'",
+  "'Survey'",
+  "'Memo'",
+  "'Other'"
+]
+
+field: [
+  "'CV'",
+  "'NLP'",
+  "'Robot'",
 ]
 
 method: [
@@ -22,19 +24,16 @@ method: [
   "'Zero-Shot Learning'"
 ]
 
-etc: [
-  "'Sensor Fusion'",
-  "'AutoEncoder'",
-  "'Encoder-Decoder'",
-  "'English'",
-  "'GAN'",
-  "'Graph'",
-  "'RNN'",
-  "'Interpretability'",
-  "'Sparsity'",
-  "'Synthetic'",
-  "'TreeRNN'",
-  "'Survey'",
+data: [
+  "'RGB Image'",
+  "'Depth Image'",
+  "'Mesh'",
+  "'Point Cloud'",
+  "'Voxel'",
+  "'Video'",
+  "'Sound'",
+  "'Supervoxel'",
+  "'Superpixel'",
 ]
 
 task: [
@@ -62,8 +61,15 @@ task: [
   "'Super-Resolution'",
 ]
 
-field: [
-  "'CV'",
-  "'NLP'",
-  "'Robot'",
+etc: [
+  "'Sensor Fusion'",
+  "'AutoEncoder'",
+  "'Encoder-Decoder'",
+  "'GAN'",
+  "'Graph'",
+  "'RNN'",
+  "'Interpretability'",
+  "'Sparsity'",
+  "'Synthetic'",
+  "'TreeRNN'",
 ]

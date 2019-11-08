@@ -97,7 +97,7 @@ R Devon Hjelm, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachma
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV
+RGB_Image, Self-Supervised_Learning, CV, Paper
 
 ## status
 未完

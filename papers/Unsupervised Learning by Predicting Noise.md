@@ -36,7 +36,7 @@ Piotr Bojanowski, Armand Joulin.
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV
+RGB_Image, Self-Supervised_Learning, CV, Paper
 
 ## status
 未完

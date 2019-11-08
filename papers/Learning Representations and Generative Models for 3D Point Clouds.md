@@ -175,7 +175,7 @@ Panos Achlioptas, Olga Diamanti, Ioannis Mitliagkas, and Leonidas Guibas.
 JSDは別の資料を見たほうがいいと思う。あとこの論文の詳細は付録にいっぱいある(ここではそれを省く)。VAE使ったほうが楽じゃない...?あと分別器にAEを使うって?
 
 ## key-words
-AutoEncoder, Classification, GAN, Point_Cloud, CV
+AutoEncoder, Classification, GAN, Point_Cloud, CV, Paper
 
 ## status
 更新済

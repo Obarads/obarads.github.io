@@ -59,12 +59,12 @@ function search(il, tl, title, path, mode) {
   html = _html.map(create_links);
   var div = document.getElementById("_papers_tbody");
   div.innerHTML = html.join("");
-  if (mode==0){
+  if (mode == 0) {
     _html = tl;
     html = _html.map(create_tag);
     var div = document.getElementById("_category_tags");
     div.innerHTML = html.join(" ");
-  }else if(mode==1){
+  } else if (mode == 1) {
     _html = tl[0];
     html = _html.map(create_tag);
     var div = document.getElementById("_data_tags");
@@ -89,6 +89,12 @@ function search(il, tl, title, path, mode) {
     html = _html.map(create_tag);
     var div = document.getElementById("_field_tags");
     div.innerHTML = html.join(" ");
+
+    _html = tl[5];
+    html = _html.map(create_tag);
+    var div = document.getElementById("_contents_tags");
+    div.innerHTML = html.join(" ");
+
   }
   url_param = getParam("tag");
   if (url_param == null) {
@@ -179,8 +185,8 @@ function search(il, tl, title, path, mode) {
     /* display year and status or not*/
     var size = document.getElementById("body").clientWidth;
     if (size < transform_size) {
-        document.getElementById("__Year").click();
-        document.getElementById("__Status").click();
+      document.getElementById("__Year").click();
+      document.getElementById("__Status").click();
     }
 
     $('#_initialization_button').bind("click", function () {
@@ -198,8 +204,70 @@ function search(il, tl, title, path, mode) {
 
 }
 
+function chenge_id(){
+  var h_list = [2,3,4,5]
+  var new_ids = []
+  for(var i in h_list){
+    h = h_list[i]
+    var element = document.getElementsByTagName("h"+h)
+    var counter = 0
+    while(counter < element.length){
+      new_id = "_"+h+"-"+counter
+      element[counter].id = new_id
+      new_ids.push(new_id)
+      counter=counter+1
+    }
+  }
+  return new_ids
+}
+
+function headline(markdown, new_ids){
+  lines = markdown.split("\n");
+  var headline = [];
+  var in_code = false;
+  for(var it in lines){
+      if(lines[it].match(/^```.?/)){
+          // コードの行内の場合は外す
+          in_code = in_code ? false : true;
+      }
+      if(lines[it][0] == '#' && !in_code && lines[it][1] != ' '){
+          // 先頭の#とスペースを削除して追加
+          headline.push([lines[it].replace(/^#+/, '').trim(),lines[it].split(" ")[0].length]);
+      }
+  }
+
+  // 表示用のリスト構文
+  var preview = "";
+  var counter = [0,0,0,0,0] // [h1,h2,h3,h4,h5]
+  for(var it in headline){
+      preview += "<div class='toc-"
+              +  headline[it][1]
+              +  "'>"
+              +  "<a href=\"javascript:id_scroll('"
+              +  "_" + headline[it][1] + "-" + counter[headline[it][1]-1]
+              +  "')\">"
+              +  headline[it][0]
+              +  "</a></div>";
+              counter[headline[it][1]-1] = counter[headline[it][1]-1] + 1
+  }
+  preview += "</ul>"
+  // 確認用
+  $('#headline-preview').html(preview);
+  // 更新用
+  $('#headline').html(headline.join(','));
+}
+
+function id_scroll(id_name){
+  var element = document.getElementById(id_name);
+  element.scrollIntoView({
+    behavior: 'auto',
+    block: 'start',
+    inline: 'nearest',
+  });
+}
+
 function detail(name, title) {
-  $('#_header').load('../html/index_header_container.html', function () {
+  $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = title;
   });
 
@@ -214,6 +282,7 @@ function detail(name, title) {
     smartLists: false,
     smartypants: false
   });
+
 
   document.title = decodeURI(name).replace(".md", "") + " - " + title;
   // ページ内リンクなのでhistory.pushStateする必要はない
@@ -246,6 +315,11 @@ function detail(name, title) {
     div.innerHTML = _html;
     MathJax.Hub.Configured();
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    new_ids = chenge_id()
+    headline(text, new_ids)
+    var div = document.getElementById("headline-preview").innerHTML;
+    MathJax.Hub.Configured();
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
   }).catch(function (err) {
     // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
     console.error(err);
@@ -253,7 +327,7 @@ function detail(name, title) {
 }
 
 function home(name) {
-  $('#_header').load('../html/index_header_container.html', function () {
+  $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = "Obarads"
   });
 

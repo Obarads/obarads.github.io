@@ -32,7 +32,7 @@ Yoram Gdalyahu, Daphna Weinshall, Michael Werman.
 なし
 
 ## key-words
-CV
+CV, Paper
 
 ## status
 未完

@@ -99,7 +99,7 @@ Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Josh Susskind, Wenda Wang and Ru
 なし
 
 ## key-words
-GAN, Synthetic, RGB_Image, CV
+GAN, Synthetic, RGB_Image, CV, Paper
 
 ## status
 更新済

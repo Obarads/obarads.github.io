@@ -128,7 +128,7 @@ Keisuke Tateno, Federico Tombari, Iro Laina, Nassir Navab.
 なし
 
 ## key-words
-RGB_Image, SLAM, CV
+RGB_Image, SLAM, CV, Paper
 
 ## status
 修正

@@ -1,15 +1,40 @@
-.__CV{
+.__Paper{
 background:#d9333f;
+color:#fff;
+}
+
+.__Article{
+background:#d9333f;
+color:#fff;
+}
+
+.__Survey{
+background:#d9333f;
+color:#fff;
+}
+
+.__Memo{
+background:#d9333f;
+color:#fff;
+}
+
+.__Other{
+background:#d9333f;
+color:#fff;
+}
+
+.__CV{
+background:#005FFF;
 color:#fff;
 }
 
 .__NLP{
-background:#d9333f;
+background:#005FFF;
 color:#fff;
 }
 
 .__Robot{
-background:#d9333f;
+background:#005FFF;
 color:#fff;
 }
 
@@ -59,47 +84,47 @@ color:#fff;
 }
 
 .__RGB_Image{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Depth_Image{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Mesh{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Point_Cloud{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Voxel{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Video{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Sound{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Supervoxel{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
 .__Superpixel{
-background:#005FFF;
+background:#228B22;
 color:#fff;
 }
 
@@ -214,62 +239,52 @@ color:#fff;
 }
 
 .__Sensor_Fusion{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__AutoEncoder{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__Encoder-Decoder{
-background:#228B22;
-color:#fff;
-}
-
-.__English{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__GAN{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__Graph{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__RNN{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__Interpretability{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__Sparsity{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__Synthetic{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 
 .__TreeRNN{
-background:#228B22;
-color:#fff;
-}
-
-.__Survey{
-background:#228B22;
+background:#aa08d3;
 color:#fff;
 }
 

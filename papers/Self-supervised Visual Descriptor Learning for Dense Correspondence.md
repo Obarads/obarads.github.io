@@ -33,7 +33,7 @@ Tanner Schmidt, Richard Newcombe, and Dieter Fox
 なし
 
 ## key-words
-Self-Supervised_Learning, Video, CV
+Self-Supervised_Learning, Video, CV, Paper
 
 ## status
 修正

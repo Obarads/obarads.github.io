@@ -85,7 +85,7 @@ Ben Graham
 この内容自体はまだ完全に理解してはいないため、いずれは勉強し直す。
 
 ## key-words
-Voxel, Sparsity, CV
+Voxel, Sparsity, CV, Paper
 
 ## status
 省略

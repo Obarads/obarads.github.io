@@ -34,7 +34,7 @@ Enrico Piazza, Andrea Romanoni, Matteo Matteucci
 なし
 
 ## key-words
-Mesh, Reconstruction
+CV, Mesh, Reconstruction, Paper
 
 ## status
 導入

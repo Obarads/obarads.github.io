@@ -36,7 +36,7 @@ Aravindh Mahendran, Andrea Vedaldi
 なし
 
 ## key-words
-CV
+CV, Paper
 
 ## status
 未完

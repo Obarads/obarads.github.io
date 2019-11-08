@@ -37,7 +37,7 @@ Andrey Kurenkov, Jingwei Ji, Animesh Garg, Viraj Mehta, JunYoung Gwak, Christoph
 なし
 
 ## key-words
-RGB_Image, Voxel, 3D_Estimation, CV
+RGB_Image, Voxel, 3D_Estimation, CV, Paper
 
 ## status
 参照

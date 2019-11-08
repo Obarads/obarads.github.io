@@ -33,7 +33,7 @@ Keze Wang, Dongyu Zhang, Ya Li, Ruimao Zhang, and Liang Lin
 なし
 
 ## key-words
-Active_Learning, CV
+Active_Learning, CV, Paper
 
 ## status
 未完

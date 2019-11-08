@@ -1,46 +1,57 @@
 # PIXOR: Real-time 3D Object Detection from Point Clouds
 
-a URL for the published paper : [arxiv.org](https://arxiv.org/abs/1902.06326)  
+元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/1902.06326)  
 Github Issues : []()  
 
-Note: most contents is quoted from the paper.
+## どんなもの?
+自動運転を想定した、点群からのリアルタイム3Dオブジェクト検出タスクに対して取り組んだ。
+- 既存の手法は点群の高次元性により、非常に計算量が非常に高価である。
 
-## What's this paper?
-I think you should see this URL: [fregu856, papers/PIXOR: Real-time 3D Object Detection from Point Clouds.md at master · fregu856/papers, 2018. (access:2019/10/31)](https://github.com/fregu856/papers/blob/master/summaries/PIXOR:%20Real-time%203D%20Object%20Detection%20from%20Point%20Clouds.md). 
+著者らは新規モデルとしてPIXOR (ORiented 3D object de-tection from PIXel-wise neural network predictions)を提案した。
+- 3Dデータを効率的に使用するため、Bird’s Eye View (BEV)からのシーンを利用する。
+- 提案なし手法である。
+- オブジェクト(車など)の向きを予測できる。
+- single-stage検出モデルである。
 
-This paper addresses real-time 3D object detection from point clouds in the context of autonomous driving. 
+KITTIとTOR4Dデータセットの2つで、車両検知ベンチマークを行った。
+- Average Precision (AP)では他のSOTA手法の結果を超え、尚且つ28 FPS以上の処理速度を記録した。
 
-## What's amazing in comparison with existing studies? or Related works
+詳しい内容は[1]を参照。
 
+## 先行研究と比べてどこがすごいの? or 関連事項
 
-## What's the key of method? or The method detatil
+## 技術や手法のキモはどこ? or 提案手法の詳細
 
-## How to experiment
+## どうやって有効だと検証した?
 
-## Is there a discussion?
+## 議論はある?
 
-## Which paper should I read next?
+## 次に読むべき論文は?
 - なし
 
-## Things related my article
-1. なし
+## 論文関連リンク
+1. [fregu856, papers/PIXOR: Real-time 3D Object Detection from Point Clouds.md at master · fregu856/papers, 2018. (access:2019/10/31)](https://github.com/fregu856/papers/blob/master/summaries/PIXOR:%20Real-time%203D%20Object%20Detection%20from%20Point%20Clouds.md)
 
-## Conference, Journal, etc.
+## 会議, 論文誌, etc.
+Bin Yang, Wenjie Luo, and Raquel Urtasun
 
-## The author
+## 著者
+CVPR 2018
 
-## Release date(yyyy/MM/dd)
+## 投稿日付(yyyy/MM/dd)
 2018/??/??
 
-## My comments
-None
+## コメント
+なし
 
 ## key-words
-CV, English, Point_Cloud, Detection
+CV, Point_Cloud, Detection, Supervised_Learning, Paper
 
 ## status
-未完
+参照
 
 ## read
+A
 
 ## Citation
+
