@@ -1,4 +1,9 @@
-/* all directory design */
+/* Temporary class */
+.test{
+    background: black;
+}
+
+/* font design */
 
 @font-face{
     font-family: noto;
@@ -10,67 +15,65 @@
     src: url(../font/JP/NotoSansJP-Black.otf) format('opentype'),
     url(../font/JP/NotoSansJP-Bold.otf) format('opentype');
 }
-
-.ff-noto {
+.font-noto {
     font-family: noto;
-}
-
-body {
-    background-color: #fff;
-    color: #333;
 }
 
 h1, h2, h3, h4, h5{
     font-family: noto-b;
 }
-
 h1 {
     font-size: 42px;
 }
-
 h2 {
     font-size: 34px;
     margin-top: 50px;
     padding-left: 10px;
-    border-left: solid 4px #666;
     padding-bottom: 10px;
     border-bottom: solid 1px #666;
+    border-left: solid 4px #666;
 }
-
 h3 {
     font-size: 29px;
     padding-left: 10px;
-    border-left: double 12px #999;
     padding-bottom: 10px;
     border-bottom: dashed 2px #999;
+    border-left: double 12px #999;
 }
-
 h4 {
     font-size: 24px;
     border-bottom: dotted 2px #999;
     padding-bottom: 3px;
 }
 
-li {
-    margin-left: 0.5rem;
-}
+/* font design END */
 
+
+
+/* body design and font color */
+
+body {
+    background-color: #fff;
+    color: #333;
+}
 body a {
     color: #ff2222;
 }
-
 body a:hover {
     color: #ff9e7b;
     text-decoration: unset;
 }
 
-/* header.html design */
+/* body design and font color END */
+
+
+/* header.html (for header (top navigation) design) */
+
 .tab-color {
     background: #333;
     font-family: noto;
     border-bottom: solid 1px #666;
 }
-
 .navbar-brand2 {
     color: rgb(216, 216, 216);
     display: inline-block;
@@ -81,52 +84,55 @@ body a:hover {
     line-height: inherit;
     white-space: nowrap;
 }
-
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(216, 216, 216);
 }
 
-/*index menu*/
+/* header (header.html design) END */
+
+/* main (each index.html design) */
+
+#_main {
+    overflow-x: auto;
+    overflow-y: auto;
+    display: block;
+    margin-top: 3.5rem;
+    height: -webkit-calc(100vh - 3.5rem);
+}
+#_main_left, #_main_right {
+    height: 100%;
+}
+/* main (each index.html design) END */
+
+/* li design */
+li {
+    margin-left: 0rem;
+}
+/* li design END */
+
+/*scroll bar*/
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #7a7a7a;
+}
+
+/*scroll bar END*/
+
 
 @media screen and (max-width: 1200px) {/*transform_size対応値*/
     #sidebar {
         padding: 1rem;
-    }
-}
-
-.row-pad {
-    padding-bottom: 1rem;
-}
-
-.row-h {
-    height: 85vh;
-}
-
-#t-con {
-    display: block;
-    margin-top: 3.5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: -webkit-calc(100vh - 3.5rem);
-    box-shadow: 0px 0px 4px -2px gray inset
-}
-
-#s-con {
-    background: #333;
-    color: #fff;
-    border-right: solid 1px #666;
-}
-
-@media screen and (min-width: 1200px) {/*transform_size対応値*/
-    #s-con {
-        position: fixed;
-        display: block;
-        margin-top: 3.5rem;
-        padding-right: 1.5rem;
-        padding-top: 0.5rem;
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: -webkit-calc(100% - 3.5rem);
     }
 }
 
@@ -167,31 +173,6 @@ body a:hover {
     max-width: 100%;
 }
 
-#content-p {
-    padding-top: 2.0rem;
-    overflow-x: auto;
-    overflow-y: auto;
-    display: block;
-    margin-top: 3.5rem;
-    height: -webkit-calc(100vh - 3.5rem);
-}
-
-/*scroll bar*/
-
-*::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-    background-color: rgba(0, 0, 0, 0);
-}
-
-*::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #7a7a7a;
-}
 
 /* detail page css */
 #headline-preview a:hover {

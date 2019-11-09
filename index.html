@@ -3,44 +3,41 @@
 <html lang="ja">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Obarads">
-    <title>Obarads</title>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/marked.js"></script>
-    <script src="js/app.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <style>
-        li {
-            margin-left: 0rem;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Obarads">
+  <title>Obarads</title>
+  <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/marked.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.css" />
 </head>
 
-<body class="ff-noto">
-    <div id="_header"></div>
-
-    <div id="content-p">
-        <main role="main">
-            <div class="row">
-                <div class="col-sm-3">
-
-                </div>
-                <div class="col-sm-9">
-                    <div id="content" class="container"></div>
-                </div>
-            </div>
-        </main>
+<body class="font-noto">
+  <div id="_header">
+    <!-- load header contents (topbar) -->
+  </div>
+  <div id="_main" class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 test">
+        <div id="_main_left" class="">
+          <!-- load sub contents (sidebar) -->
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div id="_main_right">
+          <!-- load main contents -->
+        </div>
+      </div>
     </div>
-    <script>
-        home("README.md");
-    </script>
+  </div>
+  <script>
+    home("README.md");
+  </script>
 </body>
 
 </html>

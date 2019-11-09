@@ -1,6 +1,10 @@
 var title_filter = "";
 var size_states = 0;
 
+// webサイトのサイドメニューの変形サイズ、bootstarapのcol-xx(xxにはxs、sm、md、lgが入る)と同じ値にする必要がある?
+// また、app.cssの/*transform_size対応値*/の値を変更する必要あり。
+transform_size = 1200
+
 function table_show_and_hide() {
   $('#_papers_tbody tr').each(function () {
     var sw_0 = 0;
@@ -113,8 +117,6 @@ function search(il, tl, title, path, mode) {
     }
   });
   table_show_and_hide();
-
-  transform_size = 576
 
   /*create this page*/
   $('#_header').load('../html/index_header.html', function () {
@@ -362,7 +364,7 @@ function home(name) {
     return Promise.resolve("# 404 page not found");
   }).then(function (text) {
     var _html = marked(text);
-    var div = document.getElementById("content");
+    var div = document.getElementById("_main_right");
     div.innerHTML = _html;
   });
 }

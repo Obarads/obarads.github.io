@@ -1,0 +1,23 @@
+/* side bar design*/
+
+.row-pad {
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.row-h {
+    height: 85vh;
+}
+
+.search-panel {
+    background: #333;
+    color: #fff;
+    border-right: solid 1px #666;
+    height: -webkit-calc(100vh - 3.5rem);
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-panel {
+    height: -webkit-calc(100vh - 3.5rem);
+}
