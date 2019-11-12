@@ -18,12 +18,8 @@
   <link rel="shortcut icon" href="../nanyouhagi_base_a.png" type="nanyouhagi_base_a.png">
 </head>
 
-<body class="font-noto">
-  <div id="_header">
-    <!-- load header contents (topbar) -->
-  </div>
-  <div id="_main" class="container-fluid">
-  </div>
+<body class="font-noto" id="body">
+  <div id="_main"></div>
   <script>
     window.addEventListener("DOMContentLoaded", main);
     window.addEventListener("hashchange", main);
@@ -31,25 +27,11 @@
     function main() {
       // ルーティング
       var name = "";
-      var title = "Obarads/Papers"
       var position = "#_main"
       if (location.hash.length <= 1) {
-        $(position).load('../html/index_search.html', function () {
-          search(
-            information_list_for_papers(),
-            [tag_data_list_for_papers(), tag_task_list_for_papers(), tag_etc_list_for_papers(), tag_method_list_for_papers(), tag_field_list_for_papers(), tag_contents_list_for_papers()],
-            title,
-            "papers/",
-            1
-          );
-        });
+        $(position).load('../html/search/index.html');
       } else {
-        $(position).load('../html/index_detail.html', function () {
-          detail(
-            location.hash.slice(1),
-            title
-          );
-        });
+        $(position).load('../html/search/index_detail.html');
       }
     }
   </script>

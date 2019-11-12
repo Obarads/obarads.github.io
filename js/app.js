@@ -58,48 +58,28 @@ function create_links(link) {
   return '<tr><td><div><a class="paper_title title-font" href="#' + link[0] + '.md">' + link[0] + '</a></div>' + tags + '</td><td class="align-middle text-center">' + link[2] + '</td><td class="align-middle text-center">' + link[3] + '</td></tr>';
 }
 
-function search(il, tl, title, path, mode) {
+
+function embeding_search_tags_for_a_class_name(il, class_name) {
   _html = il;
   html = _html.map(create_links);
-  var div = document.getElementById("_papers_tbody");
-  div.innerHTML = html.join("");
-  if (mode == 0) {
-    _html = tl;
-    html = _html.map(create_tag);
-    var div = document.getElementById("_category_tags");
-    div.innerHTML = html.join(" ");
-  } else if (mode == 1) {
-    _html = tl[0];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_data_tags");
-    div.innerHTML = html.join(" ");
-
-    _html = tl[1];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_task_tags");
-    div.innerHTML = html.join(" ");
-
-    _html = tl[2];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_etc_tags");
-    div.innerHTML = html.join(" ");
-
-    _html = tl[3];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_method_tags");
-    div.innerHTML = html.join(" ");
-
-    _html = tl[4];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_field_tags");
-    div.innerHTML = html.join(" ");
-
-    _html = tl[5];
-    html = _html.map(create_tag);
-    var div = document.getElementById("_contents_tags");
-    div.innerHTML = html.join(" ");
-
+  var div = document.getElementsByClassName(class_name);
+  console.log(div)
+  var counter = 0
+  while (counter < div.length) {
+    div[counter].innerHTML = html.join("");
+    counter=counter+1
   }
+}
+
+function search(il, tl, title, path) {
+  embeding_search_tags_for_a_class_name(il, "_papers_tbody");
+  embeding_search_tags_for_a_class_name(tl[0], "_data_tags");
+  embeding_search_tags_for_a_class_name(tl[1], "_task_tags");
+  embeding_search_tags_for_a_class_name(tl[2], "_etc_tags");
+  embeding_search_tags_for_a_class_name(tl[3], "_method_tags");
+  embeding_search_tags_for_a_class_name(tl[4], "_field_tags");
+  embeding_search_tags_for_a_class_name(tl[5], "_contents_tags");
+
   url_param = getParam("tag");
   if (url_param == null) {
     tag_names = []
@@ -121,13 +101,14 @@ function search(il, tl, title, path, mode) {
   /*create this page*/
   $('#_header').load('../html/index_header.html', function () {
     document.getElementById("page_title").innerHTML = title
-    var size = document.getElementById("body").clientWidth;
-    if (size < transform_size) {
+    /*var size = document.getElementById("body").clientWidth;
+    /*if (size < transform_size) {
       size_states = 1;
       $('#sidebar').appendTo('#s-sb');
-    }
+    }*/
   });
 
+  /*
   $(window).resize(function () {
     var size = document.getElementById("body").clientWidth;
     if (size < transform_size && size_states == 0) {
@@ -137,7 +118,7 @@ function search(il, tl, title, path, mode) {
       size_states = 0;
       $('#sidebar').appendTo('#l-sb');
     }
-  });
+  });*/
 
   $(function () {
     $("#_papers_table").tablesorter({});
@@ -184,12 +165,12 @@ function search(il, tl, title, path, mode) {
       $(this).toggleClass("bc-hovered");
     });
 
-    /* display year and status or not*/
+    /* display year and status or not
     var size = document.getElementById("body").clientWidth;
     if (size < transform_size) {
       document.getElementById("__Year").click();
       document.getElementById("__Status").click();
-    }
+    }*/
 
     $('#_initialization_button').bind("click", function () {
       //var len=$('tbody tr').filter(':visible').length;
