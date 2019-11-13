@@ -1,23 +1,17 @@
 /* side bar design*/
 
-.row-pad {
-    padding-bottom: 1rem;
-    width: 100%;
+#_main_left{
+    margin-top: 1rem;
 }
 
-.row-h {
-    height: 85vh;
+.btn-flat {
+    margin: 2px;
 }
 
-.search-panel {
-    background: #333;
-    color: #fff;
-    border-right: solid 1px #666;
-    height: -webkit-calc(100vh - 3.5rem);
-    overflow-y: auto;
-    width: 100%;
+._filter_input{
+    margin-bottom: 5px;
 }
 
-.table-panel {
-    height: -webkit-calc(100vh - 3.5rem);
+._initialization_button{
+    margin-bottom: 13px;
 }

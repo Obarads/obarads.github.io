@@ -1,15 +1,11 @@
+<link rel="stylesheet" href="/css/table.css">
+<link rel="stylesheet" href="/css/tag_for_papers.css">
 <link rel="stylesheet" href="/css/search.css">
+<script src="/js/tag_for_papers.js"></script>
 <script src="/js/list_for_papers.js"></script>
 <script src="/js/jquery.tablesorter.min.js"></script>
-<script>
-  title = "Obarads"
-  search(
-    information_list_for_papers(),
-    [tag_data_list_for_papers(), tag_task_list_for_papers(), tag_etc_list_for_papers(), tag_method_list_for_papers(), tag_field_list_for_papers(), tag_contents_list_for_papers()],
-    title,
-    "papers/",
-  );
-</script>
+<script src="/js/tag_for_papers.js"></script>
+<script src="/js/search.js"></script>
 
 <div id="_header">
   <!-- load header contents (topbar) -->
@@ -17,78 +13,62 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-3 search-panel position-fixed d-none d-lg-block d-xl-block">
+    <div class="col-lg-3 left-panel position-fixed d-none d-lg-block d-xl-block">
       <div id="_main_left">
-        <div class="row row-pad">
-          <label>Hidden columns
-            <div>
-              <a class="btn-column" id="__Title">Title & Tags</a>
-              <a class="btn-column" id="__Year">Year</a>
-              <a class="btn-column" id="__Status">Status</a>
-            </div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label for="_filter_input">Title Filter</label>
-          <input class="form-control _filter_input" id="_filter_input" type="text" placeholder="Fast R-CNN">
-        </div>
-        <div class="row row-pad">
-          <a id="_initialization_button" class="btn btn-danger btn-block">Init</a>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Contents
-            <div class="_contents_tags" id="_contents_tags"></div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Field
-            <div class="_field_tags" id="_field_tags"></div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Learning Method
-            <div class="_method_tags" id="_method_tags"></div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Data
-            <div class="_data_tags" id="_data_tags"></div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Task
-            <div class="_task_tags" id="_task_tags"></div>
-          </label>
-        </div>
-        <div class="row row-pad">
-          <label>
-            Structure, Form, etc.
-            <div class="_etc_tags" id="_etc_tags"></div>
-          </label>
-        </div>
+        <!-- load sub contents (sidebar) -->
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-9 offset-lg-3 table-panel ">
-        <div id="_main_right">
-          <table id="_papers_table" class="table tablesorter-default">
-            <thead>
-              <tr>
-                <th>Title & Tags</th>
-                <th width="60">Year</th>
-                <th width="75">Status</th>
-              </tr>
-            </thead>
-            <tbody id="_papers_tbody">
-            </tbody>
-          </table>
-        </div>
+    <div class="col-lg-9 offset-lg-3 right-panel ">
+      <div id="_main_right">
+        <!-- load main contents -->
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  window.addEventListener("load", function () {
+    title = "Obarads"
+    path = "papers/"
+
+    document.getElementById("page_title").innerHTML = title
+
+    embeding_search_tags_for_a_class_name(tag_data_list_for_papers(), "_data_tags", create_tag);
+    embeding_search_tags_for_a_class_name(tag_task_list_for_papers(), "_task_tags", create_tag);
+    embeding_search_tags_for_a_class_name(tag_etc_list_for_papers(), "_etc_tags", create_tag);
+    embeding_search_tags_for_a_class_name(tag_method_list_for_papers(), "_method_tags", create_tag);
+    embeding_search_tags_for_a_class_name(tag_field_list_for_papers(), "_field_tags", create_tag);
+    embeding_search_tags_for_a_class_name(tag_contents_list_for_papers(), "_contents_tags", create_tag);
+
+    /* embeding left main to header item */
+    var html = document.getElementById("_main_left").innerHTML;
+    document.getElementById("_add_item").innerHTML = html;
+
+    url_param = getParam("tag");
+    if (url_param == null) {
+      tag_names = []
+      document.title = title;
+    } else {
+      tag_names = url_param.split(",");
+      document.title = tag_names + " - " + title;
+    }
+
+    $('.btn-flat').each(function () {
+      for (var i = 0; i < Object.keys(tag_names).length; i++) {
+        if (tag_names[i] == $(this).html().replace('&amp;', '&')) {
+          $(this).toggleClass('hovered');
+        }
+      }
+    });
+    table_show_and_hide();
+
+    embeding_search_tags_for_a_id(information_list_for_papers(), "_papers_tbody", create_links);
+    $("#_papers_table").tablesorter({});
+
+    search(title, path);
+  });
+
+  $('#_header').load('/html/header.html');
+  $("#_main_left").load('/html/search/main_left.html');
+  $("#_main_right").load('/html/search/main_right.html');
+</script>

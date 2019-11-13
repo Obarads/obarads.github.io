@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/detail.css">
 <script src="../js/marked.js"></script>
 <!--Reference https://qiita.com/legokichi/items/27b7b865a0ab28b5d530 -->
 <script type="text/x-mathjax-config">
@@ -18,28 +19,29 @@ MathJax.Hub.Config({
 <script src="../js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+<script src="/js/detail.js"></script>
 <script>
   detail(
     location.hash.slice(1),
-    title
+    "Obarads"
   );
 </script>
 
-<main role="main" class="ff-noto container-fluid">
+<div id="_header">
+    <!-- load header contents (topbar) -->
+</div>
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-lg-3" id="d-con">
-      <div id="l-sb">
-        <div id="sidebar">
-          <div class="row row-pad">
-            <div id="headline-preview">
-            </div>
-          </div>
-        </div>
+    <div class="col-lg-3 position-fixed d-none d-lg-block d-xl-block left-panel">
+      <div id="_main_left">
+        <!-- load sub contents (sidebar) -->
       </div>
     </div>
-    <div class="offset-lg-3 col-lg-9" id="t-con" style="padding-top: 30px;">
-      <div id="content" class="container">
+    <div class="col-lg-9 offset-lg-3">
+      <div id="_main_right">
+        <!-- load main contents -->
       </div>
     </div>
   </div>
-</main>
+</div>
