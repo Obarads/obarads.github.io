@@ -1,15 +1,33 @@
+/* search */
+
+#_main_left{
+    padding-top: 0.5rem;
+}
+
+.btn-flat {
+    margin-right: 3px;
+    margin-top: 3px;
+}
+
+.btn-column{
+    margin-right: 3px;
+    margin-top: 3px;
+}
+
+._filter_input{
+    margin-bottom: 5px;
+}
+
+._initialization_button{
+    margin-bottom: 13px;
+}
+
+
+/* detail */
 p img {
     margin: 0px auto;
     display: block;
     max-width: 100%;
-}
-
-#_main_right {
-    padding-top: 1rem;
-}
-
-#_main_left {
-    padding-top: 0.5rem;
 }
 
 #headline-preview a:hover {
