@@ -52,7 +52,7 @@ class PapersIndex extends React.Component {
     return (
       <div>
         <div id="_header">
-          <Header page_title="Obarads/papers" add_item={this.props._add_item} />
+          <Header page_title="Obarads" add_item={this.props._add_item} />
         </div>
         <div className="container-fluid">
           <div className="row">
@@ -241,7 +241,80 @@ class MDPanel extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div id="_md_panel_contents">
+        </div>
       </React.Fragment>
     );
   }
 }
+
+function CreatingLinksForActLog(props) {
+  var link_counter = -1
+  const actlogs = props.raw_actlogs.map((actlog) => {
+    link_counter = link_counter + 1
+    console.log(actlog)
+    return (
+      <li>
+        <React.Fragment>
+          <div>{actlog[0]}</div>
+          <div> {actlog[1]}</div>
+        </React.Fragment>
+      </li>
+    )
+  });
+  return (
+    <ul>
+      {actlogs}
+    </ul>
+  );
+}
+
+
+/* not use */
+class Home extends React.Component {
+  constructor(props) { super(props); }
+  componentDidMount() { }
+  componentWillUnmount() { }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div id="_header">
+          <Header page_title="Obarads/papers" add_item={this.props._add_item} />
+        </div>
+        <div id="_main">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-3">
+                <div id="_main_left">
+                  {this.props._main_left}
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div id="_main_right">
+                  {this.props._main_right}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+class PapersActivityLog extends React.Component {
+  constructor(props) { super(props); }
+  componentDidMount() { }
+  componentWillUnmount() { }
+
+  render() {
+    var actlogs = <CreatingLinksForActLog raw_actlogs={actlog_list_for_papers()} />
+    return (
+      <React.Fragment>
+        {actlogs}
+      </React.Fragment>
+    );
+  }
+}
+

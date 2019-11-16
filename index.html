@@ -20,41 +20,25 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/marked.js"></script>
+  <script src="/js/actlog_list_for_papers.js"></script>
 
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/all.css" />
   <link rel="stylesheet" href="/css/home.css" />
-crossorigin="anonymous">
 </head>
 
 <body class="font-noto">
-  <div id="_header">
-    <!-- load header contents (topbar) -->
-  </div>
-  <div id="_main">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3">
-          <div id="_main_left">
-            <!-- load sub contents (sidebar) -->
-          </div>
-        </div>
-        <div class="col-lg-9">
-          <div id="_main_right">
-            <!-- load main contents -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="_main"></div>
   <script type="text/babel" src="/js/all.js"></script>
   <script type="text/babel">
+    var main_left = <PapersActivityLog />
+    var main_right = ""
     ReactDOM.hydrate(
-      <Header add_item="" page_title="Obarads" />,
-      document.getElementById('_header')
+      <PapersIndex _main_left={main_left} _main_right={main_right} />,
+      document.getElementById('_main')
     );
 
-    document.title = "Obarads - home"
+    document.title = "Obarads"
     name = "README.md"
     var get = $.get;
     marked.setOptions({

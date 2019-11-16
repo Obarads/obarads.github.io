@@ -154,7 +154,7 @@
       var main_right = <TablePanel />
       var add_item = <SearchPanel />
 
-      ReactDOM.unmountComponentAtNode(document.getElementById(position))
+      //ReactDOM.unmountComponentAtNode(document.getElementById(position))
       ReactDOM.hydrate(
         <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} />,
         document.getElementById(position)
@@ -307,7 +307,7 @@
         }
         // mathjaxで処理
         
-        var div = document.getElementById("_main_right");
+        var div = document.getElementById("_md_panel_contents");
         div.innerHTML = _html;
         MathJax.Hub.Configured();
         MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
@@ -328,7 +328,7 @@
       // ルーティング
       var name = "";
       var position = "_main"
-      var title = "Obarads"
+      var title = "Obarads/papers"
       var path = "/papers/"
       if (event_sw) {
         papers_events(title)

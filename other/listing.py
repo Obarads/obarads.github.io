@@ -2,6 +2,9 @@
 
 import csv
 import os
+import pathlib
+import datetime
+import platform
 import glob
 import copy
 import argparse
@@ -76,7 +79,8 @@ def extract_data(path,tag_dict,tag_list):
     status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
     md_list = glob.glob(path+"*.md")
     path_list = md_list
-    info_list = []
+    info_list = []  # 検索用の情報を取得する。
+    actlog_list = [] # 更新確認用の情報を取得する。これ専用の情報抽出処理は検索用よりも後になる。
     kw_tags = []
     date_tags = []
     status_tags = []
@@ -128,9 +132,15 @@ def extract_data(path,tag_dict,tag_list):
                     else:
                         pass
 
+            # 更新確認用情報の抽出処理
+            p = pathlib.Path(pl)
+            dt = datetime.datetime.fromtimestamp(p.stat().st_ctime)
+            dt = dt.strftime('%Y年%m月%d日 %H:%M:%S')
+
             #toc = create_toc(content)
 
             info_list.append([ml,kw_sort,date,status])
+            actlog_list.append([p.stat().st_ctime,dt,ml,kw_sort,status])
 
     date_tags = list(set(date_tags))
     status_tags = list(set(status_tags))
@@ -139,11 +149,12 @@ def extract_data(path,tag_dict,tag_list):
     kw_tags.sort()
     date_tags.sort()
     status_tags.sort()
+    actlog_list.sort(reverse=True)
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
     print(status_counter)
 
-    return info_list,kw_tags,date_tags,status_tags
+    return info_list,kw_tags,date_tags,status_tags,actlog_list
 
 def coloring_tag_template(tags,propertis='background:rgb(0,0,0);\ncolor:#fff;'):
     tag_css_class = ""
@@ -162,7 +173,7 @@ def cmd_line_args(args=None):
 def update_lists(dir_name, tag_dict, tag_list):
 
     # create new papers contents (I don't use status_tags still.)
-    info_list, kw_tags, date_tags, status_tags = extract_data(PATH+"/"+ dir_name +"/", tag_dict, tag_list)
+    info_list, kw_tags, date_tags, status_tags, actlog_list = extract_data(PATH+"/"+ dir_name +"/", tag_dict, tag_list)
 
     # create list.js
     info_list_for_js = "function information_list_for_"+ dir_name +"(){ return ["+",".join(info_list)+"]}\n"
@@ -187,6 +198,16 @@ def update_lists(dir_name, tag_dict, tag_list):
         for kt in kw_tags:
             f.writelines('"'+kt+'",\n')
         f.writelines("]")
+
+    # create actloger
+    with open(PATH + "/js/actlog_list_for_"+ dir_name +".js", 'w', encoding="utf-8") as f:
+        top10_actlog = actlog_list[0:10]
+        actlog_js = "function actlog_list_for_"+ dir_name + "(){return ["
+        for ta in top10_actlog:
+            actlog = "['"+ ta[1] + "','"+ ta[2] + "','"+ ta[3] + "','"+ ta[4] +"'],"
+            actlog_js += actlog
+        actlog_js += "]}"
+        f.write(actlog_js)
 
 def update_tags(dir_name, ucss):
     with open(PATH_OTHER + "/tag_list_for_"+ dir_name +".yaml") as f:

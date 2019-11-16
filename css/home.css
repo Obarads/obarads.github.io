@@ -1,3 +1,8 @@
 #_main_right {
     padding-top: 1rem;
 }
+
+.col-lg-3{
+    padding-right: 0px;
+    padding-left: 0px;
+}
