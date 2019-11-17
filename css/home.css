@@ -2,7 +2,39 @@
     padding-top: 1rem;
 }
 
+#_main_left {
+    padding-top: 0.5rem;
+}
+
+/*
 .col-lg-3{
     padding-right: 0px;
     padding-left: 0px;
+}
+*/
+
+.actlog_row{
+    color: #fff;
+    border-bottom: solid 1px #666;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.actlog_title{
+    font-size: 25px;
+    color: #fff;
+    border-bottom: solid 1px #666;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+#_main_left a{
+    color: white;
+}
+
+#_main_left a:hover{
+    color: #ff9e7b;
+    text-decoration: unset;
 }

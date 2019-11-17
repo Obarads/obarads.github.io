@@ -252,20 +252,23 @@ function CreatingLinksForActLog(props) {
   var link_counter = -1
   const actlogs = props.raw_actlogs.map((actlog) => {
     link_counter = link_counter + 1
-    console.log(actlog)
+    var raw_link_for_href = "/papers/#" + actlog[1]
     return (
-      <li>
+      <div className="actlog_row">
         <React.Fragment>
-          <div>{actlog[0]}</div>
-          <div> {actlog[1]}</div>
+          <div>{actlog[0]} : {actlog[3]}</div>
+          <a className="paper_title title-font" key={"_link_" + link_counter} href={raw_link_for_href}>
+              {actlog[1]}
+            </a>
+          <div><CreatingTags raw_tags={actlog[2].split(',')} /></div>
         </React.Fragment>
-      </li>
+      </div>
     )
   });
   return (
-    <ul>
+    <div>
       {actlogs}
-    </ul>
+    </div>
   );
 }
 
@@ -312,6 +315,9 @@ class PapersActivityLog extends React.Component {
     var actlogs = <CreatingLinksForActLog raw_actlogs={actlog_list_for_papers()} />
     return (
       <React.Fragment>
+        <div className="actlog_title">
+          Update log
+        </div>
         {actlogs}
       </React.Fragment>
     );
