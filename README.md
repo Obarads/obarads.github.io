@@ -30,5 +30,8 @@ Papersの内容は[https://obarads.github.io/](https://obarads.github.io/)で表
 - D: Discussion, 議論(そのような項目がある論文のみ).
 - AP: Appendix, 付録(そのような項目がある論文のみ).
 
+### manual.md
+このレポジトリの目的の詳細や運用方法などが確認できます。[Githubのページ](https://github.com/Obarads/obarads.github.io/blob/master/manual.md)で確認してください。
+
 ## Issue page in Github
 もし論文と見比べて怪しい部分がある場合は気軽に該当する論文のIssueにコメントをしていただけると幸いです.

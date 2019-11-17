@@ -14,8 +14,20 @@ Github Issues : []()
     - ベースラインよりも優れた性能を実証する。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
+事後処理を必要とせず、また、高いobjectnessを持ったインスタンスのセグメンテーションを行うことができる。[もう少し明確に違いを書き足したい。]
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+著者らが提案するモデル、3D-BoNetは2つのブランチから構成される。この2つのブランチは点群からthe backbone networkによって抽出された特徴量を使用している。
+- The bounding box prediction branchはglobal featuresを入力として受け取り、バウンディングボックスとそのスコアを直接回帰する。
+    - 学習のためにground truthバウンディングボックスを利用する。
+- The point mask prediction branchは各インスンスタンスに対してポイントレベルのバイナリーマスクを予測するため、入力にlocalとglobal featuresを使用する。
+
+### Bounding Box Prediction
+著者らは値の最大最小を用いてバウンディングボックスを表現する。これは以下のように示される。
+
+$$
+\left\{\left[x_{\min }\ y_{\min }\ z_{\min }\right],\left[x_{\max }\ y_{\max }\ z_{\max }\right]\right\}
+$$
 
 ## どうやって有効だと検証した?
 
@@ -40,11 +52,12 @@ Bo Yang, Jianan Wang, Ronald Clark, Qingyong Hu, Sen Wang, Andrew Markham, Niki 
 なし
 
 ## key-words
-Paper, CV, Point_Cloud, Instance_Segmentation
+Paper, CV, Point_Cloud, Instance_Segmentation, Supervised_Learning
 
 ## status
 未完
 
 ## read
+A, I
 
 ## Citation
