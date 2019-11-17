@@ -1,4 +1,4 @@
-function tag_contents_list_for_papers(){ return ['Article','Memo','Other','Paper','Survey']}
+function tag_contents_list_for_papers(){ return ['Article','Memo','Other','Paper','Survey','Technical Report']}
 function tag_field_list_for_papers(){ return ['CV','NLP','Robot']}
 function tag_method_list_for_papers(){ return ['Active Learning','Few-Shot Learning','Meta Learning','Reinforcement Learning','Self-Supervised Learning','Supervised Learning','Unsupervised Learning','Weakly Supervised Learning','Zero-Shot Learning']}
 function tag_data_list_for_papers(){ return ['Depth Image','Mesh','Point Cloud','RGB Image','Sound','Superpixel','Supervoxel','Video','Voxel']}
