@@ -256,7 +256,7 @@ function CreatingLinksForActLog(props) {
     return (
       <div className="actlog_row">
         <React.Fragment>
-          <div>{actlog[0]} : {actlog[3]}</div>
+          <div>{link_counter} : {actlog[0]} : {actlog[3]}</div>
           <a className="paper_title title-font" key={"_link_" + link_counter} href={raw_link_for_href}>
               {actlog[1]}
             </a>
