@@ -241,9 +241,8 @@
         counter[headline[it][1] - 1] = counter[headline[it][1] - 1] + 1
       }
       // 確認用
-      $('#headline-preview').html(preview);
+      $('.headline-preview').html(preview);
       // 更新用
-      $('#headline').html(headline.join(','));
     }
 
     function id_scroll(id_name) {
@@ -259,9 +258,10 @@
       var main_left = <TOCPanel />
       var main_right = <MDPanel />
       var name = location.hash.slice(1) + ".md"
+      var add_item = <Collapser _add_item_title="Table of Contents" _add_item_contents={main_left}/>
 
       ReactDOM.hydrate(
-        <PapersIndex _main_left={main_left} _main_right={main_right} />,
+        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} />,
         document.getElementById(position)
       );
 
@@ -313,9 +313,12 @@
         
         var new_ids = chenge_id()
         headline(text, new_ids)
-        var div = document.getElementById("headline-preview").innerHTML;
-        MathJax.Hub.Configured();
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+        var div = document.getElementsByClassName("headline-preview");
+        for(var i=0; i < div.length; i++){
+          div[i].innerHTML
+          MathJax.Hub.Configured();
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+        }
       }).catch(function (err) {
         // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
         console.log("AAA")

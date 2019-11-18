@@ -38,3 +38,12 @@
     color: #ff9e7b;
     text-decoration: unset;
 }
+
+#_add_item a{
+    color: white;
+}
+
+#_add_item a:hover{
+    color: #ff9e7b;
+    text-decoration: unset;
+}

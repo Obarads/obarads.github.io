@@ -34,8 +34,10 @@
   <script type="text/babel">
     var main_left = <PapersActivityLog />
     var main_right = ""
+    var add_item = <Collapser _add_item_title="Update log" _add_item_contents={main_left}/>
+
     ReactDOM.hydrate(
-      <PapersIndex _main_left={main_left} _main_right={main_right} />,
+      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item}/>,
       document.getElementById('_main')
     );
 

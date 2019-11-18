@@ -43,6 +43,25 @@ class Header extends React.Component {
   }
 }
 
+class Collapser extends React.Component {
+  constructor(props) { super(props); }
+  componentDidMount() { }
+  componentWillUnmount() { }
+
+  render() {
+    return (
+      <div class="pos-f-t">
+        <a class="nav-link" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" href="" >
+          {this.props._add_item_title}
+        </a>
+        <div class="collapse" id="navbarToggleExternalContent">
+          {this.props._add_item_contents}
+        </div>
+      </div>
+    )
+  }
+}
+
 class PapersIndex extends React.Component {
   constructor(props) { super(props); }
   componentDidMount() { }
@@ -225,7 +244,7 @@ class TOCPanel extends React.Component {
     return (
       <React.Fragment>
         <div className="row-custom">
-          <div id="headline-preview">
+          <div className="headline-preview">
           </div>
         </div>
       </React.Fragment>
@@ -258,8 +277,8 @@ function CreatingLinksForActLog(props) {
         <React.Fragment>
           <div>{link_counter} : {actlog[0]} : {actlog[3]}</div>
           <a className="paper_title title-font" key={"_link_" + link_counter} href={raw_link_for_href}>
-              {actlog[1]}
-            </a>
+            {actlog[1]}
+          </a>
           <div><CreatingTags raw_tags={actlog[2].split(',')} /></div>
         </React.Fragment>
       </div>
