@@ -28,6 +28,19 @@ Github Issues : []()
 3. 最終的に、2の出力であるvariational infereceを使用してセマンティック&インスタンスセグメンテーションを行う。
 
 ### Multi-Task Pointwise Network (MT-PNet)
+このネットワークの概要は図2の通り。MT-PNetは点群を入力とし、セマンティックラベルとインスタンスの埋め込みを出力する。
+
+![fig2](img/JJSSo3PCwMPNaMCRF/fig2.png)
+
+- ネットワークは途中で2つのブランチに分かれており、インスタンスまたは埋め込みを出力するようになっている。
+- このネットワークの損失は式(1)のとおりである。  
+    $$
+    \mathcal{L}=\mathcal{L}_{p r e d i c t i o n}+\mathcal{L}_{e m b e d d i n g} \tag{1}
+    $$
+- 予測損失$\mathcal{L}_ {prediction}$はクロスエントロピーによって定義される。埋め込み損失$\mathcal{L}_ {embeding}$には[1]のdiscriminative functionを採用する。
+
+### Multi-Value Conditional Random Fields (MV-CRF)
+
 
 ## どうやって有効だと検証した?
 

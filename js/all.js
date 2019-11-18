@@ -218,7 +218,7 @@ function CreatingLinks(props) {
         <td>
           <div>
             <a className="paper_title title-font" key={"_link_" + link_counter} href={raw_link_for_href}>
-              {raw_link[0]}
+              {raw_link[4]}
             </a>
           </div>
           {tags}
@@ -260,7 +260,7 @@ class MDPanel extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id="_md_panel_contents">
+        <div id="_md_panel_contents" className="container">
         </div>
       </React.Fragment>
     );
@@ -277,7 +277,7 @@ function CreatingLinksForActLog(props) {
         <React.Fragment>
           <div>{link_counter} : {actlog[0]} : {actlog[3]}</div>
           <a className="paper_title title-font" key={"_link_" + link_counter} href={raw_link_for_href}>
-            {actlog[1]}
+            {actlog[4]}
           </a>
           <div><CreatingTags raw_tags={actlog[2].split(',')} /></div>
         </React.Fragment>

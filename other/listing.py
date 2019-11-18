@@ -131,6 +131,10 @@ def extract_data(path,tag_dict,tag_list):
                         status_counter[status]+=1
                     else:
                         pass
+            if "# " in content[0]:
+                title = content[0].replace("# ","").replace("'","\\'")
+            else:
+                title = ml
 
             # 更新確認用情報の抽出処理
             p = pathlib.Path(pl)
@@ -139,8 +143,8 @@ def extract_data(path,tag_dict,tag_list):
 
             #toc = create_toc(content)
 
-            info_list.append([ml,kw_sort,date,status])
-            actlog_list.append([p.stat().st_ctime,dt,ml,kw_sort,status])
+            info_list.append([ml,kw_sort,date,status,title])
+            actlog_list.append([p.stat().st_ctime,dt,ml,kw_sort,status,title])
 
     date_tags = list(set(date_tags))
     status_tags = list(set(status_tags))
@@ -204,7 +208,7 @@ def update_lists(dir_name, tag_dict, tag_list):
         top10_actlog = actlog_list[0:10]
         actlog_js = "function actlog_list_for_"+ dir_name + "(){return ["
         for ta in top10_actlog:
-            actlog = "['"+ ta[1] + "','"+ ta[2] + "','"+ ta[3] + "','"+ ta[4] +"'],"
+            actlog = "['"+ ta[1] + "','"+ ta[2] + "','"+ ta[3] + "','"+ ta[4] + "','"+ ta[5]+"'],"
             actlog_js += actlog
         actlog_js += "]}"
         f.write(actlog_js)
