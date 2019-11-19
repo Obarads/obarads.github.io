@@ -23,26 +23,35 @@ h1, h2, h3, h4, h5{
     font-family: noto-b;
 }
 h1 {
-    font-size: 42px;
+    padding-top: 16px;
+    font-size: 30px;
 }
 h2 {
-    font-size: 34px;
+    font-size: 25px;
     margin-top: 50px;
+    padding-top: 4px;
     padding-left: 10px;
     padding-bottom: 10px;
-    border-bottom: solid 1px #666;
-    border-left: solid 4px #666;
+    border-bottom: solid 2px #666;
+    border-left: solid 14px #666;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 2px;
 }
 h3 {
-    font-size: 29px;
+    font-size: 22px;
+    padding-top: 2px;
     padding-left: 10px;
     padding-bottom: 10px;
     border-bottom: dashed 2px #999;
-    border-left: double 12px #999;
+    border-left: solid 6px #999;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 2px;
 }
 h4 {
-    font-size: 24px;
-    border-bottom: dotted 2px #999;
+    font-size: 19px;
+    border-bottom: dashed 2px #999;
     padding-bottom: 3px;
 }
 
@@ -55,6 +64,8 @@ h4 {
 body {
     background-color: #fff;
     color: #333;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 body a {
     color: #ff2222;
@@ -143,6 +154,15 @@ body a:hover {
 li {
     margin-left: 0rem;
 }
+ul, ol{
+    padding-left: 6px;
+}
+
+div > ul, div > ol {
+    padding-left: 20px;
+}
+
+
 /* li design END */
 
 /*scroll bar*/
@@ -232,7 +252,7 @@ tr {
     text-decoration: none;
     background: white;
     color: black;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 4mm;
 }
 
@@ -254,7 +274,7 @@ tr {
     text-decoration: none;
     background: orange;
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 3.7mm;
 }
 

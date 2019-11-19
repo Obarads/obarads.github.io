@@ -260,7 +260,7 @@ class MDPanel extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id="_md_panel_contents" className="container">
+        <div id="_md_panel_contents" className="">
         </div>
       </React.Fragment>
     );
