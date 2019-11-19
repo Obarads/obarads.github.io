@@ -152,10 +152,11 @@
       var main_left = <SearchPanel />
       var main_right = <TablePanel />
       var add_item = <SearchPanel />
+      var bc = <PapersBreadcrumbContents />
 
       //ReactDOM.unmountComponentAtNode(document.getElementById(position))
       ReactDOM.hydrate(
-        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
+        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title} bc={bc}/>,
         document.getElementById(position)
       );
 
@@ -259,9 +260,11 @@
       var main_right = <MDPanel />
       var name = location.hash.slice(1) + ".md"
       var add_item = <Collapser _add_item_title="Table of Contents" _add_item_contents={main_left}/>
+      //var bc = <DetailBreadcrumbContents disp={decodeURI(name).replace(".md", "")}/>
+      var bc = <DetailBreadcrumbContents disp="detail"/>
 
       ReactDOM.hydrate(
-        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
+        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title} bc={bc}/>,
         document.getElementById(position)
       );
 

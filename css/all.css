@@ -112,6 +112,21 @@ body a:hover {
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(216, 216, 216);
 }
+ol.breadcrumb{
+    padding: 0px;
+    margin: 0px;
+    background: rgba(0, 0, 0, 0);
+}
+li.breadcrumb-item a{
+    color: rgb(216, 216, 216);
+}
+li.breadcrumb-item a:hover{
+    color: #ff9e7b;
+    text-decoration: unset;
+}
+li.breadcrumb-item.active {
+    color: #ff2222;
+}
 
 /*
 .pos-f-t .nav-link[aria-expanded="false"]:after {

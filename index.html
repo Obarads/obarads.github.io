@@ -36,9 +36,11 @@
     var main_right = ""
     var add_item = <Collapser _add_item_title="Update log" _add_item_contents={main_left}/>
     var title="OPMemo/home"
+    var bc = <HomeBreadcrumbContents />
+
 
     ReactDOM.hydrate(
-      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
+      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title} bc={bc}/>,
       document.getElementById('_main')
     );
 

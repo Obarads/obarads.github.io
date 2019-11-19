@@ -1,6 +1,35 @@
 // https://ja.reactjs.org/docs/state-and-lifecycle.html
 // https://codepen.io/gaearon/pen/amqdNA?editors=0010
-
+function HomeBreadcrumbContents(props){
+  return (
+    <ol className="breadcrumb">
+      <BreadcrumbActive disp="OPMemo"/>
+    </ol>
+  );
+}
+function PapersBreadcrumbContents(props){
+  return (
+    <ol className="breadcrumb">
+      <Breadcrumb link="/" disp="OPMemo"/>
+      <BreadcrumbActive disp="papers"/>
+    </ol>
+  );
+}
+function DetailBreadcrumbContents(props){
+  return (
+    <ol className="breadcrumb">
+      <Breadcrumb link="/" disp="OPMemo"/>
+      <Breadcrumb link="/papers" disp="papers"/>
+      <BreadcrumbActive disp={props.disp} />
+    </ol>
+  );
+}
+function Breadcrumb(props){
+  return <li className="breadcrumb-item"><a href={props.link}>{props.disp}</a></li>;
+}
+function BreadcrumbActive(props){
+  return <li className="breadcrumb-item active" aria-current="page">{props.disp}</li>;
+}
 class Header extends React.Component {
   constructor(props) { super(props); }
   componentDidMount() { }
@@ -8,10 +37,8 @@ class Header extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark tab-color font-noto scrollable-menu col-lg-9">
-        <a className="navbar-brand" href="/" id="page_title">
-          {this.props.page_title}
-        </a>
+      <nav className="navbar navbar-expand-lg navbar-dark tab-color font-noto scrollable-menu col-lg-9" aria-label="breadcrumb">
+        {this.props.breadcrumb_contents}
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -80,7 +107,7 @@ class PapersIndex extends React.Component {
             <div className="col-lg-9 offset-lg-3">
               <div>
                 <div id="_header">
-                  <Header page_title={this.props._header_title} add_item={this.props._add_item} />
+                  <Header page_title={this.props._header_title} add_item={this.props._add_item} breadcrumb_contents={this.props.bc}/>
                 </div>
               </div>
               <div className="right-panel">
