@@ -1,7 +1,3 @@
-#_main_right {
-    padding-top: 1rem;
-}
-
 #_main_left {
     padding-top: 0.5rem;
 }
@@ -14,15 +10,6 @@
 */
 
 .actlog_row{
-    color: #fff;
-    border-bottom: solid 1px #666;
-    width: 100%;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-}
-
-.actlog_title{
-    font-size: 25px;
     color: #fff;
     border-bottom: solid 1px #666;
     width: 100%;

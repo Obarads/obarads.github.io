@@ -155,7 +155,7 @@
 
       //ReactDOM.unmountComponentAtNode(document.getElementById(position))
       ReactDOM.hydrate(
-        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} />,
+        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
         document.getElementById(position)
       );
 
@@ -261,7 +261,7 @@
       var add_item = <Collapser _add_item_title="Table of Contents" _add_item_contents={main_left}/>
 
       ReactDOM.hydrate(
-        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} />,
+        <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
         document.getElementById(position)
       );
 
@@ -330,16 +330,17 @@
       // ルーティング
       var name = "";
       var position = "_main"
-      var title = "Obarads/papers"
       var path = "/papers/"
       if (event_sw) {
         papers_events(title)
       }
       if (location.hash.length <= 1) {
         /**  Search page  **/
+        var title="OPMemo/papers"
         search(position, title)
       } else {
         /**  Detail page  **/
+        var title="OPMemo/papers/detail"
         detail(position, title)
       }
     }

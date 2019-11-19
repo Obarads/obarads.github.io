@@ -81,9 +81,23 @@ body a:hover {
 /* header.html (for header (top navigation) design) */
 
 .tab-color {
+    /* col-lg-9で表示幅をごまかしてる、良くない解*/
     background: #333;
     font-family: noto;
     border-bottom: solid 1px #666;
+    width: 100%;
+    position: fixed;
+}
+.tab-color.col-lg-9{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border-color: rgba(255,255,255,.0);
+}
+.navbar-dark .navbar-toggler:focus {
+    outline:0;
 }
 .navbar-brand2 {
     color: rgb(216, 216, 216);
@@ -114,38 +128,57 @@ body a:hover {
 
 /* main (each index.html design) */
 
-#_main {
-    overflow-x: auto;
-    overflow-y: auto;
-    display: block;
-    margin-top: 3.5rem;
-    height: -webkit-calc(100vh - 3.5rem);
-}
-
-#_main_left, #_main_right {
+#_main_left {
     height: 100%;
 }
-
 .left-panel{
     background: #333;
     color: #fff;
     border-right: solid 1px #666;
-    height: -webkit-calc(100vh - 3.5rem);
+    height: 100vh;
     overflow-y: auto;
     width: 100%;
 }
-
-.right-panel {
-    height: -webkit-calc(100vh - 3.5rem);
+.panel_title{
+    font-size: 22px;
+    color: #fff;
+    border-bottom: solid 1px #666;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
 }
 
+#_main_right {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: auto;
+    overflow-y: auto;
+    display: block;
+    height: 100%;
+}
+.right-panel {
+    margin-top: 3.5rem;
+    /* .col-lg-9 padding left & right */
+    width: 100%;
+}
+.right-panel-adjustment {
+    height: -webkit-calc(100vh - 3.5rem);
+}
+.col-lg-9{
+    /* default padding: left 15px, right 15px */
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.header-width{
+    width: 100%;
+}
 .row-custom {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 100%;
-    padding-bottom: 4px;
+    padding-top: 5px;
 }
 
 /* main (each index.html design) END */

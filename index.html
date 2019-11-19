@@ -35,13 +35,14 @@
     var main_left = <PapersActivityLog />
     var main_right = ""
     var add_item = <Collapser _add_item_title="Update log" _add_item_contents={main_left}/>
+    var title="OPMemo/home"
 
     ReactDOM.hydrate(
-      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item}/>,
+      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title}/>,
       document.getElementById('_main')
     );
 
-    document.title = "Obarads"
+    document.title = title
     name = "README.md"
     var get = $.get;
     marked.setOptions({

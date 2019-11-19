@@ -8,7 +8,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top tab-color font-noto scrollable-menu">
+      <nav className="navbar navbar-expand-lg navbar-dark tab-color font-noto scrollable-menu col-lg-9">
         <a className="navbar-brand" href="/" id="page_title">
           {this.props.page_title}
         </a>
@@ -70,9 +70,6 @@ class PapersIndex extends React.Component {
   render() {
     return (
       <div>
-        <div id="_header">
-          <Header page_title="Obarads" add_item={this.props._add_item} />
-        </div>
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-3 left-panel position-fixed d-none d-lg-block d-xl-block">
@@ -80,9 +77,18 @@ class PapersIndex extends React.Component {
                 {this.props._main_left}
               </div>
             </div>
-            <div className="col-lg-9 offset-lg-3 right-panel ">
-              <div id="_main_right">
-                {this.props._main_right}
+            <div className="col-lg-9 offset-lg-3">
+              <div>
+                <div id="_header">
+                  <Header page_title={this.props._header_title} add_item={this.props._add_item} />
+                </div>
+              </div>
+              <div className="right-panel">
+                <div className="right-panel-adjustment">
+                  <div id="_main_right">
+                    {this.props._main_right}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -100,6 +106,9 @@ class SearchPanel extends React.Component {
   render() {
     return (
       <div>
+        <div className="panel_title">
+          Criteria
+        </div>
         <div className="row-custom">
           <label>Hidden columns
             <div>
@@ -243,6 +252,9 @@ class TOCPanel extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className="panel_title">
+          Contents
+        </div>
         <div className="row-custom">
           <div className="headline-preview">
           </div>
@@ -301,7 +313,7 @@ class PapersActivityLog extends React.Component {
     var actlogs = <CreatingLinksForActLog raw_actlogs={actlog_list_for_papers()} />
     return (
       <React.Fragment>
-        <div className="actlog_title">
+        <div className="panel_title">
           Update log
         </div>
         {actlogs}
