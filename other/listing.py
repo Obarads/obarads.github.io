@@ -12,6 +12,9 @@ import yaml
 import numpy as np
 import re
 from distutils.util import strtobool
+import locale
+locale.setlocale(locale.LC_CTYPE, "Japanese_Japan.932") # for windows 10
+
 
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
 PATH_OTHER = os.path.dirname(os.path.abspath(__file__))
@@ -140,6 +143,7 @@ def extract_data(path,tag_dict,tag_list):
             p = pathlib.Path(pl)
             dt = datetime.datetime.fromtimestamp(p.stat().st_ctime)
             dt = dt.strftime('%Y年%m月%d日 %H:%M:%S')
+            print(dt)
 
             #toc = create_toc(content)
 
@@ -154,6 +158,7 @@ def extract_data(path,tag_dict,tag_list):
     date_tags.sort()
     status_tags.sort()
     actlog_list.sort(reverse=True)
+
 
     info_list = ["['"+"','".join(il)+"']" for il in info_list]
     print(status_counter)

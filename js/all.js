@@ -50,11 +50,11 @@ class Collapser extends React.Component {
 
   render() {
     return (
-      <div class="pos-f-t">
-        <a class="nav-link" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" href="" >
+      <div className="pos-f-t">
+        <a className="nav-link" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" href="" >
           {this.props._add_item_title}
         </a>
-        <div class="collapse" id="navbarToggleExternalContent">
+        <div className="collapse" id="navbarToggleExternalContent">
           {this.props._add_item_contents}
         </div>
       </div>
@@ -291,39 +291,6 @@ function CreatingLinksForActLog(props) {
   );
 }
 
-
-/* not use */
-class Home extends React.Component {
-  constructor(props) { super(props); }
-  componentDidMount() { }
-  componentWillUnmount() { }
-
-  render() {
-    return (
-      <React.Fragment>
-        <div id="_header">
-          <Header page_title="Obarads/papers" add_item={this.props._add_item} />
-        </div>
-        <div id="_main">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-3">
-                <div id="_main_left">
-                  {this.props._main_left}
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <div id="_main_right">
-                  {this.props._main_right}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
 
 class PapersActivityLog extends React.Component {
   constructor(props) { super(props); }

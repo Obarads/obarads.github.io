@@ -5,6 +5,8 @@ Github Issues : []()
 
 ## どんなもの?
 著者らは点群に対する新規のインスタンス&セマンティックセグメンテーションモデル、3D-BEVIS(3D bird's-eye-view instance segmentation)を提案した。
+- 提案フリーのインスタンスセグメンテーションアプローチに従って、モデルは埋め込みを学習し、そして埋め込み空間上で埋め込みをグループ分けする。
+- 既存のポイントベースの手法では点群を小分けにして個別に処理を行い[(特にスケールと点の規模がでかいlarge-scaleにおいてそのような処理が多い)]、処理後の出力をマージする。しかしながら、クラスタリングによってインスタンスのセグメンテーションを得る場合は、グローバルに一貫した特徴量が必要となる。そこで、著者らは俯瞰図表現を使うことでグローバルな情報を得て、これをローカルな点情報と組み合わせる。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 
@@ -18,8 +20,7 @@ Github Issues : []()
 - なし
 
 ## 論文関連リンク
-1. [R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. S ̈ usstrunk. SLIC superpixels compared to state-of-the-art superpixel methods. IEEE Transactions on Pattern Analysis and Machine Intelligence, 34(11):2274–2282, 2012.](https://ieeexplore.ieee.org/document/6205760)[1]
-2. [J. Demantk, C. Mallet, N. David, and B. Vallet. Dimension-ality based scale selection in 3D lidar point clouds. Inter-national Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XXXVIII-5/W12:97–102, 2011.](http://recherche.ign.fr/labos/matis/pdf/articles_conf/2011/laserscanning2011_demantke_final.pdf)[9]
+1. なし
 
 ## 会議, 論文誌, etc.
 GCPR '19
@@ -37,8 +38,9 @@ Cathrin Elich, Francis Engelmann, Theodora Kontogianni, Bastian Leibe
 Paper, CV, Point_Cloud, Instance_Segmentation, Semantic_Segmentation
 
 ## status
-未完
+導入
 
 ## read
+A
 
 ## Citation
