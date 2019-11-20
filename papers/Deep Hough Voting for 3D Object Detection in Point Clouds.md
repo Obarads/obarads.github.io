@@ -4,6 +4,8 @@
 Github Issues : []()  
 
 ## どんなもの?
+Hough votingと点群深層学習の相乗効果に基づくEnd-to-Endの3Dオブジェクト検出ネットワーク、VoteNetを提案した。
+- この手法は、表面情報しか持ち合わせない点群データに対して、オブジェクトの中心位置を回帰するのは難しいという問題に対するものである。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 
@@ -35,8 +37,9 @@ Charles R. Qi, Or Litany, Kaiming He, Leonidas J. Guibas
 CV, Paper, Point_Cloud
 
 ## status
-未完
+導入
 
 ## read
+A
 
 ## Citation
