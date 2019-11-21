@@ -11,18 +11,18 @@
   <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
 
   <!-- React lib -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="/js/React/react.development.js"></script>
+  <script src="/js/React/react-dom.development.js"></script>
 
   <!-- Don't use this in production: -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="/js/Other/babel.min.js"></script>
 
-  <script src="/js/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/marked.js"></script>
+  <script src="/js/jQuery/jquery.js"></script>
+  <script src="/js/Other/bootstrap.min.js"></script>
+  <script src="/js/Other/marked.js"></script>
   <script src="/js/actlog_list_for_papers.js"></script>
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/all.css" />
   <link rel="stylesheet" href="/css/home.css" />
   <link rel="stylesheet" href="/css/tag_for_papers.css" />
@@ -30,41 +30,14 @@
 
 <body class="font-noto">
   <div id="_main"></div>
-  <script type="text/babel" src="/js/all.js"></script>
+  <script type="text/babel" src="/js/react_componets.js"></script>
+  <script type="text/babel" src="/js/page_creation.js"></script>
   <script type="text/babel">
-    var main_left = <PapersActivityLog />
-    var main_right = ""
-    var add_item = <Collapser _add_item_title="Update log" _add_item_contents={main_left}/>
-    var title="OPMemo/home"
-    var bc = <HomeBreadcrumbContents />
-
-
-    ReactDOM.hydrate(
-      <PapersIndex _main_left={main_left} _main_right={main_right} _add_item={add_item} _header_title={title} bc={bc}/>,
-      document.getElementById('_main')
-    );
-
-    document.title = title
-    name = "README.md"
-    var get = $.get;
-    marked.setOptions({
-      renderer: new marked.Renderer(),
-      gfm: true,
-      tables: true,
-      breaks: true,
-      pedantic: false,
-      sanitize: false,
-      smartLists: false,
-      smartypants: false
-    });
-    // ページ内リンクなのでhistory.pushStateする必要はない
-    get(name).catch(function () {
-      return Promise.resolve("# 404 page not found");
-    }).then(function (text) {
-      var _html = marked(text);
-      var div = document.getElementById("_main_right");
-      div.innerHTML = _html;
-    });
+    let title = "OPMemo"
+    let position = "_main"
+    const home_index = new HomeDirIndex({})
+    home_index.setting({title:title, position:position})
+    home_index.creating_home()
   </script>
 </body>
 

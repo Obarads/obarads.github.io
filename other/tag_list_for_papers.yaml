@@ -57,6 +57,7 @@ task: [
   "'Oversegmentation'",
   "'Registration'",
   "'Reconstruction'",
+  "'Reflection Removal'",
   "'SLAM'",
   "'Semantic Segmentation'",
   "'Super-Resolution'",

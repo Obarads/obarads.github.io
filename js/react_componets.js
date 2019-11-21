@@ -259,10 +259,10 @@ function CreatingLinks(props) {
           </div>
           {tags}
         </td>
-        <td className="align-middle text-center">
+        <td key={"_link1_" + link_counter} className="align-middle text-center">
           {raw_link[2]}
         </td>
-        <td className="align-middle text-center">
+        <td key={"_link2_" + link_counter} className="align-middle text-center">
           {raw_link[3]}
         </td>
       </tr>
@@ -349,3 +349,23 @@ class PapersActivityLog extends React.Component {
   }
 }
 
+/*
+export{
+  HomeBreadcrumbContents, 
+  PapersBreadcrumbContents, 
+  DetailBreadcrumbContents, 
+  Breadcrumb,
+  BreadcrumbActive,
+  Header,
+  Collapser,
+  PapersIndex,
+  SearchPanel,
+  TablePanel,
+  CreatingTags,
+  CreatingLinks,
+  TOCPanel,
+  MDPanel,
+  CreatingLinksForActLog,
+  PapersActivityLog
+}
+*/
