@@ -1,33 +1,33 @@
 // https://ja.reactjs.org/docs/state-and-lifecycle.html
 // https://codepen.io/gaearon/pen/amqdNA?editors=0010
-function HomeBreadcrumbContents(props){
+function HomeBreadcrumbContents(props) {
   return (
     <ol className="breadcrumb">
-      <BreadcrumbActive disp="OPMemo"/>
+      <BreadcrumbActive disp="OPMemo" />
     </ol>
   );
 }
-function PapersBreadcrumbContents(props){
+function PapersBreadcrumbContents(props) {
   return (
     <ol className="breadcrumb">
-      <Breadcrumb link="/" disp="OPMemo"/>
-      <BreadcrumbActive disp="papers"/>
+      <Breadcrumb link="/" disp="OPMemo" />
+      <BreadcrumbActive disp="papers" />
     </ol>
   );
 }
-function DetailBreadcrumbContents(props){
+function DetailBreadcrumbContents(props) {
   return (
     <ol className="breadcrumb">
-      <Breadcrumb link="/" disp="OPMemo"/>
-      <Breadcrumb link="/papers" disp="papers"/>
+      <Breadcrumb link="/" disp="OPMemo" />
+      <Breadcrumb link="/papers" disp="papers" />
       <BreadcrumbActive disp={props.disp} />
     </ol>
   );
 }
-function Breadcrumb(props){
+function Breadcrumb(props) {
   return <li className="breadcrumb-item"><a href={props.link}>{props.disp}</a></li>;
 }
-function BreadcrumbActive(props){
+function BreadcrumbActive(props) {
   return <li className="breadcrumb-item active" aria-current="page">{props.disp}</li>;
 }
 class Header extends React.Component {
@@ -107,7 +107,7 @@ class PapersIndex extends React.Component {
             <div className="col-lg-9 offset-lg-3">
               <div>
                 <div id="_header">
-                  <Header page_title={this.props._header_title} add_item={this.props._add_item} breadcrumb_contents={this.props.bc}/>
+                  <Header page_title={this.props._header_title} add_item={this.props._add_item} breadcrumb_contents={this.props.bc} />
                 </div>
               </div>
               <div className="right-panel">
@@ -330,6 +330,91 @@ function CreatingLinksForActLog(props) {
   );
 }
 
+function CreatingTOCTitle(props) {
+  return (
+    <div style={{ whiteSpace: 'pre-line' }}>
+      <a class='toc-title' href="javascript:id_scroll('_1-0')">
+        {props.page_title}
+      </a>
+    </div>
+  );
+}
+
+function CreatingTOCSubtitle(props) {
+  return (
+    <div className={'toc-' + props.hl1}>
+      <div className={'toc-con-' + props.hl1}>
+        <div className={'toc-con2-' + props.hl1}>
+          <a href={"javascript:id_scroll('" + props.hl1 + "-" + props.counter1 + "')"}>
+            {props.hl0}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function creatingTOC(props) {
+  var link_counter = 0
+  var counter = [0, 0, 0, 0, 0] // [h1,h2,h3,h4,h5]
+  const toc_title = <CreatingTOCTitle page_title={props.page_title} />
+  const toc = props.headline.map((it) => {
+    link_counter = link_counter + 1
+    counter[it[1] - 1] = counter[it[1] - 1] + 1
+    const ts = <CreatingTOCSubtitle hl0={it[0]} hl1={it[1]} counter1={counter[it[1] - 1]}/>
+    return ts;
+  });
+  
+  return (
+    <React.Fragment>
+      {toc_title}
+      {toc}
+    </React.Fragment>
+  );
+}
+
+function ChengeIDAndHeadline(props) {
+  //function chenge_id() {
+  var h_list = [1, 2, 3, 4, 5]
+  var new_ids = []
+  for (var i in h_list) {
+    var h = h_list[i]
+    var element = document.getElementsByTagName("h" + h)
+    var counter = 0
+    while (counter < element.length) {
+      var new_id = "_" + h + "-" + counter
+      element[counter].id = new_id
+      new_ids.push(new_id)
+      counter = counter + 1
+    }
+  }
+  /* return new_ids} */
+
+  // ↓この関数はchange_id()と一体化していると考えていい。
+  //function headline(markdown) {
+  var lines = props.markdown.split("\n");
+  var headline = [];
+  var in_code = false;
+  for (var it in lines) {
+    if (lines[it].match(/^```.?/)) {
+      // コードの行内の場合は外す
+      in_code = in_code ? false : true;
+    }
+    if (lines[it][0] == '#' && !in_code && lines[it][1] != ' ') {
+      // 先頭の#とスペースを削除して追加
+      headline.push([lines[it].replace(/^#+/, '').trim(), lines[it].split(" ")[0].length]);
+    }
+    // #が1個だけ(記事のタイトル)の場合のみ別の処理
+    if (lines[it][0] == '#' && !in_code && lines[it][1] == ' ') {
+      var page_title = lines[it].replace(/^#+/, '').trim()
+    }
+  }
+  // 表示用のリスト構文
+  let toc = <creatingTOC headline={headline} page_title={page_title}/>
+
+  return toc;
+}
+
 
 class PapersActivityLog extends React.Component {
   constructor(props) { super(props); }
@@ -351,9 +436,9 @@ class PapersActivityLog extends React.Component {
 
 /*
 export{
-  HomeBreadcrumbContents, 
-  PapersBreadcrumbContents, 
-  DetailBreadcrumbContents, 
+  HomeBreadcrumbContents,
+  PapersBreadcrumbContents,
+  DetailBreadcrumbContents,
   Breadcrumb,
   BreadcrumbActive,
   Header,
