@@ -31,7 +31,7 @@ Mehran Maghoumi, Joseph J. LaViola, Karthik Desingh, Odest Chadwicke Jenkins.
 なし
 
 ## key-words
-CV, Paper, 
+CV, Paper, Point_Cloud, Multiple-View
 
 ## status
 未完
