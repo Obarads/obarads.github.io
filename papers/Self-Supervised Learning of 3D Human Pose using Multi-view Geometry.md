@@ -50,7 +50,7 @@ Muhammed Kocabas, Salih Karagoz, Emre Akbas
 なし
 
 ## key-words
-3D_Estimation, Self-Supervised_Learning, CV, Paper, Multi-view
+3D_Estimation, Self-Supervised_Learning, CV, Paper, Multi-View
 
 ## status
 導入

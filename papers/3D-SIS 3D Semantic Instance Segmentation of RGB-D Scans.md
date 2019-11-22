@@ -36,7 +36,7 @@ Ji Hou, Angela Dai, Matthias Nießner
 なし
 
 ## key-words
-Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image
+Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image, Multi-View
 
 ## status
 導入

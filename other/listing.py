@@ -2,9 +2,7 @@
 
 import csv
 import os
-import pathlib
 import datetime
-import platform
 import glob
 import copy
 import argparse
@@ -12,9 +10,6 @@ import yaml
 import numpy as np
 import re
 from distutils.util import strtobool
-#import locale
-#locale.setlocale(locale.LC_CTYPE, "Japanese_Japan.932") # for windows 10
-
 
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
 PATH_OTHER = os.path.dirname(os.path.abspath(__file__))
@@ -140,14 +135,14 @@ def extract_data(path,tag_dict,tag_list):
                 title = ml
 
             # 更新確認用情報の抽出処理
-            p = pathlib.Path(pl)
-            dt = datetime.datetime.fromtimestamp(p.stat().st_ctime)
-            dt = dt.strftime('%Y年%m月%d日 %H:%M:%S')
+            p = os.path.getmtime(pl)
+            dt = datetime.datetime.fromtimestamp(p)
+            dt = dt.strftime('%Y/%m/%d %H:%M:%S')
 
             #toc = create_toc(content)
 
             info_list.append([ml,kw_sort,date,status,title])
-            actlog_list.append([p.stat().st_ctime,dt,ml,kw_sort,status,title])
+            actlog_list.append([p,dt,ml,kw_sort,status,title])
 
     date_tags = list(set(date_tags))
     status_tags = list(set(status_tags))

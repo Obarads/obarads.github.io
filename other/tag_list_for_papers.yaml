@@ -69,7 +69,7 @@ etc: [
   "'Encoder-Decoder'",
   "'GAN'",
   "'Graph'",
-  "'Multiple-View'",
+  "'Multi-View'",
   "'RNN'",
   "'Interpretability'",
   "'Sparsity'",

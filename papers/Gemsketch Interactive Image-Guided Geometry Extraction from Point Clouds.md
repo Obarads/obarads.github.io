@@ -4,6 +4,9 @@
 Github Issues : []()  
 
 ## どんなもの?
+多視点もしくは一視点から直方体と円柱状の形状を抽出するための対話型システムを提案した。
+- ユーザーはオブジェクトのシルエットをトレースすることのみ必要とされる。
+- シルエットの情報を利用し、たとえオクルージョン、クラッター、インコンプリートである点群でも正確な形状を予測することができる。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 
@@ -31,7 +34,7 @@ Mehran Maghoumi, Joseph J. LaViola, Karthik Desingh, Odest Chadwicke Jenkins.
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, Multiple-View
+CV, Paper, Point_Cloud, Multi-View, RGB_Image, Depth_Image, Reconstruction
 
 ## status
 未完

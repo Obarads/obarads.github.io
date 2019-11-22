@@ -426,7 +426,7 @@ class PapersActivityLog extends React.Component {
     return (
       <React.Fragment>
         <div className="panel_title">
-          Update log
+          Update log (Y/M/D)
         </div>
         {actlogs}
       </React.Fragment>

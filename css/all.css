@@ -4,16 +4,20 @@
 }
 
 /* font design */
-
+/*
 @font-face{
-    font-family: noto;
-    src: url(../font/JP/NotoSansJP-Regular.otf) format('opentype');
+    font-family: font-default;
+    src: url(../font/JP/NotoSans/NotoSansJP-Light.otf) format('opentype');
+}*/
+@font-face{
+    font-family: font-h;
+    src: url(../font/JP/NotoSans/NotoSansJP-Black.otf) format('opentype');
 }
 @font-face{
-    font-family: noto-b;
-    src: url(../font/JP/NotoSansJP-Black.otf) format('opentype'),
-    url(../font/JP/NotoSansJP-Bold.otf) format('opentype');
+    font-family: font-btn;
+    src: url(/font/JP/NotoSans/NotoSansJP-Regular.otf) format('opentype');
 }
+/*
 @font-face{
     font-family: mpr1c;
     src: url(/font/JP/MPlusRounded1c/MPLUSRounded1c-Regular.ttf) format('truetype');
@@ -22,15 +26,16 @@
     font-family: mpr1c-b;
     src: url(/font/JP/MPlusRounded1c/MPLUSRounded1c-ExtraBold.ttf) format('truetype');
 }
+@font-face{
+    font-family: mpr1c-m;
+    src: url(/font/JP/MPlusRounded1c/MPLUSRounded1c-Medium.ttf) format('truetype');
+}
+*/
 .font-default {
-    font-family: mpr1c;
+    font-family: font-btn;
 }
-.font-noto {
-    font-family: noto;
-}
-
 h1, h2, h3, h4, h5{
-    font-family: mpr1c-b;
+    font-family: font-h;
 }
 h1 {
     padding-top: 16px;
@@ -302,12 +307,8 @@ tr {
 }
 
 /*tag button*/
-@font-face{
-    font-family: mpr1c-m;
-    src: url(/font/JP/MPlusRounded1c/MPLUSRounded1c-Medium.ttf) format('truetype');
-}
 .btn-column {
-    font-family: mpr1c-m;
+    font-family: font-btn;
     display: inline-block;
     padding: 0.0em 0.3em;
     margin-right: 3px;
@@ -329,7 +330,7 @@ tr {
 }
 
 .btn-flat {
-    font-family: mpr1c-m;
+    font-family: font-btn;
     text-shadow: none;
     display: inline-block;
     padding: 0.0em 0.3em;

@@ -48,7 +48,7 @@ Haozhe Xie, Hongxun Yao, Xiaoshuai Sun, Shangchen Zhou, Shengping Zhang
 あと、貢献を編集しよう。
 
 ## key-words
-RGB_Image, Voxel, 3D_Estimation, Reconstruction, Encoder-Decoder, CV, Paper, Multi-view
+RGB_Image, Voxel, 3D_Estimation, Reconstruction, Encoder-Decoder, CV, Paper, Multi-View
 
 ## status
 省略
