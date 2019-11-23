@@ -4,6 +4,7 @@
 Github Issues : 
 
 ## どんなもの?
+[1]を参照のこと。
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -35,7 +36,7 @@ valid pixelは正常なピクセルって意味でいいらしい
 RGB_Image, CV, Completion, Paper
 
 ## status
-未完
+参照
 
 ## read
 

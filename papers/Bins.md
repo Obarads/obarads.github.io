@@ -1,4 +1,4 @@
-# What is bins ?
+# Bins
 
 Github Issues : []()  
 

@@ -28,6 +28,7 @@ method: [
 data: [
   "'RGB Image'",
   "'Depth Image'",
+  "'Intensity Image'",
   "'Mesh'",
   "'Point Cloud'",
   "'Voxel'",

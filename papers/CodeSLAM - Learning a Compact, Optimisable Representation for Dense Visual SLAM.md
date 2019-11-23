@@ -4,6 +4,7 @@
 Github Issues : 
 
 ## どんなもの?
+1を参照のこと。非常にわかりやすい。
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -17,7 +18,7 @@ Github Issues :
 - なし
 
 ## 論文関連リンク
-1. なし
+1. [Masaya Kaneko, SlideShare, 論文読み会2018 (CodeSLAM), 2018. (アクセス:2019/11/22)](https://www.slideshare.net/MasayaKaneko/codeslam)
 
 ## 会議
 CVPR 2018
@@ -32,10 +33,10 @@ Michael Bloesch, Jan Czarnowski, Ronald Clark, Stefan Leutenegger, Andrew J. Dav
 なし
 
 ## key-words
-SLAM, CV, Paper
+SLAM, CV, Paper, Depth_Image, Intensity_Image
 
 ## status
-未完
+参照
 
 ## read
 A, I

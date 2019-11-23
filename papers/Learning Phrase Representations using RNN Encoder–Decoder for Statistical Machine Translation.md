@@ -38,7 +38,7 @@ Kyunghyun Cho, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengi
 NLP, RNN, Paper
 
 ## status
-参照    
+参照
 
 ## read
 A
