@@ -4,6 +4,10 @@
 Github Issues : 
 
 ## どんなもの?
+深層学習を使用してスーパーピクセルセグメンテーションを学習するスーパーピクセルサンプリング用の新規の微分可能モデル、Superpixel Sampling Network (SSN)を提案した。
+- SSNはEnd-to-Endで学習可能であり、適応性のある損失を用いてタスク固有のスーパーピクセルを学習できる。また、ランタイムの速度も早い。
+- 従来のスーパーピクセル手法よりもセグメンテーションのベンチマークが向上した。
+- SSNはダウンストリームのフレームワークを簡単に統合でき、パフォーマンスも向上する。
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -35,9 +39,10 @@ Varun Jampani, Deqing Sun, Ming-Yu Liu, Ming-Hsuan Yang, Jan Kautz
 Superpixel, CV, Paper
 
 ## status
-未完
+導入
 
 ## read
+A
 
 ## Citation
 

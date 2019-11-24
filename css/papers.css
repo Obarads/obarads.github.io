@@ -98,8 +98,9 @@ p img {
     color: #ffffff;
 }
 .toc-5{
-    padding-left: 45px;
-    padding-top: 16px;
+    padding-left: 30px;
+    padding-bottom: 6px;
+    font-size: 14px;
 }
 .toc-5 a{
     color: #ffffff;

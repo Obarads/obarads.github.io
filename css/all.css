@@ -69,13 +69,15 @@ h4 {
     border-bottom: dashed 2px #999;
     padding-bottom: 3px;
 }
-
+h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
 /* font design END */
 
 
 
 /* body design and font color */
-
 body {
     background-color: #fff;
     color: #333;
@@ -89,7 +91,9 @@ body a:hover {
     color: #ff9e7b;
     text-decoration: unset;
 }
-
+p {
+    margin: 0px !important;
+}
 /* body design and font color END */
 
 
@@ -140,7 +144,8 @@ li.breadcrumb-item a:hover{
     text-decoration: unset;
 }
 li.breadcrumb-item.active {
-    color: #ff2222;
+    color: #e2c000;
+    font-weight: bold;
 }
 
 /*
@@ -219,6 +224,7 @@ li {
 }
 ul, ol{
     padding-left: 6px;
+    margin-bottom: 24px;
 }
 
 div > ul, div > ol {

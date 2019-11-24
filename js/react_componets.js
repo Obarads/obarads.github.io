@@ -248,7 +248,7 @@ function CreatingLinks(props) {
   const links = props.raw_links.map((raw_link) => {
     link_counter = link_counter + 1
     var tags = <CreatingTags raw_tags={raw_link[1].split(',')} />;
-    var raw_link_for_href = "#" + raw_link[0]
+    var raw_link_for_href = "/papers/#" + raw_link[0]
     return (
       <tr>
         <td>
