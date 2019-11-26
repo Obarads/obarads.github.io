@@ -7,7 +7,7 @@ Github Issues : [#96](https://github.com/Obarads/obarads.github.io/issues/96)
 ##### 2つのステージで構成される検知フレームワークPointRCNNを提案した。入力として点群を受け取る。
 
 ## 先行研究と比べてどこがすごいの?
-省略
+##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ##### 著者らは点群から3Dオブジェクトを検知するための2ステージ検出フレームワーク、PointRCNNを提案した。
@@ -100,7 +100,7 @@ Shaoshuai Shi, Xiaogang Wang, Hongsheng Li
 なし
 
 ## key-words
-Point_Cloud, Detection, CV, Paper
+Point_Cloud, Instance_Segmentation, Detection, CV, Paper
 
 ## status
 導入
