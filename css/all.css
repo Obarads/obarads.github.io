@@ -55,7 +55,7 @@ h2 {
 }
 h3 {
     font-size: 22px;
-    padding-top: 2px;
+    padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
     border-bottom: dashed 2px #999;
@@ -73,6 +73,13 @@ h5 {
     font-size: 16px;
     font-weight: bold;
 }
+p + h3 {
+    margin-top: 12px;
+}
+p + h4 {
+    margin-top: 8px;
+}
+
 /* font design END */
 
 
@@ -163,7 +170,7 @@ li.breadcrumb-item.active {
 
 /* main (each index.html design) */
 
-#_main_left {
+#main_left {
     height: 100%;
 }
 .left-panel{
@@ -183,7 +190,7 @@ li.breadcrumb-item.active {
     padding-top: 0.5rem;
 }
 
-#_main_right {
+#main_right {
     padding-left: 15px;
     padding-right: 15px;
     overflow-x: auto;

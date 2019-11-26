@@ -7,20 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Obarads">
-  <title>Obarads</title>
   <link rel="shortcut icon" href="nanyouhagi_base_a.png" type="nanyouhagi_base_a.png" />
-
-  <!-- React lib -->
-  <script src="/js/React/react.development.js"></script>
-  <script src="/js/React/react-dom.development.js"></script>
-
-  <!-- Don't use this in production: -->
-  <script src="/js/Other/babel.min.js"></script>
 
   <script src="/js/jQuery/jquery.js"></script>
   <script src="/js/Other/bootstrap.min.js"></script>
   <script src="/js/Other/marked.js"></script>
-  <script src="/js/actlog_list_for_papers.js"></script>
+  <script src="/js/build/actlog_list_for_papers.js"></script>
+  <script src="/js/build/build.js"></script>
+  <script src="/js/all.js"></script>
 
   <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/all.css" />
@@ -29,15 +23,42 @@
 </head>
 
 <body class="font-default">
-  <div id="_main"></div>
-  <script type="text/babel" src="/js/react_componets.js"></script>
-  <script type="text/babel" src="/js/page_creation.js"></script>
-  <script type="text/babel">
-    let title = "OPMemo"
-    let position = "_main"
-    const home_index = new HomeDirIndex({})
-    home_index.setting({title:title, position:position})
-    home_index.creating_home()
+  <div id="main"></div>
+  <script type="text/javascript">
+    var title = "OPMemo";
+
+    document.title = title
+    document.getElementById("main").innerHTML = LeftAndRight()
+    document.getElementById("header").innerHTML = Header()
+    document.getElementById("main_left").innerHTML = ActivityLog()
+    document.getElementById("header_navi").innerHTML = HomeBreadcrumbContents()
+    document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
+    document.getElementById("add_item").innerHTML = Collapser()
+    document.getElementById("add_item_title").innerHTML = "Update log (Y/M/D)"
+    document.getElementById("add_item_contents").innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
+
+    name = "README.md"
+    var get = $.get;
+    marked.setOptions({
+      renderer: new marked.Renderer(),
+      gfm: true,
+      tables: true,
+      breaks: true,
+      pedantic: false,
+      sanitize: false,
+      smartLists: false,
+      smartypants: false
+    });
+
+    // ページ内リンクなのでhistory.pushStateする必要はない
+    get(name).catch(function () {
+      return Promise.resolve("# 404 page not found");
+    }).then(function (text) {
+      var _html = marked(text);
+      var div = document.getElementById("main_right");
+      div.innerHTML = _html;
+    });
+
   </script>
 </body>
 

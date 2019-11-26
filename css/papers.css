@@ -1,6 +1,6 @@
 /* search */
 
-#_main_left{
+#main_left{
     padding-top: 0.5rem;
 }
 
@@ -26,17 +26,21 @@ p img {
     max-width: 100%;
 }
 
-.headline-preview {
+.toc-contents {
     width: 100%;
 }
 
-.headline-preview a:hover {
+.toc-contents-padding{
+    padding-top: 10px;
+}
+
+.toc-contents a:hover {
     color: #ff9e7b;
     text-decoration: unset;
 }
 
-
 .toc-title{
+    padding-top: 100px;
     font-size: 17px; 
     color: white;
 }

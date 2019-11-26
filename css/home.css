@@ -1,4 +1,4 @@
-#_main_left {
+#main_left {
     padding-top: 0.5rem;
 }
 
@@ -17,20 +17,20 @@
     padding-top: 0.5rem;
 }
 
-#_main_left a{
+#main_left a{
     color: white;
 }
 
-#_main_left a:hover{
+#main_left a:hover{
     color: #ff9e7b;
     text-decoration: unset;
 }
 
-#_add_item a{
+#add_item a{
     color: white;
 }
 
-#_add_item a:hover{
+#add_item a:hover{
     color: #ff9e7b;
     text-decoration: unset;
 }

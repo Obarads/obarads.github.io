@@ -182,7 +182,7 @@ def update_lists(dir_name, tag_dict, tag_list):
 
     kw_tags_for_js = "function tag_list_for_"+ dir_name +"(){ return ["+ ",".join(kw_tags) +"]}\n"
     date_tags_for_js = "function date_tag_list_for_"+ dir_name +"(){ return ["+ ",".join(date_tags) +"]}\n"
-    with open(PATH+"/js/list_for_"+ dir_name +".js", 'w', encoding="utf-8") as f:
+    with open(PATH+"/js/build/list_for_"+ dir_name +".js", 'w', encoding="utf-8") as f:
         f.writelines(info_list_for_js)
         f.writelines(kw_tags_for_js)
         f.writelines(date_tags_for_js)
@@ -202,7 +202,7 @@ def update_lists(dir_name, tag_dict, tag_list):
         f.writelines("]")
 
     # create actloger
-    with open(PATH + "/js/actlog_list_for_"+ dir_name +".js", 'w', encoding="utf-8") as f:
+    with open(PATH + "/js/build/actlog_list_for_"+ dir_name +".js", 'w', encoding="utf-8") as f:
         top10_actlog = actlog_list[0:10]
         actlog_js = "function actlog_list_for_"+ dir_name + "(){return ["
         for ta in top10_actlog:
@@ -221,7 +221,7 @@ def update_tags(dir_name, ucss):
     tag_list_conf(yml, yml_temp)
 
     # タグのカテゴリーごとのjavascript関数を作成する。
-    with open(PATH+"/js/tag_for_"+ dir_name +".js", 'w') as f:
+    with open(PATH+"/js/build/tag_for_"+ dir_name +".js", 'w') as f:
         f.writelines("function tag_contents_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["contents"]))+"]}\n")
         f.writelines("function tag_field_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["field"]))+"]}\n")
         f.writelines("function tag_method_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["method"]))+"]}\n")

@@ -42,7 +42,7 @@ Emanuela Haller and Marius Leordeanu.
 なし
 
 ## key-words
-RGB_Image, CV, Unsupervised_Learning, Detection, RGB_Image, Paper
+RGB_Image, CV, Unsupervised_Learning, Detection, Paper
 
 ## status
 導入
