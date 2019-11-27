@@ -73,7 +73,25 @@ Github Issues : [#96](https://github.com/Obarads/obarads.github.io/issues/96)
 - [3]に類似している。
 - 向きの推定は、中心位置のときと同じように、著者らは$2\pi$方向を$n$個のビンに分け、bin分類の目標ビン$bin^{(p)}_ \theta$と残差回帰の目標値$res_ \theta^{(p)}$を計算する。
 - オブジェクトサイズ$(h, w, l)$は各クラスの訓練データの平均オブジェクトサイズに関して残差$\left(\operatorname{res}_ {h}^{(p)}, \operatorname{res}_ {w}^{(p)}, \operatorname{res}_ {l}^{(p)}\right)$を計算すること[?]で直接回帰する。
-- 以降はまだ書いていない
+- binベース手法で予測したパラメーター$x,z,\theta$は、[(読むと混乱するかも)binは分類的な手法で損失を求めないっぽい(つまり回帰的に求める)ので、]最も予測信頼性のあるbinの中心点を選び、洗練されたパラメータを得るために予測残差を追加する。
+- 直接回帰で求めるパラメータは予測残差を初期値に入れる。
+
+##### 訓練のための異なる損失項を持つ3Dバウンディングボックス回帰損失$\mathcal{L}_ {reg}$の総体を定義する(式3)。
+- $$\begin{array}{l}{\mathcal{L}_{\text {bin }}^{(p)}=\sum_{u \in\{x, z, \theta\}}\left(\mathcal{F}_{\text {cls }}\left(\widehat{\operatorname{bin}}_{u}^{(p)}, \operatorname{bin}_{u}^{(p)}\right)+\mathcal{F}_{\text {reg }}\left(\widehat{\operatorname{res}}_{u}^{(p)}, \operatorname{res}_{u}^{(p)}\right)\right),} \\ {\mathcal{L}_{\text {res }}^{(p)}=\sum_{v \in\{y, h, w, l\}} \mathcal{F}_{\text {reg }}\left(\widehat{\operatorname{res}}_{v}^{(p)}, \operatorname{res}_{v}^{(p)}\right),} \\ {\mathcal{L}_{\text {reg }}=\frac{1}{N_{\text {pos }}} \sum_{p \in \text { pos }}\left(\mathcal{L}_{\text {bin }}^{(p)}+\mathcal{L}_{\text {res }}^{(p)}\right)}\end{array} \tag{3}$$
+    - $N_ {\text{pos}}$は前景点の数
+    - $\widehat{\operatorname{bin}}_ {u}^{(p)}$と$\widehat{\operatorname{res}}_{u}^{(p)}$は予測bin割り当てと前景点$p$の残差
+    - $\text{bin}_ u^{(p)}$と$\text{res}_ u^{(p)}$は上記のように計算されたground-truth target
+    - $\mathcal{F}_ {\text{cls}}$はクロスエントロピー分類損失
+    - $\mathcal{F}_ {\text{reg}}$はsmooth $L1$損失を示す。
+
+##### また、不必要な提案を排除するために、鳥瞰図からoriented IoUに基づいてnon-maximum suppression (NMS)を実行し、少数の高品質の提案を生成する。
+- 閾値を引いたりしていらない候補を間引いている。詳細は省略。
+
+### Point cloud region pooling
+##### ステージ1の処理が終わった後に、今度は提案されたボックスの位置と方向を改良することを目標とする。[この段階はステージ1と2の間である。]
+##### はじめに、各提案のさらなる具体的な局所特徴を学習するため、著者らは各3D提案の位置に従ってステージ1から対応する点特徴と3D点をプールすることを提案した。
+
+
 
 ## どうやって有効だと検証した?
 
