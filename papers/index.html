@@ -55,7 +55,7 @@
       if (location.hash.length <= 1) {
         /**  Search page  **/
         title = "OPMemo/papers"
-        left_panel_title = "Criteria"
+        left_panel_title = "Criteria & Dispaly"
         document.getElementById("main").innerHTML = LeftAndRight()
         document.getElementById("header").innerHTML = Header()
         document.getElementById("left-panel-title").innerHTML = left_panel_title
@@ -68,7 +68,7 @@
         document.getElementsByClassName("_etc_tags")[0].innerHTML = CreatingTags(tag_etc_list_for_papers())
         document.getElementById("header_navi").innerHTML = CriteriaBreadcrumbContents()
         //document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
-        document.getElementById("add_item").innerHTML = left_panel_title
+        document.getElementById("add_item").innerHTML = document.getElementById("left-panel-contents").innerHTML
         document.getElementById("main_right").innerHTML = DocumentTable()
         document.getElementById("papers_tbody").innerHTML = CreatingLinks(information_list_for_papers())
 
