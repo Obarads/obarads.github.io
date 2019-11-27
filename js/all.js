@@ -86,16 +86,13 @@ function chenge_id_and_headline(markdown) {
         }
     }
     // 表示用のリスト構文
-    var preview = "<a class='toc-title' href=\"javascript:id_scroll('"
-        + "_1-0"
-        + "')\">"
-        + page_title
-        + "</a><br>";
+    $('.toc-title').html(page_title);
+    var preview = ""
     var counter = [0, 0, 0, 0, 0] // [h1,h2,h3,h4,h5]
     for (var it in headline) {
         preview += "<div class='toc-"
             + headline[it][1]
-            + "'>"
+            + "' style='display: block;'>"
             + "<div class='toc-con-"
             + headline[it][1]
             + "'>"
@@ -279,4 +276,19 @@ function event_start(title, tag_names) {
         var { tag_names, new_tag_names } = getting_search_parameters()
         table_show_and_hide(title_filter, tag_names)
     });
+}
+
+function toc_toggle_switch(companion_id){
+    const toc5 = document.getElementsByClassName("toc-5");
+    Array.prototype.forEach.call(toc5, function(t5) {
+        if(t5.style.display=="block"){
+            // noneで非表示
+            t5.style.display ="none";
+        }else{
+            // blockで表示
+            t5.style.display ="block";
+        }
+    });
+    var companion = document.getElementById(companion_id)
+    companion.checked = !companion.checked
 }

@@ -95,7 +95,10 @@
         document.getElementById("main").innerHTML = LeftAndRight()
         document.getElementById("header").innerHTML = Header()
         document.getElementById("header_navi").innerHTML = DetailBreadcrumbContents()
-        document.getElementById("main_left").innerHTML = ToC()
+        document.getElementById("main_left").innerHTML = ToC("A1","B1","A2","A1")
+        document.getElementById("add_item").innerHTML =  Collapser()
+        document.getElementById("add_item_title").innerHTML =  "Contents"
+        document.getElementById("add_item_contents").innerHTML = ToC("B1","A1","B2","B1")
 
         var get = $.get;
         marked.setOptions({
@@ -151,9 +154,6 @@
             MathJax.Hub.Configured();
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, toc_contents[i]]);
           }
-          document.getElementById("add_item").innerHTML =  Collapser()
-          document.getElementById("add_item_title").innerHTML =  "Contents"
-          document.getElementById("add_item_contents").innerHTML =  document.getElementById("main_left").innerHTML
         }).catch(function (err) {
           // jqueryのpromiseはthenの中でエラー吐いて止まってもconsoleに表示してくれないので表示させる
           console.error(err);

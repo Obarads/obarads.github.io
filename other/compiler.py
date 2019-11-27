@@ -21,8 +21,15 @@ for html_path,html_name in zip(html_path_list,html_name_list):
     with open(html_path) as f:
         html = f.read()
         #print(html)
-        html = html.replace("\n","").replace("\"","\\\"")
-        js = "function " + html_name + "(){ return \"" + html + "\";};\n "
+        html = html.replace("\n","").replace("\"","\\\"").split("{@}")
+        arguments = ""
+        html_with_arguments = "\"" + html[0]
+        for i in range(len(html)-1):
+            argument = "v" + str(i)
+
+            arguments += argument + ","
+            html_with_arguments += "\" + " + argument + " + \"" + html[i+1]
+        js = "function " + html_name + "("+ arguments.strip(",") +"){ return " + html_with_arguments + "\";};\n "
     build_js_list.append(js)
 with open(os.path.join(build_js_dir_path,"build.js"), mode="w") as f:
     f.writelines(build_js_list)
