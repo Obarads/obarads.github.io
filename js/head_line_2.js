@@ -62,3 +62,18 @@ function chenge_id_and_headline2(markdown) {
     $('.toc-contents').html(preview);
     /*return null}*/
 }
+
+function creating_preview(headline,it,counter){
+    var preview = "<div class='toc-con-"
+    + headline[it][1]
+    + "'>"
+    + "<div class='toc-con2-"
+    + headline[it][1]
+    + "'>"
+    + "<a href=\"javascript:id_scroll('"
+    + "_" + headline[it][1] + "-" + counter[headline[it][1] - 1]
+    + "')\">"
+    + headline[it][0]
+    + "</a></div></div>";
+    return preview
+}

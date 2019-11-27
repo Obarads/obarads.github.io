@@ -26,13 +26,14 @@
   <div id="main"></div>
   <script type="text/javascript">
     var title = "OPMemo";
+    var left_panel_title = "Update log (Y/M/D)"
 
     document.title = title
     document.getElementById("main").innerHTML = LeftAndRight()
     document.getElementById("header").innerHTML = Header()
-    document.getElementById("main_left").innerHTML = ActivityLog()
+    document.getElementById("left-panel-title").innerHTML = left_panel_title
+    document.getElementById("left-panel-contents").innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
     document.getElementById("header_navi").innerHTML = HomeBreadcrumbContents()
-    document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
     document.getElementById("add_item").innerHTML = Collapser()
     document.getElementById("add_item_title").innerHTML = "Update log (Y/M/D)"
     document.getElementById("add_item_contents").innerHTML = CreatingLinksForActLog(actlog_list_for_papers())

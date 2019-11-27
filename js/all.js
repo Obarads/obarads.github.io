@@ -106,7 +106,7 @@ function chenge_id_and_headline(markdown) {
             + "</a></div></div></div>";
         counter[headline[it][1] - 1] = counter[headline[it][1] - 1] + 1
     }
-    $('.toc-contents').html(preview);
+    return preview
     /*return null}*/
 }
 function id_scroll(id_name) {

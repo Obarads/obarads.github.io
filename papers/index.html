@@ -50,12 +50,15 @@
       var position = "main"
       var path = "/papers/"
       var title = ""
+      var left_panel_title = ""
       if (location.hash.length <= 1) {
         /**  Search page  **/
         title = "OPMemo/papers"
+        left_panel_title = "Criteria"
         document.getElementById("main").innerHTML = LeftAndRight()
         document.getElementById("header").innerHTML = Header()
-        document.getElementById("main_left").innerHTML = Criteria()
+        document.getElementById("left-panel-title").innerHTML = left_panel_title
+        document.getElementById("left-panel-contents").innerHTML = Criteria()
         document.getElementsByClassName("_contents_tags")[0].innerHTML = CreatingTags(tag_contents_list_for_papers())
         document.getElementsByClassName("_field_tags")[0].innerHTML = CreatingTags(tag_field_list_for_papers())
         document.getElementsByClassName("_method_tags")[0].innerHTML = CreatingTags(tag_method_list_for_papers())
@@ -64,7 +67,7 @@
         document.getElementsByClassName("_etc_tags")[0].innerHTML = CreatingTags(tag_etc_list_for_papers())
         document.getElementById("header_navi").innerHTML = CriteriaBreadcrumbContents()
         //document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
-        document.getElementById("add_item").innerHTML = document.getElementById("main_left").innerHTML
+        document.getElementById("add_item").innerHTML = left_panel_title
         document.getElementById("main_right").innerHTML = DocumentTable()
         document.getElementById("papers_tbody").innerHTML = CreatingLinks(information_list_for_papers())
 
@@ -91,13 +94,15 @@
         table_show_and_hide(title_filter, tag_names);
       } else {
         /**  Detail page  **/
-        var title = "OPMemo/papers/detail"
+        title = "OPMemo/papers/detail"
+        left_panel_title = "Contents"
         document.getElementById("main").innerHTML = LeftAndRight()
         document.getElementById("header").innerHTML = Header()
         document.getElementById("header_navi").innerHTML = DetailBreadcrumbContents()
-        document.getElementById("main_left").innerHTML = ToC("A1","B1","A2","A1")
+        document.getElementById("left-panel-title").innerHTML = left_panel_title
+        document.getElementById("left-panel-contents").innerHTML = ToC("A1","B1","A2","A1")
         document.getElementById("add_item").innerHTML =  Collapser()
-        document.getElementById("add_item_title").innerHTML =  "Contents"
+        document.getElementById("add_item_title").innerHTML =  left_panel_title
         document.getElementById("add_item_contents").innerHTML = ToC("B1","A1","B2","B1")
 
         var get = $.get;
@@ -147,7 +152,7 @@
           MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
 
           // tocに対する処理
-          chenge_id_and_headline(text)
+          $('.toc-contents').html(chenge_id_and_headline(text));
           var toc_contents = document.getElementsByClassName("toc-contents");
           //var toc_title = document.getElementsByClassName("toc-title");
           for (var i = 0; i < toc_contents.length; i++) {
