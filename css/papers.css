@@ -19,10 +19,14 @@ div.MathJax_Display {
   overflow-y: hidden;
 }
 
-p img {
+p img, li img {
   margin: 0px auto;
   display: block;
   max-width: 100%;
+}
+
+li:not(.breadcrumb-item) {
+  width: 100%;
 }
 
 .toc-contents {

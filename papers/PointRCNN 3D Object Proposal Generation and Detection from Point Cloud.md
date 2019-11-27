@@ -48,8 +48,8 @@ Github Issues : [#96](https://github.com/Obarads/obarads.github.io/issues/96)
 - $\theta$は鳥瞰図から見たオブジェクトの向きを示す。
 
 ##### 生成された3Dボックス提案に制約を課すために、3Dバウンディングボックス位置を推定するためのbinベースの回帰損失を提案する。
-- 図3に示すように、各前景点はX軸とZ軸に沿ったbinsに分けられる。  
-![fig3](img/P3OPGaDfPC/fig3.png)  
+- 図3に示すように、各前景点はX軸とZ軸に沿ったbinsに分けられる。
+    ![fig3](img/P3OPGaDfPC/fig3.png)
 - それぞれ、前景点がある領域を離散的なbinsへ分割する。
     - 具体的には、各前景点のXとZ軸に対して探索範囲$\mathcal{S}$を定義し、各XとZ軸の探索範囲を均一な長さ$\delta$のビンに分割して、X-Z平面上にオブジェクトの中心(x,z)を示す。[(ここのdifferent object centersのdifferentは、様々という意味だと思うから抜いた。)]
 - binsベースの分類を使用して中心位置を特定する。[(そのbinsに基づいて分けられた領域のどこに中心位置があるか分類する。)]
