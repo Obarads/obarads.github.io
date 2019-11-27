@@ -401,33 +401,4 @@ label {
 
 /* header */
 
-.tablesorter-dark th,
-.tablesorter-dark thead td {
-  border-collapse: collapse;
-}
-
-.tablesorter-default .header,
-.tablesorter-default .tablesorter-header {
-  cursor: pointer;
-  background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-.tablesorter-default thead .headerSortUp,
-.tablesorter-default thead .tablesorter-headerSortUp,
-.tablesorter-dark thead .tablesorter-headerAsc {
-  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
-}
-
-.tablesorter-default thead .headerSortDown,
-.tablesorter-default thead .tablesorter-headerSortDown,
-.tablesorter-dark thead .tablesorter-headerDesc {
-  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
-}
-
-.tablesorter-default thead .sorter-false {
-  background-image: none;
-  cursor: default;
-}
 /*tabel css end*/

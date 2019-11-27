@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="/css/all.css" />
   <link rel="stylesheet" href="/css/papers.css">
   <link rel="stylesheet" href="/css/tag_for_papers.css" />
+  <link rel="stylesheet" href="/css/table_dark.css" />
 </head>
 
 <body class="font-default" id="body">
@@ -92,6 +93,7 @@
         $("#_papers_table").tablesorter({});
         setting_search_parameters(tag_names, title, title_filter)
         table_show_and_hide(title_filter, tag_names);
+        
       } else {
         /**  Detail page  **/
         title = "OPMemo/papers/detail"
