@@ -66,7 +66,7 @@
         document.getElementsByClassName("_data_tags")[0].innerHTML = CreatingTags(tag_data_list_for_papers())
         document.getElementsByClassName("_task_tags")[0].innerHTML = CreatingTags(tag_task_list_for_papers())
         document.getElementsByClassName("_etc_tags")[0].innerHTML = CreatingTags(tag_etc_list_for_papers())
-        document.getElementById("header_navi").innerHTML = CriteriaBreadcrumbContents()
+        document.getElementById("header_navi").innerHTML = document.getElementById("header_navi").innerHTML + CriteriaBreadcrumbContents()
         //document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
         document.getElementById("add_item").innerHTML = document.getElementById("left-panel-contents").innerHTML
         document.getElementById("main_right").innerHTML = DocumentTable()

@@ -1,17 +1,21 @@
 function HomeBreadcrumbContents() {
-    return "<ol class=\"breadcrumb\">" + BreadcrumbActive("OPMemo") + "</ol>";
+    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + "</ol>";
 }
 function CriteriaBreadcrumbContents() {
-    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/") + BreadcrumbActive("papers") + "</ol>";
+    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + BreadcrumbActive("papers") + "</ol>";
 }
 function DetailBreadcrumbContents() {
-    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/") + Breadcrumb("papers", "/papers/") + BreadcrumbActive("detail") + "</ol>";
+    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + Breadcrumb("papers", "/papers/") + BreadcrumbActive("detail") + "</ol>";
 }
-function Breadcrumb(disp, link) {
-    return "<li class=\"breadcrumb-item\"><a href=\"" + link + "\">" + disp + "</a></li>";
+function Breadcrumb(disp, link, logo=false) {
+    if(logo){
+        return "<li class=\"breadcrumb-item tab-logo\"><a href=\"" + link + "\">" + disp + "</a></li>";
+    }else{
+        return "<li class=\"breadcrumb-item breadcrumb-item-padding\"><a href=\"" + link + "\">" + disp + "</a></li>";
+    }
 }
 function BreadcrumbActive(disp) {
-    return "<li class=\"breadcrumb-item active\" aria-current=\"page\">" + disp + "</li>";
+    return "<li class=\"breadcrumb-item breadcrumb-item-padding active\" aria-current=\"page\">" + disp + "</li>";
 }
 function CreatingTags(raw_tags, join = true) {
     var tags = raw_tags.map((raw_tag) => {
