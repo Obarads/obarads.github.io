@@ -21,15 +21,15 @@
 }
 
 #main_left a:hover {
-  color: #ff9e7b;
+  color: #ffeb37;
   text-decoration: unset;
 }
 
 #add_item a {
-  color: white;
+  color: #d8d8d8;
 }
 
 #add_item a:hover {
-  color: #ff9e7b;
+  color: #ffeb37;
   text-decoration: unset;
 }

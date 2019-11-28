@@ -98,10 +98,10 @@ body {
   word-wrap: break-word;
 }
 body a {
-  color: #ff3d3d;
+  color: #ff856f;
 }
 body a:hover {
-  color: #ff9e7b;
+  color: #ffeb37;
   text-decoration: unset;
 }
 p {
@@ -144,7 +144,7 @@ p {
   white-space: nowrap;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: rgb(216, 216, 216);
+  color: #d8d8d8;
 }
 ol.breadcrumb {
   padding: 0px;
@@ -155,11 +155,11 @@ li.breadcrumb-item a {
   color: rgb(216, 216, 216);
 }
 li.breadcrumb-item a:hover {
-  color: #ff9e7b;
+  color: #ffeb37;
   text-decoration: unset;
 }
 li.breadcrumb-item.active {
-  color: #ff3d3d;
+  color: #ff2d07;
   font-weight: bold;
 }
 
@@ -276,7 +276,7 @@ div > ol {
   background-color: rgba(0, 0, 0, 0);
 }
 *::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
   height: 8px;
   background-color: rgba(0, 0, 0, 0);
 }

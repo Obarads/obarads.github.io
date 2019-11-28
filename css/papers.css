@@ -29,7 +29,7 @@ li:not(.breadcrumb-item) {
   width: 100%;
 }
 .toc-contents a:hover {
-  color: #ff9e7b;
+  color: #ff856f;
   text-decoration: unset;
 }
 
@@ -44,8 +44,8 @@ li:not(.breadcrumb-item) {
 }
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    border-color: #ff3d3d;
-    background-color: #ff3d3d;
+    border-color: #ff2d07;
+    background-color: #ff2d07;
 }
 .toc-2 {
   padding-left: 0px;
