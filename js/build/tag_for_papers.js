@@ -1,3 +1,4 @@
+function tag_status_list_for_papers(){ return ['修正','参照','完了','導入','未完','省略']}
 function tag_contents_list_for_papers(){ return ['Article','Memo','Other','Paper','Survey','Technical Report']}
 function tag_field_list_for_papers(){ return ['CV','NLP','Robot']}
 function tag_method_list_for_papers(){ return ['Active Learning','Few-Shot Learning','Meta Learning','Reinforcement Learning','Self-Supervised Learning','Supervised Learning','Unsupervised Learning','Weakly Supervised Learning','Zero-Shot Learning']}

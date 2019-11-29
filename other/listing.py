@@ -222,6 +222,7 @@ def update_tags(dir_name, ucss):
 
     # タグのカテゴリーごとのjavascript関数を作成する。
     with open(PATH+"/js/build/tag_for_"+ dir_name +".js", 'w') as f:
+        f.writelines("function tag_status_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["status"]))+"]}\n")
         f.writelines("function tag_contents_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["contents"]))+"]}\n")
         f.writelines("function tag_field_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["field"]))+"]}\n")
         f.writelines("function tag_method_list_for_"+ dir_name +"(){ return [" + ",".join(sorted(yml["method"]))+"]}\n")
@@ -232,6 +233,7 @@ def update_tags(dir_name, ucss):
     # タグのカテゴリーごとの既定の色に変更する。
     if ucss:
         with open(PATH+"/css/tag_for_"+ dir_name +".css", 'w') as f:
+            f.writelines(coloring_tag_template(yml["status"],propertis='background:#fbff21;\ncolor:#000;'))
             f.writelines(coloring_tag_template(yml["contents"],propertis='background:#d9333f;\ncolor:#fff;'))
             f.writelines(coloring_tag_template(yml["field"],propertis='background:#005FFF;\ncolor:#fff;'))
             f.writelines(coloring_tag_template(yml["method"],propertis='background:#eb6101;\ncolor:#fff;'))

@@ -60,6 +60,7 @@
         document.getElementById("header").innerHTML = Header()
         document.getElementById("left-panel-title").innerHTML = left_panel_title
         document.getElementById("left-panel-contents").innerHTML = Criteria()
+        document.getElementsByClassName("_status_tags")[0].innerHTML = CreatingTags(tag_status_list_for_papers())
         document.getElementsByClassName("_contents_tags")[0].innerHTML = CreatingTags(tag_contents_list_for_papers())
         document.getElementsByClassName("_field_tags")[0].innerHTML = CreatingTags(tag_field_list_for_papers())
         document.getElementsByClassName("_method_tags")[0].innerHTML = CreatingTags(tag_method_list_for_papers())
@@ -106,6 +107,7 @@
         document.getElementById("add_item").innerHTML =  Collapser()
         document.getElementById("add_item_title").innerHTML =  left_panel_title
         document.getElementById("add_item_contents").innerHTML = ToC("B1","A1","B2","B1")
+        document.getElementById("main_right").innerHTML = Container()
 
         var get = $.get;
         marked.setOptions({
@@ -148,7 +150,7 @@
             _html = _html.split(tuple[0]).join("$$" + tuple[1] + "$$");
           }
           // mathjaxで処理
-          var div = document.getElementById("main_right");
+          var div = document.getElementById("right-panel");
           div.innerHTML = _html;
           MathJax.Hub.Configured();
           MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);

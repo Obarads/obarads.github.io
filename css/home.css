@@ -4,7 +4,7 @@
     padding-left: 0px;
 }
 */
-.left-panel a {
+.left-panel a:not(.btn-flat){
   color: #e9e9e9;
 }
 
