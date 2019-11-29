@@ -17,7 +17,7 @@ PATH_OTHER = os.path.dirname(os.path.abspath(__file__))
 def creating_tag_dict_and_list(dir_name):
     tag_dict = {}
     tag_list = []
-    with open(PATH_OTHER + "/tag_list_for_"+ dir_name +".yaml") as f:
+    with open(PATH_OTHER + "/tag_list_for_"+ dir_name +".yaml", encoding="utf-8") as f:
         yml = yaml.load(f,Loader=yaml.SafeLoader)
 
     count = 0

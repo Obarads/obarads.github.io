@@ -16,7 +16,8 @@ div.MathJax_Display {
 }
 
 p img, li img {
-  margin: 0px auto;
+  margin: auto;
+  padding-bottom: 13px;
   display: block;
   max-width: 100%;
 }
