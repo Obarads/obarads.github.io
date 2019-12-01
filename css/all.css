@@ -281,7 +281,8 @@ div > ol {
   background-color: rgba(0, 0, 0, 0);
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #666;
+  background-color: #27293D;
+  border: solid 1px #43474d;
 }
 .scrollable-menu {
   height: auto;
