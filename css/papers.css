@@ -56,11 +56,8 @@ li:not(.breadcrumb-item) {
 }
 .toc-con-2 {
   width: 100%;
-  border-left: solid 6px #666;
+  border-left: solid 6px #ff2d07;
   border-bottom: solid 1px #666;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 1px;
 }
 .toc-con2-2 {
   margin-left: 5px;
@@ -76,11 +73,8 @@ li:not(.breadcrumb-item) {
 }
 .toc-con-3 {
   width: 100%;
-  border-left: solid 3px #999;
+  border-left: solid 3px #ff2d07;
   border-bottom: dashed 1px #999;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 1px;
 }
 .toc-con2-3 {
   margin-left: 5px;
@@ -95,7 +89,8 @@ li:not(.breadcrumb-item) {
   font-size: 15px;
 }
 .toc-con-4 {
-  border-bottom: dashed 1px #999;
+  padding-left: 3px;
+  border-left: double 3px #ff2d07;
 }
 .toc-con2-4 {
   margin-left: 2px;
