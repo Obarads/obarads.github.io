@@ -102,8 +102,21 @@ li:not(.breadcrumb-item) {
 .toc-5 {
   padding-left: 30px;
   padding-top: 5px;
-  font-size: 14px;
 }
 .toc-5 a {
+  font-size: 14px;
   color: #ffffff;
+  position: relative;
+  padding: 1 0 0 0;
+}
+.toc-5 a::before {
+  position: absolute;
+  top: 5;
+  left:-16;
+  content: url("../font/svg/check-14px.svg");
+  width: 10px;
+  height: 10px;
+  line-height: 20px;
+  font-size: .9em;
+  text-align: center;
 }
