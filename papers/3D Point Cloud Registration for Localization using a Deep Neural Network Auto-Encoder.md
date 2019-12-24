@@ -120,7 +120,7 @@ Gil Elbaz, Tamar Avraham, Anath Fischer.
 なし
 
 ## key-words
-Registration, Point_Cloud, AutoEncoder, CV, Paper, 省略, Superpoint
+Registration, Point_Cloud, AutoEncoder, CV, Paper, 省略, Superpoint, Implemented
 
 ## status
 省略

@@ -28,7 +28,7 @@
   text-decoration: unset;
 }
 
-#add_item a {
+#add_item a.paper_title {
   color: #d8d8d8;
 }
 
