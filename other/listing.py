@@ -74,7 +74,7 @@ def create_toc(md):
     return toc
 
 def extract_data(path,tag_dict,tag_list):
-    status_counter = {"更新済":0,"省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
+    status_counter = {"完了":0, "省略":0,"参照":0,"未完":0,"修正":0,"導入":0}
     md_list = glob.glob(path+"*.md")
     path_list = md_list
     info_list = []  # 検索用の情報を取得する。
@@ -123,7 +123,7 @@ def extract_data(path,tag_dict,tag_list):
             if "## status" in content:
                 status_index = content.index("## status")
                 if status_index != -1:
-                    if content[status_index+1] in ["更新済","省略","参照","未完","修正","導入"]:
+                    if content[status_index+1] in ["省略","参照","未完","修正","導入","完了"]:
                         status = content[status_index+1]
                         status_tags.append(status)
                         status_counter[status]+=1
@@ -232,6 +232,11 @@ def update_tags(dir_name, ucss):
 
     # タグのカテゴリーごとの既定の色に変更する。
     if ucss:
+        # タグ中の/を別の値に変換、対象はcssのみ。この変更に対応するために、all.jsのCreatingTagsも変更している。
+        for k in yml:
+            for i in range(len(yml[k])):
+                yml[k][i] = yml[k][i].replace("/","")
+
         with open(PATH+"/css/tag_for_"+ dir_name +".css", 'w') as f:
             f.writelines(coloring_tag_template(yml["status"],propertis='background:#fbff21;\ncolor:#000;'))
             f.writelines(coloring_tag_template(yml["contents"],propertis='background:#d9333f;\ncolor:#fff;'))

@@ -59,3 +59,6 @@ targetタスクで必要なオブジェクトの形状などの情報。オブ�
 
 ## key-words
 Self-Supervised_Learning, CV, Memo
+
+## status
+完了

@@ -39,7 +39,7 @@ Daeyun Shin, Zhile Ren, Erik B. Sudderth, Charless C. Fowlkes
 なし
 
 ## key-words
-RGB_Image, Reconstruction, 3D_Estimation, CV, Paper
+RGB_Image, Reconstruction, 3D_Estimation, CV, Paper, 修正
 
 ## status
 修正

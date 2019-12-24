@@ -78,7 +78,7 @@ Benjamin Graham, Martin Engelcke, Laurens van der Maaten
 重要なアイデア、確認しとくべき。dilateを欠点扱いしたのは、スパース性が失われることだからか?(失うと計算効率が多分下がる?)
 
 ## key-words
-Point_Cloud, Sparsity, Semantic_Segmentation, CV, Paper
+Point_Cloud, Sparsity, Semantic_Segmentation, CV, Paper, 修正
 
 ## status
-省略
+修正

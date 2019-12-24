@@ -36,10 +36,10 @@ Keze Wang, Dongyu Zhang, Ya Li, Ruimao Zhang, Liang Lin.
 なし
 
 ## key-words
-RGB_Image, Active_Learning, CV, Paper, Classification
+RGB_Image, Active_Learning, CV, Paper, Classification, 修正
 
 ## status
-導入
+修正
 
 ## read
 A

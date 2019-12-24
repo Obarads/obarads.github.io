@@ -40,15 +40,16 @@ ICRA 2018
 Mehran Maghoumi, Joseph J. LaViola, Karthik Desingh, Odest Chadwicke Jenkins.
 
 ## 投稿日付(yyyy/MM/dd)
+2018/05/21
 
 ## コメント
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, Multi-View, RGB_Image, Depth_Image, Completion
+CV, Paper, Point_Cloud, Multi-View, RGB_Image, Depth_Image, Completion, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

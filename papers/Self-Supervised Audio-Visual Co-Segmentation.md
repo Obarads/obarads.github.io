@@ -40,7 +40,7 @@ Andrew Rouditchenko, Hang Zhao, Chuang Gan, Josh McDermott, Antonio Torralba.
 なし
 
 ## key-words
-Self-Supervised_Learning, Video, CV, Paper
+Self-Supervised_Learning, Video, CV, Paper, 修正
 
 ## status
-導入
+修正

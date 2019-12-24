@@ -4,14 +4,14 @@
 Github Issues : [#43](https://github.com/Obarads/obarads.github.io/issues/43)
 
 ## どんなもの?
-##### 3Dセマンティックインスタンスセグメンテーションのための提案なし手法(proposal-free method、詳細はコメント参照)を提案した。
+- 3Dセマンティックインスタンスセグメンテーションのための提案なし手法を提案した。
 - 提案手法ではkNNを使い点の周りにあるであろう同じインスタンスの点を得ようとするが、近い点全てが同じインスタンスでは無いためアテンション機構を取り込み分別する。
 
-##### また、3Dインスタンスごとに埋め込み情報と構造情報の両方を考慮した3Dインスタンスセグメンテーションのためのstructure-aware lossを提案した。
+-  また、3Dインスタンスごとに埋め込み情報と構造情報の両方を考慮した3Dインスタンスセグメンテーションのためのstructure-aware lossを提案した。
 
 ## 先行研究と比べてどこがすごいの?
-##### kNNにアテンション機構を導入して不必要な参照をしないようにしたこと。
-##### また、新しい損失を定義した。
+- kNNにアテンション機構を導入して不必要な参照をしないようにしたこと。
+- また、新しい損失を定義した。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 提案したネットワークは図2の通り。submanifold convolution networkはGrahamら[1]のものを使う。structure-aware lossとGCNが新規提案となる。
@@ -76,7 +76,8 @@ Zhidong Liang, Ming Yang, Chunxiang Wang.
 最近、YOLOやFaster R-CNNなどで使われるROI(region of interest)などを使った領域提案を使った手法であるproposal-baseな手法に代わって、入力に対する埋め込みを生成する手法(画像では各ピクセルに対して埋め込みを生成しクラスタアルゴリズムを適応してインスタンスを得る)であるproposal-freeな手法が提案されている。
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper
+Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 修正
 
 ## status
-更新済
+修正
+

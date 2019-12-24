@@ -10,3 +10,6 @@ RGB_Image, CV, Article
 
 ## 参考文献
 [ヤツガニ †reborn(@tackson5), twitterのコメント, [Accessed: 24-Jun-2019]](https://twitter.com/tackson5/status/1144412984090886144)
+
+## status
+完了

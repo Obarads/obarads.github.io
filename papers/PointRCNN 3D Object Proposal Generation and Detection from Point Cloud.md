@@ -120,7 +120,7 @@ Shaoshuai Shi, Xiaogang Wang, Hongsheng Li
 なし
 
 ## key-words
-Point_Cloud, Instance_Segmentation, Detection, CV, Paper
+Point_Cloud, Instance_Segmentation, Detection, CV, Paper, 修正
 
 ## status
-導入
+修正

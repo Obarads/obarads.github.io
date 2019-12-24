@@ -114,7 +114,7 @@ Fangchang Ma, Guilherme Venturelli Cavalheiro, and Sertac Karaman
 なし
 
 ## key-words
-Self-Supervised_Learning, RGB_Image, Completion, Sensor_Fusion, Video, CV, Paper
+Self-Supervised_Learning, RGB_Image, Completion, Sensor_Fusion, Video, CV, Paper, 修正
 
 ## status
 修正

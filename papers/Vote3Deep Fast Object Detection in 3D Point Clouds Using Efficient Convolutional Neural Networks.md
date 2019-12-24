@@ -4,10 +4,28 @@
 Github Issues : []()  
 
 ## どんなもの?
+##### グリッドごとに点群を分割した表現をCNNに入力し、CNNの出力層は検出スコアを返す手法を用いた検出器を提案した。
+- この提案は[1]からインスピレーションを得ており、[1]の手法に基づいて開発されている。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
+##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+#### 手法の概要
+##### 最初に、グリッド状に点群を離散化する。
+- [1]と同じ。
+
+##### 次に、離散化した表現をCNNに入力する。
+- 入力された表現はスパースであるため、点が含まれている領域(Cell)のみを計算する。
+- このプロセスでは、出力層が検出スコアを予測する。
+- また、[1]でしていたように、N個の異なる方向から同じプロセスを行い、オブジェクトの向きが変わっていたとしてちゃんと検知できるようにする。
+- クラスが同じインスタンスはサイズが似ているという前提のもと、**各クラスごとに固定サイズのバウンディングボックスを想定する。**
+    - これは回帰処理をなくすため。
+    - 訓練セットの95%のGTバウンディングボックスに基づいて、関心のある[(前景の)]各クラスの3Dバウンディングボックスのサイズを選択する。
+
+##### 最後に、Nono maximum suppressionで重複する検出領域をまとめる。
+- [1]と同じ。
+
 
 ## どうやって有効だと検証した?
 
@@ -21,7 +39,7 @@ Github Issues : []()
 
 
 ## 会議, 論文誌, etc.
-IEEE International Conference on Robotics and Automation 2017
+ICRA 2017
 
 ## 著者
 Martin Engelcke, Dushyant Rao, Dominic Zeng Wang, Chi Hay Tong, Ingmar Posner
@@ -33,10 +51,10 @@ Martin Engelcke, Dushyant Rao, Dominic Zeng Wang, Chi Hay Tong, Ingmar Posner
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, Detection, Instance_Segmentation
+CV, Paper, Point_Cloud, Detection, 修正
 
 ## status
-未完
+修正
 
 ## read
 

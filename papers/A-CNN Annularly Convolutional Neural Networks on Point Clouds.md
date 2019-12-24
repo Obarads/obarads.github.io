@@ -39,10 +39,10 @@ Github Issues : []()
 なし
 
 ## key-words
-導入, CV, Paper, Semantic_Segmentation, Classification, Point_Cloud
+修正, CV, Paper, Semantic_Segmentation, Classification, Point_Cloud
 
 ## status
-導入
+修正
 
 ## read
 A, I

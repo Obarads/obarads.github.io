@@ -39,10 +39,10 @@ Jeremie Papon, Alexey Abramov, Markus Schoeler
 なし
 
 ## key-words
-Point_Cloud, Supervoxel, CV, Paper
+Point_Cloud, Supervoxel, CV, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I, R

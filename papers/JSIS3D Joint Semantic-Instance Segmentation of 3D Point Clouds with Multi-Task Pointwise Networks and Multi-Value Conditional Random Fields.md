@@ -65,10 +65,10 @@ Quang-Hieu Pham, Duc Thanh Nguyen, Binh-Son Hua, Gemma Roig, Sai-Kit Yeung
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, Instance_Segmentation, Semantic_Segmentation
+CV, Paper, Point_Cloud, Instance_Segmentation, Semantic_Segmentation, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

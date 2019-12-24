@@ -63,7 +63,8 @@ Mehdi Noroozi and Paolo Favaro.
 In this case, the features Fi would carry no semantic meaning, but just information about an arbitrary 2D position.(この場合、特徴Fiは意味を持たず、任意の2D位置に関する情報のみを持つ。)の意味が明確に理解できていない。おそらくは、同じ画像で同じギャップやジッタリングを持ったものを何度も学習させると、その決まったパターンでしか認識できなくなるからか? その影響を避けるために、同じ画像でも様々なパターンのジグゾーパズルをCFNで使う。
 
 ## key-words
-RGB_Image, Classification, Self-Supervised_Learning, CV, Paper
+RGB_Image, Classification, Self-Supervised_Learning, CV, Paper, 修正
 
 ## status
-更新済
+修正
+

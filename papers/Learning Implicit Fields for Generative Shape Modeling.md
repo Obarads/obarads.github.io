@@ -37,10 +37,10 @@ Zhiqin Chen, Hao Zhang
 なし
 
 ## key-words
-Reconstruction, CV, Paper
+Reconstruction, CV, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A

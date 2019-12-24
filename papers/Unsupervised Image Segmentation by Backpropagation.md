@@ -93,10 +93,10 @@ Asako Kanezaki.
 なし
 
 ## key-words
-RGB_Image, Unsupervised_Learning, CV, Paper
+RGB_Image, Unsupervised_Learning, CV, Paper, 修正
 
 ## status
-省略
+修正
 
 ## BibTex
 @inproceedings{kanezaki2018_unsupervised_segmentation,

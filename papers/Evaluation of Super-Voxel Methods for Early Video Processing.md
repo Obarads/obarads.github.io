@@ -33,10 +33,10 @@ Chenliang Xu and Jason J. Corso
 なし
 
 ## key-words
-CV, Voxel, Video, Supervoxel, Paper
+CV, Voxel, Video, Supervoxel, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A

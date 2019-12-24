@@ -32,10 +32,10 @@ L’ubor Ladick, Olivier Saurer, SoHyeon Jeong, Fabio Maninchedda, Marc Pollefey
 なし
 
 ## key-words
-CV, Point_Cloud, Mesh, Reconstruction, Paper
+CV, Point_Cloud, Mesh, Reconstruction, Paper, 修正
 
 ## status
-未完
+修正
 
 ## read
 

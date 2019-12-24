@@ -211,7 +211,7 @@ MNISTのところにあり
 1. [M. Ester, H.-P. Kriegel, J. Sander, X. Xu, et al. A density-based algorithm for discovering clusters in large spatial databases with noise. InProceedings of the SecondInterna-tional Conference on Knowledge Discovery and Data Min-ing, KDD’96, pages 226–231, 1996.](https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf)
 
 ## 会議
-未確認
+CVPR 2019
 
 ## 著者
 Chong Xiang, Charles R. Qi, Bo Li
@@ -223,7 +223,7 @@ Chong Xiang, Charles R. Qi, Bo Li
 アイデアはわかるが細かいところの使用が理解できなかった(特にcritical pointsの判明方法)。PointNetの人が共著している初めての点群に対するAdeversarial exampleの論文。
 
 ## key-words
-Point_Cloud, Adversarial_Examples, CV, Paper
+Point_Cloud, Adversarial_Examples, CV, Paper, 修正
 
 ## status
-更新済
+修正

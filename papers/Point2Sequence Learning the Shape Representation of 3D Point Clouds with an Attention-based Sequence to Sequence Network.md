@@ -92,7 +92,8 @@ Xinhai Liu, Zhizhong Han, Yu-Shen Liu, Matthias Zwicker
 explicit waysの手法っていうのは、graphとかshape contextのことを指しているのかな...。あと、DGCNNが強い。
 
 ## key-words
-Classification, Point_Cloud, Semantic_Segmentation, RNN, CV, Paper
+Classification, Point_Cloud, Semantic_Segmentation, RNN, CV, Paper, 修正
 
 ## status
-更新済
+修正
+

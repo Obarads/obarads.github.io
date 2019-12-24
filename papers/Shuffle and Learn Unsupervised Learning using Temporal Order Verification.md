@@ -43,9 +43,9 @@ Ishan Misra, C. Lawrence Zitnick, Martial Hebert.
 なし
 
 ## key-words
-Video, Self-Supervised_Learning, CV, Paper
+Video, Self-Supervised_Learning, CV, Paper, 修正
 
 ## status
-未完
+修正
 
 ## BibTex

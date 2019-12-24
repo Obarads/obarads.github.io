@@ -84,10 +84,10 @@ Seiichi Uchida and Hiroaki Sakoe.
 なし
 
 ## key-words
-RGB_Image, CV, Paper
+RGB_Image, CV, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

@@ -32,10 +32,10 @@ Nevrez Imamoglu, Guanqun Ding, Yuming Fang, Asako Kanezaki, Toru Kouyama, Ryosuk
 なし
 
 ## key-words
-CV, Paper
+CV, Paper, 修正
 
 ## status
-未完
+修正
 
 ## read
 

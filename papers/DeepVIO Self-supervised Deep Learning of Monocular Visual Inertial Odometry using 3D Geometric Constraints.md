@@ -41,10 +41,10 @@ Liming Han, Yimin Lin, Guoguang Du, Shiguo Lian
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV, Paper
+RGB_Image, Self-Supervised_Learning, CV, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

@@ -92,3 +92,6 @@ LRFやLiDAR、車輪エンコーダー、カメラなどから自分の位置や
 
 ## key-words
 SLAM, CV, Memo
+
+## status
+完了

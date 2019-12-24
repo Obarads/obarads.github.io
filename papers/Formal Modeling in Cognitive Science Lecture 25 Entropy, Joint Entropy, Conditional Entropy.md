@@ -120,6 +120,7 @@ $$
 $$
 
 ## 投稿日付(yyyy/MM/dd)
+2019/12/23
 
 ## key-words
 CV, Other
@@ -128,3 +129,6 @@ CV, Other
 1. [Frank Keller. Formal Modeling in Cognitive Science Lecture 25: Entropy, Joint Entropy, Conditional Entropy. (アクセス:2019/05/01)](http://www.inf.ed.ac.uk/teaching/courses/fmcs1/slides/lecture25.pdf)
 2. [情報量 - Wikipedia. (アクセス:2019/05/01)](https://ja.wikipedia.org/wiki/%E6%83%85%E5%A0%B1%E9%87%8F)
 3. [交差エントロピーの例と微分の計算 - 具体例で学ぶ数学. (アクセス:2019/05/02)](https://mathwords.net/kousaentropy)
+
+## status
+完了

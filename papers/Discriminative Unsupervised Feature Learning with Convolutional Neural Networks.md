@@ -83,7 +83,8 @@ Alexey Dosovitskiy, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller
 なし
 
 ## key-words
-RGB_Image, Data_Augmentation, Unsupervised_Learning, CV, Paper
+RGB_Image, Data_Augmentation, Unsupervised_Learning, CV, Paper, 修正
 
 ## status
-省略
+修正
+

@@ -34,10 +34,10 @@ Yin Li, Manohar Paluri, James M. Rehg, Piotr Dollár.
 なし
 
 ## key-words
-Video, RGB_Image, CV, Paper
+Video, RGB_Image, CV, Paper, 修正
 
 ## status
-未完
+修正
 
 ## read
 A

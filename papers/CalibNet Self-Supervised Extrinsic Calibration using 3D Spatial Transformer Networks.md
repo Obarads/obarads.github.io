@@ -41,10 +41,10 @@ Ganesh Iyer, Karnik Ram R., J. Krishna Murthy, K. Madhava Krishna.
 なし
 
 ## key-words
-Point_Cloud, RGB_Image, Self-Supervised_Learning, Sensor_Fusion, CV, Paper
+Point_Cloud, RGB_Image, Self-Supervised_Learning, Sensor_Fusion, CV, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

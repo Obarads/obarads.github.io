@@ -33,7 +33,7 @@ Michael Bloesch, Jan Czarnowski, Ronald Clark, Stefan Leutenegger, Andrew J. Dav
 なし
 
 ## key-words
-SLAM, CV, Paper, Depth_Image, Intensity_Image
+SLAM, CV, Paper, Depth_Image, Intensity_Image, 参照
 
 ## status
 参照

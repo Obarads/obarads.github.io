@@ -35,6 +35,7 @@ Github Issues : []()
 Memo
 
 ## status
+完了
 
 ## read
 

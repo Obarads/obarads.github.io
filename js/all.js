@@ -20,7 +20,7 @@ function BreadcrumbActive(disp) {
 function CreatingTags(raw_tags, join = true) {
     var tags = raw_tags.map((raw_tag) => {
         var cn = "btn-flat " + "__" + raw_tag.replace(/ /g, "_").replace(/&/g, "_");
-        return "<a class=\"" + cn + "\">" + raw_tag + "</a>"
+        return "<a class=\"" + cn.replace("/","") + "\">" + raw_tag + "</a>"
     });
     if (join) {
         tags = tags.join("")
@@ -33,7 +33,8 @@ function CreatingLinks(raw_links, join = true) {
         link_counter = link_counter + 1
         var tags = CreatingTags(raw_link[1].split(','));
         var raw_link_for_href = "/papers/#" + raw_link[0]
-        return "<tr><td><div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + raw_link[4] + "</a></div>" + tags + "</td><td class=\"align-middle text-center\">" + raw_link[2] + "</td><td class=\"align-middle text-center\">" + raw_link[3] + "</td></tr>"
+        //return "<tr><td><div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + raw_link[4] + "</a></div>" + tags + "</td><td class=\"align-middle text-center\">" + raw_link[2] + "</td><td class=\"align-middle text-center\">" + raw_link[3] + "</td></tr>"
+        return "<tr><td><div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + raw_link[4] + "</a></div>" + tags + "</td><td class=\"align-middle text-center\">" + raw_link[2] + "</td></tr>"
     });
     if (join) {
         links = links.join("")

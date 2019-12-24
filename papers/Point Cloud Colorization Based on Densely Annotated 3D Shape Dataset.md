@@ -51,7 +51,7 @@ Xu Cao, Katashi Nagao.
 なし
 
 ## key-words
-Point_Cloud, Dataset, GAN, CV, Technical_Report
+Point_Cloud, Dataset, GAN, CV, Technical_Report, 修正
 
 ## status
-更新済
+修正

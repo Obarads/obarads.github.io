@@ -61,10 +61,10 @@ Chen Liu, Yasutaka Furukawa
 なし
 
 ## key-words
-Technical_Report, CV, Instance_Segmentation, Mesh
+Technical_Report, CV, Instance_Segmentation, Mesh, 修正
 
 ## status
-省略
+修正
 
 ## read
 A, M

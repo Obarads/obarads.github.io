@@ -114,7 +114,8 @@ Shaoqing Ren, Kaiming He, Ross Girshick and Jian Sun
 Faster R-CNNの特許がある(論文関連リンクの1)。VoxelNetの予習用に見たため、省略多め。
 
 ## key-words
-RGB_Image, Detection, CV, Paper
+RGB_Image, Detection, CV, Paper, 修正
 
 ## status
-省略
+修正
+

@@ -33,10 +33,10 @@ Dwibedi, Aytar, Tompson, Sermanet, Zisserman.
 なし
 
 ## key-words
-Video, Self-Supervised_Learning, Few-Shot_Learning, CV, Paper
+Video, Self-Supervised_Learning, Few-Shot_Learning, CV, Paper, 修正
 
 ## status
-未完
+修正
 
 ## BibTex
 @article{dwibedi2019tcc,

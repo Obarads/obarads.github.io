@@ -1,7 +1,10 @@
 # 3D-SIS: 3D Semantic Instance Segmentation of RGB-D Scans
 
 元の論文の公開ページ : [arxiv.org](https://arxiv.org/pdf/1812.07003.pdf)  
+提案モデルの実装 : [Sekunde/3D-SIS](https://github.com/Sekunde/3D-SIS)  
 Github Issues : []()  
+
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
 ## どんなもの?
 RGB-Dスキャンによる新規の3Dインスタンスセグメンテーションモデル、3D-SISを提案した。
@@ -36,10 +39,10 @@ Ji Hou, Angela Dai, Matthias Nießner
 なし
 
 ## key-words
-Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image, Multi-View
+Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image, Multi-View, 修正
 
 ## status
-導入
+修正
 
 ## read
 

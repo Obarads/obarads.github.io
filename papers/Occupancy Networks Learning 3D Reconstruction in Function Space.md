@@ -135,7 +135,7 @@ Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Ge
 なし
 
 ## key-words
-RGB_Image, Voxel, Point_Cloud, Mesh, 3D_Estimation, Reconstruction, CV, Paper
+RGB_Image, Voxel, Point_Cloud, Mesh, 3D_Estimation, Reconstruction, CV, Paper, 修正
 
 ## status
-更新済
+修正

@@ -34,10 +34,10 @@ Charles R. Qi, Or Litany, Kaiming He, Leonidas J. Guibas
 なし
 
 ## key-words
-CV, Paper, Point_Cloud
+CV, Paper, Point_Cloud, 修正
 
 ## status
-導入
+修正
 
 ## read
 A

@@ -37,6 +37,7 @@ method: [
 data: [
   "'RGB Image'",
   "'Depth Image'",
+  "'Graph'",
   "'Intensity Image'",
   "'Mesh'",
   "'Point Cloud'",
@@ -45,6 +46,7 @@ data: [
   "'Sound'",
   "'Supervoxel'",
   "'Superpixel'",
+  "'Superpoint'"
 ]
 
 task: [
@@ -71,6 +73,7 @@ task: [
   "'SLAM'",
   "'Semantic Segmentation'",
   "'Super-Resolution'",
+  "'Action Anticipation'",
 ]
 
 etc: [
@@ -78,11 +81,14 @@ etc: [
   "'AutoEncoder'",
   "'Encoder-Decoder'",
   "'GAN'",
-  "'Graph'",
   "'Multi-View'",
   "'RNN'",
+  "'Rendering'",
   "'Interpretability'",
+  "'New Pooling'",
   "'Sparsity'",
   "'Synthetic'",
   "'TreeRNN'",
+  "'Implemented'",
+  "'w/o DL'"
 ]

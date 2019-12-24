@@ -45,10 +45,10 @@ Soohwan Song, Honggu Lee and Sungho Jo
 なし
 
 ## key-words
-Supervoxel, CV, Paper, Point_Cloud
+Supervoxel, CV, Paper, Point_Cloud, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

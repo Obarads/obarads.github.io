@@ -41,7 +41,8 @@ Yu Yu, Gang Liu, Jean-Marc Odobez.
 なし
 
 ## key-words
-Few-Shot_Learning, Self-Supervised_Learning, Domain_Adaptation, Gaze_Estimation, Synthetic, CV, Paper
+Few-Shot_Learning, Self-Supervised_Learning, Domain_Adaptation, Gaze_Estimation, Synthetic, CV, Paper, 修正
 
 ## status
-導入
+修正
+

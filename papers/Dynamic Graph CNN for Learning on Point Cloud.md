@@ -61,10 +61,10 @@ Yue Wang, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, Justin 
 シンプルな発想のわりに強力な効果を発揮している...。
 
 ## key-words
-Classification, Point_Cloud, Semantic_Segmentation, CV, Paper
+Classification, Point_Cloud, Semantic_Segmentation, CV, Paper, 修正
 
 ## status
-更新済
+修正
 
 ## Citation
 @article{dgcnn,

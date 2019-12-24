@@ -1,66 +1,104 @@
 # 3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder
 
-元の論文の公開ページ : [CVFのページ](http://openaccess.thecvf.com/content_cvpr_2017/papers/Elbaz_3D_Point_Cloud_CVPR_2017_paper.pdf)  
+元の論文の公開ページ : [openaccess.thecvf.com](http://openaccess.thecvf.com/content_cvpr_2017/papers/Elbaz_3D_Point_Cloud_CVPR_2017_paper.pdf)  
+提案モデルの実装 : [gilbaz/LORAX](https://github.com/gilbaz/LORAX)  
 Github Issues : [#48](https://github.com/Obarads/obarads.github.io/issues/48)
 
+Note: 本記事の見方や注意点については、[こちら](/)をご覧ください。
+
 ## どんなもの?
-RegistrationタスクをこなすアルゴリズムであるLORAXを提案した。
-
-## 先行研究と比べてどこがすごいの?
-省略
-
-## 技術や手法のキモはどこ? or 提案手法の詳細
-### アルゴリズム
-LORAX(LOcalization by Registration using a deep Auto-encoder reduced Cover Set、X=CS?)アルゴリズムによってRegistrationタスクを行う。このアルゴリズムでは、large outdoor areaを描写する点群をglobal点群、global点群内に一部含まれる点群をlocal点群とする(点群の関係は図7を参照したほうがいい)。global点群の点の数は最大一億であり、local点群はglobal点群よりも2~3桁少ない。アルゴリズムの概要は以下の通り。
-
-1. 新しいRandom Sphere Cover Setアルゴリズムを使用し点群をsuper-points(SP)に分割する。
-2. 各SPに対する正規化されたローカル座標系の選択(要はSP内の座標系の定義)。
-3. SPデータを2Dデプスマップへ投影する。(Depth Map Projection)
-4. 突出の検出とsuper-pointsのフィルタリング。(Saliency Detection and Filtration)
-5. DNN AutoEncoderを使って次元縮小する。
-6. 対応する記述子間の候補の一致を見つける。(Selecting Candidates for Matching)
-7. 局所探索を使った大まかなRegistrationを行う。(Coarse Registration by Localized Search)
-8. 反復的に最短点の微調整を行う。
+##### GPS等の位置に関する事前情報を必要としないレジストレーションアルゴリズム、LORAXを提案した。
+- グローバル点群(全体的な点群)とその点群と重複するローカル点群(局所的な点群)の2つに対するレジストレーションを行う。
+    - グローバル点群は点の数が最大1億個ある屋外の点群であり、一方でローカル点群はグローバル点群よりも2~3桁分点が少ない。
+- キーポイントの代わりにスーパーポイント(superpoint)を使用して、正しい変換(transformation[、ローカル点群がグローバル点群のどこに位置するか])を見つける。
+    - 図7のcは、グローバル点群とローカル点群間のそれぞれのスーパーポイントの対応関係を線で表している。
 
 ![fig7](img/3PCRfLuaDNNA/fig7.png)
 
-### Random Sphere Cover Set (RSCS)
-RSCSのアルゴリズムは以下の通り。
+##### [論文のポイントは、スーパーポイントによって大規模なグローバル点群とローカル点群を局所領域ごとに比較するという部分。]
+- [更新日: 2019/12/21時点での自分の観点より。]
+- [理由は以下の通り。]
+    - [最大1億個の点を含むグローバル点群の中のどの部分に小規模な点群であるローカル点群が一致するのか、スーパーポイントによってできた局所領域ごとに分けて比較を行う。]
+    - [局所領域の幾何学的な情報を深層オートエンコーダによって低次元なベクトルに変換するために、いくつかの工夫を加えている。]
 
-1. ランダムにSPに属していない点$P$を選択する。
-2. $P$を中心として半径$R_ {sphere}$内にある点の集合を新しいSPとして定義する。
+## 先行研究と比べてどこがすごいの?
+##### 野外においてGPS等の事前の環境情報を使わずにレジストレーションを行える。
+- 環境情報を得る前提のレジストレーションは、その環境情報の精度に大きく依存するという問題がある。
+- GPSは、天気や物理的障害に弱いため精度が左右しやすい。
+- 本提案では、その事前情報を使わない。
 
-適切な$R_ {sphere}$の値はアルゴリズムの最終段階中に一致した数$m$とlocal点群を包括する球の体積$V_ {local}$等の値から近似式で求める。尚、堅牢性向上のためglobal点群で1回、local点群で複数回、RSCSが施される。
+## 技術や手法のキモはどこ? or 提案手法の詳細
 
-### Depth Map Projection
-図3を見ての通り。SPをz軸方向から写し取った画像を用意し、必要な部分だけ切り取り、点群のノイズや点密度を均一にするためにmax filterとmean filterを使って図3(c)の状態のSPを作り出す。尚、切り取り後の画像サイズは$d_ {im2}^2=32\times 32$とする。
+### 手法の概要
+##### 1. 点群をスーパーポイント(SP)へ分割する。
+- この分割にはRandom Sphere Cover Set (RSCS)アルゴリズムを使用する。
+- 詳細は工夫のRandom Sphere Cover Set (RSCS)にて。
+
+##### 2. 各SP内でローカル座標系を定義する。
+- SPを2Dの深度マップに反映させる際に必要となる。
+- SP内の点の推定共分散行列に対してSingular Value Decomposition (SVD)を使ってローカル座標系を取得する。
+- [SP内の点群を表面として示す仮定があるなど、多分、表面の平たい部分がZ軸方向に向くようにする。]
+
+##### 3. SPを2Dの深度マップに反映する。
+- 図3のaとbの様に、点群を画像に反映させ、必要な部分のみを切り取るようにする。
+    - 最初は一辺64ピクセル、切り取りで32ピクセルで固定長。[SPの重心点から見て投影してる?]
+    - ピクセルにはz軸方向の値が入る。
+- 点群のノイズや点密度を均一にするためにmax filterとmean filterを使って図3のcの様な形に変換する。
 
 ![fig3](img/3PCRfLuaDNNA/fig3.png)
 
-### Saliency Detection and Filtration
-役に立たないSPを排除するため3つの測定を行う。
+##### 4. SPに対して突起箇所の検出とフィルタリングをする。
+- 不適切なSPを取り除くするため、3つのフィルタリングを施す。
+- 詳細は工夫のSaliency Detection and Filtrationを参照
 
-#### Density Test
-$N_ d$点に満たないSPをはじく。また、$K$個の近隣SPよりも比較的少ない点を含むSPもはじく。
+##### 5. 深層ニューラルネットワークオートエンコーダを使った次元削減を行う。
+- SPの深度マップから次元削減された特徴(SP auto-encoder based Featur, SAF)を抽出するため、深層オートエンコーダを使用する。
+- 比較のために、PCAを用いた特徴も使う。
+- 実装に関して色々あるが、ここでは省略。
 
-#### Geometric Quality Test
-高さ(z軸)に差がないSPをはじく。
+##### 6. 対応する記述子間のマッチングを行う。
+- SAFベクトルのユークリッド距離を使い、各ローカル点群中のSPから近いK個(K近傍)のグローバル点群中のSPをペアにする。
+    - ただし、i番目の近傍に関連する距離よりi+1番目の近傍に関連する距離がはるかに遠い場合、i+1からKまでの候補は除外する。
 
-#### Saliency Test
-global点群から得たSPのデプスマップを$d_ {im2}^2$個のデプスベクトルに変形する。デプスベクトルのセットにPCAを施し、最初の三つの固有ベクトルを使うだけで正確に再構築できるSP(local点群とglobal点群のもの)はデータセットでよく見られる幾何学特徴であるため、排除する(最初ってなに?)。これにより、点群の異なる領域にある類似のSP間での一致の可能性が減少する。
+##### 7. 局所的な探索を使って粗いレジストレーションを行う。
+- 最良の変換を上から5つ出力する。
+- 詳細は工夫のCoarse Registration by Localized Searchを参照
 
-### Selecting Candidates for Matching
-SPをDAEで抽出した特徴(SP auto-encoder based Feature、SAF)ベクトルのユークリッド距離を使い、各local点群中のSPから近いK個(K近傍)のglobal点群中のSPをセットとする。ただし、i番目の近傍に関連する距離よりi+1番目の近傍に関連する距離がはるかに遠い場合、i+1からKまでの候補は除外する。
+##### 8. Iterative Closest Point(ICP)で微調整する。
+- 5つの変換に対してそれぞれICPを適応し、一番結果が良かったものを選ぶ。
 
-### Coarse Registration by Localized Search
-点群間の対応関係を探すが、一致する箇所を最低$m=3$(堅牢性の考慮により$m=6$)探さなければならない。しかし、そのままだと検索規模が大きすぎる。そのため、各反復で、$V_ {local}$を超えない範囲の球の中に含まれるすべてのglobal点群に対するm個の候補ペアのみを考慮する。  
-RANSACを使い、反復的に6つの候補ペアを選択し、変換を計算、そしてglobal点群中の近傍とlocal点群内の変換点間の物理的な平均距離を計測することで一致度をチェックする。coarse registration stepの結果として最良のscoring transformationのみを選択する代わりに、local点群が重ならない5つの裁量の変換$(T_ 1, \ldots, T_ 5)$を記録する。次の微調整ステップがそれぞれに適応され、最終的に、最良のscoring fine registrationが得られたものが選択される。
+### 工夫
+#### Random Sphere Cover Set (RSCS)
+##### 重複有りのSPを生成するシンプルな手法を使う。
+- RSCSの手順は以下の通り。
+    1. SPに割り当てられていないランダムに単体点$P$を選ぶ。
+    2. $P$を中心として、固定半径を持つ球の中にある点を新しいSPとして定義する。SPの重複は有、つまり1つの点が複数のスーパーポイントに属することがある。
+    3. すべてのSPの点の数を足し合わせて、それが点群全体の95%を占めるようになるまで1と2を繰り返す。
+        - [重複は1カウント。]
+- 半径を求めるためのプロパティがある。[ここでは省略。]
+- 尚、堅牢性向上のためグローバル点群で1回、ローカル点群で複数回、RSCSが施される。
+
+#### Saliency Detection and Filtration
+##### 不適切なSP(特徴があまりないSP)を排除するため3つのフィルタリングを行う。
+- フィルタリングは以下の通り。
+    - Density Test: $N_ d$点に満たないSPをはじく。また、$K$個の近隣SPよりも比較的少ない点を含むSPもはじく。
+    - Geometric Quality Test: 高さ(z軸)に差がないSPをはじく。
+    - Saliency Test: グローバル点群から得たSPの深度マップを$d_ {im2}^2$個の深度ベクトルに変形する。深度ベクトルのセットにPCAを施し、最初の三つの固有ベクトルを使うだけで正確に再構築できるSP(ローカル点群とグローバル点群のもの)はデータセットでよく見られる幾何学特徴であるため、排除する。これにより、点群の異なる領域にある類似のSP間での一致の可能性が減少する。
+        - [最初ってなに?]
+
+#### Coarse Registration by Localized Search
+##### ローカル点群とグローバル点群を見比べて、最良の変換を上から5つ出力する。
+- 点群間の対応関係を探すが、ローカル点群とグローバル点群間で一致する箇所を最低$m=3$(堅牢性の考慮により$m=6$)探さなければならない。しかし、そのままだと検索規模が大きすぎるため、各反復でグローバル点群内で$V_ {local}$を超えない範囲の球の中に含まれるm個の候補ペアのみを考慮する。
+    - この$m$と$V_ {local}$は、RSCSの半径を決める際にも使われている。
+- RANSACを使い、反復的に6つの候補ペアを選択し、変換を計算、そしてグローバル点群中の近傍とローカル点群内の変換点間の物理的な平均距離を計測することで一致度をチェックする。
+- coarse registration stepの結果として最良のscoring transformationのみを選択する代わりに、ローカル点群が重ならない5つの最良の変換$(T_ 1, \ldots, T_ 5)$を記録する。
+- 次の微調整ステップがそれぞれに適応され、最終的に最良のscoring fine registrationが得られたものが選択される。
 
 ## どうやって有効だと検証した?
-省略
+##### 省略
 
 ## 議論はある?
-なし
+##### なし
 
 ## 次に読むべき論文は?
 - なし
@@ -82,7 +120,10 @@ Gil Elbaz, Tamar Avraham, Anath Fischer.
 なし
 
 ## key-words
-Registration, Point_Cloud, AutoEncoder, CV, Paper
+Registration, Point_Cloud, AutoEncoder, CV, Paper, 省略, Superpoint
 
 ## status
-修正
+省略
+
+## read
+A, I, R, M

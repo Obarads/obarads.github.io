@@ -41,10 +41,10 @@ Maryam Sultana, Arif Mahmood, Sajid Javed, and Soon Ki Jung
 なんか説明するたびにベースとなるGANの種類が変わっているように思える。
 
 ## key-words
-RGB_Image, Depth_Image, GAN, Video, CV, Unsupervised_Learning, Paper
+RGB_Image, Depth_Image, GAN, Video, CV, Unsupervised_Learning, Paper, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

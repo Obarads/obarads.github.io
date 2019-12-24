@@ -75,10 +75,10 @@ Andy Zeng, Kuan-Ting Yu, Shuran Song, Daniel Suo, Ed Walker Jr., Alberto Rodrigu
 このアプローチはAPC 2016の収納作業とピッキング作業でそれぞれ三位と四位を獲得している。
 
 ## key-words
-Self-Supervised_Learning, Detection, RGB_Image, Depth_Image, Point_Cloud, Robot, CV, Paper, Multi-View
+Self-Supervised_Learning, Detection, RGB_Image, Depth_Image, Point_Cloud, Robot, CV, Paper, Multi-View, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

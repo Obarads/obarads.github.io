@@ -1,67 +1,135 @@
 # VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection 
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1711.06396)
+提案モデルの実装 : [非公式:qianguih/voxelnet](https://github.com/qianguih/voxelnet)  
 Github Issues : [#15](https://github.com/Obarads/obarads.github.io/issues/15)
 
 ## どんなもの?
-手作業の特徴量の設計を必要とせず、特徴抽出とオブジェクトの境界ボックスの予測を行う汎用的でEnd-to-Endな3D検知ネットワーク、VoxelNetを提案する。ボクセルによって一定間隔ごとに点群をまとめそれを特徴表現に変換する。
+##### LiDAR等で得られる大量の点(\~100k)に対しても3D検出タスクが行えるモデル、VoxelNetを提案した。
+- VoxelNetは既存の手法で使われてきた手作業(hand-crafted)の特徴量の設計を必要とせず、特徴抽出とオブジェクトの境界ボックスの予測を行う汎用的でEnd-to-Endな3D検知ネットワークである。
+- 処理の流れは以下の通り。
+    1. グリッド状に分割した点群から、特徴量を詰め込んだスパースなtensor表現を生成する。
+    2. 生成した表現を、3D畳み込みに入力して新たな表現(特徴マップ)を得る。
+    3. 新たな表現をRegion Proposal Network(RPN)へ入力して、物体候補領域を推定する。
+
+##### KITTIデータセットを使って提案モデルの実証をした。
+- [投稿日: 2017/11/17]
+- KITTIデータセットのLiDAR-base car, pedestrian, cyclist検出ベンチマークでSOTA。
+
+##### [論文のポイントは、LiDAR点群をどうやってまとめ上げているかという部分。]
+- [投稿日: 2019/12/18時点での自分の観点より。]
+- [理由配下の通り。]
+    - [Convolutional Middle LayersやRegional Proposal Networkは新しいと思える部分がない。]
+    - [新規の特徴量取得方法により、LiDAR点群のような点が多いものに対する処理もEnd-to-Endな処理も可能になった。]
 
 ## 先行研究と比べてどこがすごいの?
-LiDARの様な100K程の大規模点群を使うような状況でも効率よくオブジェクトを検知できるような効率の良いネットワークを作成する。また、Region proposal network(領域提案ネットワーク)は密でtensor structure(画像、ビデオなど)である必要があり、LiDARのような3Dセンサーは必ずしも全体的に均一な点群を生成しない場合は適応できない。この論文ではそのギャップを埋める。
+##### 手作業の特徴量を使わない。
+- 手作業の特徴量は、3D形状情報と[(回転)]不変性の効率的な活用を妨げるボトルネックとなっている。本提案アーキテクチャでは、深層学習の訓練をEnd-to-Endで行うことができる。
+
+##### LiDARで得られる点の数(~100k)にも対応できる。
+- PointNetやPointNet++で実証されている点の数はLiDARよりも少ない(\~1k)。本提案では、liDARが得る点の数(\~100k)にも対応できるようになっている。
+- [このPointNetの点の数は1k以下、つまり1000以下ではなく、1000単位と言う意味だと思われる。つまり、VoxelNetも10万単位で処理できるということ?]
+
+##### LiDAR単体で検出が可能である。
+- LiDARにカメラを追加することで、より高い検出パフォーマンスを得ることができる。しかし、LiDARとカメラの同時運用は同期処理とキャリブレーションが必要となり、結果として用途の制限を招く。[具体的には?]また、センサーの故障により敏感になる。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-図2の様に提案するネットワークは特徴学習ネットワーク、畳み込み中間層、領域提案ネットワークの3つの構造からなる。
+### 手法の概要
+- 流れは以下の通り。概要図は図2の通り。
 
 ![fig2](img/VELfPCB3DOD/fig2.png)
 
-### 特徴学習ネットワーク
-以下の1~5までの手順の図は図2にある。
+##### はじめに、点群をグリッド状に分割する。
+- このとき、各ボクセル(セル)の点の数は一律ではない。
 
-#### ボクセル分割
-ボクセルを分割する。ボクセルのサイズは正六面体でなくても問題なく、3D空間の範囲D, H, Wであり、ボクセルのサイズがvD, vH, vWであるとき、ボクセルの軸ごとの数はD'=D/vD, H'=H/vH, W'=W/vWとなるようにする。
+##### 次に、$T$個以上の点を含む各ボクセル(セル)で$T$個の点をランダムサンプリングする。
+- 各ボクセルの点の数の最大値を$T$個に固定することで以下の利点がある。
+    - ボクセル間の点の不均等を減らすことができる。
+        - [個数に偏りがあると、ネットワークが注目する部分に偏りができる?]
+    - 計算がしやすくなる。
+        - [プログラムを書いているとわかるが、GPUで計算する際は固定次元数の配列で計算する。そのため、点の数の最大値は固定したほうが計算しやすい。]
 
-#### グルーピング
-ボクセルごとに点群を分割する。LiDARが点群を取得するため、図2のgroupingのボクセルの様にボクセルごとに保有する点群はまばらである。
+##### 次に、点を含むボクセルに対してVoxel Feature Encoding layerを適応して、ボクセルごとの特徴量を得る。
+- 細かい説明はStacked Voxel Feature Encodingで行う。
 
-#### ランダムサンプリング
-計算の節約とボクセル内の点群の数による偏りを減らすためにT個以下の点群になるようランダムサンプリングする。
+##### 次に、ボクセルごとの特徴量をまとめ、Sparse 4D Tensorを作成する。
+- サイズはボクセルの数×ボクセルごとの特徴量の次元数。
+    - ボクセルの数には点がないボクセルも含む。
+- 基本的に90%のボクセルは空であり、空ではないボクセル特徴をsparse tensorとして扱うことは学習時のメモリ使用率や計算量を減らすことができる。
+    - スパースな表現に対する処理では、効率的な計算の実装ができるという点で重要となる。
 
-#### スタックボクセル特徴のエンコーディング
-図3にボクセル特徴エンコーディング(VFE)層を示す。
+##### 次に、Convolutional Middle LayerにSparse 4D Tensorを入力し、特徴マップを取得する。
+- 畳み込みは3D畳み込みを使用する。
 
-![fig3](img/VELfPCB3DOD/fig3.png)
-
-ここでボクセルVに含まれる点piにはxyz座標のほかに反射率riを含んでおり、更にローカルな情報としてそれぞれのボクセル中の点群の中央点(vx, vy, vz)があるとすると、ボクセルVinに含まれる点p^iはxi, yi, zi, ri, xi-vx, yi-vy, zi-vzの情報を含める。このp^iはfully connected network(FCN)を介して特徴空間へ変換され、ここで点特徴fiから情報を集約できる。その後、局所集約特徴f\~を得るためelement-wise MaxPoolingをfiに使う。最後にfiとf\~をPoint-wise concatenated Featureで合体させる。合体させることにより、点ごとの特徴とローカルな特徴を兼ね備えることができる。
-
-要約すると、VFE層はT個以下の点群を含むボクセルを点ごとの特徴とそのボクセル内のローカル特徴を合体させたものを出力してくれるということである。
-
-#### スパースなTensor表現
-空ではないボクセルのリストを作る。図2の様に、ボクセルごとの特徴の次元がCであるとき、スパースな3D tensorはC\*D'\*H'*W'のサイズとなる。基本的に90%のボクセルは空であり、空ではないボクセル特徴をsuper tensorとして扱うことは学習時のメモリ使用率や計算量を減らすことができる。
-
-### 畳み込み中間層
-畳み込み中間層は、3D畳み込みを適応した層である。畳み込み中間層はボクセル単位特徴を集約し、形状記述のためのコンテキストをより多く与える。
-
-### 領域提案ネットワーク
-点群で論文関連リンクの1の領域提案ネットワークを使うためにいくつか変更を加えた。図4にRPNのアーキテクチャを示す(先に論文関連リンクの1の内容を見たほうが良い)。
+##### 特徴マップをRegion Proposal Network(RPN)へ入力し、候補領域の推定を行う。
+- 具体的には、確率スコアマップと回帰マップを取得する。
+- 概要図は図4の通り。RPN自体には、いくつか変更が加えられている。
 
 ![fig4](img/VELfPCB3DOD/fig4.png)
 
 ### 損失関数
-先に論文関連リンク1のloss functionに目を通したほうが良い。
+##### Faster R-CNN[1]の損失関数をベースとしたものを使用する。
+- 損失は式(2)の通り。Faster R-CNNの損失関数を参考にしている。
 
-$ { \\{ a^{pos}\_i \\} \_{i=1...N\_{pos}}} $ が一組の$ N_{pos} $個のpositiveアンカー、$ { \\{ a^{neg}\_j \\} \_{j=1...N\_{neg}}} $ が一組の$ N_{neg} $個のnegativeアンカーであるとする。3Dのground truthボックスをパラメータ化したものを$ (x_c^g, y_c^g, z_c^g, l^g, w^g, h^g, \theta^g) $とする。$ x_c^g, y_c^g, z_c^g $ は中央座標、$ l^g, w^g, h^g $は全長, 幅, 高さ、$ \theta^g $はzの軸周りのyaw回転である。(ground truthボックスに?)一致するpositiveアンカー$ (x_c^a, y_c^a, z_c^a, l^a, w^a, h^a, \theta^a) $からground truthボックスを探すため、残差ベクトル$ u^* \in \mathbb{R}^7 $に含まれる7つの回帰値は式(1)のように定義される。
+$$\begin{aligned}
+L &=\alpha \frac{1}{N_{\text {pos }}} \sum_{i} L_{\text {cls }}\left(p_{i}^{\text {pos }}, 1\right)+\beta \frac{1}{N_{\text {neg }}} \sum_{j} L_{\text {cls }}\left(p_{j}^{\text {neg }}, 0\right) \\
+&+\frac{1}{N_{\text {pos }}} \sum_{i} L_{\text {reg }}\left(\mathbf{u}_{i}, \mathbf{u}_{i}^{*}\right)
+\end{aligned} \tag{2}$$
+- クラス損失と位置・範囲・方向の損失を足し合わせたもの。
+    - 最初の2項はnormalied classification損失となっている。
+        - $L_ {\text{cls}}$はバイナリクロスエントロピー損失。
+    - 最後の項は回帰損失であり、smooth L1関数を使用している。
+- $p_ i^{\text{pos}}$と$p_ j^{\text{neg}}$はそれぞれpositiveアンカーとネガティブアンカーのソフトマックス出力。
+- $\mathbf{u}_ {i} \in \mathbb{R}^{7}$と$\mathbf{u}_ {i}^{*} \in \mathbb{R}^{7}$はpositiveアンカーに対する回帰出力の誤差とpositiveアンカーに対するground-truthの誤差を示す。
 
-![eq1](img/VELfPCB3DOD/eq1.png)
+##### 損失にオブジェクトの向きの誤差を追加する。
+- 式(2)の$\mathbf{u}_ {i}^{*} \in \mathbb{R}^{7}$に関する値は式(1)の残差をすべて足したものである。
+- [$\mathbf{u}_ {i} \in \mathbb{R}^{7}$も同じように計算する。大本である[1]も同じことをしている。]
+$$\begin{aligned}
+&\Delta x=\frac{x_{c}^{g}-x_{c}^{a}}{d^{a}}, \Delta y=\frac{y_{c}^{g}-y_{c}^{a}}{d^{a}}, \Delta z=\frac{z_{c}^{g}-z_{c}^{a}}{h^{a}}\\
+&\Delta l=\log \left(\frac{l^{g}}{l^{a}}\right), \Delta w=\log \left(\frac{w^{g}}{w^{a}}\right), \Delta h=\log \left(\frac{h^{g}}{h^{a}}\right)\\
+&\Delta \theta=\theta^{g}-\theta^{a}
+\end{aligned} \tag{1}$$
+- 残差にはオブジェクトの中心座標に関わる$\Delta x, \Delta y, \Delta z$、範囲に関わる$\Delta l, \Delta w, \Delta h$、向きに関わる$\Delta \theta$がある。
+- $a$がついているものはアンカーのパラメーター、$g$がついているものはground-truthのパラメーター
+- $d^{a}=\sqrt{\left(l^{a}\right)^{2}+\left(w^{a}\right)^{2}}$はアンカーの対角線である。
+- ベースの大本とは異なり、3Dボックスの向きを示す$\Delta\theta$も追加する。
 
-この時、$ d^a $はアンカーボックスの底面の対角線である。式(1)では、既存のものと違い3Dボックスを直接評価しながらΔxとΔyを$ d^a $で一様に標準化する。
+### 工夫
+#### Voxel feature encoding (VFE) layer
+##### 点ごとの特徴量を作成するためにVoxel feature encoding layerを導入する。
+- Voxel feature encoding (VFE) layerは点を含むボクセル内にある各点の特徴量を作成する。
+- VFE layerの全体像は図3の通り。
+- この層の過程を以下に示す。
 
-これらより式(2)に損失関数を定義する。
+![fig3](img/VELfPCB3DOD/fig3.png)
 
-![eq2](img/VELfPCB3DOD/eq2.png)
+##### はじめに、各ボクセルで入力特徴セット(Point-wise input)を作成する。
+- 特徴セットでは点の座標の他に、ボクセル内の重心点からの相対距離、received reflectanceを受け取る。
+    - 重心点を$v_ x, v_ y, v_ z$で表すとき、特徴セット$\mathbf{V}_ {in}$は以下のように示される。
+    - $\mathbf{V}_ {\mathrm{in}}=\\{\hat{\mathbf{p}}_ {i}=[x_ {i}, y_ {i}, z_ {i}, r_ {i}, x_ {i}-v_ {x}, y_ {i}-v_ {y}, z_ {i}-v_ {z}]^{T} \in \mathbb{R}^{7}\\}_ {i=1 \ldots t}$
+        - $t \leq T$であり、$T$はボクセル内の点の数の最大値。
+    - [相対距離を取ることで、ローカル特徴を取得している?]
 
-この時、$ p_i^{pos} $と$ p_j^{neg} $ はそれぞれ$ a^{pos}\_i $と$ a^{neg}\_j $に対するsoftmax出力を表す。また、$ u_i \in \mathbb{R}^7 $と$ u_i^* \in \mathbb{R}^7 $は回帰の出力とpositiveアンカー$ a^{pos}\_i $に対するground truthである。最初の2つの項は$ { \\{ a^{pos}\_i \\} \_{i=1...N\_{pos}}} $と$ { \\{ a^{neg}\_j \\} \_{j=1...N\_{neg}}} $に対する標準化された分類損失であり、この$ L_{cls} $は2値corss entropy損失であり、$ \alpha, \beta $はバランス調節用の変数である。最後の項の$ L_{reg} $は回帰損失であり、論文関連リンク2のSmooth L1関数を使用している。
+##### 次に、入力特徴セットをfully connected network(FCN)に入れる。
+- BNとReLUで構成された普通の層。
 
-その他にも効率的な実装、実装の詳細などが載っている。
+##### 次に、FCNの出力(Point-wise Feature)をElement-wise Maxpoolに入力する。
+- [PointNetでも使われてたものだと思われる。]
+
+##### 最後に、FCNの出力とElement-wise Maxpoolの出力(Locally Aggregated Feature)を連結する。
+- [PointNetのセマンティックセグメンテーションモデルでも、点ごとの特徴量とプーリングで得た特徴量を連結している。]
+- このような形にすることで、点周りの特徴(local feature)と点自身の特徴を融合して処理できる。
+
+#### Stacked Voxel Feature Encoding
+##### このVFE層をいくつか連続させることで、より説明可能な形状特徴情報を生成できる。
+- [VFE-1層では座標値を入れていたが、2層目以降は入力の特徴値を元に、VFE層の計算を行う。]
+
+##### 点を含むボクセルごとの特徴量は、VFE-$n$層の出力をElement-wise Maxpoolすることで得られる。
+- この処理を行うことで、点ごとの特徴量からボクセルの特徴量を得ることができる。
+
+### その他
+##### その他にも効率的な実装、実装の詳細などが載っている。
 
 ## どうやって有効だと検証した?
 KITTI 3Dオブジェクト検知ベンチマーク(論文関連リンクの3)を用いて評価した。鳥瞰図検知は表1に、3D検知は表2にVaidation setによるそれぞれ結果が載せられている。これらは3つの難易度で評価されている。
@@ -104,7 +172,10 @@ Yin Zhou and Oncel Tuzel
 super tensorの扱いがわからないからなぜ効率が良くなるのかわからない(ただ単に並列処理がしやすいということ?)。損失関数についてはFast R-CNNをちゃんと理解していないため、説明もよくわからず書いている。uiもよくわからない。先に論文関連リンクの1を見ます(2019/02/11)
 
 ## key-words
-Detection, Point_Cloud, CV, Supervised_Learning, Paper
+Detection, Point_Cloud, CV, Supervised_Learning, Paper, 完了
 
 ## status
-更新済
+完了
+
+# read
+A, I, R, M

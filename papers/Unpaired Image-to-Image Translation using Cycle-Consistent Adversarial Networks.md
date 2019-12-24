@@ -6,11 +6,13 @@ Github Issues : [#65](https://github.com/Obarads/obarads.github.io/issues/65)
 ## どんなもの?
 ドメインAのからドメインBへのImage to Imageを目的としたGANを提案した。ただし、このドメインに含まれるデータにはペアになるようなラベルが組み込まれていない。
 
+[1]を参照すること。
+
 ## 先行研究と比べてどこがすごいの?
 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-[1]を参照すること。
+省略
 
 ## どうやって有効だと検証した?
 省略
@@ -37,7 +39,7 @@ Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros.
 資料を信じているため論文は見ていない。
 
 ## key-words
-Unsupervised_Learning, RGB_Image, GAN, CV, Paper
+Unsupervised_Learning, RGB_Image, GAN, CV, Paper, 参照
 
 ## status
 参照

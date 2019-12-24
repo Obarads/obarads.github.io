@@ -94,6 +94,10 @@ $$
 1. [ToshinoriHanya. Deep Learningにおける知識の蒸留. (アクセス:3019/04/30)](http://codecrafthouse.jp/p/2018/01/knowledge-distillation/#vs)
 
 ## 投稿日付(yyyy/MM/dd)
+2019/12/23
 
 ## key-words
 Other
+
+## status
+完了

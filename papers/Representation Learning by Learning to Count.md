@@ -112,7 +112,8 @@ Mehdi Noroozi, Hamed Pirsiavash and Paolo Favaro.
 論文関連リンク1様様。
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV, Paper
+RGB_Image, Self-Supervised_Learning, CV, Paper, 修正
 
 ## status
-更新済
+修正
+

@@ -39,10 +39,10 @@ Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky.
 解説なら[1]を見るほうがいいと思う。あと、主張が面白い。関連研究も見たほうがより面白くなりそう。
 
 ## key-words
-RGB_Image, Super-Resolution, Completion, Denoising, CV, Paper
+RGB_Image, Super-Resolution, Completion, Denoising, CV, Paper, 修正
 
 ## status
-参照
+修正
 
 ## read
 A, I

@@ -4,6 +4,7 @@
 Github Issues : [#88](https://github.com/Obarads/obarads.github.io/issues/88)
 
 ## どんなもの?
+[1]を参照
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -32,9 +33,9 @@ Soeren Pirk, Mohi Khansari, Yunfei Bai, Corey Lynch, Pierre Sermanet.
 なし
 
 ## key-words
-RGB_Image, Detection, CV, Paper
+RGB_Image, Detection, CV, Paper, 参照
 
 ## status
-未完
+参照
 
 ## BibTex

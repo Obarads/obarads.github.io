@@ -1,6 +1,7 @@
 # Learning Object Bounding Boxes for 3D Instance Segmentation on Point Clouds
 
 元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/1906.01140v2)  
+提案モデルの実装 : [Yang7879/3D-BoNet](https://github.com/Yang7879/3D-BoNet)  
 Github Issues : []()  
 
 ## どんなもの?
@@ -69,10 +70,10 @@ Bo Yang, Jianan Wang, Ronald Clark, Qingyong Hu, Sen Wang, Andrew Markham, Niki 
 なし
 
 ## key-words
-Paper, CV, Point_Cloud, Instance_Segmentation, Supervised_Learning, Detection
+Paper, CV, Point_Cloud, Instance_Segmentation, Supervised_Learning, Detection, Implemented, 修正
 
 ## status
-導入
+修正
 
 ## read
 A, I

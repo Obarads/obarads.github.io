@@ -99,7 +99,7 @@ Ross Girshick
 Faster R-CNNのために見たので、省略多め。
 
 ## key-words
-Detection, RGB_Image, CV, Paper
+Detection, RGB_Image, CV, Paper, 修正
 
 ## status
-省略
+修正

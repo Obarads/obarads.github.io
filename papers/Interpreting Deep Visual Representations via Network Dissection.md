@@ -70,10 +70,10 @@ Bolei Zhou, David Bau, Aude Oliva, Antonio Torralba.
 内容は[3]とかぶっているっぽい
 
 ## key-words
-RGB_Image, Analytics, Interpretability, CV, Paper
+RGB_Image, Analytics, Interpretability, CV, Paper, 修正
 
 ## status
-省略
+修正
 
 ## read
 A, M

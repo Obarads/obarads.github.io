@@ -84,3 +84,6 @@ LiDAR用のシミュレータ
 
 ## key-words
 Point_Cloud, Registration, CV, Memo
+
+## status
+完了
