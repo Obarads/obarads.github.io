@@ -57,10 +57,10 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image, Multi-View, 修正
+Paper, CV, Instance_Segmentation, RGB_Image, Depth_Image, Multi-View, 導入, Video
 
 ## status
-##### 修正
+##### 導入
 
 ## read
 ##### A, I, R
