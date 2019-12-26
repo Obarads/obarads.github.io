@@ -41,7 +41,7 @@ Josh Tobin, OpenAI Robotics, Pieter Abbeel
 なし
 
 ## key-words
-CV, Paper, 導入, Dataset, Robot, Rendering, 修正
+CV, Paper, Dataset, Robot, Rendering, 修正
 
 ## status
 修正

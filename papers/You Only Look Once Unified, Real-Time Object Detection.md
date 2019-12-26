@@ -36,7 +36,7 @@ Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
 なし
 
 ## key-words
-CV, RGB_Image, Detection, Supervised_Learning, Paper, 参照
+CV, RGB_Image, Detection, Paper, 参照
 
 ## status
 参照

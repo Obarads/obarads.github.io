@@ -45,7 +45,7 @@ CVPR 2018
 なし
 
 ## key-words
-CV, Point_Cloud, Detection, Supervised_Learning, Paper, 修正
+CV, Point_Cloud, Detection, Paper, 修正
 
 ## status
 修正

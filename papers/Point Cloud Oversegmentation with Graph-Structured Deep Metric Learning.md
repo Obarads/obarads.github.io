@@ -235,7 +235,7 @@ Loic Landrieu, Mohamed Boussaha.
 なし
 
 ## key-words
-Supervised_Learning, Point_Cloud, Semantic_Segmentation, Oversegmentation, CV, Paper, 修正
+Point_Cloud, Semantic_Segmentation, Oversegmentation, CV, Paper, 修正
 
 ## status
 修正

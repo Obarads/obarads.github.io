@@ -36,7 +36,7 @@ Can Qin, Haoxuan You, Lichen Wang, C.-C. Jay Kuo, Yun Fu
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, 導入, Domain_Adaptation, 修正
+CV, Paper, Point_Cloud, Domain_Adaptation, 修正
 
 ## status
 修正

@@ -118,15 +118,17 @@ def extract_data(path,tag_dict,tag_list):
                 date_index = content.index(rd_type)
                 if date_index != -1:
                     if content[date_index+1].split("/")[0] != "":
-                        date = content[date_index+1].split("/")[0]
+                        date = content[date_index+1].split("/")[0].replace("##### ","")
                         date_tags.append(date)
             if "## status" in content:
                 status_index = content.index("## status")
                 if status_index != -1:
-                    if content[status_index+1] in ["省略","参照","未完","修正","導入","完了"]:
-                        status = content[status_index+1]
+                    status = content[status_index+1].replace("##### ","")
+                    if status in ["省略","参照","未完","修正","導入","完了"]:
                         status_tags.append(status)
                         status_counter[status]+=1
+                        if status == "導入":
+                            print(ml)
                     else:
                         pass
             if "# " in content[0]:
