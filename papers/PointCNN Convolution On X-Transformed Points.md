@@ -1,6 +1,7 @@
 # PointCNN: Convolution On X-Transformed Points
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1801.07791)  
+提案モデルの実装 : [yangyanli/PointCNN](https://github.com/yangyanli/PointCNN)
 Github Issues : [#91](https://github.com/Obarads/obarads.github.io/issues/91)
 
 ## どんなもの?
@@ -51,7 +52,7 @@ $\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の�
 - 畳み込む際の中心点を決める手法について、もっといいものがあるはず(Deep Points[1]など)。
 
 ## 次に読むべき論文は?
-- なし
+##### なし
 
 ## 論文関連リンク
 1. [edo_m18. コンボリューション（畳み込み処理）を実装してみる. 2014. (アクセス:2019/05/30)](https://qiita.com/edo_m18/items/d9f5f4b6de7ff73075ed)
@@ -60,24 +61,24 @@ $\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の�
 4. [CharlesR.Qi,HaoSu,MatthiasNießner,AngelaDai,MengyuanYan,andLeonidasJ.Guibas.Volumetric and multi-view cnns for object classification on 3d data. InCVPR, pages 5648–5656, 2016.](https://arxiv.org/abs/1604.03265)
 
 ## 会議
-NIPS 2018
+##### NIPS 2018
 
 ## 著者
-Yangyan Li, Rui Bu, Mingchao Sun, Wei Wu, Xinhan Di, Baoquan Chen.
+##### Yangyan Li, Rui Bu, Mingchao Sun, Wei Wu, Xinhan Di, Baoquan Chen.
 
 ## 投稿日付(yyyy/MM/dd)
-2018/01/23
+##### 2018/01/23
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 修正
+Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implemented
 
 ## status
-修正
+##### 省略
 
 ## read
-A, I、M
+##### A, I, M
 
 ## Citation
