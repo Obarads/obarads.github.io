@@ -101,29 +101,46 @@ Note: 本記事の見方や注意点については、[こちら](/)をご覧く
 ##### なし
 
 ## 次に読むべき論文は?
-- なし
+##### なし
 
 ## 論文関連リンク
+##### あり
 1. [Gil Elbaz. 3D Point Cloud Registration for Localization using a Deep Auto-encoder Neural Network. (著者の説明動画, アクセス:2019/04/10)](https://www.youtube.com/watch?v=iAScGjMvyHA)
 2. [gilbaz, gilbaz/LORAX: CVPR Paper - "3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder" - Partial Implementation Code. (著者らの実装, アクセス:2019/04/10)](https://github.com/gilbaz/LORAX)
 
 ## 会議
-CVPR 2017
+##### CVPR 2017
 
 ## 著者
-Gil Elbaz, Tamar Avraham, Anath Fischer. 
+##### Gil Elbaz, Tamar Avraham, Anath Fischer. 
 
 ## 投稿日付(yyyy/MM/dd)
-2017/07/21
+##### 2017/07/21
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-Registration, Point_Cloud, AutoEncoder, CV, Paper, 省略, Superpoint, Implemented
+##### Registration, Point_Cloud, AutoEncoder, CV, Paper, 省略, Superpoint, Implemented
 
 ## status
-省略
+##### 省略
 
 ## read
-A, I, R, M
+##### A, I, R, M
+
+## Citation
+##### ieeexplore.ieee.orgより引用
+[リンク](https://ieeexplore.ieee.org/document/8099748/citations#citations)  
+@INPROCEEDINGS{8099748,
+author={G. {Elbaz} and T. {Avraham} and A. {Fischer}},
+booktitle={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+title={3D Point Cloud Registration for Localization Using a Deep Neural Network Auto-Encoder},
+year={2017},
+volume={},
+number={},
+pages={2472-2481},
+keywords={computer vision;feature extraction;graph theory;image matching;image registration;image representation;learning (artificial intelligence);neural nets;solid modelling;unsupervised learning;deep neural network based auto-encoders;key-point descriptors;coarse point cloud registration;local 3D geometric structures;deep neural network auto-encoder;point cloud registration datasets;large-scale point cloud;super-points-local subsets;efficient coarse registration process;Three-dimensional displays;Neural networks;Algorithm design and analysis;Two dimensional displays;Iterative closest point algorithm;Computer vision;Robustness},
+doi={10.1109/CVPR.2017.265},
+ISSN={1063-6919},
+month={July},}

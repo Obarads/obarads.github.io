@@ -62,7 +62,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-Voxel, Self-Supervised_Learning, Registration, CV, Paper, 導入, Implemented
+##### Voxel, Self-Supervised_Learning, Registration, CV, Paper, 導入, Implemented
 
 ## status
 ##### 導入
@@ -71,7 +71,9 @@ Voxel, Self-Supervised_Learning, Registration, CV, Paper, 導入, Implemented
 ##### A, I, R
 
 ## Citation
-##### @inproceedings{zeng20163dmatch,
+##### github.comから引用
+[リンク](https://github.com/andyzeng/3dmatch-toolbox)
+@inproceedings{zeng20163dmatch,
     title={3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions},
     author={Zeng, Andy and Song, Shuran and Nie{\ss}ner, Matthias and Fisher, Matthew and Xiao, Jianxiong and
             Funkhouser, Thomas},

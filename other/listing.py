@@ -94,7 +94,7 @@ def extract_data(path,tag_dict,tag_list):
             if "## key-words" in content:
                 kw_index = content.index("## key-words")
                 if kw_index != -1 and len(content[kw_index:kw_index+2]) == 2:
-                    kw = content[kw_index+1].replace(" ","").replace("_"," ")
+                    kw = content[kw_index+1].replace("##### ","").replace(" ","").replace("_"," ")
                     kw_list = []
                     for k in kw.split(","):
                         k = "'"+k+"'"

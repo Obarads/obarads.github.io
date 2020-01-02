@@ -4,7 +4,7 @@
 Github Issues : [#118](https://github.com/Obarads/obarads.github.io/issues/118)
 
 ## どんなもの?
-連続性と単調性の制約を受ける、最適なピクセルマッピングを探索する新規の2次元ワーピングアルゴリズムを提示した。
+##### 連続性と単調性の制約を受ける、最適なピクセルマッピングを探索する新規の2次元ワーピングアルゴリズムを提示した。
 
 ## 先行研究と比べてどこがすごいの?
 DP法に基づく2次元ワーピング手法で最も信頼できるものの一つにLevinとPieraccini[1]が提案したものがある。しかし、この手法は実用面で以下の2つの問題を抱えている。
@@ -58,38 +58,41 @@ $D(\boldsymbol{A}, \boldsymbol{B})$は$\boldsymbol{A}$と最適に変形され�
 
 ![fig1](img/AMaCTWBoDP/fig1.png)
 
-
+##### 以降未読
 
 ## どうやって有効だと検証した?
+##### 省略
 
 ## 議論はある?
+##### 省略
 
 ## 次に読むべき論文は?
-- なし
+##### なし
 
 ## 論文関連リンク
+##### あり
 1. [E. Levin and R. Pieraccini. Dynamic planar warping for optical character recognition. Proc ICASSP, pages III 149{152, 1992.](https://www.researchgate.net/publication/3532347_Dynamic_planar_warping_for_optical_character_recognition)
 2. [R. Bellman. Adaptive Control Processes. Princeton University Press, New Jersey, 1961.](https://onlinelibrary.wiley.com/doi/abs/10.1002/zamm.19620420718)
 
 ## 会議
-ICPR 1998
+##### ICPR 1998
 
 ## 著者
-Seiichi Uchida and Hiroaki Sakoe.
+##### Seiichi Uchida and Hiroaki Sakoe.
 
 ## 投稿日付(yyyy/MM/dd)
-1998/??/??
+##### 1998/??/??
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-RGB_Image, CV, Paper, 修正
+##### RGB_Image, CV, Paper, 省略
 
 ## status
-修正
+##### 省略
 
 ## read
-A, I
+##### A, I
 
 ## Citation

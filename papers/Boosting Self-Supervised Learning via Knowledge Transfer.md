@@ -1,15 +1,19 @@
 # Boosting Self-Supervised Learning via Knowledge Transfer
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1805.00385)
+提案モデルの実装 : []()  
 Github Issues : [#49](https://github.com/Obarads/obarads.github.io/issues/49)
 
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
+
 ## どんなもの?
-省略
+##### 省略
 
 ## 先行研究と比べてどこがすごいの?
-省略
+##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+##### 手法の概要
 提案する手法は図2の様に4つのステップに分けられる。また、新たなpretextであるJigsaw++を提案した。訓練全体の流れは以下の通りである。
 
 - **(a) Self-Supervised Learning Pre-Training**: pretext taskを使ってモデルを訓練する。
@@ -27,32 +31,38 @@ Jigsawタスク[1]では1つの画像を分割してタスクをこなす形式�
 モデルはoccludingタイルの検出と、occludingタイルが無いときよりも情報量が少ない状態でJigsawタスクをこなす必要があるため、より難易度が上がる。タスクに曖昧さを加えないためにJigsawのときと同じく最小ハミング距離を使ってタイルの配置が似ないようにする。他にも各画像タイルに対して独立にmean and std normalization(平均と標準化?)を適応し、ネットワークの70%(の時間?)はグレイスケール画像によって訓練される。これらは低レベルな統計値による解決を防ぐための手法である。
 
 ## どうやって有効だと検証した?
-省略
+##### 省略
 
 ## 議論はある?
-省略
+##### 省略
 
 ## 次に読むべき論文は?
+##### あり
 - Deep Clustring for Unsupervised Learning of Visual Features
 
 ## 論文関連リンク
+##### なし
 1. [M. Noroozi and P. Favaro. Unsupervised learning of visual representations by solving jigsaw puzzles. In ECCV, 2016.](https://arxiv.org/abs/1603.09246)
 2. [鈴⽊智之. Self-supervised Learningによる特徴表現学習. (アクセス日時 2019/04/22)](http://hirokatsukataoka.net/temp/cvpaper.challenge/SSL_0929_final.pdf)
 
 ## 会議
-CVPR 2018
+##### CVPR 2018
 
 ## 著者
-Mehdi Noroozi, Ananth Vinjimoor, Paolo Favaro, Hamed Pirsiavash.
+##### Mehdi Noroozi, Ananth Vinjimoor, Paolo Favaro, Hamed Pirsiavash.
 
 ## 投稿日付(yyyy/MM/dd)
-2018/03/01
+##### 2018/03/01
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-RGB_Image, Classification, Self-Supervised_Learning, CV, Paper, 修正
+##### RGB_Image, Classification, Self-Supervised_Learning, CV, Paper, 修正
 
 ## status
-修正
+##### 修正
+
+## Citation
+##### なし
+

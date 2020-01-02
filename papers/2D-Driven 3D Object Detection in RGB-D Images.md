@@ -34,33 +34,35 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### 省略
 
 ## 次に読むべき論文は?
-- なし
+##### なし
 
 ## 論文関連リンク
-1. [なし]()[1]
+##### なし
 
 ## 会議, 論文誌, etc.
-ICCV 2017
+##### ICCV 2017
 
 ## 著者
-Jean Lahoud, Bernard Ghanem
+##### Jean Lahoud, Bernard Ghanem
 
 ## 投稿日付(yyyy/MM/dd)
-2017/10/22
+##### 2017/10/22
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-CV, Paper, RGB_Image, Depth_Image, Detection, 導入, Point_Cloud
+##### CV, Paper, RGB_Image, Depth_Image, Detection, 導入, Point_Cloud
 
 ## status
-導入
+##### 導入
 
 ## read
-A, I, R
+##### A, I, R
 
 ## Citation
+##### ieeexplore.ieee.orgより引用
+[リンク](https://ieeexplore.ieee.org/document/8237757)  
 {
     @INPROCEEDINGS{8237757,
     author={J. {Lahoud} and B. {Ghanem}},

@@ -15,40 +15,55 @@ Github Issues : []()
 ##### 本提案は、JHMDB-21で18%、UCF101-24で6%、UT-Interactionで13%改善した。
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
+##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+##### 省略
 
 ## どうやって有効だと検証した?
+##### 省略
 
 ## 議論はある?
+##### 省略
 
 ## 次に読むべき論文は?
-- なし
+##### なし
 
 ## 論文関連リンク
+##### なし
 1. [なし]()[1]
 
 ## 会議, 論文誌, etc.
-ECCV 2018
+##### ECCV 2018
 
 ## 著者
-Yuge Shi, Basura Fernando, Richard Hartley
+##### Yuge Shi, Basura Fernando, Richard Hartley
 
 ## 投稿日付(yyyy/MM/dd)
-2019/11/19
+##### 2019/11/19
 
 ## コメント
+##### なし
 
 ## key-words
-CV, Paper, Video, Action_Anticipation, RNN, 修正
+##### CV, Paper, Video, Action_Anticipation, RNN, 導入
 
 ## status
-修正
+##### 導入
 
 ## read
-A
+##### A
 
 ## Citation
-
+##### arxiv.orgより引用
+[リンク](https://arxiv.org/abs/1911.07806)  
+@misc{shi2019action,
+    title={Action Anticipation with RBF Kernelized Feature Mapping RNN},
+    author={Yuge Shi and Basura Fernando and Richard Hartley},
+    year={2019},
+    eprint={1911.07806},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 
 

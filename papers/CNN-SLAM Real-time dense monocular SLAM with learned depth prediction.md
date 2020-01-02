@@ -1,13 +1,16 @@
 # CNN-SLAM: Real-time dense monocular SLAM with learned depth prediction
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1704.03489)  
+提案モデルの実装 : [公式?:iitmcvg/CNN_SLAM](https://github.com/iitmcvg/CNN_SLAM)  
 Github Issues : [#50](https://github.com/Obarads/obarads.github.io/issues/50)
 
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
+
 ## どんなもの?
-省略
+#### 省略
 
 ## 先行研究と比べてどこがすごいの?
-省略
+#### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 提案手法のパイプラインは図2に示す通り。高フレームレートを維持するために、キーフレーム上でのみCNNを介してデプスマップを予測するように提案している。さらに、訓練データとテストデータの内容の違いがあることを踏まえ、ピクセル単位のデプス予測の信頼度を測定する不確実性マップを作成する。
@@ -99,36 +102,50 @@ $$
 図3は提案されたデプスマップ改良プロセスの有効性を示している。
 
 ### Global Model and Semantic Label Fusion
-省略
+##### 以降未読
 
 ## どうやって有効だと検証した?
-省略
+##### 省略
 
 ## 議論はある?
-省略
+##### 省略
 
 ## 次に読むべき論文は?
-- DeepVO?
+##### なし
 
 ## 論文関連リンク
+##### あり
 1. [J. Engel, T. Schps, and D. Cremers. LSD-SLAM: Large-Scale Direct Monocular SLAM. InEuropean Conference on Computer Vision (ECCV), 2014.](https://vision.in.tum.de/research/vslam/lsdslam)
 2. [長谷川邦洋. 第41回関東CV勉強会 CNN-SLAM. 2017. (アクセス:2019/03/31)](https://www.slideshare.net/KunihiroHasegawa/41cv-cnnslam)
 3. [J. Engel, J. Sturm, and D. Cremers. Semi-dense visual odom-etry for a monocular camera. InIEEE International Confer-ence on Computer Vision (ICCV), December 2013.](https://jsturm.de/publications/data/engel2013iccv.pdf)
 
 ## 会議
-CVPR2017
+##### CVPR 2017
 
 ## 著者
-Keisuke Tateno, Federico Tombari, Iro Laina, Nassir Navab.
+##### Keisuke Tateno, Federico Tombari, Iro Laina, Nassir Navab.
 
 ## 投稿日付(yyyy/MM/dd)
-2017/04/11
+##### 2017/04/11
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-RGB_Image, SLAM, CV, Paper, 修正
+##### RGB_Image, SLAM, CV, Paper, 修正, Implemented
 
 ## status
-修正
+##### 修正
+
+## Citation
+##### arxiv.orgより引用
+[リンク](https://arxiv.org/abs/1704.03489)  
+@misc{tateno2017cnnslam,
+    title={CNN-SLAM: Real-time dense monocular SLAM with learned depth prediction},
+    author={Keisuke Tateno and Federico Tombari and Iro Laina and Nassir Navab},
+    year={2017},
+    eprint={1704.03489},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+

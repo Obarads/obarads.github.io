@@ -1,10 +1,13 @@
 # Conditional Image Synthesis with Auxiliary Classifier GANs
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1610.09585)
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1610.09585)  
+提案モデルの実装 : [非公式?:clvrai/ACGAN-PyTorch](https://github.com/clvrai/ACGAN-PyTorch)  
 Github Issues : [#37](https://github.com/Obarads/obarads.github.io/issues/37)
 
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
+
 ## どんなもの?
-クラス条件付きモデルであり、クラスと画像を出力とする生成器を持つAC-GANを提案した。また、評価方法を提案したりGANの崩壊の観測についても実験している。
+##### クラス条件付きモデルであり、クラスと画像を出力とする生成器を持つAC-GANを提案した。また、評価方法を提案したりGANの崩壊の観測についても実験している。
 
 ## 先行研究と比べてどこがすごいの?
 クラス条件付きモデルでありながら、クラスラベルを再構築(生成した画像とともにラベルを生成)する補助のデコーダーを持つ。著者らが提案した二つの評価方法により、生成される画像の解像度と分類精度の関係について実験している。また、GANの崩壊の観測についても実験している。
@@ -66,26 +69,29 @@ ImageNetのクラスを使った10個のサンプルの生成。
 この解像度に関する測定を画像以外でも調べてみるべきである。
 
 ## 次に読むべき論文は?
+##### あり
 - [Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros. Image-to-Image Translation with Conditional Adversarial Networks. 2016.](https://arxiv.org/abs/1611.07004)
 
 ## 論文関連リンク
+##### あり
 1. [Szegedy, Christian, Vanhoucke, Vincent, Ioffe, Sergey, Shlens, Jonathon, and Wojna, Zbigniew. Rethinking the inception architecture for computer vision. CoRR, abs/1512.00567, 2015.](http://arxiv.org/abs/1512.00567)
 2. Wang, Zhou, Simoncelli, Eero P, and Bovik, Alan C. Multi-scale structural similarity for image quality assessment. In Signals, Systems and Computers, 2004. Conference Record of the Thirty-Seventh Asilomar Conference on, volume 2, pp. 1398–1402. Ieee, 2004b.
 
 ## 会議
-ICML 2017
+##### ICML 2017
 
 ## 著者
-Augustus Odena, Christopher Olah, Jonathon Shlens.
+##### Augustus Odena, Christopher Olah, Jonathon Shlens.
 
 ## 投稿日付(yyyy/MM/dd)
-2016/10/30
+##### 2016/10/30
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-RGB_Image, GAN, CV, Paper, 修正
+##### RGB_Image, GAN, CV, Paper, 完了, Implemented
 
 ## status
-修正
+##### 完了
+

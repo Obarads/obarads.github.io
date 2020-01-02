@@ -1,14 +1,17 @@
 # Adaptive O-CNN: A Patch-based Deep Representation of 3D Shapes
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1809.07917)
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1809.07917)  
+提案モデルの実装 : [microsoft/O-CNN](https://github.com/microsoft/O-CNN)  
 Github Issues : [#5](https://github.com/Obarads/obarads.github.io/issues/5)
+
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
 ## どんなもの?
 効率的に3D形状のエンコードとデコードを行うモデルであるAdaptive Octree-based CNN(以下AO-CNN)を提案した。
 - エンコーダーではoctreeで分割したoctant(octantはoctreeによって細分化された領域。ある1つの領域を細分化すると8つの同形状のoctreeができる。)の法線と変位を入力として扱い、各レベル(octantのサイズ)で3D畳み込みを行う。
 - デコーダーは各レベルのoctantの形状や細分状態を推定し、最良の法線と変位を算出する。
 
-## 先行研究と比べてどこがすごいの?
+## 先行研究と比べてどこがすごいの? or 関連事項
 3Dの生成モデルのベースには以下のものがある。
 - **Voxel**  
 2D画像を3Dへ拡張したボクセル表現を扱うもの。当然、2Dからの順当な拡張なので既存のフレームワークも適合しやすいが、メモリと計算コストが高いのと、高解像度なものを生成することが困難。
@@ -108,22 +111,37 @@ AutoEncoderを使った生成精度も測っており、概ね良好である。
 1. Tao Ju. 2004. Robust repair of polygonal models. ACM Trans. Graph. (SIGGRAPH) 23, 3 (2004), 888–895. 
 
 ## 参考リンク
-- なし
+##### なし
 
 ## 会議
-SIGGRAPH Asia 2018
+##### SIGGRAPH Asia 2018
 
 ## 著者/所属機関
-PENG-SHUAI WANG, CHUN-YU SUN, YANG LIU, XIN TONG
+##### PENG-SHUAI WANG, CHUN-YU SUN, YANG LIU, XIN TONG
 
 ## 投稿日付(yyyy/MM/dd)
-2018/09/21
+##### 2018/09/21
 
 ## コメント
-なし
+##### なし
 
 ## key-words
-Classification, Voxel, CV, Paper, 修正
+##### Classification, Voxel, CV, Paper, 導入, Implemented
 
 ## status
-修正
+##### 導入
+
+## read
+##### A, I, R, M, E, C
+
+## Citation
+##### github.comより引用
+[リンク](https://github.com/microsoft/O-CNN)  
+@article {Wang-2018-AOCNN,
+    title     = {{Adaptive O-CNN: A Patch-based Deep Representation of 3D Shapes}},
+    author    = {Wang, Peng-Shuai and Sun, Chun-Yu and Liu, Yang and Tong, Xin},
+    journal   = {ACM Transactions on Graphics (SIGGRAPH Asia)},
+    volume    = {37},
+    number    = {6},
+    year      = {2018},
+}
