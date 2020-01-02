@@ -45,10 +45,10 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-##### RGB_Image, CV, Paper, 修正
+##### RGB_Image, CV, Paper, 導入
 
 ## status
-##### 修正
+##### 導入
 
 ## read
 ##### A, I

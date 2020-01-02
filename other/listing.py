@@ -128,7 +128,8 @@ def extract_data(path,tag_dict,tag_list):
                         status_tags.append(status)
                         status_counter[status]+=1
                         if status == "導入":
-                            print(ml)
+                            #print(ml)
+                            pass
                     else:
                         pass
             if "# " in content[0]:
