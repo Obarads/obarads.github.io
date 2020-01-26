@@ -36,10 +36,10 @@ Varun Jampani, Deqing Sun, Ming-Yu Liu, Ming-Hsuan Yang, Jan Kautz
 なし
 
 ## key-words
-Superpixel, CV, Paper, 修正
+Superpixel, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A

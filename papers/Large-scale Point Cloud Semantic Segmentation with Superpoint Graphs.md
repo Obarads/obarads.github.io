@@ -187,10 +187,10 @@ Loic Landrieu, Martin Simonovsky
 なし
 
 ## key-words
-Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV, Paper, 修正, Superpoint
+Point_Cloud, Graph, Semantic_Segmentation, Oversegmentation, CV, Paper, 省略, Superpoint
 
 ## status
-修正
+省略
 
 ## read
 A, I, R

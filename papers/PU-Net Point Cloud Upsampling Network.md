@@ -80,10 +80,10 @@ Lequan Yu, Xianzhi Li, Chi-Wing Fu, Daniel Cohen-Or, Pheng-Ann Heng
 なし
 
 ## key-words
-Point_Cloud, Reconstruction, CV, Paper, 修正
+Point_Cloud, Reconstruction, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

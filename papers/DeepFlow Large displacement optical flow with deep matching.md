@@ -79,10 +79,10 @@ Philippe Weinzaepfel, Jerome Revaud, Zaid Harchaoui, Cordelia Schmid.
 なし
 
 ## key-words
-RGB_Image, Flow_Estimation, CV, Paper, 修正
+RGB_Image, Flow_Estimation, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

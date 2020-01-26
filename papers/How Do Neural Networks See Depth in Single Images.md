@@ -46,10 +46,10 @@ Tom van Dijk, Guido C.H.E. de Croon
 なし
 
 ## key-words
-Analytics, CV, Paper, Depth_Image, Depth_Estimation, 修正
+Analytics, CV, Paper, Depth_Image, Depth_Estimation, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A

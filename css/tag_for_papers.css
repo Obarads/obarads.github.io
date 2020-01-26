@@ -28,6 +28,11 @@ background:#fbff21;
 color:#000;
 }
 
+.__旧版{
+background:#fbff21;
+color:#000;
+}
+
 .__Paper{
 background:#d9333f;
 color:#fff;
@@ -183,6 +188,11 @@ background:#36558F;
 color:#fff;
 }
 
+.__Action_Anticipation{
+background:#36558F;
+color:#fff;
+}
+
 .__Adversarial_Examples{
 background:#36558F;
 color:#fff;
@@ -243,6 +253,11 @@ background:#36558F;
 color:#fff;
 }
 
+.__Grasping{
+background:#36558F;
+color:#fff;
+}
+
 .__Instance_Segmentation{
 background:#36558F;
 color:#fff;
@@ -293,17 +308,12 @@ background:#36558F;
 color:#fff;
 }
 
-.__Action_Anticipation{
-background:#36558F;
-color:#fff;
-}
-
-.__Sensor_Fusion{
+.__AutoEncoder{
 background:#aa08d3;
 color:#fff;
 }
 
-.__AutoEncoder{
+.__Clustering{
 background:#aa08d3;
 color:#fff;
 }
@@ -318,7 +328,22 @@ background:#aa08d3;
 color:#fff;
 }
 
+.__Implemented{
+background:#aa08d3;
+color:#fff;
+}
+
+.__Interpretability{
+background:#aa08d3;
+color:#fff;
+}
+
 .__Multi-View{
+background:#aa08d3;
+color:#fff;
+}
+
+.__New_Pooling{
 background:#aa08d3;
 color:#fff;
 }
@@ -333,12 +358,7 @@ background:#aa08d3;
 color:#fff;
 }
 
-.__Interpretability{
-background:#aa08d3;
-color:#fff;
-}
-
-.__New_Pooling{
+.__Sensor_Fusion{
 background:#aa08d3;
 color:#fff;
 }
@@ -354,11 +374,6 @@ color:#fff;
 }
 
 .__TreeRNN{
-background:#aa08d3;
-color:#fff;
-}
-
-.__Implemented{
 background:#aa08d3;
 color:#fff;
 }

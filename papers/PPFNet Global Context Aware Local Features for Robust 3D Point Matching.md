@@ -91,7 +91,7 @@ Haowen Deng, Tolga Birdal, Slobodan Ilic
 参考リンク2を参考にしている部分が理解できていないため、再度確認すること。
 
 ## key-words
-Point_Cloud, Registration, CV, Paper, 修正
+Point_Cloud, Registration, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了

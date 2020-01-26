@@ -38,10 +38,10 @@ Francis Williams, Teseo Schneider, Claudio Silva, Denis Zorin, Joan Bruna, Danie
 なし
 
 ## key-words
-Point_Cloud, CV, Paper, Reconstruction, 修正
+Point_Cloud, CV, Paper, Reconstruction, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A

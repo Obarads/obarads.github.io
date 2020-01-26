@@ -76,10 +76,10 @@ Jonathan Long, Evan Shelhamer, Trevor Darrell.
 なし
 
 ## key-words
-RGB_Image, Semantic_Segmentation, CV, Paper, 修正
+RGB_Image, Semantic_Segmentation, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, I, M

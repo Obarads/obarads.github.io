@@ -73,7 +73,7 @@ $\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の�
 ##### なし
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implemented
+Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implemented, 旧版
 
 ## status
 ##### 省略

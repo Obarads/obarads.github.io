@@ -70,7 +70,7 @@ Bo Yang, Jianan Wang, Ronald Clark, Qingyong Hu, Sen Wang, Andrew Markham, Niki 
 なし
 
 ## key-words
-Paper, CV, Point_Cloud, Instance_Segmentation, Detection, Implemented, 修正
+Paper, CV, Point_Cloud, Instance_Segmentation, Detection, Implemented, 修正, 旧版
 
 ## status
 修正

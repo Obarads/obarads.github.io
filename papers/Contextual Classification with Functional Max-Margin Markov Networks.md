@@ -33,10 +33,10 @@ Daniel Munoz, J. Andrew Bagnell, Nicolas Vandapel, Martial Hebert
 なし
 
 ## key-words
-CV, Point_Cloud, Paper, 修正
+CV, Point_Cloud, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 

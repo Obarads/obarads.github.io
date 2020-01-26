@@ -40,12 +40,13 @@ Dahnert, Manuel and Dai, Angela and Guibas, Leonidas and Niener, Matthias
 なし
 
 ## key-words
-CV, Paper, Dataset, 修正
+CV, Paper, Dataset, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
+A
 
 ## Citation
 @inproceedings{dahnert2019embedding,

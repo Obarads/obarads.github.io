@@ -84,10 +84,10 @@ Huaizu Jiang, Erik Learned-Miller, Gustav Larsson, Michael Maire, Greg Shakhnaro
 なし
 
 ## key-words
-Self-Supervised_Learning, Depth_Estimation, Domain_Adaptation, Video, RGB_Image, Depth_Image, CV, Paper, 修正
+Self-Supervised_Learning, Depth_Estimation, Domain_Adaptation, Video, RGB_Image, Depth_Image, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, I, M

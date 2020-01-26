@@ -37,10 +37,10 @@ Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Sc
 なし
 
 ## key-words
-Video, Self-Supervised_Learning, Robot, CV, Paper, 修正
+Video, Self-Supervised_Learning, Robot, CV, Paper, 旧版, 導入
 
 ## status
-修正
+導入
 
 ## BibTex
 @article{Sermanet2017TCN,

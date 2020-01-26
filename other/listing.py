@@ -127,8 +127,8 @@ def extract_data(path,tag_dict,tag_list):
                     if status in ["省略","参照","未完","修正","導入","完了"]:
                         status_tags.append(status)
                         status_counter[status]+=1
-                        if status == "導入":
-                            #print(ml)
+                        if status == "未完":
+                            print(ml)
                             pass
                     else:
                         pass

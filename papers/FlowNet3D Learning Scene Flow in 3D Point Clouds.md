@@ -1,12 +1,15 @@
 # FlowNet3D: Learning Scene Flow in 3D Point Clouds
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1806.01411)  
+提案モデルの実装 : [xingyul/flownet3d](https://github.com/xingyul/flownet3d)
 Github Issues : [#31](https://github.com/Obarads/obarads.github.io/issues/31)
+
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
 ## どんなもの?
 二つの点群からシーンフロー(場面の移り変わり)を得るFlowNet3Dを提案した。
 
-## 先行研究と比べてどこがすごいの?
+## 先行研究と比べてどこがすごいの? or 関連事項
 既存のRGBやRGB-D画像を使ったものと違い、この提案手法は点群のみを使ってシーンフローを解析する。また、深い特徴学習を行いながらも、semantic supervision(?)に頼らず教師ありでシーンフローの問題を解く。FlyingThings3D datasetとKITTI scene flow datasetで大幅な性能向上を確認した。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
@@ -109,7 +112,7 @@ Xingyu Liu, Charles R. Qi and Leonidas J. Guibas.
 無し
 
 ## key-words
-Point_Cloud, Flow_Estimation, CV, Paper, 修正
+Point_Cloud, Flow_Estimation, CV, Paper, 完了, 旧版, Implemented
 
 ## status
-修正
+完了

@@ -113,10 +113,10 @@ Georgia Gkioxari, Jitendra Malik, Justin Johnson
 なし
 
 ## key-words
-Mesh, Voxel, Detection, 3D_Estimation, Reconstruction,CV, Paper, 修正
+Mesh, Voxel, Detection, 3D_Estimation, Reconstruction,CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, I, M

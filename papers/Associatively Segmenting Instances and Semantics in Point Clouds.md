@@ -104,7 +104,7 @@ ASISも性能向上に役立っている。視覚的比較は図4と図5の通�
 ##### Deep One-Class classificationのアイデアを用いて論文関連リンクの2と同じようなこと考えていた。
 
 ## key-words
-##### Point_Cloud,Instance_Segmentation,Semantic_Segmentation, CV, Paper, 導入, Implemented
+##### Point_Cloud,Instance_Segmentation,Semantic_Segmentation, CV, Paper, 導入, Implemented, 旧版
 
 ## status
 ##### 導入

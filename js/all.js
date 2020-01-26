@@ -11,11 +11,11 @@ function Breadcrumb(disp, link, logo=false) {
     if(logo){
         return "<li class=\"breadcrumb-item tab-logo\"><a href=\"" + link + "\">" + disp + "</a></li>";
     }else{
-        return "<li class=\"breadcrumb-item breadcrumb-item-padding\"><a href=\"" + link + "\">" + disp + "</a></li>";
+        return "<li class=\"breadcrumb-item breadcrumb-item-padding tab-breadcrumb\"><a href=\"" + link + "\">" + disp + "</a></li>";
     }
 }
 function BreadcrumbActive(disp) {
-    return "<li class=\"breadcrumb-item breadcrumb-item-padding active\" aria-current=\"page\">" + disp + "</li>";
+    return "<li class=\"breadcrumb-item breadcrumb-item-padding active tab-breadcrumb\" aria-current=\"page\">" + disp + "</li>";
 }
 function CreatingTags(raw_tags, join = true) {
     var tags = raw_tags.map((raw_tag) => {

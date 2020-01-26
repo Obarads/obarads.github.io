@@ -49,13 +49,13 @@ Martin Simonovsky, Nikos Komodakis.
 なし
 
 ## key-words
-Graph, Point_Cloud, RGB_Image, Classification, CV, Paper, 修正
+Graph, Point_Cloud, RGB_Image, Classification, CV, Paper, 省略, 旧版
 
 ## read
 A, I, M
 
 ## status
-修正
+省略
 
 ## Citation
 @inproceedings{Simonovsky2017ecc,

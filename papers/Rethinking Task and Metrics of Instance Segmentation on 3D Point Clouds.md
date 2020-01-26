@@ -43,10 +43,10 @@ Kosuke Arase, Yusuke Mukuta, Tatsuya Harada
 なし
 
 ## key-words
-CV, Point_Cloud, Instance_Segmentation, Paper, 修正
+CV, Point_Cloud, Instance_Segmentation, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 

@@ -71,10 +71,10 @@ Dominic Zeng Wang and Ingmar Posner
 ## コメント
 
 ## key-words
-Paper, CV, Detection, Point_Cloud, 修正
+Paper, CV, Detection, Point_Cloud, 省略
 
 ## status
-修正
+省略
 
 ## read
 

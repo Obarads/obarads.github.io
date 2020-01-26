@@ -202,7 +202,7 @@ li.breadcrumb-item.active {
   padding-right: 10px;
 }
 .left-panel-contents-scroller{
-  max-height: -webkit-calc(100vh - 98px);
+  max-height: -webkit-calc(100vh - 80px);
   overflow-y: auto;
 }
 .left-panel-contents-frame{
@@ -239,7 +239,7 @@ li.breadcrumb-item.active {
   width: 100%;
 }
 .right-panel-adjustment {
-  height: -webkit-calc(100vh - 58px);
+  height: -webkit-calc(100vh - 40px);
 }
 .col-lg-9 {
   /* default padding: left 15px, right 15px */
@@ -325,7 +325,7 @@ div > ol {
   background-color: #616161;
 }
 .scrollable-menu {
-  height: auto;
+  padding: 0 0 0 6px;
   max-height: 100vh;
   overflow-x: hidden;
 }

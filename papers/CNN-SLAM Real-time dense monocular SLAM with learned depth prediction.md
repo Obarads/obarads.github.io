@@ -7,13 +7,46 @@ Github Issues : [#50](https://github.com/Obarads/obarads.github.io/issues/50)
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
 ## どんなもの?
-#### 省略
+##### CNNを使用して密な深度マップを生成し、それを単眼(monocular)SLAMと組み合わせる手法を提案した。
+- SLAMによる再構築時に、絶対尺度を求めることができる。
+- また、単体のフレームから得られたセマンティックラベルを密なSLAMと融合して、セマンティックに一貫したシーンの再構築を行う。
+- 評価によって、堅牢性と精度の実証を行う。
 
 ## 先行研究と比べてどこがすごいの?
-#### 省略
+##### 深度推定を深層学習で行うことで、使用環境を屋内のみに制限されず、また深度の絶対的な縮尺値を得ることを可能にする。
+- Kinect fusionなどのRGB-Dカメラを用いたセンサーフュージョンによるSLAMの手法は、RGB-Dカメラの弱点によって制限される。
+  - RGB-Dカメラは日光に弱いため、屋外ではパフォーマンスが下がる。
+- 図1(b)に示されているように、単眼SLAMでは再構築時の絶対的な縮尺がわからないため、拡張現実やロボットのアプリケーションへの利用が制限される。
+  - 既知の3Dオブジェクトモデルを利用して、絶対的な縮尺を復元する方法もあるが、既知のオブジェクトがない場合は失敗する。
+- また、回転運動によるカメラのモーション下の姿勢推定による制限もある。
+  - ステレオによる推定ができないため、トラッキングエラーが起こる。[?]
+- 本提案では、深層CNNを導入することで、絶対的な縮尺を得る。
+
+##### 深層学習で得られる深度マップの詳細がぼやける問題を解決する。
+- 深度推定に深層CNNを用いる手法は、シーンベースの仮定や幾何学的な制約を必要とせずに、絶対的な縮尺を得ることができる。
+  - しかし、細かい箇所がぼやける恐れがあり、シーン再構築時にシーンの形状のデティールが欠ける[4]。
+- 本提案では、その問題を[1]のようなステレオマッチングを使ったSLAMスキームで解決する。
+  - **small-baselineのステレオマッチングは予測された深度画像のedge regionsを改善する可能性を持つ。**
+
+##### 単眼によるセマンティックなシーン再構築を初めて行う。
+- ステレオ[5]もしくはRGB-D[6]データによるセマンティックな再構築は行われている。
+- 本提案では、単眼でセマンティックな再構築を行う(図1(c))。これは単眼のみでは初めてである。
+
+![fig1](img/CRdmSwldp/fig1.png)
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-提案手法のパイプラインは図2に示す通り。高フレームレートを維持するために、キーフレーム上でのみCNNを介してデプスマップを予測するように提案している。さらに、訓練データとテストデータの内容の違いがあることを踏まえ、ピクセル単位のデプス予測の信頼度を測定する不確実性マップを作成する。
+### 手法の概要
+- 提案手法のパイプラインは図2に示す通り。キーフレームベースのSLAM手法である[1]をベースとして採用している。
+  - [長谷川さんの資料[7]によると、図2のCamera Pose Estimation, Frame-wise Depth Refinemen, Key-frame Initialization, Pose Graph OptimizationはLSD-SLAMのフレームワークを応用している。]
+  - このようなアプローチでは、視覚的に明確なフレームのサブセット(小集団、一部)がキーフレームとして収集され、それら[(キーフレーム)]のポーズでポーズグラフ最適化(Pose Graph Optimization)に基づいた全体的な調整(global refinement)がなされる。[?]
+  - 同時に、フレームとそれに最も近いキーフレーム間の変換を推定することで、各入力フレームでカメラポーズの推定が行われる。
+- 高フレームレートを維持するために、キーフレーム上でのみCNNを介してデプスマップを予測するように提案している。
+  - 特に、現在推定されているポーズが既存のキーフレームのポーズから遠く離れている場合は、現在のフレームとCNNを介して推定された深度から新しいキーフレームが作成される。
+- 更に、深度予測に対してピクセル単位の確信度(confidence)を測定することで、不確実性マップ(uncertainty map)を構築する。
+  - 大抵の場合、SLAMに使用されるカメラとCNN用の訓練データセットで使用されたカメラは違うため、 異なるカメラの内部パラメータに対して堅牢性を得るための深度マップ正規化手順を提案する。
+- セマンティックラベルをつける機構もある。
+  - [ここでは省略]
+- また、small-baselineステレオマッチングを介して各キーフレームに関連付けられているCNNの深度マップを改良する。
 
 ![fig2](img/CRdmSwldp/fig2.png)
 
@@ -115,9 +148,13 @@ $$
 
 ## 論文関連リンク
 ##### あり
-1. [J. Engel, T. Schps, and D. Cremers. LSD-SLAM: Large-Scale Direct Monocular SLAM. InEuropean Conference on Computer Vision (ECCV), 2014.](https://vision.in.tum.de/research/vslam/lsdslam)
+1. [J. Engel, T. Schps, and D. Cremers. LSD-SLAM: Large-Scale Direct Monocular SLAM. InEuropean Conference on Computer Vision (ECCV), 2014.](https://vision.in.tum.de/research/vslam/lsdslam)[4]
 2. [長谷川邦洋. 第41回関東CV勉強会 CNN-SLAM. 2017. (アクセス:2019/03/31)](https://www.slideshare.net/KunihiroHasegawa/41cv-cnnslam)
 3. [J. Engel, J. Sturm, and D. Cremers. Semi-dense visual odom-etry for a monocular camera. InIEEE International Confer-ence on Computer Vision (ICCV), December 2013.](https://jsturm.de/publications/data/engel2013iccv.pdf)
+4. [I. Laina, C. Rupprecht, V. Belagiannis, F. Tombari, and N. Navab. Deeper depth prediction with fully convolutional residual networks. InIEEE International Conference on 3D Vision (3DV) (arXiv:1606.00373), October 2016.](https://arxiv.org/abs/1606.00373)[16]
+5. [V. Vineet, O. Miksik, M. Lidegaard, M. Nießner, S. Golodetz, V. A. Prisacariu, O. K ̈ ahler, D. W. Murray, S. Izadi, P. Perez, and P. H. S. Torr. Incremental dense se-mantic stereo fusion for large-scale semantic scene recon-struction. InIEEE International Conference on Robotics and Automation (ICRA), 2015.](http://www.robots.ox.ac.uk/~tvg/publications/2015/dssfpaper.pdf)[28]
+6. [K. Lai, L. Bo, and D. Fox. Unsupervised feature learning for 3d scene labeling. InInt. Conf. on Robotics and Automation (ICRA), 2014.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.650.1553&rep=rep1&type=pdf)[15]
+7. [邦洋 長谷川. slideshare. 第41回関東CV勉強会 CNN-SLAM. 2017. (アクセス:2020/1/26)](https://www.slideshare.net/KunihiroHasegawa/41cv-cnnslam)
 
 ## 会議
 ##### CVPR 2017
@@ -132,10 +169,13 @@ $$
 ##### なし
 
 ## key-words
-##### RGB_Image, SLAM, CV, Paper, 修正, Implemented
+##### RGB_Image, SLAM, CV, Paper, 修正, Implemented, Depth_Estimation
 
 ## status
 ##### 修正
+
+## read
+##### A, I
 
 ## Citation
 ##### arxiv.orgより引用

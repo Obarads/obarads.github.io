@@ -5,6 +5,7 @@ status: [
   "'未完'",
   "'修正'",
   "'導入'",
+  "'旧版'",
 ]
 
 contents: [
@@ -51,6 +52,7 @@ data: [
 
 task: [
   "'3D Estimation'",
+  "'Action Anticipation'",
   "'Adversarial Examples'",
   "'Analytics'",
   "'Classification'",
@@ -63,6 +65,7 @@ task: [
   "'Domain Adaptation'",
   "'Flow Estimation'",
   "'Gaze Estimation'",
+  "'Grasping'",
   "'Instance Segmentation'",
   "'Labeling'",
   "'One-Class & Anomaly Detection'",
@@ -73,22 +76,22 @@ task: [
   "'SLAM'",
   "'Semantic Segmentation'",
   "'Super-Resolution'",
-  "'Action Anticipation'",
 ]
 
 etc: [
-  "'Sensor Fusion'",
   "'AutoEncoder'",
+  "'Clustering'",
   "'Encoder-Decoder'",
   "'GAN'",
+  "'Implemented'",
+  "'Interpretability'",
   "'Multi-View'",
+  "'New Pooling'",
   "'RNN'",
   "'Rendering'",
-  "'Interpretability'",
-  "'New Pooling'",
+  "'Sensor Fusion'",
   "'Sparsity'",
   "'Synthetic'",
   "'TreeRNN'",
-  "'Implemented'",
   "'w/o DL'"
 ]

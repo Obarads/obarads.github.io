@@ -22,10 +22,9 @@ Github Issues : []()
 なし
 
 ## key-words
-Memo, Point_Cloud, 未完
+Memo, Point_Cloud
 
 ## status
-未完
 
 ## read
 

@@ -220,10 +220,10 @@ Chong Xiang, Charles R. Qi, Bo Li
 2018/09/19
 
 ## コメント
-アイデアはわかるが細かいところの使用が理解できなかった(特にcritical pointsの判明方法)。PointNetの人が共著している初めての点群に対するAdeversarial exampleの論文。
+アイデアはわかるが細かいところの仕様が理解できなかった(特にcritical pointsの判明方法)。PointNetの人が共著している初めての点群に対するAdeversarial exampleの論文。
 
 ## key-words
-Point_Cloud, Adversarial_Examples, CV, Paper, 修正
+Point_Cloud, Adversarial_Examples, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了

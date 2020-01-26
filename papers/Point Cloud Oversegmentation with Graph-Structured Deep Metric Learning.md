@@ -235,10 +235,10 @@ Loic Landrieu, Mohamed Boussaha.
 なし
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Oversegmentation, CV, Paper, 修正
+Point_Cloud, Semantic_Segmentation, Oversegmentation, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I, R, M

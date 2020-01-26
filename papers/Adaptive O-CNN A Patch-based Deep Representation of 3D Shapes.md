@@ -126,7 +126,7 @@ AutoEncoderを使った生成精度も測っており、概ね良好である。
 ##### なし
 
 ## key-words
-##### Classification, Voxel, CV, Paper, 導入, Implemented
+##### Classification, Voxel, CV, Paper, 導入, Implemented, 旧版
 
 ## status
 ##### 導入

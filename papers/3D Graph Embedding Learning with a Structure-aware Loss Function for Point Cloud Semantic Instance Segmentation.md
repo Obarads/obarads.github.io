@@ -76,7 +76,7 @@ Zhidong Liang, Ming Yang, Chunxiang Wang.
 最近、YOLOやFaster R-CNNなどで使われるROI(region of interest)などを使った領域提案を使った手法であるproposal-baseな手法に代わって、入力に対する埋め込みを生成する手法(画像では各ピクセルに対して埋め込みを生成しクラスタアルゴリズムを適応してインスタンスを得る)であるproposal-freeな手法が提案されている。
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 修正
+Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 修正, 旧版
 
 ## status
 修正

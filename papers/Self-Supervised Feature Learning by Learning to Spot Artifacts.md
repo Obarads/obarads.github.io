@@ -70,7 +70,7 @@ Simon Jenni, Paolo Favaro.
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV, Paper, 修正
+RGB_Image, Self-Supervised_Learning, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略

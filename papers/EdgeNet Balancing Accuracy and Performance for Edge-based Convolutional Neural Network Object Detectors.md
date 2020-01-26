@@ -43,10 +43,10 @@ George Plastiras, Christos Kyrkou, Theocharis Theocharides
 なし
 
 ## key-words
-CV, Paper, 修正, Detection
+CV, Paper, RGB_Image, Detection, 導入
 
 ## status
-修正
+導入
 
 ## read
 A

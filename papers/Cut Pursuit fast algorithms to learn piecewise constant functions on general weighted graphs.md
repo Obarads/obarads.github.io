@@ -37,10 +37,10 @@ Loic Landrieu and Guillaume Obozinski
 この論文を読むために勉強が必要
 
 ## key-words
-CV, Paper, 修正
+CV, Paper, 修正, 旧版
 
 ## status
-導入, 修正
+修正
 
 ## read
 A

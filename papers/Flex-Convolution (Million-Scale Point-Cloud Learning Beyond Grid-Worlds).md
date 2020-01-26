@@ -48,10 +48,10 @@ Fabian Groh, Patrick Wieschollek, Hendrik P.A. Lensch.
 なし
 
 ## key-words
-Point_Cloud, CV, Paper, Classification, Semantic_Segmentation, 修正
+Point_Cloud, CV, Paper, Classification, Semantic_Segmentation, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I

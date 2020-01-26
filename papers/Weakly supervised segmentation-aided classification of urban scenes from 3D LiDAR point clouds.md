@@ -36,10 +36,10 @@ S. Guinard and L. Landrieu.
 
 
 ## key-words
-Weakly_Supervised_Learning, Point_Cloud, Supervoxel, CV, Paper, 修正
+Weakly_Supervised_Learning, Point_Cloud, Supervoxel, CV, Paper, 旧版, 導入
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

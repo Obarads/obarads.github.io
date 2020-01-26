@@ -84,7 +84,7 @@ Hang Zhao, Chuang Gan, Andrew Rouditchenko, Carl Vondrick, Josh McDermott, Anton
 なし
 
 ## key-words
-Unsupervised_Learning, Video, Sound, CV, Paper, 修正
+Unsupervised_Learning, Video, Sound, CV, Paper, 修正, 旧版
 
 ## status
 修正

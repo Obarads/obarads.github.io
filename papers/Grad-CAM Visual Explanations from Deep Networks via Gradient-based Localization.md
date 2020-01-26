@@ -89,7 +89,7 @@ Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, 
 どちらかというと検証メインの論文。
 
 ## key-words
-RGB_Image, Analytics, CV, Paper, 修正
+RGB_Image, Analytics, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略

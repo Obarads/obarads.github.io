@@ -90,7 +90,7 @@ Robert Geirhos, Patricia Rubisch, Claudio Michaelis, Matthias Bethge, Felix A. W
 なし
 
 ## key-words
-RGB_Image, Analytics, CV, Paper, 修正
+RGB_Image, Analytics, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了

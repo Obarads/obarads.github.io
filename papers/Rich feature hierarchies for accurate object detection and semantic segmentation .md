@@ -69,8 +69,8 @@ Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik
 こんな説明より論文関連リンクの1を見たほうが早い。また、アーキテクチャの把握のためだけに読んでいるため、省略多め。
 
 ## key-words
-RGB_Image, Detection, CV, Paper, 修正
+RGB_Image, Detection, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 

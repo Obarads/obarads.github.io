@@ -94,11 +94,11 @@ R Devon Hjelm, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachma
 2018/08/20
 
 ## コメント
-なし
+結構難しい、途中まで
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV, Paper, 修正
+RGB_Image, Self-Supervised_Learning, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 

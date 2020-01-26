@@ -110,7 +110,7 @@ Yaoqing Yang, Chen Feng, Yiru Shen and Dong Tian.
 なし
 
 ## key-words
-Point_Cloud,AutoEncoder, CV, Paper, 修正
+Point_Cloud, AutoEncoder, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略

@@ -41,10 +41,10 @@ Chu Wang, Babak Samari, Kaleem Siddiqi.
 なし
 
 ## key-words
-Point_Cloud, Graph, CV, Paper, New_Pooling, 修正, Semantic_Segmentation, Classification
+Point_Cloud, Graph, CV, Paper, New_Pooling, 導入, Semantic_Segmentation, Classification
 
 ## status
-修正
+導入
 
 ## read
 A, I

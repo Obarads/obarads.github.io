@@ -52,7 +52,7 @@ $$
 ![fig3](img/DCfULoVF/fig3.png)
 
 #### Probing deeper layers
-
+以下未読
 
 ## 議論はある?
 省略
@@ -83,7 +83,7 @@ Mathilde Caron, Piotr Bojanowski, Armand Joulin, and Matthijs Douze
 なし
 
 ## key-words
-RGB_Image, Self-Supervised_Learning, CV, Paper, 修正
+RGB_Image, Self-Supervised_Learning, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略

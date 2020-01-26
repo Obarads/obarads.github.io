@@ -127,10 +127,10 @@ Xianzhi Li, Lequan Yu, Chi-Wing Fu, Daniel Cohen-Or, Pheng-Ann Heng.
 Adapted Contrastive Learningがよくわからん、PointCNNがもはや別物で笑ってしまった。
 
 ## key-words
-Unsupervised_Learning, Point_Cloud, Analytics, CV, Paper, 修正
+Unsupervised_Learning, Point_Cloud, Analytics, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, I, R, M

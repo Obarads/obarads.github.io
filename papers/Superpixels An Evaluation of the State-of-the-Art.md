@@ -34,10 +34,10 @@ David Stutz, Alexander Hermans, Bastian Leibe
 なし
 
 ## key-words
-Superpixel, RGB_Image, Survey, CV, 修正
+Superpixel, RGB_Image, Survey, CV, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 

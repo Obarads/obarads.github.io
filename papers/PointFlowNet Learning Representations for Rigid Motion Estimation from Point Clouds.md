@@ -140,10 +140,10 @@ Aseem Behl, Despoina Paschalidou, Simon Donné, Andreas Geiger.
 なし
 
 ## key-words
-Point_Cloud, Flow_Estimation, Detection, CV, Paper, 修正
+Point_Cloud, Flow_Estimation, Detection, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了
 
 ## read
 A, I, R, M, E, C

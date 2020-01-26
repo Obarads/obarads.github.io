@@ -87,7 +87,7 @@ $D(\boldsymbol{A}, \boldsymbol{B})$は$\boldsymbol{A}$と最適に変形され�
 ##### なし
 
 ## key-words
-##### RGB_Image, CV, Paper, 省略
+##### RGB_Image, CV, Paper, 省略, 旧版
 
 ## status
 ##### 省略

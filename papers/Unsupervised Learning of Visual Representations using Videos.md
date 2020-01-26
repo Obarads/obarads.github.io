@@ -44,10 +44,10 @@ Xiaolong Wang and Abhinav Gupta
 なし
 
 ## key-words
-Self-Supervised_Learning, RGB_Image, Video, CV, Paper, 修正
+Self-Supervised_Learning, RGB_Image, Video, CV, Paper, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

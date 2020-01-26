@@ -74,10 +74,10 @@ Suha Kwak, Seunghoon Hong, Bohyung Han
 なし
 
 ## key-words
-CV, RGB_Image, Semantic_Segmentation, Superpixel, Weakly_Supervised_Learning, Paper, 修正
+CV, RGB_Image, Semantic_Segmentation, Superpixel, Weakly_Supervised_Learning, Paper, 導入, 修正
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

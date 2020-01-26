@@ -99,10 +99,10 @@ Charles R. Qi, Li Yi, Hao Su, Leonidas J. Guibas.
 個人的なミソはRobust Feature Learning under Non-Uniform Sampling Densityだと思う。
 
 ## key-words
-Point_Cloud, Classification, Semantic_Segmentation, CV, Paper, Implemented, 修正
+Point_Cloud, Classification, Semantic_Segmentation, CV, Paper, Implemented, 省略
 
 ## status
-修正
+省略
 
 ## read
 A, I, M

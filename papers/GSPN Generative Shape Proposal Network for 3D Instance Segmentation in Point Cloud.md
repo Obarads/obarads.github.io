@@ -118,7 +118,7 @@ Li Yi, Wang Zhao, He Wang, Minhyuk Sung, Leonidas Guibas.
 Recognitionとprior network周辺を修正すること。正直、図2が正しい図とは言えない。ただ、GPSNの機構自体は教師なし学習として拡張できそう。
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 修正
+Point_Cloud, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略

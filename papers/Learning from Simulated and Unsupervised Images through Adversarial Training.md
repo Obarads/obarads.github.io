@@ -1,6 +1,6 @@
 # Learning from Simulated and Unsupervised Images through Adversarial Training
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1612.07828)
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1612.07828)  
 Github Issues : [#19](https://github.com/Obarads/obarads.github.io/issues/19)
 
 ## どんなもの?
@@ -99,7 +99,7 @@ Ashish Shrivastava, Tomas Pfister, Oncel Tuzel, Josh Susskind, Wenda Wang and Ru
 なし
 
 ## key-words
-GAN, Synthetic, RGB_Image, CV, Paper, 修正
+GAN, Synthetic, RGB_Image, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了

@@ -34,10 +34,10 @@ Jae-Seong Yun, Jae-Young Sim
 なし
 
 ## key-words
-CV, Paper, Point_Cloud, Reflection_Removal, 修正
+CV, Paper, Point_Cloud, Reflection_Removal, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 

@@ -58,7 +58,7 @@ Jigsawタスク[1]では1つの画像を分割してタスクをこなす形式�
 ##### なし
 
 ## key-words
-##### RGB_Image, Classification, Self-Supervised_Learning, CV, Paper, 修正
+##### RGB_Image, Classification, Self-Supervised_Learning, CV, Paper, 修正, 旧版
 
 ## status
 ##### 修正

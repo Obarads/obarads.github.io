@@ -41,8 +41,8 @@ Tong Xiao, Tian Xia, Yi Yang, Chang Huang, and Xiaogang Wang.
 なし
 
 ## key-words
-RGB_Image, CV, Paper, 修正
+RGB_Image, CV, Paper, 旧版, 導入
 
 ## status
-修正
+導入
 

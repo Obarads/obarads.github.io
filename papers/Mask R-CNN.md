@@ -58,10 +58,10 @@ Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick.
 これを読む前にR-CNN、Fast R-CNN、Faster R-CNNを読むこと。
 
 ## key-words
-RGB_Image, Detection, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 修正
+RGB_Image, Detection, Semantic_Segmentation, Instance_Segmentation, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, M

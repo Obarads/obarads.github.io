@@ -90,7 +90,7 @@ ImageNetのクラスを使った10個のサンプルの生成。
 ##### なし
 
 ## key-words
-##### RGB_Image, GAN, CV, Paper, 完了, Implemented
+##### RGB_Image, GAN, CV, Paper, 完了, Implemented, 旧版
 
 ## status
 ##### 完了

@@ -49,7 +49,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-##### RGB_Image, Classification, CV, Paper, 未完
+##### RGB_Image, Classification, CV, Paper, 未完, 旧版
 
 ## status
 ##### 未完

@@ -116,7 +116,7 @@ Ting-Chun Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, Jan Kautz, Bryan Catanzaro
 なし
 
 ## key-words
-RGB_Image, GAN, Semantic_Segmentation, CV, Paper, 修正
+RGB_Image, GAN, Semantic_Segmentation, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了

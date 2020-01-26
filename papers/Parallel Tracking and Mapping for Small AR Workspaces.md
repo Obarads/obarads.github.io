@@ -93,7 +93,7 @@ Georg Klein, David Murray.
 動画がすごくおもしろかった....。あと、[1]様様。
 
 ## key-words
-SLAM, RGB_Image, CV, Paper, 修正
+SLAM, RGB_Image, CV, Paper, 修正, 旧版
 
 ## status
 修正

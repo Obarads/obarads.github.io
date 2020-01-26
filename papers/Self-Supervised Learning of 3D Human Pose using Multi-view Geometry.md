@@ -25,8 +25,6 @@ Github Issues : [#125](https://github.com/Obarads/obarads.github.io/issues/125)
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 
-
-
 ## どうやって有効だと検証した?
 
 ## 議論はある?
@@ -50,10 +48,10 @@ Muhammed Kocabas, Salih Karagoz, Emre Akbas
 なし
 
 ## key-words
-3D_Estimation, Self-Supervised_Learning, CV, Paper, Multi-View, 修正
+3D_Estimation, Self-Supervised_Learning, CV, Paper, Multi-View, 導入, 旧版
 
 ## status
-修正
+導入
 
 ## read
 A, I, R

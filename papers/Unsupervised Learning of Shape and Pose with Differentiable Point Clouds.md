@@ -62,11 +62,11 @@ Eldar Insafutdinov and Alexey Dosovitskiy.
 2018/10/22
 
 ## コメント
-アンサンブルについて詳しくないから意味あってるのかよくわからん。
+なし
 
 ## key-words
-Unsupervised_Learning, RGB_Image, Point_Cloud, 3D_Estimation, CV, Paper, 修正
+Unsupervised_Learning, RGB_Image, Point_Cloud, 3D_Estimation, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了
 

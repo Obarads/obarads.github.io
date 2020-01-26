@@ -79,10 +79,10 @@ Daeyun Shin, Charless C. Fowlkes, Derek Hoiem
 なし
 
 ## key-words
-RGB_Image, Reconstruction, Encoder-Decoder, Voxel, Mesh, CV, Paper, 修正
+RGB_Image, Reconstruction, Encoder-Decoder, Voxel, Mesh, CV, Paper, 省略, 旧版
 
 ## status
-修正
+省略
 
 ## read
 A, I, R, M

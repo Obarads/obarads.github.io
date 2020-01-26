@@ -80,7 +80,7 @@ Jiajun Wu, Chengkai Zhang, Tianfan Xue, William T. Freeman and Joshua B. Tenenba
 なし
 
 ## key-words
-Voxel, GAN, CV, Paper, 修正
+Voxel, GAN, CV, Paper, 完了, 旧版
 
 ## status
-修正
+完了
