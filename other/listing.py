@@ -172,6 +172,7 @@ def cmd_line_args(args=None):
     # parser.add_argument('--conv-layers', '-c', type=int, default=4)
     parser.add_argument('--mode', '-m', type=str, default="l", choices=["l","t"]) # lはmdの情報を/papersページのリストに反映、tは新規タグを反映させる。タグに反映させる際はother/tag_list.yamlに新たなtagを入力しなければいけない。
     parser.add_argument('--css', '-c', type=strtobool, default='false') # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
+    parser.add_argument('--dir', '-d', type=str) # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
     args = parser.parse_args()
     return args
 
@@ -251,16 +252,16 @@ def update_tags(dir_name, ucss):
 
 def main():
     args = cmd_line_args()
-    tag_dict, tag_list = creating_tag_dict_and_list("papers")
+    tag_dict, tag_list = creating_tag_dict_and_list(args.dir)
 
     # ファイルの内容を検索欄に表示するための処理を行う。
     if args.mode=="l":
-        update_lists("papers", tag_dict, tag_list)
+        update_lists(args.dir, tag_dict, tag_list)
         #update_lists("complementary", tag_dict, tag_list)
 
     # 検索などのためのタグの反映を行う。
     elif args.mode=="t":
-        update_tags("papers", args.css)
+        update_tags(args.dir, args.css)
         #update_tags("complementary", args.css)
 
 if __name__ == '__main__':

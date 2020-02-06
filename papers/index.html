@@ -49,7 +49,8 @@
     function main(event_sw) {
       // ルーティング
       var position = "main"
-      var path = "/papers/"
+      var dir = "papers"
+      var path = "/"+dir+"/"
       var title = ""
       var left_panel_title = ""
       if (location.hash.length <= 1) {
@@ -67,11 +68,11 @@
         document.getElementsByClassName("_data_tags")[0].innerHTML = CreatingTags(tag_data_list_for_papers())
         document.getElementsByClassName("_task_tags")[0].innerHTML = CreatingTags(tag_task_list_for_papers())
         document.getElementsByClassName("_etc_tags")[0].innerHTML = CreatingTags(tag_etc_list_for_papers())
-        document.getElementById("header_navi").innerHTML = document.getElementById("header_navi").innerHTML + CriteriaBreadcrumbContents()
+        document.getElementById("header_navi").innerHTML = document.getElementById("header_navi").innerHTML + CriteriaBreadcrumbContents(dir)
         //document.getElementsByClassName("activity_log_contents")[0].innerHTML = CreatingLinksForActLog(actlog_list_for_papers())
         document.getElementById("add_item").innerHTML = document.getElementById("left-panel-contents").innerHTML
         document.getElementById("main_right").innerHTML = DocumentTable()
-        document.getElementById("papers_tbody").innerHTML = CreatingLinks(information_list_for_papers())
+        document.getElementById("papers_tbody").innerHTML = CreatingLinks(information_list_for_papers(),dir)
 
         var url_tag = getParam("tag", null);
         var tag_names = null
@@ -92,7 +93,7 @@
         var title_filter = ""
 
         $("#_papers_table").tablesorter({});
-        setting_search_parameters(tag_names, title, title_filter)
+        setting_search_parameters(tag_names, title, dir, title_filter)
         table_show_and_hide(title_filter, tag_names);
         
       } else {
@@ -101,7 +102,7 @@
         left_panel_title = "Contents"
         document.getElementById("main").innerHTML = LeftAndRight()
         document.getElementById("header").innerHTML = Header()
-        document.getElementById("header_navi").innerHTML = DetailBreadcrumbContents()
+        document.getElementById("header_navi").innerHTML = DetailBreadcrumbContents(dir)
         document.getElementById("left-panel-title").innerHTML = left_panel_title
         document.getElementById("left-panel-contents").innerHTML = ToC("A1","B1","A2","A1")
         document.getElementById("add_item").innerHTML =  Collapser()
@@ -169,7 +170,7 @@
         });
       }
       if (event_sw) {
-        event_start(title, tag_names)
+        event_start(title, dir, tag_names)
       }
     }
 

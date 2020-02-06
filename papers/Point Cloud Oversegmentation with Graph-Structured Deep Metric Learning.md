@@ -211,7 +211,8 @@ graph structured contrastive loss の効率において、$\mu_ {i, j}$の選択
 
 ### PointCloud Oversegmentation
 #### Evaluation Metrics
-著者らは(P1)object-purity、(P2)border recall、(P3)regularityを測定するための基準を用意する。具体的には、superpointがobject boundariesを順守し、変に交わらないか評価するために、Boundary Recall(BR)とPrecision(BP)が使われる((P2),(P3))。これらの計測方法はpoints[1]やboundary pixels[2]に関して定義されている。しかしながら、著者らは点群の点ではなく点間でtransitionが起こると主張する。そのため、著者らは
+著者らは(P1)object-purity、(P2)border recall、(P3)regularityを測定するための基準を用意する。具体的には、superpointがobject boundariesを順守し、変に交わらないか評価するために、Boundary Recall(BR)とPrecision(BP)が使われる((P2),(P3))。これらの計測方法はpoints[1]やboundary pixels[2]に関して定義されている。しかしながら、著者らは点群の点ではなく点間でtransitionが起こると主張する。そのため、著者らは予測されたtransitionの集合$E_ {inter}^{pred}$を定義する(2つの異なるsuperpointsにある$C$の2つの点をつなぐ$E$のエッジのサブセット)。これらの基準は、大抵許容範囲に関して与えられる。つまり、予測されたtransitionは実際の
+[この辺謎]
 
 ## 議論はある?
 

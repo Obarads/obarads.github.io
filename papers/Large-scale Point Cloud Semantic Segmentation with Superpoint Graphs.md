@@ -89,7 +89,6 @@ Github Issues : [#129](https://github.com/Obarads/obarads.github.io/issues/129)
 [handcrafted特徴を使用]
 
 ### Superpoint Embeding
-#### ここ以降はまだやってない
 ##### 全てのsuperpoint $S_ i$に対応する記述子を計算する。
 この記述子は、[superpointから]固定次元長$d_ z$のベクトル$z_ i$への埋め込みである。なお、この埋め込みはsuperpointごとに分離されている。信頼できる分類を行うためのcontextual informationはグラフ畳み込みによって次の段階でのみ提供される。
 

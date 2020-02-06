@@ -29,6 +29,7 @@ github repository: [Obarads/obarads.github.io](https://github.com/Obarads/obarad
     - 上以外: 個人的なメモ
 - **[@ X]がある場合でも、Xには上の意味が適応されます. この形式は、引用内に存在する場合もあります.**
 - 以下の項にあるstatusとreadは各ファイル内に書かれている内容です.
+- **記述内容がどこを参照して書かれているか把握するために、コメントが「あり」の場合はコメントの内容を確認してください。**
 
 #### status
 ##### ページ内の進行具合を示すものです. 以下6つに分けられます. statusが同じでも載っている内容の量に差があるため, 大まかな目安として利用してください.  
@@ -50,6 +51,11 @@ github repository: [Obarads/obarads.github.io](https://github.com/Obarads/obarad
 - C: Conclusion, 結論. 
 - D: Discussion, 議論(そのような項目がある論文のみ).
 - AP: Appendix, 付録(そのような項目がある論文のみ).
+
+### Links
+#### 概要
+##### 作成中
+- [Links(linksディレクトリ)](./links)にはリンクが入っている。
 
 ### manual.md
 ##### このレポジトリの目的の詳細や運用方法などが確認できます。

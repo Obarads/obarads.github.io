@@ -1,11 +1,11 @@
 function HomeBreadcrumbContents() {
     return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + "</ol>";
 }
-function CriteriaBreadcrumbContents() {
-    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + BreadcrumbActive("papers") + "</ol>";
+function CriteriaBreadcrumbContents(dir) {
+    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + BreadcrumbActive(dir) + "</ol>";
 }
-function DetailBreadcrumbContents() {
-    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + Breadcrumb("papers", "/papers/") + BreadcrumbActive("detail") + "</ol>";
+function DetailBreadcrumbContents(dir) {
+    return "<ol class=\"breadcrumb\">" + Breadcrumb("OPMemo", "/", true) + Breadcrumb(dir, "/"+dir+"/") + BreadcrumbActive("detail") + "</ol>";
 }
 function Breadcrumb(disp, link, logo=false) {
     if(logo){
@@ -27,12 +27,12 @@ function CreatingTags(raw_tags, join = true) {
     }
     return tags
 }
-function CreatingLinks(raw_links, join = true) {
+function CreatingLinks(raw_links, dir, join = true) {
     var link_counter = -1
     var links = raw_links.map((raw_link) => {
         link_counter = link_counter + 1
         var tags = CreatingTags(raw_link[1].split(','));
-        var raw_link_for_href = "/papers/#" + raw_link[0]
+        var raw_link_for_href = "/"+dir+"/#" + raw_link[0]
         //return "<tr><td><div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + raw_link[4] + "</a></div>" + tags + "</td><td class=\"align-middle text-center\">" + raw_link[2] + "</td><td class=\"align-middle text-center\">" + raw_link[3] + "</td></tr>"
         return "<tr><td><div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + raw_link[4] + "</a></div>" + tags + "</td><td class=\"align-middle text-center\">" + raw_link[2] + "</td></tr>"
     });
@@ -41,11 +41,11 @@ function CreatingLinks(raw_links, join = true) {
     }
     return links;
 }
-function CreatingLinksForActLog(raw_actlogs, join = true) {
+function CreatingLinksForActLog(raw_actlogs, dir, join = true) {
     var link_counter = -1
     var actlogs = raw_actlogs.map((actlog) => {
         link_counter = link_counter + 1
-        var raw_link_for_href = "/papers/#" + actlog[1]
+        var raw_link_for_href = "/"+dir+"/#" + actlog[1]
         return "<div class=\"actlog_row\"><div>" + link_counter + " : " + actlog[0] + " : " + actlog[3] + "</div><a class=\"paper_title title-font\" href=\"" + raw_link_for_href + "\">" + actlog[4] + "</a><div>" + CreatingTags(actlog[2].split(',')) + "</div></div>"
     });
     if (join) {
@@ -157,7 +157,7 @@ function getting_search_parameters(category_name = null) {
     return { tag_names: tag_names, new_tag_names: new_tag_names }
 }
 
-function setting_search_parameters(tag_names, title, title_filter) {
+function setting_search_parameters(tag_names, title, dir, title_filter) {
     var def_url_param = "?"
     var additional_url_param = def_url_param
 
@@ -182,7 +182,7 @@ function setting_search_parameters(tag_names, title, title_filter) {
         additional_url_param = ""
     }
 
-    window.history.replaceState('', '', "/papers/" + additional_url_param);
+    window.history.replaceState('', '', "/"+dir+"/" + additional_url_param);
 }
 
 function getParam(name, url) {
@@ -223,16 +223,17 @@ function table_show_and_hide(title_filter, tag_names) {
     });
 }
 
-function event_start(title, tag_names) {
+function event_start(title, dir, tag_names) {
     const _title = title
     var title_filter = ""
+    var dir = dir
 
     $(document).on('input', '._filter_input', function () {
         var { tag_names, new_tag_names } = getting_search_parameters()
         var value = $(this).val();
         $('._filter_input').val(value);
         title_filter = value;
-        setting_search_parameters(tag_names, _title, title_filter)
+        setting_search_parameters(tag_names, _title, dir, title_filter)
         table_show_and_hide(title_filter, tag_names);
     });
 
@@ -255,7 +256,7 @@ function event_start(title, tag_names) {
             }
         });
 
-        setting_search_parameters(tag_names, _title, title_filter)
+        setting_search_parameters(tag_names, _title, dir, title_filter)
         table_show_and_hide(title_filter, tag_names);
     });
 
