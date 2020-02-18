@@ -14,6 +14,15 @@ from distutils.util import strtobool
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
 PATH_OTHER = os.path.dirname(os.path.abspath(__file__))
 
+def cmd_line_args(args=None):
+    parser = argparse.ArgumentParser(description='-m l:listing, t:classes tag category')
+    # parser.add_argument('--conv-layers', '-c', type=int, default=4)
+    parser.add_argument('--mode', '-m', type=str, default="l", choices=["l","t"]) # lはmdの情報を/papersページのリストに反映、tは新規タグを反映させる。タグに反映させる際はother/tag_list.yamlに新たなtagを入力しなければいけない。
+    parser.add_argument('--css', '-c', type=strtobool, default='false') # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
+    parser.add_argument('--dir', '-d', type=str, choices=["papers","links"]) # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
+    args = parser.parse_args()
+    return args
+
 def creating_tag_dict_and_list(dir_name):
     tag_dict = {}
     tag_list = []
@@ -166,15 +175,6 @@ def coloring_tag_template(tags,propertis='background:rgb(0,0,0);\ncolor:#fff;'):
     for t in tags:
         tag_css_class += '.__'+ t.replace(" ","_").replace("&","_").replace("'","") + '{\n'+propertis+'\n}\n\n' 
     return tag_css_class
-
-def cmd_line_args(args=None):
-    parser = argparse.ArgumentParser(description='-m l:listing, t:classes tag category')
-    # parser.add_argument('--conv-layers', '-c', type=int, default=4)
-    parser.add_argument('--mode', '-m', type=str, default="l", choices=["l","t"]) # lはmdの情報を/papersページのリストに反映、tは新規タグを反映させる。タグに反映させる際はother/tag_list.yamlに新たなtagを入力しなければいけない。
-    parser.add_argument('--css', '-c', type=strtobool, default='false') # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
-    parser.add_argument('--dir', '-d', type=str) # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
-    args = parser.parse_args()
-    return args
 
 def update_lists(dir_name, tag_dict, tag_list):
 

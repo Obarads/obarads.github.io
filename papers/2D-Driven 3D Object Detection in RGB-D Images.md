@@ -24,8 +24,24 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
   - オブジェクトの向きとオブジェクトの3次元点群座標のヒストグラムを使用して、3Dバウンディングボックスの回帰を行える様にした。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-##### 省略
+### 手法の概要
+- 手法のパイプラインは図2の通り。
+
 ![fig2](img/23ODiRI/fig2.png)
+
+##### 1. Faster R-CNNでオブジェクトの2Dバウンディングボックス(BB)を取得し、そこから錐台3DBBを得る。
+- 錐台3DBBは2DBBと深度画像から生成される。
+
+##### 2. 3Dオブジェクトの方向を推定する。
+- [1]で提案されている、Manhattan Frame Estimation(MFE)を利用して、全ての錐台3DBB内のオブジェクトの方向をそれぞれ推定する。
+
+##### 3. 3DBBを推定する。
+- 点群の重心と推定されたオブジェクトの方向を用いて正規直交系を設定する。
+- 3次元点群座標のヒストグラムをMLPに入力し、3DBBの境界を推定する。
+- 3DBBを得た後に、スコアの計算を行う。
+
+##### 4. コンテキスト情報を用いて、スコアを洗練させる。
+- 各BBの関係をグラフを用いて表して洗練のための計算をする。
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -37,7 +53,8 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## 論文関連リンク
-##### なし
+##### あり
+1. [B. Ghanem, A. Thabet, J. C. Niebles, and F. C. Heilbron. Ro-bust manhattan frame estimation from a single rgb-d image. InCVPR, pages 3772–3780. IEEE, 2015.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Ghanem_Robust_Manhattan_Frame_2015_CVPR_paper.pdf)
 
 ## 会議, 論文誌, etc.
 ##### ICCV 2017
@@ -49,16 +66,17 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### 2017/10/22
 
 ## コメント
-##### なし
+##### あり
+- Mは大雑把に読んだ。
 
 ## key-words
-##### CV, Paper, RGB_Image, Depth_Image, Detection, 導入, Point_Cloud
+##### CV, Paper, RGB_Image, Depth_Image, Detection, 省略, Point_Cloud
 
 ## status
-##### 導入
+##### 省略
 
 ## read
-##### A, I, R
+##### A, I, R, M
 
 ## Citation
 ##### ieeexplore.ieee.orgより引用
