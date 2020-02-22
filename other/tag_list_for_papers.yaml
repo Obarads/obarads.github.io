@@ -68,6 +68,7 @@ task: [
   "'Grasping'",
   "'Instance Segmentation'",
   "'Labeling'",
+  "'Normal Estimation'",
   "'One-Class & Anomaly Detection'",
   "'Oversegmentation'",
   "'Part Segmentation'",
