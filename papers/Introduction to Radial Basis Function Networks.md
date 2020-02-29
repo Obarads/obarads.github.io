@@ -82,7 +82,7 @@ $$
 ##### Technical_Report, Memo
 
 ## status
-##### 未完
+##### 省略
 
 ## read
 ##### なし
