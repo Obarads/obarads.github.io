@@ -75,6 +75,7 @@ task: [
   "'Registration'",
   "'Reconstruction'",
   "'Reflection Removal'",
+  "'Simulation'",
   "'SLAM'",
   "'Semantic Segmentation'",
   "'Super-Resolution'",
