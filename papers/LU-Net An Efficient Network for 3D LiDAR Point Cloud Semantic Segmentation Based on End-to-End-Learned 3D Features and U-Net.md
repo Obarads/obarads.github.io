@@ -32,9 +32,12 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 
 ![fig3](img/LAENf3LPCSSBoE3FaU/fig3.png)
 
-##### 2. High-level 3D feature extraction moduleによる特徴量の抽出を行う。
+##### 2. High-level 3D feature extraction moduleを導入したネットワーク(LU-Net)でセマンティックセグメンテーションを行う。
+- このネットワークの全体像は図6の通り。
 - 工夫のHigh-level 3D feature extraction moduleにて説明する。
+- 訓練中の損失はfocal lossを使用する。
 
+![fig6](img/LAENf3LPCSSBoE3FaU/fig6.png)
 
 ### 工夫
 #### High-level 3D feature extraction module
@@ -51,7 +54,13 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 - ただし、このモジュールは距離画像から近傍点を作成する。更に、このモジュールの出力は距離画像である。
 - 近傍点は図4のように距離画像の周りから取る。
 - 近傍点と中央点の相対値を測り、それを[2]同様にMLPへ入力し処理する。その後の処理は図5の通り。
-  - 尚、
+  - 尚、maxpoolingされたあとは$p_ i$と$r_ i$に連結される。
+  - また、畳込みは$1/times1$の畳み込み層である。
+
+![fig4](img/LAENf3LPCSSBoE3FaU/fig4.png)
+
+![fig5](img/LAENf3LPCSSBoE3FaU/fig5.png)
+
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -79,13 +88,13 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-##### Paper, CV, Point_Cloud, Semantic_Segmentation, 未完, Implemented
+##### Paper, CV, Point_Cloud, Semantic_Segmentation, 省略, Implemented
 
 ## status
-##### 未完
+##### 省略
 
 ## read
-##### A, I
+##### A, I, M
 
 ## Citation
 ##### 未記入

@@ -14,12 +14,17 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-提案するConvolutional Cluster Pool-ing (CCP)層を使ったアーキテクチャは図1の通り。この層は以下の処理を行う。
-
-1. 入力グラフをクラスタリング演算を実行する。
-2. 1で得られた結果をもとに各クラスタに対して固定数の固定ノードを選択し、クラスタ内のcentrality-based rankでノードをソートする。
+### 手法の概要
+- 提案するConvolutional Cluster Pooling (CCP)層を使ったアーキテクチャは図1の通り。この層は以下の処理を行う。
 
 ![fig1](img/CSoIDvCCP/fig1.png)
+
+##### 1. 入力グラフでクラスタリング演算を実行し、荒い出力グラフを生成する。
+- [未記入]
+
+##### 2. 最初のステップで
+2. 1で得られた結果をもとに各クラスタに対して固定数の固定ノードを選択し、クラスタ内のcentrality-based rankでノードをソートする。
+
 
 ### Hierarchical Graph Clustering
 ##### 以降未読
@@ -49,7 +54,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-##### RGB_Image, Classification, CV, Paper, 未完, 旧版
+##### RGB_Image, Classification, CV, Paper, 未完
 
 ## status
 ##### 未完
