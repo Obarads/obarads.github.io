@@ -16,7 +16,90 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-##### 省略
+### 手法の概要
+- 手法の概要図は図1の通り。提案モデルはGrid-GCNであり、このモデルの層であるGridConvがキモとなる。
+  - ここではセグメンテーション用のGrid-GCNを説明している。
+  - GridConvは2つのモジュールによって構成されている。
+
+##### 1. 入力にGridConvによるダウンサンプリング処理を施す。
+- GridConvは2つのモジュールによって構成されている。
+  - これの詳細は工夫のCoverage-Aware Grid Query (CAGQ) moduleとGrid Context Aggregation (GCA) moduleにあり。
+
+##### 2. ダウンサンプリングを施した入力にアップサンプリングを施す。
+- セグメンテーションでは、最終的にラベルが割り振られる。
+- アップサンプリングの詳細も工夫のCoverage-Aware Grid Query (CAGQ) moduleとGrid Context Aggregation (GCA) moduleにあり。
+
+![fig1](img/GfFaSPCL/fig1.png)
+
+### 工夫
+#### Coverage-Aware Grid Query (CAGQ) module
+##### このモジュールは$N$個の点から$M$個の点グループをサンプリングする。各グループはK個のnode pointsとグループのcenterを持つ。
+- 本モジュールの概要図は図2の通り。図2を見ながら以下を見るとわかりやすい。
+
+![fig2](img/GfFaSPCL/fig2.png)
+
+##### はじめに、入力の空間をボクセル化する。
+- このとき、ボクセルサイズを$(v_ x, v_ y, v_ z)$とする。
+- 各点をボクセルインデックス$\operatorname{Vid}(u, v, w)=\operatorname{floor}(\frac{x}{v_ {x} }, \frac{y}{v_ {y} }, \frac{z}{v_ {z} })$へマッピングする。
+  - ここでは、$n_ v$個まで各ボクセルに保存する。
+
+##### 次に$M$個のcenter voxels $O_ {c} \subseteq O_ {v}$をサンプリングするとする。
+- $O_ v$は空でないボクセル全てであるとする。
+- 各center voxel $v_ i$に対して近傍ボクセルを$\pi(v_ i)$と、$\pi(v_ i)$内の保存された点をcontext pointsと定義する。
+  - point-voxel間のインデックスはすでに前の段階で作成されているため、CAGQは高速で$v_ i$とcontext pointsの対応付けができる。
+- その後、CAGQは各$v_ i$のcontext pointsから$K$個のnode pointsを選ぶ。
+- そして、グループのcenterの位置として、グループ内のnode points重心が計算される。
+
+##### この時点で、サンプリング関して2つの問題が残る。
+- 問題は以下の通り。
+  - (1) どうやってcenter voxels$O_ {c} \subseteq O_ {v}$をサンプリングするか。
+  - (2) どうやって$\pi(v_ i)$中のcontext pointsから$K$個のnodeを選ぶか。
+
+##### 最初の問題を解決するために、center voxels samplingフレームワークを提案する。
+- このフレームワークは2つの手法を含んでいる。
+- **Random Voxel Sampling (RVS)**: 空でない各ボクセルに対して同じ確率で選択する。これらのcenter voxels内で計算されたグループのcentersは、RPSによって入力点上で選択されたcentersよりも均等に分布する。[?]
+- **Coverage-Aware Sampling (CAS)**: CASの目標は空でない[(ボクセルの部分の)]空間をできるだけカバーできるようにcenter voxels $O_ c$のセットを選択することである。[翻訳微妙]
+  - 選ばれた各center voxelは最大$\lambda$個の空でない近傍ボクセルを覆う。
+  - この問題の最適な解を見つけるため、組み合わせを全て試すことである。
+  - それ故、greedy algorithmを使用して最適な解を見つける。
+
+##### Coverage-Aware Samplingのgreedy algorithmについて
+- はじめに、$O_ v$から$M$個のボクセルをincumbentsとしてランダムに選ぶ。
+  - 選択されていない全てのボクセルから、毎回ランダムなincumbentにchallengeするためのボクセルを繰り返し選択する。
+  - もし追加されたchallenger(and in the meantime removes the incumbent)がより良いカバレッジ(範囲)を与えてくれる場合、incumbentをchallengerに置き換える。
+  - challenger $v_ C$とincumbent $v_ I$がある時、この方法は式(1)~(3)のように計算される。
+
+$$
+\delta(x)=\{\begin{array}{ll}1, & \text { if } x=0. \\ 0, & \text { otherwise }.\end{array} \tag{1}
+$$
+
+$$
+H_{a d d}=\sum_{V \in \pi\left(V_{C}\right)} \delta\left(C_{V}\right)-\beta \cdot \frac{C_{V}}{\lambda} \tag{2}
+$$
+
+$$
+H_{r m v}=\sum_{V \in \pi\left(V_{I}\right)} \delta\left(C_{V}-1\right) \tag{3}
+$$
+
+- ここで、
+  - $\lambda$はボクセル近傍の量、
+  - $C_ V$はボクセル$V$を覆うincumbentの数を示す。
+  - $H_ {add}$は$V_ C$を追加した場合のカバレッジゲイン(coverage gain)を示す。
+    - ただし、オーバーカバレッジにより罰則が与えられる。
+  - $H_ {rmv}$は$V_ I$を排除したあとのカバレッジ損失を示す。
+- もし$H_ {a d d}>H_ {r m v}$であるとき、incumbentはchallenger voxelと置き換えられる。
+- もし、$\beta$を0とすると、交換するたびに空間のカバー範囲が改善される。
+
+##### 2つ目の問題を解決するためにNode points queryingを使う。
+- CAGQは、$\pi(v_ i)$中のcontext pointsから$K$個のnode pointsを選択するための戦略を提供する。
+- **Cube Query**: context pointsから$$K個の点をランダムに選択する。PointNet++で使われているボールクエリと比較して、Cube Queryは点の密度がアンバランスであるとき、より多くのスペースをカバーするようにできる。
+  - 図2より、ボールクエリは全ての生の点(グレー)から$K$個の点をサンプリングするため、3つの生の点を飲みを持つボクセルからnode pointsが選ばれることはない。
+- **K-Nearest Neighbors**: 全ての点が探索範囲である従来のkNNと違い、CAGQのkNNはcontext points内のみ探索するだけでよく、クエリを大幅に高速化できる。
+  - 補足資料で最適化された方法も提供する。
+
+#### Grid Context Aggregation (GCA) module
+##### 各点グループのために局所グラフを作成し、特徴をグループのcenterに集約する。
+- [以下未読]
 
 ## どうやって有効だと検証した?
 ##### 省略
