@@ -99,7 +99,34 @@ $$
 
 #### Grid Context Aggregation (GCA) module
 ##### 各点グループのために局所グラフを作成し、特徴をグループのcenterに集約する。
-- [以下未読]
+- CAGQによって提供された点のグループに対して、著者らはnode pointsからグループのcenterへ特徴を集約するGCAモジュールを使う。
+- はじめに、local graph $G(V,E)$を作成する。
+  - ここで、CAGQによって提供された$K$個のnode pointとグループのcenterからなる$V$があるとする。
+- 次に、各node pointをグループのcenterへ接続する。
+- GCAはnode pointの特徴$f_ i$を$\tilde{f}_ {i}$へ投影する。
+- centerとnode間のエッジの関係に基づき、GCAは$\tilde{f}_ {i}$のcontribution[?]を計算し、centerの特徴$\tilde{f_ c}$としてこれら全ての特徴を集約する。
+- 具体的には、GCAモジュールは式(4)(5)として表される。
+
+$$
+\widetilde{f}_{c, i}=e\left(\chi_{i}, f_{i}\right) * \mathcal{M}\left(f_{i}\right) \tag{4}
+$$
+
+$$
+\tilde{f}_{c}=\mathcal{A}\left(\left\{\tilde{f}_{c, i}\right\}, i \in 1, \ldots, K\right) \tag{5}
+$$
+
+- ここで、
+  - $\tilde{f}_ {c,i}$はnode空のcontribution、
+  - $x_ i$はnodeのxyz座標である。
+  - $\mathcal{M}$はMLP、
+  - $e$はエッジのアテンション関数、
+  - $\mathcal{A}$は集約関数である。
+- 本提案では、アテンション関数$e$に新しい設計を施したものを使用する。
+- 図4にそれの構造を載せる。
+
+![fig4](img/GfFaSPCL/fig4.png)
+
+- **Coverage Weight**: 既存の研究はcenterの$\mathcal{X}_ c$とnodeの$\mathcal{X}_ i$
 
 ## どうやって有効だと検証した?
 ##### 省略
