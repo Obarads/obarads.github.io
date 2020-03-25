@@ -1,22 +1,86 @@
 # PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
 
-元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1612.00593)
-Github Issues : [#1](https://github.com/Obarads/obarads.github.io/issues/1)
+元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1612.00593)  
+提案モデルの実装 : [charlesq34/pointnet](https://github.com/charlesq34/pointnet)  
+Github Issues : [#1](https://github.com/Obarads/obarads.github.io/issues/1)  
+
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
 ## どんなもの?
-Point Cloud(以下点群)に対してClassification、Part Segmentation、Semantic Segmentationを行う教師あり学習モデル、PointNetを提案した。入力される点群の以下のような特性があり、これらに対して学習できるモデルを提案する。
+##### 点群を直接入力することが可能な深層学習ネットワーク、PointNetを提案した。
+- PointNetは点群を他の表現(ボクセルグリッド表現、collections of images(Multiview)等)へ変換する必要がない。
+- 本論文では、点群に対してクラス分類、セマンティックセグメンテーション、パーツセグメンテーション、オブジェクト検出を教師ありで提案している。
+- 点群では、点の順不同性と剛体変換されたオブジェクトに対処しなければいけない。PointNetはこれらの問題に対して対処できる様になっている。
 
-- 入力に順序なし  
-  画像のようにグリッドに沿った値ではない。つまり、入力値の順序が変化する。ボクセルを使うことで対策できるがこのモデルはそれを使わない。(ボクセル表現は値を離散化させ、本来の不変性を曖昧にする。おそらく離散化した影響で細かい値が消えるせいで出力値にずれが出る。)
+![fig1](img/PDLoPSf3CaS/fig1.png)
 
-- 点間の相互作用  
-  点と点の間には相互作用が有り、モデルは点と点の局所的構造を捉える必要がある。(あとで説明するが、点と点の局所構造を捉えるような畳込みを持っているとは言いづらい様に思える。ただし、点ごとの特徴をローカルな特徴として扱っている。)
+## 先行研究と比べてどこがすごいの? or 関連事項
+##### ネットワークに入力する際に、点群を他の表現へ変換する必要がない。
+- 点群に対して機械学習を適応させるには、点群を別の表現や特徴量に変換する必要がある。しかしながら、それらには以下のような問題があると考えられる。
+  - hand-crafted特徴
+    - 基本的に、点特徴は点の統計的な特性をエンコードし、変換に対して普遍になるように設計されている。一般的に、これらはintrinsicとextrinsicに分類される。
+    - しかしながら、これらの特徴を使ってタスクに対する最適な特徴を見つけるのは簡単ではない。
+  - Volumetric
+    - 点群を体積表現へ変換することで、既存の2D畳み込みを流用して畳み込みが可能になる。
+    - しかしながら、体積表現を用いた深層学習はスパース性や計算コストの影響による解像度の制限を強く受ける。スパース性に取り組んだ手法[5,6]もあるが、依然として非常に大きな点群を扱うのは難しい。
+  - Multiview
+    - 3D点群もしくは3D形状を2D画像へレンダリングし、これに2DCNNを適応する。
+    - 分類タスクや検索タスクにおいて高いパフォーマンスを誇るが、他の3Dタスクへの応用が難しいという問題がある。
+- 畳み込みネットワークとしては以下の手法がある。
+  - Spectral CNNsとFeature-based DNNs[(この記事では省略。)]
+- 本提案では、点群を他の表現に変換せずとも処理できるため、他の点群タスクへの応用がしやすいという利点がある。
 
-- 変換の不変性  
-  幾何学的オブジェクトは剛体変換されている可能性がある。回転、平行移動されたオブジェクトであっても結果が変わらないようにしなければならない。
+##### 点群の順不同に対処する。
+- Oriol Vinyalsら[7]が順不同な入力に対する処理の提案を行っているが、これはNLPアプリケーションに対するものであり、点群などの幾何学的な性質を持つ集合に対する処理は提示されていない。
 
-## 先行研究と比べてどこがすごいの?
-通常、voxelなどで点群をグリッドに合わせ処理しやすいようにするが、PointNetはそれをせずとも処理を行うことができる上、SOTAに勝るとも劣らない結果を出した。
+## 技術や手法のキモはどこ? or 提案手法の詳細
+##### 省略
+
+## どうやって有効だと検証した?
+##### 省略
+
+## 議論はある?
+##### 省略
+
+## 次に読むべき論文は?
+##### あり
+- Pointwise Convolutional Neural Networks (このPointNetと同等の結果を示しているため)
+
+## 論文関連リンク
+##### あり
+1. [Naoya Chiba, 三次元点群を取り扱うニューラルネットワークのサーベイ, (アクセス:2019/05/26)](https://www.slideshare.net/naoyachiba18/ss-120302579)
+2. [Fujimoto Keisuke, Point net, (アクセス:2019/05/26)](https://www.slideshare.net/FujimotoKeisuke/point-net)
+3. [M. Jaderberg, K. Simonyan, A. Zisserman, et al. Spatial transformer networks. InNIPS 2015.](https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf)[9]
+4. [KYoshiyama, 点群×ディープラーニング【入門】. 2019.](https://qiita.com/KYoshiyama/items/802506ec397559725a1c)
+5. [Y. Li, S. Pirk, H. Su, C. R. Qi, and L. J. Guibas. Fpnn: Field probing neural networks for 3d data. arXiv preprint arXiv:1605.06240, 2016.](https://arxiv.org/abs/1605.06240)
+6. [D. Z. Wang and I. Posner. Voting for voting in online point cloud object detection. Proceedings of the Robotics: Science and Systems, Rome, Italy, 1317, 2015.](http://www.robots.ox.ac.uk/~mobile/Papers/2015RSS_wang.pdf)
+7. [O. Vinyals, S. Bengio, and M. Kudlur. Order matters: Sequence to sequence for sets. arXiv preprint arXiv:1511.06391, 2015.](https://arxiv.org/abs/1511.06391)
+
+## 会議, 論文誌, etc.
+##### CVPR 2017
+
+## 著者
+##### Charles R. Qi, Hao Su, Kaichun Mo,  Leonidas J. Guibas  
+
+## 投稿日付(yyyy/MM/dd)
+##### 2016/12/02
+
+## コメント
+##### あり
+- CVPR2018では、局所形状を取り込む手法を取り入れたモデルが大量に生まれた。「ローカルな構造」について論文中に出ているが、ローカルな構造=局所形状のイメージが強いせいか、ローカルな構造を言うほど活かしていないように思えた(Segmentationではちゃんと使っているが)。
+
+## key-words
+##### Classification, Point_Cloud, Semantic_Segmentation, CV, Paper, 完了, Part_Segmentation, Detection
+
+## status
+##### 完了
+
+## read
+##### A, R, M, E
+
+## Citation
+##### 未記入
+
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 PointNetのアーキテクチャは図2の通り。入力は生の点群、出力はクラスを表す配列(クラス分類)もしくは点ごとの点ごとにクラスを表す配列を割り振った2次元配列(セマンティックセグメンテーション)となっている。アーキテクチャの説明は以下のようになっている。
@@ -51,35 +115,3 @@ ClassificationはModelNet40、Part SegmentationはShapeNet part data set、Seman
 
 ## 議論はある?
 局所的な形状情報を取り扱うための仕組みがないので、それをどう取り入れるか改善の余地がある(これが冒頭で点間の相互作用に対する考えの理由である)。
-
-## 次に読むべき論文は?
-- Pointwise Convolutional Neural Networks (このPointNetと同等の結果を示しているため)
-
-## 論文関連リンク
-1. [Naoya Chiba, 三次元点群を取り扱うニューラルネットワークのサーベイ, (アクセス:2019/05/26)](https://www.slideshare.net/naoyachiba18/ss-120302579)
-2. [Fujimoto Keisuke, Point net, (アクセス:2019/05/26)](https://www.slideshare.net/FujimotoKeisuke/point-net)
-3. [M. Jaderberg, K. Simonyan, A. Zisserman, et al. Spatial transformer networks. InNIPS 2015.](https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf)
-
-## 会議
-CVPR2017
-
-## 著者
-Charles R. Qi, Hao Su, Kaichun Mo,  Leonidas J. Guibas  
-
-## 投稿日付(yyyy/MM/dd)
-2016/12/02
-
-## コメント
-CVPR2018では、局所形状を取り込む手法を取り入れたモデルが大量に生まれた。「ローカルな構造」について論文中に出ているが、ローカルな構造=局所形状のイメージが強いせいか、ローカルな構造を言うほど活かしていないように思えた(Segmentationではちゃんと使っているが)。
-
-## key-words
-Classification, Point_Cloud, Semantic_Segmentation, CV, Paper, 完了, 旧版
-
-## read
-A, R, M, E
-
-## status
-完了
-
-## Citation
-

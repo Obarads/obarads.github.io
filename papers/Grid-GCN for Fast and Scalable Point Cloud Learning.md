@@ -126,7 +126,17 @@ $$
 
 ![fig4](img/GfFaSPCL/fig4.png)
 
-- **Coverage Weight**: 既存の研究はcenterの$\mathcal{X}_ c$とnodeの$\mathcal{X}_ i$
+- **Coverage Weight**: 既存の研究は幾何学的関係の関数としてedge attentionをモデル化するためにcenterの$\mathcal{X}_ c$とnodeの$\mathcal{X}_ i$を使う。(図4b)
+  - しかしながら、定式化は前の層からの各node pointのunderlying contribution[?]を無視する。
+  - 直感的に、より多くの情報を持つnode pointに注意を払う必要がある。
+    - このシナリオを図3に示す。
+  - そのことを念頭におき、著者らはcoverage weightの概念を導入する。
+    - これは、前の層のnodeへ集約された点の数として定義される。
+  - この値はCAGQでかんたんに計算可能で、coverage weightはedge attentionを計算する際の重要な特性であると主張する。
+    - 表6にablation studiesあり
+- **Grid Context Pooling**: 意味的な関係性はedge attentionを計算する際の重要な側面がある。
+  - 既存の研究では、意味的な関係性はgroup center's feature $f_ c$とnode point's features $f_ i$を使うことで符号化される。
+  - [以降未読]
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -154,10 +164,10 @@ $$
 ##### なし
 
 ## key-words
-##### CV, Paper, Point_Cloud, Classification, Semantic_Segmentation, 導入
+##### CV, Paper, Point_Cloud, Classification, Semantic_Segmentation, 省略, 修正
 
 ## status
-##### 導入
+##### 修正
 
 ## read
 ##### A
