@@ -4,12 +4,16 @@
 提案モデルの実装 : [yangyanli/PointCNN](https://github.com/yangyanli/PointCNN)
 Github Issues : [#91](https://github.com/Obarads/obarads.github.io/issues/91)
 
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
+
 ## どんなもの?
 点群において、点と関連付けられている入力特徴の重み付けと点の潜在的な順序を同時に学習する演算とネットワークを提案した。
 
-## 先行研究と比べてどこがすごいの?
+## 先行研究と比べてどこがすごいの? or 関連事項
+##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
+##### 省略
 画像処理などで使われる典型的な畳み込み演算子を生の点群に適応できない理由は、点群にデータの順序が無く、なおかつデータが規則的に並んでいない(不規則)からである。
 
 順序の問題についての説明は図1の通り。この図の${Conv}(\cdot, \cdot)$は(画像で言えば)カーネルとピクセルの要素ごとの積を集約する典型的な畳み込み演算子を指す[1]。画像の場合は入力されるデータは図1(i)の様に規則正しい構造を持つが、点群の場合は図1(ii),(iii),(iv)の様に同じ表現でありながら3パターンの構造を持つ可能性がある。点群に${Conv}$を適応するには、先に点を潜在的な並びに置換する必要がある。
@@ -45,22 +49,25 @@ $\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の�
 
 実装ではドロップアウトを採用し、[4]からsubvolume supervisionのアイデアを導入することとした。また、より一般化された表現を得るためにデータ拡張を行う(詳細省略)。
 
-## どうやって有効だと検証した?
 
+
+## どうやって有効だと検証した?
+##### 省略
 
 ## 議論はある?
-- 畳み込む際の中心点を決める手法について、もっといいものがあるはず(Deep Points[1]など)。
+##### 畳み込む際の中心点を決める手法について、もっといいものがあるはず(Deep Points[1]など)。
 
 ## 次に読むべき論文は?
 ##### なし
 
 ## 論文関連リンク
+##### あり
 1. [edo_m18. コンボリューション（畳み込み処理）を実装してみる. 2014. (アクセス:2019/05/30)](https://qiita.com/edo_m18/items/d9f5f4b6de7ff73075ed)
 2. [Shihao Wu,Hui Huang,Minglun Gong,Matthias Zwicker,and Daniel Cohen-Or. Deep points consolidation. ToG, 34(6):176:1–176:13, October 2015.](https://dl.acm.org/citation.cfm?id=2818073)
 3. [Hyeonwoo Noh, Seunghoon Hong, and Bohyung Han. Learning deconvolution network for semantic segmentation. In ICCV, ICCV ’15, pages 1520–1528, Washington, DC, USA, 2015. IEEE Computer Society.](https://arxiv.org/abs/1505.04366)
 4. [CharlesR.Qi,HaoSu,MatthiasNießner,AngelaDai,MengyuanYan,andLeonidasJ.Guibas.Volumetric and multi-view cnns for object classification on 3d data. InCVPR, pages 5648–5656, 2016.](https://arxiv.org/abs/1604.03265)
 
-## 会議
+## 会議, 論文誌, etc.
 ##### NIPS 2018
 
 ## 著者
@@ -73,7 +80,7 @@ $\mathcal{X}$-Convを単純に階層的に組み合わせた場合、図4(a)の�
 ##### なし
 
 ## key-words
-Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implemented, 旧版
+##### Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implemented
 
 ## status
 ##### 省略
@@ -82,3 +89,4 @@ Point_Cloud, Semantic_Segmentation, Classification, CV, Paper, 省略, Implement
 ##### A, I, M
 
 ## Citation
+##### 未記入
