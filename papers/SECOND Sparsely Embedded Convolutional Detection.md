@@ -43,7 +43,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 
 ### 工夫
 #### Sparse Convolutional Middle Extractor
-##### [未読]
+##### [省略]
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -76,10 +76,10 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### なし
 
 ## key-words
-##### Paper, CV, Point_Cloud, Detection, 導入
+##### Paper, CV, Point_Cloud, Detection, 省略, Implemented
 
 ## status
-##### 導入
+##### 省略
 
 ## read
 ##### A, I, R
