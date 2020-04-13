@@ -15,7 +15,8 @@
 }
 @font-face {
   font-family: font-btn;
-  src: url(/font/JP/NotoSans/NotoSansJP-Regular.otf) format("opentype");
+  src: url(/font/JP/NotoSans/NotoSansJP-Regular.otf) format("opentype"),
+  url(../font/EN/NotoSans/NotoSans-Italic.ttf) format("truetype");
 }
 @font-face {
   font-family: font-logo;

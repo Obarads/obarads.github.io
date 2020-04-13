@@ -19,7 +19,7 @@ def cmd_line_args(args=None):
     # parser.add_argument('--conv-layers', '-c', type=int, default=4)
     parser.add_argument('--mode', '-m', type=str, default="l", choices=["l","t"]) # lはmdの情報を/papersページのリストに反映、tは新規タグを反映させる。タグに反映させる際はother/tag_list.yamlに新たなtagを入力しなければいけない。
     parser.add_argument('--css', '-c', type=strtobool, default='false') # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
-    parser.add_argument('--dir', '-d', type=str, choices=["papers","links"]) # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
+    parser.add_argument('--dir', '-d', type=str, choices=["papers","links"], required=True) # tabの色を指定色に決めるかどうか、現在はtrueを適応している。
     args = parser.parse_args()
     return args
 
