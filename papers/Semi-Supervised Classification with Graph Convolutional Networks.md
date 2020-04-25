@@ -1,10 +1,11 @@
-# LightConvPoint: convolution for points
+# Semi-Supervised Classification with Graph Convolutional Networks
 
-元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/2004.04462)  
-提案モデルの実装 : [なし:2020/04/13]()  
+元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/1609.02907)  
+提案モデルの実装 : [tkipf/gcn](https://github.com/tkipf/gcn)  
 Github Issues : []()  
 
-Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
+Note: 記事の見方や注意点については、[こちら](/)をご覧ください。  
+Note: 引用中の[*]は論文内の文献番号である。該当する論文は、論文関連リンクの各リストの末尾に基づいて調べられる。
 
 ## どんなもの?
 
@@ -28,19 +29,19 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 1. [なし]()[1]
 
 ## 会議, 論文誌, etc.
-##### 不明
+##### ICLR 2017
 
 ## 著者
-##### Alexandre Boulch, Gilles Puy, Renaud Marlet
+##### Thomas N. Kipf, Max Welling
 
 ## 投稿日付(yyyy/MM/dd)
-##### 2020/04/09
+##### 2017/02/22
 
 ## コメント
 ##### なし
 
 ## key-words
-##### Paper, CV, Point_Cloud, 未完
+##### Paper, Graph, Implemented
 
 ## status
 ##### 未完
