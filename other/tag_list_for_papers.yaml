@@ -72,6 +72,7 @@ task: [
   "'One-Class & Anomaly Detection'",
   "'Oversegmentation'",
   "'Part Segmentation'",
+  "'Pose Estimation'",
   "'Registration'",
   "'Reconstruction'",
   "'Reflection Removal'",
