@@ -41,6 +41,11 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - この問題点を解決するには、マルチスケールな特徴ボリュームをRoI gridsに直接集約することであるが、これでは多くのメモリを占有してしまう。
   - 例えば、KITTIデータセットから4倍のダウンサンプリングで18000ボクセルを得たとき、$3\times 3 \times 3$グリッド内の提案を100個得る場合、$2700 \times 18000$サイズの処理を行うのはしきい値などを用いても効率的でない。
 - **”To tackle this issue, we propose a two-step approach to first encode voxels at different neural layers of the entire scene into a small number of keypoints and then aggregate keypoint features to RoI grids for box proposal refinement.”**
+  - この提案は工夫に示すとおり。
+
+### 工夫
+#### Voxel Set Abstraction Module
+##### PointNet++で提案された
 
 ## どうやって有効だと検証した?
 ##### 省略
