@@ -55,7 +55,7 @@ Note: [peluigiさんの記事[1]](http://peluigi.hatenablog.com/entry/2019/11/08
 ##### CV, Paper, Point_Cloud, Implemented, 導入, 参照
 
 ## status
-##### 導入
+##### 参照
 
 ## read
 ##### A, I
