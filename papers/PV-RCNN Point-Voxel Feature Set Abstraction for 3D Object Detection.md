@@ -28,10 +28,11 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### 手法の概要
 - 概要図は図2の通り。
+- 従来の手法を統合する上で、voxelベースに対する以下の問題点を上げている。
 
 ![fig2](img/PPFSAf3OD/fig2.png)
 
-##### 指摘
+##### Voxelベースの問題点を挙げた。
 - 既存の検出器では以下の問題点が挙げられる。
   - (1) "These feature volumes are generally of low spatial resolution as they are downsampled by up to 8 times, which hinders accurate localization of objects in the input scene."
     - These feature volumeは3DCNNもしくは2DCNNによって生成されたもの。
@@ -45,7 +46,44 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 
 ### 工夫
 #### Voxel Set Abstraction Module
-##### PointNet++で提案された
+##### PointNet++で提案されたset abstraction operationを用いてvoxel-wiseの集約を行う。
+- "The surrounding points of keypoints are now regular voxels with multi-scale semantic features encoded by the 3D voxel CNN from the multiple levels, instead of the neighboring raw points with features learned from PointNet."
+- キーポイントからボクセルまでの相対3D座標値を計算し、任意の範囲内にあるボクセルのみ近傍として扱う。
+  - ただし、空ではないボクセルのみ選ぶ。
+- これらのボクセルの近傍の特徴はPointNetによってキーポイントのための特徴へ変換される。
+  - なお、近傍ボクセルの数も最大$T_ k$個になるようにランダムサンプリングされた後にMLPなどが施される。
+- 各レベルで生成されたキーポイントの特徴は連結される。
+
+##### このモジュールの拡張として、生の点と俯瞰図の特徴量をキーポイント特徴に連結する。(Extended VSA Module)
+- 生の点も上のPointNetによる処理を施した後に特徴として上記のキーポイントの特徴に連結する。
+- 俯瞰図もキーポイントを2D俯瞰図に投影して、bilinear補間を施した後にキーポイントの特徴に連結する。
+- これらをすべて連結したキーポイントの特徴$f_ i^{(p)}$は式(4)の通り。
+
+$$
+f_ i^{(p)} = [f_ i^{(pv)},f_ i^{(raw)},f_ i^{(bev)}], for i=i,\ldots,n \tag{4}
+$$
+
+##### キーポイントに対して重み付けを行う。
+- 前景オブジェクトであるキーポイントは提案の洗練に役に立つが、背景オブジェクトのキーポイントはそれほど役に立たないと考えた。
+- この考えを学習に組み込むため、3DBBアノテーションを用いてキーポイントがBBに含まれるか含まれないか予測する。
+- この予測を行うためのモジュールをPredicted Keypoint Weighting (PKW)モジュールと名付け、このモジュールは図3のように示される。
+
+![fig3](img/PPFSAf3OD/fig3.png)
+
+#### Keypoint-to-grid RoI Feature Abstraction for Proposal Refinement
+##### キーポイントからグリッドへのRoI feature abstractionを提案した。
+- 各3D提案にて、キーポイントの特徴を$6\times6\times6$個のグリッドポイントへそれぞれ集約する。
+- この集約も、任意の範囲内にあるグリッドポイントの近傍キーポイントを探し、PointNetによってそのキーポイント特徴を集約する。ここでもランダムサンプリングを施したあとにMLPなどを適応する。
+  - この際に、複数の範囲を設けてマルチスケールに特徴を得る。
+- このあと、提案ごとに、生成されたすべてのグリッドポイントを2層のMLPで256次元のRoI特徴へ変換する。
+
+![fig4](img/PPFSAf3OD/fig4.png)
+
+##### 生成された提案ごとのRoI特徴を用いてBBの向きやサイズ、中心座標を予測する。
+- MLPを利用して予測する。
+
+#### 訓練損失
+##### [省略]
 
 ## どうやって有効だと検証した?
 ##### 省略
