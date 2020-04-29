@@ -52,7 +52,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 - 実験は項とその冒頭を参照したのみ。
 
 ## key-words
-##### CV, Paper, Active_Learning, 導入, Detection, Classification, Pose_Estimation, RGB_Image
+##### CV, Paper, Active_Learning, 導入, Detection, Classification, Pose_Estimation, RGB_Image, Implemented
 
 ## status
 ##### 導入

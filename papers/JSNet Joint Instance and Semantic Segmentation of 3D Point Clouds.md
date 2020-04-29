@@ -48,7 +48,7 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 - 内容的にはASISと趣旨が似ている様に思える。
 
 ## key-words
-##### CV, Paper, Point_Cloud, Implemented, Instance_Segmentation, Semantic_Segmentation, 未完, Part_Segmentation
+##### CV, Paper, Point_Cloud, Implemented, Instance_Segmentation, Semantic_Segmentation, 導入, Part_Segmentation
 
 ## status
 ##### 導入

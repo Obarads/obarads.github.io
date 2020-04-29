@@ -28,7 +28,11 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 省略
 
 ## 議論はある?
-##### 省略
+#### フィルタリングは依然としてチャレンジングなタスクである。
+- そのフィルタリングに関する研究の今後の方向性については以下の通り。
+- "(1) Combination of color and geometric information: For point clouds, especially these containing color information, a pure color or pure geometric attributes based method cannot work well. Hence, it is expected to combine the color and geometric information in the filtering process to further increase the performance of a filtering scheme."
+- "(2) Time complexity reduction: Because point clouds contain a large number of points, some of which can be up to hundreds of thousands or even millions of points, computation on these point clouds is time consuming. It is necessaryto develop filtering technologies to filter point cloud effectively to reduce time complexity."
+- "(3) Filtering on point cloud sequence: Since object recognition from a point cloud sequence will become the future research direction. And filtering the point cloud sequence will help to improve the performance and accuracy of object recognition."
 
 ## 次に読むべき論文は?
 ##### なし
@@ -47,7 +51,8 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 2017/09/??
 
 ## コメント
-##### なし
+##### あり
+- Rは2.1~2.3まで、あまり理解できていない。知識不足。
 
 ## key-words
 ##### Survey, CV, Point_Cloud, 導入
@@ -56,7 +61,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 導入
 
 ## read
-##### なし
+##### A, I, R, C
 
 ## Citation
 ##### あり
