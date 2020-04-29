@@ -10,6 +10,10 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ##### 点群に対するセマンティックセグメンテーションとインスタンスセグメンテーションを同時に行うモデル、JSNetを提案した。
 - backboneネットワークの異なる層からの特徴を融合するpoint cloud feature fusion(PCFF)モジュールと、インスタンス特徴とセマンティック特徴を相互に集約するjoint instance semantic segmentation(JISS)モジュールを提案した。
 
+##### 実験では、ins.seg.、sem.seg.、part seg.タスクを行った。
+- セマンティックセグメンテーション、インスタンスセグメンテーションはS3DISでベンチマークを行った。
+- パーツセグメンテーションはShapeNetで行った。
+
 ## 先行研究と比べてどこがすごいの? or 関連事項
 - [IのASISに対する言及のみ取り上げる。理由はASISと趣旨が似ているから。]
 
@@ -19,7 +23,16 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 - また、訓練時に高次のスパーステンソルを生成するため、計算とメモリ消費の効率がいいとは言えない。
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-##### 省略
+### 手法の概要
+- 全体像は図2の通り。
+- エンコーダー&デコーダーとしてPointNetとPointConvを利用している。
+- 全体的な構造はASISと同じ。ただし、
+  - ボトルネック構造を採用して余計なメモリを使わないようにした。
+  - PCFFとJISSモジュールが本論文の提案であり、kNNのような距離計算を必要としない。
+    - [処理スピードなどは変わらない?]
+- 損失もASISやJSIS3Dと同じものを使っている模様。
+
+![fig2](img/JJIaSSo3PC/fig2.png)
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -46,15 +59,16 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
 ## コメント
 ##### あり
 - 内容的にはASISと趣旨が似ている様に思える。
+- Mは一部のみ。
 
 ## key-words
-##### CV, Paper, Point_Cloud, Implemented, Instance_Segmentation, Semantic_Segmentation, 導入, Part_Segmentation
+##### CV, Paper, Point_Cloud, Implemented, Instance_Segmentation, Semantic_Segmentation, 省略, Part_Segmentation
 
 ## status
-##### 導入
+##### 省略
 
 ## read
-##### A, I
+##### A, I, M
 
 ## Citation
 ##### 未記入
