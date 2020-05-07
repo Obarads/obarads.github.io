@@ -70,15 +70,15 @@ Note: 記事の見方や注意点については、[こちら](/)をご覧くだ
   - challenger $v_ C$とincumbent $v_ I$がある時、この方法は式(1)~(3)のように計算される。
 
 $$
-\delta(x)=\{\begin{array}{ll}1, & \text { if } x=0. \\ 0, & \text { otherwise }.\end{array} \tag{1}
+\delta(x)=\{\begin{array} {ll}1, & \text { if } x=0. \\ 0, & \text { otherwise }.\end{array} \tag{1}
 $$
 
 $$
-H_{a d d}=\sum_{V \in \pi\left(V_{C}\right)} \delta\left(C_{V}\right)-\beta \cdot \frac{C_{V}}{\lambda} \tag{2}
+H_{a d d}=\sum_{V \in \pi\left(V_{C}\right) } \delta\left(C_{V}\right)-\beta \cdot \frac{C_{V} }{\lambda} \tag{2}
 $$
 
 $$
-H_{r m v}=\sum_{V \in \pi\left(V_{I}\right)} \delta\left(C_{V}-1\right) \tag{3}
+H_{r m v}=\sum_{V \in \pi\left(V_{I}\right) } \delta\left(C_{V}-1\right) \tag{3}
 $$
 
 - ここで、
@@ -92,7 +92,7 @@ $$
 
 ##### 2つ目の問題を解決するためにNode points queryingを使う。
 - CAGQは、$\pi(v_ i)$中のcontext pointsから$K$個のnode pointsを選択するための戦略を提供する。
-- **Cube Query**: context pointsから$$K個の点をランダムに選択する。PointNet++で使われているボールクエリと比較して、Cube Queryは点の密度がアンバランスであるとき、より多くのスペースをカバーするようにできる。
+- **Cube Query**: context pointsから$K$個の点をランダムに選択する。PointNet++で使われているボールクエリと比較して、Cube Queryは点の密度がアンバランスであるとき、より多くのスペースをカバーするようにできる。
   - 図2より、ボールクエリは全ての生の点(グレー)から$K$個の点をサンプリングするため、3つの生の点を飲みを持つボクセルからnode pointsが選ばれることはない。
 - **K-Nearest Neighbors**: 全ての点が探索範囲である従来のkNNと違い、CAGQのkNNはcontext points内のみ探索するだけでよく、クエリを大幅に高速化できる。
   - 補足資料で最適化された方法も提供する。
