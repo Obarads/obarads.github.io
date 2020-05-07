@@ -62,7 +62,7 @@ h2 {
 h3 {
   font-size: 22px;
   padding-top: 4px;
-  padding-left: 10px;
+  padding-left: 13px;
   padding-bottom: 10px;
   border-bottom: dashed 2px #5a5a5a;
   border-left: solid 8px #ff2d07;
@@ -70,20 +70,20 @@ h3 {
 h4 {
   font-size: 19px;
   border-left: double 6px #ff2d07;
-  padding-left: 6px;
+  padding-left: 15px;
   padding-bottom: 7px;
 }
 h5 {
   font-size: 17px;
   font-weight: bold;
   position: relative;
-  padding: 1px 0px 0px 1.6em;
+  padding: 3.5px 0px 0px 1.2em;
   margin-bottom: 5px;
 }
 h5::before {
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: -5px;
   content: url("../font/svg/check-24px.svg");
   width: 10px;
   height: 10px;
@@ -275,7 +275,6 @@ div > ol {
 /* for smart phones (xs)*/
 @media screen and (min-width:0px) and (max-width:575.98px) {
   li {
-    margin-left: 6px;
   }
   ul,
   ol {
@@ -287,7 +286,6 @@ div > ol {
 /* for landscape phones (sm) ~ desktop (lg)*/
 @media screen and (min-width:576px) and (max-width:1199.98px) {
   li {
-    margin-left: 6px;
   }
   ul,
   ol {
@@ -299,7 +297,6 @@ div > ol {
 /* for large desktop (xl)*/
 @media screen and (min-width:1200px){
   li {
-    margin-left: 6px;
   }
   ul,
   ol {
