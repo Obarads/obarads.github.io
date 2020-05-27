@@ -31,6 +31,7 @@ method: [
   "'Supervised Learning'",
   "'Few-Shot Learning'",
   "'Meta Learning'",
+  "'Semi-Supervised Learning'",
   "'Weakly Supervised Learning'",
   "'Zero-Shot Learning'"
 ]

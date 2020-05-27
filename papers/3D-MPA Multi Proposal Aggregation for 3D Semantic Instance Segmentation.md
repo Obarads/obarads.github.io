@@ -43,7 +43,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### Paper, CV, Point_Cloud, Instance_Segmentation, Voxel
+##### Paper, CV, Point_Cloud, Instance_Segmentation, Voxel, 未完
 
 ## status
 ##### 未完
