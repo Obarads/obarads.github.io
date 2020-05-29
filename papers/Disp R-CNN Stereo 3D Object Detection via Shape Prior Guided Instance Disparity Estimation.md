@@ -47,7 +47,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### CV, Paper, 導入, Detection, RGB_Image, Implemented
+##### CV, Paper, 導入, Detection, RGB_Image, Implemented, Stereo_Image
 
 ## status
 ##### 導入

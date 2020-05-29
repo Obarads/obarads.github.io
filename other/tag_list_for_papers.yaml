@@ -48,7 +48,8 @@ data: [
   "'Sound'",
   "'Supervoxel'",
   "'Superpixel'",
-  "'Superpoint'"
+  "'Superpoint'",
+  "'Stereo Image'"
 ]
 
 task: [
