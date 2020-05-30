@@ -48,6 +48,31 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - $G$はcoarse to fine的に、段階的[(層ごと)]に構築される。
 - ここで、層$L$のグラフを$G_ L$と示す。
 - $L$が大きいほど点の数が多い層となるため、層0が最も粗い層であり点が最も少ない。
+- Edge branchでの処理の殆どは、Edge moduleによって行われる。
+
+##### Edge Modiuleを用いて$L$層の点特徴からエッジ特徴を生成する。
+- Edge Moduleの引数は$L$層の点特徴$\mathbb{F}_ {V_ L}$と($L-1$)層のエッジ特徴$\mathbb{H}_ {E_ {L-1}}$であり、$L$層のエッジ特徴を返す。
+  - $G_ L=(V_ L, E_ L)$はグラフ
+  - $N_ L$は点の数とする。
+- 図3に示す内容は、式(1)のように示される。
+
+$$
+\mathbb{H}_{E_{L}}=M_{\text {encoder}}\left(\mathbb{F}_{V_{L}}, M_{\text {upsample}}\left(\mathbb{H}_{E_{L-1}}\right)\right) \tag{1}
+$$
+
+- ここで
+  - $M_ {encoder}$はedge encoder
+  - $M_ {upsampling}$はedge upsamplingとする。
+- このモジュールはグラフ$G_ {L-1}$のエッジ特徴をグラフ$G_ L$へマッピングする。
+
+![fig3](img/HPINfPCSS/fig3.png)
+
+- 各エッジ$e_ {i,j}=(p_ i, p_ j)\in E_ L$に対して、$L$のエッジ特徴は式(2)のように示される。
+
+$$
+H_{i, j}^{L}=M_{\text {encoder}}\left(F_{i}^{L}, F_{j}^{L}, H_{i, j}^{L-1 \rightarrow L}\right) \tag{2}
+$$
+
 
 #### Point Branch
 
@@ -91,7 +116,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 導入
 
 ## read
-##### A, I, C
+##### A, I, C, M
 
 ## Citation
 ##### 未記入
