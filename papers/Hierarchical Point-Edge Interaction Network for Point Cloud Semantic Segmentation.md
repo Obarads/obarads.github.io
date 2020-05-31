@@ -37,10 +37,10 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 
 ##### 2. Encoding stageで得られた点の特徴量に基づいて、Edge BranchとPoint Branchによるセグメンテーション予測を行う。
 - これらのBranchは、それぞれ別の損失を持っている。
-- 詳細は工夫のedge branchとpoint branchを参照。
+- 詳細は工夫のEdge BranchとPoint Branchを参照。
 
 ### 工夫
-#### Edge Branch
+#### Edge BranchとPoint Branch
 ##### 層の深度と点の数は比例する構造になっている。
 - 層と点の関係は以下の通り。
 - $N$個の点$\mathcal{P}=\{p_{1}, p_{2}, \ldots, p_{N}\}$を持つ点群が与えられる場合、有向グラフ$G=(V,E)$を構築する。
@@ -54,7 +54,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - Edge Moduleの引数は$L$層の点特徴$\mathbb{F}_ {V_ L}$と($L-1$)層のエッジ特徴$\mathbb{H}_ {E_ {L-1}}$であり、$L$層のエッジ特徴を返す。
   - $G_ L=(V_ L, E_ L)$はグラフ
   - $N_ L$は点の数とする。
-- 図3に示す内容は、式(1)のように示される。
+- 図3(a)に示す内容は、式(1)のように示される。
 
 $$
 \mathbb{H}_{E_{L}}=M_{\text {encoder}}\left(\mathbb{F}_{V_{L}}, M_{\text {upsample}}\left(\mathbb{H}_{E_{L-1}}\right)\right) \tag{1}
@@ -73,14 +73,66 @@ $$
 H_{i, j}^{L}=M_{\text {encoder}}\left(F_{i}^{L}, F_{j}^{L}, H_{i, j}^{L-1 \rightarrow L}\right) \tag{2}
 $$
 
+- ここで、
+  - $F_i^L$と$F_ j^L$はそれぞれ$p_ i$と$p_ j$の点特徴
+  - $H_{i, j}^{L-1 \rightarrow L}$は$L-1$層から$L$層へアップサンプリングされたエッジ特徴を指す。
+- 図3(b)に示す内容は、式(3)(単体エッジのための$M_ {encoder}$)のように示される。
 
-#### Point Branch
+$$
+H_{i, j}^{L}=f_{e x t}^{(1)}\left(\left[f_{e x t}^{(2)}\left(f_{e d g e}\left(F_{i}^{L}, F_{j}^{L}\right)\right), H_{i, j}^{L-1 \rightarrow L}\right]\right) 
+$$
+
+- ここで、
+  - $[\cdot,\cdot]$は連結
+  - $f_{e x t}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$は微分可能関数である。
+  - 実装では、MLPを$f_ {ext}$として使う。
+- また、エッジ関数$f_ {edge}$は接続した２つの点の特徴量を入力として、エッジの特徴量を出力する。これは式(4)のように示される。
+
+$$
+f_{e d g e}\left(F_{i}^{L}, F_{j}^{L}\right)=\left[\left(p_{j}-p_{i}\right), F_{j}^{L}, F_{i}^{L}\right] \tag{4}
+$$
+
+- ここでは、
+  - $[\cdot,\cdot,\cdot]$は3要素の連結
+  - $p_i,p_j$は3D点座標を示す。
+  - 2点はの特徴は2点の情報を完全に保持しておくために連結される。
+  - 二点間の相対座標を利用するため、$(p_i-p_j)$を与える。
+
+##### Point Moduleでは、$L$層の$G_L$中の点$p_i$へ$p_i$に接続されているエッジのコンテキスト情報を含むように処理する。
+- 点の情報を集約するため、maxpoolingを使用する。
+- まずは、点$p_i$から始まるすべてのエッジを含む集合を$E_L(p_i)$として表し、対応するエッジ特徴の集合を式(5)に示す。
+
+$$
+\mathbb{H}_{E_{L}\left(p_{i}\right)}=\left\{H_{i, j}^{L} |\left(p_{i}, p_{j}\right) \in E_{L}\left(p_{i}\right)\right\} \tag{5}
+$$
+
+- このとき、図4に示すように点特徴$F_i^L$は式(6)で更新される。
+
+$$
+\left(F_{i}^{L}\right)_{n e w}=\left[F_{i}^{L}, \operatorname{Max} \operatorname{Pool}\left(\mathbb{H}_{E_{L}\left(p_{i}\right)}\right)\right] \tag{6}
+$$
+
+- ここで点へエッジ情報を組み込むのはmessage passing rangeを広げることでより遠くの局所領域特徴を汲み取ることができるようになるため。
+  - [messageとは、"第1式では隣接ノードとエッジの特徴から注目ノードに向かう"[[1]より引用]もののことらしい。]
+  - [message passing rangeとは、そのmessageの範囲のことだと思う(そのまんま)。]
+- [互いのブランチの特徴量を利用することで、よりパワフルになり、最終的な予測が良くなる。]
+
+##### グラフは0層で初期化された後、段階的に構築される。
+- 図5に示すように、階層的にグラフ構築を行う。
+- 前の層のエッジを意識する"edge upsample"を設計することで、エッジに対して広範囲のmessage passingが可能になる。
+- グラフはグラフは0層で初期化される。初期化は、$k_0$の近傍点を結ぶことで行われる。
+- このグラフ$G_0=(V_0,E_0)$の初期化は式(7)で示される。
+
+$$
+H_{i, j}^{L}=M_{e n c o d e r}\left(F_{i}^{L}, F_{j}^{L}, H_{i, j}^{L-1 \rightarrow L}\right) \tag{7}
+$$
+
+- このとき、
+  - $\mathcal{P}_0$は0層での点集合
+    - なお、この時点ではエンコーディング時にFPSによるダウンサンプリングを受けているため、点の数は少ない。
+    - $N_{k_0}(p_i)$は点$p_i$の$k_0$近傍点と自身の集合である。
 
 
-- 図2は提案手法の概要図。本提案はPointNet++のようなencoder-decoder構造モデルを持つPoint Branch(図2の水色部分)と、Edge Branch(図2の黄色部分)からなる。
-  - Edge Brachは違う層から点特徴(Point feature)を受け取って階層的にエッジ特徴(edge feature)を生成していく。
-  - その後、局所グラフの情報を統合するために、Point branchへエッジ特徴を供給する。
-- 各点に対して、対応するエッジ特徴が局所的な幾何学及び意味的な情報を提供して、点の表現を強化する。
 
 
 ## どうやって有効だと検証した?
@@ -93,8 +145,8 @@ $$
 ##### なし
 
 ## 論文関連リンク
-##### なし
-1. [なし]()[1]
+##### あり
+1. [shionhonda, GNNまとめ(2): 様々なSpatial GCN, 2019.(アクセス:2020/05/31)](https://qiita.com/shionhonda/items/0d747b00fe6ddaff26e2)
 
 ## 会議, 論文誌, etc.
 ##### ICCV 2019
