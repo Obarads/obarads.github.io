@@ -1,8 +1,7 @@
 # A review of algorithms for filtering the 3D point cloud
 
 元の論文の公開ページ : [sciencedirect.com](https://www.sciencedirect.com/science/article/abs/pii/S0923596517300930)  
-提案モデルの実装 : [なし]()  
-Github Issues : []()  
+提案モデルの実装 : [unkown]()  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。  
 Note: 引用中の[*]は論文内の文献番号である。該当する論文は、論文関連リンクの各リストの末尾に基づいて調べられる。
@@ -22,7 +21,21 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-##### 省略
+### Survey overview
+- "Section 2 presents an overview of filtering approaches for 3D point cloud."
+- "experimental results and discussion are illustrated in Section 3."
+- "Conclusions are drawn in Section 4."
+
+### Section 2 ("Methods for filtering point cloud")
+#### "2.1. Statistical-based filtering techniques"
+- "In the context of filtering point cloud, many techniques utilize the adaptation of the statistical conceptions, which are suitable for the nature of the point cloud."
+
+##### Statistical-based filtering techniques achieve denoising.
+- These techinques is as follows.
+- "Schall et al. [18] filtered point cloud using a kernel based clustering approach."
+- "Narváez et al. [15] proposed a new weighted variant of the principal component analysis method for denoising point cloud".
+
+[blank]
 
 ## どうやって有効だと検証した?
 ##### 省略
@@ -38,8 +51,9 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## 論文関連リンク
-##### なし
-1. [なし]()[1]
+##### あり
+1. [O. Schall, A. Belyaev, H.P. Seidel, Robust filtering of noisy scattered point data, in: Proceedings Eurographics/IEEE VGTC Symposium Point-Based Graphics, Stony Brook, NY, USA, June, 2005, pp. 71–144.](https://ieeexplore.ieee.org/document/1500321/authors#authors)[18]
+2. [E.A.L. Narváez, N.E.L. Narváez, Point cloud denoising using robust principal com-ponent analysis, in: Proceedings of the First International Conference on Computer Graphics Theory and Applications, Setúbal, Portugal, February, 2006, pp. 51–58.](https://www.researchgate.net/publication/220869008_Point_cloud_denoising_using_robust_principal_component_analysis)[15]
 
 ## 会議, 論文誌, etc.
 ##### Signal Processing: Image Communication Volume 57, September 2017, Pages 103-112
@@ -58,7 +72,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### Survey, CV, Point_Cloud, 導入
 
 ## status
-##### 導入
+##### 省略
 
 ## read
 ##### A, I, R, C

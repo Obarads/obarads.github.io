@@ -78,6 +78,7 @@ task: [
   "'Registration'",
   "'Reconstruction'",
   "'Reflection Removal'",
+  "'Re-identification'",
   "'Scene Graph'",
   "'Simulation'",
   "'SLAM'",
@@ -88,6 +89,7 @@ task: [
 etc: [
   "'AutoEncoder'",
   "'Clustering'",
+  "'Competition'",
   "'Encoder-Decoder'",
   "'GAN'",
   "'Implemented'",

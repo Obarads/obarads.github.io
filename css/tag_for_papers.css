@@ -318,6 +318,11 @@ background:#36558F;
 color:#fff;
 }
 
+.__Re-identification{
+background:#36558F;
+color:#fff;
+}
+
 .__Scene_Graph{
 background:#36558F;
 color:#fff;
@@ -349,6 +354,11 @@ color:#fff;
 }
 
 .__Clustering{
+background:#aa08d3;
+color:#fff;
+}
+
+.__Competition{
 background:#aa08d3;
 color:#fff;
 }
