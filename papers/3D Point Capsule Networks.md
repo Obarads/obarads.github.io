@@ -2,7 +2,6 @@
 
 元の論文の公開ページ : [openaccess.thecvf.com](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zhao_3D_Point_Capsule_Networks_CVPR_2019_paper.pdf)  
 提案モデルの実装 : [yongheng1991/3D-point-capsule-networks](https://github.com/yongheng1991/3D-point-capsule-networks)  
-Github Issues : []()  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 Note: 引用中の[*]は論文内の文献番号である。該当する論文は、論文関連リンクの各リストの末尾に基づいて調べられる。
@@ -39,6 +38,8 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - 手法の全体像は図2の通り。
 
 ![fig2](img/3PCN/fig2.png)
+
+
 
 ## どうやって有効だと検証した?
 ##### 省略

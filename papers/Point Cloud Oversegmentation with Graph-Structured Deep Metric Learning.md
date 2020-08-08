@@ -37,7 +37,7 @@ Note: 現在このページは元論文の参考文献番号を参照してい�
 
 以下に、1)局所点埋め込み器と、2)グラフもしくはクラスタベースのオーバーセグメンテーションアルゴリズムを使った埋め込みから点群オーバーセグメンテーションを計算する方法を説明する。
 
-各点$i$を含む点群$C$を処理すると考える。この各点は座標情報$p_ i\in\mathbb{R}^3$と$d$次元の放射計測情報$r_ i\in\mathbb{R}^d$(色、LiDARならレーザーの強度、無い場合は使わない)を含む。また各点$i$は入力点中の$k$近傍$N_ i$の座標情報と放射計測情報から成る集合特徴$P_ {i}=\\{p_ {j} | j \in N_ {i}\\}$と$R_ {i}=\\{r_ {j} | j \in N_ {i}\\}$にそれぞれ関連している。集合特徴$X$へ適応する任意の演算子や関数$f(X)=\\{f(x) | x \in X\\}$は全ての要素に適応される。
+各点$i$を含む点群$C$を処理すると考える。この各点は座標情報$p_ i\in\mathbb{R}^3$と$d$次元の放射計測情報$r_ i\in\mathbb{R}^d$(色、LiDARならレーザーの強度、無い場合は使わない)を含む。また各点$i$は入力点中の$k$近傍$N_ i$の座標情報と放射計測情報から成る集合特徴$P_ {i}= \{p_ {j} | j \in N_ {i}\}$と$R_ {i}= \{r_ {j} | j \in N_ {i} \}$にそれぞれ関連している。集合特徴$X$へ適応する任意の演算子や関数$f(X)=\{f(x) | x \in X \}$は全ての要素に適応される。
 
 ### Local Point Embedding
 著者らの目的は、各点特徴の局所近傍の幾何学情報と放射計測情報をコンパクトな$m$次元の埋め込み$e_ i$を関連付けることである。埋め込みは訓練中に崩壊しないように$m$単位球$\mathbb{S}_ m$に制約され[52]、そして互いの距離を正規化する。この目的のため、Local Point Embedder(LPE)というPointNetからインスパイアされた軽量のネットワークを導入する。このLPEはPointNetと違い、入力点群全体ではなく純粋なローカル情報に基づき各点を符号化する。以下にPointNetと違うLPEの部品について説明する。
@@ -192,12 +192,12 @@ graph structured contrastive loss の効率において、$\mu_ {i, j}$の選択
     - 言い換えれば$\mathcal{C}$がオブジェクトもしくはsuperpoints間のすべてのエッジが削除されたとき、$\mathcal{C}$はthe set of connected components of the graph $G$であり、
     - *super-edge*(*i.e.* set of edges)($U,V$)$\in \mathcal{E}$は、$\mathcal{C}$中の$U$,$V$間の$E_ {inter}$のinter-edgesの集合である。
     - このとき、上記の定義は以下のように表される。
-        - $$ \begin{array}{l}{\mathcal{C}=\{O \cap S | O \in \mathcal{O}, S \in \mathcal{S}\}} \\ {\mathcal{E}=\left\{\left\{(i, j) \in(U \times V) \cap E_{\text {inter }}\right\} | U, V \in \mathcal{C}\right\}}\end{array}$$
+        - $$\begin{array}{l}{\mathcal{C}=\{O \cap S | O \in \mathcal{O}, S \in \mathcal{S}\}} \\ {\mathcal{E}=\left\{\left\{(i, j) \in(U \times V) \cap E_{\text {inter }}\right\} | U, V \in \mathcal{C}\right\}}\end{array}$$
 
 - 著者らは重み$\mu_ {U,V}$を各superedge$(U,V)$へ、$\mu_ {i,j}$を各edgeに振り分ける。
     - 重みは以下の通り。
-    - $$ \begin{array}{l}{\mu_{U, V}=\frac{\mu \min (|U|,|V|)}{|(U, V)|} \quad \text{for}(U, V) \in \mathcal{E}} \\ {\mu_{i, j}=\mu_{U, V} \quad \text { for all }(i, j) \in(U, V)}\end{array} $$
-        - $\mu$はモデルのパラメータである。
+    - $$\begin{array}{l}{\mu_{U, V}=\frac{\mu \min (|U|,|V|)}{|(U, V)|} \quad \text{for}(U, V) \in \mathcal{E}} \\ {\mu_{i, j}=\mu_{U, V} \quad \text { for all }(i, j) \in(U, V)}\end{array}$$
+      - $\mu$はモデルのパラメータである。
     - このような重みは、界面のpurityと形状によるedgesの影響を同時に考慮する。[訳間違ってるかも]
     - 実際、superedge $(U,V)$のedgeが境界として見過ごされると、the superpoints $U$と$V$はマージされるだろう。
     - $U$と$V$は異なるオブジェクトをカバーするので、このようなマージは最低$\min (|U|,|V|)$個のvertices trespassingを起こす。
