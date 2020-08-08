@@ -1,0 +1,105 @@
+
+.pound_link_adjustment{
+  margin-top: -50px;
+  padding-top: 50px;
+}
+
+h1 {
+  padding-top: 0px;
+  font-size: 30px;
+}
+h2 {
+  font-size: 25px;
+  margin-top: 15px;
+  padding-top: 4px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-left: solid 14px #ff2d07;
+  border-bottom: solid 2px #5a5a5a;
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 22px;
+  padding-top: 4px;
+  padding-left: 13px;
+  padding-bottom: 7px;
+  border-bottom: dashed 2px #5a5a5a;
+  border-left: solid 8px #ff2d07;
+  margin-bottom: 17px;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+h4 {
+  font-size: 19px;
+  border-left: double 6px #ff2d07;
+  padding-left: 15px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  margin: 0px 0px 9px 5px;
+}
+h5 {
+  font-size: 17px;
+  font-weight: bold;
+  position: relative;
+  padding: 3.5px 0px 0px 1.6em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+h5::before {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  content: url("/svg/check-24px.svg");
+  width: 10px;
+  height: 10px;
+  line-height: 20px;
+  font-size: .9em;
+  text-align: center;
+}
+
+p img, li img {
+  margin: auto;
+  padding-bottom: 13px;
+  display: block;
+  max-width: 100%;
+}
+
+/* li design */
+div > ul,
+div > ol {
+  padding-left: 20px;
+}
+/* bootstrap ver 4.4*/
+/* for smart phones (xs)*/
+@media screen and (min-width:0px) and (max-width:575.98px) {
+  li {
+  }
+  ul,
+  ol {
+    /*padding-left: 6px;*/
+    padding-left: 5px;
+    /* margin-bottom: 20px; */
+  }
+}
+/* for landscape phones (sm) ~ desktop (lg)*/
+@media screen and (min-width:576px) and (max-width:1199.98px) {
+  li {
+  }
+  ul,
+  ol {
+    /*padding-left: 6px;*/
+    padding-left: 12px;
+    /* margin-bottom: 20px; */
+  }
+}
+/* for large desktop (xl)*/
+@media screen and (min-width:1200px){
+  li {
+  }
+  ul,
+  ol {
+    /*padding-left: 6px;*/
+    padding-left: 19px;
+    /* margin-bottom: 20px; */
+  }
+}

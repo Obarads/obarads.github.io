@@ -1,0 +1,106 @@
+status: [
+  "'完了'",
+  "'省略'",
+  "'参照'",
+  "'未完'",
+  "'修正'",
+  "'導入'",
+  "'旧版'",
+]
+
+contents: [
+  "'Paper'",
+  "'Technical Report'",
+  "'Article'",
+  "'Survey'",
+  "'Memo'",
+  "'Other'"
+]
+
+field: [
+  "'CV'",
+  "'NLP'",
+  "'Robot'",
+]
+
+method: [
+  "'Active Learning'",
+  "'Reinforcement Learning'",
+  "'Self-Supervised Learning'",
+  "'Unsupervised Learning'",
+  "'Supervised Learning'",
+  "'Few-Shot Learning'",
+  "'Meta Learning'",
+  "'Semi-Supervised Learning'",
+  "'Weakly Supervised Learning'",
+  "'Zero-Shot Learning'"
+]
+
+data: [
+  "'RGB Image'",
+  "'Depth Image'",
+  "'Graph'",
+  "'Intensity Image'",
+  "'Mesh'",
+  "'Point Cloud'",
+  "'Voxel'",
+  "'Video'",
+  "'Sound'",
+  "'Supervoxel'",
+  "'Superpixel'",
+  "'Superpoint'",
+  "'Stereo Image'"
+]
+
+task: [
+  "'3D Estimation'",
+  "'Action Anticipation'",
+  "'Adversarial Examples'",
+  "'Analytics'",
+  "'Classification'",
+  "'Completion'",
+  "'Data Augmentation'",
+  "'Dataset'",
+  "'Denoising'",
+  "'Detection'",
+  "'Depth Estimation'",
+  "'Domain Adaptation'",
+  "'Flow Estimation'",
+  "'Gaze Estimation'",
+  "'Grasping'",
+  "'Instance Segmentation'",
+  "'Labeling'",
+  "'Normal Estimation'",
+  "'One-Class & Anomaly Detection'",
+  "'Oversegmentation'",
+  "'Part Segmentation'",
+  "'Pose Estimation'",
+  "'Registration'",
+  "'Reconstruction'",
+  "'Reflection Removal'",
+  "'Re-identification'",
+  "'Scene Graph'",
+  "'Simulation'",
+  "'SLAM'",
+  "'Semantic Segmentation'",
+  "'Super-Resolution'",
+]
+
+etc: [
+  "'AutoEncoder'",
+  "'Clustering'",
+  "'Competition'",
+  "'Encoder-Decoder'",
+  "'GAN'",
+  "'Implemented'",
+  "'Interpretability'",
+  "'Multi-View'",
+  "'New Pooling'",
+  "'RNN'",
+  "'Rendering'",
+  "'Sensor Fusion'",
+  "'Sparsity'",
+  "'Synthetic'",
+  "'TreeRNN'",
+  "'w/o DL'"
+]

@@ -1,0 +1,31 @@
+.list-link {
+  text-decoration: unset;
+}
+.list-nav{
+  padding: 3px 3px 9px 9px;
+}
+.list-category{
+  font-size: 16px;
+  color: white;
+}
+
+.btn-flat {
+  font-family: font-btn;
+  text-shadow: none;
+  display: inline-block;
+  padding: 0em 0.3em;
+  margin-right: 3px;
+  margin-top: 3px;
+  text-decoration: none;
+  background: orange;
+  color: white;
+  border-radius: 5px;
+  font-size: 3.7mm;
+}
+
+.btn-flat:hover,
+.hovered {
+  color: #fff !important;
+  /* Prevent inheritance from `body` */
+  background-color: #333 !important;
+}
