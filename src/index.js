@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // container
 import Paperbase from "./Paperbase";
 import { MarkdownRender, MarkdownNavigatorRender, Toggle, ActLogNavigatorRender, NoMatchRender } from "./Renders";
-// import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker';
 import raw from "./raw.macro";
 
 // data
@@ -67,8 +67,7 @@ function CreateDetail() {
     return paper[0] === id;
   });
   if (paper_exists) {
-    const markdown_contents = raw(`../public/papers/${id}.md`);
-    console.log(markdown_contents)
+    const markdown_contents = raw(`../public/data/${id}.md`);
     return (
       <React.StrictMode>
         <Paperbase
@@ -90,11 +89,11 @@ ReactDOM.render(
       <Route exact path="/">
         <CreateHome />
       </Route>
+      <Route exact path="/papers/">
+        <CreatePapers />
+      </Route>
       <Route path="/papers/:id">
         <CreateDetail />
-      </Route>
-      <Route path="/papers">
-        <CreatePapers />
       </Route>
       <Route path="*">
         <NoMatchRender />

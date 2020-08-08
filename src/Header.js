@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 // material design
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
@@ -68,17 +68,17 @@ function Header(props) {
             </Hidden>
             <Grid item xs />
             <Grid item>
-              <Link className={classes.link} href="/" variant="body2">
+              <Link className={classes.link} to="/">
                 <HomeIcon />
               </Link>
             </Grid>
             <Grid item>
-              <Link className={classes.link} href="/papers" variant="body2">
+              <Link className={classes.link} to="/papers">
                 <FindInPageIcon />
               </Link>
             </Grid>
             <Grid item>
-              <Link className={classes.link} href="https://github.com/Obarads/obarads.github.io" variant="body2">
+              <Link className={classes.link} href="https://github.com/Obarads/obarads.github.io">
                 <GitHubIcon />
               </Link>
             </Grid>

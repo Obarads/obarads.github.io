@@ -23,11 +23,13 @@ import { tag_data_list_for_papers, tag_contents_list_for_papers, tag_etc_list_fo
 import {information_list_for_papers} from "./build/list_for_papers"
 import {actlog_list_for_papers} from "./build/actlog_list_for_papers"
 
+export const paper_link = "/papers/"
+
 // Mathjax setting
 const transformImageUri = input =>
   /^https?:/.test(input)
     ? input
-    : `/papers/${input}`
+    : `/data/${input}`
 
 const HeadingRenderer = props => {
   if (props.level === 1) {
@@ -146,7 +148,7 @@ export function ActLogNavigatorRender(props) {
       {act_log.map((log) => (
         <div className="actlog-block">
           <div className={"actlog-log"}>{log[0]} {":" + log[3]}</div>
-          <Link to={"/papers/" + log[1]} className={"actlog-link"}>{log[4]}</Link><br />
+          <Link to={paper_link + log[1]} className={"actlog-link"}>{log[4]}</Link><br />
           <TagRender tag={log[2].split(",")} />
         </div>
       ))}
@@ -163,7 +165,10 @@ export function TagRender(props) {
 
   return <span>
     {tag.map((tag_name) => (
-      <a className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/\&/g, "_") + " list-link btn-flat"} onClick={() => tag_action(tag_name, "__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/\&/g, "_"))}>{tag_name}</a>))}
+      <a className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_") + " list-link btn-flat"} 
+      onClick={() => tag_action(tag_name, "__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_"))}>
+        {tag_name}
+      </a>))}
   </span>
 }
 
@@ -205,7 +210,7 @@ export class Toggle {
       if (column_number === this.link_number) {
         const tag = row[1].split(",")
         return (<span>
-          <Link className="list-link" to={"/papers/" + row[0]}>{row[column_number]} </Link><br />
+          <Link className="list-link" to={paper_link + row[0]}>{row[column_number]} </Link><br />
           <TagRender tag={tag} action={this.handleClick} />
         </span>)
       }
@@ -333,16 +338,6 @@ export class Toggle {
         ))}
       </span>
     )
-  }
-
-  render(props) {
-    return (
-      <TableBody>
-      </TableBody>
-      // <button onClick={this.handleClick}>
-      //   {this.state.isToggleOn ? 'ON' : 'OFF'}
-      // </button>
-    );
   }
 }
 
