@@ -34,11 +34,24 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 省略
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-##### 手法の概要
+### Formulation
+- AtlasNet conventionを参考にし、一般的な3Dオートエンコーダーと提案手法の比較を行い、そこから提案手法の優位性を説明する。
+
+#### 定義1 (Surface and Point Cloud)
+- 3D表面は微分可能な3Dユークリッド空間内にある2-manifold(2D多様体)である: $\mathcal{M}^2\in\mathbb{R}^3$
+- 点群を表面からサンプリングされた離散的なサブセットとして近似する: $\mathbf{X}=\{\mathbf{x}_i\in\mathcal{M}^2\cap \mathbb{R}^{3}\}$
+
+#### 定義2 (Diffeomorphism)
+- 微分同相写像は、2つの微分可能な表面間で連続、可逆、構造保存する写像である。[?]
+
+#### 定義3 (Chart and Parametrization)
+
+### 手法の概要
 - 手法の全体像は図2の通り。
 
 ![fig2](img/3PCN/fig2.png)
 
+- 
 
 
 ## どうやって有効だと検証した?
