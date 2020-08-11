@@ -2,7 +2,6 @@
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1802.05384)  
 提案モデルの実装 : [ThibaultGROUEIX/AtlasNet](https://github.com/ThibaultGROUEIX/AtlasNet)  
-Github Issues : [#133](https://github.com/Obarads/obarads.github.io/issues/133)
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 

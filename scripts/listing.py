@@ -170,7 +170,7 @@ def coloring_tag_template(tags,propertis='background:rgb(0,0,0);\ncolor:#fff;'):
 def update_lists(dir_name, tag_dict, tag_list):
 
     # create new papers contents (I don't use status_tags still.)
-    info_list, kw_tags, date_tags, status_tags, actlog_list = extract_data(PATH+"/public/"+ dir_name +"/", tag_dict, tag_list)
+    info_list, kw_tags, date_tags, status_tags, actlog_list = extract_data(PATH+"/public/data/", tag_dict, tag_list)
 
     # create list.js
     info_list_for_js = "export function information_list_for_"+ dir_name +"(){ return ["+",".join(info_list)+"]}\n"
