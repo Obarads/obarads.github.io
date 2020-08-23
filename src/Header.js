@@ -78,9 +78,9 @@ function Header(props) {
               </Link>
             </Grid>
             <Grid item>
-              <Link className={classes.link} href="https://github.com/Obarads/obarads.github.io">
+              <a className={classes.link} href="https://github.com/Obarads/obarads.github.io">
                 <GitHubIcon />
-              </Link>
+              </a>
             </Grid>
           </Grid>
         </Toolbar>
