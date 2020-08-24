@@ -48,7 +48,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### CV, RGB_Image, 導入
+##### CV, RGB_Image, 導入, Paper
 
 ## status
 ##### 導入

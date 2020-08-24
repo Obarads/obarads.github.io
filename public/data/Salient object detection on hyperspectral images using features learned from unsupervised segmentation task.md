@@ -1,8 +1,7 @@
 # Salient object detection on hyperspectral images using features learned from unsupervised segmentation task
 
 元の論文の公開ページ : [arxiv](https://arxiv.org/abs/1902.10993)  
-提案モデルの実装 : []()  
-Github Issues : []()  
+提案モデルの実装 : [非公式?:gqding/SUDF](https://github.com/gqding/SUDF)  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 

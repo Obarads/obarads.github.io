@@ -60,7 +60,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### CV, Paper, Point_Cloud, Superpixel, Oversegmentation, 省略
+##### CV, Paper, Point_Cloud, Superpixel, Oversegmentation, 省略, Implemented
 
 ## status
 ##### 省略

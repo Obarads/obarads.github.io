@@ -128,7 +128,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - "$\beta$ is the percentage of non-edge points among all classes."
 
 ##### $L_{dual}$はdualityを考慮するための損失である。
-- 予測されたSSPマスク$s\in\mathbf{R}^{N\times K}$からsub-moduleを介して生成されたedge activation point maps $\{a_{1}, \ldots, a_{K}\}(a_{i} \in \mathbf{R}\N$は式(1)の通り。
+- 予測されたSSPマスク$s\in\mathbf{R}^{N\times K}$からsub-moduleを介して生成されたedge activation point maps $\{a_{1}, \ldots, a_{K}\}(a_{i} \in \mathbf{R}^N)$は式(1)の通り。
 - 式(1)と同じく、edge activation point mapsのGT値を生成する場合、以下のようになる。
 - $$\hat{a}_{i}=col_{i}(\mid M * One_hot(\hat{s})-{ One_hot }(\hat{s}) \mid) \tag{6}$$
   - softmaxからone_hotに変更されていることに注意。
@@ -165,7 +165,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### CV, Paper, Point_Cloud, Semantic_Segmentation, 省略
+##### CV, Paper, Point_Cloud, Semantic_Segmentation, 省略, Implemented
 
 ## status
 ##### 省略
