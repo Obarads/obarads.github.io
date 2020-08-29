@@ -47,4 +47,4 @@
 ##### Memo, Detection
 
 ## status
-##### 未完
+##### 省略

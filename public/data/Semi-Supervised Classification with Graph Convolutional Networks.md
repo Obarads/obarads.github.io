@@ -2,12 +2,13 @@
 
 元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/1609.02907)  
 提案モデルの実装 : [tkipf/gcn](https://github.com/tkipf/gcn)  
-Github Issues : []()  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。  
 Note: 引用中の[*]は論文内の文献番号である。該当する論文は、論文関連リンクの各リストの末尾に基づいて調べられる。
 
 ## どんなもの?
+- コメントあり。
+- こちらのpeluigiさんのブログを参照->[peluigi. SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKSを読んだのでメモ. 2018. (アクセス:2020/08/29)](http://peluigi.hatenablog.com/entry/2018/08/22/183809)
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 ##### 省略
@@ -26,7 +27,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 
 ## 論文関連リンク
 ##### なし
-1. [なし]()[1]
+1. [peluigi. SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKSを読んだのでメモ. 2018. (アクセス:2020/08/29)](http://peluigi.hatenablog.com/entry/2018/08/22/183809)
 
 ## 会議, 論文誌, etc.
 ##### ICLR 2017
@@ -38,16 +39,17 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 2017/02/22
 
 ## コメント
-##### なし
+##### あり
+- 自分は論文の中身をそんなに見ていないことに注意。
 
 ## key-words
-##### Paper, Graph, Implemented
+##### Paper, Graph, Implemented, 参照
 
 ## status
-##### 未完
+##### 参照
 
 ## read
-##### なし
+##### A
 
 ## Citation
 ##### 未記入

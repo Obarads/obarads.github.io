@@ -2,7 +2,6 @@
 
 元の論文の公開ページ : [discovery.ucl.ac.uk](https://discovery.ucl.ac.uk/id/eprint/1533148/1/Firman_structured-prediction-unobserved.pdf)  
 提案モデルの実装 : [mdfirman/voxlets](https://github.com/mdfirman/voxlets)  
-Github Issues : []()  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。
 
