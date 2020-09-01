@@ -35,7 +35,9 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 省略
 
 ## 次に読むべき論文は?
-##### なし
+##### あり
+- [Yukai Shi, Keze Wang, Chongyu Chen, Li Xu, and Liang Lin. Structure-preserving image super-resolution via con-textualized multitask learning. IEEE transactions on multi-media, 19(12):2804–2815, 2017.](https://arxiv.org/abs/1707.08340)
+  - 3D sketch-aware feature embeddingはいわば境界線(境界線もgeometry)の利用であり、境界線は解像度に依存しない。この依存しないという話に対して、この論文が参考文献として挙げられている。
 
 ## 論文関連リンク
 ##### なし
@@ -54,7 +56,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### CV, Paper, Voxel, Semantic_Segmentation, Reconstruction, RGB_Image, 導入
+##### CV, Paper, Voxel, Semantic_Segmentation, Reconstruction, RGB_Image, 導入, Implemented
 
 ## status
 ##### 導入
