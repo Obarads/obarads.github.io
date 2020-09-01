@@ -1,14 +1,12 @@
-# Point cloud denoising using robust principal component analysis
+# Structure-Preserving Image Super-resolution via Contextualized Multi-task Learning
 
-元の論文の公開ページ : [researchgate.net](https://www.researchgate.net/publication/220869008_Point_cloud_denoising_using_robust_principal_component_analysis)  
-提案モデルの実装 : [なし:2020/08/24]()  
+元の論文の公開ページ : [arxiv.org](https://arxiv.org/abs/1707.08340)  
+提案モデルの実装 : [ykshi/SPNet](https://github.com/ykshi/SPNet)  
 
 Note: 記事の見方や注意点については、[こちら](/)をご覧ください。  
 Note: 引用中の[*]は論文内の文献番号である。該当する論文は、論文関連リンクの各リストの末尾に基づいて調べられる。
 
 ## どんなもの?
-##### Authors propose a new method that filter out noise from a point cloud (denoising).
-- "The method smoothes the data set whereas preserves sharp features."
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 ##### 省略
@@ -30,23 +28,22 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 1. [なし]()[1]
 
 ## 会議, 論文誌, etc.
-##### GRAPP 2006: Proceedings of the First International Conference on Computer Graphics Theory and Applications, Setúbal, Portugal, February 25-28, 2006
+##### IEEE transactions on multi-media, 19(12):2804–2815, 2017.
 
 ## 著者
-##### Esmeide Leal, Nalling Leal
+##### Yukai Shi, Keze Wang, Chongyu Chen, Li Xu, Liang Lin
 
 ## 投稿日付(yyyy/MM/dd)
-##### 2006/01/??
+##### 2017/07/26
 
 ## コメント
-##### あり
-- 既存の研究を調べる必要あり
+##### なし
 
 ## key-words
-##### Paper, CV, Point_Cloud, 導入
+##### CV, Paper, Super-Resolution, RGB_Image, 未完, Implemented
 
 ## status
-##### 導入
+##### 未完
 
 ## read
 ##### A, I
