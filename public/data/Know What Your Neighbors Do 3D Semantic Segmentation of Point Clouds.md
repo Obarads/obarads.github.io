@@ -17,14 +17,14 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
   - Centroid lossを設けた。これは、モデルの最後の出力に対して使用する。
 
 ##### Note
-- Feature Networkには近傍情報を集約する機能がない。
-- $\mathcal{N}_F$-moduleは特徴空間上でkNNを使用し、その近傍を利用した畳み込みを行う。
+- [Feature Networkには近傍情報を集約する機能がない。]
+- [$\mathcal{N}_F$-moduleは特徴空間上でkNNを使用し、その近傍を利用した畳み込みを行う。]
   - [畳み込みモジュールの提案はPointNet++と比較している。特徴空間上のkNNはDGCNNと同じだが、特に言及なし。]
-- $\mathcal{N}_W$-moduleはK-means clustringでグループを得る際に、$\mathcal{N}_F$-moduleで生成した特徴は利用していないのかなと思ったら、多分利用してた。
+- [$\mathcal{N}_W$-moduleはK-means clustringでグループを得る際に、$\mathcal{N}_F$-moduleで生成した特徴は利用していないのかなと思ったら、多分利用してた。]
   - " In this context, the world space corresponds to the features of the input point cloud, such as position and color."
   - "We then feed these features into three stacked NF-modules. The subsequent NW-module computes a regional descriptors for each cluster (based on world space with descriptors form the feature space)."
-- Pairwise Similarity lossは、特徴空間上の近傍に対して、同じラベルに属する特徴が近づき、別のラベルの特徴を離す損失。
-- Centroid lossは同じラベルの特徴の平均値を求めて、その平均値へ同じラベルの特徴が近づくようにするもの。
+- [Pairwise Similarity lossは、特徴空間上の近傍に対して、同じラベルに属する特徴が近づき、別のラベルの特徴を離す損失。]
+- [Centroid lossは同じラベルの特徴の平均値を求めて、その平均値へ同じラベルの特徴が近づくようにするもの。]
 
 ## 先行研究と比べてどこがすごいの? or 関連事項
 ##### 省略
