@@ -40,10 +40,9 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### 手法の概要
 - Focal lossは、前景と背景クラス間に極端な不均衡(e.g. 1:1000)が存在するone-stage detectorsの訓練を想定した設計となっている。
-- 提案されるFocal lossは、(binary) cross entropy損失(以下CE)を拡張した形となっている。
+- 提案されるFocal lossは、(binary) cross entropy(以下CE)損失を拡張した形となっている。
 
-### Focal Loss
-#### 定義
+#### CE損失の定義とexamplesに関して
 ##### CEの定義を行う。
 - CEを以下のように定義する。
 - $$
@@ -69,8 +68,18 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 - easy examplesが大量にある場合、これらの損失が他の比較的レアなクラスを圧倒してしまう。
 - ![fig1](img/FLfDOD/fig1.png)
 
-#### Balanced Cross Entropy
+##### クラスの不均衡に対する一般的なCE損失の拡張手法として$\alpha$-balanced CE損失を定義する。
+- クラスの不均衡に対する一般的なCE損失の拡張手法は、重み付け係数$alpha$を導入したCE損失である。
+  - クラスラベル1に対して、$\alpha \in[0,1]$
+  - クラスラベル-1に対して、$1-\alpha$
+- 実際には、クラスの頻度の逆数もしくはクロスバリデーションに基づいたハイパーパラメーター値がセットされる。
+- $alpha_t$をバランスとして定義したとき、この重み付けされたCE損失である$\alpha$-balanced CE損失は
 
+### 工夫
+#### Focal Loss
+
+### Balanced Cross Entropy
+#### 
 
 ## どうやって有効だと検証した?
 ##### 省略
