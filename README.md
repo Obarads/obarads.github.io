@@ -10,13 +10,6 @@ github repository: [Obarads/obarads.github.io](https://github.com/Obarads/obarad
 - ブラウザはGoogle Chromeのみで確認をとっているため, その他は表示が崩れる可能性が有ります.
 - 論文に関する記事更新情報は[Twitterの@obarads](https://twitter.com/obarads)で公開していました. 現在は休止しています.
 
-## Links
-##### 本サイト内リンクと本サイトに関連するページのリンク集は以下の通りです.
-- [Papers](/papers/) : 読んだ論文の検索を行うためのページ。
-  - キーワード検索に関して: **様々なキーワードがあるため、Laerning methodとetcの中に、機能していない単語が混じっている。**
-- [Github](https://github.com/Obarads/obarads.github.io) : 本サイトのGithubレポジトリのページ。
-- [Issues](https://github.com/Obarads/obarads.github.io/issues) : GithubのIssuesページ。利用についてはAboutをご覧ください.
-
 ## Directories & Files
 ### Papers
 #### 概要
@@ -53,11 +46,22 @@ github repository: [Obarads/obarads.github.io](https://github.com/Obarads/obarad
 - D: Discussion, 議論(そのような項目がある論文のみ).
 - AP: Appendix, 付録(そのような項目がある論文のみ).
 
-### Links
-#### 概要
-##### 作成中
-- [Links(linksディレクトリ)](./links)にはリンクが入っている。
+## 開発メモ
+### ページをリストや更新履歴に登録する
+- python3が必要。以下のコマンドを実行。
+  ```
+  python scripts/listing.py
+  ```
 
-### manual.md
-##### このレポジトリの目的の詳細や運用方法などが確認できます。
-- [Githubのページ](https://github.com/Obarads/obarads.github.io/blob/master/manual.md)で確認してください. 作成中です.
+### サイトをローカルで表示する
+- 表示される内容は、以下のコマンドを実行した際のもの。表示中にmdファイルの内容を変更しても、npmの仕様上更新されないので注意(めんどい)。
+  ```
+  npm start
+  ```
+
+### サイトをgithub pageにアップロードする
+- 単にgit pushしてもmasterブランチの内容が更新されるだけなので注意。
+  ```
+  npm run deploy
+  ```
+
