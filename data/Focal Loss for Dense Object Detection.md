@@ -162,7 +162,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### なし
 
 ## key-words
-##### Paper, CV, RGB_Image, Detection, 省略
+##### Paper, CV, RGB_Image, Detection, 省略, Implemented
 
 ## status
 ##### 省略
