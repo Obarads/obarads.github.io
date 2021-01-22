@@ -27,7 +27,7 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 ### 手法の概要
-- フレームワークのコンポーネントは図2のように設計されている。
+- フレームワークのコンポーネントは図2のように設計されている。  
   ![fig2](img/TAMMFfRDLo3PC/fig2.png)
 - 処理フローは赤いハイライトに沿って行われる。
 
@@ -41,15 +41,15 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
 ##### 3. ModelではDataloaderからの値を読み込む。
 - このフレームワークのModelで扱われるネットワークの構成はU-netに従う。これは、PointNet++など点群で扱われるモデルの大部分がU-net likeであるため。
 - このアーキテクチャに基づく構成ファイルを使ったシステムを提案する。
-- 例えば、PointNet2ではlisting 2のようなコンフィグファイルを利用することでこれに沿ったモデルを構築する。
+- 例えば、PointNet2ではlisting 2のようなコンフィグファイルを利用することでこれに沿ったモデルを構築する。  
+  ![listing2](img/TAMMFfRDLo3PC/listing2.png)
 
-![listing2](img/TAMMFfRDLo3PC/listing2.png)
-
-- 以下のコマンドを利用することで、上記のコンフィグファイルの構成のモデルを利用できるようになる。
-
-![command1](img/TAMMFfRDLo3PC/command1.png)
+- 以下のコマンドを利用することで、上記のコンフィグファイルの構成のモデルを利用できるようになる。  
+  ![command1](img/TAMMFfRDLo3PC/command1.png)
 
 ##### 4. Predictionでモデルからの予測出力を受け取る。
+- 後述する通り、jupyterで利用できる視覚化ツールも備わっている。
+
 ##### 5. これらの結果は、Metricsで事前定義された指標によって評価され、wandbなどのロガーに渡される。
 - フレームワークで実装されたモデルの結果を比較できるように、Hydra configuration systemとWandbを使用する。
 - これは、以下の要項を確認するために利用できる。
@@ -57,9 +57,8 @@ Note: 引用中の[*]は論文内の文献番号である。該当する論文�
   - 実験の透明性の確保
   - データ拡張の利用など、実験環境の公平性の確認
     - [Indeed, the field of 3D analysis lacks a common ground when it comes to evaluation and augmentation strategies, both at test and training time.]
-- また、Jupyterで利用できる視覚化ツールも提供する。一例は図3の通り。
-
-![fig3](img/TAMMFfRDLo3PC/fig3.png)
+- また、Jupyterで利用できる視覚化ツールも提供する。一例は図3の通り。  
+  ![fig3](img/TAMMFfRDLo3PC/fig3.png)
 
 ### フレームワークについて
 #### A 
