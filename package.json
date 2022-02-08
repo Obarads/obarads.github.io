@@ -18,7 +18,9 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
     "rehype-katex": "^6.0.2",
-    "remark-math": "^5.1.1"
+    "remark-math": "^5.1.1",
+    "nth-check": ">=2.0.1",
+    "postcss": ">=8.2.13"
   },
   "scripts": {
     "predeploy": "npm run build",
