@@ -18,7 +18,7 @@ function Copyright() {
       <Link color="inherit">
         Obarads
       </Link>{' '}
-      {new Date().getFullYear()}
+      2019 - {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
@@ -190,7 +190,7 @@ function Paperbase(props) {
         <div className={classes.app}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <main className={classes.main}>
-            <Content contents={props.contents} use_wrapper={props.use_wrapper}/>
+            <Content contents={props.contents} use_wrapper={props.use_wrapper} />
           </main>
           <footer className={classes.footer}>
             <Copyright />

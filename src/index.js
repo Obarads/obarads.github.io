@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom';
 // container
 import Paperbase from "./Paperbase";
 import { MarkdownRender, MarkdownNavigatorRender, Toggle, ActLogNavigatorRender, NoMatchRender } from "./Renders";
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 import raw from "./raw.macro";
 
 // data
-import {information_list_for_papers} from "./build/list_for_papers";
+import { information_list_for_papers } from "./build/list_for_papers";
 
 // router
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   useParams,
   // useRouteMatch,
@@ -33,7 +33,7 @@ function CreateHome() {
   return (
     <React.StrictMode>
       <Paperbase
-        contents={<MarkdownRender source={markdown_contents} />}
+        contents={<MarkdownRender children={markdown_contents} />}
         navigator={<ActLogNavigatorRender />}
       />
     </React.StrictMode>
@@ -58,7 +58,6 @@ function CreatePapers() {
 }
 
 function CreateDetail() {
-  // let { url } = useRouteMatch();
   let { id } = useParams(); // filename
   document.title = id + title_domain;
 
@@ -71,8 +70,8 @@ function CreateDetail() {
     return (
       <React.StrictMode>
         <Paperbase
-          contents={<MarkdownRender source={markdown_contents} />}
-          navigator={<MarkdownNavigatorRender source={markdown_contents} />}
+          contents={<MarkdownRender children={markdown_contents} />}
+          navigator={<MarkdownNavigatorRender children={markdown_contents} />}
         />
       </React.StrictMode>
     );
@@ -85,20 +84,12 @@ function CreateDetail() {
 
 ReactDOM.render(
   <Router>
-    <Switch>
-      <Route exact path="/">
-        <CreateHome />
-      </Route>
-      <Route exact path="/papers/">
-        <CreatePapers />
-      </Route>
-      <Route path="/papers/:id">
-        <CreateDetail />
-      </Route>
-      <Route path="*">
-        <NoMatchRender />
-      </Route>
-    </Switch>
+    <Routes>
+      <Route exact path="/" element={<CreateHome />} />
+      <Route exact path="/papers/" element={<CreatePapers />} />
+      <Route path="/papers/:id" element={<CreateDetail />} />
+      <Route path="*" element={<NoMatchRender />} />
+    </Routes>
   </Router>,
   document.getElementById('root')
 );

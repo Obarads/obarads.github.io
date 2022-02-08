@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
-import MathJax from 'react-mathjax';
-import RemarkMathPlugin from 'remark-math';
+// import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css'
 
 // design
 import Table from '@material-ui/core/Table';
@@ -20,18 +22,19 @@ import "./css/all.css"
 
 // tag data
 import { tag_data_list_for_papers, tag_contents_list_for_papers, tag_etc_list_for_papers, tag_field_list_for_papers, tag_method_list_for_papers, tag_status_list_for_papers, tag_task_list_for_papers } from "./build/tag_for_papers";
-import {information_list_for_papers} from "./build/list_for_papers"
-import {actlog_list_for_papers} from "./build/actlog_list_for_papers"
+import { information_list_for_papers } from "./build/list_for_papers"
+import { actlog_list_for_papers } from "./build/actlog_list_for_papers"
 
 export const paper_link = "/papers/"
 
-// Mathjax setting
-const transformImageUri = input =>
-  /^https?:/.test(input)
-    ? input
-    : `/data/${input}`
+export function NoMatchRender(props) {
+  return (
+    <h3> 404: Not found </h3>
+  )
 
-const HeadingRenderer = props => {
+}
+
+const HeadingRenderer = ({ node, ...props }) => {
   if (props.level === 1) {
     return (
       <div>
@@ -41,57 +44,33 @@ const HeadingRenderer = props => {
   } else {
     return (
       <div>
-        <div className="pound_link_adjustment" id={props.children[0].props.children}></div>
+        <div className="pound_link_adjustment" id={props.children[0]}></div>
         {React.createElement('h' + props.level, {}, props.children)}
       </div>
     )
   }
 }
-function get_newProps(props) {
-  const newProps = {
-    ...props,
-    plugins: [
-      RemarkMathPlugin,
-    ],
-    escapeHtml: true,
-    renderers: {
-      ...props.renderers,
-      math: (props) =>
-        <MathJax.Node formula={props.value} />,
-      inlineMath: (props) =>
-        <MathJax.Node inline formula={props.value} />,
-      linkReference: (reference) => {
-        // console.log(reference)
-        if (!reference.href) {
-          return `[${reference.children[0].props.children}]`; // confirm console.log
-        }
-        return <a href={reference.$ref}>{reference.children}</a>
-      },
-      heading: HeadingRenderer,
-    },
-    transformImageUri: transformImageUri,
-  };
-  return newProps;
-}
-
-export function NoMatchRender(props){
-  return (
-    <h3> 404: Not found </h3>
-  )
-
-}
 
 export function MarkdownRender(props) {
-  const newProps = get_newProps(props)
   return (
-    <MathJax.Provider input="tex">
-      <ReactMarkdown {...newProps} />
-    </MathJax.Provider>
+    <ReactMarkdown
+      children={props.children}
+      remarkPlugins={[remarkMath]}
+      rehypePlugins={[rehypeKatex]}
+      transformImageUri={uri => `${'/data/'}${uri}`}
+      components={{
+        h1: HeadingRenderer,
+        h2: HeadingRenderer,
+        h3: HeadingRenderer,
+        h4: HeadingRenderer,
+        h5: HeadingRenderer
+      }}>
+    </ReactMarkdown>
   );
 }
 
 export function MarkdownNavigatorRender(props) {
-  const markdown_contents = props.source;
+  const markdown_contents = props.children;
   let lines = markdown_contents.split("\n");
   let headline = [];
   let in_code = false;
@@ -107,35 +86,29 @@ export function MarkdownNavigatorRender(props) {
       let dollar_split = line_content.split("$")
       if (dollar_split.length >= 1) {
         for (let jt in dollar_split) {
-          if (jt % 2 === 1) { dollar_split[jt] = <MathJax.Node inline formula={dollar_split[jt]} /> }
+          if (jt % 2 === 1) { dollar_split[jt] = <ReactMarkdown children={dollar_split[jt]} /> }
         }
-        line_content = dollar_split.map((line)=>(line)); // 連結
+        line_content = dollar_split.map((line) => (line)); // 連結
       }
       headline.push([line_content, lines[it].split(" ")[0].length]);
 
     }
-    // #が1個だけ(記事のタイトル)の場合のみ別の処理
-    // if (lines[it][0] === '#' && !in_code && lines[it][1] === ' ') {
-    //   page_title = lines[it].replace(/^#+/, '').trim()
-    // }
   }
 
   return (
-    <MathJax.Provider input="tex">
-      <div>
-        {headline.map((hl) => (
-          <div className={"toc-" + hl[1].toString() + " toc-right-padding"}>
-            <div className={"toc-con-" + hl[1].toString()}>
-              <div className={"toc-con2-" + hl[1].toString()}>
-                <a href={"#" + hl[0]} className={"toc-contents"}>
-                  {hl[0]}
-                </a>
-              </div>
+    <div>
+      {headline.map((hl) => (
+        <div className={"toc-" + hl[1].toString() + " toc-right-padding"}>
+          <div className={"toc-con-" + hl[1].toString()}>
+            <div className={"toc-con2-" + hl[1].toString()}>
+              <a href={"#" + hl[0]} className={"toc-contents"}>
+                {hl[0]}
+              </a>
             </div>
           </div>
-        ))}
-      </div>
-    </MathJax.Provider>
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -165,8 +138,8 @@ export function TagRender(props) {
 
   return <span>
     {tag.map((tag_name) => (
-      <a className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_") + " list-link btn-flat"} 
-      onClick={() => tag_action(tag_name, "__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_"))}>
+      <a className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_") + " list-link btn-flat"}
+        onClick={() => tag_action(tag_name, "__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_"))}>
         {tag_name}
       </a>))}
   </span>
@@ -189,7 +162,6 @@ const StyledTableCell = withStyles((theme) => ({
     fontSize: 14,
   },
 }))(TableCell);
-
 
 export class Toggle {
   constructor() {

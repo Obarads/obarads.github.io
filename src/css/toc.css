@@ -91,7 +91,7 @@
   position: absolute;
   top: 0px;
   left: -16px;
-  content: url("/svg/check-14px.svg");
+  content: url("../assets/check-14px.svg");
   width: 10px;
   height: 10px;
   line-height: 20px;
