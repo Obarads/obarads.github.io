@@ -66,7 +66,7 @@ function CreateDetail() {
     return paper[0] === id;
   });
   if (paper_exists) {
-    const markdown_contents = raw(`../public/data/${id}.md`);
+    const markdown_contents = raw(`../public/data/${id}`);
     return (
       <React.StrictMode>
         <Paperbase

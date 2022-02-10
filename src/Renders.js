@@ -21,7 +21,7 @@ import "./css/home.css"
 import "./css/all.css"
 
 // tag data
-import { tag_data_list_for_papers, tag_contents_list_for_papers, tag_etc_list_for_papers, tag_field_list_for_papers, tag_method_list_for_papers, tag_status_list_for_papers, tag_task_list_for_papers } from "./build/tag_for_papers";
+import { tag_data_list_for_papers, tag_etc_list_for_papers, tag_field_list_for_papers, tag_method_list_for_papers, tag_task_list_for_papers } from "./build/tag_for_papers";
 import { information_list_for_papers } from "./build/list_for_papers"
 import { actlog_list_for_papers } from "./build/actlog_list_for_papers"
 
@@ -120,8 +120,8 @@ export function ActLogNavigatorRender(props) {
     <span>
       {act_log.map((log) => (
         <div className="actlog-block">
-          <div className={"actlog-log"}>{log[0]} {":" + log[3]}</div>
-          <Link to={paper_link + log[1]} className={"actlog-link"}>{log[4]}</Link><br />
+          <div className={"actlog-log"}>{log[0]}</div>
+          <Link to={paper_link + log[3]} className={"actlog-link"}>{log[1]}</Link><br />
           <TagRender tag={log[2].split(",")} />
         </div>
       ))}
@@ -174,9 +174,9 @@ export class Toggle {
 
     // table contents setting
     this.data_list = information_list_for_papers();
-    this.list_head = ["Name", "year", "Status"];
-    this.link_number = 4;
-    this.column_order = [this.link_number, 2, 3];
+    this.list_head = ["Name", "year"];
+    this.link_number = 2;
+    this.column_order = [this.link_number, 3];
     this.row_id = this.link_number;
     this.row_function = (column_number, row) => {
       if (column_number === this.link_number) {
@@ -185,8 +185,9 @@ export class Toggle {
           <Link className="list-link" to={paper_link + row[0]}>{row[column_number]} </Link><br />
           <TagRender tag={tag} action={this.handleClick} />
         </span>)
+      } else {
+        return row[column_number]
       }
-      return row[column_number]
     };
   }
 
@@ -234,10 +235,8 @@ export class Toggle {
   }
 
   create_table_contents() {
-    const categories = ["Status", "Contents", "Field", "Learning Method", "Data", "Task", "Structure, Form, etc."];
+    const categories = ["Field", "Learning Method", "Data", "Task", "Structure, Form, etc."];
     const tags = [
-      tag_status_list_for_papers(),
-      tag_contents_list_for_papers(),
       tag_field_list_for_papers(),
       tag_method_list_for_papers(),
       tag_data_list_for_papers(),
@@ -285,10 +284,8 @@ export class Toggle {
 
   NaviRender() {
     // for navigator
-    const categories = ["Status", "Contents", "Field", "Learning Method", "Data", "Task", "Structure, Form, etc."];
+    const categories = ["Field", "Learning Method", "Data", "Task", "Structure, Form, etc."];
     const tags = [
-      tag_status_list_for_papers(),
-      tag_contents_list_for_papers(),
       tag_field_list_for_papers(),
       tag_method_list_for_papers(),
       tag_data_list_for_papers(),

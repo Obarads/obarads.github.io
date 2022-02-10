@@ -47,17 +47,13 @@ The propose consept is based on FoldingNet:
 > We evaluate our network on ICVL [36], MSRA [35] and NYU [40] datasets, which are challenging benchmarks commonly used for evaluation of a 3D hand pose estimation task.
 
 ## 議論はある?
-##### 省略
+省略
 
 ## Reference
-##### なし
-1. [なし]()[1]
+1. [Yang, Yaoqing, Chen Feng, Yiru Shen, and Dong Tian. 2018. “Foldingnet: Point Cloud Auto-Encoder via Deep Grid Deformation.” In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 206–15.](https://openaccess.thecvf.com/content_cvpr_2018/html/Yang_FoldingNet_Point_Cloud_CVPR_2018_paper.html)
 
-## コメント
-##### なし
+## Note
+なし
 
 ## key-words
-##### なし
-
-## status
-##### 未完
+##### CV, Point_Cloud
