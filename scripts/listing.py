@@ -1,8 +1,4 @@
-from audioop import reverse
 from dataclasses import dataclass
-from pydoc import classname
-from re import A
-from statistics import mode
 from typing import Dict, List
 
 import os
@@ -106,12 +102,12 @@ def write_table_row_data_list_to_js(
     js_string: str = "export function information_list_for_papers(){ return ["
 
     for table_row_data in table_row_data_list:
-        js_string += "["
-        js_string += f"'{table_row_data.filename}',"
-        js_string += f"'{','.join(table_row_data.keyword_list)}',"
-        js_string += f"'{table_row_data.title}',"
-        js_string += f"'{table_row_data.year}',"
-        js_string += "],"
+        js_string += "{"
+        js_string += f"'filename':'{table_row_data.filename}',"
+        js_string += f"'keywords':'{','.join(table_row_data.keyword_list)}',"
+        js_string += f"'title':'{table_row_data.title}',"
+        js_string += f"'year':'{table_row_data.year}',"
+        js_string += "},"
 
     js_string += "]}"
 
@@ -122,16 +118,16 @@ def write_table_row_data_list_to_js(
 def write_class_and_tag_to_js(
     output_file_path: str, class_to_keyword: Dict[str, List[str]]
 ):
-    js_string: str = ""
+    js_string: str = "export function tag_for_papers(){ return {"
 
     for class_name in class_to_keyword:
-        js_string += f"export function tag_{class_name}_list_for_papers()"
-        js_string += "{ return ["
+        js_string += f"'{class_name}' : ["
         for keyword in class_to_keyword[class_name]:
             js_string += f"'{keyword}',"
+        js_string += "],"
 
-        js_string = js_string[:-1]  # remove last comma
-        js_string += "]}\n"
+    js_string = js_string[:-1]  # remove last comma
+    js_string += "}}\n"
 
     with open(output_file_path, mode="w") as f:
         f.write(js_string)

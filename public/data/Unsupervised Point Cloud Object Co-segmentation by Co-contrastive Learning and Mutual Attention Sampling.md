@@ -21,5 +21,5 @@ Implementation : [jimmy15923/unsup_point_coseg](https://github.com/jimmy15923)
 なし
 
 ## key-words
-##### CV, Point_Cloud
+##### CV, Point_Cloud, Unsupervised_Learning
 
