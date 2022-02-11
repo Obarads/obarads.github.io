@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
-// import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css'
@@ -117,7 +117,7 @@ export function ActLogNavigatorRender(props) {
   const act_log = actlog_list_for_papers();
 
   return (
-    <span>
+    <span>  <div className='actlog-header'>最近更新した記事</div>
       {act_log.map((log) => (
         <div className="actlog-block">
           <div className={"actlog-log"}>{log[0]}</div>
@@ -138,7 +138,7 @@ export function TagRender(props) {
 
   return <span>
     {tag.map((tag_name) => (
-      <a className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_") + " list-link btn-flat"}
+      <a href='_blank' className={"__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_") + " list-link btn-flat"}
         onClick={() => tag_action(tag_name, "__" + tag_name.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_"))}>
         {tag_name}
       </a>))}
@@ -162,6 +162,15 @@ const StyledTableCell = withStyles((theme) => ({
     fontSize: 14,
   },
 }))(TableCell);
+
+function usePageViews() {
+  let location = useLocation();
+  React.useEffect(() => {
+    // ga.send(["pageview", location.pathname]);
+  }, [location]);
+}
+
+
 
 export class Toggle {
   constructor() {
@@ -198,6 +207,7 @@ export class Toggle {
     const row_function = this.row_fction;
     var idx = this.tags.indexOf(tag_name);
     let ele = document.getElementsByClassName(unique)
+    usePageViews()
     if (idx >= 0) {
       this.tags.splice(idx, 1);
       Array.prototype.forEach.call(ele, function (e) {

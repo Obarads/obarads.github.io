@@ -24,7 +24,7 @@ import "./css/list.css"
 import "./css/tag_for_papers.css"
 
 // title
-const title_domain = " - OPMemo"
+const title_domain = " - Note board"
 
 function CreateHome() {
   const markdown_contents = raw("../README.md");
