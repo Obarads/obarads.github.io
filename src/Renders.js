@@ -207,7 +207,6 @@ export class Toggle {
     const row_function = this.row_fction;
     var idx = this.tags.indexOf(tag_name);
     let ele = document.getElementsByClassName(unique)
-    usePageViews()
     if (idx >= 0) {
       this.tags.splice(idx, 1);
       Array.prototype.forEach.call(ele, function (e) {
