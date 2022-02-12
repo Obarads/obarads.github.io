@@ -34,7 +34,7 @@ function Navigator(props) {
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
         <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)}>
-          OPMemo
+          Note board
         </ListItem>
         {props.contents}
       </List>

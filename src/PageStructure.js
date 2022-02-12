@@ -11,7 +11,8 @@ import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
 
-function Copyright() {
+function Copyright()
+{
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -158,11 +159,13 @@ const styles = {
   },
 };
 
-function Paperbase(props) {
+function PageStructure(props)
+{
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
+  const handleDrawerToggle = () =>
+  {
     setMobileOpen(!mobileOpen);
   };
 
@@ -200,8 +203,8 @@ function Paperbase(props) {
     </ThemeProvider>
   );
 }
-Paperbase.propTypes = {
+PageStructure.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-// Paperbase classes by with styles: root, drawer, app, main, footer
-export default withStyles(styles)(Paperbase);
+// PageStruecture classes by with styles: root, drawer, app, main, footer
+export default withStyles(styles)(PageStructure);
