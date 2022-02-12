@@ -8,4 +8,8 @@
     - ブラウザはGoogle Chromeのみで確認をとっているため, その他は表示が崩れる可能性が有ります.
 
 ## サイト内リンク
-- [papers/](papers/) (確認した論文のリスト)
+- 確認した論文のリスト
+  - Github: [public/data/](https://github.com/Obarads/obarads.github.io/tree/master/public/data)
+  - Github Page: [papers/](papers/)
+- 確認した論文のリスト (過去フォーマット版)
+  - Github: [public/previous_data/](https://github.com/Obarads/obarads.github.io/tree/master/public/previous_data)
