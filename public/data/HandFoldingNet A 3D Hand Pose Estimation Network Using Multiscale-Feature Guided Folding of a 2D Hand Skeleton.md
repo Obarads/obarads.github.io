@@ -56,4 +56,4 @@ The propose consept is based on FoldingNet:
 なし
 
 ## key-words
-##### CV, Point_Cloud
+##### CV, Point_Cloud, Supervised_Learning
