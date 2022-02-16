@@ -51,14 +51,23 @@ def extract_data(markdown_dir_path: str):
         else:
             raise ValueError(f"Not found title (#): {markdown_path}")
 
+        # extract a year
+        year: int = None
+        if "Cite: " in content[2]:
+            year_str: str = content[2].split(". “")[0].split(". ")[-1]
+            if len(year_str) == 4:
+                year = int(year_str)
+            else:
+                raise ValueError(f"Invalid year: {markdown_path}")
+        else:
+            raise ValueError(f"Not found year: {markdown_path}")
+
         # extract key words
         keywords: List[str] = []
         if "## key-words" in content:
             keyword_row_index = content.index("## key-words")
             # If key-words is found and there is keyword_row_index + 1 row
-            if (keyword_row_index != -1) and (
-                keyword_row_index + 1 < len(content)
-            ):
+            if (keyword_row_index != -1) and (keyword_row_index + 1 < len(content)):
                 # modify key words
                 keywords_string = (
                     content[keyword_row_index + 1]
@@ -72,13 +81,9 @@ def extract_data(markdown_dir_path: str):
                     f"Invalid keyword format (## key-words): {markdown_path}"
                 )
         else:
-            raise ValueError(
-                f"Not found key words (## key-words): {markdown_path}"
-            )
+            raise ValueError(f"Not found key words (## key-words): {markdown_path}")
 
-        table_row_data_list.append(
-            TableRowData(title, filename, keyword_list, 0)
-        )
+        table_row_data_list.append(TableRowData(title, filename, keyword_list, year))
 
     return table_row_data_list
 
@@ -147,9 +152,7 @@ def write_css(output_file_path: str, class_to_keyword: Dict[str, List[str]]):
 
     for class_name in class_to_keyword:
         for keyword in class_to_keyword[class_name]:
-            css_class = (
-                keyword.replace(" ", "_").replace("/", "").replace("&", "_")
-            )
+            css_class = keyword.replace(" ", "_").replace("/", "").replace("&", "_")
             css_string += f".__{css_class}"
             css_string += "{"
             css_string += f"{CSS_COLOR_LIST[class_name]}"
@@ -171,16 +174,14 @@ def write_actlog_to_js(
     # create an update time list
     for table_row_data in table_row_data_list:
         # get time and time string
-        p = os.path.getmtime(
-            os.path.join(markdown_dir_path, table_row_data.filename)
-        )
+        p = os.path.getmtime(os.path.join(markdown_dir_path, table_row_data.filename))
         dt = datetime.datetime.fromtimestamp(p)
         dt = dt.strftime("%Y/%m/%d %H:%M:%S")
 
         actlog_list.append([p, dt, table_row_data])
 
     # sort update time and get top-10
-    actlog_list.sort(reverse=True)
+    actlog_list = sorted(actlog_list, reverse=True, key=lambda actlog: actlog[0])
     actlog_top = actlog_list[0:10]
 
     # write update time list into js
@@ -212,9 +213,7 @@ def main():
         os.path.join(PATH, "src/build/tag_for_papers.js"), class_to_keyword
     )
 
-    write_css(
-        os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword
-    )
+    write_css(os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword)
 
     write_actlog_to_js(
         os.path.join(PATH, "src/build/actlog_list_for_papers.js"),

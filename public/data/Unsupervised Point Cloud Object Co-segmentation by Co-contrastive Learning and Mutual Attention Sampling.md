@@ -1,7 +1,7 @@
 # Unsupervised Point Cloud Object Co-segmentation by Co-contrastive Learning and Mutual Attention Sampling
 
-Cite : [Yang, Cheng-Kun, Yung-Yu Chuang, and Yen-Yu Lin. 2021. “Unsupervised Point Cloud Object Co-Segmentation by Co-Contrastive Learning and Mutual Attention Sampling.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, 7335–44.](https://openaccess.thecvf.com/content/ICCV2021/html/Yang_Unsupervised_Point_Cloud_Object_Co-Segmentation_by_Co-Contrastive_Learning_and_Mutual_ICCV_2021_paper.html)  
-Implementation : [jimmy15923/unsup_point_coseg](https://github.com/jimmy15923/unsup_point_coseg)  
+Cite: [Yang, Cheng-Kun, Yung-Yu Chuang, and Yen-Yu Lin. 2021. “Unsupervised Point Cloud Object Co-Segmentation by Co-Contrastive Learning and Mutual Attention Sampling.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, 7335–44.](https://openaccess.thecvf.com/content/ICCV2021/html/Yang_Unsupervised_Point_Cloud_Object_Co-Segmentation_by_Co-Contrastive_Learning_and_Mutual_ICCV_2021_paper.html)  
+Implementation: [jimmy15923/unsup_point_coseg](https://github.com/jimmy15923/unsup_point_coseg)  
 
 ## どんなもの?
 > This paper presents a new task, point cloud object co-segmentation, aiming to segment the common 3D objects in a set of point clouds.  

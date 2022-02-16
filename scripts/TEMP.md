@@ -1,7 +1,7 @@
 # title
 
-Cite : []()  
-Implementation : []()  
+Cite: []()  
+Implementation: []()  
 
 ## どんなもの?
 

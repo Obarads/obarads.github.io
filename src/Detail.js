@@ -11,19 +11,16 @@ import "./css/list.css"
 import "./css/tag_for_papers.css"
 
 
-export function CreateDetail(prop)
-{
+export function CreateDetail(prop) {
     let { id } = useParams(); // filename
     document.title = id + prop.title_domain;
 
     const paper_list = information_list_for_papers();
-    const paper_exists = paper_list.some((paper) =>
-    {
+    const paper_exists = paper_list.some((paper) => {
         return paper.filename === id;
     });
     console.log(id, paper_exists)
-    if (paper_exists)
-    {
+    if (paper_exists) {
         const markdown_contents = raw(`../public/data/${id}`);
         return (
             <React.StrictMode>
@@ -33,8 +30,7 @@ export function CreateDetail(prop)
                 />
             </React.StrictMode>
         );
-    } else
-    {
+    } else {
         return (
             <NoMatchRender />
         )
