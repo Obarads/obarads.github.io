@@ -1,7 +1,7 @@
 # HandFoldingNet: A 3D Hand Pose Estimation Network Using Multiscale-Feature Guided Folding of a 2D Hand Skeleton
 
-Cite : [Cheng, Wencan, Jae Hyun Park, and Jong Hwan Ko. 2021. “HandFoldingNet: A 3D Hand Pose Estimation Network Using Multiscale-Feature Guided Folding of a 2D Hand Skeleton.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, 11260–69.](https://arxiv.org/abs/2108.05545)  
-Implementation : [cwc1260/HandFold](https://github.com/cwc1260/HandFold)  
+Cite: [Cheng, Wencan, Jae Hyun Park, and Jong Hwan Ko. 2021. “HandFoldingNet: A 3D Hand Pose Estimation Network Using Multiscale-Feature Guided Folding of a 2D Hand Skeleton.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, 11260–69.](https://arxiv.org/abs/2108.05545)  
+Implementation: [cwc1260/HandFold](https://github.com/cwc1260/HandFold)  
 
 ## どんなもの?
 > With increasing applications of 3D hand pose estimation in various human-computer interaction applications, convolution neural networks (CNNs) based estimation models have been actively explored. However, the existing models require complex architectures or redundant computational resources to trade with the acceptable accuracy. To tackle this limitation, this paper proposes HandFoldingNet, an accurate and efficient hand pose estimator that regresses the hand joint locations from the normalized 3D hand point cloud input.
@@ -56,4 +56,4 @@ The propose consept is based on FoldingNet:
 なし
 
 ## key-words
-##### CV, Point_Cloud, Supervised_Learning
+##### CV, Point_Cloud, Supervised_Learning, Pose_Estimation
