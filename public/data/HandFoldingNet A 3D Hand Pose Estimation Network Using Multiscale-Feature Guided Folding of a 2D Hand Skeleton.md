@@ -43,7 +43,8 @@ The propose consept is based on FoldingNet:
     ![fig3](img/HA3HPENUMGFoa2HS/fig3.png)
 
 ## どうやって有効だと検証した?
-> Experimental results show that the proposed model outperforms the existing methods on three hand pose benchmark datasets with the lowest model parameter requirement.  
+> Experimental results show that the proposed model outperforms the existing methods on three hand pose benchmark datasets with the lowest model parameter requirement.
+
 > We evaluate our network on ICVL [36], MSRA [35] and NYU [40] datasets, which are challenging benchmarks commonly used for evaluation of a 3D hand pose estimation task.
 
 ## 議論はある?
