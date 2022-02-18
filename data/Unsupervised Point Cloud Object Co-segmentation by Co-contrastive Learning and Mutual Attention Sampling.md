@@ -4,7 +4,8 @@ Cite: [Yang, Cheng-Kun, Yung-Yu Chuang, and Yen-Yu Lin. 2021. “Unsupervised Po
 Implementation: [jimmy15923/unsup_point_coseg](https://github.com/jimmy15923/unsup_point_coseg)  
 
 ## どんなもの?
-> This paper presents a new task, point cloud object co-segmentation, aiming to segment the common 3D objects in a set of point clouds.  
+> This paper presents a new task, point cloud object co-segmentation, aiming to segment the common 3D objects in a set of point clouds.
+
 > We formulate this task as an object point sampling problem, and develop two techniques, the mutual attention module and co-contrastive learning, to enable it.
 
 Point cloud object co-segmentation is based on 2D image object co-segmentation.

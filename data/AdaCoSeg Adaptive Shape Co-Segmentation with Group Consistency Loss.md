@@ -8,7 +8,8 @@ Implementation: [BigkoalaZhu/AdaCoSeg](https://github.com/BigkoalaZhu/AdaCoSeg)
 
 この手法では、与ららた複数の点群オブジェクト間で一貫するようなパーツセグメンテーションをその場で学習し出力する(パーツセグメンテーション時は教師なし学習)。本質的には、k-meansのようなクラスタリング手法と同じである。
 
-> From this perspective, the input shape collection serves both as the test setand the training set. Ideally, the co-segmentation network can quickly adapt to a new input set without expensive retraining. Such an adaptive network would change its behavior, i.e., the network weights, at the time it is run. This is different from the traditional label learning paradigm, where the trained model strives to generalize to new inputs without changing the network weights, either under the su-pervised [11, 20] or weakly supervised settings [5, 19, 26].  
+> From this perspective, the input shape collection serves both as the test setand the training set. Ideally, the co-segmentation network can quickly adapt to a new input set without expensive retraining. Such an adaptive network would change its behavior, i.e., the network weights, at the time it is run. This is different from the traditional label learning paradigm, where the trained model strives to generalize to new inputs without changing the network weights, either under the su-pervised [11, 20] or weakly supervised settings [5, 19, 26].
+
 > Hence, the network performs essentially an unsupervised K-way clustering of the input points across all test shapes.
 
 ただし、一部モジュール(part prior network)は事前の教師あり学習(タスクはパーツセグメンテーションとは別)を行う必要がある。
@@ -32,6 +33,7 @@ Implementation: [BigkoalaZhu/AdaCoSeg](https://github.com/BigkoalaZhu/AdaCoSeg)
 
 Part prior networkの学習については以下の通り。
 > The network takes as input a point cloud with noisy binary labeling, where the foreground represents an imperfect part, and outputs a regularized labeling leading to a refined part.  
+
 > Essentially, the part prior network learns what a valid part looks like through training on a labeling denoising task.
 
 Co-segmentation Networkの学習については以下の通り。
