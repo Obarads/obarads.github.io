@@ -11,18 +11,15 @@ Implementation: [BigkoalaZhu/AdaCoSeg](https://github.com/BigkoalaZhu/AdaCoSeg)
 > From this perspective, the input shape collection serves both as the test setand the training set. Ideally, the co-segmentation network can quickly adapt to a new input set without expensive retraining. Such an adaptive network would change its behavior, i.e., the network weights, at the time it is run. This is different from the traditional label learning paradigm, where the trained model strives to generalize to new inputs without changing the network weights, either under the su-pervised [11, 20] or weakly supervised settings [5, 19, 26].  
 > Hence, the network performs essentially an unsupervised K-way clustering of the input points across all test shapes.
 
-ただし、一部モジュール(part prior network)は事前の教師あり学習を行う必要があるため、本手法はweakly supervised methodであるとしている。
+ただし、一部モジュール(part prior network)は事前の教師あり学習(タスクはパーツセグメンテーションとは別)を行う必要がある。
 
 > Our part prior network is trained using the dataset from ComplementMe [25]; the adaptive co-segmentation is unsupervised.
-> Overall, our method is weakly supervised, producing segmentations tailored to the test set, without consistent ground-truth seg-mentations.
-
 
 本手法の根幹は、ネットワークに入力される点群間のみで一貫したセグメンテーションを得られるようにするCo-segmentationである。
 
 > The goal of co-segmentation is to compute a consistent segmentation for all shapes in the input collection. The consistency of the segmentation implies a correspondence between all the segmented parts, which is a critical re-quirement for knowledge and attribute transfer, collecting statistics over a dataset, and structure-aware shape model-ing [18]. Figure 1 shows such a modeling example based on part reshuffling induced by a co-segmentation. 
 
 ![fig1](img/AASCwGCL/fig1.png)
-
 
 
 ## 先行研究と比べてどこがすごいの?
@@ -56,6 +53,6 @@ Co-segmentation Networkの学習については以下の通り。
 なし
 
 ## key-words
-##### CV, Point_Cloud, Weakly_Supervised_Learning, Part_Segmentation
+##### CV, Point_Cloud, Part_Segmentation
 
 
