@@ -32,15 +32,19 @@ The propose consept is based on FoldingNet:
 
 ![fig1](img/HA3HPENUMGFoa2HS/fig1.png)
 
+> Figure 1. Illustration of the folding concept. The network can be interpreted as emulating the ”force” through multi-scale features extracted from the point cloud. The ”force” will drive a 2D hand skeleton to ”fold” into the 3D joint coordinates representing the hand pose. 
+
 ### Architecture
 
 ![fig2](img/HA3HPENUMGFoa2HS/fig2.png)
+> Figure 2. The HandFoldingNet architecture. It takes the preprocessed normalized point cloud with surface normal vectors from a2D depth image as an input. The hierarchical PointNet encoder is then exploited to extract features of various levels to summarize a global feature from the input point cloud. The global folding decoder receives the global feature to guide the folding of a pre-defined 2D hand skeleton into the initial joint coordinates. In the end, the local features near the initial joint coordinates are grouped and fed into the local folding blocks to estimate the accurate joint coordinates. 
 
 ### The two novel modules in propose models
 - global-feature guided folding (global folding) decoder  
     > The proposed decoder folds a fixed 2D hand skeleton into the 3D coordinates of joints, being guided by a global feature.
 - joint-wise local-feature guided folding (local folding) block  
     ![fig3](img/HA3HPENUMGFoa2HS/fig3.png)
+    > Figure 3. Joint-wise local feature guided folding block. The local folding block accepts three inputs, which are the previously estimated joint coordinates, folding embeddings from intermediate layers of the previous folding block, and a local feature map extracted by the previous set abstraction level. The joint coordinates are used as centroids that group local features from the local feature map. Folding embeddings are rearranged to be aligned with the corresponding adjacent joints to collect spatial dependencies. Ultimately, the aggregated feature map composed with grouped local features and rearranged embeddings is fed into a symmetric architecture to compute the residual with respect to the previously-estimated joint locations for more accurate joint estimation. 
 
 ## どうやって有効だと検証した?
 > Experimental results show that the proposed model outperforms the existing methods on three hand pose benchmark datasets with the lowest model parameter requirement.

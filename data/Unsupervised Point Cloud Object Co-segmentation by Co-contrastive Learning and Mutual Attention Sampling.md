@@ -15,7 +15,7 @@ This paper proposed a new task, point cloud object co-segmentation, and its upsu
 
 As related works, this paper introduced shape co-segmentation. The differences between object co-segmentation and shape co-segmentation are as follows.
 - > First, the tasks differ. Shape co-segmentation decomposes objects into universal parts, while object co-segmentation distinguishes common objects from the back-ground.
-- > Second, shape co-segmentation aims to find structural correspondences across shapes of the same category, such as arm-rests of chairs.
+- > Second, shape co-segmentation aims to find structural correspondences across shapes of the same category, such as armrests of chairs.
 - > Third, many shape co-segmentation methods rely on online manual annotation [11] or additional datasets [53]. 
 
 
@@ -29,6 +29,8 @@ As related works, this paper introduced shape co-segmentation. The differences b
 - > Third, a co-contrastive loss is developed to address the lack of data for pre-training and the absence of supervisory signals for co-segmentation.
 
 ![fig1](img/UPCOCbCLaMAS/fig1.png)
+
+> Figure 1: Overview of our method for unsupervised point cloud co-segmentation. Theinputto our method is a set of point clouds covering objects of a common category (chairs, in this example). Our method only requires 3D coordinates as the input. Color is added here for visualization. Our method picks out the co-segmented points of the common objects (those in red). It formulates co-segmentation as a sampling problem by employing two competitive samplers: one for foreground points and the other for the rest. Amutual attention moduleis embedded in each sampler for capturing cross-cloud point correlation. The whole network is end-to-end trained by the proposed co-contrastive loss.
 
 ## どうやって有効だと検証した?
 > It is evaluated on the ScanObjectNN and S3DIS datasets and achieves promising results.
