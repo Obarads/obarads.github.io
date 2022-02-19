@@ -22,6 +22,8 @@ Implementation: [BigkoalaZhu/AdaCoSeg](https://github.com/BigkoalaZhu/AdaCoSeg)
 
 ![fig1](img/AASCwGCL/fig1.png)
 
+> Figure 1. Our adaptive shape co-segmentation network, AdaCoSeg, produces structurally different segmentations (here up to 4 parts) for two sets of chairs — one with armrests, one without. For each set, the segmentations are semantically consistent, allowing shape generation via part reshuffling. However, the same shape can be segmented differently depending on its containing set (see the circled chair), showing the method’s adaptivity. 
+
 
 ## 先行研究と比べてどこがすごいの?
 省略
@@ -31,14 +33,21 @@ Implementation: [BigkoalaZhu/AdaCoSeg](https://github.com/BigkoalaZhu/AdaCoSeg)
 
 ![fig2](img/AASCwGCL/fig2.png)
 
+> Figure 2. AdaCoSeg consists of a part prior network (top) and a co-segmentation network (bottom). The part feature encoder and part prior module in the first network learn a weak regularizing prior to denoise proposed part shapes. The co-segmentation network is trained with a novel group consistency loss, defined on a set of shapes, based on the ranks of part similarity matrices.
+
 Part prior networkの学習については以下の通り。
 > The network takes as input a point cloud with noisy binary labeling, where the foreground represents an imperfect part, and outputs a regularized labeling leading to a refined part.  
 
 > Essentially, the part prior network learns what a valid part looks like through training on a labeling denoising task.
 
+![fig3](img/AASCwGCL/fig3.png)
+> Figure 3. The architecture of the part prior network. The network encodes a shape with noisy part labeling and the whole shape, using the MSG and MRG feature encoders from PointNet++ [20], respectively. It is trained to denoise the input binary labeling and output a clean labeling, indicating a plausible part.
+
 Co-segmentation Networkの学習については以下の通り。
 
 ![fig4](img/AASCwGCL/fig4.png)
+
+> Figure 4. Left: Given an input point cloud, the K-way classifier segments it into K parts. These parts are then refined by the part prior module, resulting in a refinedK-way segmentation of the input point cloud. After that, the part feature encoder is used to extract features for each refined part. Right: Given a set of input point clouds, we construct a part similarity matrix for each abstract part label, based on the part features extracted for all shapes.
 
 > The corresponding part features with the same label for all shapes in the set constitute a part feature matrix. Then, weights of the co-segmentation network are optimized with the objective to maximize the part feature similarity within one label and minimize the similarity across different labels. This amounts to minimizing the rank of the part feature matrix for each semantic label while maximizing the rank of the joint part feature matrix for two semantic labels. 
 
