@@ -28,8 +28,7 @@ const CustomTableCell = withStyles((theme) => ({
     },
 }))(TableCell);
 
-export function CreatePapers(prop)
-{
+export function CreatePapers(prop) {
     document.title = "Papers" + prop.title_domain;
     const list_render = TableRender()
     const navi_render = NaviRender()
@@ -47,8 +46,7 @@ export function CreatePapers(prop)
     );
 }
 
-function NaviRender()
-{
+function NaviRender() {
     const tag_dict = tag_for_papers()
     const class_to_keywords = {
         "Field": tag_dict["field"],
@@ -72,8 +70,7 @@ function NaviRender()
     )
 }
 
-function TableRender()
-{
+function TableRender() {
     return (
         <TableContainer component={Paper}>
             <Table size="small" aria-label="a dense table">
@@ -84,8 +81,7 @@ function TableRender()
     )
 }
 
-function TableHeadRender()
-{
+function TableHeadRender() {
     return (<TableHead>
         <TableRow>
             <CustomTableCell align="left">
@@ -98,8 +94,7 @@ function TableHeadRender()
     </TableHead>)
 }
 
-function TableBodyRender()
-{
+function TableBodyRender() {
     const row_data_list = ROW_DATA_LIST;
     HiddenRows(row_data_list)
     return (
@@ -111,8 +106,7 @@ function TableBodyRender()
     )
 }
 
-function TableRowDataRender(props)
-{
+function TableRowDataRender(props) {
     const paper_link = PAPER_LINK;
     const row_data_dict = props.row_data_dict
     const keyword_list = row_data_dict['keywords'].split(',')
@@ -135,15 +129,12 @@ function TableRowDataRender(props)
     )
 }
 
-function HiddenRows(table_row_data_list)
-{
+function HiddenRows(table_row_data_list) {
     const searchParams = useSearchParams()[0];
     let current_keywords = searchParams.get("keywords");
 
-    useEffect(() =>
-    {
-        if (current_keywords !== null)
-        {
+    useEffect(() => {
+        if (current_keywords !== null) {
             table_row_data_list.map((table_row_data) => (
                 create_row(table_row_data, String(current_keywords).split(','))
             ))
@@ -151,25 +142,20 @@ function HiddenRows(table_row_data_list)
     });
 }
 
-function create_row(row, keyword_list)
-{ // TODO: this is not readable.
+function create_row(row, keyword_list) { // TODO: this is not readable.
     let sw = 0;
     let row_keyword_list = row['keywords'].split(',')
-    Array.prototype.forEach.call(row_keyword_list, (row_keyword) =>
-    {
+    Array.prototype.forEach.call(row_keyword_list, (row_keyword) => {
         let css_row_keyword = "__" + row_keyword.replace(/\s+/g, "_").replace(/\//g, "").replace(/&/g, "_")
-        keyword_list.forEach((keyword) =>
-        {
+        keyword_list.forEach((keyword) => {
             if (css_row_keyword === keyword) { sw += 1 };
         })
     })
 
     let row_ele = document.getElementById(row["filename"])
-    if (sw === keyword_list.length)
-    {
+    if (sw === keyword_list.length) {
         row_ele.style.display = "table-row";
-    } else
-    {
+    } else {
         row_ele.style.display = "none";
     }
 }
