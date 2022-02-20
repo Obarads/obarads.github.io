@@ -8,22 +8,9 @@ Implementation: [czq142857/BAE-NET](https://github.com/czq142857/BAE-NET)
 
 > We treat shape co-segmentation as a representation learning problem and introduce BAE-NET, a branched autoencoder network, for the task.
 
-> To learn shape parts, we introduce a branched version of autoencoders, where each branch is tasked to learn a simple representation for one universal part of the input shape collection.
-
 > Importantly, the decoder is branched: each branch learns a compact representation for one commonly recurring part of the shape collection, e.g., airplane wings.
 
-![fig2](img/BBAfSC/fig2.png)
-
-> Figure 2. Network architecture of the BAE-NET decoder; encoder is a CNN. L3 is the branch output layer (one neuron per branch) that gives the implicit field for each branch. The final output layer groups the branch outputs, via max pooling, to form the final implicit field. Each branch either represents a shape part or simply outputs nothing, if all the parts are represented by other branches. The max pooling operator allows part overlap, giving BAE-NET the freedom to represent each part in the most natural or simplest way. All the colors for the parts are for visualization only. 
-
-
-About shape co-segmentation result:
->  Finally, we use a max pooling operator to merge parts together and obtain the entire shape, which allows our segmented parts to overlap
-
-About training method and experiments:
 > The unsupervised BAE-NET is trained with a collection of unsegmented shapes, using a shape reconstruction loss, without any ground-truth labels.
-
-> We show unsupervised, weakly supervised, and one-shot learning results by BAE-NET, demonstrating that using only a couple of exemplars, our network can generally outperform state-of-the-art supervised methods trained on hundreds of segmented shapes.
 
 ## 先行研究と比べてどこがすごいの?
 ### For existing Image co-segmentation approaches without strong supervision:
@@ -52,10 +39,20 @@ For other shpae segmentation:
 > Our method does not depend on any such supervision or base template, although it can optionally benefit from one or two annotated examples to separate strongly correlated part pairs. 
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-省略
+> To learn shape parts, we introduce a branched version of autoencoders, where each branch is tasked to learn a simple representation for one universal part of the input shape collection.
+
+![fig2](img/BBAfSC/fig2.png)
+
+> Figure 2. Network architecture of the BAE-NET decoder; encoder is a CNN. L3 is the branch output layer (one neuron per branch) that gives the implicit field for each branch. The final output layer groups the branch outputs, via max pooling, to form the final implicit field. Each branch either represents a shape part or simply outputs nothing, if all the parts are represented by other branches. The max pooling operator allows part overlap, giving BAE-NET the freedom to represent each part in the most natural or simplest way. All the colors for the parts are for visualization only. 
+
+About shape co-segmentation result:
+>  Finally, we use a max pooling operator to merge parts together and obtain the entire shape, which allows our segmented parts to overlap
+
+About other learning methods:
+> We show unsupervised, weakly supervised, and one-shot learning results by BAE-NET, demonstrating that using only a couple of exemplars, our network can generally outperform state-of-the-art supervised methods trained on hundreds of segmented shapes.
 
 ## どうやって有効だと検証した?
-省略
+> We demonstrate unsupervised, weakly supervised, and one-shot learning results for shape co-segmentation on the ShapeNet [5], ShapeNet part [64], and Tags2Parts [36] datasets, comparing BAE-NET with existing supervised and weakly supervised methods. The co-segmentation results from BAE-NET are consistent without explicitly enforcing any consistency loss in the network. Using only one (resp. two or three) segmented exemplars, the one-shot learn-ing version of BAE-NET outperforms state-of-the-art su-pervised segmentation methods, including PointNet++ and PointCNN, when the latter are trained on 10% (resp. 20% or 30%), i.e., hundreds, of the segmented shapes.
 
 ## 議論はある?
 省略
@@ -67,6 +64,6 @@ For other shpae segmentation:
 なし
 
 ## key-words
-##### CV, Point_Cloud, Mesh, Voxel, Part_Segmentation, Reconstruction, AutoEncoder
+##### CV, Point_Cloud, Mesh, Voxel, Unsupervised_Learning, Part_Segmentation, Reconstruction, AutoEncoder
 
 
