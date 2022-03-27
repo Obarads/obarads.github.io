@@ -72,17 +72,14 @@ etc: [
   "AutoEncoder",
   "Clustering",
   "Competition",
-  "Encoder-Decoder",
   "GAN",
   "Implemented",
   "Interpretability",
   "Multi-View",
-  "New Pooling",
   "RNN",
   "Rendering",
   "Sensor Fusion",
-  "Sparsity",
   "Synthetic",
-  "TreeRNN",
-  "w/o DL"
+  "w/o DL",
+  "WIP article"
 ]

@@ -8,8 +8,6 @@ import { information_list_for_papers } from "./build/list_for_papers";
 import PageStructure from './PageStructure';
 
 import "./css/list.css"
-import "./css/tag_for_papers.css"
-
 
 export function CreateDetail(prop) {
     let { id } = useParams(); // filename

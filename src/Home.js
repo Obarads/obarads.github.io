@@ -7,6 +7,10 @@ import { TagRender } from './Tag';
 import raw from "./raw.macro";
 import actlog_list_for_papers from './build/actlog_list_for_papers'
 
+import "./css/home.css"
+import "./css/list.css"
+import "./css/tag_for_papers.css"
+
 export function CreateHome(prop)
 {
     const markdown_contents = raw("../README.md");

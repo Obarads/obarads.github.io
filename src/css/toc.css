@@ -3,7 +3,7 @@
   text-decoration: unset;
 }
 .toc-contents a:hover {
-  color: #ff856f;
+  color: #666;
   text-decoration: unset;
 }
 
@@ -34,7 +34,6 @@
 }
 .toc-con-2 {
   width: 100%;
-  border-left: solid 6px #ff2d07;
   border-bottom: solid 1px #666;
 }
 .toc-con2-2 {
@@ -45,13 +44,12 @@
   color: #ffffff;
 }
 .toc-3 {
-  padding-left: 10px;
+  padding-left: 12px;
   padding-top: 8px;
   font-size: 16px;
 }
 .toc-con-3 {
   width: 100%;
-  border-left: solid 3px #ff2d07;
   border-bottom: dashed 1px #999;
 }
 .toc-con2-3 {

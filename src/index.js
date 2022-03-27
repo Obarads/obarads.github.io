@@ -8,8 +8,7 @@ import { CreateHome } from './Home';
 import { CreateDetail } from './Detail';
 // import raw from "./raw.macro";
 
-import "./css/list.css"
-import "./css/tag_for_papers.css"
+import "./css/all.css"
 
 // title
 const title_domain = " - Note board"

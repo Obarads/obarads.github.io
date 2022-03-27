@@ -6,29 +6,33 @@
 
 h1 {
   padding-top: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 30px;
 }
+
 h2 {
-  font-size: 25px;
-  margin-top: 15px;
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  border-left: solid 14px #ff2d07;
-  border-bottom: solid 2px #5a5a5a;
-  margin-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    padding-top: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.15rem;
 }
+
 h3 {
-  font-size: 22px;
-  padding-top: 4px;
-  padding-left: 13px;
-  padding-bottom: 7px;
-  border-bottom: dashed 2px #5a5a5a;
-  border-left: solid 8px #ff2d07;
-  margin-bottom: 17px;
-  margin-left: 3px;
-  margin-top: 0px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    /* margin-bottom: 1rem; */
+    display: block;
+    /* font-size: 1.17em; */
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0px;
 }
+
 h4 {
   font-size: 19px;
   border-left: double 6px #ff2d07;
@@ -57,6 +61,10 @@ h5::before {
   text-align: center;
 }
 
+p {
+  margin: 10px 0px 3px 0px;
+}
+
 p img, li img {
   margin: auto;
   padding-bottom: 13px;
@@ -73,6 +81,7 @@ div > ol {
 /* for smart phones (xs)*/
 @media screen and (min-width:0px) and (max-width:575.98px) {
   li {
+    margin-top: 3px;
   }
   ul,
   ol {
@@ -84,31 +93,33 @@ div > ol {
 /* for landscape phones (sm) ~ desktop (lg)*/
 @media screen and (min-width:576px) and (max-width:1199.98px) {
   li {
+    margin-top: 3px;
   }
   ul,
   ol {
     /*padding-left: 6px;*/
-    padding-left: 19px;
-    /* margin-bottom: 20px; */
+    padding-left: 15px;
   }
 }
 /* for large desktop (xl)*/
 @media screen and (min-width:1200px){
   li {
+    margin-top: 3px;
   }
   ul,
   ol {
     /*padding-left: 6px;*/
     padding-left: 19px;
-    /* margin-bottom: 20px; */
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 0.8em 0px;
-  padding: 0.5em 10px;
+  border-left: 4px solid #ccc;
+  margin: 0.15em 0em 0em 0em;
+  padding: 0.2em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote p {

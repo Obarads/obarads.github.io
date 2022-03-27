@@ -6,8 +6,6 @@ import 'katex/dist/katex.min.css'
 
 import "./css/markdown.css"
 import "./css/toc.css"
-import "./css/home.css"
-import "./css/all.css"
 
 const HeadingRenderer = ({ node, ...props }) =>
 {
