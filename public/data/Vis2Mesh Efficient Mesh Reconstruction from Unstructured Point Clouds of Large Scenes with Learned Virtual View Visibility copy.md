@@ -34,6 +34,7 @@ The virtual view is the generated view by this method (camera frustum in followi
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
 
+
 ## どうやって有効だと検証した?
 
 ## 議論はある?
@@ -46,6 +47,6 @@ The virtual view is the generated view by this method (camera frustum in followi
 なし
 
 ## key-words
-##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering, WIP_article
+##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering
 
 
