@@ -21,5 +21,5 @@ Implementation: []()
 なし
 
 ## key-words
-##### なし
+##### WIP_article
 

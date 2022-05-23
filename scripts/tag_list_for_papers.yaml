@@ -7,7 +7,6 @@ field: [
 method: [
   "Active Learning",
   "Reinforcement Learning",
-  
   "Self-Supervised Learning",
   "Unsupervised Learning",
   "Supervised Learning",
@@ -53,6 +52,7 @@ task: [
   "Instance Segmentation",
   "Labeling",
   "Normal Estimation",
+  "Novel_View_Synthesis",
   "One-Class & Anomaly Detection",
   "Oversegmentation",
   "Part Segmentation",

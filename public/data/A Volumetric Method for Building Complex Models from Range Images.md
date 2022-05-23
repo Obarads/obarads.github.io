@@ -21,6 +21,6 @@ Implementation: [?]()
 なし
 
 ## key-words
-##### CV, Depth_Image, Reconstruction, Article_WIP
+##### CV, Depth_Image, Reconstruction, WIP_article
 
 

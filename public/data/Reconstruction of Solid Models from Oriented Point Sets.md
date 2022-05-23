@@ -1,6 +1,6 @@
 # Reconstruction of Solid Models from Oriented Point Sets
 
-Cite: [Kazhdan, Michael. n.d. “Reconstruction of Solid Models from Oriented Point Sets.” Accessed March 14, 2022. https://www.cs.jhu.edu/~misha/MyPapers/SGP05.pdf.](https://www.cs.jhu.edu/~misha/MyPapers/SGP05.pdf)  
+Cite: [Kazhdan, Michael. 2005. “Reconstruction of Solid Models from Oriented Point Sets.” In Proceedings of the Third Eurographics Symposium on Geometry Processing, 73 – es. SGP ’05. Goslar, DEU: Eurographics Association.](https://www.cs.jhu.edu/~misha/MyPapers/SGP05.pdf)  
 Implementation: not found  
 
 ## どんなもの?
@@ -21,7 +21,7 @@ Implementation: not found
 なし
 
 ## key-words
-##### CV, Reconstruction, Article_WIP
+##### CV, Reconstruction, WIP_article
 
 
 

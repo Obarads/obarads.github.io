@@ -21,7 +21,7 @@ Implementation: [unofficial/python binding](https://github.com/mmolero/pypoisson
 なし
 
 ## key-words
-##### CV, Reconstruction, Article_WIP
+##### CV, Reconstruction, WIP_article
 
 
 

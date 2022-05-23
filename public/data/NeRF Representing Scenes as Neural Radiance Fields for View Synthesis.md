@@ -4,7 +4,11 @@ Cite: [Mildenhall, Ben, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron
 Implementation: [TensorFlow (official)](https://github.com/bmild/nerf), [Pytorch](https://github.com/yenchenlin/nerf-pytorch)  
 
 ## どんなもの?
-The authors 
+The authors proposed the rendering method using neural radiance field. The neural radiance field in the paper links viewing direction ($\theta, \phi$) and a position ($x, y, z$) on the camera ray to the color (RGB) and volume density ($\sigma$) on $x, y, z$ with deep learning ($F_\Theta$).
+
+![fig2](img/NRSaNRFfVS/fig2.png)
+
+> Fig. 2: An overview of our neural radiance field scene representation and differentiable rendering procedure. We synthesize images by sampling 5D coordinates (location and viewing direction) along camera rays (a), feeding those locations into an MLP to produce a color and volume density (b), and using volume rendering techniques to composite these values into an image (c). This rendering function is differentiable, so we can optimize our scene representation by minimizing the residual between synthesized and ground truth observed images (d).
 
 ## 先行研究と比べてどこがすごいの?
 
@@ -23,5 +27,5 @@ The authors
 なし
 
 ## key-words
-##### CV, Image, Reconstruction, Rendering, Multi-View
+##### CV, RGB_Image, Novel_View_Synthesis, Rendering, Multi-View, WIP_article
 
