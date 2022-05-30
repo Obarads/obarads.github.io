@@ -47,6 +47,6 @@ The virtual view is the generated view by this method (camera frustum in followi
 なし
 
 ## key-words
-##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering
+##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering, WIP_article
 
 
