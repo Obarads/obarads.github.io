@@ -1,7 +1,7 @@
 # Poisson surface reconstruction
 
 Cite: [Kazhdan, Michael, Matthew Bolitho, and Hugues Hoppe. 2006. “Poisson Surface Reconstruction.” In Proceedings of the Fourth Eurographics Symposium on Geometry Processing. Vol. 7. https://hhoppe.com/poissonrecon.pdf.](https://hhoppe.com/poissonrecon.pdf)  
-Implementation: [unofficial/python binding](https://github.com/mmolero/pypoisson)  
+Implementation: [mmolero/pypoisson (unofficial)](https://github.com/mmolero/pypoisson)  
 
 ## どんなもの?
 
