@@ -33,9 +33,10 @@ The virtual view is the generated view by this method (camera frustum in followi
   - The author mentions a comparison of each method such as Point2Mesh, Points2Surf.
 
 ## 技術や手法のキモはどこ? or 提案手法の詳細
-
+省略
 
 ## どうやって有効だと検証した?
+省略
 
 ## 議論はある?
 省略
@@ -47,6 +48,6 @@ The virtual view is the generated view by this method (camera frustum in followi
 なし
 
 ## key-words
-##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering, WIP_article
+##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering
 
 
