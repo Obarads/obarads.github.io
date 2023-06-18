@@ -18,6 +18,7 @@ By using point clouds, Point-NeRF can avoid sampling points in the vast empty sp
 
 
 ## どうやって有効だと検証した?
+省略
 
 ## 議論はある?
 省略
@@ -29,6 +30,6 @@ By using point clouds, Point-NeRF can avoid sampling points in the vast empty sp
 なし
 
 ## key-words
-##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering, WIP_article
+##### CV, Point_Cloud, Mesh, Depth_Image, Reconstruction, Rendering
 
 
