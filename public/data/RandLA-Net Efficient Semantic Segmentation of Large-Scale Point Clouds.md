@@ -11,7 +11,7 @@ Update: 2023/06/22
   - framework: Tensorflow
   - Official code: Yes
   - License: Attribution-NonCommercial-ShareAlike 4.0 International
-- Keywords: CV, Point_Cloud, Semantic_Segmentation
+- Keywords: CV, Point Cloud, Semantic Segmentation
 
 ## How to build with docker
 ### 1. Create a docker container

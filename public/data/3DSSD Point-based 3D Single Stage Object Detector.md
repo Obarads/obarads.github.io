@@ -11,7 +11,7 @@ Update: 2023/06/15
   - framework: tensorflow
   - Official code: Yes
   - License: MIT license
-- Keywords: CV, Point_Cloud, Detection
+- Keywords: CV, Point Cloud, Detection
 
 ## How to build with docker
 ### 1. Create a docker container

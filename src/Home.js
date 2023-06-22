@@ -31,7 +31,7 @@ function ActLogNavigatorRender(props)
     const act_log = actlog_list_for_papers();
 
     return (
-        <span>  <div className='actlog-header'>最近更新した記事</div>
+        <span>  <div className='actlog-header'>Recently updated articles</div>
             {act_log.map((log) => (
                 <div className="actlog-block">
                     <div className={"actlog-log"}>{log[0]}</div>

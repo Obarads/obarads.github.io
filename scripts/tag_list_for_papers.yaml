@@ -69,17 +69,12 @@ task: [
 ]
 
 etc: [
-  "AutoEncoder",
   "Clustering",
   "Competition",
-  "GAN",
-  "Implemented",
   "Interpretability",
   "Multi-View",
-  "RNN",
   "Rendering",
   "Sensor Fusion",
   "Synthetic",
   "w/o DL",
-  "WIP article"
 ]
