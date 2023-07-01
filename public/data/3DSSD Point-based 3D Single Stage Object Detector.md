@@ -13,7 +13,7 @@ Update: 2023/06/15
   - License: MIT license
 - Keywords: CV, Point Cloud, Detection
 
-## How to build with docker
+## How to build with docker and run the model in a docker container
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -34,10 +34,10 @@ docker run -dit --name 3dssd --gpus all -v $PWD:/workspace 3dssd
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
 ```bash
 cd /workspace
 
-~/anaconda3/bin/conda init
 source ~/.bashrc
 conda create -n 3dssd python=3.6
 conda activate 3dssd
@@ -46,8 +46,8 @@ TENSORFLOW_PATH=~/anaconda3/envs/3dssd/lib/python3.6/site-packages/tensorflow
 CUDA_PATH=/usr/local/cuda
 
 cd dev_env
-pip install -r requirements.txt 
 git apply code.diff
+pip install -r requirements.txt
 
 cd ../
 bash compile_all.sh $TENSORFLOW_PATH $CUDA_PATH
@@ -56,6 +56,13 @@ cd dataset/KITTI/object
 wget https://github.com/dvlab-research/3DSSD/files/4491173/train.txt
 wget https://github.com/dvlab-research/3DSSD/files/4491174/val.txt
 wget https://github.com/dvlab-research/3DSSD/files/4491574/test.txt
+
+```
+
+### 3. Run a model
+In a docker container:
+```bash
+cd /workspace
 
 ```
 

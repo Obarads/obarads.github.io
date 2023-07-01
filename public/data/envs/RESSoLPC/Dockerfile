@@ -8,6 +8,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
     git \
+    p7zip-full \
     libboost-all-dev \
     wget && \
     rm -rf /var/lib/apt/lists/*
@@ -29,5 +30,5 @@ USER ${UID}
 # Python setting
 RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh && \
     sh Anaconda3-2023.03-1-Linux-x86_64.sh -b && \
-    rm Anaconda3-2023.03-1-Linux-x86_64.sh
-
+    rm Anaconda3-2023.03-1-Linux-x86_64.sh && \
+    ~/anaconda3/bin/conda init bash

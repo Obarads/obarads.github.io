@@ -13,7 +13,13 @@ Update: 2023/06/22
   - License: Attribution-NonCommercial-ShareAlike 4.0 International
 - Keywords: CV, Point Cloud, Semantic Segmentation
 
-## How to build with docker
+## How to build with docker and run the model in a docker container
+The docker environment is as follows, and () is estimated minimum specifications to run the model:
+- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
+- GPU: NVIDIA GeForce RTX 2080 Ti
+- Memory: 64 GiB (16 GiB)
+- Capacity: 1 TB (64 GiB)
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -34,10 +40,10 @@ docker run -dit --name randla_net --gpus all -v $PWD:/workspace randla_net
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
 ```bash
 cd /workspace
 
-~/anaconda3/bin/conda init
 source ~/.bashrc
 conda create -n randlanet python=3.6 # for PyYAML=5.4
 conda activate randlanet
@@ -47,6 +53,16 @@ pip install -r requirements.txt
 
 cd ../
 sh compile_op.sh
+
+# setup a dataset for semantic segmentation
+sh utils/download_semantic3d.sh data/semantic3d
+```
+
+### 3. Run a model
+In a docker container:
+```bash
+cd /workspace
+
 ```
 
 ## どんなもの?

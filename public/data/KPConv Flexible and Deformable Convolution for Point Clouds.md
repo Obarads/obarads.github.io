@@ -13,8 +13,12 @@ Update: 2023/06/26
   - License: MIT License, MIT License
 - Keywords: CV, Point Cloud, Semantic Segmentation, Classification, Part Segmentation
 
-## How to build with docker
-This documentation describes the Pytorch version.
+## How to build with docker and run the model in a docker container
+This documentation describes the Pytorch version. The docker environment is as follows, and () is estimated minimum specifications to run the model:
+- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
+- GPU: NVIDIA GeForce RTX 2080 Ti
+- Memory: 64 GiB (16 GiB)
+- Capacity: 1 TB (64 GiB)
 
 ### 1. Create a docker container
 ```bash
@@ -25,7 +29,7 @@ OGI_DIR_PATH=/path/to/obarads.github.io
 git clone https://github.com/HuguesTHOMAS/KPConv-PyTorch
 # Move to RandLA-Net
 cd KPConv-PyTorch
-# Switch to 2021/07/02 ver.
+# Switch to 2023/05/03 ver.
 git switch -d 680296878d238e6bdb798c190120062a46f492d1
 # Copy a folder for building env.
 cp -r $OGI_DIR_PATH/public/data/envs/KFaDCfPC/ ./dev_env
@@ -36,6 +40,7 @@ docker run -dit --name kpconv --gpus all --shm-size 16g -v $PWD:/workspace kpcon
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
 ```bash
 cd /workspace
 
@@ -44,6 +49,13 @@ sh dev_env/poetry.sh
 cd cpp_wrappers
 source ~/.bashrcs
 sh compile_wrappers.sh
+```
+
+### 3. Run a model
+In a docker container:
+```bash
+cd /workspace
+
 ```
 
 ## どんなもの?
