@@ -14,6 +14,12 @@ Update: 2023/06/15
 - Keywords: CV, Point Cloud, Detection
 
 ## How to build with docker and run the model in a docker container
+The docker environment is as follows, and () is estimated minimum specifications to run the model:
+- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
+- GPU: NVIDIA GeForce RTX 2080 Ti
+- Memory: 64 GiB (16 GiB)
+- Capacity: 1 TB (64 GiB)
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -55,19 +61,32 @@ pip install -r requirements.txt
 
 cd ../
 bash compile_all.sh $TENSORFLOW_PATH $CUDA_PATH
+
+export PYTHONPATH=$PYTHONPATH:/workspace/lib:/workspace/mayavi
+echo 'export PYTHONPATH=$PYTHONPATH:/workspace/lib:/workspace/mayavi' >> ~/.bashrc
+```
+
+### 3. Setup the dataset
+Please refer to [the section of README.md](https://github.com/dvlab-research/3DSSD/tree/8bc7605d4d3a6ec9051e7689e96a23bdac4c4cd9#data-preparation) for the [KITTI dataset](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) preparation (`calib`, `image_2`, `label_2`, `velodyne` dirs) into the docker container, and then run the following commands:
+```bash
 mkdir -p dataset/KITTI/object
 cd dataset/KITTI/object
 wget https://github.com/dvlab-research/3DSSD/files/4491173/train.txt --no-check-certificate
 wget https://github.com/dvlab-research/3DSSD/files/4491174/val.txt --no-check-certificate
 wget https://github.com/dvlab-research/3DSSD/files/4491574/test.txt --no-check-certificate
 
+gdown https://drive.google.com/u/0/uc?id=1d5mq0RXRnvHPVeKx6Q612z0YRO1t2wAp
+unzip train_planes.zip -d training/
+
+python lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list train
+python lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list val
 ```
 
-### 3. Run a model
+### 4. Run the model
 In a docker container:
 ```bash
 cd /workspace
-
+python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 ```
 
 ## どんなもの?

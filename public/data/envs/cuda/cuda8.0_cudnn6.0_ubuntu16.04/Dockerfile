@@ -16,9 +16,9 @@ RUN apt-get update && \
 
 # install cuda and cudnn
 RUN apt-file update && apt-file search '*Tie/File.pm' && \
-    wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run --no-check-certificate && \
+    wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run --no-check-certificate -nv && \
     sh cuda_8.0.61_375.26_linux-run --silent --toolkit && \
-    wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6_6.0.21-1+cuda8.0_amd64.deb --no-check-certificate && \
+    wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6_6.0.21-1+cuda8.0_amd64.deb --no-check-certificate -nv && \
     dpkg -i libcudnn6_6.0.21-1+cuda8.0_amd64.deb && \
-    wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6-dev_6.0.21-1+cuda8.0_amd64.deb --no-check-certificate && \
+    wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6-dev_6.0.21-1+cuda8.0_amd64.deb --no-check-certificate -nv && \
     dpkg -i libcudnn6-dev_6.0.21-1+cuda8.0_amd64.deb
