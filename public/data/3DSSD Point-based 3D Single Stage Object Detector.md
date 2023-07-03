@@ -19,6 +19,10 @@ Update: 2023/06/15
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
 OGI_DIR_PATH=/path/to/obarads.github.io
 
+# Create a base image with cuda 8.0, cudnn 6.0, and ubuntu 16.04
+BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
+docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda8.0_cudnn6.0_ubuntu16.04/Dockerfile 
+
 # Clone the repository
 git clone https://github.com/dvlab-research/3DSSD.git
 # Move to 3DSSD
@@ -29,7 +33,7 @@ git switch -d 8bc7605d4d3a6ec9051e7689e96a23bdac4c4cd9
 cp -r $OGI_DIR_PATH/public/data/envs/3P3SSOD/ ./dev_env
 
 # Create docker image and container
-docker build . -t 3dssd -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+docker build . -t 3dssd -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
 docker run -dit --name 3dssd --gpus all -v $PWD:/workspace 3dssd
 ```
 
@@ -53,9 +57,9 @@ cd ../
 bash compile_all.sh $TENSORFLOW_PATH $CUDA_PATH
 mkdir -p dataset/KITTI/object
 cd dataset/KITTI/object
-wget https://github.com/dvlab-research/3DSSD/files/4491173/train.txt
-wget https://github.com/dvlab-research/3DSSD/files/4491174/val.txt
-wget https://github.com/dvlab-research/3DSSD/files/4491574/test.txt
+wget https://github.com/dvlab-research/3DSSD/files/4491173/train.txt --no-check-certificate
+wget https://github.com/dvlab-research/3DSSD/files/4491174/val.txt --no-check-certificate
+wget https://github.com/dvlab-research/3DSSD/files/4491574/test.txt --no-check-certificate
 
 ```
 
