@@ -18,12 +18,16 @@ This documentation describes the Pytorch version. The docker environment is as f
 - CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
 - GPU: NVIDIA GeForce RTX 2080 Ti
 - Memory: 64 GiB (16 GiB)
-- Capacity: 1 TB (64 GiB)
+- Capacity: 1 TB (32 GiB)
 
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
 OGI_DIR_PATH=/path/to/obarads.github.io
+
+# Create a base image with cuda 10.0, cudnn 7.6, and ubuntu 18.04
+BASE_IMAGE=ogi_cuda:cuda10.0_cudnn7.6_ubuntu18.04
+docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda10.0_cudnn7.6_ubuntu18.04/Dockerfile 
 
 # Clone the repository
 git clone https://github.com/HuguesTHOMAS/KPConv-PyTorch
@@ -35,7 +39,7 @@ git switch -d 680296878d238e6bdb798c190120062a46f492d1
 cp -r $OGI_DIR_PATH/public/data/envs/KFaDCfPC/ ./dev_env
 
 # Create docker image and container
-docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
 docker run -dit --name kpconv --gpus all --shm-size 16g -v $PWD:/workspace kpconv
 ```
 
@@ -45,17 +49,27 @@ In a docker container:
 cd /workspace
 
 sh dev_env/poetry.sh
+source ~/.bashrc
 
 cd cpp_wrappers
-source ~/.bashrcs
 sh compile_wrappers.sh
 ```
 
-### 3. Run a model
+### 3. Setup the dataset
 In a docker container:
 ```bash
 cd /workspace
+wget https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip --no-check-certificate
+sudo mkdir /Data/
+unzip modelnet40_normal_resampled.zip
+sudo mv modelnet40_normal_resampled /Data/ModelNet40
+```
 
+### 4. Run a model
+In a docker container:
+```bash
+cd /workspace
+python train_ModelNet40.py
 ```
 
 ## どんなもの?

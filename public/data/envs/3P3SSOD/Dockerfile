@@ -1,5 +1,5 @@
-ARG BASE_IMAGW=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
-FROM ${BASE_IMAGW}
+ARG BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
+FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
