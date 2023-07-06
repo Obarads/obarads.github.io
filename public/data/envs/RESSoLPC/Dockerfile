@@ -1,4 +1,5 @@
-FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
+ARG BASE_IMAGE=ogi_cuda:cuda9.0_cudnn7.6_ubuntu16.04
+FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -10,7 +11,9 @@ RUN apt-get update && \
     git \
     p7zip-full \
     libboost-all-dev \
-    wget && \
+    wget \
+    libgl1-mesa-dev \
+    g++ && \
     rm -rf /var/lib/apt/lists/*
 
 # Workdirectory setting
@@ -28,7 +31,7 @@ RUN groupadd -g ${GID} host-group && \
 USER ${UID}
 
 # Python setting
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh && \
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh --no-check-certificate -nv && \
     sh Anaconda3-2023.03-1-Linux-x86_64.sh -b && \
     rm Anaconda3-2023.03-1-Linux-x86_64.sh && \
     ~/anaconda3/bin/conda init bash
