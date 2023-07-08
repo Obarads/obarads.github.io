@@ -8,7 +8,7 @@
         // Append -bullseye or -buster to pin to an OS version.
         // Use -bullseye variants on local arm64/Apple Silicon.
         "args": {
-            "VARIANT": "20-slim"
+            "VARIANT": "20-bullseye"
         }
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
