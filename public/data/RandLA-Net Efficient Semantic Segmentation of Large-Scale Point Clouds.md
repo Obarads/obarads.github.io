@@ -97,6 +97,8 @@ sh jobs_6_fold_cv_s3dis.sh
 > - We demonstrate significant memory and computational gains over baselines, and surpass the state-of-the-art semantic segmentation methods on multiple large-scale benchmarks.
 
 ## どうやって有効だと検証した?
+他モデルと比べた際の結果は以下の通り。
+
 ### SemanticKITTIによるセグメンテーション検証
 ![tab2](img/RESSoLPC/tab2.png)
 

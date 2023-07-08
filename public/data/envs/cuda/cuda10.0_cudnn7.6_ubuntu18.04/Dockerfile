@@ -22,3 +22,7 @@ RUN wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cu
     dpkg -i libcudnn7_7.6.5.32-1+cuda10.0_amd64.deb && \
     wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/libcudnn7-dev_7.6.5.32-1+cuda10.0_amd64.deb --no-check-certificate -nv && \
     dpkg -i libcudnn7-dev_7.6.5.32-1+cuda10.0_amd64.deb
+
+# CUDA setting
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64/
+ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}

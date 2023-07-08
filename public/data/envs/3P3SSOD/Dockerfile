@@ -34,6 +34,3 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh -
     sh Anaconda3-2023.03-1-Linux-x86_64.sh -b && \
     rm Anaconda3-2023.03-1-Linux-x86_64.sh && \
     ~/anaconda3/bin/conda init bash
-
-# CUDA setting
-RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/' >> ~/.bashrc

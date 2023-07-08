@@ -107,6 +107,8 @@ python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 > - We design a delicate box prediction network, making our framework both effective and efficient further. Experimental results on KITTI and nuScenes dataset show that our framework outperforms all single stage methods, and has comparable performance to state-of-the-art two stage methods with a much faster speed, which is 38ms per scene.
 
 ## どうやって有効だと検証した?
+他モデルと比べた際の結果は以下の通り。
+
 ### KITTIによる検出検証
 ![tab3](img/3P3SSOD/tab3.png)
 

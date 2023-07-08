@@ -22,3 +22,7 @@ RUN apt-file update && apt-file search '*Tie/File.pm' && \
     dpkg -i libcudnn6_6.0.21-1+cuda8.0_amd64.deb && \
     wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6-dev_6.0.21-1+cuda8.0_amd64.deb --no-check-certificate -nv && \
     dpkg -i libcudnn6-dev_6.0.21-1+cuda8.0_amd64.deb
+
+# CUDA setting
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64/
+ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}

@@ -33,6 +33,3 @@ RUN groupadd -g ${GID} host-group && \
     useradd -u ${UID} --create-home -G sudo,root,${GID} -m user && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER ${UID}
-
-# CUDA setting
-RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/' >> ~/.bashrc

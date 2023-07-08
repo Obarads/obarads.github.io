@@ -87,6 +87,8 @@ python train_ModelNet40.py
 > Figure 3. Deformable KPConv illustrated on 2D points.
 
 ## どうやって有効だと検証した?
+他モデルと比べた際の結果は以下の通り。
+
 ### 3D shape Classificaton (ModelNet40)とPart Segmentation(ShapeNetPart)による精度実験
 ![tab1](img/KFaDCfPC/tab1.png)
 > Table 1. 3D Shape Classification and Segmentation results. For generalizability to real data, we only consider scores obtained without shape normals on ModelNet40 dataset. The metrics are overall accuracy (OA) for Modelnet40, class average IoU (mcIoU) and instance average IoU (mIoU) for ShapeNetPart.
