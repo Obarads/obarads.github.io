@@ -13,37 +13,63 @@ Update: 2023/06/26
   - License: MIT License, MIT License
 - Keywords: CV, Point Cloud, Semantic Segmentation, Classification, Part Segmentation
 
-## How to build with docker
-This documentation describes the Pytorch version.
+## How to build with docker and run the model in a docker container
+This documentation describes the Pytorch version. The docker environment is as follows, and () is estimated minimum specifications to run the model:
+- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
+- GPU: NVIDIA GeForce RTX 2080 Ti
+- Memory: 64 GiB (16 GiB)
+- Capacity: 1 TB (32 GiB)
 
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
 OGI_DIR_PATH=/path/to/obarads.github.io
 
+# Create a base image with cuda 10.0, cudnn 7.6, and ubuntu 18.04
+BASE_IMAGE=ogi_cuda:cuda10.0_cudnn7.6_ubuntu18.04
+docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda10.0_cudnn7.6_ubuntu18.04/Dockerfile 
+
 # Clone the repository
 git clone https://github.com/HuguesTHOMAS/KPConv-PyTorch
 # Move to RandLA-Net
 cd KPConv-PyTorch
-# Switch to 2021/07/02 ver.
+# Switch to 2023/05/03 ver.
 git switch -d 680296878d238e6bdb798c190120062a46f492d1
 # Copy a folder for building env.
 cp -r $OGI_DIR_PATH/public/data/envs/KFaDCfPC/ ./dev_env
 
 # Create docker image and container
-docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
 docker run -dit --name kpconv --gpus all --shm-size 16g -v $PWD:/workspace kpconv
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
 ```bash
 cd /workspace
 
 sh dev_env/poetry.sh
+source ~/.bashrc
 
 cd cpp_wrappers
-source ~/.bashrcs
 sh compile_wrappers.sh
+```
+
+### 3. Setup the dataset
+In a docker container:
+```bash
+cd /workspace
+wget https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip --no-check-certificate
+sudo mkdir /Data/
+unzip modelnet40_normal_resampled.zip
+sudo mv modelnet40_normal_resampled /Data/ModelNet40
+```
+
+### 4. Run a model
+In a docker container:
+```bash
+cd /workspace
+python train_ModelNet40.py
 ```
 
 ## どんなもの?
@@ -61,6 +87,8 @@ sh compile_wrappers.sh
 > Figure 3. Deformable KPConv illustrated on 2D points.
 
 ## どうやって有効だと検証した?
+他モデルと比べた際の結果は以下の通り。
+
 ### 3D shape Classificaton (ModelNet40)とPart Segmentation(ShapeNetPart)による精度実験
 ![tab1](img/KFaDCfPC/tab1.png)
 > Table 1. 3D Shape Classification and Segmentation results. For generalizability to real data, we only consider scores obtained without shape normals on ModelNet40 dataset. The metrics are overall accuracy (OA) for Modelnet40, class average IoU (mcIoU) and instance average IoU (mIoU) for ShapeNetPart.

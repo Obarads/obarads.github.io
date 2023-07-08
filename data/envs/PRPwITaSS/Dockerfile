@@ -1,5 +1,4 @@
-ARG BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
-FROM ${BASE_IMAGE}
+FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,10 +8,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
     git \
-    libboost-all-dev \
-    libglib2.0-0 \
-    libgl1-mesa-dev \
-    unzip \
+    curl \
     wget && \
     rm -rf /var/lib/apt/lists/*
 
@@ -20,6 +16,7 @@ RUN apt-get update && \
 WORKDIR /workspace
 RUN chmod 777 -R /workspace
 ENV SHELL /bin/bash
+ENV LC_ALL=C
 
 # [Optional] User setting
 ARG UID
@@ -30,7 +27,7 @@ RUN groupadd -g ${GID} host-group && \
 USER ${UID}
 
 # Python setting
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh --no-check-certificate && \
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh && \
     sh Anaconda3-2023.03-1-Linux-x86_64.sh -b && \
     rm Anaconda3-2023.03-1-Linux-x86_64.sh && \
     ~/anaconda3/bin/conda init bash

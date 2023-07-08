@@ -13,11 +13,22 @@ Update: 2023/06/22
   - License: Attribution-NonCommercial-ShareAlike 4.0 International
 - Keywords: CV, Point Cloud, Semantic Segmentation
 
-## How to build with docker
+## How to build with docker and run the model in a docker container
+The docker environment is as follows, and () is estimated minimum specifications to run the model:
+- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
+- GPU: NVIDIA GeForce RTX 2080 Ti
+- Memory: 64 GiB (16 GiB)
+- Capacity: 1 TB (64 GiB)
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
 OGI_DIR_PATH=/path/to/obarads.github.io
+
+# Create a base image with cuda 9.0, cudnn 7.6, and ubuntu 16.04
+ENV_VERSION=cuda9.0_cudnn7.6_ubuntu16.04
+BASE_IMAGE=ogi_cuda:$ENV_VERSION
+docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/$ENV_VERSION/Dockerfile 
 
 # Clone the repository
 git clone https://github.com/QingyongHu/RandLA-Net
@@ -29,16 +40,15 @@ git switch -d 6b5445f5f279d33d2335e85ed39ca8b68cb1c57e
 cp -r $OGI_DIR_PATH/public/data/envs/RESSoLPC/ ./dev_env
 
 # Create docker image and container
-docker build . -t randla_net -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+docker build . -t randla_net -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
 docker run -dit --name randla_net --gpus all -v $PWD:/workspace randla_net
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
 ```bash
 cd /workspace
 
-~/anaconda3/bin/conda init
-source ~/.bashrc
 conda create -n randlanet python=3.6 # for PyYAML=5.4
 conda activate randlanet
 
@@ -47,6 +57,21 @@ pip install -r requirements.txt
 
 cd ../
 sh compile_op.sh
+```
+
+### 3. Setup the dataset
+Please refer to [the section of README.md](https://github.com/QingyongHu/RandLA-Net/tree/6b5445f5f279d33d2335e85ed39ca8b68cb1c57e#2-s3dis) for the [S3DIS dataset](https://docs.google.com/forms/d/e/1FAIpQLScDimvNMCGhy_rmBA2gHfDu3naktRm6A8BPwAWWDv-Uhm6Shw/viewform?c=0&w=1) preparation (`/data/S3DIS/Stanford3dDataset_v1.2_Aligned_Version/` dir) into the docker container, and then run the following commands :
+```bash
+# setup a dataset for semantic segmentation
+sudo chmod -R 777 /data/
+python utils/data_prepare_s3dis.py
+```
+
+### 4. Run a model
+In a docker container:
+```bash
+cd /workspace
+sh jobs_6_fold_cv_s3dis.sh
 ```
 
 ## どんなもの?
@@ -72,6 +97,8 @@ sh compile_op.sh
 > - We demonstrate significant memory and computational gains over baselines, and surpass the state-of-the-art semantic segmentation methods on multiple large-scale benchmarks.
 
 ## どうやって有効だと検証した?
+他モデルと比べた際の結果は以下の通り。
+
 ### SemanticKITTIによるセグメンテーション検証
 ![tab2](img/RESSoLPC/tab2.png)
 

@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+ARG BASE_IMAGE=ogi_cuda:cuda10.0_cudnn7.6_ubuntu18.04
+FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -10,17 +11,20 @@ RUN apt-get update && \
     git \
     curl \
     wget \
+    g++ \
+    unzip \
+    ca-certificates \
     python3.8 \
     python3.8-dev \
     python3.8-distutils && \
     rm -rf /var/lib/apt/lists/* && \
-    update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1 && \
+    update-ca-certificate
 
 # Workdirectory setting
 WORKDIR /workspace
 RUN chmod 777 -R /workspace
 ENV SHELL /bin/bash
-ENV LC_ALL=C
 
 # [Optional] User setting
 ARG UID
