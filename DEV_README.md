@@ -1,6 +1,6 @@
 # 本レポジトリの開発メモ
-## Devcontainer
-- I referred to [vscode-remote-try-node](https://github.com/Microsoft/vscode-remote-try-node)
+## 環境作成
+vscodeの.devcontainerを用いた環境作成を行うこと。なお、Codespace寄りのイメージを使用している。
 
 ## ページをリストや更新履歴に登録する
 - python3.7が必要。以下のコマンドを実行。

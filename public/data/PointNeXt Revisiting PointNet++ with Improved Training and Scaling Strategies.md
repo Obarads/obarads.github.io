@@ -25,6 +25,10 @@ The docker environment is as follows, and () is estimated minimum specifications
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
 OGI_DIR_PATH=/path/to/obarads.github.io
 
+# Get a base image
+BASE_IMAGE=nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
+docker pull $BASE_IMAGE
+
 # Clone the repository
 git clone https://github.com/guochengqian/PointNeXt.git
 # Move to PointNeXt
@@ -41,10 +45,9 @@ git switch -d ee100c81b1d9603c0fc76a3ee4e37d10b2af60ba
 # Copy a folder for building env.
 cd ../
 cp -r $OGI_DIR_PATH/public/data/envs/PRPwITaSS/ ./dev_env
-git diff 
 
 # Create docker image and container
-docker build . -t pointnext -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+docker build . -t pointnext -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
 docker run -dit --name pointnext --gpus all -v $PWD:/workspace pointnext
 ```
 
