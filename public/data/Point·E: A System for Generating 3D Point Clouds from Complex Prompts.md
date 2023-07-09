@@ -44,7 +44,16 @@ docker run -dit --name pointe --gpus all -v $PWD:/workspace pointe
 ```
 
 ### 2. Setup in the docker container
+In a docker container:
+```bash
+cd /workspace
 
-### 3. Setup the dataset
+conda create -n pointe python=3.9
+conda activate pointe
 
-### 4. Run the model
+pip install -r dev_env/requirements.txt
+pip install -e .
+```
+
+### 3. Run the model
+Please open `/workspace/point_e/examples/image2pointcloud.ipynb`, in the container and run the cells in `image2pointcloud.ipynb`.

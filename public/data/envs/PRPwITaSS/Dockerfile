@@ -28,7 +28,7 @@ RUN groupadd -g ${GID} host-group && \
 USER ${UID}
 
 # Python setting
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh && \
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh --no-check-certificate -nv && \
     sh Anaconda3-2023.03-1-Linux-x86_64.sh -b && \
     rm Anaconda3-2023.03-1-Linux-x86_64.sh && \
     ~/anaconda3/bin/conda init bash

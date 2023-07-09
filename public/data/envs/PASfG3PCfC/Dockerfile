@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
+ARG BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -9,10 +9,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
     git \
-    libboost-all-dev \
-    libglib2.0-0 \
-    libgl1-mesa-dev \
-    unzip \
+    curl \
     wget && \
     rm -rf /var/lib/apt/lists/*
 
@@ -20,6 +17,7 @@ RUN apt-get update && \
 WORKDIR /workspace
 RUN chmod 777 -R /workspace
 ENV SHELL /bin/bash
+ENV LC_ALL=C
 
 # [Optional] User setting
 ARG UID
