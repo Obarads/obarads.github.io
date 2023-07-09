@@ -10,7 +10,7 @@ blessings==1.7
 bpython==0.22.1
 cached-property==1.5.2
 cachetools==4.2.4
-certifi==2021.5.30
+certifi==2022.12.7
 cffi==1.15.1
 charset-normalizer==2.0.12
 curtsies==0.3.10
