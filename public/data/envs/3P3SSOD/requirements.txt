@@ -108,6 +108,6 @@ typing==3.7.4.3
 typing_extensions==4.1.1
 urllib3==1.26.16
 wcwidth==0.2.6
-Werkzeug==2.0.3
+Werkzeug==2.2.3
 widgetsnbextension==3.6.4
 zipp==3.6.0
