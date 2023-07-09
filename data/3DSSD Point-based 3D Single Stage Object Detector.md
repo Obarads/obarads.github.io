@@ -48,7 +48,6 @@ In a docker container:
 ```bash
 cd /workspace
 
-source ~/.bashrc
 conda create -n 3dssd python=3.6
 conda activate 3dssd
 
