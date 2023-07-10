@@ -1,17 +1,17 @@
-# Point·E: A System for Generating 3D Point Clouds from Complex Prompts
+# Shap-E: Generating Conditional 3D Implicit Functions
 
 Update: 2023/07/09
 
 ## Info
-- Paper: [arxiv.org](https://arxiv.org/abs/2206.04670)
-  - Submission date: 2022/12/16
-  - Authors: Alex Nichol, Heewoo Jun, Prafulla Dhariwal, Pamela Mishkin, Mark Chen
+- Paper: [arxiv.org](https://arxiv.org/abs/2305.02463)
+  - Submission date: 2023/05/03
+  - Authors: Heewoo Jun, Alex Nichol
   - Conf.: None?
 - Implementation: [openai/point-e](https://github.com/openai/point-e)
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
-- Keywords: CV, Point Cloud, Object Generation
+- Keywords: CV, Mesh, Object Generation
 
 ## How to build with docker and run the model in a docker container
 The docker environment is as follows:
@@ -30,17 +30,17 @@ BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
 # Clone the repository
-git clone https://github.com/openai/point-e.git
-# Move to point-e
-cd point-e
-# Switch to 2022/12/21 ver.
-git switch -d fc8a607c08a3ea804cc82bf1ef8628f88a3a5d2f
+git clone https://github.com/openai/shap-e.git
+# Move to shape-e
+cd shap-e
+# Switch to 2023/07/07 ver.
+git switch -d db3f3b4c2f572b53fbe408d202e2445a1f656353
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/public/data/envs/PASfG3PCfC/ ./dev_env
+cp -r $OGI_DIR_PATH/public/data/envs/SGC3IF/ ./dev_env
 
 # Create docker image and container
-docker build . -t pointe -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
-docker run -dit --name pointe --gpus all -v $PWD:/workspace pointe
+docker build . -t shape -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
+docker run -dit --name shape --gpus all -v $PWD:/workspace shape
 ```
 
 ### 2. Setup in the docker container
@@ -48,12 +48,13 @@ In a docker container:
 ```bash
 cd /workspace
 
-conda create -n pointe python=3.9
-conda activate pointe
+conda create -n shape python=3.9
+conda activate shape
 
 pip install -r dev_env/requirements.txt
 pip install -e .
 ```
 
 ### 3. Run the model
-Please open `/workspace/point_e/examples/image2pointcloud.ipynb`, in the container and run the cells in `image2pointcloud.ipynb`.
+Please open `/workspace/shap_e/examples/sample_text_to_3d.ipynb`, in the container and run the cells in `sample_text_to_3d.ipynb`.
+

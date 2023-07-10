@@ -14,11 +14,11 @@ Update: 2023/06/26
 - Keywords: CV, Point Cloud, Semantic Segmentation, Classification, Part Segmentation
 
 ## How to build with docker and run the model in a docker container
-This documentation describes the Pytorch version. The docker environment is as follows, and () is estimated minimum specifications to run the model:
+This documentation describes the Pytorch version. The docker environment is as follows:
 - CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
 - GPU: NVIDIA GeForce RTX 2080 Ti
-- Memory: 64 GiB (16 GiB)
-- Capacity: 1 TB (32 GiB)
+- Memory: 64 GiB
+- Capacity: 1 TB
 
 ### 1. Create a docker container
 ```bash
@@ -31,7 +31,7 @@ docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda10.0_c
 
 # Clone the repository
 git clone https://github.com/HuguesTHOMAS/KPConv-PyTorch
-# Move to RandLA-Net
+# Move to KPConv-PyTorch
 cd KPConv-PyTorch
 # Switch to 2023/05/03 ver.
 git switch -d 680296878d238e6bdb798c190120062a46f492d1
