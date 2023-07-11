@@ -7,11 +7,11 @@ Update: 2023/07/09
   - Submission date: 2023/05/03
   - Authors: Heewoo Jun, Alex Nichol
   - Conf.: None?
-- Implementation: [openai/point-e](https://github.com/openai/point-e)
+- Implementation: [openai/shap-e](https://github.com/openai/shap-e)
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
-- Keywords: CV, Object Generation
+- Keywords: CV, Mesh, Object Generation
 
 ## How to build with docker and run the model in a docker container
 The docker environment is as follows:

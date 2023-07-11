@@ -11,6 +11,7 @@ data: [
   "Depth Image",
   "Intensity Image",
   "Point Cloud",
+  "Mesh",
 ]
 
 task: [
