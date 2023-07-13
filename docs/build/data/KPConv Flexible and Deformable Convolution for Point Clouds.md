@@ -23,7 +23,9 @@ This documentation describes the Pytorch version. The docker environment is as f
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
-OGI_DIR_PATH=/path/to/obarads.github.io
+git clone https://github.com/Obarads/obarads.github.io.git
+cd obarads.github.io
+OGI_DIR_PATH=$PWD
 
 # Create a base image with cuda 10.0, cudnn 7.6, and ubuntu 18.04
 BASE_IMAGE=ogi_cuda:cuda10.0_cudnn7.6_ubuntu18.04
@@ -36,7 +38,7 @@ cd KPConv-PyTorch
 # Switch to 2023/05/03 ver.
 git switch -d 680296878d238e6bdb798c190120062a46f492d1
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/public/data/envs/KFaDCfPC/ ./dev_env
+cp -r $OGI_DIR_PATH/environments/KFaDCfPC/ ./dev_env
 
 # Create docker image and container
 docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE

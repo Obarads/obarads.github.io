@@ -23,7 +23,9 @@ The docker environment is as follows:
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
-OGI_DIR_PATH=/path/to/obarads.github.io
+git clone https://github.com/Obarads/obarads.github.io.git
+cd obarads.github.io
+OGI_DIR_PATH=$PWD
 
 # Create a base image with cuda 9.0, cudnn 7.6, and ubuntu 16.04
 ENV_VERSION=cuda9.0_cudnn7.6_ubuntu16.04
@@ -37,7 +39,7 @@ cd RandLA-Net
 # Switch to 2021/07/02 ver.
 git switch -d 6b5445f5f279d33d2335e85ed39ca8b68cb1c57e
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/public/data/envs/RESSoLPC/ ./dev_env
+cp -r $OGI_DIR_PATH/environments/RESSoLPC/ ./dev_env
 
 # Create docker image and container
 docker build . -t randla_net -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE

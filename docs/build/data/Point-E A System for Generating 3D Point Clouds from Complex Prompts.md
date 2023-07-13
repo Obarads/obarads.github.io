@@ -23,7 +23,9 @@ The docker environment is as follows:
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
-OGI_DIR_PATH=/path/to/obarads.github.io
+git clone https://github.com/Obarads/obarads.github.io.git
+cd obarads.github.io
+OGI_DIR_PATH=$PWD
 
 # Get a base image
 BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
@@ -36,7 +38,7 @@ cd point-e
 # Switch to 2022/12/21 ver.
 git switch -d fc8a607c08a3ea804cc82bf1ef8628f88a3a5d2f
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/public/data/envs/PASfG3PCfC/ ./dev_env
+cp -r $OGI_DIR_PATH/environments/PASfG3PCfC/ ./dev_env
 
 # Create docker image and container
 docker build . -t pointe -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
