@@ -23,7 +23,9 @@ The docker environment is as follows:
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
-OGI_DIR_PATH=/path/to/obarads.github.io
+git clone https://github.com/Obarads/obarads.github.io.git
+cd obarads.github.io
+OGI_DIR_PATH=$PWD
 
 # Create a base image with cuda 8.0, cudnn 6.0, and ubuntu 16.04
 BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
@@ -36,7 +38,7 @@ cd 3DSSD
 # Switch to 2020/04/09 ver.
 git switch -d 8bc7605d4d3a6ec9051e7689e96a23bdac4c4cd9
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/public/data/envs/3P3SSOD/ ./dev_env
+cp -r $OGI_DIR_PATH/environments/3P3SSOD/ ./dev_env
 
 # Create docker image and container
 docker build . -t 3dssd -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
