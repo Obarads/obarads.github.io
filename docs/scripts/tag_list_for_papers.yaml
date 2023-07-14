@@ -21,6 +21,7 @@ task: [
   "Part Segmentation",
   "Semantic Segmentation",
   "Object Generation",
+  "Scene Generation"
 ]
 
 etc: [
