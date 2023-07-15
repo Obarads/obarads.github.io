@@ -15,9 +15,9 @@ Update: 2023/07/14
 
 ## How to build with docker and run the model in a docker container
 The docker environment is as follows:
-- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
-- GPU: NVIDIA GeForce RTX 2080 Ti
-- Memory: 64 GiB
+- CPU: 13th Gen Intel(R) Core(TM) i9-13900KF
+- GPU: NVIDIA GeForce RTX 4090
+- Memory: 128 GiB
 - Capacity: 1 TB
 
 ### 1. Create a docker container
