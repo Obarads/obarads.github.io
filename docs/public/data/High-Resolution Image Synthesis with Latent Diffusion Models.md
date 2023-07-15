@@ -7,7 +7,7 @@ Update: 2023/07/14
   - Submission date: 2021/12/24
   - Authors: Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer
   - Conf.: CVPR 2022
-- Implementation: [dvlab-research/3DSSD](https://github.com/dvlab-research/3DSSD)
+- Implementation: [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
   - framework: pytorch
   - Official code: Yes
   - License: CreativeML Open RAIL-M
