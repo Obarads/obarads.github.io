@@ -76,7 +76,7 @@ ptyprocess==0.7.0
 pybind11==2.10.4
 pycocotools==2.0.6
 pycparser==2.21
-Pygments==2.14.0
+Pygments==2.15.0
 pyparsing==3.1.0
 pyquaternion==0.9.9
 pyrsistent==0.18.0
