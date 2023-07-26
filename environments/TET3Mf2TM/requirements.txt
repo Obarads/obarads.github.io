@@ -23,7 +23,7 @@ diffusers==0.14.0
 executing==1.2.0
 fastjsonschema==2.16.3
 filelock==3.10.0
-Flask==2.2.3
+Flask==2.2.5
 fonttools==4.39.2
 fvcore==0.1.5.post20221221
 gdown==4.7.1
