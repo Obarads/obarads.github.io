@@ -78,7 +78,6 @@ pyquaternion==0.9.9
 pyrsistent==0.19.3
 PySocks==1.7.1
 python-dateutil==2.8.2
-pytorch3d @ git+https://github.com/facebookresearch/pytorch3d.git@3145dd4d16edaceb394838364b8e87a440f83c10
 pytz==2022.7.1
 PyYAML==6.0
 pyzmq==25.0.2

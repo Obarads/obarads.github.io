@@ -55,17 +55,17 @@ conda create -n text2room python=3.9
 conda activate text2room
 cd dev_env
 pip install -r requirements.txt
+pip install "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.2"
 ```
 
 ### 3. Setup the dataset
 In a docker container:
 ```bash
+cd /workspace
+
 mkdir checkpoints
 gdown https://drive.google.com/uc?id=1mMvj0fBKPfXRjLypaDPrCidT67jutWdr -O checkpoints/
 gdown https://drive.google.com/uc?id=16cNJPZgxHI2wsa5dlG1HgMD_Vl5BPTSq -O checkpoints/
-
-git clone https://huggingface.co/stabilityai/stable-diffusion-2-inpainting checkpoints/stable-diffusion-2-inpainting
-git clone https://huggingface.co/stabilityai/stable-diffusion-2-1 checkpoints/stable-diffusion-2-1
 ```
 
 ### 4. Run the model
