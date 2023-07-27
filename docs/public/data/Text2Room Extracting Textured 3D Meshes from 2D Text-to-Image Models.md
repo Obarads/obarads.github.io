@@ -1,4 +1,4 @@
-# PointNeXt: Revisiting PointNet++ with Improved Training and Scaling Strategies
+# Text2Room: Extracting Textured 3D Meshes from 2D Text-to-Image Models
 
 Update: 2023/07/26
 
@@ -7,7 +7,7 @@ Update: 2023/07/26
   - Submission date: 2022/03/21
   - Authors: Lukas Höllein, Ang Cao, Andrew Owens, Justin Johnson, Matthias Nießner
   - Conf.: ICCV 2023
-- Implementation: [guochengqian/PointNeXt](https://github.com/guochengqian/PointNeXt)
+- Implementation: [lukasHoel/text2room](https://github.com/lukasHoel/text2room)
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
@@ -15,9 +15,9 @@ Update: 2023/07/26
 
 ## How to build with docker and run the model in a docker container
 The docker environment is as follows:
-- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16 
-- GPU: NVIDIA GeForce RTX 2080 Ti
-- Memory: 64 GiB
+- CPU: 13th Gen Intel(R) Core(TM) i9-13900KF
+- GPU: NVIDIA GeForce RTX 4090
+- Memory: 128 GiB
 - Capacity: 1 TB
 
 ### 1. Create a docker container
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 pip install "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.2"
 ```
 
-### 3. Setup the dataset
+### 3. Setup the models
 In a docker container:
 ```bash
 cd /workspace
@@ -70,15 +70,13 @@ gdown https://drive.google.com/uc?id=16cNJPZgxHI2wsa5dlG1HgMD_Vl5BPTSq -O checkp
 
 ### 4. Run the model
 In a docker container:
-<!-- ```bash
+```bash
 cd /workspace
-CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/pointnext-s.yaml --batch_size 16
-``` -->
-
+conda activate text2room
+CUDA_VISIBLE_DEVICES=0 python generate_scene.py
+```
+<!-- 
 ## どんなもの?
+### 
 
-## どうやって有効だと検証した?
-
-## 論文関連リンク
-なし
-
+## どうやって有効だと検証した? -->
