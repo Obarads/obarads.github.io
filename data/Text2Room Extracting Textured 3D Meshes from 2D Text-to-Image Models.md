@@ -3,8 +3,8 @@
 Update: 2023/07/26
 
 ## Info
-- Paper: [arxiv.org](https://arxiv.org/pdf/2303.11989.pdf)
-  - Submission date: 2022/03/21
+- Paper: [arxiv.org](https://arxiv.org/abs/2303.11989)
+  - Submission date: 2023/03/21
   - Authors: Lukas Höllein, Ang Cao, Andrew Owens, Justin Johnson, Matthias Nießner
   - Conf.: ICCV 2023
 - Implementation: [lukasHoel/text2room](https://github.com/lukasHoel/text2room)
@@ -75,8 +75,3 @@ cd /workspace
 conda activate text2room
 CUDA_VISIBLE_DEVICES=0 python generate_scene.py
 ```
-<!-- 
-## どんなもの?
-### 
-
-## どうやって有効だと検証した? -->
