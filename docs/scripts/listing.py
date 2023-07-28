@@ -216,7 +216,7 @@ def write_table_row_data_list_to_js(
 
     js_string += "]}"
 
-    with open(output_file_path, mode="w") as f:
+    with open(output_file_path, mode="w", encoding='UTF-8') as f:
         f.write(js_string)
 
 
@@ -301,7 +301,7 @@ def write_actlog_to_js(
         js_string += "],"
     js_string += "]}\nexport default actlog_list_for_papers"
 
-    with open(output_file_path, mode="w") as f:
+    with open(output_file_path, mode="w", encoding='UTF-8') as f:
         f.write(js_string)
 
 
