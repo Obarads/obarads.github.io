@@ -84,7 +84,6 @@ CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/poi
 ```
 
 ## どんなもの?
-### PointNet++をベースとして改修したモデル、PointNeXtを提案した。
 - > In this work, we revisit PointNet++, the classical and widely used network, and find that its full potential has yet to be explored, mainly due to two factors that were not present at the time of PointNet++: (1) superior training strategies and (2) effective model scaling strategies.
   1. > Through a comprehensive empirical study on various benchmarks, e.g., ScanObjecNN [48] for object classification and S3DIS [1] for semantic segmentation, we discover that training strategies, i.e., data augmentation and optimization techniques, play an important role in the network’s performance. In fact, a large part of the performance gain of state-of-the-art (SOTA) methods [51, 47, 62] over PointNet++ [32] is due to improved training strategies that are, unfortunately, less publicized compared to architectural changes.
   2.  > Effectively expanding PointNet++ from its original small scale to a larger scale is a topic worth studying because larger models are generally expected to enable richer representations and perform better [2, 18, 61]. However, we find that the naive way of using more building blocks or increasing the channel size in PointNet++ only leads to an overhead in latency and no significant improvement in accuracy (see Sec. 4.4.2). For effective and efficient model scaling, we introduce residual connections [14], an inverted bottleneck design [40], and separable MLPs [34] into PointNet++.
@@ -94,9 +93,6 @@ CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/poi
 
 > Figure 2: PointNeXt architecture. PointNeXt shares the same Set Abstraction and Feature Propagation blocks as PointNet++ [32], while adding an additional MLP layer at the beginning and scaling the architecture with the proposed Inverted Residual MLP (InvResMLP) blocks. Here, we present PointNeXt for segmentation as an example. Refer to Appendix for the classification architecture.
 
-### Contribution
-> - We present the first systematic study of training strategies in the point cloud domain and show that PointNet++ strikes back (+8.2% OA on ScanObjectNN and +13.6% mIoU on S3DIS) by simply adopting improved training strategies alone. The improved training strategies are general and can be easily applied to improve other methods [31, 51, 29].
-> - We propose PointNeXt, the next version of PointNets. PointNeXt is scalable and surpasses SOTA on all tasks studied, including object classification [48], semantic segmentation [1], and part segmentation [59], while being faster than SOTA in inference.
 
 ## どうやって有効だと検証した?
 他モデルと比べた際の結果は以下の通り。

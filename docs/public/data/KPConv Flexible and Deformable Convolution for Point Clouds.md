@@ -75,7 +75,7 @@ python train_ModelNet40.py
 ```
 
 ## どんなもの?
-### 新規の点畳込み演算子、Kernel Point Convolution (KPConv)を提案した。
+- 新規の点畳込み演算子、Kernel Point Convolution (KPConv)を提案した。
 - >  KPConv also consists of a set of local 3D filters, but overcomes previous point convolution limitations as shown in related work.
   - "previous point convolution" are Projection networks, Graph convolution networks, Pointwise MLP networks, Point convolution networks.
   - > PCNN [2] design is the closest to KPConv.
