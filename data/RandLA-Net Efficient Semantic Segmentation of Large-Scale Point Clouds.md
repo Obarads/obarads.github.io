@@ -77,7 +77,7 @@ sh jobs_6_fold_cv_s3dis.sh
 ```
 
 ## どんなもの?
-### 大規模点群に対する軽量なモデル、RandLA-Netを提案した。
+- 大規模点群に対する軽量なモデル、RandLA-Netを提案した。
 - 既存の手法よりも最大200倍早い。また、100万点に対する処理も一回の入力で処理できる。これは既存の手法よりも、一度に多くの点を処理できることを示す。
   - lage-scale点群を処理する手法はあるが、これらはボクセル化やSPG化などの前処理で時間がかかる。
 - 複雑な点選択アプローチの代わりにランダムサンプリングを使用することがこのアイデアの重要な点である。
@@ -92,11 +92,6 @@ sh jobs_6_fold_cv_s3dis.sh
 ![fig7](img/RESSoLPC/fig7.png)
 
 > Figure 7. The detailed architecture of our RandLA-Net. (N, D) represents the number of points and feature dimension respectively. FC: Fully Connected layer, LFA: Local Feature Aggregation, RS: Random Sampling, MLP: shared Multi-Layer Perceptron, US: Up-sampling, DP: Dropout.
-
-### Contribution
-> - We analyse and compare existing sampling approaches, identifying random sampling as the most suitable component for efficient learning on large-scale point clouds.
-> - We propose an effective local feature aggregation module to preserve complex local structures by progressively increasing the receptive field for each point.
-> - We demonstrate significant memory and computational gains over baselines, and surpass the state-of-the-art semantic segmentation methods on multiple large-scale benchmarks.
 
 ## どうやって有効だと検証した?
 他モデルと比べた際の結果は以下の通り。

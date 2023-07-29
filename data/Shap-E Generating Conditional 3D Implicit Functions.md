@@ -61,7 +61,6 @@ pip install -e .
 Please open `/workspace/shap_e/examples/sample_text_to_3d.ipynb`, in the container and run the cells in `sample_text_to_3d.ipynb`.
 
 ## どんなもの?
-### The authors proposed Shap·E that can generates the parameters of implicit functions (for 3D representation etc.).
 - > Unlike recent work on 3D generative models which produce a single output representation, Shap·E directly generates the parameters of implicit functions that can be rendered as both textured meshes  and neural radiance fields.
 - > We train Shap·E in two stages: 
   - > first, we train an encoder that deterministically maps 3D assets into the parameters of an implicit function;
