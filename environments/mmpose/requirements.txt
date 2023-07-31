@@ -1,0 +1,82 @@
+--find-links https://download.pytorch.org/whl/torch/
+--find-links https://download.pytorch.org/whl/torchvision/
+addict==2.4.0
+boltons @ file:///croot/boltons_1677628692245/work
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1683875369620/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+chumpy==0.70
+click==8.1.6
+colorama==0.4.6
+conda @ file:///croot/conda_1689269889729/work
+conda-content-trust @ file:///tmp/abs_5952f1c8-355c-4855-ad2e-538535021ba5h26t22e5/croots/recipe/conda-content-trust_1658126371814/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1685032319139/work/src
+conda-package-handling @ file:///croot/conda-package-handling_1685024767917/work
+conda_package_streaming @ file:///croot/conda-package-streaming_1685019673878/work
+contourpy==1.1.0
+cryptography @ file:///croot/cryptography_1686613057838/work
+cycler==0.11.0
+Cython==3.0.0
+fonttools==4.41.1
+idna @ file:///croot/idna_1666125576474/work
+importlib-metadata==6.8.0
+json-tricks==3.17.2
+jsonpatch @ file:///tmp/build/80754af9/jsonpatch_1615747632069/work
+jsonpointer==2.1
+kiwisolver==1.4.4
+libmambapy @ file:///croot/mamba-split_1685993156657/work/libmambapy
+Markdown==3.4.4
+markdown-it-py==3.0.0
+matplotlib==3.7.2
+mdurl==0.1.2
+mmcv==2.0.1
+-e git+https://github.com/open-mmlab/mmdetection.git@f78af7785ada87f1ced75a2313746e4ba3149760#egg=mmdet
+mmengine==0.8.2
+-e git+https://github.com/open-mmlab/mmpose.git@537bd8e543ab463fb55120d5caaa1ae22d6aaf06#egg=mmpose
+model-index==0.1.11
+munkres==1.1.4
+numpy==1.25.1
+opencv-python==4.8.0.74
+opendatalab==0.0.9
+openmim==0.3.9
+ordered-set==4.1.0
+packaging @ file:///croot/packaging_1678965309396/work
+pandas==2.0.3
+Pillow==10.0.0
+platformdirs==3.9.1
+pluggy @ file:///tmp/build/80754af9/pluggy_1648024709248/work
+pycocotools==2.0.6
+pycosat @ file:///croot/pycosat_1666805502580/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycryptodome==3.18.0
+Pygments==2.15.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+pyparsing==3.0.9
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+python-dateutil==2.8.2
+pytz==2023.3
+PyYAML==6.0.1
+requests @ file:///croot/requests_1682607517574/work
+rich==13.4.2
+ruamel.yaml @ file:///croot/ruamel.yaml_1666304550667/work
+ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1666302247304/work
+scipy==1.11.1
+shapely==2.0.1
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+tabulate==0.9.0
+termcolor==2.3.0
+terminaltables==3.1.10
+tomli==2.0.1
+toolz @ file:///croot/toolz_1667464077321/work
+torch==1.13.1+cu117
+torchaudio==0.13.1
+torchvision==0.14.1+cu117
+tqdm @ file:///croot/tqdm_1679561862951/work
+typing_extensions==4.7.1
+tzdata==2023.3
+urllib3 @ file:///croot/urllib3_1686163155763/work
+xtcocotools==1.13
+yapf==0.40.1
+zipp==3.16.2
+zstandard @ file:///croot/zstandard_1677013143055/work
