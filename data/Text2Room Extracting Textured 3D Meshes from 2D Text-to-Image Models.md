@@ -11,7 +11,7 @@ Update: 2023/07/26
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
-- Keywords: CV, Point Cloud, Scene Generation
+- Keywords: CV, Mesh, RGB Image, Intensity Image, Scene Generation
 
 ## How to build with docker and run the model in a docker container
 The docker environment is as follows:
