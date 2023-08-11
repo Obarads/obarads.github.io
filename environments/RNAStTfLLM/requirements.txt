@@ -1,0 +1,22 @@
+--find-links https://download.pytorch.org/whl/torch/
+--find-links https://download.pytorch.org/whl/torchvision/
+certifi==2023.7.22
+charset-normalizer==3.2.0
+fairscale==0.4.0
+filelock==3.12.2
+fsspec==2023.6.0
+huggingface-hub==0.16.4
+idna==3.4
+numpy==1.25.2
+packaging==23.1
+Pillow==10.0.0
+PyYAML==6.0.1
+requests==2.31.0
+timm==0.6.13
+torch==1.13.1+cu117
+torchaudio==0.13.1
+-e git+https://github.com/microsoft/torchscale.git@bf65397b26469ac9c24d83a9b779b285c1ec640b#egg=torchscale
+torchvision==0.14.1+cu117
+tqdm==4.65.0
+typing_extensions==4.7.1
+urllib3==2.0.4

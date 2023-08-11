@@ -1,5 +1,6 @@
 field: [
   "CV",
+  "NLP",
 ]
 
 method: [
@@ -19,6 +20,7 @@ task: [
   "Detection",
   "Depth Estimation",
   "Part Segmentation",
+  "Pose Estimation",
   "Semantic Segmentation",
   "Object Generation",
   "Scene Generation"

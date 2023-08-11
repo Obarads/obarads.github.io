@@ -133,6 +133,12 @@ def extract_data(markdown_dir_path: str):
                     raise ValueError("Invalid date format: {markdown_path}")
                 date = datetime.datetime.strptime(date, "%Y/%m/%d")
                 year = date.year
+            if re.fullmatch(r"^Release: \d{4}$", content_dict["Info"][1][0]) is not None:
+                date = content_dict["Info"][1][0].split(": ")[-1]
+                if len(date) == 1:
+                    raise ValueError("Invalid date format: {markdown_path}")
+                date = datetime.datetime.strptime(date, "%Y")
+                year = date.year
             if year is None:
                 raise ValueError(
                     f"Invalid info format (## Info): {markdown_path}"
