@@ -10,7 +10,7 @@ python scripts/listing.py
 
 ## node_modulesをインストールする
 ```
-npm install
+npm install --force
 ```
 
 

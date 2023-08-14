@@ -23,7 +23,8 @@ task: [
   "Pose Estimation",
   "Semantic Segmentation",
   "Object Generation",
-  "Scene Generation"
+  "Scene Generation",
+  "Texture Generation"
 ]
 
 etc: [
