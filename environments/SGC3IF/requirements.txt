@@ -4,7 +4,7 @@ asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_16702639
 backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393461/work
 backports.functools-lru-cache @ file:///home/conda/feedstock_root/build_artifacts/backports.functools_lru_cache_1687772187254/work
 blobfile==2.0.2
-certifi==2023.5.7
+certifi==2023.7.22
 charset-normalizer==3.2.0
 clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33
 cmake==3.26.4
