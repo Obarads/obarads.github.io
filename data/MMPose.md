@@ -11,12 +11,6 @@ Update: 2023/07/31
 - Keywords: CV, RGB Image, Pose Estimation
 
 ## How to build with docker and run the model in a docker container
-This documentation describes the Pytorch version. The docker environment is as follows:
-- CPU: Intel® Core™ i9-9900K CPU @ 3.60GHz × 16
-- GPU: NVIDIA GeForce RTX 2080 Ti
-- Memory: 64 GiB
-- Capacity: 1 TB
-
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

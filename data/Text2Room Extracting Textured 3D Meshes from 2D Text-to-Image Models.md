@@ -14,12 +14,6 @@ Update: 2023/07/26
 - Keywords: CV, Mesh, RGB Image, Intensity Image, Scene Generation
 
 ## How to build with docker and run the model in a docker container
-The docker environment is as follows:
-- CPU: 13th Gen Intel(R) Core(TM) i9-13900KF
-- GPU: NVIDIA GeForce RTX 4090
-- Memory: 128 GiB
-- Capacity: 1 TB
-
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

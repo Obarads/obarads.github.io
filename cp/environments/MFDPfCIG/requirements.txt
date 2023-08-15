@@ -1,0 +1,7 @@
+--find-links https://download.pytorch.org/whl/torch/
+--find-links https://download.pytorch.org/whl/torchvision/
+diffusers==0.19.3
+transformers==4.31.0
+torch==1.13.1+cu117
+torchvision==0.14.1+cu117
+jupyterlab==4.0.4
