@@ -69,6 +69,7 @@ python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id=
 ### 3. Run the model
 In a docker container:
 ```bash
+cd /workspace
 ./bash/run.sh
 ```
 
