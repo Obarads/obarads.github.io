@@ -84,6 +84,7 @@ In a docker container:
 ```bash
 cd /workspace
 ./scripts/test_multi.sh
+./scripts/test_canonical.sh
 ```
 
 ## どんなもの? 
