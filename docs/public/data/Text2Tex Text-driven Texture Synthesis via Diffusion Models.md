@@ -14,6 +14,9 @@ Update: 2023/08/13
 - Keywords: CV, Mesh, Texture Generation
 
 ## How to build with docker and run the model in a docker container
+Tested on:
+- GPU: RTX2080Ti
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

@@ -13,6 +13,7 @@ data: [
   "Intensity Image",
   "Point Cloud",
   "Mesh",
+  "Video"
 ]
 
 task: [
