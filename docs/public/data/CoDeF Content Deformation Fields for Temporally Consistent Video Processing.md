@@ -15,7 +15,7 @@ Update: 2023/08/19
 
 ## How to build with docker and run the model in a docker container
 Tested on:
-
+- GPU: RTX4090
 
 ### 1. Create a docker container
 ```bash
@@ -39,7 +39,7 @@ cp -r $OGI_DIR_PATH/environments/CCDFfTCVP/ ./dev_env
 
 # Create docker image and container
 docker build . -t codef -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
-docker run -dit --name codef --gpus all -v $PWD:/workspace codef
+docker run -dit --name codef --gpus all --shm-size=48g -v $PWD:/workspace codef
 ```
 
 ### 2. Setup in the docker container
@@ -88,9 +88,7 @@ cd /workspace
 
 ## どんなもの? 
 
-
 ## どうやって有効だと検証した?
-
 
 ### Quantitative results
 
