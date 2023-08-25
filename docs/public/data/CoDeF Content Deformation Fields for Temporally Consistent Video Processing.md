@@ -86,17 +86,3 @@ cd /workspace
 ./scripts/test_multi.sh
 ./scripts/test_canonical.sh
 ```
-
-## どんなもの?
-- > a
-
-## どうやって有効だと検証した?
-
-### Quantitative results
-
-### Qualitative analysis
-
-### Other experiments
-
-## 論文関連リンク
-- [] 

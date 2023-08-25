@@ -314,7 +314,7 @@ def write_actlog_to_js(
 def main():
     table_row_data_list = extract_data(os.path.join(PATH, "public/data/"))
     _, class_to_keyword = extract_keyword_dict(
-        os.path.join(PATH, "scripts/tag_list_for_papers.yaml")
+        os.path.join(PATH, "scripts/configs/tag_list_for_papers.yaml")
     )
 
     write_table_row_data_list_to_js(

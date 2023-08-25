@@ -20,6 +20,8 @@ task: [
   "Classification",
   "Detection",
   "Depth Estimation",
+  "Novel View Synthesis",
+  "Panoptic Segmentation",
   "Part Segmentation",
   "Pose Estimation",
   "Semantic Segmentation",
