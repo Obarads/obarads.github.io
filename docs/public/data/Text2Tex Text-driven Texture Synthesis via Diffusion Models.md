@@ -13,7 +13,7 @@ Update: 2023/08/13
   - License: licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 - Keywords: CV, Mesh, Texture Generation
 
-## How to build with docker and run the model in a docker container
+## Setup commands to run the implementation
 Tested on:
 - GPU: RTX2080Ti
 
@@ -70,10 +70,9 @@ cd /workspace
 ./bash/run.sh
 ```
 
-## どんなもの? 
+## Clipping and note
+### どんな論文か？
 - > In this paper, we introduce Text2Tex, a novel texture synthesis method that seamlessly texturizes 3D objects using a pre-trained depth-aware text-to-image diffusion model.
-  - > Text2Tex follows a generate-then-refine strategy.
-  - Also, the authors propose the automatic viewpoint selection technique to address unsatisfactory texturization issue of the autoregressive generation process via the diffusion-based image inpainting model.
   - Overview is fig.2.
 - > We conduct extensive study on a considerable amount of 3D objects, demonstrating the proposed method is effective for large-scale 3D content generation.
 
@@ -81,24 +80,29 @@ cd /workspace
 
 > Figure 2:  Overview of Text2Tex. We illustrate the pipeline using a 3D car mesh with a prompt “golden Porsche”. We progressively generate the texture via a generate-then-refine scheme. In progressive texture generation (Sec. 3.3), we start by rendering the object from an initial preset viewpoint.  We generate a new appearance according to the input prompt via a depth-to-image diffusion model, and project the generated image back to the partial texture.  Then, we repeat this process until the last preset viewpoint to output the initial textured mesh. In the subsequent texture refinement (Sec. 3.4), we update the initial texture from a sequence of automatically selected viewpoints to refine the stretched and blurry artifacts.
 
-## どうやって有効だと検証した?
+### 新規性
+- > Text2Tex follows a generate-then-refine strategy.
+- Also, the authors propose the automatic viewpoint selection technique to address unsatisfactory texturization issue of the autoregressive generation process via the diffusion-based image inpainting model.
+
+### 結果
 - About data
   - > We evaluate our method on a subset of textured meshes from the Objaverse [17] dataset.
   - > To compare with GAN-based category-specific approaches, we also report results on the “car” objects from the ShapeNet dataset [7].
+- Quantitative results are tab. 1 and 2.
+- Qualitative analysis are fig. 5 and 6.
 
-### Quantitative results
 ![tab1](img/TTTSvDM/tab1.png)
 > Table  1: Quantitative  comparisons  on  Objaverse  subset. Our  method  performs  favaorably  against  state-of-the-art text-driven texture synthesis methods.
 
 ![tab2](img/TTTSvDM/tab2.png)
 > Table  2:   Quantitative  comparison  on  the  ShapeNet  cars. Our  method  outperform  state-of-the-art  category-specific GAN-based methods by a significant margin.
 
-### Qualitative analysis
 ![fig5](img/TTTSvDM/fig5.png)
 > Figure 5:  Qualitative comparisons on Objaverse.  We compare our textured mesh against CLIPMesh [37], Text2Mesh [34], Latent-Paint [33], and the original textures from Objaverse.  In comparison with the baselines, our method produces more consistent and detailed 3D textures with respect to the input geometries. Image best viewed in color.
 
 ![fig6](img/TTTSvDM/fig6.png)
 > Figure 6:  Qualitative comparisons on ShapeNet car.   Our method generates sharper and more coherent textures with respect to the geometries compared to the state-of-the-art GAN-based method.
+
 
 ### Other experiments
 Ablation studies, Limitations, Additional Qualitative Results, 
@@ -131,4 +135,5 @@ pip install --no-index --no-cache-dir pytorch3d==0.7.2 -f https://dl.fbaipublicf
 # setup xformers
 pip install xformers==0.0.12
 ```
- 
+
+## どうやって有効だと検証した?

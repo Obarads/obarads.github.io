@@ -2,14 +2,17 @@
 - Paper: [arxiv.org](@{arxiv_url})
   - Submission date: @{arxiv_submission_date}
   - Authors: @{arxiv_authors}
-  - Conf.: ?
+  - Conf.: ??
 - Implementation: []()
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
 - Keywords: 
 
-## How to build with docker and run the model in a docker container
+## Setup commands to run the implementation
+Tested on:
+- GPU: ??
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -59,9 +62,12 @@ In a docker container:
 cd /workspace
 ```
 
-## どんなもの?
+## Clipping and note
+### どんな論文か？
 
-## どうやって有効だと検証した?
+### 新規性
+
+### 結果
 
 ### Other experiments
 
