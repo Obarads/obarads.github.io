@@ -1,0 +1,13 @@
+--find-links https://download.pytorch.org/whl/torch/
+--find-links https://download.pytorch.org/whl/torchvision/
+transformers==4.31.0
+torch==1.12.1+cu116
+torchvision==0.13.1+cu116
+jupyterlab==4.0.4
+langchain==0.0.279
+pypdf
+accelerate
+-e git+https://github.com/HazyResearch/flash-attention.git#subdirectory=csrc/rotary
+flash-attn
+protobuf
+sentencepiece
