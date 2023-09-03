@@ -2,7 +2,7 @@
 
 ```bash
 # Get a base image
-BASE_IMAGE=nvidia/cuda:11.6.2-cudnn8-devel-ubuntu20.04
+BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
 # Create docker image and container
@@ -14,4 +14,6 @@ In the container:
 ```bash
 cd /workspace
 pip install -r .devcontainer/requirements.txt
+pip install flash-attn --no-build-isolation
+pip install git+https://github.com/HazyResearch/flash-attention.git#subdirectory=csrc/rotary
 ```

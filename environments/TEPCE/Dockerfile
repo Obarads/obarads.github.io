@@ -13,12 +13,6 @@ RUN apt-get update && \
     libgl1-mesa-dev \
     libglib2.0-0 \
     wget \
-    nodejs \
-    npm \
-    cmake \
-    build-essential \
-    pkg-config \
-    libgoogle-perftools-dev \
     unzip && \
     # cmake build-essential pkg-config libgoogle-perftools-dev && \ 
     rm -rf /var/lib/apt/lists/*

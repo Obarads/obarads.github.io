@@ -1,12 +1,16 @@
+# @{arxiv_title}
+
+Update: @{update_date}
+
 ## Info
 - Paper: [arxiv.org](@{arxiv_url})
   - Submission date: @{arxiv_submission_date}
   - Authors: @{arxiv_authors}
   - Conf.: ??
-- Implementation: []()
+- Implementation: [@{github_userdir}](@{github_url})
   - framework: Pytorch
   - Official code: Yes
-  - License: MIT license
+  - License: @{github_license}
 - Keywords: 
 
 ## Setup commands to run the implementation
@@ -29,7 +33,7 @@ git clone @{github_url}
 # Move to text2room
 cd @{github_dir}
 # Switch to @{github_commit_hash_date} ver.
-git switch -d @{github_commit_hash_date}
+git switch -d @{github_commit_hash}
 # Copy a folder for building env.
 cp -r $OGI_DIR_PATH/environments/@{myrepo_article_abb}/ ./dev_env
 
@@ -44,7 +48,7 @@ In a docker container:
 cd /workspace
 
 # setup python and packages
-conda create -n @{github_dir} python=3.9
+conda create -y -n @{github_dir} python=3.9
 conda activate @{github_dir}
 cd dev_env
 # pip install -r requirements.txt
