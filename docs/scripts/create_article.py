@@ -1,6 +1,7 @@
 import argparse
 import os
 import arxiv
+import datetime
 from dataclasses import dataclass
 from typing import List
 from github import Github
@@ -71,8 +72,8 @@ class Data:
     myrepo_article_abb: str
 
 
-def create_article(data: Data):
-    with open("/workspace/docs/scripts/configs/temp.md") as f:
+def create_article(data: Data, ):
+    with open(os.path.join(os.path.dirname(__file__), "configs/temp.md"), encoding="utf-8") as f:
         temp_article = f.read()
 
     splited_temp_articles = temp_article.split("@{")
@@ -81,7 +82,7 @@ def create_article(data: Data):
         end_word_index = splited_temp_article.find("}")
         value_name = splited_temp_article[:end_word_index]
         value = getattr(data, value_name)
-        splited_article = value + splited_temp_article[end_word_index + 1 :]
+        splited_article = value + splited_temp_article[end_word_index + 1:]
         splited_articles.append(splited_article)
 
     article = "".join(splited_articles)
@@ -92,14 +93,18 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--arxiv_url", "-a")
     parser.add_argument("--github_url", "-g")
+    parser.add_argument("--base_nvidia_image", "-b")
     args = parser.parse_args()
 
     # arxiv_url = args.arxiv_url
     arxiv_url = "https://arxiv.org/abs/1612.00593"
     # github_url = args.github_url
     github_url = "https://github.com/charlesq34/pointnet"
+    # base_nvidia_image = args.base_nvidia_image
+    base_nvidia_image = "nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04"
 
-    arxiv_title, arxiv_submission_date, arxiv_authors = create_arxiv_data(arxiv_url)
+    arxiv_title, arxiv_submission_date, arxiv_authors = create_arxiv_data(
+        arxiv_url)
     (
         github_url,
         github_dir,
@@ -108,6 +113,8 @@ def main():
         github_commit_hash_date,
         github_license,
     ) = create_github_url(github_url)
+
+    update_date = datetime.datetime.now().strftime("%Y/%m/%d")
 
     data = Data(
         arxiv_title=arxiv_title,
@@ -120,12 +127,19 @@ def main():
         github_commit_hash=github_commit_hash,
         github_commit_hash_date=github_commit_hash_date,
         github_license=github_license,
-        update_date="None",
-        base_nvidia_image="None",
+        update_date=update_date,
+        base_nvidia_image=base_nvidia_image,
         myrepo_article_abb="".join([t[0] for t in arxiv_title.split(" ")]),
     )
+    article = create_article(data)
 
-    print(create_article(data=data))
+    output_file_path = os.path.join(os.path.dirname(
+        __file__), "..", "public/data", arxiv_title.replace(":", "") + ".md")
+    if not os.path.exists(output_file_path):
+        with open(output_file_path, "w", encoding="utf-8") as f:
+            f.write(article)
+    else:
+        print(f"exist: {output_file_path}")
 
 
 if __name__ == "__main__":
