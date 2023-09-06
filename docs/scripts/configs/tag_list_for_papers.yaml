@@ -32,4 +32,5 @@ task: [
 
 etc: [
   "Multi-View",
+  "Library",
 ]

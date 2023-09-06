@@ -8,7 +8,7 @@ Update: 2023/07/31
 - Implementation: [open-mmlab/mmpose](https://github.com/open-mmlab/mmpose)
   - framework: Pytorch
   - License: Apache License 2.0
-- Keywords: CV, RGB Image, Pose Estimation
+- Keywords: CV, RGB Image, Pose Estimation, Library
 
 ## How to build with docker and run the model in a docker container
 ### 1. Create a docker container
