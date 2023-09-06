@@ -51,20 +51,16 @@ cd /workspace
 conda create -y -n torchsparse python=3.10
 conda activate torchsparse
 
+pip install -r dev_env/requirements.txt
 python -c "$(curl -fsSL https://raw.githubusercontent.com/mit-han-lab/torchsparse/master/install.py)"
-# pip install -r requirements.txt
-```
-
-### 3. Setup the models
-In a docker container:
-```bash
-cd /workspace
 ```
 
 ### 4. Run the model
 In a docker container:
 ```bash
 cd /workspace
+cd examples
+python example.py
 ```
 
 ## Clipping and note
