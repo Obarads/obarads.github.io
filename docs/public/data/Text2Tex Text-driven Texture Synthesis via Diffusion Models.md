@@ -135,5 +135,3 @@ pip install --no-index --no-cache-dir pytorch3d==0.7.2 -f https://dl.fbaipublicf
 # setup xformers
 pip install xformers==0.0.12
 ```
-
-## どうやって有効だと検証した?

@@ -1,6 +1,6 @@
 # TorchSparse++: Efficient Point Cloud Engine
 
-Update: @{update_date}
+Update: 2023/09/06
 
 ## Info
 - Paper: [openaccess.thecvf.com](https://openaccess.thecvf.com/content/CVPR2023W/WAD/html/Tang_TorchSparse_Efficient_Point_Cloud_Engine_CVPRW_2023_paper.html)

@@ -39,3 +39,6 @@ tqdm==4.64.1
 transforms3d==0.4.1
 trimesh==3.18.0
 wandb==0.13.4
+gdown==4.7.1
+pandas==2.1.0
+randomname==0.2.1
