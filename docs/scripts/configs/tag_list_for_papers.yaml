@@ -1,6 +1,7 @@
 field: [
   "CV",
   "NLP",
+  "Audio"
 ]
 
 method: [
@@ -13,7 +14,7 @@ data: [
   "Intensity Image",
   "Point Cloud",
   "Mesh",
-  "Video"
+  "Video",
 ]
 
 task: [
@@ -33,4 +34,6 @@ task: [
 etc: [
   "Multi-View",
   "Library",
+  "LLM",
+  "Multi-Modality"
 ]

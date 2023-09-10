@@ -2,7 +2,7 @@
 
 Update: @{update_date}
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](@{arxiv_url})
   - Submission date: @{arxiv_submission_date}
   - Authors: @{arxiv_authors}
@@ -13,7 +13,7 @@ Update: @{update_date}
   - License: @{github_license}
 - Keywords: 
 
-## Setup commands to run the implementation
+## 🖥 Setup commands to run the implementation
 Tested on:
 - GPU: ??
 
@@ -35,11 +35,11 @@ cd @{github_dir}
 # Switch to @{github_commit_hash_date} ver.
 git switch -d @{github_commit_hash}
 # Copy a folder for building env.
-cp -r $OGI_DIR_PATH/environments/@{myrepo_article_abb}/ ./dev_env
+cp -r "${OGI_DIR_PATH}/environments/@{myrepo_article_abb}/" ./dev_env
 
 # Create docker image and container
-docker build . -t @{github_dir} -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
-docker run -dit --name @{github_dir} --gpus all -v $PWD:/workspace @{github_dir}
+docker build . -t @{github_dir_lowercase} -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
+docker run -dit --name @{github_dir_lowercase} --gpus all -v $PWD:/workspace @{github_dir_lowercase}
 ```
 
 ### 2. Setup in the docker container
@@ -66,7 +66,7 @@ In a docker container:
 cd /workspace
 ```
 
-## Clipping and note
+## 📝 Clipping and note
 ### どんな論文か？
 
 ### 新規性
@@ -75,6 +75,6 @@ cd /workspace
 
 ### Other experiments
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [] 
 

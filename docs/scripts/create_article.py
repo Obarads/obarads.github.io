@@ -5,6 +5,7 @@ import datetime
 from dataclasses import dataclass
 from typing import List
 from github import Github
+import shutil
 
 
 def create_arxiv_data(arxiv_url):
@@ -33,6 +34,7 @@ def create_github_url(github_url):
 
         github_url: str = github_url
         github_dir: str = repo.name
+        github_dir_lowercase: str = repo.name.lower()
         github_userdir: str = github_userdir
         github_commit_hash: str = latest_commit.sha
         github_commit_hash_date: str = latest_commit.commit.author.date.strftime(
@@ -42,12 +44,14 @@ def create_github_url(github_url):
     else:
         github_url: str = None
         github_dir: str = None
+        github_dir_lowercase: str = None
         github_userdir: str = None
         github_commit_hash: str = None
         github_commit_hash_date: str = None
     return (
         github_url,
         github_dir,
+        github_dir_lowercase,
         github_userdir,
         github_commit_hash,
         github_commit_hash_date,
@@ -63,6 +67,7 @@ class Data:
     arxiv_authors: List[str]
     github_url: str
     github_dir: str
+    github_dir_lowercase: str
     github_userdir: str
     github_commit_hash: str
     github_commit_hash_date: str
@@ -81,7 +86,7 @@ def create_article(
         temp_article = f.read()
 
     splited_temp_articles = temp_article.split("@{")
-    splited_articles = []
+    splited_articles = [splited_temp_articles[0]]
     for splited_temp_article in splited_temp_articles[1:]:
         end_word_index = splited_temp_article.find("}")
         value_name = splited_temp_article[:end_word_index]
@@ -97,20 +102,25 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--arxiv_url", "-a")
     parser.add_argument("--github_url", "-g")
-    parser.add_argument("--base_nvidia_image", "-b")
+    parser.add_argument(
+        "--base_nvidia_image",
+        "-b",
+        default="nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04",
+    )
     args = parser.parse_args()
 
-    # arxiv_url = args.arxiv_url
-    arxiv_url = "https://arxiv.org/abs/1612.00593"
-    # github_url = args.github_url
-    github_url = "https://github.com/charlesq34/pointnet"
-    # base_nvidia_image = args.base_nvidia_image
-    base_nvidia_image = "nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04"
+    arxiv_url = args.arxiv_url
+    # arxiv_url = "https://arxiv.org/abs/1612.00593"
+    github_url = args.github_url
+    # github_url = "https://github.com/charlesq34/pointnet"
+    base_nvidia_image = args.base_nvidia_image
+    # base_nvidia_image = "nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04"
 
     arxiv_title, arxiv_submission_date, arxiv_authors = create_arxiv_data(arxiv_url)
     (
         github_url,
         github_dir,
+        github_dir_lowercase,
         github_userdir,
         github_commit_hash,
         github_commit_hash_date,
@@ -127,6 +137,7 @@ def main():
         arxiv_authors=arxiv_authors,
         github_url=github_url,
         github_dir=github_dir,
+        github_dir_lowercase=github_dir_lowercase,
         github_userdir=github_userdir,
         github_commit_hash=github_commit_hash,
         github_commit_hash_date=github_commit_hash_date,
@@ -151,13 +162,37 @@ def main():
     os.makedirs(
         os.path.join(
             os.path.dirname(__file__), "../public/data/img", myrepo_article_abb
-        )
+        ),
+        exist_ok=True,
     )
     os.makedirs(
         os.path.join(
             os.path.dirname(__file__), "../../environments", myrepo_article_abb
-        )
+        ),
+        exist_ok=True,
     )
+    dockerfile_path = os.path.join(
+        os.path.dirname(__file__),
+        "../../environments",
+        myrepo_article_abb,
+        "Dockerfile",
+    )
+    if not os.path.exists(dockerfile_path):
+        shutil.copy(
+            os.path.join(os.path.dirname(__file__), "configs/Dockerfile"),
+            dockerfile_path,
+        )
+    req_txt_path = os.path.join(
+        os.path.dirname(__file__),
+        "../../environments",
+        myrepo_article_abb,
+        "requirements.txt",
+    )
+    if not os.path.exists(req_txt_path):
+        shutil.copy(
+            os.path.join(os.path.dirname(__file__), "configs/requirements.txt"),
+            req_txt_path,
+        )
 
 
 if __name__ == "__main__":

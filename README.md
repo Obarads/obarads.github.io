@@ -2,7 +2,7 @@
 This site (repository) provides **setup commands (with docker) to run the implementation of papers or packages** and **the paper clippings**.
 If you want to know this contents, Please check [my github.io](https://obarads.github.io/) or Example (docker command) section.
 
-## Setup commands 
+## 🖥️ Setup commands 
 Setup commands section notes how to build environments to run the implementation of papers or packages with Docker. Setup commands are written in 'How to build with docker and run the model in a docker container' section. 
 
 ### Example
@@ -37,7 +37,7 @@ docker build . -t text2room -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --b
 docker run -dit --name text2room --gpus all -v $PWD:/workspace text2room
 ```
 
-## Paper clippings
+## 📝 Paper clippings and note
 Paper clippings section notes summary of paper methods. Paper clippings are written in 'どんなもの?' (What thing?) 'どうやって有効だと検証した?' (How did the authors verify that proposed method is valid?) section and '論文関連リンク' (cited papers in the paper). 
 
 ### Example
