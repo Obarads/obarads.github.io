@@ -2,7 +2,7 @@
 
 Update: 2023/06/15
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2002.10187)
   - Submission date: 2020/02/24
   - Authors: Zetong Yang, Yanan Sun, Shu Liu, Jiaya Jia
@@ -13,7 +13,7 @@ Update: 2023/06/15
   - License: MIT license
 - Keywords: CV, Point Cloud, Detection
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -83,8 +83,8 @@ In a docker container:
 cd /workspace
 python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 ```
-
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - Single stage 3D物体検出モデル、3DSSDを提案した。
 - 精度と効率を調律させた軽量のモデルである。
 - 効率を上げるため、既存手法で大抵採用されているアップサンプリング層とrefinement stageをすべて省き、計算コストを大幅削減した。
@@ -96,20 +96,19 @@ python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 
 > Figure 1. Illustration of the 3DSSD framework. On the whole, it is composed of backbone and box prediction network including a candidate generation layer and an anchor-free prediction head. (a) Backbone network. It takes the raw point cloud (x, y, z, r) as input, and generates global features for all representative points through several SA layers with fusion sampling (FS) strategy. (b) Candidate generation layer (CG). It downsamples, shifts and extracts features for representative points after SA layers. (c) Anchor-free prediction head.
 
-
-## どうやって有効だと検証した?
+### どうやって有効だと検証した?
 他モデルと比べた際の結果は以下の通り。
+- KITTIによる検出検証 (table 3)
+- nuScenesによる検出検証 (table 4)
 
-### KITTIによる検出検証
 ![tab3](img/3P3SSOD/tab3.png)
 
 > Table 3. Results on KITTI test set on class Car drawn from official Benchmark [1]. “Sens.” means sensors used by the method. “L” and “R” represent using LiDAR and RGB images respectively
 
-### nuScenesによる検出検証
 ![tab4](img/3P3SSOD/tab4.png)
 
 > Table 4. AP on nuScenes dataset. The results of SECOND come from its official implementation [2].
 
-## 論文関連リンク
+## 📚 論文関連リンク
 なし
 

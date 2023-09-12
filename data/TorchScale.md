@@ -2,15 +2,15 @@
 
 Update: 2023/08/12
 
-## Info
+## ℹ️ Info
 - Document: [github.com](https://github.com/microsoft/torchscale)
   - Release: 2022
 - Implementation: [microsoft/torchscale](https://github.com/microsoft/torchscale)
   - framework: Pytorch
   - License: MIT License
-- Keywords: NLP
+- Keywords: NLP, Library
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

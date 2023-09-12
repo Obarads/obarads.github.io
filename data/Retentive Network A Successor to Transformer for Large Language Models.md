@@ -2,7 +2,7 @@
 
 Update: 2023/08/03
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2307.08621)
   - Submission date: 2023/07/17
   - Authors: Yutao Sun, Li Dong, Shaohan Huang, Shuming Ma, Yuqing Xia, Jilong Xue, Jianyong Wang, Furu Wei
@@ -11,9 +11,9 @@ Update: 2023/08/03
   - framework: Pytorch
   - Official code: Yes
   - License: MIT license
-- Keywords: NLP
+- Keywords: NLP, LLM
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -27,7 +27,7 @@ docker pull $BASE_IMAGE
 
 # Clone the repository
 git clone https://github.com/microsoft/torchscale.git
-# Move to text2room
+# Move to the repository
 cd torchscale
 # Switch to 2023/07/24 ver.
 git switch -d bf65397b26469ac9c24d83a9b779b285c1ec640b

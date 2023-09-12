@@ -2,7 +2,7 @@
 
 Update: 2023/06/26
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/1904.08889)
   - Submission date: 2019/04/18
   - Authors: Hugues Thomas, Charles R. Qi, Jean-Emmanuel Deschaud, Beatriz Marcotegui, François Goulette, Leonidas J. Guibas
@@ -13,7 +13,7 @@ Update: 2023/06/26
   - License: MIT License, MIT License
 - Keywords: CV, Point Cloud, Semantic Segmentation, Classification, Part Segmentation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -68,7 +68,8 @@ cd /workspace
 python train_ModelNet40.py
 ```
 
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - 新規の点畳込み演算子、Kernel Point Convolution (KPConv)を提案した。
 - >  KPConv also consists of a set of local 3D filters, but overcomes previous point convolution limitations as shown in related work.
   - "previous point convolution" are Projection networks, Graph convolution networks, Pointwise MLP networks, Point convolution networks.
@@ -82,17 +83,16 @@ python train_ModelNet40.py
 ![fig3](img/KFaDCfPC/fig3.png)
 > Figure 3. Deformable KPConv illustrated on 2D points.
 
-## どうやって有効だと検証した?
-他モデルと比べた際の結果は以下の通り。
+### どうやって有効だと検証した?
+- 3D shape Classificaton (ModelNet40)とPart Segmentation(ShapeNetPart)による精度実験 (table 1)
+- 3D Scene Semantic Segmentation (ScanNet, Semantic 3D, S3DIS, Paris-Lille-3D)による精度検証 (table 2)
 
-### 3D shape Classificaton (ModelNet40)とPart Segmentation(ShapeNetPart)による精度実験
 ![tab1](img/KFaDCfPC/tab1.png)
 > Table 1. 3D Shape Classification and Segmentation results. For generalizability to real data, we only consider scores obtained without shape normals on ModelNet40 dataset. The metrics are overall accuracy (OA) for Modelnet40, class average IoU (mcIoU) and instance average IoU (mIoU) for ShapeNetPart.
 
-### 3D Scene Semantic Segmentation (ScanNet, Semantic 3D, S3DIS, Paris-Lille-3D)による精度検証
 ![tab2](img/KFaDCfPC/tab2.png)
 > 3D scene segmentation scores (mIoU). Scannet, Semantic3D and Paris-Lille-3D (PL3D) scores are taken from their respective online benchmarks (reduced-8 challenge for Seman- tic3D). S3DIS scores are given for Area-5 (see supplementary material for k-fold).
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [2] Matan Atzmon, Haggai Maron, and Yaron Lipman. Point convolutional neural networks by extension operators. ACM Transactions on Graphics (TOG), 37(4):71, 2018.
 - [7] Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, and Yichen Wei. Deformable convolutional networks. In Proceedings of the IEEE international Confer- ence on Computer Vision, pages 764–773, 2017.

@@ -2,7 +2,7 @@
 
 Update: 2023/07/01
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2206.04670)
   - Submission date: 2022/07/09
   - Authors: Guocheng Qian, Yuchen Li, Houwen Peng, Jinjie Mai, Hasan Abed Al Kader Hammoud, Mohamed Elhoseiny, Bernard Ghanem
@@ -13,7 +13,7 @@ Update: 2023/07/01
   - License: MIT license
 - Keywords: CV, Point Cloud, Semantic Segmentation, Part Segmentation, Classification
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -77,7 +77,8 @@ cd /workspace
 CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/pointnext-s.yaml --batch_size 16
 ```
 
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - > In this work, we revisit PointNet++, the classical and widely used network, and find that its full potential has yet to be explored, mainly due to two factors that were not present at the time of PointNet++: (1) superior training strategies and (2) effective model scaling strategies.
   1. > Through a comprehensive empirical study on various benchmarks, e.g., ScanObjecNN [48] for object classification and S3DIS [1] for semantic segmentation, we discover that training strategies, i.e., data augmentation and optimization techniques, play an important role in the network’s performance. In fact, a large part of the performance gain of state-of-the-art (SOTA) methods [51, 47, 62] over PointNet++ [32] is due to improved training strategies that are, unfortunately, less publicized compared to architectural changes.
   2.  > Effectively expanding PointNet++ from its original small scale to a larger scale is a topic worth studying because larger models are generally expected to enable richer representations and perform better [2, 18, 61]. However, we find that the naive way of using more building blocks or increasing the channel size in PointNet++ only leads to an overhead in latency and no significant improvement in accuracy (see Sec. 4.4.2). For effective and efficient model scaling, we introduce residual connections [14], an inverted bottleneck design [40], and separable MLPs [34] into PointNet++.
@@ -88,23 +89,22 @@ CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/poi
 > Figure 2: PointNeXt architecture. PointNeXt shares the same Set Abstraction and Feature Propagation blocks as PointNet++ [32], while adding an additional MLP layer at the beginning and scaling the architecture with the proposed Inverted Residual MLP (InvResMLP) blocks. Here, we present PointNeXt for segmentation as an example. Refer to Appendix for the classification architecture.
 
 
-## どうやって有効だと検証した?
-他モデルと比べた際の結果は以下の通り。
+### どうやって有効だと検証した?
+- S3DISによるセグメンテーション検証 (table 1)
+- ScanObjectNNによるオブジェクト分類検証 (table 2)
+- ShapeNetPartによるパーツセグメンテーション検証 (table 3)
 
-### S3DISによるセグメンテーション検証
-![tab2](img/PRPwITaSS/tab1.png)
+![tab1](img/PRPwITaSS/tab1.png)
 
 > Table 1: Semantic segmentation on S3DIS with 6-fold cross-validation. The improvements of our PointNeXt over PointNet++ [32] are highlighted in green color. Methods are in chronological order.
 
-### ScanObjectNNによるオブジェクト分類検証
 ![tab2](img/PRPwITaSS/tab2.png)
 
 > Table 2: Object classification on ScanObjectNN.
 
-### ShapeNetPartによるパーツセグメンテーション検証
-![tab2](img/PRPwITaSS/tab3.png)
+![tab3](img/PRPwITaSS/tab3.png)
 
 > Table 3: Part segmentation on ShapeNetPart.
 
-## 論文関連リンク
+## 📚 論文関連リンク
 なし

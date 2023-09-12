@@ -2,7 +2,7 @@
 
 Update: 2023/06/22
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/1911.11236)
   - Submission date: 2019/11/25
   - Authors: Qingyong Hu, Bo Yang, Linhai Xie, Stefano Rosa, Yulan Guo, Zhihua Wang, Niki Trigoni, Andrew Markham
@@ -13,7 +13,7 @@ Update: 2023/06/22
   - License: Attribution-NonCommercial-ShareAlike 4.0 International
 - Keywords: CV, Point Cloud, Semantic Segmentation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -70,7 +70,8 @@ cd /workspace
 sh jobs_6_fold_cv_s3dis.sh
 ```
 
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - 大規模点群に対する軽量なモデル、RandLA-Netを提案した。
 - 既存の手法よりも最大200倍早い。また、100万点に対する処理も一回の入力で処理できる。これは既存の手法よりも、一度に多くの点を処理できることを示す。
   - lage-scale点群を処理する手法はあるが、これらはボクセル化やSPG化などの前処理で時間がかかる。
@@ -87,18 +88,17 @@ sh jobs_6_fold_cv_s3dis.sh
 
 > Figure 7. The detailed architecture of our RandLA-Net. (N, D) represents the number of points and feature dimension respectively. FC: Fully Connected layer, LFA: Local Feature Aggregation, RS: Random Sampling, MLP: shared Multi-Layer Perceptron, US: Up-sampling, DP: Dropout.
 
-## どうやって有効だと検証した?
-他モデルと比べた際の結果は以下の通り。
+### どうやって有効だと検証した?
+- SemanticKITTIによるセグメンテーション検証 (table 2)
+- Semantic3Dによるセグメンテーション検証 (table 3)
 
-### SemanticKITTIによるセグメンテーション検証
 ![tab2](img/RESSoLPC/tab2.png)
 
 > Table 2. Quantitative results of different approaches on Semantic3D (reduced-8) [17]. Only the recent published approaches are compared. Accessed on 31 March 2020.
 
-### Semantic3Dによるセグメンテーション検証
-![tab2](img/RESSoLPC/tab3.png)
+![tab3](img/RESSoLPC/tab3.png)
 
 > Table 3. Quantitative results of different approaches on SemanticKITTI [3]. Only the recent published methods are compared and all scores are obtained from the online single scan evaluation track. Accessed on 31 March 2020.
 
-## 論文関連リンク
+## 📚 論文関連リンク
 なし
