@@ -2,7 +2,7 @@
 
 Update: 2023/08/13
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2303.11396)
   - Submission date: 2023/03/20
   - Authors: Dave Zhenyu Chen, Yawar Siddiqui, Hsin-Ying Lee, Sergey Tulyakov, Matthias Nießner
@@ -13,7 +13,7 @@ Update: 2023/08/13
   - License: licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 - Keywords: CV, Mesh, Texture Generation
 
-## Setup commands to run the implementation
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: RTX2080Ti
 
@@ -70,7 +70,7 @@ cd /workspace
 ./bash/run.sh
 ```
 
-## Clipping and note
+## 📝 Clipping and note
 ### どんな論文か？
 - > In this paper, we introduce Text2Tex, a novel texture synthesis method that seamlessly texturizes 3D objects using a pre-trained depth-aware text-to-image diffusion model.
   - Overview is fig.2.
@@ -107,7 +107,7 @@ cd /workspace
 ### Other experiments
 Ablation studies, Limitations, Additional Qualitative Results, 
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [7] Angel  X  Chang,  Thomas  Funkhouser,  Leonidas  Guibas, Pat  Hanrahan,  Qixing  Huang,  Zimo  Li,  Silvio  Savarese, Manolis  Savva,  Shuran  Song,  Hao  Su,  et  al. Shapenet: An  information-rich  3d  model  repository. arXiv  preprint arXiv:1512.03012, 2015.
 - [17] Matt Deitke, Dustin Schwenk, Jordi Salvador, Luca Weihs, Oscar  Michel,   Eli  VanderBilt,   Ludwig  Schmidt,   Kiana Ehsani,   Aniruddha  Kembhavi,   and  Ali  Farhadi. Obja- verse:  A universe of annotated 3d objects. arXiv preprint arXiv:2212.08051, 2022.
 - [33] Gal Metzer, Elad Richardson, Or Patashnik, Raja Giryes, and Daniel Cohen-Or. Latent-nerf for shape-guided generation of 3d shapes and textures. In CVPR, 2023.

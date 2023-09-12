@@ -2,7 +2,7 @@
 
 Update: 2023/07/31
 
-## Info
+## ℹ️ Info
 - Document: [readthedocs.io](https://mmpose.readthedocs.io/en/latest/overview.html)
   - Release: 2020
 - Implementation: [open-mmlab/mmpose](https://github.com/open-mmlab/mmpose)
@@ -10,7 +10,7 @@ Update: 2023/07/31
   - License: Apache License 2.0
 - Keywords: CV, RGB Image, Pose Estimation, Library
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -24,7 +24,7 @@ docker pull $BASE_IMAGE
 
 # Clone the repository
 git clone https://github.com/open-mmlab/mmpose.git
-# Move to text2room
+# Move to MMPose
 cd mmpose
 # Switch to 2023/07/04 ver.
 git switch -d 537bd8e543ab463fb55120d5caaa1ae22d6aaf06

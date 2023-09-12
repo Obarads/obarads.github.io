@@ -2,7 +2,7 @@
 
 Update: 2023/08/12
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2302.08113)
   - Submission date: 2023/02/16
   - Authors: Omer Bar-Tal, Lior Yariv, Yaron Lipman, Tali Dekel
@@ -13,7 +13,7 @@ Update: 2023/08/12
   - License: ?
 - Keywords: CV, RGB Image, Scene Generation, Object Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -55,7 +55,8 @@ pip install -r requirements.txt
 Please open `/workspace/MultiDiffusion_Panorama.ipynb`, in the container and run the cells in `MultiDiffusion_Panorama.ipynb`.  
 Note: cell 2 takes a long time.
 
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - > In this work, we present MultiDiffusion, a unified framework that enables versatile and controllable image generation, using a pre-trained text-to-image diffusion model, without any further training or finetuning.
 - >  We show that MultiDiffusion can be readily applied to generate high quality and diverse images that adhere to user-provided controls, such as desired aspect ratio (e.g., panorama), and spatial guiding signals, ranging from tight segmentation masks to bounding boxes.
 - > MultiDiffusion is to define a new generation process that is composed of several reference diffusion generation pro- cesses binded together with a set of shared parameters or constraints.
@@ -64,9 +65,13 @@ Note: cell 2 takes a long time.
 ![fig2](img/MFDPfCIG/fig2.png)
 > Figure 2. MultiDiffusion: a new generation process, $\Psi$, is defined over a pre-trained reference model $\Phi$. Starting from a noise image $J_T$ , at each generation step, we solve an optimization task whose objective is that each crop $F_i (J_t)$ will follow as closely as possible its denoised version $\Phi(F_i(J_t))$. Note that while each denoising step $\Phi(F_i(J_t))$ may pull to a different direction, our process fuses these inconsistent directions into a global denoising step $\Phi(J_t)$, resulting in a high-quality seamless image.
 
-## どうやって有効だと検証した?
-### Panorama Generation
-- > To evaluate our method on the task of text-to-panorama generation (Sec. 4.1), we generated a diverse set of 512 × 4608 panoramas, ×9 wider than the original training resolution.
+### どうやって有効だと検証した?
+- Panorama Generation
+  - > To evaluate our method on the task of text-to-panorama generation (Sec. 4.1), we generated a diverse set of 512 × 4608 panoramas, ×9 wider than the original training resolution.
+  - Table 1 and figure 4
+- Region-based Text-to-Image Generation
+  - > Our region-based formulation (Sec. 4.2) allows novice users greater flexibility in their content creation, by lifting the burden of creating accurate tight masks.
+  - Table 2 and figure 5
 
 ![tab1](img/MFDPfCIG/tab1.png)
 
@@ -75,9 +80,6 @@ Note: cell 2 takes a long time.
 ![fig4](img/MFDPfCIG/fig4.png)
 
 > Figure 4. Text-to-Panorama comparison to Blended Latent Diffusion (BLD) (Avrahami et al., 2022a) and Stable Inpainting (SI) (Rombach et al., 2022). Our framework produces seamless and diverse content whereas the baselines either contain repetitive content, visible seams or artifacts.
-
-### Region-based Text-to-Image Generation
-> Our region-based formulation (Sec. 4.2) allows novice users greater flexibility in their content creation, by lifting the burden of creating accurate tight masks.
 
 ![tab2](img/MFDPfCIG/tab2.png)
 
@@ -90,7 +92,7 @@ Note: cell 2 takes a long time.
 ### Other experiments
 Additional Results, Bootstrapping
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [Avrahami et al., 2022a] Avrahami, O., Fried, O., and Lischinski, D. Blended latent diffusion. arXiv preprint arXiv:2206.02779, 2022a.
 - [Rombach et al., 2022] Rombach,  R.,  Blattmann,  A.,  Lorenz,  D.,  Esser,  P.,  and Ommer, B. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Con- ference on Computer Vision and Pattern Recognition, pp. 10684–10695, 2022.
 - [Gafni et al., 2022] Gafni,  O.,  Polyak,  A.,  Ashual,  O.,  Sheynin,  S.,  Parikh, D., and Taigman, Y.  Make-a-scene:  Scene-based text- to-image generation with human priors.   In European Conference on Computer Vision (ECCV), 2022.

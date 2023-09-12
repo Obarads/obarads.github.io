@@ -2,7 +2,7 @@
 
 Update: 2023/07/09
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2206.04670)
   - Submission date: 2022/12/16
   - Authors: Alex Nichol, Heewoo Jun, Prafulla Dhariwal, Pamela Mishkin, Mark Chen
@@ -13,7 +13,7 @@ Update: 2023/07/09
   - License: MIT license
 - Keywords: CV, Point Cloud, Object Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

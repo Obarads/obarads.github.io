@@ -2,7 +2,7 @@
 
 Update: 2023/07/14
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2112.10752)
   - Submission date: 2021/12/24
   - Authors: Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer
@@ -13,7 +13,7 @@ Update: 2023/07/14
   - License: CreativeML Open RAIL-M
 - Keywords: CV, RGB Image, Object Generation, Scene Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

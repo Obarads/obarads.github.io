@@ -2,7 +2,7 @@
 
 Update: 2023/09/06
 
-## Info
+## ℹ️ Info
 - Paper: [openaccess.thecvf.com](https://openaccess.thecvf.com/content/CVPR2023W/WAD/html/Tang_TorchSparse_Efficient_Point_Cloud_Engine_CVPRW_2023_paper.html)
   - Submission date: 2023/06/18
   - Authors: Haotian Tang, Shang Yang, Zhijian Liu, Ke Hong, Zhongming Yu, Xiuyu Li, Guohao Dai, Yu Wang, Song Han
@@ -13,7 +13,7 @@ Update: 2023/09/06
   - License: MIT license
 - Keywords: CV, Point Cloud, Detection, Semantic Segmentation, Library
 
-## Setup commands to run the implementation
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: RTX2080ti
 
@@ -30,7 +30,7 @@ docker pull $BASE_IMAGE
 
 # Clone the repository
 git clone https://github.com/mit-han-lab/torchsparse.git
-# Move to text2room
+# Move to the repository
 cd torchsparse
 # Switch to 2023/07/28 ver.
 git switch -d b55506aa2524c8d69e3b6081a4fd404ffd072b4b
@@ -63,7 +63,7 @@ cd examples
 python example.py
 ```
 
-## Clipping and note
+## 📝 Clipping and note
 ### どんな論文か？
 - > In this work, we systematically analyze and improve existing dataflows.
 - > Our resulting system, TorchSparse++, achieves 2.9×, 3.3×, 2.2× and 1.8× measured end-to-end speedup on an NVIDIA A100 GPU over the state-of-the-art MinkowskiEngine, SpConv 1.2, TorchSparse and SpConv v2 in inference respectively.
@@ -99,7 +99,7 @@ python example.py
 ### Other experiments
 None
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [2] Jens Behley, Martin Garbade, Andres Milioto, Jan Quenzel, Sven Behnke, Cyrill Stachniss, and Juergen Gall. SemanticKITTI: A Dataset for Semantic Scene Understanding of LiDAR Sequences. In IEEE/CVF International Conference on Computer Vision (ICCV), 2019.
 - [3] Holger Caesar, Varun Bankiti, Alex H. Lang, Sourabh Vora, Venice Erin Liong, Qiang Xu, Anush Krishnan, Yu Pan, Giancarlo Baldan, and Oscar Beijbom. nuScenes: A Multimodal Dataset for Autonomous Driving. In IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
 - [9] Ran Cheng, Christopher Agia, Yuan Ren, Xinhai Li, and Bingbing Liu. S3CNet: A Sparse Semantic Scene Completion Network for LiDAR Point Clouds. In CoRL, 2020.

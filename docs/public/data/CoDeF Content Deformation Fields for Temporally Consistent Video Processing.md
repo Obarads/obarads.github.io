@@ -2,7 +2,7 @@
 
 Update: 2023/08/19
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2308.07926)
   - Submission date: 2023/03/21
   - Authors: Hao Ouyang, Qiuyu Wang, Yuxi Xiao, Qingyan Bai, Juntao Zhang, Kecheng Zheng, Xiaowei Zhou, Qifeng Chen, Yujun Shen
@@ -13,7 +13,7 @@ Update: 2023/08/19
   - License: MIT license
 - Keywords: CV, Video, Scene Generation, Object Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: RTX4090
 

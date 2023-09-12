@@ -2,7 +2,7 @@
 
 Update: 2023/08/19
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2303.12074)
   - Submission date: 2023/03/21
   - Authors: Sherwin Bahmani, Jeong Joon Park, Despoina Paschalidou, Xingguang Yan, Gordon Wetzstein, Leonidas Guibas, Andrea Tagliasacchi
@@ -13,7 +13,7 @@ Update: 2023/08/19
   - License: The code is based on the [EG3D](https://github.com/NVlabs/eg3d) and follows their license code.
 - Keywords: CV, Mesh, Scene Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -63,7 +63,8 @@ In a docker container:
 cd /workspace
 ```
 
-## どんなもの? 
+## 📝 Clipping and note
+### どんなもの? 
 - > In this work, we introduce CC3D, a conditional generative model that synthesizes complex 3D scenes conditioned on 2D semantic scene layouts, trained using single-view images.
   - Fig.1 shows input and output.
   - > The key component of our approach is a 2D-to-3D translation scheme that efficiently converts the 2D layout image into a 3D neural field.
@@ -84,16 +85,16 @@ cd /workspace
 ![fig3](img/CLGoC3DS/fig3.png)
 > Figure 3. Architecture – Our method takes a floorplan projection of the semantic scene layout and a noise vector as inputs.  We use a conditional StyleGAN2 backbone to generate a 2D feature field based on the given layout and reshape the channels into a 3D feature volume. This feature volume is queried using trilinear interpolation and subsequently decoded into color and density using a small MLP. We use a superresolution module to upsample volume rendered images to target resolution and use a standard StyleGAN2 discriminator. In order to ensure semantic consistency between the layout and the rendering, we sample equidistant coordinates from the feature volume and process the sampled features with a semantic segmentation decoder added to the discriminator. We train our model on a combination of an adversarial loss and cross entropy loss.
 
-## どうやって有効だと検証した?
+### どうやって有効だと検証した?
 - About Data
   - > We  conduct  experiments  on  3D-FRONT [17] bedrooms and living rooms, following the same pre-processing steps as [41].
   - > To demonstrate the generation capabilities of our model in more challenging real-world scenarios, we also evaluate our model on KITTI-360 [29].
+- Quantitative results (table 1)
+- Qualitative analysis (figure 7, 8, 9)
 
-### Quantitative results
 ![tab1](img/CLGoC3DS/tab1.png)
 > Quantitative evaluation using FID and KID for all methods at $256^2$ pixel resolution on 3D-FRONT bedrooms, 3D-FRONT living rooms, and KITTI-360.
 
-### Qualitative analysis
 ![fig7](img/CLGoC3DS/fig7.png)
 > Figure 7. Visualization of depth maps – extracted from the density fields.  Our method is able to generate sharp depth maps in comparison to EG3D, which produces unrecognizable results.
 
@@ -106,7 +107,7 @@ cd /workspace
 ### Other experiments
 Empirical Analysis, Video Results, Additional Results
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [7] Eric R Chan, Connor Z Lin, Matthew A Chan, Koki Nagano, Boxiao  Pan,  Shalini  De  Mello,  Orazio  Gallo,  Leonidas Guibas,  Jonathan Tremblay,  Sameh Khamis,  Tero Karras, and Gordon Wetzstein. Efficient geometry-aware 3d genera- tive adversarial networks. In Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), 2022.
 - [15] Terrance DeVries, Miguel Angel Bautista, Nitish Srivastava, Graham W Taylor, and Joshua M Susskind.  Unconstrained scene generation with locally conditioned radiance fields. In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.
 - [17] Huan Fu, Bowen Cai, Lin Gao, Ling-Xiao Zhang, Jiaming Wang,  Cao  Li,  Qixun  Zeng,  Chengyue  Sun,  Rongfei  Jia, Binqiang Zhao,  et al.   3d-front:  3d furnished rooms with layouts and semantics.  In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.

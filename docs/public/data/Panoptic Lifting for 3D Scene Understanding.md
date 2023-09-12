@@ -2,7 +2,7 @@
 
 Update: 2023/08/22
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2212.09802)
   - Submission date: 2022/12/19
   - Authors: Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Buló, Norman Müller, Matthias Nießner, Angela Dai, Peter Kontschieder
@@ -13,7 +13,7 @@ Update: 2023/08/22
   - License: Attribution-NonCommercial-ShareAlike 4.0 International
 - Keywords: CV, RGB Image, Intensity Image, Panoptic Segmentation, Depth Estimation, Novel View Synthesis
 
-## Setup commands to run the implementation
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: RTX2080ti
 
@@ -73,7 +73,7 @@ cp inference/render_panopli.py ./
 python render_panopli.py pretrained-examples/hypersim_ai001008/checkpoints/epoch=30-step=590148.ckpt False
 ```
 
-## Clipping and note
+## 📝 Clipping and note
 ### どんな論文か？
 - > In this work we introduce Panoptic Lifting, a novel formulation which represents a static 3D scene as a panoptic radiance field (see Sec. 3.2).
   - > Panoptic Lifting supports applications like novel panoptic view synthesis and scene editing, while maintaining robustness to a variety of diverse input data. 
@@ -103,7 +103,7 @@ python render_panopli.py pretrained-examples/hypersim_ai001008/checkpoints/epoch
 ### Other experiments
 Ablations, Scene Editing
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [6] owen Cheng, Ishan Misra, Alexander G Schwing, Alexander Kirillov, and Rohit Girdhar. Masked-attention mask transformer for universal image segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 1290–1299, 2022.
 - [9] Angela Dai, Angel X Chang, Manolis Savva, Maciej Halber, Thomas Funkhouser, and Matthias Nießner. Scannet: Richly-annotated 3d reconstructions of indoor scenes. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 5828–5839, 2017.
 - [18] Sosuke Kobayashi, Eiichi Matsumoto, and Vincent Sitzmann. Decomposing nerf for editing via feature field distillation. In Advances in Neural Information Processing Systems, volume 35, 2022.

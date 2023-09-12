@@ -78,6 +78,7 @@ class TableRowData:
     keyword_list: List[str]
     year: int = 0  # TODO
 
+ELEMENT_INFO = "ℹ️ Info"
 
 def extract_data(markdown_dir_path: str):
     markdown_path_list = glob.glob(markdown_dir_path + "*.md")
@@ -98,9 +99,9 @@ def extract_data(markdown_dir_path: str):
         content_dict = {
             c.split("\n")[0]: c.split("\n")[1:] for c in content_by_section
         }
-        if "Info" in content_dict.keys():
+        if ELEMENT_INFO in content_dict.keys():
             space_indentation_list = []
-            for text in content_dict["Info"]:
+            for text in content_dict[ELEMENT_INFO]:
                 if get_num_space_for_indentation(text) != 0:
                     space_indentation_list.append(
                         get_num_space_for_indentation(text)
@@ -110,11 +111,11 @@ def extract_data(markdown_dir_path: str):
                 min_space_indentation = min(space_indentation_list)
             else:
                 raise ValueError(
-                    f"Invalid info format (## Info): {markdown_path}"
+                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
                 )
 
-            content_dict["Info"] = markdow_to_list(
-                content_dict["Info"], min_space_indentation
+            content_dict[ELEMENT_INFO] = markdow_to_list(
+                content_dict[ELEMENT_INFO], min_space_indentation
             )
 
         # extract a title
@@ -126,22 +127,22 @@ def extract_data(markdown_dir_path: str):
 
         # extract a year
         year: int = None
-        if "Info" in content_dict.keys():
-            if re.fullmatch(r"^Submission date: \d{4}/\d{2}/\d{2}$", content_dict["Info"][1][0]) is not None:
-                date = content_dict["Info"][1][0].split(": ")[-1]
+        if ELEMENT_INFO in content_dict.keys():
+            if re.fullmatch(r"^Submission date: \d{4}/\d{2}/\d{2}$", content_dict[ELEMENT_INFO][1][0]) is not None:
+                date = content_dict[ELEMENT_INFO][1][0].split(": ")[-1]
                 if len(date) == 1:
                     raise ValueError("Invalid date format: {markdown_path}")
                 date = datetime.datetime.strptime(date, "%Y/%m/%d")
                 year = date.year
-            if re.fullmatch(r"^Release: \d{4}$", content_dict["Info"][1][0]) is not None:
-                date = content_dict["Info"][1][0].split(": ")[-1]
+            if re.fullmatch(r"^Release: \d{4}$", content_dict[ELEMENT_INFO][1][0]) is not None:
+                date = content_dict[ELEMENT_INFO][1][0].split(": ")[-1]
                 if len(date) == 1:
                     raise ValueError("Invalid date format: {markdown_path}")
                 date = datetime.datetime.strptime(date, "%Y")
                 year = date.year
             if year is None:
                 raise ValueError(
-                    f"Invalid info format (## Info): {markdown_path}"
+                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
                 )
         else:
             if "Cite: " in content[2]:
@@ -155,14 +156,14 @@ def extract_data(markdown_dir_path: str):
 
         # extract key words
         keyword_list: List[str] = []
-        if "Info" in content_dict.keys():
-            if re.fullmatch(r"^Keywords: .*$", content_dict["Info"][4]) is not None:
-                keywords_string = content_dict["Info"][4].split(": ")[-1]
+        if ELEMENT_INFO in content_dict.keys():
+            if re.fullmatch(r"^Keywords: .*$", content_dict[ELEMENT_INFO][4]) is not None:
+                keywords_string = content_dict[ELEMENT_INFO][4].split(": ")[-1]
                 keyword_list = keywords_string.split(", ")
 
             if len(keyword_list) == 0:
                 raise ValueError(
-                    f"Invalid info format (## Info): {markdown_path}"
+                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
                 )
         elif "## key-words" in content:
             keyword_row_index = content.index("## key-words")

@@ -2,7 +2,7 @@
 
 Update: 2023/07/26
 
-## Info
+## ℹ️ Info
 - Paper: [arxiv.org](https://arxiv.org/abs/2303.11989)
   - Submission date: 2023/03/21
   - Authors: Lukas Höllein, Ang Cao, Andrew Owens, Justin Johnson, Matthias Nießner
@@ -13,7 +13,7 @@ Update: 2023/07/26
   - License: MIT license
 - Keywords: CV, Mesh, RGB Image, Intensity Image, Scene Generation
 
-## How to build with docker and run the model in a docker container
+## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -70,7 +70,8 @@ conda activate text2room
 CUDA_VISIBLE_DEVICES=0 python generate_scene.py
 ```
 
-## どんなもの?
+## 📝 Clipping and note
+### どんなもの?
 - The authors present Text2Room, a method for generating textured 3D meshes of room-scale indoor scenes from a given text prompt as input.
 - > In very recent concurrent work, Fridman et al. [18] create 3D scenes from text,  but  focus  on  this  type  of  3D-consistent “zoom-out” video generation. 
   - > Instead, we generate complete, textured 3D room geometry from arbitrary trajectories.
@@ -84,21 +85,21 @@ CUDA_VISIBLE_DEVICES=0 python generate_scene.py
 
 > Figure 3. Iterative scene generation. For each new pose, we ren- der the current mesh to obtain partial RGB and depth renderings. We complete both, utilizing respective inpainting models and the text prompt.  Next, we perform depth alignment (see Section 3.2) and mesh filtering (see Section 3.3) to obtain an optimal next mesh patch, that is finally fused with the existing geometry.
 
-## どうやって有効だと検証した?
-> We  calculate CLIP Score (CS) [57] and Inception Score (IS) [68] on RGB renderings of the respective scenes.
+### どうやって有効だと検証した?
+- > We  calculate CLIP Score (CS) [57] and Inception Score (IS) [68] on RGB renderings of the respective scenes.
+- Qualitative Results (figure 6)
+- Quantitative Results (table 1)
 
-### Qualitative Results
 ![fig6](img/TET3Mf2TM/fig6.png)
 > Figure 5. 3D scene generation results of our method. We show color and shaded geometry renderings from generated scenes with corresponding text prompts. Our method synthesizes realistic meshes satisfying text descriptions. We remove the ceiling in the top-down view for better visualization of the scene layout.
 
-### Quantitative Results
 ![tab1](img/TET3Mf2TM/tab1.png)
 > Table  1. Quantitative  comparison. We  report  2D  metrics and  user  study  results,  including:   Clip  Score  (CS),  Inception Score (IS), Perceptual Quality (PQ), and 3D Structure Completeness  (3DS). Our method creates scenes with the highest quality.
 
 ### Other experiments
 Ablations, Application: Controllable Scene Generation, Limitations, Additional Discussion on Related Methods and Baselines, Additional Qualitative Results
 
-## 論文関連リンク
+## 📚 論文関連リンク
 - [18] Rafail Fridman, Amit Abecasis, Yoni Kasten, and Tali Dekel. Scenescape:  Text-driven consistent scene generation. arXiv preprint arXiv:2302.01133, 2023.
 - [57] Alec  Radford,   Jong  Wook  Kim,   Chris  Hallacy,   Aditya Ramesh,  Gabriel  Goh,  Sandhini  Agarwal,  Girish  Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable  visual  models  from  natural  language  supervi- sion. In International conference on machine learning, pages 8748–8763. PMLR, 2021.
 - [68] Tim  Salimans,  Ian  Goodfellow,  Wojciech  Zaremba,  Vicki Cheung, Alec Radford, and Xi Chen.  Improved techniques for training gans. Advances in neural information processing systems, 29, 2016.

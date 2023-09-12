@@ -30,7 +30,7 @@ docker pull $BASE_IMAGE
 
 # Clone the repository
 git clone @{github_url}
-# Move to text2room
+# Move to the repository
 cd @{github_dir}
 # Switch to @{github_commit_hash_date} ver.
 git switch -d @{github_commit_hash}
