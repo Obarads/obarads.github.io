@@ -1,6 +1,6 @@
 --find-links https://download.pytorch.org/whl/torch/
 --find-links https://download.pytorch.org/whl/torchvision/
-torch==1.12.1+cu113
+torch==1.13.1
 torchvision==0.13.1+cu113
 trimesh
 scikit-learn
