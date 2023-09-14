@@ -26,6 +26,9 @@ ENV_VERSION=cuda9.0_cudnn7.6_ubuntu16.04
 BASE_IMAGE=ogi_cuda:$ENV_VERSION
 docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/$ENV_VERSION/Dockerfile 
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/QingyongHu/RandLA-Net
 # Move to RandLA-Net
@@ -40,7 +43,7 @@ docker build . -t randla_net -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --
 docker run -dit --name randla_net --gpus all -v $PWD:/workspace randla_net
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

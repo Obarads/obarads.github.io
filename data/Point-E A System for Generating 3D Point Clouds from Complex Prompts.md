@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/openai/point-e.git
 # Move to point-e
@@ -39,7 +42,7 @@ docker build . -t pointe -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --buil
 docker run -dit --name pointe --gpus all -v $PWD:/workspace pointe
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

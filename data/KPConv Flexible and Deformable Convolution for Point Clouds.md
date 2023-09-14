@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=ogi_cuda:cuda10.0_cudnn7.6_ubuntu18.04
 docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda10.0_cudnn7.6_ubuntu18.04/Dockerfile 
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/HuguesTHOMAS/KPConv-PyTorch
 # Move to KPConv-PyTorch
@@ -39,7 +42,7 @@ docker build . -t kpconv -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --buil
 docker run -dit --name kpconv --gpus all --shm-size 16g -v $PWD:/workspace kpconv
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

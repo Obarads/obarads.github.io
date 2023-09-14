@@ -22,6 +22,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/microsoft/torchscale.git
 # Move to the repository
@@ -36,7 +39,7 @@ docker build . -t torchscale -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --
 docker run -dit --name torchscale --gpus all -v $PWD:/workspace torchscale
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=ogi_cuda:cuda8.0_cudnn6.0_ubuntu16.04
 docker build . -t $BASE_IMAGE  -f $OGI_DIR_PATH/public/data/envs/cuda/cuda8.0_cudnn6.0_ubuntu16.04/Dockerfile 
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/dvlab-research/3DSSD.git
 # Move to 3DSSD
@@ -39,7 +42,7 @@ docker build . -t 3dssd -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build
 docker run -dit --name 3dssd --gpus all -v $PWD:/workspace 3dssd
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace
