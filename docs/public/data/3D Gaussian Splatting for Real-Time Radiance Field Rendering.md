@@ -28,6 +28,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/graphdeco-inria/gaussian-splatting --recursive
 # Move to the repository
@@ -42,7 +45,7 @@ docker build . -t gaussian-splatting -f ./dev_env/Dockerfile --build-arg UID=$(i
 docker run -dit --name gaussian-splatting --gpus all -v $PWD:/workspace gaussian-splatting
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace
@@ -51,19 +54,28 @@ cd /workspace
 conda create -y -n gaussian-splatting python=3.9
 conda activate gaussian-splatting
 cd dev_env
-# pip install -r requirements.txt
+pip install -r requirements.txt
+cd ../submodules/diff-gaussian-rasterization
+pip install -e .
+cd ../simple-knn
+pip install -e .
 ```
 
-### 3. Setup the models
+### 3. Setup the dataset
 In a docker container:
 ```bash
 cd /workspace
+
+# Download dataset
+wget https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/datasets/input/tandt_db.zip
+unzip tandt_db.zip
 ```
 
 ### 4. Run the model
 In a docker container:
 ```bash
 cd /workspace
+python train.py -s tandt_db/train/
 ```
 
 ## 📝 Clipping and note

@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/CompVis/stable-diffusion.git
 # Move to stable-diffusion
@@ -39,7 +42,7 @@ docker build . -t sd -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-ar
 docker run -dit --name sd --gpus all -v $PWD:/workspace sd
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

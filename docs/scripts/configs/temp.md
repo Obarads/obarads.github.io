@@ -28,6 +28,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=@{base_nvidia_image}
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone @{github_url}
 # Move to the repository
@@ -42,7 +45,7 @@ docker build . -t @{github_dir_lowercase} -f ./dev_env/Dockerfile --build-arg UI
 docker run -dit --name @{github_dir_lowercase} --gpus all -v $PWD:/workspace @{github_dir_lowercase}
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace
@@ -58,6 +61,7 @@ cd dev_env
 In a docker container:
 ```bash
 cd /workspace
+gdown https://drive.google.com/u/0/uc?id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ### 4. Run the model

@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.6.2-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/sherwinbahmani/cc3d.git
 # Move to the repository
@@ -39,7 +42,7 @@ docker build . -t cc3d -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-
 docker run -dit --name cc3d --gpus all -v $PWD:/workspace cc3d
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

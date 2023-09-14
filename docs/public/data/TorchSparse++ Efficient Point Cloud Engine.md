@@ -28,6 +28,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/mit-han-lab/torchsparse.git
 # Move to the repository
@@ -42,7 +45,7 @@ docker build . -t torchsparse -f ./dev_env/Dockerfile --build-arg UID=$(id -u) -
 docker run -dit --name torchsparse --gpus all -v $PWD:/workspace torchsparse
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

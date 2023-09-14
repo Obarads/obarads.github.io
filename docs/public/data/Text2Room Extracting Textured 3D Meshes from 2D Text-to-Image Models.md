@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/lukasHoel/text2room.git
 # Move to text2room
@@ -39,7 +42,7 @@ docker build . -t text2room -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --b
 docker run -dit --name text2room --gpus all -v $PWD:/workspace text2room
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

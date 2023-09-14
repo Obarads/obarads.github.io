@@ -25,6 +25,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/guochengqian/PointNeXt.git
 # Move to PointNeXt
@@ -47,7 +50,7 @@ docker build . -t pointnext -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --b
 docker run -dit --name pointnext --gpus all -v $PWD:/workspace pointnext
 ```
 
-### 2. Setup in the docker container
+### 2. Setup packages
 In a docker container:
 ```bash
 cd /workspace

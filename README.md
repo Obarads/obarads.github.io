@@ -8,7 +8,7 @@ Setup commands section notes how to build environments to run the implementation
 ### Example
 For example, [text2room](https://obarads.github.io/papers/Text2Room%20Extracting%20Textured%203D%20Meshes%20from%202D%20Text-to-Image%20Models.md) contains the following items:
 1. Create a docker container
-2. Setup in the docker container
+2. Setup packages
 3. Setup the models
 4. Run the model
 
@@ -23,6 +23,9 @@ OGI_DIR_PATH=$PWD
 BASE_IMAGE=nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 docker pull $BASE_IMAGE
 
+# Create and move to a container dir
+mkdir containers
+cd containers
 # Clone the repository
 git clone https://github.com/lukasHoel/text2room.git
 # Move to text2room
