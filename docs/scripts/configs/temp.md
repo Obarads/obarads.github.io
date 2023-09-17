@@ -13,7 +13,7 @@ Update: @{update_date}
   - License: @{github_license}
 - Keywords: 
 
-## 🖥 Setup commands to run the implementation
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: ??
 

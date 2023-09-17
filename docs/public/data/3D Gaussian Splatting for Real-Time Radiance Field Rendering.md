@@ -13,7 +13,7 @@ Update: 2023/09/12
   - License: Other
 - Keywords: CV, RGB Image, Multi-View
 
-## 🖥 Setup commands to run the implementation
+## 🖥️ Setup commands to run the implementation
 Tested on:
 - GPU: RTX4090
 
