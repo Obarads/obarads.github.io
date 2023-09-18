@@ -102,7 +102,7 @@ CUDA_VISIBLE_DEVICES=0 python generate_scene.py
 ### Other experiments
 Ablations, Application: Controllable Scene Generation, Limitations, Additional Discussion on Related Methods and Baselines, Additional Qualitative Results
 
-## 📚 論文関連リンク
+## 📚 References
 - [18] Rafail Fridman, Amit Abecasis, Yoni Kasten, and Tali Dekel. Scenescape:  Text-driven consistent scene generation. arXiv preprint arXiv:2302.01133, 2023.
 - [57] Alec  Radford,   Jong  Wook  Kim,   Chris  Hallacy,   Aditya Ramesh,  Gabriel  Goh,  Sandhini  Agarwal,  Girish  Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable  visual  models  from  natural  language  supervi- sion. In International conference on machine learning, pages 8748–8763. PMLR, 2021.
 - [68] Tim  Salimans,  Ian  Goodfellow,  Wojciech  Zaremba,  Vicki Cheung, Alec Radford, and Xi Chen.  Improved techniques for training gans. Advances in neural information processing systems, 29, 2016.

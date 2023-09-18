@@ -95,7 +95,7 @@ Note: cell 2 takes a long time.
 ### Other experiments
 Additional Results, Bootstrapping
 
-## 📚 論文関連リンク
+## 📚 References
 - [Avrahami et al., 2022a] Avrahami, O., Fried, O., and Lischinski, D. Blended latent diffusion. arXiv preprint arXiv:2206.02779, 2022a.
 - [Rombach et al., 2022] Rombach,  R.,  Blattmann,  A.,  Lorenz,  D.,  Esser,  P.,  and Ommer, B. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Con- ference on Computer Vision and Pattern Recognition, pp. 10684–10695, 2022.
 - [Gafni et al., 2022] Gafni,  O.,  Polyak,  A.,  Ashual,  O.,  Sheynin,  S.,  Parikh, D., and Taigman, Y.  Make-a-scene:  Scene-based text- to-image generation with human priors.   In European Conference on Computer Vision (ECCV), 2022.

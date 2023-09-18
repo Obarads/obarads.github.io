@@ -103,5 +103,5 @@ sh jobs_6_fold_cv_s3dis.sh
 
 > Table 3. Quantitative results of different approaches on SemanticKITTI [3]. Only the recent published methods are compared and all scores are obtained from the online single scan evaluation track. Accessed on 31 March 2020.
 
-## 📚 論文関連リンク
+## 📚 References
 なし

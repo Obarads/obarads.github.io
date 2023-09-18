@@ -103,7 +103,7 @@ python demo_text_3d.py
 
 > Figure 5. Inference Paradigm of Point-LLM. Referring to ImageBind-LLM [19], we adopt a bind network, a visual cache model, and zero-initialized gating mechanisms to fine-tune LLaMA [73] to follow 3D instructions.  Optionally, our Point-LLM can also take as input multi-modality data, and conduct cross-modal reasoning for language response.
 
-### 新規性
+### Contributions, novelty
 - Point-Bind
   - > Aligning 3D with ImageBind. Within a joint embedding space, Point-Bind firstly aligns 3D point clouds with multi-modalities guided by ImageBind, including 2D images, video, language, audio, etc.
   - > Any-to-3D Generation. Based on existing text-to-3D generative models, Point-Bind enables 3D shape synthesis conditioned on any modalities, i.e., text/image/audio/point-to-mesh generation.
@@ -114,7 +114,7 @@ python demo_text_3d.py
   - > Data- and Parameter-efficiency. We only utilize public  vision-language  data  for  tuning  without  any  3D instruction  data,  and  adopt  parameter-efficient  finetuning techniques, saving extensive resources.
   - > 3D  and  Multi-modal  Reasoning. Via  the  joint  embedding space, Point-LLM can generate descriptive responses by reasoning a combination of 3D and multi-modal input, e.g., a point cloud with an image/audio.
 
-### 結果
+### Result
 - Point-LLM for 3D Q&A
   - > In Figure 3, we provide the question-answering examples of Point-LLM, which shows favorable 3D instruction-following and multi-modal reasoning capacity.
 - 3D Cross-modal Retrieval with ModelNet40
@@ -131,6 +131,6 @@ python demo_text_3d.py
 ### Other experiments
 Embedding-space Arithmetic with 3D, Any-to-3D Generation, 3D Zero-shot Understanding, Ablation Study
 
-## 📚 論文関連リンク
+## 📚 References
 - [] 
 

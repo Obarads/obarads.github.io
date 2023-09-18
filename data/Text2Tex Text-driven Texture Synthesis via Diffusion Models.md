@@ -83,11 +83,11 @@ cd /workspace
 
 > Figure 2:  Overview of Text2Tex. We illustrate the pipeline using a 3D car mesh with a prompt “golden Porsche”. We progressively generate the texture via a generate-then-refine scheme. In progressive texture generation (Sec. 3.3), we start by rendering the object from an initial preset viewpoint.  We generate a new appearance according to the input prompt via a depth-to-image diffusion model, and project the generated image back to the partial texture.  Then, we repeat this process until the last preset viewpoint to output the initial textured mesh. In the subsequent texture refinement (Sec. 3.4), we update the initial texture from a sequence of automatically selected viewpoints to refine the stretched and blurry artifacts.
 
-### 新規性
+### Contributions, novelty
 - > Text2Tex follows a generate-then-refine strategy.
 - Also, the authors propose the automatic viewpoint selection technique to address unsatisfactory texturization issue of the autoregressive generation process via the diffusion-based image inpainting model.
 
-### 結果
+### Result
 - About data
   - > We evaluate our method on a subset of textured meshes from the Objaverse [17] dataset.
   - > To compare with GAN-based category-specific approaches, we also report results on the “car” objects from the ShapeNet dataset [7].
@@ -110,7 +110,7 @@ cd /workspace
 ### Other experiments
 Ablation studies, Limitations, Additional Qualitative Results, 
 
-## 📚 論文関連リンク
+## 📚 References
 - [7] Angel  X  Chang,  Thomas  Funkhouser,  Leonidas  Guibas, Pat  Hanrahan,  Qixing  Huang,  Zimo  Li,  Silvio  Savarese, Manolis  Savva,  Shuran  Song,  Hao  Su,  et  al. Shapenet: An  information-rich  3d  model  repository. arXiv  preprint arXiv:1512.03012, 2015.
 - [17] Matt Deitke, Dustin Schwenk, Jordi Salvador, Luca Weihs, Oscar  Michel,   Eli  VanderBilt,   Ludwig  Schmidt,   Kiana Ehsani,   Aniruddha  Kembhavi,   and  Ali  Farhadi. Obja- verse:  A universe of annotated 3d objects. arXiv preprint arXiv:2212.08051, 2022.
 - [33] Gal Metzer, Elad Richardson, Or Patashnik, Raja Giryes, and Daniel Cohen-Or. Latent-nerf for shape-guided generation of 3d shapes and textures. In CVPR, 2023.

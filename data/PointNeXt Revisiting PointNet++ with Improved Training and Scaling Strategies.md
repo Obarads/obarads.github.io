@@ -109,5 +109,5 @@ CUDA_VISIBLE_DEVICES=0 python examples/segmentation/main.py --cfg cfgs/s3dis/poi
 
 > Table 3: Part segmentation on ShapeNetPart.
 
-## 📚 論文関連リンク
+## 📚 References
 なし
