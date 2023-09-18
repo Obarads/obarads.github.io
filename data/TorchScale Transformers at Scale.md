@@ -1,14 +1,17 @@
-# TorchScale - A Library of Foundation Architectures
+# TorchScale: Transformers at Scale
 
-Update: 2023/08/12
+Update: 2023/09/18
 
 ## ℹ️ Info
-- Document: [github.com](https://github.com/microsoft/torchscale)
-  - Release: 2022
+- Paper: [arxiv.org](https://arxiv.org/abs/2303.11396)
+  - Submission date: 2022/11/23
+  - Authors: Shuming Ma, Hongyu Wang, Shaohan Huang, Wenhui Wang, Zewen Chi, Li Dong, Alon Benhaim, Barun Patra, Vishrav Chaudhary, Xia Song, Furu Wei
+  - Conf.: ?
 - Implementation: [microsoft/torchscale](https://github.com/microsoft/torchscale)
   - framework: Pytorch
+  - Official code: Yes
   - License: MIT License
-- Keywords: NLP, Library
+- Keywords: NLP, Library, LLM
 
 ## 🖥️ Setup commands to run the implementation
 ### 1. Create a docker container

@@ -88,35 +88,35 @@ In a docker container:
 cd /workspace/examples/fairseq/
 PATH_TO_DATA=/workspace/fairseq/data-bin/wikitext-103
 NUM_GPU=1
-# python -m torch.distributed.launch --nproc_per_node=${NUM_GPU} --nnodes=1 train.py \
-#     ${PATH_TO_DATA} \
-#     --num-workers 2 \
-#     --activation-fn gelu \
-#     --share-decoder-input-output-embed \
-#     --validate-interval-updates 1000 \
-#     --save-interval-updates 1000 \
-#     --no-epoch-checkpoints \
-#     --memory-efficient-fp16 \
-#     --fp16-init-scale 4 \
-#     --arch retnet_base \
-#     --task language_modeling \
-#     --sample-break-mode none \
-#     --tokens-per-sample 128 \
-#     --optimizer adam --adam-betas "(0.9, 0.98)" \
-#     --adam-eps 1e-08 \
-#     --clip-norm 0.0 \
-#     --lr 5e-4 \
-#     --lr-scheduler polynomial_decay \
-#     --warmup-updates 750 \
-#     --dropout 0.1 \
-#     --weight-decay 0.01 \
-#     --batch-size 4 \
-#     --update-freq 1 \
-#     --required-batch-size-multiple 1 \
-#     --total-num-update 50000 \
-#     --max-update 50000 \
-#     --seed 1 \
-#     --ddp-backend=c10d
+python -m torch.distributed.launch --nproc_per_node=${NUM_GPU} --nnodes=1 train.py \
+    ${PATH_TO_DATA} \
+    --num-workers 2 \
+    --activation-fn gelu \
+    --share-decoder-input-output-embed \
+    --validate-interval-updates 1000 \
+    --save-interval-updates 1000 \
+    --no-epoch-checkpoints \
+    --memory-efficient-fp16 \
+    --save-dir save_dir/retnet_base/wikitext-103 \
+    --fp16-init-scale 4 \
+    --arch retnet_base \
+    --task language_modeling \
+    --sample-break-mode none \
+    --tokens-per-sample 128 \
+    --optimizer adam --adam-betas "(0.9, 0.98)" \
+    --adam-eps 1e-08 \
+    --clip-norm 0.0 \
+    --lr 5e-4 \
+    --lr-scheduler polynomial_decay \
+    --warmup-updates 750 \
+    --dropout 0.1 \
+    --weight-decay 0.01 \
+    --batch-size 4 \
+    --update-freq 1 \
+    --required-batch-size-multiple 1 \
+    --total-num-update 50000 \
+    --max-update 50000 \
+    --seed 1
 ```
 
 
