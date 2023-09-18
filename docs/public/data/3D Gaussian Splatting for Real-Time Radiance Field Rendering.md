@@ -79,6 +79,7 @@ python train.py -s tandt_db/train/
 ```
 
 ### 5. Run Viewer
+In a docker container:
 ```bash
 cd /workspace
 cd SIBR_viewers
