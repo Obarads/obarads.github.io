@@ -1,4 +1,8 @@
+# Ref: https://github.com/colmap/colmap/blob/3.8/docker/Dockerfile
 ARG BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+ARG COLMAP_VERSION=dev
+ARG CUDA_ARCHITECTURES=native
+
 FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -9,10 +13,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
     git \
-    curl \
-    libgl1-mesa-dev \
-    libglib2.0-0 \
-    wget \
     cmake \
     ninja-build \
     build-essential \
@@ -20,18 +20,19 @@ RUN apt-get update && \
     libboost-filesystem-dev \
     libboost-graph-dev \
     libboost-system-dev \
+    libboost-test-dev \
     libeigen3-dev \
     libflann-dev \
     libfreeimage-dev \
     libmetis-dev \
     libgoogle-glog-dev \
-    libgtest-dev \
+    libgflags-dev \
     libsqlite3-dev \
     libglew-dev \
     qtbase5-dev \
     libqt5opengl5-dev \
     libcgal-dev \
-    libceres-dev \
+    libceres-dev\
     unzip && \
     rm -rf /var/lib/apt/lists/*
 
@@ -41,6 +42,16 @@ RUN chmod 777 -R /workspace
 ENV SHELL /bin/bash
 ENV LC_ALL=C
 
+RUN git clone https://github.com/colmap/colmap.git
+RUN cd colmap && \
+    git reset --hard ${COLMAP_VERSION} && \
+    mkdir build && \
+    cd build && \
+    cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=${CUDA_ARCHITECTURES} && \
+    ninja && \
+    ninja install && \
+    cd .. && rm -rf colmap
+
 # [Optional] User setting
 ARG UID
 ARG GID
@@ -48,10 +59,3 @@ RUN groupadd -g ${GID} host-group && \
     useradd -u ${UID} --create-home -G sudo,root,${GID} -m user && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER ${UID}
-
-# Python setting
-ENV MINICONDA3_SH_FILE=Miniconda3-py310_23.5.2-0-Linux-x86_64.sh
-RUN wget https://repo.anaconda.com/miniconda/${MINICONDA3_SH_FILE} --no-check-certificate -nv && \
-    sh ${MINICONDA3_SH_FILE} -b && \
-    rm ${MINICONDA3_SH_FILE} && \
-    ~/miniconda3/bin/conda init bash

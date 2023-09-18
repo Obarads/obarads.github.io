@@ -100,7 +100,7 @@ python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 > Figure 1. Illustration of the 3DSSD framework. On the whole, it is composed of backbone and box prediction network including a candidate generation layer and an anchor-free prediction head. (a) Backbone network. It takes the raw point cloud (x, y, z, r) as input, and generates global features for all representative points through several SA layers with fusion sampling (FS) strategy. (b) Candidate generation layer (CG). It downsamples, shifts and extracts features for representative points after SA layers. (c) Anchor-free prediction head.
 
 ### どうやって有効だと検証した?
-他モデルと比べた際の結果は以下の通り。
+他モデルと比べた際のResultは以下の通り。
 - KITTIによる検出検証 (table 3)
 - nuScenesによる検出検証 (table 4)
 
@@ -112,6 +112,6 @@ python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 
 > Table 4. AP on nuScenes dataset. The results of SECOND come from its official implementation [2].
 
-## 📚 論文関連リンク
+## 📚 References
 なし
 

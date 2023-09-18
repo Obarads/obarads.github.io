@@ -73,12 +73,12 @@ cd /workspace
 ## 📝 Clipping and note
 ### どんな論文か？
 
-### 新規性
+### Contributions, novelty
 
-### 結果
+### Result
 
 ### Other experiments
 
-## 📚 論文関連リンク
+## 📚 References
 - [] 
 

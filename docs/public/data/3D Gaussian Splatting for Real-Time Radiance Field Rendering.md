@@ -11,7 +11,7 @@ Update: 2023/09/12
   - framework: Pytorch
   - Official code: Yes
   - License: Other
-- Keywords: CV, RGB Image, Multi-View
+- Keywords: CV, RGB Image, Novel View Synthesis, Multi-View
 
 ## 🖥️ Setup commands to run the implementation
 Tested on:
@@ -42,7 +42,7 @@ cp -r "${OGI_DIR_PATH}/environments/3GSfRRFR/" ./dev_env
 
 # Create docker image and container
 docker build . -t gaussian-splatting -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg BASE_IMAGE=$BASE_IMAGE
-docker run -dit --name gaussian-splatting --gpus all -v $PWD:/workspace gaussian-splatting
+docker run -dit --name gaussian-splatting --gpus all --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" -v $PWD:/workspace -v /tmp/.X11-unix:/tmp/.X11-unix gaussian-splatting
 ```
 
 ### 2. Setup packages
@@ -78,15 +78,58 @@ cd /workspace
 python train.py -s tandt_db/train/
 ```
 
+### 5. Run Viewer
+```bash
+cd /workspace
+cd SIBR_viewers
+cmake -Bbuild . -DCMAKE_BUILD_TYPE=Release # add -G Ninja to build faster
+cmake --build build -j24 --target install
+install/bin/SIBR_gaussianViewer_app -m path/to/trained/model # ex ../output/f7b2e4c0-7/
+```
+
 ## 📝 Clipping and note
-### どんな論文か？
+### Introduction
+- > We introduce three key elements that allow us to achieve state-of-the-art visual quality while maintaining competitive training times and importantly allow high-quality real-time (≥30 fps) novel-view synthesis at 1080p resolution.
+  - Figure 1 shows competition with the previous method.
 
-### 新規性
+![fig1](img/3GSfRRFR/fig1.png)
 
-### 結果
+> Fig. 1. Our method achieves real-time rendering of radiance fields with quality that equals the previous method with the best quality [Barron et al. 2022], while only requiring optimization times competitive with the fastest previous methods [Fridovich-Keil and Yu et al. 2022; Müller et al. 2022]. Key to this performance is a novel 3D Gaussian scene representation coupled with a real-time differentiable renderer, which offers significant speedup to both scene optimization and novel view synthesis. Note that for comparable training times to InstantNGP [Müller et al. 2022], we achieve similar quality to theirs; while this is the maximum quality they reach, by training for 51min we achieve state-of-the-art quality, even slightly better than Mip-NeRF360 [Barron et al. 2022].
+
+### Contribution, novelty
+- > The introduction of anisotropic 3D Gaussians as a high-quality, unstructured representation of radiance fields.
+- > An optimization method of 3D Gaussian properties, inter-leaved with adaptive density control that creates high-quality representations for captured scenes.
+- > A fast, differentiable rendering approach for the GPU, which is visibility-aware, allows anisotropic splatting and fast back-propagation to achieve high-quality novel view synthesis.
+
+### Results
+- Result of real world scene dataset
+  - Tab. 1: quantitative evaluation
+  - Fig. 5: the results of author method for 30K iterations of training
+  - Fig. 6: the difference in visual quality for our two iteration configuration
+- Synthetic Bounded Scenes
+  - Tab. 2: PSNR scores using a white background for compatibility
+  - Fig. 10: result examples
+  - Note:
+    - The trained synthetic scenes rendered at 180–300 FPS.
+
+![tab1](img/3GSfRRFR/tab1.png)
+> Table 1. Quantitative evaluation of our method compared to previous work, computed over three datasets. Results marked with dagger †have been directly adopted from the original paper, all others were obtained in our own experiments.
+
+![fig5](img/3GSfRRFR/fig5.png)
+> Fig. 5. We show comparisons of ours to previous methods and the corresponding ground truth images from held-out test views. The scenes are, from the top down: Bicycle, Garden, Stump, Counter and Room from the Mip-NeRF360 dataset; Playroom, DrJohnson from the Deep Blending dataset [Hedman et al. 2018] and Truck and Train from Tanks&Temples. Non-obvious differences in quality highlighted by arrows/insets.
+
+![fig6](img/3GSfRRFR/fig6.png)
+> For some scenes (above) we can see that even at 7K iterations ( ∼5min for this scene), our method has captured the train quite well. At 30K iterations (∼35min) the background artifacts have been reduced significantly. For other scenes (below), the difference is barely visible; 7K iterations (∼8min) is already very high quality.
+
+![tab2](img/3GSfRRFR/tab2.png)
+> Table 2.  PSNR scores for Synthetic NeRF, we start with 100K randomly initialized points. Competing metrics extracted from respective papers.
+
+![fig10](img/3GSfRRFR/fig10.png)
+> Fig. 10.   We train scenes with Gaussian anisotropy disabled and enabled. The use of anisotropic volumetric splats enables modelling of fine structures and has a significant impact on visual quality. Note that for illustrative purposes, we restricted Ficus to use no more than 5k Gaussians in both configurations.
 
 ### Other experiments
+Ablations, Limitations
 
-## 📚 論文関連リンク
+## 📚 References
 - [] 
 

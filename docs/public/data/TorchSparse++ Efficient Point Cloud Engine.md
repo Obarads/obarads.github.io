@@ -77,10 +77,10 @@ python example.py
 
 > TorchSparse++ is a high-performance GPU library that provides highly-optimized dataflows for convolution on point clouds. It provides state-of-the-art inference and training performance for all driving-related applications (e.g. 3D semantic segmentation, object detection and scene reconstruction). Scenes source: [2, 9, 27].
 
-### 新規性
+### Contributions, novelty
 - > Although most functions in TorchSparse++ are implemented straightforwardly, efficiently mapping the sparse convolution operator onto GPUs poses a nontrivial challenge. In this section, we describe three alternative implementations for sparse convolution that we have developed to address this challenge. Our approaches significantly improve upon existing implementations by introducing tensor core intrinsics, enhancing computation regularity and parallelism.
 
-### 結果
+### Result
 - Inference Speedup
   - > We compare our results with the baseline design MinkowskiEngine, SpConv 1.2.1, TorchSparse and SpConv 2.2.3 in Figure 10.
   - > Figure 9, we also compare TorchSparse++ with SpConv 2.2.3 on NVIDIA Jetson Orin, an edge GPU platform widely deployed on real-world autonomous vehicles.
@@ -102,7 +102,7 @@ python example.py
 ### Other experiments
 None
 
-## 📚 論文関連リンク
+## 📚 References
 - [2] Jens Behley, Martin Garbade, Andres Milioto, Jan Quenzel, Sven Behnke, Cyrill Stachniss, and Juergen Gall. SemanticKITTI: A Dataset for Semantic Scene Understanding of LiDAR Sequences. In IEEE/CVF International Conference on Computer Vision (ICCV), 2019.
 - [3] Holger Caesar, Varun Bankiti, Alex H. Lang, Sourabh Vora, Venice Erin Liong, Qiang Xu, Anush Krishnan, Yu Pan, Giancarlo Baldan, and Oscar Beijbom. nuScenes: A Multimodal Dataset for Autonomous Driving. In IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
 - [9] Ran Cheng, Christopher Agia, Yuan Ren, Xinhai Li, and Bingbing Liu. S3CNet: A Sparse Semantic Scene Completion Network for LiDAR Point Clouds. In CoRL, 2020.

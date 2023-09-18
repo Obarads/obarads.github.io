@@ -86,11 +86,11 @@ python render_panopli.py pretrained-examples/hypersim_ai001008/checkpoints/epoch
 ![fig1](img/PLf3SUwNF/fig1.png)
 > Figure 1. Given only RGB images of an in-the-wild scene as input, our method optimizes a panoptic radiance field which can be queried for color, depth, semantics, and instances for any point in space. We obtain poses for input images with COLMAP [32], and 2D panoptic segmentation masks using a pretrained off-the-shelf network [6]. During training, our method lifts these 2D segmentation masks, which are often noisy and view-inconsistent, into a consistent 3D panoptic radiance field. Once trained, our model is able to render images and their corresponding panoptic segmentation masks from both existing and novel viewpoints.
 
-### 新規性
+### Contributions, novelty
 - > A novel approach to panoptic radiance field representation that models the radiance, semantic class and instance id for each point in the space for a scene by directly lifting machine-generated 2D panoptic labels.
 - > A robust formulation to handle inherent noise and inconsistencies in machine-generated labels, resulting in a clean, coherent and view-consistent panoptic segmentations from novel views, across diverse data.
 
-### 結果
+### Result
 - > As shown in Tab. 1 and Fig. 6, we outperform baselines across all datasets on both semantic and panoptic segmentation tasks, without sacrificing view synthesis quality.
 - > Fig. 7 additionally shows qualitative results on an in-the-wild capture.
 
@@ -106,7 +106,7 @@ python render_panopli.py pretrained-examples/hypersim_ai001008/checkpoints/epoch
 ### Other experiments
 Ablations, Scene Editing
 
-## 📚 論文関連リンク
+## 📚 References
 - [6] owen Cheng, Ishan Misra, Alexander G Schwing, Alexander Kirillov, and Rohit Girdhar. Masked-attention mask transformer for universal image segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 1290–1299, 2022.
 - [9] Angela Dai, Angel X Chang, Manolis Savva, Maciej Halber, Thomas Funkhouser, and Matthias Nießner. Scannet: Richly-annotated 3d reconstructions of indoor scenes. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 5828–5839, 2017.
 - [18] Sosuke Kobayashi, Eiichi Matsumoto, and Vincent Sitzmann. Decomposing nerf for editing via feature field distillation. In Advances in Neural Information Processing Systems, volume 35, 2022.

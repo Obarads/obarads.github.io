@@ -33,8 +33,8 @@ cd containers
 git clone https://github.com/colmap/colmap.git
 # Move to the repository
 cd colmap
-# Switch to 2023/09/10 ver.
-git switch -d fd84a0d8f77940568aed13c368dbfdeb837b344d
+# Switch to 2023/02/01 ver.
+git switch -d 43de802cfb3ed2bd155150e7e5e3e8c8dd5aaa3e
 # Copy a folder for building env.
 cp -r $OGI_DIR_PATH/environments/colmap/ ./dev_env
 
@@ -43,18 +43,15 @@ docker build . -t colmap -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --buil
 docker run -dit --name colmap --gpus all -v $PWD:/workspace colmap
 ```
 
-### 2. Setup colmap
-In a docker container:
-```bash
-cd /workspace
+### 2. 
 
-# Download and install colmap
-git clone https://github.com/colmap/colmap.git
-cd colmap
-git checkout dev
-mkdir build
-cd build
-cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=native
-ninja
-sudo ninja install
+### 2. Run colmap command
+In the container:
+```bash
+DATASET_PATH=data/
+# If you run 3d gaussian-splatinig, please add `--camera_model SIMPLE_PINHOLE`
+colmap automatic_reconstructor \
+    --workspace_path $DATASET_PATH \
+    --image_path $DATASET_PATH/images
+    # --camera_model SIMPLE_PINHOLE
 ```

@@ -41,7 +41,7 @@ docker run -dit --name text2room --gpus all -v $PWD:/workspace text2room
 ```
 
 ## 📝 Paper clippings and note
-Paper clippings section notes summary of paper methods. Paper clippings are written in 'どんなもの?' (What thing?) 'どうやって有効だと検証した?' (How did the authors verify that proposed method is valid?) section and '論文関連リンク' (cited papers in the paper). 
+Paper clippings section notes summary of paper methods. Paper clippings are written in 'どんなもの?' (What thing?) 'どうやって有効だと検証した?' (How did the authors verify that proposed method is valid?) section and 'References' (cited papers in the paper). 
 
 ### Example
 An example of [text2room](https://obarads.github.io/papers/Text2Room%20Extracting%20Textured%203D%20Meshes%20from%202D%20Text-to-Image%20Models.md) 'どんなもの?' is as follows:

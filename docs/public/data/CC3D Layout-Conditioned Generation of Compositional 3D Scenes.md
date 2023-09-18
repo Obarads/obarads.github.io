@@ -110,7 +110,7 @@ cd /workspace
 ### Other experiments
 Empirical Analysis, Video Results, Additional Results
 
-## 📚 論文関連リンク
+## 📚 References
 - [7] Eric R Chan, Connor Z Lin, Matthew A Chan, Koki Nagano, Boxiao  Pan,  Shalini  De  Mello,  Orazio  Gallo,  Leonidas Guibas,  Jonathan Tremblay,  Sameh Khamis,  Tero Karras, and Gordon Wetzstein. Efficient geometry-aware 3d genera- tive adversarial networks. In Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), 2022.
 - [15] Terrance DeVries, Miguel Angel Bautista, Nitish Srivastava, Graham W Taylor, and Joshua M Susskind.  Unconstrained scene generation with locally conditioned radiance fields. In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.
 - [17] Huan Fu, Bowen Cai, Lin Gao, Ling-Xiao Zhang, Jiaming Wang,  Cao  Li,  Qixun  Zeng,  Chengyue  Sun,  Rongfei  Jia, Binqiang Zhao,  et al.   3d-front:  3d furnished rooms with layouts and semantics.  In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.
