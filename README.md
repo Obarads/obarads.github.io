@@ -57,7 +57,7 @@ An example of [text2room](https://obarads.github.io/papers/Text2Room%20Extractin
 
 ![fig3](img/TET3Mf2TM/fig3.png)
 
-> Figure 3. Iterative scene generation. For each new pose, we ren- der the current mesh to obtain partial RGB and depth renderings. We complete both, utilizing respective inpainting models and the text prompt.  Next, we perform depth alignment (see Section 3.2) and mesh filtering (see Section 3.3) to obtain an optimal next mesh patch, that is finally fused with the existing geometry.
+> Figure 3. Iterative scene generation. For each new pose, we render the current mesh to obtain partial RGB and depth renderings. We complete both, utilizing respective inpainting models and the text prompt.  Next, we perform depth alignment (see Section 3.2) and mesh filtering (see Section 3.3) to obtain an optimal next mesh patch, that is finally fused with the existing geometry.
 
 Note: I used 'どんなもの?' and 'どうやって有効だと検証した?' with reference to [先端技術とメディア表現1 #FTMA15](https://www.slideshare.net/Ochyai/1-ftma15).
 Note: I used 'どんな論文か?', '新規性', '結果' with reference to [cvpaperchallenge format](http://xpaperchallenge.org/cv/survey/eccv2022_summaries/1).

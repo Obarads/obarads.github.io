@@ -5,6 +5,7 @@ import datetime
 from dataclasses import dataclass
 from typing import List
 from github import Github
+import github
 import shutil
 
 
@@ -40,7 +41,11 @@ def create_github_url(github_url):
         github_commit_hash_date: str = latest_commit.commit.author.date.strftime(
             "%Y/%m/%d"
         )
-        github_license: str = repo.get_license().license.name
+
+        try:
+            github_license: str = repo.get_license().license.name
+        except github.UnknownObjectException:
+            github_license = "Not described"
     else:
         github_url: str = None
         github_dir: str = None
