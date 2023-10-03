@@ -7,6 +7,7 @@ Update: @{update_date}
   - Submission date: @{arxiv_submission_date}
   - Authors: @{arxiv_authors}
   - Conf.: ??
+  - HTML: [ar5iv.labs.arxiv.org](@{ar5iv_url})
 - Implementation: [@{github_userdir}](@{github_url})
   - framework: Pytorch
   - Official code: Yes
@@ -14,7 +15,7 @@ Update: @{update_date}
 - Keywords: 
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: ??
 
 ### 1. Create a docker container
@@ -71,7 +72,7 @@ cd /workspace
 ```
 
 ## 📝 Clipping and note
-### どんな論文か？
+### Introduction
 
 ### Contributions, novelty
 

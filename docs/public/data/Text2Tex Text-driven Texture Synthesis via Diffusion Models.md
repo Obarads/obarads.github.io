@@ -14,7 +14,7 @@ Update: 2023/08/13
 - Keywords: CV, Mesh, Texture Generation
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX2080Ti
 
 ### 1. Create a docker container

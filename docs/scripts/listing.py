@@ -44,9 +44,7 @@ def markdow_to_list(raw_list, min_space_indentation):
         if not exist_list(raw):
             break
         current_space_indentation = get_num_space_for_indentation(raw)
-        diff_space_indentation = (
-            current_space_indentation - prev_space_indentation
-        )
+        diff_space_indentation = current_space_indentation - prev_space_indentation
         new_content = raw[current_space_indentation + 2 :]
         if diff_space_indentation == 0 or (
             diff_space_indentation < 0
@@ -76,9 +74,12 @@ class TableRowData:
     title: str
     filename: str
     keyword_list: List[str]
-    year: int = 0  # TODO
+    update_date: datetime.datetime
+    year: int = 0
+
 
 ELEMENT_INFO = "ℹ️ Info"
+
 
 def extract_data(markdown_dir_path: str):
     markdown_path_list = glob.glob(markdown_dir_path + "*.md")
@@ -96,23 +97,17 @@ def extract_data(markdown_dir_path: str):
             content_by_section = raw_content.split("## ")
 
         # re-format
-        content_dict = {
-            c.split("\n")[0]: c.split("\n")[1:] for c in content_by_section
-        }
+        content_dict = {c.split("\n")[0]: c.split("\n")[1:] for c in content_by_section}
         if ELEMENT_INFO in content_dict.keys():
             space_indentation_list = []
             for text in content_dict[ELEMENT_INFO]:
                 if get_num_space_for_indentation(text) != 0:
-                    space_indentation_list.append(
-                        get_num_space_for_indentation(text)
-                    )
+                    space_indentation_list.append(get_num_space_for_indentation(text))
 
             if len(space_indentation_list) > 0:
                 min_space_indentation = min(space_indentation_list)
             else:
-                raise ValueError(
-                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
-                )
+                raise ValueError(f"Invalid info format (## ℹ️ Info): {markdown_path}")
 
             content_dict[ELEMENT_INFO] = markdow_to_list(
                 content_dict[ELEMENT_INFO], min_space_indentation
@@ -125,25 +120,50 @@ def extract_data(markdown_dir_path: str):
         else:
             raise ValueError(f"Not found title (#): {markdown_path}")
 
+        pattern = re.compile(r"^Update: (\d{4})[/](\d{2})[/](\d{2})")
+        update_date_re_list = list(re.finditer(pattern, content[2]))
+        if len(update_date_re_list) > 0:
+            update_date_row_str = content[2][
+                update_date_re_list[0].start() : update_date_re_list[0].end()
+            ]
+            update_date_re = list(
+                re.finditer(
+                    re.compile(r"(\d{4})[/](\d{2})[/](\d{2})"), update_date_row_str
+                )
+            )[0]
+            update_date = datetime.datetime.strptime(
+                update_date_row_str[update_date_re.start() : update_date_re.end()],
+                "%Y/%m/%d",
+            )
+        else:
+            update_date = datetime.datetime(2000, 1, 1)
+
         # extract a year
         year: int = None
         if ELEMENT_INFO in content_dict.keys():
-            if re.fullmatch(r"^Submission date: \d{4}/\d{2}/\d{2}$", content_dict[ELEMENT_INFO][1][0]) is not None:
+            if (
+                re.fullmatch(
+                    r"^Submission date: \d{4}/\d{2}/\d{2}$",
+                    content_dict[ELEMENT_INFO][1][0],
+                )
+                is not None
+            ):
                 date = content_dict[ELEMENT_INFO][1][0].split(": ")[-1]
                 if len(date) == 1:
                     raise ValueError("Invalid date format: {markdown_path}")
                 date = datetime.datetime.strptime(date, "%Y/%m/%d")
                 year = date.year
-            if re.fullmatch(r"^Release: \d{4}$", content_dict[ELEMENT_INFO][1][0]) is not None:
+            if (
+                re.fullmatch(r"^Release: \d{4}$", content_dict[ELEMENT_INFO][1][0])
+                is not None
+            ):
                 date = content_dict[ELEMENT_INFO][1][0].split(": ")[-1]
                 if len(date) == 1:
                     raise ValueError("Invalid date format: {markdown_path}")
                 date = datetime.datetime.strptime(date, "%Y")
                 year = date.year
             if year is None:
-                raise ValueError(
-                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
-                )
+                raise ValueError(f"Invalid info format (## ℹ️ Info): {markdown_path}")
         else:
             if "Cite: " in content[2]:
                 year_str: str = content[2].split(". “")[0].split(". ")[-1]
@@ -157,20 +177,19 @@ def extract_data(markdown_dir_path: str):
         # extract key words
         keyword_list: List[str] = []
         if ELEMENT_INFO in content_dict.keys():
-            if re.fullmatch(r"^Keywords: .*$", content_dict[ELEMENT_INFO][4]) is not None:
+            if (
+                re.fullmatch(r"^Keywords: .*$", content_dict[ELEMENT_INFO][4])
+                is not None
+            ):
                 keywords_string = content_dict[ELEMENT_INFO][4].split(": ")[-1]
                 keyword_list = keywords_string.split(", ")
 
             if len(keyword_list) == 0:
-                raise ValueError(
-                    f"Invalid info format (## ℹ️ Info): {markdown_path}"
-                )
+                raise ValueError(f"Invalid info format (## ℹ️ Info): {markdown_path}")
         elif "## key-words" in content:
             keyword_row_index = content.index("## key-words")
             # If key-words is found and there is keyword_row_index + 1 row
-            if (keyword_row_index != -1) and (
-                keyword_row_index + 1 < len(content)
-            ):
+            if (keyword_row_index != -1) and (keyword_row_index + 1 < len(content)):
                 # modify key words
                 keywords_string = (
                     content[keyword_row_index + 1]
@@ -184,12 +203,10 @@ def extract_data(markdown_dir_path: str):
                     f"Invalid keyword format (## key-words): {markdown_path}"
                 )
         else:
-            raise ValueError(
-                f"Not found key words (## key-words): {markdown_path}"
-            )
+            raise ValueError(f"Not found key words (## key-words): {markdown_path}")
 
         table_row_data_list.append(
-            TableRowData(title, filename, keyword_list, year)
+            TableRowData(title, filename, keyword_list, update_date, year)
         )
 
     return table_row_data_list
@@ -223,7 +240,7 @@ def write_table_row_data_list_to_js(
 
     js_string += "]}"
 
-    with open(output_file_path, mode="w", encoding='UTF-8') as f:
+    with open(output_file_path, mode="w", encoding="UTF-8") as f:
         f.write(js_string)
 
 
@@ -259,9 +276,7 @@ def write_css(output_file_path: str, class_to_keyword: Dict[str, List[str]]):
 
     for class_name in class_to_keyword:
         for keyword in class_to_keyword[class_name]:
-            css_class = (
-                keyword.replace(" ", "_").replace("/", "").replace("&", "_")
-            )
+            css_class = keyword.replace(" ", "_").replace("/", "").replace("&", "_")
             css_string += f".__{css_class}"
             css_string += "{"
             css_string += f"{CSS_COLOR_LIST[class_name]}"
@@ -283,18 +298,15 @@ def write_actlog_to_js(
     # create an update time list
     for table_row_data in table_row_data_list:
         # get time and time string
-        p = os.path.getmtime(
-            os.path.join(markdown_dir_path, table_row_data.filename)
-        )
-        dt = datetime.datetime.fromtimestamp(p)
-        dt = dt.strftime("%Y/%m/%d %H:%M:%S")
+        # p = os.path.getmtime(os.path.join(markdown_dir_path, table_row_data.filename))
+        p = table_row_data.update_date
+        # dt = datetime.datetime.fromtimestamp(p)
+        dt = p.strftime("%Y/%m/%d")
 
         actlog_list.append([p, dt, table_row_data])
 
     # sort update time and get top-10
-    actlog_list = sorted(
-        actlog_list, reverse=True, key=lambda actlog: actlog[0]
-    )
+    actlog_list = sorted(actlog_list, reverse=True, key=lambda actlog: actlog[0])
     actlog_top = actlog_list[0:10]
 
     # write update time list into js
@@ -308,7 +320,7 @@ def write_actlog_to_js(
         js_string += "],"
     js_string += "]}\nexport default actlog_list_for_papers"
 
-    with open(output_file_path, mode="w", encoding='UTF-8') as f:
+    with open(output_file_path, mode="w", encoding="UTF-8") as f:
         f.write(js_string)
 
 
@@ -326,9 +338,7 @@ def main():
         os.path.join(PATH, "src/build/tag_for_papers.js"), class_to_keyword
     )
 
-    write_css(
-        os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword
-    )
+    write_css(os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword)
 
     write_actlog_to_js(
         os.path.join(PATH, "src/build/actlog_list_for_papers.js"),

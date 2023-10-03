@@ -1,0 +1,2 @@
+git+https://github.com/jin-s13/xtcocoapi.git@70a6aaa759d39a5d7ff919d3c7973daf3d244ecf
+git+https://github.com/open-mmlab/mmpose.git@537bd8e543ab463fb55120d5caaa1ae22d6aaf06

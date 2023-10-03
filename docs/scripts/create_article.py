@@ -9,59 +9,56 @@ import github
 import shutil
 
 
-def create_arxiv_data(arxiv_url):
-    if arxiv_url is not None:
-        arxiv_id = os.path.basename(arxiv_url).removesuffix(".pdf")
-        search = arxiv.Search(id_list=[arxiv_id])
-        paper = next(search.results())
-        arxiv_title: str = paper.title
-        arxiv_submission_date: str = paper.published.strftime("%Y/%m/%d")
-        arxiv_authors: List[str] = ", ".join([f.name for f in paper.authors])
-    else:
-        arxiv_title: str = None
-        arxiv_submission_date: str = None
-        arxiv_authors: List[str] = None
-    return arxiv_title, arxiv_submission_date, arxiv_authors
+class ArxivData:
+    arxiv_url: str = None
+    arxiv_title: str = None
+    arxiv_submission_date: str = None
+    arxiv_authors: List[str] = None
+    ar5iv_url: str = None
+
+    def __init__(self, arxiv_url: str) -> None:
+        if arxiv_url is not None:
+            arxiv_id = os.path.basename(arxiv_url).removesuffix(".pdf")
+            search = arxiv.Search(id_list=[arxiv_id])
+            paper = next(search.results())
+            self.arxiv_url = arxiv_url
+            self.arxiv_title: str = paper.title
+            self.arxiv_submission_date: str = paper.published.strftime("%Y/%m/%d")
+            self.arxiv_authors: List[str] = ", ".join([f.name for f in paper.authors])
+            self.ar5iv_url: str = "https://ar5iv.labs.arxiv.org/html/" + arxiv_id
 
 
-def create_github_url(github_url):
-    if github_url is not None:
-        github_url = github_url.removesuffix(".git")
-        paths = github_url.split("/")
-        github_userdir = f"{paths[-2]}/{paths[-1]}"
-        g = Github()
-        repo = g.get_repo(github_userdir)
-        latest_commit = repo.get_commits()[0]
+class GithubData:
+    github_url: str = None
+    github_dir: str = None
+    github_dir_lowercase: str = None
+    github_userdir: str = None
+    github_commit_hash: str = None
+    github_commit_hash_date: str = None
+    github_license: str = "Not described"
 
-        github_url: str = github_url
-        github_dir: str = repo.name
-        github_dir_lowercase: str = repo.name.lower()
-        github_userdir: str = github_userdir
-        github_commit_hash: str = latest_commit.sha
-        github_commit_hash_date: str = latest_commit.commit.author.date.strftime(
-            "%Y/%m/%d"
-        )
+    def __init__(self, github_url) -> None:
+        if github_url is not None:
+            github_url = github_url.removesuffix(".git")
+            paths = github_url.split("/")
+            github_userdir = f"{paths[-2]}/{paths[-1]}"
+            g = Github()
+            repo = g.get_repo(github_userdir)
+            latest_commit = repo.get_commits()[0]
 
-        try:
-            github_license: str = repo.get_license().license.name
-        except github.UnknownObjectException:
-            github_license = "Not described"
-    else:
-        github_url: str = None
-        github_dir: str = None
-        github_dir_lowercase: str = None
-        github_userdir: str = None
-        github_commit_hash: str = None
-        github_commit_hash_date: str = None
-    return (
-        github_url,
-        github_dir,
-        github_dir_lowercase,
-        github_userdir,
-        github_commit_hash,
-        github_commit_hash_date,
-        github_license,
-    )
+            self.github_url: str = github_url
+            self.github_dir: str = repo.name
+            self.github_dir_lowercase: str = repo.name.lower()
+            self.github_userdir: str = github_userdir
+            self.github_commit_hash: str = latest_commit.sha
+            self.github_commit_hash_date: str = (
+                latest_commit.commit.author.date.strftime("%Y/%m/%d")
+            )
+
+            try:
+                self.github_license = repo.get_license().license.name
+            except github.UnknownObjectException:
+                pass
 
 
 @dataclass
@@ -70,6 +67,7 @@ class Data:
     arxiv_url: str
     arxiv_submission_date: str
     arxiv_authors: List[str]
+    ar5iv_url: str
     github_url: str
     github_dir: str
     github_dir_lowercase: str
@@ -95,6 +93,7 @@ def create_article(
     for splited_temp_article in splited_temp_articles[1:]:
         end_word_index = splited_temp_article.find("}")
         value_name = splited_temp_article[:end_word_index]
+        # print(value_name)
         value = getattr(data, value_name)
         splited_article = value + splited_temp_article[end_word_index + 1 :]
         splited_articles.append(splited_article)
@@ -121,42 +120,26 @@ def main():
     base_nvidia_image = args.base_nvidia_image
     # base_nvidia_image = "nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04"
 
-    arxiv_title, arxiv_submission_date, arxiv_authors = create_arxiv_data(arxiv_url)
-    (
-        github_url,
-        github_dir,
-        github_dir_lowercase,
-        github_userdir,
-        github_commit_hash,
-        github_commit_hash_date,
-        github_license,
-    ) = create_github_url(github_url)
-
-    update_date = datetime.datetime.now().strftime("%Y/%m/%d")
-    myrepo_article_abb = "".join([t[0] for t in arxiv_title.split(" ")])
-
-    data = Data(
-        arxiv_title=arxiv_title,
-        arxiv_url=arxiv_url,
-        arxiv_submission_date=arxiv_submission_date,
-        arxiv_authors=arxiv_authors,
-        github_url=github_url,
-        github_dir=github_dir,
-        github_dir_lowercase=github_dir_lowercase,
-        github_userdir=github_userdir,
-        github_commit_hash=github_commit_hash,
-        github_commit_hash_date=github_commit_hash_date,
-        github_license=github_license,
-        update_date=update_date,
-        base_nvidia_image=base_nvidia_image,
-        myrepo_article_abb=myrepo_article_abb,
+    arxiv_data = vars(ArxivData(arxiv_url))
+    github_data = vars(GithubData(github_url))
+    data_dict = (
+        arxiv_data
+        | github_data
+        | {
+            "update_date": datetime.datetime.now().strftime("%Y/%m/%d"),
+            "base_nvidia_image": base_nvidia_image,
+            "myrepo_article_abb": "".join(
+                [t[0] for t in arxiv_data["arxiv_title"].split(" ")]
+            ),
+        }
     )
+    data = Data(**data_dict)
     article = create_article(data)
 
     output_file_path = os.path.join(
         os.path.dirname(__file__),
         "../public/data",
-        arxiv_title.replace(":", "") + ".md",
+        data.arxiv_title.replace(":", "") + ".md",
     )
     if not os.path.exists(output_file_path):
         with open(output_file_path, "w", encoding="utf-8") as f:
@@ -166,20 +149,20 @@ def main():
 
     os.makedirs(
         os.path.join(
-            os.path.dirname(__file__), "../public/data/img", myrepo_article_abb
+            os.path.dirname(__file__), "../public/data/img", data.myrepo_article_abb
         ),
         exist_ok=True,
     )
     os.makedirs(
         os.path.join(
-            os.path.dirname(__file__), "../../environments", myrepo_article_abb
+            os.path.dirname(__file__), "../../environments", data.myrepo_article_abb
         ),
         exist_ok=True,
     )
     dockerfile_path = os.path.join(
         os.path.dirname(__file__),
         "../../environments",
-        myrepo_article_abb,
+        data.myrepo_article_abb,
         "Dockerfile",
     )
     if not os.path.exists(dockerfile_path):
@@ -190,7 +173,7 @@ def main():
     req_txt_path = os.path.join(
         os.path.dirname(__file__),
         "../../environments",
-        myrepo_article_abb,
+        data.myrepo_article_abb,
         "requirements.txt",
     )
     if not os.path.exists(req_txt_path):

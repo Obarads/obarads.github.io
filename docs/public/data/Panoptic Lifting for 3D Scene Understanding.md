@@ -14,7 +14,7 @@ Update: 2023/08/22
 - Keywords: CV, RGB Image, Intensity Image, Panoptic Segmentation, Depth Estimation, Novel View Synthesis
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX2080ti
 
 ### 1. Create a docker container

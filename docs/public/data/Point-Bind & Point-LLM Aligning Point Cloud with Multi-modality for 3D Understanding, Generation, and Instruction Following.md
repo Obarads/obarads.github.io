@@ -14,7 +14,7 @@ Update: 2023/09/09
 - Keywords: CV, Audio, NLP, Point_Cloud, RGB_Image, LLM, Multi-Modality
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX2080ti
 
 ### 1. Create a docker container

@@ -13,7 +13,10 @@ Update: 2023/08/19
   - License: The code is based on the [EG3D](https://github.com/NVlabs/eg3d) and follows their license code.
 - Keywords: CV, Mesh, Scene Generation
 
-## 🖥️ Setup commands to run the implementation
+## 🖥️ (WIP) Setup commands to run the implementation
+Test env.:
+- GPU: RTX2080Ti
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)

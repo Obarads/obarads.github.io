@@ -15,6 +15,7 @@ data: [
   "Point Cloud",
   "Mesh",
   "Video",
+  "Text",
 ]
 
 task: [

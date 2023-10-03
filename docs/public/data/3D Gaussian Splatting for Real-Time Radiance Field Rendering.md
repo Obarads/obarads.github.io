@@ -14,7 +14,7 @@ Update: 2023/09/12
 - Keywords: CV, RGB Image, Novel View Synthesis, Multi-View
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX4090
 
 ### 1. Create a docker container

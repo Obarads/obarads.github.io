@@ -14,7 +14,7 @@ Update: 2023/09/21
 - Keywords: CV, RGB Image, Multi-View
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: ??
 
 ### 1. Create a docker container
@@ -54,24 +54,53 @@ cd /workspace
 conda create -y -n realfusion python=3.9
 conda activate realfusion
 cd dev_env
-# pip install -r requirements.txt
+pip install -r requirements.txt
+
+cd ../
+pip install ./raymarching
+pip install ./shencoder
+pip install ./freqencoder
+pip install ./gridencoder
+pip install git+https://github.com/NVlabs/nvdiffrast.git@c5caf7bdb8a2448acc491a9faa47753972edd380
 ```
 
-### 3. Setup the models
+### 3. Setup code
 In a docker container:
 ```bash
 cd /workspace
-gdown https://drive.google.com/u/0/uc?id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+git apply dev_env/code.diff
 ```
 
 ### 4. Run the model
 In a docker container:
 ```bash
 cd /workspace
+export DATA_DIR="/workspace/examples/natural-images/test_bird_2"
+export IMAGE_PATH="/workspace/examples/natural-images/bird_2/image.png"
+python scripts/extract-mask.py --image_path ${IMAGE_PATH} --output_dir ${DATA_DIR}
+
+cd textual_inversion
+export MODEL_NAME="runwayml/stable-diffusion-v1-5"
+export OUTPUT_DIR="outputs"
+python textual_inversion.py \
+  --pretrained_model_name_or_path=$MODEL_NAME \
+  --train_data_dir=$DATA_DIR \
+  --learnable_property="object" \
+  --placeholder_token="_cat_statue_" \
+  --initializer_token="cat" \
+  --resolution=512 \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --max_train_steps=3000 \
+  --learning_rate=5.0e-04 --scale_lr \
+  --lr_scheduler="constant" \
+  --lr_warmup_steps=0 \
+  --output_dir=$OUTPUT_DIR \
+  --use_augmentations
 ```
 
 ## 📝 Clipping and note
-### どんな論文か？
+### Introduction
 - > We consider the problem of reconstructing a full 360◦ photographic model of an object from a single image of it.
   - Figure 2 is method diagram.
 

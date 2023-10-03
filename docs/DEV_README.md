@@ -28,5 +28,13 @@ npm run deploy
 
 ## pipでrequirements.txt作成
 ```bash
-pip freeze > requirements.txt
+pip list --format=freeze
+```
+
+## diffファイルの取得と適用
+```bash
+# 取得
+git diff -- $FILE_PATH
+# 適用
+git apply code.diff
 ```

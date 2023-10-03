@@ -14,7 +14,7 @@ Update: 2023/08/19
 - Keywords: CV, Video, Scene Generation, Object Generation
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX4090
 
 ### 1. Create a docker container
