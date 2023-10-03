@@ -10,7 +10,7 @@ munkres==1.1.4
 matplotlib==3.7.2
 json_tricks==3.17.2
 chumpy==0.70
-requests==2.29.0
+requests==2.31.0
 ipykernel==6.15.0
 openmim==0.3.9
 
