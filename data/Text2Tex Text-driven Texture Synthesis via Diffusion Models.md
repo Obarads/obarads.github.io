@@ -14,7 +14,7 @@ Update: 2023/08/13
 - Keywords: CV, Mesh, Texture Generation
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX2080Ti
 
 ### 1. Create a docker container
@@ -112,7 +112,7 @@ Ablation studies, Limitations, Additional Qualitative Results,
 
 ## 📚 References
 - [7] Angel  X  Chang,  Thomas  Funkhouser,  Leonidas  Guibas, Pat  Hanrahan,  Qixing  Huang,  Zimo  Li,  Silvio  Savarese, Manolis  Savva,  Shuran  Song,  Hao  Su,  et  al. Shapenet: An  information-rich  3d  model  repository. arXiv  preprint arXiv:1512.03012, 2015.
-- [17] Matt Deitke, Dustin Schwenk, Jordi Salvador, Luca Weihs, Oscar  Michel,   Eli  VanderBilt,   Ludwig  Schmidt,   Kiana Ehsani,   Aniruddha  Kembhavi,   and  Ali  Farhadi. Obja- verse:  A universe of annotated 3d objects. arXiv preprint arXiv:2212.08051, 2022.
+- [17] Matt Deitke, Dustin Schwenk, Jordi Salvador, Luca Weihs, Oscar  Michel,   Eli  VanderBilt,   Ludwig  Schmidt,   Kiana Ehsani,   Aniruddha  Kembhavi,   and  Ali  Farhadi. Objaverse:  A universe of annotated 3d objects. arXiv preprint arXiv:2212.08051, 2022.
 - [33] Gal Metzer, Elad Richardson, Or Patashnik, Raja Giryes, and Daniel Cohen-Or. Latent-nerf for shape-guided generation of 3d shapes and textures. In CVPR, 2023.
 - [34] Oscar Michel, Roi Bar-On, Richard Liu, Sagie Benaim, and Rana Hanocka.   Text2mesh:  Text-driven neural stylization for meshes. In CVPR, 2022.
 - [37] Nasir Mohammad Khalid, Tianhao Xie, Eugene Belilovsky, and Tiberiu Popa.   Clip-mesh:  Generating textured meshes from text using pretrained image-text models. In SIGGRAPH Asia, 2022.

@@ -14,7 +14,7 @@ Update: 2023/09/06
 - Keywords: CV, Point Cloud, Detection, Semantic Segmentation, Library
 
 ## 🖥️ Setup commands to run the implementation
-Tested on:
+Test env.:
 - GPU: RTX2080ti
 
 ### 1. Create a docker container

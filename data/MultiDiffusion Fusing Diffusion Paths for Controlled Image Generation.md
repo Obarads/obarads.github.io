@@ -62,7 +62,7 @@ Note: cell 2 takes a long time.
 ### どんなもの?
 - > In this work, we present MultiDiffusion, a unified framework that enables versatile and controllable image generation, using a pre-trained text-to-image diffusion model, without any further training or finetuning.
 - >  We show that MultiDiffusion can be readily applied to generate high quality and diverse images that adhere to user-provided controls, such as desired aspect ratio (e.g., panorama), and spatial guiding signals, ranging from tight segmentation masks to bounding boxes.
-- > MultiDiffusion is to define a new generation process that is composed of several reference diffusion generation pro- cesses binded together with a set of shared parameters or constraints.
+- > MultiDiffusion is to define a new generation process that is composed of several reference diffusion generation processes binded together with a set of shared parameters or constraints.
   - The process example is shown in Fig. 2.
 
 ![fig2](img/MFDPfCIG/fig2.png)
@@ -97,9 +97,9 @@ Additional Results, Bootstrapping
 
 ## 📚 References
 - [Avrahami et al., 2022a] Avrahami, O., Fried, O., and Lischinski, D. Blended latent diffusion. arXiv preprint arXiv:2206.02779, 2022a.
-- [Rombach et al., 2022] Rombach,  R.,  Blattmann,  A.,  Lorenz,  D.,  Esser,  P.,  and Ommer, B. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Con- ference on Computer Vision and Pattern Recognition, pp. 10684–10695, 2022.
-- [Gafni et al., 2022] Gafni,  O.,  Polyak,  A.,  Ashual,  O.,  Sheynin,  S.,  Parikh, D., and Taigman, Y.  Make-a-scene:  Scene-based text- to-image generation with human priors.   In European Conference on Computer Vision (ECCV), 2022.
-- [Avrahami et al., 2022b] Avrahami, O., Hayes, T., Gafni, O., Gupta, S., Taigman, Y., Parikh, D., Lischinski, D., Fried, O., and Yin, X.  Spa- text: Spatio-textual representation for controllable image generation. arXiv preprint arXiv:2211.14305, 2022b.
+- [Rombach et al., 2022] Rombach,  R.,  Blattmann,  A.,  Lorenz,  D.,  Esser,  P.,  and Ommer, B. High-resolution image synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10684–10695, 2022.
+- [Gafni et al., 2022] Gafni,  O.,  Polyak,  A.,  Ashual,  O.,  Sheynin,  S.,  Parikh, D., and Taigman, Y.  Make-a-scene:  Scene-based text-to-image generation with human priors.   In European Conference on Computer Vision (ECCV), 2022.
+- [Avrahami et al., 2022b] Avrahami, O., Hayes, T., Gafni, O., Gupta, S., Taigman, Y., Parikh, D., Lischinski, D., Fried, O., and Yin, X.  Spa-text: Spatio-textual representation for controllable image generation. arXiv preprint arXiv:2211.14305, 2022b.
 
 
  

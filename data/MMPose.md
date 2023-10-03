@@ -45,11 +45,15 @@ In a docker container:
 cd /workspace
 
 # setup python and packages
-conda create -n mmpose python=3.10
+conda create -y -n mmpose python=3.10
 conda activate mmpose
 cd dev_env
 pip install -r requirements.txt
+mim install "mmengine==0.8.2"
+mim install "mmcv==2.0.1"
+mim install "mmdet==3.1.0"
+pip install -r post_requirements.txt
 ```
 
 ### 3. Run the model
-Please open `/workspace/demo/MMPose_Tutorial.ipynb`, in the container and run the cells in `MMPose_Tutorial.ipynb`.
+Please open `/workspace/demo/MMPose_Tutorial.ipynb`, in the container and run cells below 9th cell (# Check Pytorch installation ~) in `MMPose_Tutorial.ipynb`.

@@ -13,7 +13,10 @@ Update: 2023/08/19
   - License: The code is based on the [EG3D](https://github.com/NVlabs/eg3d) and follows their license code.
 - Keywords: CV, Mesh, Scene Generation
 
-## 🖥️ Setup commands to run the implementation
+## 🖥️ (WIP) Setup commands to run the implementation
+Test env.:
+- GPU: RTX2080Ti
+
 ### 1. Create a docker container
 ```bash
 # Set this repository absolute path (ex: /home/user/obarads.github.io)
@@ -75,7 +78,7 @@ cd /workspace
     - Fig.3 shows architecture.
 - In proposing the method of this paper, the author treats mainly the following two existing problems.
   - > First, they typically generate the entire scene from a single latent code, ignoring the compositional nature of multi-object scenes, thus struggling to synthesize scenes with multiple objects, as shown in Fig. 2.
-  - > Second, their generation process remains largely uncontrol- lable, making it non-trivial to enable user control.
+  - > Second, their generation process remains largely uncontrollable, making it non-trivial to enable user control.
     - > While some works [6, 31] allow conditioning the generation of input images via GAN inversion, this optimization process can be time-consuming and prone to local minima.
   - The authors also describe their differentiation over other current methods in Sec. 2 Concurrent works.
 
@@ -111,10 +114,10 @@ cd /workspace
 Empirical Analysis, Video Results, Additional Results
 
 ## 📚 References
-- [7] Eric R Chan, Connor Z Lin, Matthew A Chan, Koki Nagano, Boxiao  Pan,  Shalini  De  Mello,  Orazio  Gallo,  Leonidas Guibas,  Jonathan Tremblay,  Sameh Khamis,  Tero Karras, and Gordon Wetzstein. Efficient geometry-aware 3d genera- tive adversarial networks. In Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), 2022.
+- [7] Eric R Chan, Connor Z Lin, Matthew A Chan, Koki Nagano, Boxiao  Pan,  Shalini  De  Mello,  Orazio  Gallo,  Leonidas Guibas,  Jonathan Tremblay,  Sameh Khamis,  Tero Karras, and Gordon Wetzstein. Efficient geometry-aware 3d generative adversarial networks. In Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), 2022.
 - [15] Terrance DeVries, Miguel Angel Bautista, Nitish Srivastava, Graham W Taylor, and Joshua M Susskind.  Unconstrained scene generation with locally conditioned radiance fields. In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.
 - [17] Huan Fu, Bowen Cai, Lin Gao, Ling-Xiao Zhang, Jiaming Wang,  Cao  Li,  Qixun  Zeng,  Chengyue  Sun,  Rongfei  Jia, Binqiang Zhao,  et al.   3d-front:  3d furnished rooms with layouts and semantics.  In Proc. of the IEEE International Conf. on Computer Vision (ICCV), 2021.
 - [29] Yiyi Liao, Jun Xie, and Andreas Geiger. Kitti-360: A novel dataset and benchmarks for urban scene understanding in 2d and 3d. IEEE Trans. on Pattern Analysis and Machine Intelligence (PAMI), 2022.
-- [38] Michael Niemeyer and Andreas Geiger.  Campari: Camera- aware decomposed generative neural radiance fields. In Proc. of the International Conf. on 3D Vision (3DV), 2021.
-- [41] Despoina Paschalidou, Amlan Kar, Maria Shugrina, Karsten Kreis, Andreas Geiger, and Sanja Fidler. Atiss: Autoregres- sive transformers for indoor scene synthesis. Advances in Neural Information Processing Systems (NeurIPS), 2021.
+- [38] Michael Niemeyer and Andreas Geiger.  Campari: Camera-aware decomposed generative neural radiance fields. In Proc. of the International Conf. on 3D Vision (3DV), 2021.
+- [41] Despoina Paschalidou, Amlan Kar, Maria Shugrina, Karsten Kreis, Andreas Geiger, and Sanja Fidler. Atiss: Autoregressive transformers for indoor scene synthesis. Advances in Neural Information Processing Systems (NeurIPS), 2021.
 

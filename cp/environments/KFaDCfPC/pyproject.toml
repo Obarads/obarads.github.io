@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kpconv"
+version = "0.1.0"
+description = ""
+authors = ["obarads"]
+
+[tool.poetry.dependencies]
+python = "3.8"
+torch = {url = "https://download.pytorch.org/whl/cu100/torch-1.4.0%2Bcu100-cp38-cp38-linux_x86_64.whl"}
+torchvision = {url = "https://download.pytorch.org/whl/cu100/torchvision-0.5.0%2Bcu100-cp38-cp38-linux_x86_64.whl"}
+numpy = "1.21.2"
+scikit-learn = "^1.2.2"
+pyyaml = "^6.0"
+matplotlib = "^3.7.1"
+mayavi = "^4.8.1"
+pyqt5 = "^5.15.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
