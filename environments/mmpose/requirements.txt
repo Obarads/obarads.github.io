@@ -3,7 +3,7 @@
 torch==1.13.1+cu117
 torchvision==0.14.1+cu117
 scipy==1.11.1
-pillow==10.0.0
+pillow==10.0.1
 opencv-python==4.8.0.74
 numpy==1.25.1
 munkres==1.1.4
