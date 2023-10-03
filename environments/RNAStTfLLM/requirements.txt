@@ -17,7 +17,7 @@ torchaudio==0.13.1
 torchvision==0.14.1+cu117
 tqdm==4.65.0
 typing_extensions==4.7.1
-urllib3==2.0.4
+urllib3==2.0.6
 sentencepiece==0.1.99
 Cython==3.0.0
 tensorboardX==2.6.2
