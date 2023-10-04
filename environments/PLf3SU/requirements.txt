@@ -14,7 +14,7 @@ matplotlib==3.5.3
 matplotlib-inline==0.1.6
 numpy==1.23.3
 opencv-python==4.6.0.66
-Pillow==9.2.0
+Pillow==10.0.1
 plotly==5.7.0
 pypng==0.20220715.0
 pytorch-lightning==1.8.6
