@@ -43,8 +43,6 @@ docker build . -t colmap -f ./dev_env/Dockerfile --build-arg UID=$(id -u) --buil
 docker run -dit --name colmap --gpus all -v $PWD:/workspace colmap
 ```
 
-### 2. 
-
 ### 2. Run colmap command
 In the container:
 ```bash
