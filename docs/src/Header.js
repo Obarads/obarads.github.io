@@ -3,88 +3,110 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 // material design
-import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
-import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@mui/material/AppBar'
+import Grid from '@mui/material/Grid';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import { styled } from '@mui/system';
 
 // icons
-import GitHubIcon from '@material-ui/icons/GitHub';
-import FindInPageIcon from '@material-ui/icons/FindInPage';
-import HomeIcon from '@material-ui/icons/Home';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FindInPageIcon from '@mui/icons-material/FindInPage';
+import HomeIcon from '@mui/icons-material/Home';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
-const styles = (theme) => ({
-  secondaryBar: {
-    zIndex: 0,
-  },
-  menuButton: {
-    marginLeft: -theme.spacing(1),
-  },
-  iconButtonAvatar: {
-    padding: 4,
-  },
-  link: {
-    textDecoration: 'none',
-    color: lightColor,
-    '&:hover': {
-      color: theme.palette.common.white,
-    },
-    paddingRight: 10
-  },
-  button: {
-    borderColor: lightColor,
-  },
-  barColor: {
-    backgroundColor: "rgb(24, 32, 44)"
-  }
+// const styles = (theme) => ({
+//   secondaryBar: {
+//     zIndex: 0,
+//   },
+//   menuButton: {
+//     marginLeft: -theme.spacing(1),
+//   },
+//   iconButtonAvatar: {
+//     padding: 4,
+//   },
+//   link: {
+//     textDecoration: 'none',
+//     color: lightColor,
+//     '&:hover': {
+//       color: theme.palette.common.white,
+//     },
+//     paddingRight: 10
+//   },
+//   button: {
+//     borderColor: lightColor,
+//   },
+//   barColor: {
+//     backgroundColor: "rgb(24, 32, 44)"
+//   }
+// });
+const MenuIconButton = styled(IconButton)({
+  marginLeft: 12,
+  color: 'inherit',
 });
-
+const LinkList = styled(Link)({
+  textDecoration: 'none',
+  color: lightColor,
+  '&:hover': {
+    color: 'white',
+  },
+  paddingRight: 10
+});
+const ALink = styled('a')({
+textDecoration: 'none',
+  color: lightColor,
+  '&:hover': {
+    color: 'white',
+  },
+  paddingRight: 10
+});
+const TopAppBar = styled(AppBar)({
+  backgroundColor: "rgb(24, 32, 44)"
+});
 
 
 function Header(props) {
   const { classes, onDrawerToggle } = props;
 
+  // <AppBar position="sticky" elevation={0} className={classes.barColor}></AppBar>
   return (
     <React.Fragment>
-      <AppBar position="sticky" elevation={0} className={classes.barColor}>
+      <TopAppBar position="sticky" elevation={0}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
             <Hidden smUp>
               <Grid item>
-                <IconButton
+                <MenuIconButton
                   color="inherit"
                   aria-label="open drawer"
                   onClick={onDrawerToggle}
-                  className={classes.menuButton}
                 >
                   <MenuIcon />
-                </IconButton>
+                </MenuIconButton>
               </Grid>
             </Hidden>
             <Grid item xs />
             <Grid item>
-              <Link className={classes.link} to="/">
+              <LinkList to="/">
                 <HomeIcon />
-              </Link>
+              </LinkList>
             </Grid>
             <Grid item>
-              <Link className={classes.link} to="/papers">
+              <LinkList to="/papers">
                 <FindInPageIcon />
-              </Link>
+              </LinkList>
             </Grid>
             <Grid item>
-              <a className={classes.link} href="https://github.com/Obarads/obarads.github.io">
+              <ALink href="https://github.com/Obarads/obarads.github.io">
                 <GitHubIcon />
-              </a>
+              </ALink>
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
+      </TopAppBar>
     </React.Fragment>
   );
 }
@@ -94,4 +116,4 @@ Header.propTypes = {
   onDrawerToggle: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default Header;

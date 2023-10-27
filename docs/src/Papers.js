@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link, useSearchParams } from "react-router-dom";
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 
 import { tag_for_papers } from "./build/tag_for_papers";
 import { information_list_for_papers } from "./build/list_for_papers"
@@ -18,7 +18,7 @@ import PageStructure from "./PageStructure"
 const ROW_DATA_LIST = information_list_for_papers()
 const PAPER_LINK = "/papers/";
 
-const CustomTableCell = withStyles((theme) => ({
+const CustomTableCell = styled((theme) => ({
     head: {
         backgroundColor: "rgb(24, 32, 44)",
         color: theme.palette.common.white,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/system';
 
 const styles = (theme) => ({
   paper: {
@@ -49,4 +49,4 @@ Content.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Content);
+export default styled(styles)(Content);

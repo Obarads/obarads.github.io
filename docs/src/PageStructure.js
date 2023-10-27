@@ -1,18 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+// import PropTypes from 'prop-types';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/system'
+import CssBaseline from '@mui/material/CssBaseline'
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 // container
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-function Copyright()
-{
+function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -25,7 +25,7 @@ function Copyright()
   );
 }
 
-let theme = createMuiTheme({
+let theme = createTheme({
   palette: {
     primary: {
       light: '#63ccff',
@@ -132,79 +132,74 @@ theme = {
 
 const drawerWidth = 256;
 
-const styles = {
-  root: {
-    display: 'flex',
-    minHeight: '100vh',
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  app: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  main: {
-    flex: 1,
-    padding: theme.spacing(2, 4),
-    background: '#eaeff1',
-  },
-  footer: {
-    padding: theme.spacing(2),
-    background: '#eaeff1',
-  },
-};
+const DivRoot = styled('div')({
+  display: 'flex',
+  minHeight: '100vh',
+})
+const NavDrawer = styled('nav')({
+  [theme.breakpoints.up('sm')]: {
+    width: drawerWidth,
+    flexShrink: 0,
+  }
+})
+const DivApp = styled('div')({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+})
+const MainMain = styled('main')({
+  flex: 1,
+  padding: theme.spacing(2, 4),
+  background: '#eaeff1',
+})
+const FooterFooter = styled('footer')({
+  padding: theme.spacing(2),
+  background: '#eaeff1',
+})
+function Hidden(contents) {
+  const sm_match = useMediaQuery(theme => theme.breakpoints.up('sm'));
+  return
+}
+// PageStructure.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
-function PageStructure(props)
-{
-  const { classes } = props;
+// PageStruecture classes by with styles: root, drawer, app, main, footer
+export default function PageStructure(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () =>
-  {
+  const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}>
+      <DivRoot>
         <CssBaseline />
-        <nav className={classes.drawer}>
-          <Hidden smUp implementation="js">
-            <Navigator
-              PaperProps={{ style: { width: drawerWidth } }}
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              contents={props.navigator}
-            />
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Navigator
-              PaperProps={{ style: { width: drawerWidth } }}
-              contents={props.navigator}
-            />
-          </Hidden>
-        </nav>
-        <div className={classes.app}>
+        <NavDrawer>
+          <Navigator
+            sx={{ display: { sm: 'none', xs: 'block' } }}
+            PaperProps={{ style: { width: drawerWidth } }}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            contents={props.navigator}
+          />
+          <Navigator
+            sx={{ display: { sm: 'block', xs: 'none' } }}
+            PaperProps={{ style: { width: drawerWidth } }}
+            contents={props.navigator}
+          /></NavDrawer>
+        <DivApp>
           <Header onDrawerToggle={handleDrawerToggle} />
-          <main className={classes.main}>
-            <Content contents={props.contents} use_wrapper={props.use_wrapper} />
-          </main>
-          <footer className={classes.footer}>
+          <MainMain>
+            {/* <Content contents={props.contents} use_wrapper={props.use_wrapper} /> */}
+          </MainMain>
+          <FooterFooter>
             <Copyright />
-          </footer>
-        </div>
-      </div>
+          </FooterFooter>
+        </DivApp>
+      </DivRoot>
     </ThemeProvider>
   );
-}
-PageStructure.propTypes = {
-  classes: PropTypes.object.isRequired,
 };
-// PageStruecture classes by with styles: root, drawer, app, main, footer
-export default withStyles(styles)(PageStructure);
