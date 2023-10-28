@@ -7,5 +7,4 @@ This section notes how to build environments to run the implementation of papers
 
 ## 📝 Clipping and note
 This section notes summary of paper methods with 'Introduction', 'Contributions, novelty', 'Result' and 'References'.
-
-
+Some articles are in [先端技術とメディア表現1 #FTMA15](https://www.slideshare.net/Ochyai/1-ftma15) and [cvpaperchallenge format](http://xpaperchallenge.org/cv/survey/eccv2022_summaries/1) format.
