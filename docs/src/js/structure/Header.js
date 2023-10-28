@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 // material design
 import AppBar from '@mui/material/AppBar'
 import Grid from '@mui/material/Grid';
-import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/system';
 
@@ -18,31 +17,6 @@ import HomeIcon from '@mui/icons-material/Home';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
-// const styles = (theme) => ({
-//   secondaryBar: {
-//     zIndex: 0,
-//   },
-//   menuButton: {
-//     marginLeft: -theme.spacing(1),
-//   },
-//   iconButtonAvatar: {
-//     padding: 4,
-//   },
-//   link: {
-//     textDecoration: 'none',
-//     color: lightColor,
-//     '&:hover': {
-//       color: theme.palette.common.white,
-//     },
-//     paddingRight: 10
-//   },
-//   button: {
-//     borderColor: lightColor,
-//   },
-//   barColor: {
-//     backgroundColor: "rgb(24, 32, 44)"
-//   }
-// });
 const MenuIconButton = styled(IconButton)({
   marginLeft: 12,
   color: 'inherit',
@@ -69,25 +43,25 @@ const TopAppBar = styled(AppBar)({
 
 
 function Header(props) {
-  const { classes, onDrawerToggle } = props;
+  const { onDrawerToggle } = props;
 
-  // <AppBar position="sticky" elevation={0} className={classes.barColor}></AppBar>
   return (
     <React.Fragment>
       <TopAppBar position="sticky" elevation={0}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
-            <Hidden smUp>
+            <Grid sx={{display: {sm:'none', xs: 'block'}}} item>
               <Grid item>
                 <MenuIconButton
                   color="inherit"
                   aria-label="open drawer"
                   onClick={onDrawerToggle}
+                  edge="start"
                 >
                   <MenuIcon />
                 </MenuIconButton>
               </Grid>
-            </Hidden>
+            </Grid>
             <Grid item xs />
             <Grid item>
               <LinkList to="/">
@@ -112,7 +86,6 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
   onDrawerToggle: PropTypes.func.isRequired,
 };
 

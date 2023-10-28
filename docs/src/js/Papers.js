@@ -8,25 +8,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 
 import { tag_for_papers } from "./build/tag_for_papers";
 import { information_list_for_papers } from "./build/list_for_papers"
-import { HoverManager, TagRender } from './Tag';
-import PageStructure from "./PageStructure"
+import { HoverManager, TagRender } from './common/Tag';
+import PageStructure from "./structure/PageStructure"
 
 const ROW_DATA_LIST = information_list_for_papers()
 const PAPER_LINK = "/papers/";
-
-const CustomTableCell = styled((theme) => ({
-    head: {
-        backgroundColor: "rgb(24, 32, 44)",
-        color: theme.palette.common.white,
-    },
-    body: {
-        fontSize: 14
-    },
-}))(TableCell);
 
 export function CreatePapers(prop) {
     document.title = "Papers" + prop.title_domain;
@@ -38,9 +27,9 @@ export function CreatePapers(prop) {
     return (
         <React.StrictMode>
             <PageStructure
-                contents={list_render}  //{<ListRender />}
-                navigator={navi_render} //{<ListNavigatorRender />}
-                use_wrapper={false} // content内に余白を設けるかどうか
+                contents={list_render}
+                navigator={navi_render}
+                use_wrapper={false} // spaces in content
             />
         </React.StrictMode>
     );
@@ -71,38 +60,28 @@ function NaviRender() {
 }
 
 function TableRender() {
-    return (
-        <TableContainer component={Paper}>
-            <Table size="small" aria-label="a dense table">
-                <TableHeadRender />
-                <TableBodyRender />
-            </Table>
-        </TableContainer>
-    )
-}
-
-function TableHeadRender() {
-    return (<TableHead>
-        <TableRow>
-            <CustomTableCell align="left">
-                {"Name"}
-            </CustomTableCell>
-            <CustomTableCell align="left">
-                {"Year"}
-            </CustomTableCell>
-        </TableRow>
-    </TableHead>)
-}
-
-function TableBodyRender() {
     const row_data_list = ROW_DATA_LIST;
     HiddenRows(row_data_list)
     return (
-        <TableBody id={"data_table"}>
-            {row_data_list.map((row_data) => (
-                <TableRowDataRender row_data_dict={row_data} />
-            ))}
-        </TableBody>
+        <TableContainer component={Paper}>
+            <Table size="small" aria-label="a dense table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="left" sx={{ background: "rgb(24, 32, 44)", color: "white", fontSize: 14 }}>
+                            {"Name"}
+                        </TableCell>
+                        <TableCell align="left" sx={{ background: "rgb(24, 32, 44)", color: "white", fontSize: 14 }}>
+                            {"Year"}
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody id={"data_table"}>
+                    {row_data_list.map((row_data) => (
+                        <TableRowDataRender row_data_dict={row_data} />
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
     )
 }
 
@@ -142,7 +121,7 @@ function HiddenRows(table_row_data_list) {
     });
 }
 
-function create_row(row, keyword_list) { // TODO: this is not readable.
+function create_row(row, keyword_list) {
     let sw = 0;
     let row_keyword_list = row['keywords'].split(',')
     Array.prototype.forEach.call(row_keyword_list, (row_keyword) => {

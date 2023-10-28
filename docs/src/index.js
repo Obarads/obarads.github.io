@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { NoMatchRender } from "./404";
-import { CreatePapers } from './Papers';
-import { CreateHome } from './Home';
-import { CreateDetail } from './Detail';
+import { NoMatchRender } from "./js/404";
+import { CreatePapers } from './js/Papers';
+import { CreateHome } from './js/Home';
+import { CreateDetail } from './js/Detail';
 // import raw from "./raw.macro";
 
 import "./css/all.css"
+import "./css/home.css"
+import "./css/list.css"
+import "./css/tag_for_papers.css"
+import "./css/markdown.css"
+import "./css/toc.css"
 
 // title
 const title_domain = " - Note board"
