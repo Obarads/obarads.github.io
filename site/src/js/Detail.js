@@ -16,7 +16,7 @@ export function CreateDetail(prop) {
         return paper.filename === id;
     });
     if (paper_exists) {
-        const markdown_contents = raw(`../../public/data/${id}`);
+        const markdown_contents = raw(`../../../docs/${id}`);
         return (
             <React.StrictMode>
                 <PageStructure

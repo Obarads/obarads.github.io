@@ -84,7 +84,7 @@ def create_article(
     data: Data,
 ):
     with open(
-        os.path.join(os.path.dirname(__file__), "configs/temp.md"), encoding="utf-8"
+        os.path.join(os.path.dirname(__file__), "template/article.md"), encoding="utf-8"
     ) as f:
         temp_article = f.read()
 
@@ -136,9 +136,10 @@ def main():
     data = Data(**data_dict)
     article = create_article(data)
 
+    # docs
     output_file_path = os.path.join(
         os.path.dirname(__file__),
-        "../public/data",
+        "../docs",
         data.arxiv_title.replace(":", "") + ".md",
     )
     if not os.path.exists(output_file_path):
@@ -146,39 +147,38 @@ def main():
             f.write(article)
     else:
         print(f"exist: {output_file_path}")
-
     os.makedirs(
-        os.path.join(
-            os.path.dirname(__file__), "../public/data/img", data.myrepo_article_abb
-        ),
+        os.path.join(os.path.dirname(__file__), "../docs/img", data.myrepo_article_abb),
         exist_ok=True,
     )
+
+    # environments
     os.makedirs(
         os.path.join(
-            os.path.dirname(__file__), "../../environments", data.myrepo_article_abb
+            os.path.dirname(__file__), "../environments", data.myrepo_article_abb
         ),
         exist_ok=True,
     )
     dockerfile_path = os.path.join(
         os.path.dirname(__file__),
-        "../../environments",
+        "../environments",
         data.myrepo_article_abb,
         "Dockerfile",
     )
     if not os.path.exists(dockerfile_path):
         shutil.copy(
-            os.path.join(os.path.dirname(__file__), "configs/Dockerfile"),
+            os.path.join(os.path.dirname(__file__), "template/Dockerfile"),
             dockerfile_path,
         )
     req_txt_path = os.path.join(
         os.path.dirname(__file__),
-        "../../environments",
+        "../environments",
         data.myrepo_article_abb,
         "requirements.txt",
     )
     if not os.path.exists(req_txt_path):
         shutil.copy(
-            os.path.join(os.path.dirname(__file__), "configs/requirements.txt"),
+            os.path.join(os.path.dirname(__file__), "template/requirements.txt"),
             req_txt_path,
         )
 
