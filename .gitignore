@@ -9,7 +9,8 @@ node_modules/
 /coverage
 
 # production
-/docs/build
+/site/build
+/site/public/img
 
 # other folder
 .vscode

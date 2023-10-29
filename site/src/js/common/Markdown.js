@@ -36,7 +36,7 @@ export function MarkdownRender(props)
             children={props.children}
             remarkPlugins={[remarkMath]}
             rehypePlugins={[rehypeKatex]}
-            urlTransform={uri => `${'/data/'}${uri}`}
+            urlTransform={uri => `../${uri}`}
             components={{
                 h1: H1Render,
                 h2: H2Render,

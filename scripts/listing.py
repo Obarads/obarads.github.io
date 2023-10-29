@@ -325,24 +325,24 @@ def write_actlog_to_js(
 
 
 def main():
-    table_row_data_list = extract_data(os.path.join(PATH, "public/data/"))
+    table_row_data_list = extract_data(os.path.join(PATH, "docs/"))
     _, class_to_keyword = extract_keyword_dict(
         os.path.join(PATH, "scripts/configs/tag_list_for_papers.yaml")
     )
 
     write_table_row_data_list_to_js(
-        os.path.join(PATH, "src/js/build/list_for_papers.js"), table_row_data_list
+        os.path.join(PATH, "site/src/js/build/list_for_papers.js"), table_row_data_list
     )
 
     write_class_and_tag_to_js(
-        os.path.join(PATH, "src/js/build/tag_for_papers.js"), class_to_keyword
+        os.path.join(PATH, "site/src/js/build/tag_for_papers.js"), class_to_keyword
     )
 
-    write_css(os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword)
+    write_css(os.path.join(PATH, "site/src/css/tag_for_papers.css"), class_to_keyword)
 
     write_actlog_to_js(
-        os.path.join(PATH, "src/js/build/actlog_list_for_papers.js"),
-        os.path.join(PATH, "public/data/"),
+        os.path.join(PATH, "site/src/js/build/actlog_list_for_papers.js"),
+        os.path.join(PATH, "docs/"),
         table_row_data_list,
     )
 
