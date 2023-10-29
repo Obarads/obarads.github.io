@@ -1,13 +1,11 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 
-import raw from "./raw.macro";
-import { MarkdownRender, MarkdownNavigatorRender } from "./Markdown";
 import { NoMatchRender } from './404';
 import { information_list_for_papers } from "./build/list_for_papers";
-import PageStructure from './PageStructure';
-
-import "./css/list.css"
+import raw from "./common/raw.macro";
+import { MarkdownRender, MarkdownNavigatorRender } from "./common/Markdown";
+import PageStructure from './structure/PageStructure';
 
 export function CreateDetail(prop) {
     let { id } = useParams(); // filename
@@ -17,9 +15,8 @@ export function CreateDetail(prop) {
     const paper_exists = paper_list.some((paper) => {
         return paper.filename === id;
     });
-    console.log(id, paper_exists)
     if (paper_exists) {
-        const markdown_contents = raw(`../public/data/${id}`);
+        const markdown_contents = raw(`../../public/data/${id}`);
         return (
             <React.StrictMode>
                 <PageStructure

@@ -1,19 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PageStructure from './PageStructure';
-import { MarkdownRender } from "./Markdown";
-import { TagRender } from './Tag';
-import raw from "./raw.macro";
+import PageStructure from './structure/PageStructure';
 import actlog_list_for_papers from './build/actlog_list_for_papers'
-
-import "./css/home.css"
-import "./css/list.css"
-import "./css/tag_for_papers.css"
+import { MarkdownRender } from "./common/Markdown";
+import { TagRender } from './common/Tag';
+import raw from "./common/raw.macro";
 
 export function CreateHome(prop)
 {
-    const markdown_contents = raw("../../README.md");
+    const markdown_contents = raw("../../../README.md");
     document.title = "Home" + prop.title_domain;
     return (
         <React.StrictMode>
@@ -27,9 +23,7 @@ export function CreateHome(prop)
 
 function ActLogNavigatorRender(props)
 {
-    // for navigator
     const act_log = actlog_list_for_papers();
-
     return (
         <span>  <div className='actlog-header'>Recently updated articles</div>
             {act_log.map((log) => (
@@ -44,4 +38,3 @@ function ActLogNavigatorRender(props)
         </span>
     )
 }
-

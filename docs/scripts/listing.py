@@ -82,7 +82,7 @@ ELEMENT_INFO = "ℹ️ Info"
 
 
 def extract_data(markdown_dir_path: str):
-    markdown_path_list = glob.glob(markdown_dir_path + "*.md")
+    markdown_path_list = sorted(glob.glob(markdown_dir_path + "*.md"))
     table_row_data_list: List[TableRowData] = []
     print(f"number of file: {len(markdown_path_list)}")
 
@@ -331,17 +331,17 @@ def main():
     )
 
     write_table_row_data_list_to_js(
-        os.path.join(PATH, "src/build/list_for_papers.js"), table_row_data_list
+        os.path.join(PATH, "src/js/build/list_for_papers.js"), table_row_data_list
     )
 
     write_class_and_tag_to_js(
-        os.path.join(PATH, "src/build/tag_for_papers.js"), class_to_keyword
+        os.path.join(PATH, "src/js/build/tag_for_papers.js"), class_to_keyword
     )
 
     write_css(os.path.join(PATH, "src/css/tag_for_papers.css"), class_to_keyword)
 
     write_actlog_to_js(
-        os.path.join(PATH, "src/build/actlog_list_for_papers.js"),
+        os.path.join(PATH, "src/js/build/actlog_list_for_papers.js"),
         os.path.join(PATH, "public/data/"),
         table_row_data_list,
     )

@@ -4,28 +4,30 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css'
 
-import "./css/markdown.css"
-import "./css/toc.css"
-
-const HeadingRenderer = ({ node, ...props }) =>
-{
-    if (props.level === 1)
+function HeadingRenderer(h_number, value){
+    if (h_number === 1)
     {
         return (
             <div>
-                {React.createElement('h' + props.level, {}, props.children)}
+                {React.createElement('h' + h_number, {}, value)}
             </div>
         )
     } else
     {
         return (
             <div>
-                <div className="pound_link_adjustment" id={props.children[0]}></div>
-                {React.createElement('h' + props.level, {}, props.children)}
+                <div className="pound_link_adjustment" id={value}></div>
+                {React.createElement('h' + h_number, {}, value)}
             </div>
         )
     }
 }
+
+const H1Render = ({node, ...props}) => {return HeadingRenderer(1, props.children)}
+const H2Render = ({node, ...props}) => {return HeadingRenderer(2, props.children)}
+const H3Render = ({node, ...props}) => {return HeadingRenderer(3, props.children)}
+const H4Render = ({node, ...props}) => {return HeadingRenderer(4, props.children)}
+const H5Render = ({node, ...props}) => {return HeadingRenderer(5, props.children)}
 
 export function MarkdownRender(props)
 {
@@ -34,13 +36,13 @@ export function MarkdownRender(props)
             children={props.children}
             remarkPlugins={[remarkMath]}
             rehypePlugins={[rehypeKatex]}
-            transformImageUri={uri => `${'/data/'}${uri}`}
+            urlTransform={uri => `${'/data/'}${uri}`}
             components={{
-                h1: HeadingRenderer,
-                h2: HeadingRenderer,
-                h3: HeadingRenderer,
-                h4: HeadingRenderer,
-                h5: HeadingRenderer
+                h1: H1Render,
+                h2: H2Render,
+                h3: H3Render,
+                h4: H4Render,
+                h5: H5Render,
             }}>
         </ReactMarkdown>
     );
@@ -52,17 +54,14 @@ export function MarkdownNavigatorRender(props)
     let lines = markdown_contents.split("\n");
     let headline = [];
     let in_code = false;
-    // let page_title = null
     for (let it in lines)
     {
         if (lines[it].match(/^```.?/))
         {
-            // コードの行内の場合は外す
             in_code = in_code ? false : true;
         }
         if (lines[it][0] === '#' && !in_code && lines[it][1] !== ' ')
         {
-            // 先頭の#とスペースを削除して追加
             let line_content = lines[it].replace(/^#+/, '').trim()
             let dollar_split = line_content.split("$")
             if (dollar_split.length >= 1)
