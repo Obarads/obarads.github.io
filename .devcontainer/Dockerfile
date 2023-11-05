@@ -4,9 +4,13 @@ ARG VARIANT=20-bullseye
 FROM mcr.microsoft.com/devcontainers/javascript-node:1-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends python3 python3-pip sudo \
-    update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get -y install --no-install-recommends \
+    python3 \
+    python3-pip \
+    sudo
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
